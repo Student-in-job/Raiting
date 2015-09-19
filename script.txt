@@ -1,0 +1,191 @@
+CREATE DATABASE URaiting;
+
+CREATE TABLE branch(
+id serial, 
+name varchar(500),
+CONSTRAINT id_branch PRIMARY KEY (id)
+);
+
+CREATE TABLE region(
+id serial, 
+name varchar(500),
+CONSTRAINT id_region PRIMARY KEY (id)
+);
+
+CREATE TABLE university(
+id serial, 
+name varchar(500),
+id_branch int,
+id_region int,
+CONSTRAINT id_university PRIMARY KEY (id),
+CONSTRAINT id_branch FOREIGN KEY (id_branch) REFERENCES branch(id)
+	ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT id_region FOREIGN KEY (id_region) REFERENCES region(id)
+	ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE year(
+id serial, 
+num int,
+CONSTRAINT id_year PRIMARY KEY (id)
+);
+
+INSERT INTO year(num) VALUES (2013);
+INSERT INTO year(num) VALUES (2014);
+INSERT INTO year(num) VALUES (2015);
+INSERT INTO year(num) VALUES (2016);
+
+
+INSERT INTO university(name) VALUES ('Андижанский государственный университет');
+INSERT INTO university(name) VALUES ('Андижанский машиностроительный институт');
+INSERT INTO university(name) VALUES ('Андижанский медицинский институт');
+INSERT INTO university(name) VALUES ('Андижанский сельскохозяйственный институт');
+INSERT INTO university(name) VALUES ('Бухарский государственный университет');
+INSERT INTO university(name) VALUES ('Бухарский инженерно-технологический институт');
+INSERT INTO university(name) VALUES ('Бухарский медицинский институт');
+INSERT INTO university(name) VALUES ('Высшая школа национального танца и хареографии');
+INSERT INTO university(name) VALUES ('Государственная консерватория Узбекистана');
+INSERT INTO university(name) VALUES ('Гулистанский государственный университет');
+INSERT INTO university(name) VALUES ('Джизакский государственный педагогический институт');
+INSERT INTO university(name) VALUES ('Джизакский политехнический институт');
+INSERT INTO university(name) VALUES ('Институт национального художества и дизайна');
+INSERT INTO university(name) VALUES ('Каракалпакский государственный университет');
+INSERT INTO university(name) VALUES ('Каршинский государственный университет');
+INSERT INTO university(name) VALUES ('Каршинский инженерно-экономический институт');
+INSERT INTO university(name) VALUES ('Кокандский государственный педагогический институт');
+INSERT INTO university(name) VALUES ('Навоинский государственный горный институт');
+INSERT INTO university(name) VALUES ('Навоинский государственный педагогический институт');
+INSERT INTO university(name) VALUES ('Налоговая академия');
+INSERT INTO university(name) VALUES ('Наманганский государственный университет');
+INSERT INTO university(name) VALUES ('Наманганский инженерно-педагогический институт');
+INSERT INTO university(name) VALUES ('Наманганский инженерно-технологический институт');
+INSERT INTO university(name) VALUES ('Национальный университет Узбекистана');
+INSERT INTO university(name) VALUES ('Нукусский государственный педагогический институт');
+INSERT INTO university(name) VALUES ('Самаркандский государственный архитектурно-строительный институт');
+INSERT INTO university(name) VALUES ('Самаркандский государственный институт иностранных языков');
+INSERT INTO university(name) VALUES ('Самаркандский государственный университет');
+INSERT INTO university(name) VALUES ('Самаркандский институт экономики и сервиса');
+INSERT INTO university(name) VALUES ('Самаркандский медицинский институт');
+INSERT INTO university(name) VALUES ('Самаркандский сельскохозяйственный институт');
+INSERT INTO university(name) VALUES ('Ташкентская медицинская академия');
+INSERT INTO university(name) VALUES ('Ташкентский автомобильно-дорожный институт');
+INSERT INTO university(name) VALUES ('Ташкентский архитектурно-строительный институт');
+INSERT INTO university(name) VALUES ('Ташкентский государственный аграрный университет');
+INSERT INTO university(name) VALUES ('Ташкентский государственный институт востоковедения');
+INSERT INTO university(name) VALUES ('Ташкентский государственный педагогический университет');
+INSERT INTO university(name) VALUES ('Ташкентский государственный технический университет');
+INSERT INTO university(name) VALUES ('Ташкентский государственный экономический университет');
+INSERT INTO university(name) VALUES ('Ташкентский государственный юридический университет');
+INSERT INTO university(name) VALUES ('Ташкентский институт инженеров железнодорожного транспорта');
+INSERT INTO university(name) VALUES ('Ташкентский институт ирригации и мелиорации');
+INSERT INTO university(name) VALUES ('Ташкентский институт текстильной и легкой промышленности');
+INSERT INTO university(name) VALUES ('Ташкентский исламский университет');
+INSERT INTO university(name) VALUES ('Ташкентский медицинский педиатрический институт');
+INSERT INTO university(name) VALUES ('Ташкентский университет информационных технологий');
+INSERT INTO university(name) VALUES ('Ташкентский фармацевтический институт');
+INSERT INTO university(name) VALUES ('Ташкентский финансовый институт');
+INSERT INTO university(name) VALUES ('Ташкентский химико-технологический институт');
+INSERT INTO university(name) VALUES ('Термезский государственный университет');
+INSERT INTO university(name) VALUES ('Узбекский государственный институт искусства и культуры');
+INSERT INTO university(name) VALUES ('Узбекский государственный институт физической культуры');
+INSERT INTO university(name) VALUES ('Узбекский государственный университет мировых языков');
+INSERT INTO university(name) VALUES ('Университет мировой экономики и дипломатии');
+INSERT INTO university(name) VALUES ('Ургенчский государственный университет');
+INSERT INTO university(name) VALUES ('Ферганский государственный университет');
+INSERT INTO university(name) VALUES ('Ферганский политехнический институт');
+
+CREATE TABLE raiting(
+id serial, 
+id_university int,
+id_year int,
+--i1
+p float,
+px float,
+py float,
+--i2
+n1 float,
+n2 float,
+n3 float,
+n4 float,
+n5 float,
+n6 float,
+--i3
+s1 float,
+s2 float,
+s3 float,
+--i4
+p1 float,
+p2 float,
+p3 float,
+--i5
+p4 float,
+p5 float,
+p5_1 float,
+p6 float,
+p6_1 float,
+--i6
+k1 float,
+k float,
+--i7
+p7 float,
+p8 float,
+--i8
+pz float,
+--i9
+p9 float,
+--i10
+tsi float,
+tsti float,
+--i11
+r1 float,
+r float,
+--i12
+p10 float,
+p11 float,
+--i13
+p12 float,
+p13 float,
+p14 float,
+p15 float,
+p1_2 float,
+p1_3 float,
+p1_4 float,
+p1_5 float,
+--i14
+s4 float,
+s5 float,
+--i15 
+s7 float,
+s8 float,
+s9 float,
+--i16
+d float,
+z float,
+v float,
+--i17
+t4 float,
+t5 float,
+t6 float,
+tL float,
+--i18
+i float,
+t7 float,
+t8 float,
+ya float,
+kL float,
+--i19
+a1 float,
+a2 float,
+a3 float,
+a4 float,
+a5 float,
+--i20
+k2 float,
+m float,
+L float,
+CONSTRAINT id_raiting PRIMARY KEY (id),
+CONSTRAINT id_university FOREIGN KEY (id_university) REFERENCES university(id)
+	ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT id_year FOREIGN KEY (id_year) REFERENCES year(id)
+	ON DELETE CASCADE ON UPDATE CASCADE
+);
