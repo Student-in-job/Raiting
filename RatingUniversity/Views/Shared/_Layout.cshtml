@@ -23,6 +23,12 @@
                     <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "" })</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Year <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="width:240px;">
+                            <li><a href="#">2013</a> <a href="#">2014</a> <a href="#">2015</a> <a href="#">2016</a></li>
+                        </ul>
+                    </li>
                     <li>@Html.ActionLink("Theme Features", "Theme", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")

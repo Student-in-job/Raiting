@@ -17,5 +17,33 @@ namespace RatingUniversity
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+		public void Init()
+        {
+           
+        }
+        protected void Application_Error()
+        {
+            /*на случай не обработанных исключений*/
+        }
+        protected void Session_Start()
+        {
+            /*при обращении нового пользователя*/
+        }
+        protected void Session_End()
+        {
+            /*срабатывает после истечения сессии*/
+        }
+        protected void AuthetenticateRequest()
+        {
+            /*срабатывает после подтверждения личности*/
+        }
+        protected void AuthorizeRequest()
+        {
+            /*срабатывает после подтверждения доступа к ресурсам*/
+        }
+        public void Dispose()
+        {
+            /*вызывается перед удалем объекта HTttpApplication, нужен для очистки ресурсов*/
+        }
     }
 }
