@@ -45,13 +45,38 @@
     </div>
     <div class="col-md-9">
         <section id="mainContent">
-            <h4></h4>
-            <form role="upload">
+            <h4>Выберите файл для загрузки</h4>
+            @using (Html.BeginForm("Upload", "Main", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
                 <div class="form-group">
-                    <input class="form-control" placeholder="Выберите Excel файл" type="text">
+                    <label class="control-label">* some info</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">Excel file</span>
+                        <input class="form-control" type="file" name="upload">
+                        <span class="input-group-btn" style="float:left;">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </span>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-default">Отправить</button>
-            </form>
+                
+                <div class="alert alert-dismissible alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Warning!</strong> @ViewBag.Result
+                </div>
+                <div class="alert alert-dismissible alert-info">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Heads up!</strong> @ViewBag.Result
+                </div>
+                <div class="alert alert-dismissible alert-success">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Well done!</strong> @ViewBag.Result
+                </div>
+                <div class="alert alert-dismissible alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Oh snap!</strong> @ViewBag.Result
+                </div>
+            }
+
             <br />
             <div class="jumbotron">
                 <h3></h3>

@@ -85,5 +85,31 @@ namespace RatingUniversity.Controllers
                 return View();
             }
         }
+        /* Upload file begin method */
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase upload)
+        {
+            if (upload != null && upload.ContentLength > 0)
+            {
+                try
+                {
+                    // file name
+                    string fileName = System.IO.Path.GetFileName(upload.FileName);
+                    // save into Files folder in the project
+                    upload.SaveAs(Server.MapPath("~/Files/" + fileName));
+                    ViewBag.Result = "File uploaded successfully!";
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Result = "ERROR:" + ex.Message.ToString();
+                }
+            }
+            else
+            {
+                ViewBag.Result = "You have not specified a file.";
+            }
+            return RedirectToAction("Index");
+        }
+        /* Upload file end method */
     }
 }
