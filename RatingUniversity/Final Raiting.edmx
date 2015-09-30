@@ -1,0 +1,1017 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="URaitingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I1_dolya_pps_s_uchenoy_stepenyu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I1_dolya_pps_s_uchenoy_stepenyu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I11" Type="float" />
+          <Property Name="I12" Type="float" />
+          <Property Name="I1" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I10_rezultati_attestacii_u_studentov' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I10_rezultati_attestacii_u_studentov">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I10" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I11" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I12_dolya_trudoustroennih_vipusknikov' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I12_dolya_trudoustroennih_vipusknikov">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I12" Type="float" />
+          <Property Name="I12_1" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I13_kolichestvo_studentov_udostoennih_nagrad' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I13_kolichestvo_studentov_udostoennih_nagrad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I13" Type="float" />
+          <Property Name="I131" Type="float" />
+          <Property Name="I132" Type="float" />
+          <Property Name="I133" Type="float" />
+          <Property Name="I134" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I14_citiruemost_publikaciy_pps' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I14_citiruemost_publikaciy_pps">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I14" Type="float" />
+          <Property Name="I141" Type="float" />
+          <Property Name="I142" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I15_kolichestvo_izdannih_statey' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I15_kolichestvo_izdannih_statey">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I15" Type="float" />
+          <Property Name="I151" Type="float" />
+          <Property Name="I152" Type="float" />
+          <Property Name="I153" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I16_kolichestvo_sotrudnikov_utverjdennih_vak' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I16_kolichestvo_sotrudnikov_utverjdennih_vak">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I16" Type="float" />
+          <Property Name="I161" Type="float" />
+          <Property Name="I162" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I17" Type="float" />
+          <Property Name="I171" Type="float" />
+          <Property Name="I172" Type="float" />
+          <Property Name="I173" Type="float" />
+          <Property Name="I174" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I18_effektivnost_provodimih_nauchnih_rabot' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I18_effektivnost_provodimih_nauchnih_rabot">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I18" Type="float" />
+          <Property Name="I181" Type="float" />
+          <Property Name="I182" Type="float" />
+          <Property Name="I183" Type="float" />
+          <Property Name="I184" Type="float" />
+          <Property Name="I185" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I19_stepen_osnashennosti_laboratoriy_oborudovaniem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I19_stepen_osnashennosti_laboratoriy_oborudovaniem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="Z1" Type="float" />
+          <Property Name="Z2" Type="float" />
+          <Property Name="Z3" Type="float" />
+          <Property Name="Z4" Type="float" />
+          <Property Name="Z5" Type="float" />
+          <Property Name="Z" Type="float" />
+          <Property Name="I19" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I2_uroven_kachestva_prepodavaniya' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I2_uroven_kachestva_prepodavaniya">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="T1" Type="float" />
+          <Property Name="T2" Type="float" />
+          <Property Name="T3" Type="float" />
+          <Property Name="I21" Type="float" />
+          <Property Name="I31" Type="float" />
+          <Property Name="I41" Type="float" />
+          <Property Name="I2" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I20_obespechennost_irc_uchebnoy_literaturoy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I20_obespechennost_irc_uchebnoy_literaturoy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I20" Type="float" />
+          <Property Name="I201" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I3_kolichestvo_uchebnikov_i_posobiy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I3_kolichestvo_uchebnikov_i_posobiy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I31" Type="float" />
+          <Property Name="I32" Type="float" />
+          <Property Name="I33" Type="float" />
+          <Property Name="I3" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I4_dolya_inostrannih_prepodavateley_i_studentov' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I4_dolya_inostrannih_prepodavateley_i_studentov">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I41" Type="float" />
+          <Property Name="I42" Type="float" />
+          <Property Name="I4" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I5_uchastie_v_programme_obmena' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I5_uchastie_v_programme_obmena">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I5" Type="float" />
+          <Property Name="I51" Type="float" />
+          <Property Name="I52_1" Type="float" />
+          <Property Name="I52_2" Type="float" />
+          <Property Name="I53_1" Type="float" />
+          <Property Name="I53_2" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I6_kolichestvo_uchebnih_kursov_na_inostrannom' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I6_kolichestvo_uchebnih_kursov_na_inostrannom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I6" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I7_uroven_angliyskogo_i_ikt_u_pps' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I7_uroven_angliyskogo_i_ikt_u_pps">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I7" Type="float" />
+          <Property Name="I71" Type="float" />
+          <Property Name="I72" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I8" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I9_dolya_pps_prepodayushego_v_sspo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="I9" Type="float" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <EntityContainer Name="URaitingModelStoreContainer">
+          <EntitySet Name="I1_dolya_pps_s_uchenoy_stepenyu" EntityType="Self.I1_dolya_pps_s_uchenoy_stepenyu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I1_dolya_pps_s_uchenoy_stepenyu].[ID] AS [ID], 
+    [I1_dolya_pps_s_uchenoy_stepenyu].[name] AS [name], 
+    [I1_dolya_pps_s_uchenoy_stepenyu].[I11] AS [I11], 
+    [I1_dolya_pps_s_uchenoy_stepenyu].[I12] AS [I12], 
+    [I1_dolya_pps_s_uchenoy_stepenyu].[I1] AS [I1], 
+    [I1_dolya_pps_s_uchenoy_stepenyu].[YEAR] AS [YEAR]
+    FROM [dbo].[I1_dolya_pps_s_uchenoy_stepenyu] AS [I1_dolya_pps_s_uchenoy_stepenyu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I10_rezultati_attestacii_u_studentov" EntityType="Self.I10_rezultati_attestacii_u_studentov" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I10_rezultati_attestacii_u_studentov].[ID] AS [ID], 
+    [I10_rezultati_attestacii_u_studentov].[name] AS [name], 
+    [I10_rezultati_attestacii_u_studentov].[I10] AS [I10], 
+    [I10_rezultati_attestacii_u_studentov].[YEAR] AS [YEAR]
+    FROM [dbo].[I10_rezultati_attestacii_u_studentov] AS [I10_rezultati_attestacii_u_studentov]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami" EntityType="Self.I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami].[ID] AS [ID], 
+    [I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami].[name] AS [name], 
+    [I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami].[I11] AS [I11], 
+    [I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami].[YEAR] AS [YEAR]
+    FROM [dbo].[I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami] AS [I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I12_dolya_trudoustroennih_vipusknikov" EntityType="Self.I12_dolya_trudoustroennih_vipusknikov" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I12_dolya_trudoustroennih_vipusknikov].[ID] AS [ID], 
+    [I12_dolya_trudoustroennih_vipusknikov].[name] AS [name], 
+    [I12_dolya_trudoustroennih_vipusknikov].[I12] AS [I12], 
+    [I12_dolya_trudoustroennih_vipusknikov].[I12_1] AS [I12_1], 
+    [I12_dolya_trudoustroennih_vipusknikov].[YEAR] AS [YEAR]
+    FROM [dbo].[I12_dolya_trudoustroennih_vipusknikov] AS [I12_dolya_trudoustroennih_vipusknikov]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I13_kolichestvo_studentov_udostoennih_nagrad" EntityType="Self.I13_kolichestvo_studentov_udostoennih_nagrad" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I13_kolichestvo_studentov_udostoennih_nagrad].[ID] AS [ID], 
+    [I13_kolichestvo_studentov_udostoennih_nagrad].[name] AS [name], 
+    [I13_kolichestvo_studentov_udostoennih_nagrad].[I13] AS [I13], 
+    [I13_kolichestvo_studentov_udostoennih_nagrad].[I131] AS [I131], 
+    [I13_kolichestvo_studentov_udostoennih_nagrad].[I132] AS [I132], 
+    [I13_kolichestvo_studentov_udostoennih_nagrad].[I133] AS [I133], 
+    [I13_kolichestvo_studentov_udostoennih_nagrad].[I134] AS [I134], 
+    [I13_kolichestvo_studentov_udostoennih_nagrad].[YEAR] AS [YEAR]
+    FROM [dbo].[I13_kolichestvo_studentov_udostoennih_nagrad] AS [I13_kolichestvo_studentov_udostoennih_nagrad]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I14_citiruemost_publikaciy_pps" EntityType="Self.I14_citiruemost_publikaciy_pps" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I14_citiruemost_publikaciy_pps].[ID] AS [ID], 
+    [I14_citiruemost_publikaciy_pps].[name] AS [name], 
+    [I14_citiruemost_publikaciy_pps].[I14] AS [I14], 
+    [I14_citiruemost_publikaciy_pps].[I141] AS [I141], 
+    [I14_citiruemost_publikaciy_pps].[I142] AS [I142], 
+    [I14_citiruemost_publikaciy_pps].[YEAR] AS [YEAR]
+    FROM [dbo].[I14_citiruemost_publikaciy_pps] AS [I14_citiruemost_publikaciy_pps]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I15_kolichestvo_izdannih_statey" EntityType="Self.I15_kolichestvo_izdannih_statey" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I15_kolichestvo_izdannih_statey].[ID] AS [ID], 
+    [I15_kolichestvo_izdannih_statey].[name] AS [name], 
+    [I15_kolichestvo_izdannih_statey].[I15] AS [I15], 
+    [I15_kolichestvo_izdannih_statey].[I151] AS [I151], 
+    [I15_kolichestvo_izdannih_statey].[I152] AS [I152], 
+    [I15_kolichestvo_izdannih_statey].[I153] AS [I153], 
+    [I15_kolichestvo_izdannih_statey].[YEAR] AS [YEAR]
+    FROM [dbo].[I15_kolichestvo_izdannih_statey] AS [I15_kolichestvo_izdannih_statey]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I16_kolichestvo_sotrudnikov_utverjdennih_vak" EntityType="Self.I16_kolichestvo_sotrudnikov_utverjdennih_vak" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I16_kolichestvo_sotrudnikov_utverjdennih_vak].[ID] AS [ID], 
+    [I16_kolichestvo_sotrudnikov_utverjdennih_vak].[name] AS [name], 
+    [I16_kolichestvo_sotrudnikov_utverjdennih_vak].[I16] AS [I16], 
+    [I16_kolichestvo_sotrudnikov_utverjdennih_vak].[I161] AS [I161], 
+    [I16_kolichestvo_sotrudnikov_utverjdennih_vak].[I162] AS [I162], 
+    [I16_kolichestvo_sotrudnikov_utverjdennih_vak].[YEAR] AS [YEAR]
+    FROM [dbo].[I16_kolichestvo_sotrudnikov_utverjdennih_vak] AS [I16_kolichestvo_sotrudnikov_utverjdennih_vak]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost" EntityType="Self.I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost].[ID] AS [ID], 
+    [I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost].[name] AS [name], 
+    [I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost].[I17] AS [I17], 
+    [I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost].[I171] AS [I171], 
+    [I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost].[I172] AS [I172], 
+    [I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost].[I173] AS [I173], 
+    [I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost].[I174] AS [I174], 
+    [I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost].[YEAR] AS [YEAR]
+    FROM [dbo].[I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost] AS [I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I18_effektivnost_provodimih_nauchnih_rabot" EntityType="Self.I18_effektivnost_provodimih_nauchnih_rabot" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I18_effektivnost_provodimih_nauchnih_rabot].[ID] AS [ID], 
+    [I18_effektivnost_provodimih_nauchnih_rabot].[name] AS [name], 
+    [I18_effektivnost_provodimih_nauchnih_rabot].[I18] AS [I18], 
+    [I18_effektivnost_provodimih_nauchnih_rabot].[I181] AS [I181], 
+    [I18_effektivnost_provodimih_nauchnih_rabot].[I182] AS [I182], 
+    [I18_effektivnost_provodimih_nauchnih_rabot].[I183] AS [I183], 
+    [I18_effektivnost_provodimih_nauchnih_rabot].[I184] AS [I184], 
+    [I18_effektivnost_provodimih_nauchnih_rabot].[I185] AS [I185], 
+    [I18_effektivnost_provodimih_nauchnih_rabot].[YEAR] AS [YEAR]
+    FROM [dbo].[I18_effektivnost_provodimih_nauchnih_rabot] AS [I18_effektivnost_provodimih_nauchnih_rabot]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I19_stepen_osnashennosti_laboratoriy_oborudovaniem" EntityType="Self.I19_stepen_osnashennosti_laboratoriy_oborudovaniem" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I19_stepen_osnashennosti_laboratoriy_oborudovaniem].[ID] AS [ID], 
+    [I19_stepen_osnashennosti_laboratoriy_oborudovaniem].[name] AS [name], 
+    [I19_stepen_osnashennosti_laboratoriy_oborudovaniem].[Z1] AS [Z1], 
+    [I19_stepen_osnashennosti_laboratoriy_oborudovaniem].[Z2] AS [Z2], 
+    [I19_stepen_osnashennosti_laboratoriy_oborudovaniem].[Z3] AS [Z3], 
+    [I19_stepen_osnashennosti_laboratoriy_oborudovaniem].[Z4] AS [Z4], 
+    [I19_stepen_osnashennosti_laboratoriy_oborudovaniem].[Z5] AS [Z5], 
+    [I19_stepen_osnashennosti_laboratoriy_oborudovaniem].[Z] AS [Z], 
+    [I19_stepen_osnashennosti_laboratoriy_oborudovaniem].[I19] AS [I19], 
+    [I19_stepen_osnashennosti_laboratoriy_oborudovaniem].[YEAR] AS [YEAR]
+    FROM [dbo].[I19_stepen_osnashennosti_laboratoriy_oborudovaniem] AS [I19_stepen_osnashennosti_laboratoriy_oborudovaniem]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I2_uroven_kachestva_prepodavaniya" EntityType="Self.I2_uroven_kachestva_prepodavaniya" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I2_uroven_kachestva_prepodavaniya].[ID] AS [ID], 
+    [I2_uroven_kachestva_prepodavaniya].[name] AS [name], 
+    [I2_uroven_kachestva_prepodavaniya].[T1] AS [T1], 
+    [I2_uroven_kachestva_prepodavaniya].[T2] AS [T2], 
+    [I2_uroven_kachestva_prepodavaniya].[T3] AS [T3], 
+    [I2_uroven_kachestva_prepodavaniya].[I21] AS [I21], 
+    [I2_uroven_kachestva_prepodavaniya].[I31] AS [I31], 
+    [I2_uroven_kachestva_prepodavaniya].[I41] AS [I41], 
+    [I2_uroven_kachestva_prepodavaniya].[I2] AS [I2], 
+    [I2_uroven_kachestva_prepodavaniya].[YEAR] AS [YEAR]
+    FROM [dbo].[I2_uroven_kachestva_prepodavaniya] AS [I2_uroven_kachestva_prepodavaniya]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I20_obespechennost_irc_uchebnoy_literaturoy" EntityType="Self.I20_obespechennost_irc_uchebnoy_literaturoy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I20_obespechennost_irc_uchebnoy_literaturoy].[ID] AS [ID], 
+    [I20_obespechennost_irc_uchebnoy_literaturoy].[name] AS [name], 
+    [I20_obespechennost_irc_uchebnoy_literaturoy].[I20] AS [I20], 
+    [I20_obespechennost_irc_uchebnoy_literaturoy].[I201] AS [I201], 
+    [I20_obespechennost_irc_uchebnoy_literaturoy].[YEAR] AS [YEAR]
+    FROM [dbo].[I20_obespechennost_irc_uchebnoy_literaturoy] AS [I20_obespechennost_irc_uchebnoy_literaturoy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I3_kolichestvo_uchebnikov_i_posobiy" EntityType="Self.I3_kolichestvo_uchebnikov_i_posobiy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I3_kolichestvo_uchebnikov_i_posobiy].[ID] AS [ID], 
+    [I3_kolichestvo_uchebnikov_i_posobiy].[name] AS [name], 
+    [I3_kolichestvo_uchebnikov_i_posobiy].[I31] AS [I31], 
+    [I3_kolichestvo_uchebnikov_i_posobiy].[I32] AS [I32], 
+    [I3_kolichestvo_uchebnikov_i_posobiy].[I33] AS [I33], 
+    [I3_kolichestvo_uchebnikov_i_posobiy].[I3] AS [I3], 
+    [I3_kolichestvo_uchebnikov_i_posobiy].[YEAR] AS [YEAR]
+    FROM [dbo].[I3_kolichestvo_uchebnikov_i_posobiy] AS [I3_kolichestvo_uchebnikov_i_posobiy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I4_dolya_inostrannih_prepodavateley_i_studentov" EntityType="Self.I4_dolya_inostrannih_prepodavateley_i_studentov" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I4_dolya_inostrannih_prepodavateley_i_studentov].[ID] AS [ID], 
+    [I4_dolya_inostrannih_prepodavateley_i_studentov].[name] AS [name], 
+    [I4_dolya_inostrannih_prepodavateley_i_studentov].[I41] AS [I41], 
+    [I4_dolya_inostrannih_prepodavateley_i_studentov].[I42] AS [I42], 
+    [I4_dolya_inostrannih_prepodavateley_i_studentov].[I4] AS [I4], 
+    [I4_dolya_inostrannih_prepodavateley_i_studentov].[YEAR] AS [YEAR]
+    FROM [dbo].[I4_dolya_inostrannih_prepodavateley_i_studentov] AS [I4_dolya_inostrannih_prepodavateley_i_studentov]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I5_uchastie_v_programme_obmena" EntityType="Self.I5_uchastie_v_programme_obmena" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I5_uchastie_v_programme_obmena].[ID] AS [ID], 
+    [I5_uchastie_v_programme_obmena].[name] AS [name], 
+    [I5_uchastie_v_programme_obmena].[I5] AS [I5], 
+    [I5_uchastie_v_programme_obmena].[I51] AS [I51], 
+    [I5_uchastie_v_programme_obmena].[I52_1] AS [I52_1], 
+    [I5_uchastie_v_programme_obmena].[I52_2] AS [I52_2], 
+    [I5_uchastie_v_programme_obmena].[I53_1] AS [I53_1], 
+    [I5_uchastie_v_programme_obmena].[I53_2] AS [I53_2], 
+    [I5_uchastie_v_programme_obmena].[YEAR] AS [YEAR]
+    FROM [dbo].[I5_uchastie_v_programme_obmena] AS [I5_uchastie_v_programme_obmena]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I6_kolichestvo_uchebnih_kursov_na_inostrannom" EntityType="Self.I6_kolichestvo_uchebnih_kursov_na_inostrannom" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I6_kolichestvo_uchebnih_kursov_na_inostrannom].[ID] AS [ID], 
+    [I6_kolichestvo_uchebnih_kursov_na_inostrannom].[name] AS [name], 
+    [I6_kolichestvo_uchebnih_kursov_na_inostrannom].[I6] AS [I6], 
+    [I6_kolichestvo_uchebnih_kursov_na_inostrannom].[YEAR] AS [YEAR]
+    FROM [dbo].[I6_kolichestvo_uchebnih_kursov_na_inostrannom] AS [I6_kolichestvo_uchebnih_kursov_na_inostrannom]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I7_uroven_angliyskogo_i_ikt_u_pps" EntityType="Self.I7_uroven_angliyskogo_i_ikt_u_pps" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I7_uroven_angliyskogo_i_ikt_u_pps].[ID] AS [ID], 
+    [I7_uroven_angliyskogo_i_ikt_u_pps].[name] AS [name], 
+    [I7_uroven_angliyskogo_i_ikt_u_pps].[I7] AS [I7], 
+    [I7_uroven_angliyskogo_i_ikt_u_pps].[I71] AS [I71], 
+    [I7_uroven_angliyskogo_i_ikt_u_pps].[I72] AS [I72], 
+    [I7_uroven_angliyskogo_i_ikt_u_pps].[YEAR] AS [YEAR]
+    FROM [dbo].[I7_uroven_angliyskogo_i_ikt_u_pps] AS [I7_uroven_angliyskogo_i_ikt_u_pps]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah" EntityType="Self.I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah].[ID] AS [ID], 
+    [I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah].[name] AS [name], 
+    [I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah].[I8] AS [I8], 
+    [I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah].[YEAR] AS [YEAR]
+    FROM [dbo].[I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah] AS [I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I9_dolya_pps_prepodayushego_v_sspo" EntityType="Self.I9_dolya_pps_prepodayushego_v_sspo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I9_dolya_pps_prepodayushego_v_sspo].[ID] AS [ID], 
+    [I9_dolya_pps_prepodayushego_v_sspo].[name] AS [name], 
+    [I9_dolya_pps_prepodayushego_v_sspo].[I9] AS [I9], 
+    [I9_dolya_pps_prepodayushego_v_sspo].[YEAR] AS [YEAR]
+    FROM [dbo].[I9_dolya_pps_prepodayushego_v_sspo] AS [I9_dolya_pps_prepodayushego_v_sspo]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="URaitingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="I1_dolya_pps_s_uchenoy_stepenyu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I11" Type="Double" />
+          <Property Name="I12" Type="Double" />
+          <Property Name="I1" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I10_rezultati_attestacii_u_studentov">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I10" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I11" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I12_dolya_trudoustroennih_vipusknikov">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I12" Type="Double" />
+          <Property Name="I12_1" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I13_kolichestvo_studentov_udostoennih_nagrad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I13" Type="Double" />
+          <Property Name="I131" Type="Double" />
+          <Property Name="I132" Type="Double" />
+          <Property Name="I133" Type="Double" />
+          <Property Name="I134" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I14_citiruemost_publikaciy_pps">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I14" Type="Double" />
+          <Property Name="I141" Type="Double" />
+          <Property Name="I142" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I15_kolichestvo_izdannih_statey">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I15" Type="Double" />
+          <Property Name="I151" Type="Double" />
+          <Property Name="I152" Type="Double" />
+          <Property Name="I153" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I16_kolichestvo_sotrudnikov_utverjdennih_vak">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I16" Type="Double" />
+          <Property Name="I161" Type="Double" />
+          <Property Name="I162" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I17" Type="Double" />
+          <Property Name="I171" Type="Double" />
+          <Property Name="I172" Type="Double" />
+          <Property Name="I173" Type="Double" />
+          <Property Name="I174" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I18_effektivnost_provodimih_nauchnih_rabot">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I18" Type="Double" />
+          <Property Name="I181" Type="Double" />
+          <Property Name="I182" Type="Double" />
+          <Property Name="I183" Type="Double" />
+          <Property Name="I184" Type="Double" />
+          <Property Name="I185" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I19_stepen_osnashennosti_laboratoriy_oborudovaniem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Z1" Type="Double" />
+          <Property Name="Z2" Type="Double" />
+          <Property Name="Z3" Type="Double" />
+          <Property Name="Z4" Type="Double" />
+          <Property Name="Z5" Type="Double" />
+          <Property Name="Z" Type="Double" />
+          <Property Name="I19" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I2_uroven_kachestva_prepodavaniya">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="T1" Type="Double" />
+          <Property Name="T2" Type="Double" />
+          <Property Name="T3" Type="Double" />
+          <Property Name="I21" Type="Double" />
+          <Property Name="I31" Type="Double" />
+          <Property Name="I41" Type="Double" />
+          <Property Name="I2" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I20_obespechennost_irc_uchebnoy_literaturoy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I20" Type="Double" />
+          <Property Name="I201" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I3_kolichestvo_uchebnikov_i_posobiy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I31" Type="Double" />
+          <Property Name="I32" Type="Double" />
+          <Property Name="I33" Type="Double" />
+          <Property Name="I3" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I4_dolya_inostrannih_prepodavateley_i_studentov">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I41" Type="Double" />
+          <Property Name="I42" Type="Double" />
+          <Property Name="I4" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I5_uchastie_v_programme_obmena">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I5" Type="Double" />
+          <Property Name="I51" Type="Double" />
+          <Property Name="I52_1" Type="Double" />
+          <Property Name="I52_2" Type="Double" />
+          <Property Name="I53_1" Type="Double" />
+          <Property Name="I53_2" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I6_kolichestvo_uchebnih_kursov_na_inostrannom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I6" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I7_uroven_angliyskogo_i_ikt_u_pps">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I7" Type="Double" />
+          <Property Name="I71" Type="Double" />
+          <Property Name="I72" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I8" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="I9_dolya_pps_prepodayushego_v_sspo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="I9" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="URaitingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="I1_dolya_pps_s_uchenoy_stepenyu" EntityType="Self.I1_dolya_pps_s_uchenoy_stepenyu" />
+          <EntitySet Name="I10_rezultati_attestacii_u_studentov" EntityType="Self.I10_rezultati_attestacii_u_studentov" />
+          <EntitySet Name="I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami" EntityType="Self.I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami" />
+          <EntitySet Name="I12_dolya_trudoustroennih_vipusknikov" EntityType="Self.I12_dolya_trudoustroennih_vipusknikov" />
+          <EntitySet Name="I13_kolichestvo_studentov_udostoennih_nagrad" EntityType="Self.I13_kolichestvo_studentov_udostoennih_nagrad" />
+          <EntitySet Name="I14_citiruemost_publikaciy_pps" EntityType="Self.I14_citiruemost_publikaciy_pps" />
+          <EntitySet Name="I15_kolichestvo_izdannih_statey" EntityType="Self.I15_kolichestvo_izdannih_statey" />
+          <EntitySet Name="I16_kolichestvo_sotrudnikov_utverjdennih_vak" EntityType="Self.I16_kolichestvo_sotrudnikov_utverjdennih_vak" />
+          <EntitySet Name="I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost" EntityType="Self.I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost" />
+          <EntitySet Name="I18_effektivnost_provodimih_nauchnih_rabot" EntityType="Self.I18_effektivnost_provodimih_nauchnih_rabot" />
+          <EntitySet Name="I19_stepen_osnashennosti_laboratoriy_oborudovaniem" EntityType="Self.I19_stepen_osnashennosti_laboratoriy_oborudovaniem" />
+          <EntitySet Name="I2_uroven_kachestva_prepodavaniya" EntityType="Self.I2_uroven_kachestva_prepodavaniya" />
+          <EntitySet Name="I20_obespechennost_irc_uchebnoy_literaturoy" EntityType="Self.I20_obespechennost_irc_uchebnoy_literaturoy" />
+          <EntitySet Name="I3_kolichestvo_uchebnikov_i_posobiy" EntityType="Self.I3_kolichestvo_uchebnikov_i_posobiy" />
+          <EntitySet Name="I4_dolya_inostrannih_prepodavateley_i_studentov" EntityType="Self.I4_dolya_inostrannih_prepodavateley_i_studentov" />
+          <EntitySet Name="I5_uchastie_v_programme_obmena" EntityType="Self.I5_uchastie_v_programme_obmena" />
+          <EntitySet Name="I6_kolichestvo_uchebnih_kursov_na_inostrannom" EntityType="Self.I6_kolichestvo_uchebnih_kursov_na_inostrannom" />
+          <EntitySet Name="I7_uroven_angliyskogo_i_ikt_u_pps" EntityType="Self.I7_uroven_angliyskogo_i_ikt_u_pps" />
+          <EntitySet Name="I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah" EntityType="Self.I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah" />
+          <EntitySet Name="I9_dolya_pps_prepodayushego_v_sspo" EntityType="Self.I9_dolya_pps_prepodayushego_v_sspo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="URaitingModelStoreContainer" CdmEntityContainer="URaitingEntities">
+          <EntitySetMapping Name="I1_dolya_pps_s_uchenoy_stepenyu">
+            <EntityTypeMapping TypeName="URaitingModel.I1_dolya_pps_s_uchenoy_stepenyu">
+              <MappingFragment StoreEntitySet="I1_dolya_pps_s_uchenoy_stepenyu">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I11" ColumnName="I11" />
+                <ScalarProperty Name="I12" ColumnName="I12" />
+                <ScalarProperty Name="I1" ColumnName="I1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I10_rezultati_attestacii_u_studentov">
+            <EntityTypeMapping TypeName="URaitingModel.I10_rezultati_attestacii_u_studentov">
+              <MappingFragment StoreEntitySet="I10_rezultati_attestacii_u_studentov">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I10" ColumnName="I10" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami">
+            <EntityTypeMapping TypeName="URaitingModel.I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami">
+              <MappingFragment StoreEntitySet="I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I11" ColumnName="I11" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I12_dolya_trudoustroennih_vipusknikov">
+            <EntityTypeMapping TypeName="URaitingModel.I12_dolya_trudoustroennih_vipusknikov">
+              <MappingFragment StoreEntitySet="I12_dolya_trudoustroennih_vipusknikov">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I12" ColumnName="I12" />
+                <ScalarProperty Name="I12_1" ColumnName="I12_1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I13_kolichestvo_studentov_udostoennih_nagrad">
+            <EntityTypeMapping TypeName="URaitingModel.I13_kolichestvo_studentov_udostoennih_nagrad">
+              <MappingFragment StoreEntitySet="I13_kolichestvo_studentov_udostoennih_nagrad">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I13" ColumnName="I13" />
+                <ScalarProperty Name="I131" ColumnName="I131" />
+                <ScalarProperty Name="I132" ColumnName="I132" />
+                <ScalarProperty Name="I133" ColumnName="I133" />
+                <ScalarProperty Name="I134" ColumnName="I134" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I14_citiruemost_publikaciy_pps">
+            <EntityTypeMapping TypeName="URaitingModel.I14_citiruemost_publikaciy_pps">
+              <MappingFragment StoreEntitySet="I14_citiruemost_publikaciy_pps">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I14" ColumnName="I14" />
+                <ScalarProperty Name="I141" ColumnName="I141" />
+                <ScalarProperty Name="I142" ColumnName="I142" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I15_kolichestvo_izdannih_statey">
+            <EntityTypeMapping TypeName="URaitingModel.I15_kolichestvo_izdannih_statey">
+              <MappingFragment StoreEntitySet="I15_kolichestvo_izdannih_statey">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I15" ColumnName="I15" />
+                <ScalarProperty Name="I151" ColumnName="I151" />
+                <ScalarProperty Name="I152" ColumnName="I152" />
+                <ScalarProperty Name="I153" ColumnName="I153" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I16_kolichestvo_sotrudnikov_utverjdennih_vak">
+            <EntityTypeMapping TypeName="URaitingModel.I16_kolichestvo_sotrudnikov_utverjdennih_vak">
+              <MappingFragment StoreEntitySet="I16_kolichestvo_sotrudnikov_utverjdennih_vak">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I16" ColumnName="I16" />
+                <ScalarProperty Name="I161" ColumnName="I161" />
+                <ScalarProperty Name="I162" ColumnName="I162" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost">
+            <EntityTypeMapping TypeName="URaitingModel.I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost">
+              <MappingFragment StoreEntitySet="I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I17" ColumnName="I17" />
+                <ScalarProperty Name="I171" ColumnName="I171" />
+                <ScalarProperty Name="I172" ColumnName="I172" />
+                <ScalarProperty Name="I173" ColumnName="I173" />
+                <ScalarProperty Name="I174" ColumnName="I174" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I18_effektivnost_provodimih_nauchnih_rabot">
+            <EntityTypeMapping TypeName="URaitingModel.I18_effektivnost_provodimih_nauchnih_rabot">
+              <MappingFragment StoreEntitySet="I18_effektivnost_provodimih_nauchnih_rabot">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I18" ColumnName="I18" />
+                <ScalarProperty Name="I181" ColumnName="I181" />
+                <ScalarProperty Name="I182" ColumnName="I182" />
+                <ScalarProperty Name="I183" ColumnName="I183" />
+                <ScalarProperty Name="I184" ColumnName="I184" />
+                <ScalarProperty Name="I185" ColumnName="I185" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I19_stepen_osnashennosti_laboratoriy_oborudovaniem">
+            <EntityTypeMapping TypeName="URaitingModel.I19_stepen_osnashennosti_laboratoriy_oborudovaniem">
+              <MappingFragment StoreEntitySet="I19_stepen_osnashennosti_laboratoriy_oborudovaniem">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Z1" ColumnName="Z1" />
+                <ScalarProperty Name="Z2" ColumnName="Z2" />
+                <ScalarProperty Name="Z3" ColumnName="Z3" />
+                <ScalarProperty Name="Z4" ColumnName="Z4" />
+                <ScalarProperty Name="Z5" ColumnName="Z5" />
+                <ScalarProperty Name="Z" ColumnName="Z" />
+                <ScalarProperty Name="I19" ColumnName="I19" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I2_uroven_kachestva_prepodavaniya">
+            <EntityTypeMapping TypeName="URaitingModel.I2_uroven_kachestva_prepodavaniya">
+              <MappingFragment StoreEntitySet="I2_uroven_kachestva_prepodavaniya">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="T1" ColumnName="T1" />
+                <ScalarProperty Name="T2" ColumnName="T2" />
+                <ScalarProperty Name="T3" ColumnName="T3" />
+                <ScalarProperty Name="I21" ColumnName="I21" />
+                <ScalarProperty Name="I31" ColumnName="I31" />
+                <ScalarProperty Name="I41" ColumnName="I41" />
+                <ScalarProperty Name="I2" ColumnName="I2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I20_obespechennost_irc_uchebnoy_literaturoy">
+            <EntityTypeMapping TypeName="URaitingModel.I20_obespechennost_irc_uchebnoy_literaturoy">
+              <MappingFragment StoreEntitySet="I20_obespechennost_irc_uchebnoy_literaturoy">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I20" ColumnName="I20" />
+                <ScalarProperty Name="I201" ColumnName="I201" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I3_kolichestvo_uchebnikov_i_posobiy">
+            <EntityTypeMapping TypeName="URaitingModel.I3_kolichestvo_uchebnikov_i_posobiy">
+              <MappingFragment StoreEntitySet="I3_kolichestvo_uchebnikov_i_posobiy">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I31" ColumnName="I31" />
+                <ScalarProperty Name="I32" ColumnName="I32" />
+                <ScalarProperty Name="I33" ColumnName="I33" />
+                <ScalarProperty Name="I3" ColumnName="I3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I4_dolya_inostrannih_prepodavateley_i_studentov">
+            <EntityTypeMapping TypeName="URaitingModel.I4_dolya_inostrannih_prepodavateley_i_studentov">
+              <MappingFragment StoreEntitySet="I4_dolya_inostrannih_prepodavateley_i_studentov">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I41" ColumnName="I41" />
+                <ScalarProperty Name="I42" ColumnName="I42" />
+                <ScalarProperty Name="I4" ColumnName="I4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I5_uchastie_v_programme_obmena">
+            <EntityTypeMapping TypeName="URaitingModel.I5_uchastie_v_programme_obmena">
+              <MappingFragment StoreEntitySet="I5_uchastie_v_programme_obmena">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I5" ColumnName="I5" />
+                <ScalarProperty Name="I51" ColumnName="I51" />
+                <ScalarProperty Name="I52_1" ColumnName="I52_1" />
+                <ScalarProperty Name="I52_2" ColumnName="I52_2" />
+                <ScalarProperty Name="I53_1" ColumnName="I53_1" />
+                <ScalarProperty Name="I53_2" ColumnName="I53_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I6_kolichestvo_uchebnih_kursov_na_inostrannom">
+            <EntityTypeMapping TypeName="URaitingModel.I6_kolichestvo_uchebnih_kursov_na_inostrannom">
+              <MappingFragment StoreEntitySet="I6_kolichestvo_uchebnih_kursov_na_inostrannom">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I6" ColumnName="I6" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I7_uroven_angliyskogo_i_ikt_u_pps">
+            <EntityTypeMapping TypeName="URaitingModel.I7_uroven_angliyskogo_i_ikt_u_pps">
+              <MappingFragment StoreEntitySet="I7_uroven_angliyskogo_i_ikt_u_pps">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I7" ColumnName="I7" />
+                <ScalarProperty Name="I71" ColumnName="I71" />
+                <ScalarProperty Name="I72" ColumnName="I72" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah">
+            <EntityTypeMapping TypeName="URaitingModel.I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah">
+              <MappingFragment StoreEntitySet="I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I8" ColumnName="I8" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I9_dolya_pps_prepodayushego_v_sspo">
+            <EntityTypeMapping TypeName="URaitingModel.I9_dolya_pps_prepodayushego_v_sspo">
+              <MappingFragment StoreEntitySet="I9_dolya_pps_prepodayushego_v_sspo">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="I9" ColumnName="I9" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

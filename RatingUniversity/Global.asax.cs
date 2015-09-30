@@ -17,10 +17,6 @@ namespace RatingUniversity
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
-		public void Init()
-        {
-           
-        }
         protected void Application_Error()
         {
             /*на случай не обработанных исключений*/
@@ -41,7 +37,7 @@ namespace RatingUniversity
         {
             /*срабатывает после подтверждения доступа к ресурсам*/
         }
-        public void Dispose()
+        public override void Dispose()
         {
             /*вызывается перед удалем объекта HTttpApplication, нужен для очистки ресурсов*/
         }

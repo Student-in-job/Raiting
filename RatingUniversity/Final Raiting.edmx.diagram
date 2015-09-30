@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1da6668662a24de495e1f02f7a930428" Name="Diagram1">
+        <EntityTypeShape EntityType="URaitingModel.I1_dolya_pps_s_uchenoy_stepenyu" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I10_rezultati_attestacii_u_studentov" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I12_dolya_trudoustroennih_vipusknikov" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I13_kolichestvo_studentov_udostoennih_nagrad" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I14_citiruemost_publikaciy_pps" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I15_kolichestvo_izdannih_statey" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I16_kolichestvo_sotrudnikov_utverjdennih_vak" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I18_effektivnost_provodimih_nauchnih_rabot" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I19_stepen_osnashennosti_laboratoriy_oborudovaniem" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I2_uroven_kachestva_prepodavaniya" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I20_obespechennost_irc_uchebnoy_literaturoy" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I3_kolichestvo_uchebnikov_i_posobiy" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I4_dolya_inostrannih_prepodavateley_i_studentov" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I5_uchastie_v_programme_obmena" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I6_kolichestvo_uchebnih_kursov_na_inostrannom" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I7_uroven_angliyskogo_i_ikt_u_pps" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I9_dolya_pps_prepodayushego_v_sspo" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

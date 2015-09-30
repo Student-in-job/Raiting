@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -159,11 +161,88 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DolyaPPSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RaitingController.cs" />
+    <Compile Include="Final Raiting.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Final Raiting.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Final Raiting.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Final Raiting.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Final Raiting.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="I10_rezultati_attestacii_u_studentov.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I12_dolya_trudoustroennih_vipusknikov.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I13_kolichestvo_studentov_udostoennih_nagrad.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I14_citiruemost_publikaciy_pps.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I15_kolichestvo_izdannih_statey.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I16_kolichestvo_sotrudnikov_utverjdennih_vak.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I18_effektivnost_provodimih_nauchnih_rabot.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I19_stepen_osnashennosti_laboratoriy_oborudovaniem.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I1_dolya_pps_s_uchenoy_stepenyu.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I20_obespechennost_irc_uchebnoy_literaturoy.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I2_uroven_kachestva_prepodavaniya.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I3_kolichestvo_uchebnikov_i_posobiy.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I4_dolya_inostrannih_prepodavateley_i_studentov.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I5_uchastie_v_programme_obmena.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I6_kolichestvo_uchebnih_kursov_na_inostrannom.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I7_uroven_angliyskogo_i_ikt_u_pps.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="I9_dolya_pps_prepodayushego_v_sspo.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -179,6 +258,23 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Final Raiting.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Final Raiting.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Final Raiting.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Final Raiting.edmx</DependentUpon>
+      <LastGenOutput>Final Raiting.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Final Raiting.edmx.diagram">
+      <DependentUpon>Final Raiting.edmx</DependentUpon>
+    </Content>
+    <Content Include="Final Raiting.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Final Raiting.edmx</DependentUpon>
+      <LastGenOutput>Final Raiting.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -191,7 +287,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -231,10 +329,16 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Home\Theme.cshtml" />
+    <Content Include="Views\DolyaPPS\Create.cshtml" />
+    <Content Include="Views\DolyaPPS\Details.cshtml" />
+    <Content Include="Views\DolyaPPS\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutSideMenuEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DAL\" />
     <Folder Include="Files\" />
+    <Folder Include="Views\Raiting\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -243,6 +347,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

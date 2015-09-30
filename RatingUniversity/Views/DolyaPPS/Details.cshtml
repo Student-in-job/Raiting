@@ -1,0 +1,57 @@
+﻿@model RatingUniversity.I1_dolya_pps_s_uchenoy_stepenyu
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>I1_dolya_pps_s_uchenoy_stepenyu</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.I11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.I11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.I12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.I12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.I1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.I1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YEAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YEAR)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

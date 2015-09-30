@@ -1,0 +1,81 @@
+﻿@model RatingUniversity.I1_dolya_pps_s_uchenoy_stepenyu
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>I1_dolya_pps_s_uchenoy_stepenyu</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ID)
+                @Html.ValidationMessageFor(model => model.ID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.name)
+                @Html.ValidationMessageFor(model => model.name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.I11, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.I11)
+                @Html.ValidationMessageFor(model => model.I11)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.I12, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.I12)
+                @Html.ValidationMessageFor(model => model.I12)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.I1, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.I1)
+                @Html.ValidationMessageFor(model => model.I1)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.YEAR, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.YEAR)
+                @Html.ValidationMessageFor(model => model.YEAR)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

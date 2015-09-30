@@ -29,5 +29,7 @@ namespace RatingUniversity.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<RatingUniversity.I1_dolya_pps_s_uchenoy_stepenyu> I1_dolya_pps_s_uchenoy_stepenyu { get; set; }
     }
 }
