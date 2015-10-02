@@ -16,7 +16,6 @@
         <EntityTypeShape EntityType="URaitingModel.I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="URaitingModel.I18_effektivnost_provodimih_nauchnih_rabot" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="URaitingModel.I19_stepen_osnashennosti_laboratoriy_oborudovaniem" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="URaitingModel.I2_uroven_kachestva_prepodavaniya" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="URaitingModel.I20_obespechennost_irc_uchebnoy_literaturoy" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="URaitingModel.I3_kolichestvo_uchebnikov_i_posobiy" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="URaitingModel.I4_dolya_inostrannih_prepodavateley_i_studentov" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
@@ -25,6 +24,7 @@
         <EntityTypeShape EntityType="URaitingModel.I7_uroven_angliyskogo_i_ikt_u_pps" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="URaitingModel.I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="URaitingModel.I9_dolya_pps_prepodayushego_v_sspo" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="URaitingModel.I2_uroven_kachestva_prepodavaniya" Width="1.5" PointX="0.75" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

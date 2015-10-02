@@ -20,8 +20,8 @@ namespace RatingUniversity
         public Nullable<double> T2 { get; set; }
         public Nullable<double> T3 { get; set; }
         public Nullable<double> I21 { get; set; }
-        public Nullable<double> I31 { get; set; }
-        public Nullable<double> I41 { get; set; }
+        public Nullable<double> I22 { get; set; }
+        public Nullable<double> I23 { get; set; }
         public Nullable<double> I2 { get; set; }
         public Nullable<int> YEAR { get; set; }
     }

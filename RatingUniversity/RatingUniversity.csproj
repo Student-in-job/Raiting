@@ -160,8 +160,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes\Classes.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DolyaPPSController.cs" />
+    <Compile Include="Controllers\QualityOfEducationalWorkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -275,6 +276,7 @@
       <DependentUpon>Final Raiting.edmx</DependentUpon>
       <LastGenOutput>Final Raiting.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\Vitaliy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -329,14 +331,22 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Home\Theme.cshtml" />
-    <Content Include="Views\DolyaPPS\Create.cshtml" />
-    <Content Include="Views\DolyaPPS\Details.cshtml" />
-    <Content Include="Views\DolyaPPS\Index.cshtml" />
+    <Content Include="Views\QualityOfEducationalWork\Create.cshtml" />
+    <Content Include="Views\QualityOfEducationalWork\Details.cshtml" />
+    <Content Include="Views\QualityOfEducationalWork\DolyaPPS.cshtml" />
     <Content Include="Views\Shared\_LayoutSideMenuEdit.cshtml" />
+    <Content Include="Views\QualityOfEducationalWork\DisplayTemplates\Double.cshtml" />
+    <Content Include="Views\QualityOfEducationalWork\NumberOfEducationMatherials.cshtml" />
+    <Content Include="Views\QualityOfEducationalWork\SurveyOfStudents.cshtml" />
+    <Content Include="Views\QualityOfEducationalWork\NumberOfForeigners.cshtml" />
+    <Content Include="Views\QualityOfEducationalWork\ForeignUniversitiesExchange.cshtml" />
+    <Content Include="Views\QualityOfEducationalWork\CourcesInEnglish.cshtml" />
+    <Content Include="Views\QualityOfEducationalWork\ForeignLanguage.cshtml" />
+    <Content Include="Views\QualityOfEducationalWork\ForeignLecturesParticipants.cshtml" />
+    <Content Include="Views\QualityOfEducationalWork\SSPOTraining.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DAL\" />
     <Folder Include="Files\" />
     <Folder Include="Views\Raiting\" />
   </ItemGroup>

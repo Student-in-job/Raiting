@@ -36,7 +36,6 @@ namespace RatingUniversity
         public virtual DbSet<I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost> I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost { get; set; }
         public virtual DbSet<I18_effektivnost_provodimih_nauchnih_rabot> I18_effektivnost_provodimih_nauchnih_rabot { get; set; }
         public virtual DbSet<I19_stepen_osnashennosti_laboratoriy_oborudovaniem> I19_stepen_osnashennosti_laboratoriy_oborudovaniem { get; set; }
-        public virtual DbSet<I2_uroven_kachestva_prepodavaniya> I2_uroven_kachestva_prepodavaniya { get; set; }
         public virtual DbSet<I20_obespechennost_irc_uchebnoy_literaturoy> I20_obespechennost_irc_uchebnoy_literaturoy { get; set; }
         public virtual DbSet<I3_kolichestvo_uchebnikov_i_posobiy> I3_kolichestvo_uchebnikov_i_posobiy { get; set; }
         public virtual DbSet<I4_dolya_inostrannih_prepodavateley_i_studentov> I4_dolya_inostrannih_prepodavateley_i_studentov { get; set; }
@@ -45,5 +44,6 @@ namespace RatingUniversity
         public virtual DbSet<I7_uroven_angliyskogo_i_ikt_u_pps> I7_uroven_angliyskogo_i_ikt_u_pps { get; set; }
         public virtual DbSet<I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah> I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah { get; set; }
         public virtual DbSet<I9_dolya_pps_prepodayushego_v_sspo> I9_dolya_pps_prepodayushego_v_sspo { get; set; }
+        public virtual DbSet<I2_uroven_kachestva_prepodavaniya> I2_uroven_kachestva_prepodavaniya { get; set; }
     }
 }

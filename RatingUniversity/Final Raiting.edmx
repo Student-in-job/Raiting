@@ -167,8 +167,8 @@ warning 6002: The table/view 'URaiting.dbo.I2_uroven_kachestva_prepodavaniya' do
           <Property Name="T2" Type="float" />
           <Property Name="T3" Type="float" />
           <Property Name="I21" Type="float" />
-          <Property Name="I31" Type="float" />
-          <Property Name="I41" Type="float" />
+          <Property Name="I22" Type="float" />
+          <Property Name="I23" Type="float" />
           <Property Name="I2" Type="float" />
           <Property Name="YEAR" Type="int" />
         </EntityType>
@@ -399,8 +399,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
     [I2_uroven_kachestva_prepodavaniya].[T2] AS [T2], 
     [I2_uroven_kachestva_prepodavaniya].[T3] AS [T3], 
     [I2_uroven_kachestva_prepodavaniya].[I21] AS [I21], 
-    [I2_uroven_kachestva_prepodavaniya].[I31] AS [I31], 
-    [I2_uroven_kachestva_prepodavaniya].[I41] AS [I41], 
+    [I2_uroven_kachestva_prepodavaniya].[I22] AS [I22], 
+    [I2_uroven_kachestva_prepodavaniya].[I23] AS [I23], 
     [I2_uroven_kachestva_prepodavaniya].[I2] AS [I2], 
     [I2_uroven_kachestva_prepodavaniya].[YEAR] AS [YEAR]
     FROM [dbo].[I2_uroven_kachestva_prepodavaniya] AS [I2_uroven_kachestva_prepodavaniya]</DefiningQuery>
@@ -615,21 +615,6 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <Property Name="I19" Type="Double" />
           <Property Name="YEAR" Type="Int32" />
         </EntityType>
-        <EntityType Name="I2_uroven_kachestva_prepodavaniya">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="T1" Type="Double" />
-          <Property Name="T2" Type="Double" />
-          <Property Name="T3" Type="Double" />
-          <Property Name="I21" Type="Double" />
-          <Property Name="I31" Type="Double" />
-          <Property Name="I41" Type="Double" />
-          <Property Name="I2" Type="Double" />
-          <Property Name="YEAR" Type="Int32" />
-        </EntityType>
         <EntityType Name="I20_obespechennost_irc_uchebnoy_literaturoy">
           <Key>
             <PropertyRef Name="ID" />
@@ -727,7 +712,6 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <EntitySet Name="I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost" EntityType="Self.I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost" />
           <EntitySet Name="I18_effektivnost_provodimih_nauchnih_rabot" EntityType="Self.I18_effektivnost_provodimih_nauchnih_rabot" />
           <EntitySet Name="I19_stepen_osnashennosti_laboratoriy_oborudovaniem" EntityType="Self.I19_stepen_osnashennosti_laboratoriy_oborudovaniem" />
-          <EntitySet Name="I2_uroven_kachestva_prepodavaniya" EntityType="Self.I2_uroven_kachestva_prepodavaniya" />
           <EntitySet Name="I20_obespechennost_irc_uchebnoy_literaturoy" EntityType="Self.I20_obespechennost_irc_uchebnoy_literaturoy" />
           <EntitySet Name="I3_kolichestvo_uchebnikov_i_posobiy" EntityType="Self.I3_kolichestvo_uchebnikov_i_posobiy" />
           <EntitySet Name="I4_dolya_inostrannih_prepodavateley_i_studentov" EntityType="Self.I4_dolya_inostrannih_prepodavateley_i_studentov" />
@@ -736,7 +720,23 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <EntitySet Name="I7_uroven_angliyskogo_i_ikt_u_pps" EntityType="Self.I7_uroven_angliyskogo_i_ikt_u_pps" />
           <EntitySet Name="I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah" EntityType="Self.I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah" />
           <EntitySet Name="I9_dolya_pps_prepodayushego_v_sspo" EntityType="Self.I9_dolya_pps_prepodayushego_v_sspo" />
+          <EntitySet Name="I2_uroven_kachestva_prepodavaniya" EntityType="URaitingModel.I2_uroven_kachestva_prepodavaniya" />
         </EntityContainer>
+        <EntityType Name="I2_uroven_kachestva_prepodavaniya">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="T1" Type="Double" />
+          <Property Name="T2" Type="Double" />
+          <Property Name="T3" Type="Double" />
+          <Property Name="I21" Type="Double" />
+          <Property Name="I22" Type="Double" />
+          <Property Name="I23" Type="Double" />
+          <Property Name="I2" Type="Double" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -882,22 +882,6 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="I2_uroven_kachestva_prepodavaniya">
-            <EntityTypeMapping TypeName="URaitingModel.I2_uroven_kachestva_prepodavaniya">
-              <MappingFragment StoreEntitySet="I2_uroven_kachestva_prepodavaniya">
-                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="T1" ColumnName="T1" />
-                <ScalarProperty Name="T2" ColumnName="T2" />
-                <ScalarProperty Name="T3" ColumnName="T3" />
-                <ScalarProperty Name="I21" ColumnName="I21" />
-                <ScalarProperty Name="I31" ColumnName="I31" />
-                <ScalarProperty Name="I41" ColumnName="I41" />
-                <ScalarProperty Name="I2" ColumnName="I2" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="I20_obespechennost_irc_uchebnoy_literaturoy">
             <EntityTypeMapping TypeName="URaitingModel.I20_obespechennost_irc_uchebnoy_literaturoy">
               <MappingFragment StoreEntitySet="I20_obespechennost_irc_uchebnoy_literaturoy">
@@ -988,6 +972,22 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="I9" ColumnName="I9" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I2_uroven_kachestva_prepodavaniya">
+            <EntityTypeMapping TypeName="URaitingModel.I2_uroven_kachestva_prepodavaniya">
+              <MappingFragment StoreEntitySet="I2_uroven_kachestva_prepodavaniya">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="I2" ColumnName="I2" />
+                <ScalarProperty Name="I23" ColumnName="I23" />
+                <ScalarProperty Name="I22" ColumnName="I22" />
+                <ScalarProperty Name="I21" ColumnName="I21" />
+                <ScalarProperty Name="T3" ColumnName="T3" />
+                <ScalarProperty Name="T2" ColumnName="T2" />
+                <ScalarProperty Name="T1" ColumnName="T1" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
