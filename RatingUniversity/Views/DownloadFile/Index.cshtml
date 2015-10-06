@@ -1,0 +1,59 @@
+﻿@model IEnumerable<RatingUniversity.Models.Jadval1>
+
+	@{
+		ViewBag.Title = "Jadvallar bilan ishlash";
+	}
+  	<h2>Universitetlar reytingi</h2>
+
+	<h3>Download File</h3>
+
+	<a href="/DownloadFile/Download">Yuklab olish</a>
+
+
+	<h3>Upload File</h3>
+
+	@using (Html.BeginForm("Upload", "DownloadFile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+	{
+		<input type="file" name="files" />
+		<input type="submit" name="Submit" id="Submit" value="Upload" />
+	}
+
+	@if (ViewBag.bor == true)
+	{
+		<h3>Ma'lumotlar:</h3>	
+		<table class="table">
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.OtmName)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.State)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Reyting)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Year)
+				</th>
+			</tr>
+
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.OtmName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.State)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Reyting)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Year)
+					</td>
+				</tr>
+			}
+
+		</table>
+	}

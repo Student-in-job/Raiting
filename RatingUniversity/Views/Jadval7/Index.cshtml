@@ -1,0 +1,98 @@
+﻿@model IEnumerable<RatingUniversity.Models.Jadval7>
+
+<h2>Universitetlar reytingi</h2>
+
+<h3>Download File</h3>
+
+<a href="/Jadval7/Download">Yuklab olish</a>
+
+
+<h3>Upload File</h3>
+
+@using (Html.BeginForm("Upload", "Jadval7", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+	<input type="file" name="files" />
+	<input type="submit" name="Submit" id="Submit" value="Upload" />
+}
+
+@if (ViewBag.bor == true)
+{
+	<h3>Ma'lumotlar:</h3>
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.FullName_uzb)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.State_uzb)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Mutaxassislik_uzb)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.FullName_xorij)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.State_xorij)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Mutaxassislik_xorij)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Asos)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Asos_fayl)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Bak_mag)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Year)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UserId)
+			</th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.FullName_uzb)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.State_uzb)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Mutaxassislik_uzb)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.FullName_xorij)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.State_xorij)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Mutaxassislik_xorij)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Asos)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Asos_fayl)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Bak_mag)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Year)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UserId)
+				</td>
+			</tr>
+		}
+
+	</table>
+}

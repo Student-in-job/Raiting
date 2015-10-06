@@ -6,9 +6,13 @@
     <title>@ViewBag.Title - Rating of universities</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/flipclock.css")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div id="top-header" class="" style="height:auto;font-size:36px;font-weight:600;padding:10px 35px 10px 0;text-align:right;background:url(../../Images/background.jpg) no-repeat #fafafa;">
+        <div style="" class="text-primary">Top university in Uzbekistan</div>
+    </div>
+    <div class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -16,22 +20,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!--@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })-->
+                <!--@Html.ActionLink("URating", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })-->
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "" })</li>
-<!--                    <li>@*Html.ActionLink("About", "About", "Home")*@</li> -->
-<!--                    <li>@*Html.ActionLink("Contact", "Contact", "Home")*@</li>-->
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Критерии рейтинга", "Index", "QualityOfEducationalWork")</li>
-<!--                    <li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Year <span class="caret"></span></a>
-                        <ul class="dropdown-menu" style="width:240px;">
-                            <li><a href="#">2013</a> <a href="#">2014</a> <a href="#">2015</a> <a href="#">2016</a></li>
+                        <ul class="dropdown-menu">
+                            <div style="padding:0;width:180%;" class="container navbar-default nav navbar-nav">
+                                <li><a href="#">2013</a></li>
+                                <li><a href="#">2014</a></li>
+                                <li><a href="#">2015</a></li>
+                                <li><a href="#">2016</a></li>
+                                <li><a href="#">2017</a></li>
+                            </div>
                         </ul>
                     </li>
--->
-                    <li>@Html.ActionLink("Theme Features", "Theme", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <!--<li>@Html.ActionLink("Theme Features", "Theme", "Home")</li>-->
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -46,8 +55,32 @@
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/flipclock.js")
     @RenderSection("scripts", required: false)
     @Styles.Render("~/Content/custom.min.css")
     @Scripts.Render("~/Scripts/custom.js")
+    <script type="text/javascript">
+        var clock;
+
+        $(document).ready(function () {
+            var clock;
+
+            clock = $('.clock').FlipClock({
+                clockFace: 'DailyCounter',
+                autoStart: false,
+                language: 'en',
+                callbacks: {
+                    stop: function () {
+                        $('.message').html('The clock has stopped!')
+                    }
+                }
+            });
+
+            clock.setTime(220880);
+            clock.setCountdown(true);
+            clock.start();
+
+        });
+    </script>
 </body>
 </html>
