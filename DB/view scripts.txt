@@ -111,7 +111,7 @@ GO
 --- 2.1
 CREATE VIEW I10_rezultati_attestacii_u_studentov AS 
 SELECT university.id as ID, university.name as name, 
-(raiting.tsi/raiting.tsti)*100 AS I10,
+(raiting.tsi/CASE raiting.tsti WHEN 0 THEN 1 ELSE raiting.tsti END)*100 AS I10,
 YEAR
 FROM raiting INNER JOIN university
 	ON raiting.id_university = university.id;
@@ -121,7 +121,7 @@ GO
 --- 2.2
 CREATE VIEW I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami AS 
 SELECT university.id as ID, university.name as name, 
-(raiting.r1/raiting.r)*100 AS I11,
+(raiting.r1/CASE raiting.r WHEN 0 THEN 1 ELSE raiting.r END)*100 AS I11,
 YEAR
 FROM raiting INNER JOIN university
 	ON raiting.id_university = university.id;
@@ -131,8 +131,8 @@ GO
 --- 2.3
 CREATE VIEW I12_dolya_trudoustroennih_vipusknikov AS 
 SELECT university.id as ID, university.name as name, 
-5*raiting.p10/raiting.p11 AS I12,
-raiting.p10/raiting.p11 AS I12_1,
+5*raiting.p10/CASE raiting.p11 WHEN 0 THEN 1 ELSE raiting.p11 END AS I12,
+raiting.p10/CASE raiting.p11 WHEN 0 THEN 1 ELSE raiting.p11 END AS I12_1,
 YEAR
 FROM raiting INNER JOIN university
 	ON raiting.id_university = university.id;
@@ -142,11 +142,11 @@ GO
 --- 2.4
 CREATE VIEW I13_kolichestvo_studentov_udostoennih_nagrad AS 
 SELECT university.id as ID, university.name as name, 
-(1.6*raiting.p1_2+0.8*raiting.p1_3+0.14*raiting.p1_4+0.2*raiting.p1_5)/raiting.p1 AS I13,
-raiting.p1_2/raiting.p1 AS I131,
-raiting.p1_3/raiting.p1 AS I132,
-raiting.p1_4/raiting.p1 AS I133,
-raiting.p1_5/raiting.p1 AS I134,
+(1.6*raiting.p1_2+0.8*raiting.p1_3+0.4*raiting.p1_4+0.2*raiting.p1_5)/CASE raiting.p1 WHEN 0 THEN 1 ELSE raiting.p1 END AS I13,
+raiting.p1_2/CASE raiting.p1 WHEN 0 THEN 1 ELSE raiting.p1 END AS I131,
+raiting.p1_3/CASE raiting.p1 WHEN 0 THEN 1 ELSE raiting.p1 END AS I132,
+raiting.p1_4/CASE raiting.p1 WHEN 0 THEN 1 ELSE raiting.p1 END AS I133,
+raiting.p1_5/CASE raiting.p1 WHEN 0 THEN 1 ELSE raiting.p1 END AS I134,
 YEAR
 FROM raiting INNER JOIN university
 	ON raiting.id_university = university.id;
@@ -156,9 +156,9 @@ GO
 --- 3.1
 CREATE VIEW I14_citiruemost_publikaciy_pps AS 
 SELECT university.id as ID, university.name as name,
-(2*raiting.s4+5*raiting.s5)/raiting.p AS I14,
-raiting.s4/raiting.p AS I141,
-raiting.s5/raiting.p AS I142,
+(2*raiting.s4+5*raiting.s5)/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I14,
+raiting.s4/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I141,
+raiting.s5/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I142,
 YEAR
 FROM raiting INNER JOIN university
 	ON raiting.id_university = university.id;
@@ -168,10 +168,10 @@ GO
 --- 3.2
 CREATE VIEW I15_kolichestvo_izdannih_statey AS 
 SELECT university.id as ID, university.name as name,
-(2*raiting.s7+raiting.s8+raiting.s9)/raiting.p AS I15,
-raiting.s7/raiting.p AS I151,
-raiting.s8/raiting.p AS I152,
-raiting.s9/raiting.p AS I153,
+(2*raiting.s7+raiting.s8+raiting.s9)/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I15,
+raiting.s7/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I151,
+raiting.s8/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I152,
+raiting.s9/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I153,
 YEAR
 FROM raiting INNER JOIN university
 	ON raiting.id_university = university.id;
@@ -181,9 +181,9 @@ GO
 --- 3.3
 CREATE VIEW I16_kolichestvo_sotrudnikov_utverjdennih_vak AS 
 SELECT university.id as ID, university.name as name,
-((2*raiting.d/(raiting.p-raiting.z-raiting.v))+(2*raiting.z+2*raiting.v)/raiting.p)*100 AS I16,
-(raiting.d/(raiting.p-raiting.z-raiting.v))*100 AS I161,
-((raiting.z+raiting.v)/p)*100 AS I162,
+((2*raiting.d/(CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END - CASE raiting.z WHEN 0 THEN 1 ELSE raiting.z END - CASE raiting.v WHEN 0 THEN 1 ELSE raiting.v END))+(2*raiting.z+2*raiting.v)/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END)*100 AS I16,
+(raiting.d/(CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END-CASE raiting.z WHEN 0 THEN 1 ELSE raiting.z END-CASE raiting.v WHEN 0 THEN 1 ELSE raiting.v END))*100 AS I161,
+((raiting.z+raiting.v)/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END)*100 AS I162,
 YEAR
 FROM raiting INNER JOIN university
 	ON raiting.id_university = university.id;
@@ -193,11 +193,11 @@ GO
 --- 3.4
 CREATE VIEW I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost AS 
 SELECT university.id as ID, university.name as name,
-(3*raiting.t4+2*raiting.t5+2*raiting.t6+raiting.tl)/raiting.p AS I17,
-raiting.t4/raiting.p AS I171,
-raiting.t5/raiting.p AS I172,
-raiting.t6/raiting.p AS I173,
-raiting.tl/raiting.p AS I174,
+(3*raiting.t4+2*raiting.t5+2*raiting.t6+raiting.tl)/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I17,
+raiting.t4/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I171,
+raiting.t5/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I172,
+raiting.t6/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I173,
+raiting.tl/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I174,
 YEAR
 FROM raiting INNER JOIN university
 	ON raiting.id_university = university.id;
@@ -207,12 +207,12 @@ GO
 --- 3.5
 CREATE VIEW I18_effektivnost_provodimih_nauchnih_rabot AS 
 SELECT university.id as ID, university.name as name,
-(raiting.i+raiting.t7+raiting.t8+raiting.ya+raiting.kl)/raiting.p AS I18,
-raiting.i/raiting.p AS I181,
-raiting.t7/raiting.p AS I182,
-raiting.t8/raiting.p AS I183,
-raiting.ya/raiting.p AS I184,
-raiting.kl/raiting.p AS I185,
+(raiting.i+raiting.t7+raiting.t8+raiting.ya+raiting.kl)/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I18,
+raiting.i/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I181,
+raiting.t7/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I182,
+raiting.t8/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I183,
+raiting.ya/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I184,
+raiting.kl/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END AS I185,
 YEAR
 FROM raiting INNER JOIN university
 	ON raiting.id_university = university.id;
@@ -227,8 +227,8 @@ raiting.a1 AS Z1,
 0.5*raiting.a3 AS Z3,
 0.25*raiting.a4 AS Z4,
 0*raiting.a5 AS Z5,
-(raiting.a1+0.75*raiting.a2+0.5*raiting.a3+0.25*raiting.a4)/(raiting.a1+raiting.a2+raiting.a3+raiting.a4+raiting.a5) AS Z,
-(2*(raiting.a1+0.75*raiting.a2+0.5*raiting.a3+0.25*raiting.a4)/(raiting.a1+raiting.a2+raiting.a3+raiting.a4+raiting.a5)) AS I19,
+(raiting.a1+0.75*raiting.a2+0.5*raiting.a3+0.25*raiting.a4)/(CASE raiting.a1 WHEN 0 THEN 1 ELSE raiting.a1 END+raiting.a2+raiting.a3+raiting.a4+raiting.a5) AS Z,
+(2*(raiting.a1+0.75*raiting.a2+0.5*raiting.a3+0.25*raiting.a4)/(CASE raiting.a1 WHEN 0 THEN 1 ELSE raiting.a1 END+raiting.a2+raiting.a3+raiting.a4+raiting.a5)) AS I19,
 YEAR
 FROM raiting INNER JOIN university
 	ON raiting.id_university = university.id;
@@ -238,8 +238,8 @@ GO
 --- 4.1
 CREATE VIEW I20_obespechennost_irc_uchebnoy_literaturoy AS 
 SELECT university.id as ID, university.name as name,
-(2*raiting.k2+raiting.m)/(2*raiting.l) AS I20,
-raiting.k2/raiting.l AS I201,
+(2*raiting.k2+raiting.m)/(2*CASE raiting.l WHEN 0 THEN 1 ELSE raiting.l END) AS I20,
+raiting.k2/CASE raiting.l WHEN 0 THEN 1 ELSE raiting.l END AS I201,
 YEAR
 FROM raiting INNER JOIN university
 	ON raiting.id_university = university.id;
