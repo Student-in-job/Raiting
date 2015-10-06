@@ -1,0 +1,96 @@
+﻿@model IEnumerable<RatingUniversity.Models.Jadval10>
+
+@{
+	ViewBag.Title = "Jadval10";
+}
+
+<h2>Universitetlar reytingi</h2>
+
+<h3>Download File</h3>
+
+<a href="/Jadval10/Download">Yuklab olish</a>
+
+
+<h3>Upload File</h3>
+
+@using (Html.BeginForm("Upload", "Jadval10", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+	<input type="file" name="files" />
+	<input type="submit" name="Submit" id="Submit" value="Upload" />
+}
+
+@if (ViewBag.bor == true)
+{
+	<h3>Ma'lumotlar:</h3>
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.DirectionCode)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.DirectionName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.SubjectName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ForeignLanguage)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.EducationCourse)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.StudentCount)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Asos)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.AsosFile)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Year)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UserId)
+			</th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.DirectionCode)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.DirectionName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.SubjectName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.ForeignLanguage)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.EducationCourse)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.StudentCount)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Asos)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AsosFile)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Year)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UserId)
+				</td>
+			</tr>
+		}
+
+	</table>
+}

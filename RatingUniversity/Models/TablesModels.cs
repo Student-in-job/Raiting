@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace RatingUniversity.Models
 {
@@ -26,7 +27,7 @@ namespace RatingUniversity.Models
 		public DbSet<Jadval19> Jadval19 { get; set; }
 		public DbSet<Jadval20> Jadval20 { get; set; }
 		public DbSet<Jadval21> Jadval21 { get; set; }
-		public DbSet<Jadval32> Jadval22 { get; set; }
+		public DbSet<Jadval32> Jadval32 { get; set; }
 		public DbSet<Jadval_AKTdaraja_1_7> Jadval_AKTdaraja_1_7 { get; set; }
 		public DbSet<Jadval_bitiruvchi_2_2> Jadval_bitiruvchi_2_2 { get; set; }
 		public DbSet<Jadval_talababilim_2_1> Jadval_talababilim_2_1 { get; set; }
@@ -84,9 +85,13 @@ namespace RatingUniversity.Models
 	public class Jadval1
 	{
 		public Int32 Id { get; set; }
+		[Display(Name = "OTM nomi")]
 		public String OtmName { get; set; }
+		[Display(Name = "OTM davlati")]
 		public String State { get; set; }
+		[Display(Name = "OTM reytingi")]
 		public Int32 Reyting { get; set; }
+		[Display(Name = "Yil")]
 		public Int16 Year { get; set; }
 		public Int32 UserId { get; set; }
 	}
