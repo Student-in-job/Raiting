@@ -1,0 +1,47 @@
+﻿@model IEnumerable<RatingUniversity.I2_uroven_kachestva_prepodavaniya>
+
+@{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
+
+<h3>@ViewBag.Title</h3>
+
+<table class="table table-striped" style="font-size:14px;">
+    <tr>
+        <th>Рейтинг</th>
+        <th>Название высшего учебного заведения</th>
+        <th>Качество содержания и новизна материалов учебных занятий</th>
+        <th>Качество форм организации учебных занятий и методов преподавания дисциплин, в том числе использование интерактивных методов преподавания</th>
+        <th>Объективность оценки знаний студентов</th>
+        <th>Уровень качества преподавания</th>
+        <th>Год проведения рейтинга</th>
+    </tr>
+
+@{var position = 0;}
+@foreach (var item in Model)
+{
+    position++;
+    <tr>
+        <td>
+            @position
+        </td>
+        <td width="35%">
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.I21)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.I22)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.I23)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.I2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YEAR)
+        </td>
+    </tr>
+}
+
+</table>

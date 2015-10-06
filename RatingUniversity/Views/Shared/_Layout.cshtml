@@ -25,10 +25,10 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Raiting PPS", "Index", "DolyaPPS")</li>
-                    <li class="dropdown">
+<!--                    <li>@*Html.ActionLink("About", "About", "Home")*@</li> -->
+<!--                    <li>@*Html.ActionLink("Contact", "Contact", "Home")*@</li>-->
+                    <li>@Html.ActionLink("Критерии рейтинга", "Index", "QualityOfEducationalWork")</li>
+<!--                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Year <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <div style="padding:0;width:180%;" class="container navbar-default nav navbar-nav">
@@ -40,6 +40,7 @@
                             </div>
                         </ul>
                     </li>
+-->
                     <li>@Html.ActionLink("Theme Features", "Theme", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
