@@ -16,6 +16,7 @@ warning 6002: The table/view 'URaiting.dbo.I1_dolya_pps_s_uchenoy_stepenyu' does
           <Property Name="I11" Type="float" />
           <Property Name="I12" Type="float" />
           <Property Name="I1" Type="float" />
+          <Property Name="mark" Type="float" />
           <Property Name="YEAR" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -281,6 +282,7 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
     [I1_dolya_pps_s_uchenoy_stepenyu].[I11] AS [I11], 
     [I1_dolya_pps_s_uchenoy_stepenyu].[I12] AS [I12], 
     [I1_dolya_pps_s_uchenoy_stepenyu].[I1] AS [I1], 
+    [I1_dolya_pps_s_uchenoy_stepenyu].[mark] AS [mark], 
     [I1_dolya_pps_s_uchenoy_stepenyu].[YEAR] AS [YEAR]
     FROM [dbo].[I1_dolya_pps_s_uchenoy_stepenyu] AS [I1_dolya_pps_s_uchenoy_stepenyu]</DefiningQuery>
           </EntitySet>
@@ -497,6 +499,7 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <Property Name="I12" Type="Double" />
           <Property Name="I1" Type="Double" />
           <Property Name="YEAR" Type="Int32" />
+          <Property Name="mark" Type="Double" />
         </EntityType>
         <EntityType Name="I10_rezultati_attestacii_u_studentov">
           <Key>
@@ -746,6 +749,7 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <EntitySetMapping Name="I1_dolya_pps_s_uchenoy_stepenyu">
             <EntityTypeMapping TypeName="URaitingModel.I1_dolya_pps_s_uchenoy_stepenyu">
               <MappingFragment StoreEntitySet="I1_dolya_pps_s_uchenoy_stepenyu">
+                <ScalarProperty Name="mark" ColumnName="mark" />
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="name" ColumnName="name" />
