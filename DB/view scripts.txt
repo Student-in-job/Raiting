@@ -11,8 +11,8 @@ FROM raiting inner join university
 GO
 
 CREATE VIEW I1_dolya_pps_s_uchenoy_stepenyu AS 
-SELECT ID, name, I11, I12, I1, 4*I1/(SELECT MAX(I1) FROM I1 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I1 outer
+SELECT ID, name, I11, I12, I1, 4*I1/(SELECT MAX(I1) FROM I1 WHERE I1.YEAR = YEAR) AS mark, YEAR
+FROM I1
 
 GO
 
@@ -33,8 +33,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I2_uroven_kachestva_prepodavaniya AS 
-SELECT ID, name, T1, T2, T3, I21, I22, I23, I2, 7*I2/(SELECT MAX(I2) FROM I2 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I2 outer
+SELECT ID, name, T1, T2, T3, I21, I22, I23, I2, 7*I2/(SELECT MAX(I2) FROM I2 WHERE I2.YEAR = YEAR) AS mark, YEAR
+FROM I2
 
 GO
 
@@ -52,8 +52,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I3_kolichestvo_uchebnikov_i_posobiy AS 
-SELECT ID, name, I31, I32, I33, I3, 5*I3/(SELECT MAX(I3) FROM I3 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I3 outer
+SELECT ID, name, I31, I32, I33, I3, 5*I3/(SELECT MAX(I3) FROM I3 WHERE I3.YEAR = YEAR) AS mark, YEAR
+FROM I3
 
 GO
 
@@ -70,8 +70,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I4_dolya_inostrannih_prepodavateley_i_studentov AS 
-SELECT ID, name, I41, I42, I4, 3*I4/(SELECT MAX(I4) FROM I4 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I4 outer
+SELECT ID, name, I41, I42, I4, 3*I4/(SELECT MAX(I4) FROM I4 WHERE I4.YEAR = YEAR) AS mark, YEAR
+FROM I4
 
 GO
 
@@ -91,8 +91,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I5_uchastie_v_programme_obmena AS 
-SELECT ID, name, I51, I52_1, I52_2, I53_1, I53_2, I5, 4*I5/(SELECT MAX(I5) FROM I5 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I5 outer
+SELECT ID, name, I51, I52_1, I52_2, I53_1, I53_2, I5, 4*I5/(SELECT MAX(I5) FROM I5 WHERE I5.YEAR = YEAR) AS mark, YEAR
+FROM I5
 
 GO
 
@@ -107,8 +107,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I6_kolichestvo_uchebnih_kursov_na_inostrannom AS 
-SELECT ID, name, I6, 3*I6/(SELECT MAX(I6) FROM I6 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I6 outer
+SELECT ID, name, I6, 3*I6/(SELECT MAX(I6) FROM I6 WHERE I6.YEAR = YEAR) AS mark, YEAR
+FROM I6
 
 GO
 
@@ -126,8 +126,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I7_uroven_angliyskogo_i_ikt_u_pps AS 
-SELECT ID, name, I71, I72, I7, 5*I7/(SELECT MAX(I7) FROM I7 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I7 outer
+SELECT ID, name, I71, I72, I7, 5*I7/(SELECT MAX(I7) FROM I7 WHERE I7.YEAR = YEAR) AS mark, YEAR
+FROM I7
 
 GO
 
@@ -142,8 +142,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah AS 
-SELECT ID, name, I8, 3*I8/(SELECT MAX(I8) FROM I8 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I8 outer
+SELECT ID, name, I8, 3*I8/(SELECT MAX(I8) FROM I8 WHERE I8.YEAR = YEAR) AS mark, YEAR
+FROM I8
 
 GO
 
@@ -158,8 +158,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I9_dolya_pps_prepodayushego_v_sspo AS 
-SELECT ID, name, I9, I9/(SELECT MAX(I9) FROM I9 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I9 outer
+SELECT ID, name, I9, I9/(SELECT MAX(I9) FROM I9 WHERE I9.YEAR = YEAR) AS mark, YEAR
+FROM I9
 
 GO
 
@@ -174,8 +174,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I10_rezultati_attestacii_u_studentov AS 
-SELECT ID, name, I10, 7*I10/(SELECT MAX(I10) FROM I10 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I10 outer
+SELECT ID, name, I10, 8*I10/(SELECT MAX(I10) FROM I10 WHERE I10.YEAR = YEAR) AS mark, YEAR
+FROM I10
 
 GO
 
@@ -190,8 +190,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami AS 
-SELECT ID, name, I11, 5*I11/(SELECT MAX(I11) FROM I11 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I11 outer
+SELECT ID, name, I11, 3*I11/(SELECT MAX(I11) FROM I11 WHERE I11.YEAR = YEAR) AS mark, YEAR
+FROM I11
 
 GO
 
@@ -207,8 +207,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I12_dolya_trudoustroennih_vipusknikov AS 
-SELECT ID, name, I12_1, I12, 5*I12/(SELECT MAX(I12) FROM I12 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I12 outer
+SELECT ID, name, I12_1, I12, 6*I12/(SELECT MAX(I12) FROM I12 WHERE I12.YEAR = YEAR) AS mark, YEAR
+FROM I12
 
 GO
 
@@ -227,8 +227,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I13_kolichestvo_studentov_udostoennih_nagrad AS 
-SELECT ID, name, I131, I132, I133, I134, I13, 3*I13/(SELECT MAX(I13) FROM I13 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I13 outer
+SELECT ID, name, I131, I132, I133, I134, I13, 3*I13/(SELECT MAX(I13) FROM I13 WHERE I13.YEAR = YEAR) AS mark, YEAR
+FROM I13
 
 GO
 
@@ -245,8 +245,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I14_citiruemost_publikaciy_pps AS 
-SELECT ID, name, I141, I142, I14, 7*I14/(SELECT MAX(I14) FROM I14 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I14 outer
+SELECT ID, name, I141, I142, I14, 7*I14/(SELECT MAX(I14) FROM I14 WHERE I14.YEAR = YEAR) AS mark, YEAR
+FROM I14
 
 GO
 
@@ -264,8 +264,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I15_kolichestvo_izdannih_statey AS 
-SELECT ID, name, I151, I152, I153, I15, 4*I15/(SELECT MAX(I15) FROM I15 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I15 outer
+SELECT ID, name, I151, I152, I153, I15, 5*I15/(SELECT MAX(I15) FROM I15 WHERE I15.YEAR = YEAR) AS mark, YEAR
+FROM I15
 
 GO
 
@@ -282,8 +282,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I16_kolichestvo_sotrudnikov_utverjdennih_vak AS 
-SELECT ID, name, I161, I162, I16, 4*I16/(SELECT MAX(I16) FROM I16 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I16 outer
+SELECT ID, name, I161, I162, I16, 5*I16/(SELECT MAX(I16) FROM I16 WHERE I16.YEAR = YEAR) AS mark, YEAR
+FROM I16
 
 GO
 
@@ -302,8 +302,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost AS 
-SELECT ID, name, I171, I172, I173, I174, I17, 8*I17/(SELECT MAX(I17) FROM I17 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I17 outer
+SELECT ID, name, I171, I172, I173, I174, I17, 10*I17/(SELECT MAX(I17) FROM I17 WHERE I17.YEAR = YEAR) AS mark, YEAR
+FROM I17
 
 GO
 
@@ -323,8 +323,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I18_effektivnost_provodimih_nauchnih_rabot AS 
-SELECT ID, name, I181, I182, I183, I184, I185, I18, 5*I18/(SELECT MAX(I18) FROM I18 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I18 outer
+SELECT ID, name, I181, I182, I183, I184, I185, I18, 6*I18/(SELECT MAX(I18) FROM I18 WHERE I18.YEAR = YEAR) AS mark, YEAR
+FROM I18
 
 GO
 
@@ -345,8 +345,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I19_stepen_osnashennosti_laboratoriy_oborudovaniem AS 
-SELECT ID, name, Z1, Z2, Z3, Z4, Z5, Z, I19, 2*I19/(SELECT MAX(I19) FROM I19 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I19 outer
+SELECT ID, name, Z1, Z2, Z3, Z4, Z5, Z, I19, 2*I19/(SELECT MAX(I19) FROM I19 WHERE I19.YEAR = YEAR) AS mark, YEAR
+FROM I19
 
 GO
 
@@ -362,5 +362,5 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I20_obespechennost_irc_uchebnoy_literaturoy AS 
-SELECT ID, name, I201, I20, 3*I20/(SELECT MAX(I20) FROM I20 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I20 outer
+SELECT ID, name, I201, I20, 3*I20/(SELECT MAX(I20) FROM I20 WHERE I20.YEAR = YEAR) AS mark, YEAR
+FROM I20
