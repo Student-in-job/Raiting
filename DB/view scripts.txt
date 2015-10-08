@@ -62,12 +62,8 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I3_kolichestvo_uchebnikov_i_posobiy AS 
-<<<<<<< HEAD
 SELECT ID, name, I31, I32, I33, I3, 5*I3/(SELECT MAX(I3) FROM I3 WHERE I3.YEAR = YEAR) AS mark, YEAR
 FROM I3
-=======
-SELECT ID, name, I31, I32, I33, I3, 5*I3/(SELECT MAX(I3) FROM I3 inner WHERE inner.year = outer.year) AS mark, YEAR
-FROM I3 outer
 >>>>>>> 617115de2da83ca67bf1efc638324835608cee7b
 
 GO
