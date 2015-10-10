@@ -20,5 +20,6 @@ namespace RatingUniversity
         public Nullable<double> I12 { get; set; }
         public Nullable<double> I1 { get; set; }
         public Nullable<int> YEAR { get; set; }
+        public Nullable<double> mark { get; set; }
     }
 }

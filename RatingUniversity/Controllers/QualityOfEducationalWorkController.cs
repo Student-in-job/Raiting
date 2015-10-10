@@ -34,7 +34,7 @@ namespace RatingUniversity.Controllers
             this.CreateActive(0);
             ViewBag.active = this.active;
             ViewBag.Title = "Доля профессорско-преподавательского состава (ППС), имеющего степень PhD (ученую степень доктора, кандидата наук), магистра (дипломированного специалиста) зарубежных высших образовательных учреждений (вузов), входящих в число 500 лучших вузов мира";
-            return View(db.I1_dolya_pps_s_uchenoy_stepenyu.OrderByDescending(model => model.I1).ToList());
+            return View(db.I1_dolya_pps_s_uchenoy_stepenyu.OrderByDescending(model => model.mark).ToList());
         }
 
         // GET: /QualityOfEducationalWork/SurveyOfStudents

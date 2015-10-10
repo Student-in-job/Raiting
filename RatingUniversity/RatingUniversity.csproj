@@ -276,9 +276,23 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom.min.css" />
+    <Content Include="Content\flipclock.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Final Raiting.edmx">
@@ -298,8 +312,12 @@
       <DependentUpon>Final Raiting.edmx</DependentUpon>
       <LastGenOutput>Final Raiting.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\bootstrap.min.css.bak" />
     <None Include="Properties\PublishProfiles\Vitaliy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\flipclock.js" />
+    <Content Include="Scripts\flipclock.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
