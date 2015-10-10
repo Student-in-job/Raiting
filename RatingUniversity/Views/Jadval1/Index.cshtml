@@ -1,26 +1,25 @@
 ﻿@model IEnumerable<RatingUniversity.Models.Jadval1>
+@using RatingUniversity.Resources
+	
+@{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
 
-	@{
-		ViewBag.Title = "Jadvallar bilan ishlash";
-	}
-  	<h2>Universitetlar reytingi</h2>
+<!--<h2>@ResourceRu.Title</h2>-->
+  	<h2>Top университет - 300</h2>
 
-	<h3>Download File</h3>
-
-	<a href="/DownloadFile/Download">Yuklab olish</a>
+	<a href="/Jadval1/Download">Загрузить шаблон</a>
 
 
-	<h3>Upload File</h3>
+	<h3>Прикрепить файл</h3>
 
-	@using (Html.BeginForm("Upload", "DownloadFile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+	@using (Html.BeginForm("Upload", "Jadval1", FormMethod.Post, new { enctype = "multipart/form-data" }))
 	{
 		<input type="file" name="files" />
-		<input type="submit" name="Submit" id="Submit" value="Upload" />
+	<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
 	}
 
 	@if (ViewBag.bor == true)
 	{
-		<h3>Ma'lumotlar:</h3>	
+		<h3>Данные:</h3>	
 		<table class="table">
 			<tr>
 				<th>

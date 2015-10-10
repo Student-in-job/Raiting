@@ -93,7 +93,7 @@ namespace RatingUniversity.Controllers
 		private static void GetExcelData_Jadval6(DataTable data)
 		{
 			List<Jadval6> uploadExl = new List<Jadval6>();
-			for (int i = 4; i < data.Rows.Count - 6; i++)
+			for (int i = 4; i < data.Rows.Count - 7; i++)
 			{
 				Jadval6 NewUpload = new Jadval6();
 				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
@@ -109,6 +109,14 @@ namespace RatingUniversity.Controllers
 
 			using (TablesContext db = new TablesContext())
 			{
+				int yil = Int32.Parse(DateTime.Now.Year.ToString());
+				IQueryable<Jadval6> deleteRows = db.Jadval6.Where(x => x.Year == yil);
+				foreach (var row in deleteRows)
+				{
+					db.Jadval6.Remove(row);
+				}
+				db.SaveChanges();
+
 				foreach (var t in uploadExl)
 					db.Jadval6.Add(t);
 				db.SaveChanges();

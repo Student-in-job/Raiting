@@ -1,5 +1,10 @@
 ﻿@model IEnumerable<RatingUniversity.Models.Jadval2>
 
+@{
+	Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
+}
+
+
 <h2>Universitetlar reytingi</h2>
 
 <h3>Download File</h3>
@@ -48,7 +53,7 @@
 				@Html.DisplayNameFor(model => model.Year)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.UserId)
+				@Html.DisplayNameFor(model => model.UniversityId)
 			</th>
 		</tr>
 
@@ -83,7 +88,7 @@
 					@Html.DisplayFor(modelItem => item.Year)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.UserId)
+					@Html.DisplayFor(modelItem => item.UniversityId)
 				</td>
 			</tr>
 		}

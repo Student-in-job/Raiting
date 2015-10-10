@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace RatingUniversity.Models
 {
 	public class TablesModels
@@ -13,7 +14,7 @@ namespace RatingUniversity.Models
 
 
 	public class TablesContext : DbContext
-	{
+	{		
 		public DbSet<Jadval1> Jadval1 { get; set; }
 		public DbSet<Jadval2> Jadval2 { get; set; }
 		public DbSet<Jadval5> Jadval5 { get; set; }
@@ -43,9 +44,8 @@ namespace RatingUniversity.Models
 		public Int32 P { get; set; }//obshiy kolichenstvo
 		public Int32 P7 { get; set; }//inostranniy sdavshiy udavletvоritelno
 		public Int32 P8 { get; set; }//akt sdavshiy udоvletvоritelno
-		public Int32 UniversityId { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 
 	public class Jadval_bitiruvchi_2_2
@@ -55,7 +55,6 @@ namespace RatingUniversity.Models
 		public Int32 R1 { get; set; }//Udovletvоritelniy
 		public Int32 UniversityId { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
 	}
 
 	public class Jadval_talababilim_2_1
@@ -65,7 +64,6 @@ namespace RatingUniversity.Models
 		public Int32 T_Qualified { get; set; }//Kol. studentov puluchevshiy xoroshiy otsenki
 		public Int32 UniversityId { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
 	}
 
 	public class Jadval_talimsifati_1_2
@@ -79,21 +77,20 @@ namespace RatingUniversity.Models
 		public Int32 N5 { get; set; }
 		public Int32 UniversityId { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
 	}
 
 	public class Jadval1
 	{
 		public Int32 Id { get; set; }
-		[Display(Name = "OTM nomi")]
+		[Display(Name = "Название")]
 		public String OtmName { get; set; }
-		[Display(Name = "OTM davlati")]
+		[Display(Name = "Страна")]
 		public String State { get; set; }
-		[Display(Name = "OTM reytingi")]
+		[Display(Name = "Рейтинг")]
 		public Int32 Reyting { get; set; }
-		[Display(Name = "Yil")]
+		[Display(Name = "Год")]
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32? UniversityId { get; set; }
 	}
 
 	public class Jadval10
@@ -108,7 +105,7 @@ namespace RatingUniversity.Models
 		public String Asos { get; set; }
 		public String AsosFile { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 	public class Jadval11
 	{
@@ -124,7 +121,7 @@ namespace RatingUniversity.Models
 		public String OquvmajmuaName { get; set; }
 		public String OquvmajmuaCertificate { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 	public class Jadval18
 	{
@@ -138,12 +135,11 @@ namespace RatingUniversity.Models
 		public String Asos { get; set; }
 		public String AsosFile { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 	public class Jadval19
 	{
 		public Int32 Id { get; set; }
-		public Int32 UniversityId { get; set; }
 		public String FullName { get; set; }
 		public String TanlovName { get; set; }
 		public String Tanlov_joy_date { get; set; }
@@ -155,7 +151,7 @@ namespace RatingUniversity.Models
 		public String Description { get; set; }
 		public String AsosFile { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 	public class Jadval2
 	{
@@ -169,7 +165,7 @@ namespace RatingUniversity.Models
 		public String Speciality { get; set; }
 		public String Ishga_qabul_buyruq { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 	public class Jadval20
 	{
@@ -182,7 +178,7 @@ namespace RatingUniversity.Models
 		public String Asos_fayl { get; set; }
 		public String Mag_otm { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 	public class Jadval21
 	{
@@ -194,7 +190,7 @@ namespace RatingUniversity.Models
 		public String Ish_lavozimi { get; set; }
 		public String Asos_fayl { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 	public class Jadval32
 	{
@@ -212,7 +208,7 @@ namespace RatingUniversity.Models
 		public Int32 Oxirgi_malaka_oshirgan_yili { get; set; }
 		public String Subjects { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 	public class Jadval5
 	{
@@ -224,7 +220,7 @@ namespace RatingUniversity.Models
 		public String Asos { get; set; }
 		public String Asos_fayl { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 	public class Jadval6
 	{
@@ -236,7 +232,7 @@ namespace RatingUniversity.Models
 		public String Asos { get; set; }
 		public String Asos_fayl { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 	public class Jadval7
 	{
@@ -251,7 +247,7 @@ namespace RatingUniversity.Models
 		public String Asos_fayl { get; set; }
 		public Int32 Bak_mag { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 	public class Jadval8
 	{
@@ -265,7 +261,7 @@ namespace RatingUniversity.Models
 		public String Asos { get; set; }
 		public String Asos_fayl { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 	public class Jadval9
 	{
@@ -277,7 +273,7 @@ namespace RatingUniversity.Models
 		public String Asos { get; set; }
 		public String Asos_fayl { get; set; }
 		public Int16 Year { get; set; }
-		public Int32 UserId { get; set; }
+		public Int32 UniversityId { get; set; }
 	}
 /*
 	public class Role

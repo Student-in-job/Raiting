@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using RatingUniversity.Models;
 
 namespace RatingUniversity
 {
@@ -12,11 +14,13 @@ namespace RatingUniversity
     {
         protected void Application_Start()
         {
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-        }
+			Database.SetInitializer<TablesContext>(null);//for modify models
+		}
         protected void Application_Error()
         {
             /*на случай не обработанных исключений*/
