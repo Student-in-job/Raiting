@@ -21,13 +21,10 @@ namespace RatingUniversity.Controllers
 		{
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
-			//IQueryable<Jadval1> poisk_reyting = db.Jadval1.Where(pr => pr.Year == yil);
-
 			var list = db.Jadval2.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
 			ViewBag.bor = true;
 			if (list.Count() == 0)
 				ViewBag.bor = false;
-			//return View(await list.ToListAsync());
 			return View(list.ToList());
 		}
 
@@ -99,7 +96,7 @@ namespace RatingUniversity.Controllers
 				//NewUpload.Jadval1_Id = Convert.ToString(data.Rows[i][1]);
 				NewUpload.Phd_seriya = Convert.ToString(data.Rows[i][3]);
 				NewUpload.Phd_nomer = Convert.ToString(data.Rows[i][4]);
-				NewUpload.Mag_seriya = Convert.ToString(data.Rows[i][5]);///////jadval xato!!!!!!!!!!!
+				NewUpload.Mag_seriya = Convert.ToString(data.Rows[i][5]);
 				NewUpload.Mag_nomer = Convert.ToString(data.Rows[i][6]);
 				NewUpload.Speciality = Convert.ToString(data.Rows[i][7]);
 				NewUpload.Ishga_qabul_buyruq = Convert.ToString(data.Rows[i][8]);				
@@ -110,6 +107,14 @@ namespace RatingUniversity.Controllers
 
 			using (TablesContext db = new TablesContext())
 			{
+				int yil = Int32.Parse(DateTime.Now.Year.ToString());
+				IQueryable<Jadval2> deleteRows = db.Jadval2.Where(x => x.Year == yil);
+				foreach (var row in deleteRows)
+				{
+					db.Jadval2.Remove(row);
+				}
+				db.SaveChanges();
+
 				foreach (var t in uploadExl)
 					db.Jadval2.Add(t);
 				db.SaveChanges();

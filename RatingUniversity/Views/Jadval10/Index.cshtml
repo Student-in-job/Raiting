@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<RatingUniversity.Models.Jadval10>
 
 @{
+	Layout = "~/Views/Shared/_LayoutSideMenu.cshtml";
 	ViewBag.Title = "Jadval10";
 }
 
@@ -52,7 +53,7 @@
 				@Html.DisplayNameFor(model => model.Year)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.UserId)
+				@Html.DisplayNameFor(model => model.UniversityId)
 			</th>
 		</tr>
 
@@ -87,7 +88,7 @@
 					@Html.DisplayFor(modelItem => item.Year)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.UserId)
+					@Html.DisplayFor(modelItem => item.UniversityId)
 				</td>
 			</tr>
 		}

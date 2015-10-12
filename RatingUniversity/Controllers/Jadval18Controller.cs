@@ -111,6 +111,14 @@ namespace RatingUniversity.Controllers
 
 			using (TablesContext db = new TablesContext())
 			{
+				int yil = Int32.Parse(DateTime.Now.Year.ToString());
+				IQueryable<Jadval18> deleteRows = db.Jadval18.Where(x => x.Year == yil);
+				foreach (var row in deleteRows)
+				{
+					db.Jadval18.Remove(row);
+				}
+				db.SaveChanges();
+
 				foreach (var t in uploadExl)
 					db.Jadval18.Add(t);
 				db.SaveChanges();

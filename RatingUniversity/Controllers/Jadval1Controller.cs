@@ -16,25 +16,21 @@ using System.Net;
 
 namespace RatingUniversity.Controllers
 {
-    public class DownloadFileController : Controller
+    public class Jadval1Controller : Controller
     {
         //
-        // GET: /DownloadFile/
-        //public async Task<ActionResult> Index()
+        // GET: /Jadval1/
 		public ActionResult Index()
         {
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
-			//IQueryable<Jadval1> poisk_reyting = db.Jadval1.Where(pr => pr.Year == yil);
-			
 			var list = db.Jadval1.Where(pr => pr.Year == yil).OrderBy(j => j.Year).OrderBy(j => j.Reyting);
 			ViewBag.bor = true;
 			if (list.Count() == 0)
 				ViewBag.bor = false;
-			//return View(await list.ToListAsync());
 			return View(list.ToList());
         }
-		
+
 		public FileResult Download()
 		{
 			string filename = Server.MapPath("~/Files/table1.xls");
@@ -72,7 +68,7 @@ namespace RatingUniversity.Controllers
 					}
 				}
 			}
-			return RedirectToAction("Index", "DownloadFile");
+			return RedirectToAction("Index", "Jadval1");
 		}
 
 
@@ -85,7 +81,6 @@ namespace RatingUniversity.Controllers
 			fileExtension = Path.GetExtension(f.FileName);
 			filepath = Path.GetFullPath(f.FileName);
 		}
-
 
 		/// <summary>
 		/// This method is used to get the data source and read the data from files.
@@ -116,20 +111,24 @@ namespace RatingUniversity.Controllers
 				//if (data.Rows[i][3] != null) Int32.TryParse(data.Rows[i][3], NewUpload.Reyting);
 				NewUpload.Reyting = Convert.ToInt32(data.Rows[i][3]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
-
+				NewUpload.UniversityId = 24;
 				uploadExl.Add(NewUpload);
 			}
 
 			using (TablesContext db=new TablesContext())
 			{
+				int yil = Int32.Parse(DateTime.Now.Year.ToString());
+				IQueryable<Jadval1> deleteRows = db.Jadval1.Where(x => x.Year == yil);
+				foreach(var row in deleteRows)
+				{
+					db.Jadval1.Remove(row);
+				}
+				db.SaveChanges();
+		 
 				foreach (var t in uploadExl)
-				db.Jadval1.Add(t);
+					db.Jadval1.Add(t);
 				db.SaveChanges();
 			}
-
 		}
-
-
-
 	}
 }
