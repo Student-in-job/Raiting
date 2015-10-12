@@ -19,9 +19,9 @@ namespace RatingUniversity
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            Database.SetInitializer<TablesContext>(null);//for modify models
         }
-			Database.SetInitializer<TablesContext>(null);//for modify models
-		}
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
         {
