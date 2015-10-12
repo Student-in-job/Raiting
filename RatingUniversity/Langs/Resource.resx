@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ButtonLearnMore" xml:space="preserve">
+    <value>Подробнее</value>
+  </data>
+  <data name="FooterCopyrightAllRightReserved" xml:space="preserve">
+    <value>Все права защищены.</value>
+  </data>
+  <data name="FooterCopyrightDev" xml:space="preserve">
+    <value>Разработано</value>
+  </data>
+  <data name="FooterCopyrightDtm" xml:space="preserve">
+    <value>Государственный Центр Тестирования</value>
+  </data>
+  <data name="FooterCopyrightInfo" xml:space="preserve">
+    <value>При полном или частичном использовании материалов ссылка на ресурс обязательна</value>
+  </data>
+  <data name="FooterCopyrightMinistry" xml:space="preserve">
+    <value>Министерство высшего и среднего специального образования Республики Узбекистан</value>
+  </data>
+  <data name="FooterCopyrightNuu" xml:space="preserve">
+    <value>Национальный Университет Узбекистана</value>
+  </data>
+  <data name="FooterCopyrightNuuAbbr" xml:space="preserve">
+    <value>O`zMU</value>
+  </data>
+  <data name="FooterCopyrightTuit" xml:space="preserve">
+    <value>Ташкентский Университет Информационных Технологий</value>
+  </data>
+  <data name="FooterCopyrightTuitAbbr" xml:space="preserve">
+    <value>TUIT</value>
+  </data>
+  <data name="HomePageChanges" xml:space="preserve">
+    <value>Изменения</value>
+  </data>
+  <data name="HomePageChartHeader" xml:space="preserve">
+    <value>Аналитика</value>
+  </data>
+  <data name="HomePageChartHeaderInfo" xml:space="preserve">
+    <value>Еще немного текста...</value>
+  </data>
+  <data name="HomePageHeader" xml:space="preserve">
+    <value>Топ ВУЗ-ов</value>
+  </data>
+  <data name="HomePageHeaderInfo" xml:space="preserve">
+    <value>Какая-нибудь актульная и полезная инфа... Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы...</value>
+  </data>
+  <data name="HomePageRatingHeader" xml:space="preserve">
+    <value>Топ университетов</value>
+  </data>
+  <data name="HomePageRatingHeaderInfo" xml:space="preserve">
+    <value>Нужно боООоольше текста... </value>
+  </data>
+  <data name="HomePageTitle" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="HomePageUniversity" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="MainMenuAbout" xml:space="preserve">
+    <value>О проекте</value>
+  </data>
+  <data name="MainMenuAddData" xml:space="preserve">
+    <value>Добавить данные</value>
+  </data>
+  <data name="MainMenuContact" xml:space="preserve">
+    <value>Контакты</value>
+  </data>
+  <data name="MainMenuEduQuality" xml:space="preserve">
+    <value>Критерии рейтинга</value>
+  </data>
+  <data name="MainMenuHome" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>Рейтинг ВУЗ-ов Узбекистана</value>
+    <comment>&lt;head&gt;&lt;title&gt;Page title is here&lt;/title&gt;&lt;/head&gt;</comment>
+  </data>
+  <data name="RU" xml:space="preserve">
+    <value>Русский</value>
+    <comment>!!! Перевод не требуется !!! Can`t touch this !!!</comment>
+  </data>
+  <data name="TopHeader" xml:space="preserve">
+    <value>Рейтинг ВУЗ-ов</value>
+    <comment>&lt;div id="top-header"&gt;&lt;div class="text-primary"&gt;Top Header is here&lt;/div&gt;&lt;/div&gt;</comment>
+  </data>
+  <data name="UZ" xml:space="preserve">
+    <value>O`zbek</value>
+    <comment>!!! Перевод не требуется !!! Can`t touch this !!!</comment>
+  </data>
+</root>

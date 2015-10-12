@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Rating of universities</title>
+    <title>@ViewBag.Title - @RatingUniversity.Langs.Resource.PageTitle</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/flipclock.css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div id="top-header" class="" style="height:auto;font-size:36px;font-weight:600;padding:10px 35px 10px 0;text-align:right;background:url(../../Images/background.jpg) no-repeat #fafafa;">
-        <div style="" class="text-primary">Top university in Uzbekistan</div>
+        <div style="" class="text-primary">@RatingUniversity.Langs.Resource.TopHeader</div>
     </div>
     <div class="navbar navbar-inverse">
         <div class="container">
@@ -20,17 +20,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!--@Html.ActionLink("URating", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })-->
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Критерии рейтинга", "Index", "QualityOfEducationalWork")</li>
+                    <li>@Html.ActionLink(@RatingUniversity.Langs.Resource.MainMenuHome, "Index", "Home")</li>
+                    <li>@Html.ActionLink(@RatingUniversity.Langs.Resource.MainMenuAbout, "About", "Home")</li>
+                    <li>@Html.ActionLink(@RatingUniversity.Langs.Resource.MainMenuEduQuality, "Index", "QualityOfEducationalWork")</li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Добавить данные<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@RatingUniversity.Langs.Resource.MainMenuAddData <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <div style="padding:0;width:180%;" class="container navbar-default nav navbar-nav">
+                            <div style="padding:0;width:182%;" class="container navbar-default nav navbar-nav">
                                 <li><a href="~/DownloadFile/index">2013</a></li>
                                 <li><a href="#">2014</a></li>
                                 <li><a href="#">2015</a></li>
@@ -39,10 +38,22 @@
                             </div>
                         </ul>
                     </li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <!--<li>@Html.ActionLink("Theme Features", "Theme", "Home")</li>-->
+                    <li>@Html.ActionLink(@RatingUniversity.Langs.Resource.MainMenuContact, "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Lang <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="navbar-default">
+                                <a href="@Url.Action("ChangeCulture", "Home", new { lang = "ru" })"><img src="@Url.Content("~/Images/ru.png")" width="24" height="24" border="0" alt="" /> @RatingUniversity.Langs.Resource.RU</a>
+                            </li>
+                            <li class="navbar-default">
+                                <a href="@Url.Action("ChangeCulture", "Home", new { lang = "uz" })"><img src="@Url.Content("~/Images/uz.png")" width="24" height="24" border="0" alt="" /> @RatingUniversity.Langs.Resource.UZ</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -50,7 +61,12 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year <a href="//edu.uz/" title="">edu.uz</a></p>
+            <div class="col-md-4">
+                <p>Copyright © 2014 - @DateTime.Now.Year <a href="http://edu.uz/" title="@RatingUniversity.Langs.Resource.FooterCopyrightMinistry">Edu.uz</a> & <a href="http://dtm.uz/" title="@RatingUniversity.Langs.Resource.FooterCopyrightDtm">DTM.uz</a></p>
+                <p>@RatingUniversity.Langs.Resource.FooterCopyrightAllRightReserved</p>
+            </div>
+            <div class="col-md-4 text-muted">@RatingUniversity.Langs.Resource.FooterCopyrightInfo</div>
+            <div class="col-md-4">@RatingUniversity.Langs.Resource.FooterCopyrightDev <a href="http://tuit.uz/" title="@RatingUniversity.Langs.Resource.FooterCopyrightTuit">@RatingUniversity.Langs.Resource.FooterCopyrightTuitAbbr</a> & <a href="http://nuu.uz/" title="@RatingUniversity.Langs.Resource.FooterCopyrightNuu">@RatingUniversity.Langs.Resource.FooterCopyrightNuuAbbr</a></div>
         </footer>
     </div>
     @Scripts.Render("~/bundles/jquery")
@@ -61,10 +77,8 @@
     @Scripts.Render("~/Scripts/custom.js")
     <script type="text/javascript">
         var clock;
-
         $(document).ready(function () {
             var clock;
-
             clock = $('.clock').FlipClock({
                 clockFace: 'DailyCounter',
                 autoStart: false,
@@ -75,12 +89,21 @@
                     }
                 }
             });
-
             clock.setTime(220880);
             clock.setCountdown(true);
             clock.start();
-
         });
     </script>
+<!-- 
+Status: @HttpContext.Current.ApplicationInstance.Response.Status
+Charset: @HttpContext.Current.ApplicationInstance.Response.Charset
+HashCode: @HttpContext.Current.ApplicationInstance.Response.GetHashCode()
+BrowserInfo: @HttpContext.Current.ApplicationInstance.Request.Browser.Browser ver. @HttpContext.Current.ApplicationInstance.Request.Browser.Version
+MobileDeviceModel: @HttpContext.Current.ApplicationInstance.Request.Browser.MobileDeviceModel
+MobileDeviceManufacturer: @HttpContext.Current.ApplicationInstance.Request.Browser.MobileDeviceManufacturer
+Platform: @HttpContext.Current.ApplicationInstance.Request.Browser.Platform
+UserAgent: @HttpContext.Current.ApplicationInstance.Request.UserAgent
+UserHostAddress: @HttpContext.Current.ApplicationInstance.Request.UserHostAddress
+-->
 </body>
 </html>

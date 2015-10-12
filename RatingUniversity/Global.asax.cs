@@ -17,6 +17,28 @@ namespace RatingUniversity
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Application_AcquireRequestState(object sender, EventArgs e)
+        {
+            var handler = Context.Handler as MvcHandler;
+            var routeData = handler != null ? handler.RequestContext.RouteData : null;
+            var routeCulture = routeData != null ? routeData.Values["culture"].ToString() : null;
+            var languageCookie = HttpContext.Current.Request.Cookies["lang"];
+            var userLanguages = HttpContext.Current.Request.UserLanguages;
+
+            // Set the Culture based on a route, a cookie or the browser settings,
+            // or default value if something went wrong
+            var cultureInfo = new System.Globalization.CultureInfo(
+                routeCulture ?? (languageCookie != null
+                   ? languageCookie.Value
+                   : userLanguages != null
+                       ? userLanguages[0]
+                       : "ru")
+            );
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture(cultureInfo.Name);
+        }
+
         protected void Application_Error()
         {
             /*на случай не обработанных исключений*/
