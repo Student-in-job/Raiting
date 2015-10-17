@@ -5,17 +5,16 @@
 
 <h2>Universitetlar reytingi</h2>
 
-<h3>Download File</h3>
 
-<a href="/Jadval11/Download">Yuklab olish</a>
+				  	<a href="/Jadval11/Download">Загрузить шаблон</a>
 
 
-<h3>Upload File</h3>
+				  	<h3>Прикрепить файл</h3>
 
 @using (Html.BeginForm("Upload", "Jadval11", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 	<input type="file" name="files" />
-	<input type="submit" name="Submit" id="Submit" value="Upload" />
+	<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
 }
 
 @if (ViewBag.bor == true)

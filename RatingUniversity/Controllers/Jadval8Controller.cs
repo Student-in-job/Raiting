@@ -32,9 +32,9 @@ namespace RatingUniversity.Controllers
 		}
 		public FileResult Download()
 		{
-			string filename = Server.MapPath("~/Files/table6.xls");
+			string filename = Server.MapPath("~/Files/table8.xls");
 			byte[] fileBytes = System.IO.File.ReadAllBytes(filename);
-			string client_fileName = "table6.xls";
+			string client_fileName = "table8.xls";
 			return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, client_fileName);
 		}
 
@@ -52,7 +52,12 @@ namespace RatingUniversity.Controllers
 					SetFileDetails(f, out fileName, out filepath, out fileExtension);
 					if (fileExtension == ".xls" || fileExtension == ".xlsx")
 					{
-						string savedExcelFiles = Server.MapPath("~/Files/Upload/") + fileName;
+						//Save the uploaded file to the application folder.
+						string yil = DateTime.Now.Year.ToString();
+						string ID_upl = "24";
+						string savepath = Server.MapPath("~/Files/Upload/") + yil + "/" + ID_upl + "/";
+						Directory.CreateDirectory(savepath);
+						string savedExcelFiles = savepath + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
 						f.SaveAs(savedExcelFiles);
 						ReadDataFromExcelFiles(savedExcelFiles);
 					}
@@ -62,7 +67,7 @@ namespace RatingUniversity.Controllers
 					}
 				}
 			}
-			return RedirectToAction("Index", "Jadval6");
+			return RedirectToAction("Index", "Jadval8");
 		}
 
 
@@ -84,14 +89,20 @@ namespace RatingUniversity.Controllers
 			var ds = new DataSet();
 			adapter.Fill(ds, "T1");
 			DataTable data = ds.Tables["T1"];
+			GetExcelData_Jadval8(data, 1);//1-professor, 2-student
 
-			GetExcelData_Jadval8(data);
+			var adapter_s = new OleDbDataAdapter("SELECT * FROM [List2$]", connectionString);
+			var ds_s = new DataSet();
+			adapter_s.Fill(ds, "T2");
+			DataTable data_s = ds.Tables["T2"];
+
+			GetExcelData_Jadval8(data_s, 2);//1-professor, 2-student
 		}
 
-		private static void GetExcelData_Jadval8(DataTable data)
+		private static void GetExcelData_Jadval8(DataTable data, int profstud)
 		{
 			List<Jadval8> uploadExl = new List<Jadval8>();
-			for (int i = 4; i < data.Rows.Count - 6; i++)
+			for (int i = 4; i < data.Rows.Count - 7; i++)
 			{
 				Jadval8 NewUpload = new Jadval8();
 				NewUpload.FullName = Convert.ToString(data.Rows[i][2]);
@@ -99,12 +110,11 @@ namespace RatingUniversity.Controllers
 				NewUpload.Talim_yonalish = Convert.ToString(data.Rows[i][4]);
 				NewUpload.Loyiha_nomi = Convert.ToString(data.Rows[i][5]);
 				NewUpload.Konferensiya_nomi = Convert.ToString(data.Rows[i][6]);
-				NewUpload.Student_oqituvchi = Convert.ToInt32(data.Rows[i][7]);///???????????????? jadvalda yo'q!!!
+				NewUpload.Student_oqituvchi = profstud;
 				NewUpload.Asos = Convert.ToString(data.Rows[i][1]);
 				//NewUpload.Asos_fayl = Convert.ToString(data.Rows[i][8]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
-
-				
+				NewUpload.UniversityId = 24;
 
 				uploadExl.Add(NewUpload);
 			}
@@ -112,7 +122,7 @@ namespace RatingUniversity.Controllers
 			using (TablesContext db = new TablesContext())
 			{
 				int yil = Int32.Parse(DateTime.Now.Year.ToString());
-				IQueryable<Jadval8> deleteRows = db.Jadval8.Where(x => x.Year == yil);
+				IQueryable<Jadval8> deleteRows = db.Jadval8.Where(x => x.Year == yil).Where(x=> x.Student_oqituvchi == profstud);
 				foreach (var row in deleteRows)
 				{
 					db.Jadval8.Remove(row);

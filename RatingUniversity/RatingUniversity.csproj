@@ -162,11 +162,16 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Classes\Classes.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Jadval19Controller.cs" />
+    <Compile Include="Controllers\Jadval1Controller.cs" />
     <Compile Include="Controllers\Jadval10Controller.cs" />
     <Compile Include="Controllers\Jadval11Controller.cs" />
     <Compile Include="Controllers\Jadval18Controller.cs" />
-    <Compile Include="Controllers\Jadval1Controller.cs" />
+    <Compile Include="Controllers\Jadval1_7Controller.cs" />
+    <Compile Include="Controllers\Jadval20Controller.cs" />
+    <Compile Include="Controllers\Jadval21Controller.cs" />
     <Compile Include="Controllers\Jadval2Controller.cs" />
+    <Compile Include="Controllers\Jadval2_1Controller.cs" />
     <Compile Include="Controllers\Jadval5Controller.cs" />
     <Compile Include="Controllers\Jadval6Controller.cs" />
     <Compile Include="Controllers\Jadval7Controller.cs" />
@@ -534,8 +539,11 @@
     <Content Include="Views\Jadval7\Index.cshtml" />
     <Content Include="Views\Jadval8\Index.cshtml" />
     <Content Include="Views\Jadval9\Index.cshtml" />
-    <Content Include="Views\Jadval1\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutSideMenu.cshtml" />
+    <Content Include="Views\Jadval19\Index.cshtml" />
+    <Content Include="Views\Jadval20\Index.cshtml" />
+    <Content Include="Views\Jadval21\Index.cshtml" />
+    <Content Include="Views\Jadval1_7\Index.cshtml" />
+    <Content Include="Views\Jadval2_1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

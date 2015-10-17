@@ -152,6 +152,7 @@ namespace RatingUniversity.Models
 		public String AsosFile { get; set; }
 		public Int16 Year { get; set; }
 		public Int32 UniversityId { get; set; }
+		public Int32 TanlovTuri { get; set; }//1-OTM yo'nalishiga mos xalqaro,2 - OTM yo'nalishiga mos resp,3 - OTM yo'nalishiga mosmas xalqaro, 4 - OTM yo'nalishiga mosmas resp
 	}
 	public class Jadval2
 	{
