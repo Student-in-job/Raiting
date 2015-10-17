@@ -97,8 +97,13 @@ py float default 0, -- степень магистра зарубежного вуза
 n1 float default 0, -- количество вопросов по качеству содержани€ и новизне материалов учебных зан€тий
 n2 float default 0, -- количество вопросов по качеству форм организации уч.зан€тий и методов преподавани€ спец.дисциплин
 n3 float default 0, -- количество вопросов по качеству и объективности системы оценивани€ знаний студентов
-n4 float default 0, -- количество оценок на 4
-n5 float default 0, -- количество оценок на 5
+n41 float default 0, -- количество оценок на 4 по качеству содержани€ и новизне материалов учебных зан€тий
+n51 float default 0, -- количество оценок на 5 по качеству содержани€ и новизне материалов учебных зан€тий
+n42 float default 0, -- количество оценок на 4 по качеству форм организации уч.зан€тий и методов преподавани€ спец.дисциплин
+n52 float default 0, -- количество оценок на 5 по качеству форм организации уч.зан€тий и методов преподавани€ спец.дисциплин
+n43 float default 0, -- количество оценок на 4 по качеству и объективности системы оценивани€ знаний студентов
+n53 float default 0, -- количество оценок на 5 по качеству и объективности системы оценивани€ знаний студентов
+i2 float default 0, -- показатель I2 ¬”«а
 t float default 0, -- общее количество учавствовавших в опросе
 --i3
 s1 float default 0, -- количество учебников
@@ -118,6 +123,7 @@ p6_1 float default 0, -- количество студентов, учавствовавших в международных ко
 k1 float default 0, --количество учебных курсов на ин.€зыке
 k float default 0, -- общее количество учебных курсов
 --i7
+ty float default 0, -- общее количество ппс, участвовавшего на тестировании
 p7 float default 0, -- общее количество ппс, удовлетворительно сдавшего тесты по ин.€зыку
 p8 float default 0, -- общее количество ппс, удовлетворительно сдавшего тесты по икт
 --i8
@@ -231,3 +237,122 @@ INSERT INTO raiting (id_university,year,p,px,py,t,s1,s2,s3,p1,p2,p3,p4,p5,p5_1,p
 INSERT INTO raiting (id_university,year,p,px,py,t,s1,s2,s3,p1,p2,p3,p4,p5,p5_1,p6,p6_1,k,k1,p7,p8,pz,p9,tsi,tsti,r,r1,p10,p11,p1_2,p1_3,p1_4,p1_5,s4,s5,s7,s8,s9,d,z,v,t4,t5,t6,i,t7,t8,ya,kl,k2,m,l) VALUES (55,2013,678,3,0,76,0,1,0,6638,1,69,11,12,7,0,0,830,0,100,266,1,12,0,1,80,50.40,1332,1633,0,9,0,0,0,96,19,11,108,1,138,1,53.57,111.77,302.71,4,6,12,15,0,2302,2302,2552);
 INSERT INTO raiting (id_university,year,p,px,py,t,s1,s2,s3,p1,p2,p3,p4,p5,p5_1,p6,p6_1,k,k1,p7,p8,pz,p9,tsi,tsti,r,r1,p10,p11,p1_2,p1_3,p1_4,p1_5,s4,s5,s7,s8,s9,d,z,v,t4,t5,t6,i,t7,t8,ya,kl,k2,m,l) VALUES (56,2013,611,0,1,113,0,1,0,5502,0,6,0,0,0,1,0,576,0,34,172,0,7,0,1,93,64.40,1051,1412,0,4,0,0,80,228,14,3,39,0,161,1,0.00,13.00,73.45,1,0,0,4,0,1782,1163,2104);
 INSERT INTO raiting (id_university,year,p,px,py,t,s1,s2,s3,p1,p2,p3,p4,p5,p5_1,p6,p6_1,k,k1,p7,p8,pz,p9,tsi,tsti,r,r1,p10,p11,p1_2,p1_3,p1_4,p1_5,s4,s5,s7,s8,s9,d,z,v,t4,t5,t6,i,t7,t8,ya,kl,k2,m,l) VALUES (57,2013,480,1,0,103,1,2,0,5141,0,0,0,13,4,2,0,454,0,1,106,0,8,0,1,30,52.20,832,1126,0,0,0,0,22,101,16,1,38,0,120,0,0.00,49.75,127.14,1,0,0,0,0,2010,1756,2260);
+
+
+
+update raiting set i2 =  92.00 where id_university =  1 ;
+update raiting set i2 =  89.00 where id_university =  2 ;
+update raiting set i2 =  92.70 where id_university =  3 ;
+update raiting set i2 =  93.90 where id_university =  4 ;
+update raiting set i2 =  91.90 where id_university =  5 ;
+update raiting set i2 =  89.70 where id_university =  6 ;
+update raiting set i2 =  95.70 where id_university =  7 ;
+update raiting set i2 =  88.60 where id_university =  8 ;
+update raiting set i2 =  95.50 where id_university =  9 ;
+update raiting set i2 =  91.80 where id_university =  10 ;
+update raiting set i2 =  88.40 where id_university =  11 ;
+update raiting set i2 =  93.40 where id_university =  12 ;
+update raiting set i2 =  88.20 where id_university =  13 ;
+update raiting set i2 =  85.10 where id_university =  14 ;
+update raiting set i2 =  93.20 where id_university =  15 ;
+update raiting set i2 =  91.20 where id_university =  16 ;
+update raiting set i2 =  93.50 where id_university =  17 ;
+update raiting set i2 =  97.60 where id_university =  18 ;
+update raiting set i2 =  88.70 where id_university =  19 ;
+update raiting set i2 =  99.60 where id_university =  20 ;
+update raiting set i2 =  94.20 where id_university =  21 ;
+update raiting set i2 =  98.00 where id_university =  22 ;
+update raiting set i2 =  93.10 where id_university =  23 ;
+update raiting set i2 =  93.30 where id_university =  24 ;
+update raiting set i2 =  92.70 where id_university =  25 ;
+update raiting set i2 =  89.00 where id_university =  26 ;
+update raiting set i2 =  88.10 where id_university =  27 ;
+update raiting set i2 =  94.70 where id_university =  28 ;
+update raiting set i2 =  87.40 where id_university =  29 ;
+update raiting set i2 =  95.40 where id_university =  30 ;
+update raiting set i2 =  93.50 where id_university =  31 ;
+update raiting set i2 =  93.20 where id_university =  32 ;
+update raiting set i2 =  91.70 where id_university =  33 ;
+update raiting set i2 =  89.70 where id_university =  34 ;
+update raiting set i2 =  86.20 where id_university =  35 ;
+update raiting set i2 =  89.70 where id_university =  36 ;
+update raiting set i2 =  88.00 where id_university =  37 ;
+update raiting set i2 =  88.20 where id_university =  38 ;
+update raiting set i2 =  88.50 where id_university =  39 ;
+update raiting set i2 =  89.90 where id_university =  40 ;
+update raiting set i2 =  96.00 where id_university =  41 ;
+update raiting set i2 =  99.20 where id_university =  42 ;
+update raiting set i2 =  89.60 where id_university =  43 ;
+update raiting set i2 =  92.60 where id_university =  44 ;
+update raiting set i2 =  94.30 where id_university =  45 ;
+update raiting set i2 =  92.00 where id_university =  46 ;
+update raiting set i2 =  97.70 where id_university =  47 ;
+update raiting set i2 =  92.40 where id_university =  48 ;
+update raiting set i2 =  90.90 where id_university =  49 ;
+update raiting set i2 =  96.60 where id_university =  50 ;
+update raiting set i2 =  92.60 where id_university =  51 ;
+update raiting set i2 =  92.80 where id_university =  52 ;
+update raiting set i2 =  82.50 where id_university =  53 ;
+update raiting set i2 =  92.30 where id_university =  54 ;
+update raiting set i2 =  95.30 where id_university =  55 ;
+update raiting set i2 =  93.50 where id_university =  56 ;
+update raiting set i2 =  89.50 where id_university =  57 ;
+
+UPDATE raiting SET ty =  510 WHERE id_university =  1 ;
+UPDATE raiting SET ty =  187 WHERE id_university =  2 ;
+UPDATE raiting SET ty =  471 WHERE id_university =  3 ;
+UPDATE raiting SET ty =  225 WHERE id_university =  4 ;
+UPDATE raiting SET ty =  407 WHERE id_university =  5 ;
+UPDATE raiting SET ty =  386 WHERE id_university =  6 ;
+UPDATE raiting SET ty =  190 WHERE id_university =  7 ;
+UPDATE raiting SET ty =  25 WHERE id_university =  8 ;
+UPDATE raiting SET ty =  225 WHERE id_university =  9 ;
+UPDATE raiting SET ty =  274 WHERE id_university =  10 ;
+UPDATE raiting SET ty =  354 WHERE id_university =  11 ;
+UPDATE raiting SET ty =  202 WHERE id_university =  12 ;
+UPDATE raiting SET ty =  156 WHERE id_university =  13 ;
+UPDATE raiting SET ty =  563 WHERE id_university =  14 ;
+UPDATE raiting SET ty =  437 WHERE id_university =  15 ;
+UPDATE raiting SET ty =  286 WHERE id_university =  16 ;
+UPDATE raiting SET ty =  420 WHERE id_university =  17 ;
+UPDATE raiting SET ty =  199 WHERE id_university =  18 ;
+UPDATE raiting SET ty =  332 WHERE id_university =  19 ;
+UPDATE raiting SET ty =  24 WHERE id_university =  20 ;
+UPDATE raiting SET ty =  361 WHERE id_university =  21 ;
+UPDATE raiting SET ty =  270 WHERE id_university =  22 ;
+UPDATE raiting SET ty =  124 WHERE id_university =  23 ;
+UPDATE raiting SET ty =  728 WHERE id_university =  24 ;
+UPDATE raiting SET ty =  424 WHERE id_university =  25 ;
+UPDATE raiting SET ty =  304 WHERE id_university =  26 ;
+UPDATE raiting SET ty =  243 WHERE id_university =  27 ;
+UPDATE raiting SET ty =  529 WHERE id_university =  28 ;
+UPDATE raiting SET ty =  179 WHERE id_university =  29 ;
+UPDATE raiting SET ty =  467 WHERE id_university =  30 ;
+UPDATE raiting SET ty =  273 WHERE id_university =  31 ;
+UPDATE raiting SET ty =  841 WHERE id_university =  32 ;
+UPDATE raiting SET ty =  292 WHERE id_university =  33 ;
+UPDATE raiting SET ty =  285 WHERE id_university =  34 ;
+UPDATE raiting SET ty =  456 WHERE id_university =  35 ;
+UPDATE raiting SET ty =  221 WHERE id_university =  36 ;
+UPDATE raiting SET ty =  696 WHERE id_university =  37 ;
+UPDATE raiting SET ty =  710 WHERE id_university =  38 ;
+UPDATE raiting SET ty =  510 WHERE id_university =  39 ;
+UPDATE raiting SET ty =  184 WHERE id_university =  40 ;
+UPDATE raiting SET ty =  311 WHERE id_university =  41 ;
+UPDATE raiting SET ty =  392 WHERE id_university =  42 ;
+UPDATE raiting SET ty =  257 WHERE id_university =  43 ;
+UPDATE raiting SET ty =  45 WHERE id_university =  44 ;
+UPDATE raiting SET ty =  591 WHERE id_university =  45 ;
+UPDATE raiting SET ty =  551 WHERE id_university =  46 ;
+UPDATE raiting SET ty =  178 WHERE id_university =  47 ;
+UPDATE raiting SET ty =  451 WHERE id_university =  48 ;
+UPDATE raiting SET ty =  243 WHERE id_university =  49 ;
+UPDATE raiting SET ty =  424 WHERE id_university =  50 ;
+UPDATE raiting SET ty =  206 WHERE id_university =  51 ;
+UPDATE raiting SET ty =  260 WHERE id_university =  52 ;
+UPDATE raiting SET ty =  490 WHERE id_university =  53 ;
+UPDATE raiting SET ty =  127 WHERE id_university =  54 ;
+UPDATE raiting SET ty =  411 WHERE id_university =  55 ;
+UPDATE raiting SET ty =  397 WHERE id_university =  56 ;
+UPDATE raiting SET ty =  181 WHERE id_university =  57 ;
+

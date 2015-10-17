@@ -11,6 +11,7 @@ using System.Data.OleDb;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Net;
+using RatingUniversity.Models;
 //using System.Threading.Tasks;
 //using Microsoft.Office.Interop.Excel;
 
@@ -26,7 +27,6 @@ namespace RatingUniversity.Controllers
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
 			var list = db.Jadval1.Where(pr => pr.Year == yil).OrderBy(j => j.Year).OrderBy(j => j.Reyting);
 			ViewBag.bor = true;
-			if (list.Count() == 0)
 				ViewBag.bor = false;
 			return View(list.ToList());
         }

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using RatingUniversity;
 using RatingUniversity.Classes;
+using RatingUniversity.Models;
 
 namespace RatingUniversity.Controllers
 {
@@ -43,7 +44,7 @@ namespace RatingUniversity.Controllers
             this.CreateActive(1);
             ViewBag.active = this.active;
             ViewBag.Title = "Уровень качества преподавания (по результатам опроса студентов)";
-            return View(db.I2_uroven_kachestva_prepodavaniya.OrderByDescending(model => model.I2).ToList());
+            return View(db.I2_uroven_kachestva_prepodavaniya.OrderByDescending(model => model.i2).ToList());
         }
 
         // GET: /QualityOfEducationalWork/NumberOfEducationMatherials
@@ -118,7 +119,7 @@ namespace RatingUniversity.Controllers
         }
 
         // GET: /Dolya_PPS/Details/5
-        public ActionResult Details(int? id)
+        /*public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -130,7 +131,7 @@ namespace RatingUniversity.Controllers
                 return HttpNotFound();
             }
             return View(i1_dolya_pps_s_uchenoy_stepenyu);
-        }
+        }*/
 
         // GET: /Dolya_PPS/Create
         public ActionResult Create()
@@ -141,7 +142,7 @@ namespace RatingUniversity.Controllers
         // POST: /Dolya_PPS/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        /*[HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include="ID,name,I11,I12,I1,YEAR")] I1_dolya_pps_s_uchenoy_stepenyu i1_dolya_pps_s_uchenoy_stepenyu)
         {
@@ -153,7 +154,7 @@ namespace RatingUniversity.Controllers
             }
 
             return View(i1_dolya_pps_s_uchenoy_stepenyu);
-        }
+        }*/
 
         protected override void Dispose(bool disposing)
         {

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RatingUniversity.I3_kolichestvo_uchebnikov_i_posobiy>
+﻿@model IEnumerable<RatingUniversity.Models.I3_kolichestvo_uchebnikov_i_posobiy>
 
 @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
 
@@ -10,6 +10,7 @@
         <th rowspan="2">Название высшего учебного заведения</th>
         <th colspan="3">Количество</th>
         <th rowspan="2">Общее</th>
+        <th rowspan="2">Показатель общее</th>
         <th rowspan="2">Год проведения рейтинга</th>
     </tr>
     <tr>
@@ -40,6 +41,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.I3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mark)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.YEAR)

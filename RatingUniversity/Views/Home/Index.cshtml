@@ -1,10 +1,11 @@
-﻿@{
+﻿@*model IEnumerable<RatingUniversity.Models.>*@
+@{
     ViewBag.Title = @RatingUniversity.Langs.Resource.HomePageTitle;
 }
 
 <div class="jumbotron">
     <h1>@RatingUniversity.Langs.Resource.HomePageHeader</h1>
-    <p class="lead">@RatingUniversity.Langs.Resource.HomePageHeaderInfo</p>
+    <p class="lead" style="margin-bottom: 2em !important; ">@RatingUniversity.Langs.Resource.HomePageHeaderInfo</p>
     <div class="clock"></div>
     <div class="message"></div>
     <!--<p><a href="" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>-->
@@ -12,61 +13,67 @@
 
 <div class="row">
     <div class="col-md-8">
-        <h2>@RatingUniversity.Langs.Resource.HomePageRatingHeader</h2>
+        <h2>@RatingUniversity.Langs.Resource.HomePageRatingHeader @ViewBag.year </h2>
+<!--
         <p>
             @RatingUniversity.Langs.Resource.HomePageRatingHeaderInfo
         </p>
-        <table class="table table-striped table-hover ">
-            <thead>
-                <tr>
-                    <th>№</th>
-                    <th>@RatingUniversity.Langs.Resource.HomePageChanges</th>
-                    <th>@RatingUniversity.Langs.Resource.HomePageUniversity</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="danger text-danger">
-                    <td><h5><strong>1<strong></h5></td>
-                    <td><h5><strong>▲ (+2)<strong></h5></td>
-                    <td><h5><strong>Column content<strong></h5></td>
-                </tr>
-                <tr class="info text-primary">
-                    <td><h5>2</h5></td>
-                    <td><h5>▼ (-1)</h5></td>
-                    <td><h5>Column content</h5></td>
-                </tr>
-                <tr class="success text-success">
-                    <td><h6>3</h6></td>
-                    <td><h6>▼ (-1)</h6></td>
-                    <td><h6>Column content</h6></td>
-                </tr>
-                <tr class="warning text-warning">
-                    <td>4</td>
-                    <td>▲ (+1)</td>
-                    <td>Column content</td>
-                </tr>
-                <tr class="active text-muted">
-                    <td>5</td>
-                    <td>▼ (-1)</td>
-                    <td>Column content</td>
-                </tr>
-                <tr class="active text-muted">
-                    <td>6</td>
-                    <td>▼ (-1)</td>
-                    <td>Column content</td>
-                </tr>
-                <tr class="active text-muted">
-                    <td>7</td>
-                    <td>▼ (-1)</td>
-                    <td>Column content</td>
-                </tr>
-            </tbody>
-        </table>
-        <p><a class="btn btn-default" href="#Getting started">@RatingUniversity.Langs.Resource.ButtonLearnMore &raquo;</a></p>
+-->
+@*
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>@RatingUniversity.Langs.Resource.HomePageChanges</th>
+                <th>@RatingUniversity.Langs.Resource.HomePageUniversity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="danger text-danger">
+                <td><h5><strong>1<strong></h5></td>
+                <td><h5><strong>▲ (+2)<strong></h5></td>
+                <td><h5><strong>Column content<strong></h5></td>
+            </tr>
+            <tr class="info text-primary">
+                <td><h5>2</h5></td>
+                <td><h5>▼ (-1)</h5></td>
+                <td><h5>Column content</h5></td>
+            </tr>
+            <tr class="success text-success">
+                <td><h6>3</h6></td>
+                <td><h6>▼ (-1)</h6></td>
+                <td><h6>Column content</h6></td>
+            </tr>
+            <tr class="warning text-warning">
+                <td>4</td>
+                <td>▲ (+1)</td>
+                <td>Column content</td>
+            </tr>
+            <tr class="active text-muted">
+                <td>5</td>
+                <td>▼ (-1)</td>
+                <td>Column content</td>
+            </tr>
+            <tr class="active text-muted">
+                <td>6</td>
+                <td>▼ (-1)</td>
+                <td>Column content</td>
+            </tr>
+            <tr class="active text-muted">
+                <td>7</td>
+                <td>▼ (-1)</td>
+                <td>Column content</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a class="btn btn-default" href="#Getting started">@RatingUniversity.Langs.Resource.ButtonLearnMore &raquo;</a></p>
+*@
     </div>
+    @*
     <div class="col-md-4">
         <h2>@RatingUniversity.Langs.Resource.HomePageChartHeader</h2>
         <p>@RatingUniversity.Langs.Resource.HomePageChartHeaderInfo</p>
         <p><a class="btn btn-default" href="#Get more information">@RatingUniversity.Langs.Resource.ButtonLearnMore &raquo;</a></p>
     </div>
+    *@
 </div>
