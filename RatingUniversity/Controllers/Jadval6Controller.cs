@@ -54,7 +54,12 @@ namespace RatingUniversity.Controllers
 					SetFileDetails(f, out fileName, out filepath, out fileExtension);
 					if (fileExtension == ".xls" || fileExtension == ".xlsx")
 					{
-						string savedExcelFiles = Server.MapPath("~/Files/Upload/") + fileName;
+						//Save the uploaded file to the application folder.
+						string yil = DateTime.Now.Year.ToString();
+						string ID_upl = "24";
+						string savepath = Server.MapPath("~/Files/Upload/") + yil + "/" + ID_upl + "/";
+						Directory.CreateDirectory(savepath);
+						string savedExcelFiles = savepath + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
 						f.SaveAs(savedExcelFiles);
 						ReadDataFromExcelFiles(savedExcelFiles);
 					}
@@ -103,6 +108,7 @@ namespace RatingUniversity.Controllers
 				NewUpload.Asos = Convert.ToString(data.Rows[i][5]);
 				//NewUpload.Asos_fayl = Convert.ToString(data.Rows[i][7]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
+				NewUpload.UniversityId = 24;
 
 				uploadExl.Add(NewUpload);
 			}

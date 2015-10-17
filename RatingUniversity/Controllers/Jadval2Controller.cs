@@ -50,7 +50,12 @@ namespace RatingUniversity.Controllers
 					SetFileDetails(f, out fileName, out filepath, out fileExtension);
 					if (fileExtension == ".xls" || fileExtension == ".xlsx")
 					{
-						string savedExcelFiles = Server.MapPath("~/Files/Upload/") + fileName;
+						//Save the uploaded file to the application folder.
+						string yil = DateTime.Now.Year.ToString();
+						string ID_upl = "24";
+						string savepath = Server.MapPath("~/Files/Upload/") + yil + "/" + ID_upl + "/";
+						Directory.CreateDirectory(savepath);
+						string savedExcelFiles = savepath + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
 						f.SaveAs(savedExcelFiles);
 						ReadDataFromExcelFiles(savedExcelFiles);
 					}
@@ -89,11 +94,11 @@ namespace RatingUniversity.Controllers
 		private static void GetExcelData_Jadval2(DataTable data)
 		{
 			List<Jadval2> uploadExl = new List<Jadval2>();
-			for (int i = 4; i < data.Rows.Count - 5; i++)
+			for (int i = 5; i < data.Rows.Count - 5; i++)
 			{
 				Jadval2 NewUpload = new Jadval2();
 				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
-				//NewUpload.Jadval1_Id = Convert.ToString(data.Rows[i][1]);
+				NewUpload.Jadval1_Id = Convert.ToInt32(data.Rows[i][2]);//????????
 				NewUpload.Phd_seriya = Convert.ToString(data.Rows[i][3]);
 				NewUpload.Phd_nomer = Convert.ToString(data.Rows[i][4]);
 				NewUpload.Mag_seriya = Convert.ToString(data.Rows[i][5]);
@@ -101,6 +106,7 @@ namespace RatingUniversity.Controllers
 				NewUpload.Speciality = Convert.ToString(data.Rows[i][7]);
 				NewUpload.Ishga_qabul_buyruq = Convert.ToString(data.Rows[i][8]);				
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
+				NewUpload.UniversityId = 24;
 
 				uploadExl.Add(NewUpload);
 			}

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<RatingUniversity.Models.Jadval20>
+
+@{
+	Layout = "~/Views/Shared/_LayoutSideMenu.cshtml";
+	ViewBag.Title = "Jadval20";
+}
+
+<h2>Universitetlar reytingi</h2>
+
+
+				  	<a href="/Jadval20/Download">Загрузить шаблон</a>
+
+
+				  	<h3> файл</h3>
+@using (Html.BeginForm("Upload", "Jadval20", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+	<input type="file" name="files" />
+	<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+}
+
+@if (ViewBag.bor == true)
+{
+	<h3>Ma'lumotlar:</h3>
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.FullName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Talim_yonalish_shifri)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Talim_yonalish_nomi)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Ish_nomi)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Ish_lavozimi)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Asos_fayl)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Mag_otm)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Year)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UniversityId)
+			</th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.FullName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Talim_yonalish_shifri)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Talim_yonalish_nomi)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Ish_nomi)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Ish_lavozimi)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Asos_fayl)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Mag_otm)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Year)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UniversityId)
+				</td>
+			</tr>
+		}
+
+	</table>
+}

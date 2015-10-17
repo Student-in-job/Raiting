@@ -1,0 +1,63 @@
+﻿@model IEnumerable<RatingUniversity.Models.Jadval_AKTdaraja_1_7>
+
+@{
+	Layout = "~/Views/Shared/_LayoutSideMenu.cshtml";
+	ViewBag.Title = "Jadval1_7";
+}
+
+<h2>Universitetlar reytingi</h2>
+
+
+<a href="/Jadval1_7/Download">Загрузить шаблон</a>
+
+				  	<h3>Прикрепить файл</h3>
+@using (Html.BeginForm("Upload", "Jadval1_7", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+	<input type="file" name="files" />
+	<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+}
+
+@if (ViewBag.bor == true)
+{
+	<h3>Ma'lumotlar:</h3>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.P)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UniversityId)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.P)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UniversityId)
+        </td>
+    </tr>
+}
+
+</table>
+}

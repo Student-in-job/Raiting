@@ -33,9 +33,9 @@ namespace RatingUniversity.Controllers
 
 		public FileResult Download()
 		{
-			string filename = Server.MapPath("~/Files/table6.xls");
+			string filename = Server.MapPath("~/Files/table11.xls");
 			byte[] fileBytes = System.IO.File.ReadAllBytes(filename);
-			string client_fileName = "table6.xls";
+			string client_fileName = "table11.xls";
 			return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, client_fileName);
 		}
 
@@ -53,7 +53,12 @@ namespace RatingUniversity.Controllers
 					SetFileDetails(f, out fileName, out filepath, out fileExtension);
 					if (fileExtension == ".xls" || fileExtension == ".xlsx")
 					{
-						string savedExcelFiles = Server.MapPath("~/Files/Upload/") + fileName;
+						//Save the uploaded file to the application folder.
+						string yil = DateTime.Now.Year.ToString();
+						string ID_upl = "24";
+						string savepath = Server.MapPath("~/Files/Upload/") + yil + "/" + ID_upl + "/";
+						Directory.CreateDirectory(savepath);
+						string savedExcelFiles = savepath + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
 						f.SaveAs(savedExcelFiles);
 						ReadDataFromExcelFiles(savedExcelFiles);
 					}
@@ -63,7 +68,7 @@ namespace RatingUniversity.Controllers
 					}
 				}
 			}
-			return RedirectToAction("Index", "Jadval6");
+			return RedirectToAction("Index", "Jadval11");
 		}
 
 
@@ -106,6 +111,7 @@ namespace RatingUniversity.Controllers
 				NewUpload.OquvmajmuaName = Convert.ToString(data.Rows[i][9]);
 				NewUpload.OquvmajmuaCertificate = Convert.ToString(data.Rows[i][10]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
+				NewUpload.UniversityId = 24;
 
 				uploadExl.Add(NewUpload);
 			}
