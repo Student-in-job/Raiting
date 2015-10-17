@@ -261,21 +261,13 @@
     <Compile Include="I9_dolya_pps_prepodayushego_v_sspo.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
+    <Compile Include="Langs\Resource.Designer.cs" />
+    <Compile Include="Langs\Resource.uz.Designer.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\TablesModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\ResourceRu.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceRu.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\ResourceUz.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceUz.resx</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -389,7 +381,7 @@
     <Content Include="Views\QualityOfEducationalWork\ForeignLanguage.cshtml" />
     <Content Include="Views\QualityOfEducationalWork\ForeignLecturesParticipants.cshtml" />
     <Content Include="Views\QualityOfEducationalWork\SSPOTraining.cshtml" />
-    <Content Include="Views\Jadval1\Index.cshtml" />
+    <Content Include="Views\DownloadFile\Index.cshtml" />
     <Content Include="Views\Jadval10\Index.cshtml" />
     <Content Include="Views\Jadval11\Index.cshtml" />
     <Content Include="Views\Jadval18\Index.cshtml" />
@@ -399,7 +391,6 @@
     <Content Include="Views\Jadval7\Index.cshtml" />
     <Content Include="Views\Jadval8\Index.cshtml" />
     <Content Include="Views\Jadval9\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutSideMenu.cshtml" />
     <Content Include="Views\Jadval19\Index.cshtml" />
     <Content Include="Views\Jadval20\Index.cshtml" />
     <Content Include="Views\Jadval21\Index.cshtml" />
@@ -423,14 +414,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\ResourceRu.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceRu.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ResourceUz.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceUz.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Langs\Resource.resx" />
+    <EmbeddedResource Include="Langs\Resource.uz.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
