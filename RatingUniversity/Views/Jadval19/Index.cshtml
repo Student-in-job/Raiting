@@ -1,113 +1,140 @@
-﻿@model IEnumerable<RatingUniversity.Models.Jadval19>
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<RatingUniversity.Models.Jadval19>
+	<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
-@{
-	Layout = "~/Views/Shared/_LayoutSideMenu.cshtml";
-	ViewBag.Title = "Jadval19";
-}
+	@{
+		Layout = "~/Views/Shared/_LayoutSideMenu.cshtml";
+		ViewBag.Title = "Jadval19";
+	}
 
-<h2>Universitetlar reytingi</h2>
+	<h2>Universitetlar reytingi</h2>
 
-				  	<a href="/Jadval19/Download">Загрузить шаблон</a>
+	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
+	{
+		<a href="/Jadval19/Download">Загрузить шаблон</a>
+		<h3>Прикрепить файл</h3>
 
-
-				  	<h3> файл</h3>
-
-@using (Html.BeginForm("Upload", "Jadval19", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-	<input type="file" name="files" />
-	<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
-}
-
-@if (ViewBag.bor == true)
-{
-	<h3>Ma'lumotlar:</h3>
-	<table class="table">
-		<tr>
-			<th>
-				@Html.DisplayNameFor(model => model.FullName)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.TanlovTuri)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.TanlovName)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Tanlov_joy_date)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.SubjectName)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.EgallaganPosition)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.DiplomSeria)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.DiplomNumber)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.SovrinName)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Description)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.AsosFile)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Year)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.UniversityId)
-			</th>
-		</tr>
-
-		@foreach (var item in Model)
+		using (Html.BeginForm("Upload", "Jadval19", FormMethod.Post, new { enctype = "multipart/form-data" }))
 		{
-			<tr>
-				<td>
-					@Html.DisplayFor(modelItem => item.FullName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.TanlovTuri)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.TanlovName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Tanlov_joy_date)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.SubjectName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.EgallaganPosition)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.DiplomSeria)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.DiplomNumber)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.SovrinName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Description)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.AsosFile)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Year)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.UniversityId)
-				</td>
-			</tr>
+			<input type="file" name="files" />
+			<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
 		}
+	}
+	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 1)
+	{
+		<h3>Ma'lumotlarni kiritish uchun vaqtingiz tugadi</h3>
+	}
+	@if (ViewBag.status == 1)
+	{
+		<h3>Ma'lumotlarni tasdiqlangan</h3>
+	}
+	@if (ViewBag.status == 0)
+	{
+		<h3>Ma'lumotlar tasdiqlanmagan</h3>
+	}
+	@if (ViewBag.status == 0 && ViewBag.role == 1)
+	{
+		<a href="/Jadval19/Tasdiqlash/@ViewBag.UniverId">Подтверждать</a>
+	}
+	@if (ViewBag.bor == true)
+	{
+		<h3>Ma'lumotlar:</h3>
+		<table class="table">
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.FullName)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.TanlovTuri)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.TanlovName)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Tanlov_joy_date)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.SubjectName)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.EgallaganPosition)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.DiplomSeria)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.DiplomNumber)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.SovrinName)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Description)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.AsosFile)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Year)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.UniversityId)
+				</th>
+			</tr>
 
-	</table>
-}
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.FullName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.TanlovTuri)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.TanlovName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Tanlov_joy_date)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.SubjectName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.EgallaganPosition)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.DiplomSeria)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.DiplomNumber)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.SovrinName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Description)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.AsosFile)
+						<br />
+						@using (Html.BeginForm("UploadData", "Jadval19", FormMethod.Post, new { enctype = "multipart/form-data" }))
+						{
+							<input type="file" name="files" />
+							<input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.Id)" />
+							<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+						}
+
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Year)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.UniversityId)
+					</td>
+				</tr>
+			}
+
+		</table>
+		@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+	}

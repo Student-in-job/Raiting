@@ -1,0 +1,136 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<RatingUniversity.Models.Jadval32>
+	<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+	@{ Layout = "~/Views/Shared/_LayoutSideMenu.cshtml"; }
+
+	<h2>Список преподавателей ВУЗа</h2>
+
+	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
+	{
+		<a href="/Jadval32/Download">Загрузить шаблон</a>
+		<h3>Прикрепить файл</h3>
+
+		using (Html.BeginForm("Upload", "Jadval32", FormMethod.Post, new { enctype = "multipart/form-data" }))
+		{
+			<input type="file" name="files" />
+			<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+		}
+	}
+	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 1)
+	{
+		<h3>Ma'lumotlarni kiritish uchun vaqtingiz tugadi</h3>
+	}
+	@if (ViewBag.status == 1)
+	{
+		<h3>Ma'lumotlarni tasdiqlangan</h3>
+	}
+	@if (ViewBag.status == 0)
+	{
+		<h3>Ma'lumotlar tasdiqlanmagan</h3>
+	}
+	@if (ViewBag.status == 0 && ViewBag.role == 1)
+	{
+		<a href="/Jadval32/Tasdiqlash/@ViewBag.UniverId">Подтверждать</a>
+	}
+	@if (ViewBag.bor == true)
+	{
+		<h3>Данные:</h3>
+		<table class="table">
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.FullName)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.BirthDate)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Post)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.stavka)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.GraduatedOtm)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Diplom_ixtisoslik)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Diplom_mutaxassislik)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Ilmiy_daraja)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Ilmiy_unvon)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Qaysi_yildan_kafedrada_ishlaydi)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Oxirgi_malaka_oshirgan_yili)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Subjects)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Year)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.UniversityId)
+				</th>
+			</tr>
+
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.FullName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.BirthDate)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Post)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.stavka)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.GraduatedOtm)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Diplom_ixtisoslik)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Diplom_mutaxassislik)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Ilmiy_daraja)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Ilmiy_unvon)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Qaysi_yildan_kafedrada_ishlaydi)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Oxirgi_malaka_oshirgan_yili)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Subjects)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Year)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.UniversityId)
+					</td>
+				</tr>
+			}
+
+		</table>
+		@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+	}

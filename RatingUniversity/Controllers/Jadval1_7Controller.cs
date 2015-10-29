@@ -11,7 +11,7 @@ using System.Data.OleDb;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Net;
-
+using RatingUniversity.Classes;
 namespace RatingUniversity.Controllers
 {
     public class Jadval1_7Controller : Controller
@@ -22,18 +22,68 @@ namespace RatingUniversity.Controllers
 		{
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
+			int UniverId = 24;
 			var list = db.Jadval_AKTdaraja_1_7.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
 			ViewBag.bor = true;
 			if (list.Count() == 0)
 				ViewBag.bor = false;
+
+			int? status_table = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.J1_7).FirstOrDefault();
+			ViewBag.status = status_table;
+			DateTime? status_dt = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
+			ViewBag.status_date = 0;
+			ViewBag.date = status_dt;
+			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
+
+			ViewBag.role = 0;
+			//nuzjno dobavit Yesli (user == podtverjditel) ViewBag.role = 1;
+			ViewBag.UniverId = UniverId;
 			return View(list.ToList());
 		}
 
+		public ActionResult Tasdiqlash(int UniverId = 0)
+		{
+			int yil = Int32.Parse(DateTime.Now.Year.ToString());
+			MonitoringUpdate.Update(0, "J1_7", 1, yil);
+			return RedirectToAction("Index", "Jadval1_7");
+		}
+
+
+
 		public FileResult Download()
 		{
-			string filename = Server.MapPath("~/Files/table1_7.xlsx");
+			string filename_original = Server.MapPath("~/Files/table1_7.xls");
+			string dt = DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss");
+			string filename = Server.MapPath("~/Files/table1_7" + dt + ".xls");
+			System.IO.File.Copy(filename_original, filename);
+
+			OleDbConnection oledbcon = new OleDbConnection(string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 12.0 xml;HDR=No'", filename));
+			TablesContext db = new TablesContext();
+			var list = db.Database.SqlQuery<university>(@"select u.id, u.name, u.id_branch, u.id_region from university u ORDER BY u.name");
+			OleDbCommand MyCommand = new OleDbCommand();
+			oledbcon.Open();
+			MyCommand.Connection = oledbcon;
+			int xi = 4;
+			foreach (var l in list)
+			{
+				string sql = "update [List1$A" + xi.ToString() + ":A" + xi.ToString() + "] set F1=(@param1);";
+				MyCommand.CommandType = CommandType.Text;
+				MyCommand.CommandText = sql;
+				MyCommand.Parameters.Clear();
+				MyCommand.Parameters.Add("param1", OleDbType.Integer).Value = l.id;
+				MyCommand.ExecuteNonQuery();
+				sql = "update [List1$B" + xi.ToString() + ":B" + xi.ToString() + "] set F1=(@param2);";
+				MyCommand.CommandType = CommandType.Text;
+				MyCommand.CommandText = sql;
+				MyCommand.Parameters.Clear();
+				MyCommand.Parameters.Add("param2", OleDbType.VarChar).Value = l.name;
+				MyCommand.ExecuteNonQuery();
+				xi++;
+			}
+			oledbcon.Close();
+
 			byte[] fileBytes = System.IO.File.ReadAllBytes(filename);
-			string client_fileName = "table1_7.xlsx";
+			string client_fileName = "table1_7" + dt + ".xls";
 			return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, client_fileName);
 		}
 
@@ -108,11 +158,12 @@ namespace RatingUniversity.Controllers
 			for (int i = 2; i < data.Rows.Count-2; i++)
 			{
 				Jadval_AKTdaraja_1_7 NewUpload = new Jadval_AKTdaraja_1_7();
+				if (data.Rows[i][0].ToString() == "") break;
 				NewUpload.P = Convert.ToInt32(data.Rows[i][2]);
 				NewUpload.P7 = Convert.ToInt32(data.Rows[i][3]);
 				NewUpload.P8 = Convert.ToInt32(data.Rows[i][4]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
-				NewUpload.UniversityId = 24;
+				NewUpload.UniversityId = Convert.ToInt32(data.Rows[i][0]);
 				uploadExl.Add(NewUpload);
 			}
 
@@ -129,6 +180,7 @@ namespace RatingUniversity.Controllers
 				foreach (var t in uploadExl)
 					db.Jadval_AKTdaraja_1_7.Add(t);
 				db.SaveChanges();
+				MonitoringUpdate.Update(0, "J1_7", 0, yil);
 			}
 		}
 	}

@@ -14,13 +14,17 @@ namespace RatingUniversity
     {
         protected void Application_Start()
         {
-
-            AreaRegistration.RegisterAllAreas();
+			AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             Database.SetInitializer<TablesContext>(null);//for modify models
+
+/*			TestContext db = new TestContext();
+			db.Monitoring.Add(new Monitoring() { J1 = 9, Year = 2015, UniverId = 4 });
+			db.SaveChanges();
+ */           
         }
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
