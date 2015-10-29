@@ -2709,19 +2709,21 @@ var FlipClock;
 
   FlipClock.Lang.Russian = {
 
-    'years'   : 'лет',
+    'years'   : '  лет  ',
     'months'  : 'месяцев',
-    'days'    : 'дней',
-    'hours'   : 'часов',
-    'minutes' : 'минут',
-    'seconds' : 'секунд'
+    'days'    : '  дней ',
+    'hours'   : ' часов ',
+    'minutes' : ' минут ',
+    'seconds' : ' секунд'
 
   };
 
   /* Create various aliases for convenience */
 
   FlipClock.Lang['ru']      = FlipClock.Lang.Russian;
-  FlipClock.Lang['ru-ru']   = FlipClock.Lang.Russian;
+  FlipClock.Lang['ru-ru'] = FlipClock.Lang.Russian;
+  FlipClock.Lang['ru-Ru'] = FlipClock.Lang.Russian;
+  FlipClock.Lang['ru-RU'] = FlipClock.Lang.Russian;
   FlipClock.Lang['russian']  = FlipClock.Lang.Russian;
 
 }(jQuery));
@@ -2778,5 +2780,48 @@ var FlipClock;
 	FlipClock.Lang['zh']      = FlipClock.Lang.Chinese;
 	FlipClock.Lang['zh-cn']   = FlipClock.Lang.Chinese;
 	FlipClock.Lang['chinese'] = FlipClock.Lang.Chinese;
+
+}(jQuery));
+
+(function ($) {
+
+    /**
+	 * FlipClock Uzbek Language Pack
+	 *
+	 * This class will used to translate tokens into the Chinese language.
+	 *	
+	 */
+
+    FlipClock.Lang.Uzbek = {
+
+        'years'   : '  yil  ',
+        'months'  : '   oy  ',
+        'days'    : '  kun  ',
+        'hours'   : '  soat ',
+        'minutes' : ' minut ',
+        'seconds' : ' sekund'
+
+    };
+
+    FlipClock.Lang.UzbekCyrillic = {
+
+        'years'   : '  йил  ',
+        'months'  : '   ой  ',
+        'days'    : '  кун  ',
+        'hours'   : '  соат ',
+        'minutes' : ' минут ',
+        'seconds' : ' секунд'
+
+    };
+
+    /* Create various aliases for convenience */
+
+    FlipClock.Lang['uz'] = FlipClock.Lang.Uzbek;
+    FlipClock.Lang['uz-uz'] = FlipClock.Lang.Uzbek;
+    FlipClock.Lang['uz-Uz'] = FlipClock.Lang.Uzbek;
+    FlipClock.Lang['uz-UZ'] = FlipClock.Lang.Uzbek;
+    FlipClock.Lang['uzbek'] = FlipClock.Lang.Uzbek;
+    FlipClock.Lang['uz-Cy'] = FlipClock.Lang.UzbekCyrillic;
+    FlipClock.Lang['uz-La'] = FlipClock.Lang.Uzbek;
 
 }(jQuery));

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using RatingUniversity.Classes;
 
 namespace RatingUniversity.Controllers
 {
@@ -37,6 +38,10 @@ namespace RatingUniversity.Controllers
 
         public ActionResult Index()
         {
+            CultureInfo currentCulrute = Thread.CurrentThread.CurrentCulture;
+            ViewBag.lang = currentCulrute.Name.Substring(0, 5);
+            ViewBag.timeLeft = Functions.GetLeftTime("01-11-2015 00:00:00");
+            ViewBag.year = 2013;
             return View();
         }
 

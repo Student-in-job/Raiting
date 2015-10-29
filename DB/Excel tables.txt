@@ -1,0 +1,322 @@
+--12
+CREATE TABLE citiruemost_publikaciy_pps_vuza (  
+id int PRIMARY KEY IDENTITY ,
+fio varchar(100) ,
+source varchar(1000) ,
+info varchar(1000) ,
+link varchar(1000) ,
+usage int ,
+year int ,
+id_university int FOREIGN KEY REFERENCES university(id) 
+);  
+
+GO
+
+--11
+CREATE TABLE majmua(  
+id int PRIMARY KEY IDENTITY ,
+fio varchar(100) ,
+kod_spec varchar(1000) ,
+metodich_name varchar(1000) ,
+metodich_number varchar(1000) ,
+filename varchar(100) ,
+year int ,
+id_university int FOREIGN KEY REFERENCES university(id) 
+);  
+
+GO
+
+CREATE TABLE qullanma(  
+id int PRIMARY KEY IDENTITY ,
+fio varchar(100) ,
+kod_spec varchar(1000) ,
+posobie_name varchar(1000) ,
+posobie_number varchar(1000) ,
+filename varchar(100) ,
+year int ,
+id_university int FOREIGN KEY REFERENCES university(id) 
+);  
+
+GO
+
+CREATE TABLE darslik(  
+id int PRIMARY KEY IDENTITY ,
+fio varchar(100) ,
+kod_spec varchar(1000) ,
+ucheb_name varchar(1000) ,
+ucheb_number varchar(1000) ,
+filename varchar(100) ,
+year int ,
+id_university int FOREIGN KEY REFERENCES university(id) 
+);  
+
+GO
+
+CREATE TABLE monografiya(  
+id int PRIMARY KEY IDENTITY ,
+fio varchar(100) ,
+kod_spec varchar(1000) ,
+monograf_name varchar(1000) ,
+monograf_year varchar(1000) ,
+filename varchar(100) ,
+year int ,
+id_university int FOREIGN KEY REFERENCES university(id) 
+);  
+
+GO
+
+--13
+CREATE TABLE kolichestvo_izdannih_mejdunarodnih_statey(  
+id int PRIMARY KEY IDENTITY ,
+fio varchar(100) ,
+country varchar(100) ,
+journal varchar(1000) ,
+paper varchar(1000) ,
+paper_year varchar(100) ,
+link varchar(1000) ,
+coauthor_count varchar(1000) ,
+filename varchar(100) ,
+year int ,
+id_university int FOREIGN KEY REFERENCES university(id) 
+);  
+
+
+GO
+
+--14
+CREATE TABLE kolichestvo_izdannih_mestnih_statey(  
+id int PRIMARY KEY IDENTITY ,
+fio varchar(100) ,
+journal varchar(1000) ,
+paper varchar(1000) ,
+paper_year varchar(1000) ,
+link varchar(1000) ,
+coauthor_count varchar(1000) ,
+filename varchar(100) ,
+year int ,
+id_university int FOREIGN KEY REFERENCES university(id) 
+);
+
+GO
+
+--3
+CREATE TABLE chislennost_pps_vuza(  
+id int PRIMARY KEY IDENTITY ,
+ass_shtat int ,
+urindosh int ,
+saotbay int ,
+as_fan_nom int ,
+as_fan_doc int ,
+as_prof int ,
+as_doz int ,
+as_katta int ,
+as_ass int ,
+ur_prof int ,
+ur_doc int ,
+ur_katta int ,
+ur_ass int ,
+so_prof int ,
+so_doc int ,
+so_katta int ,
+so_ass int ,
+id_university int FOREIGN KEY REFERENCES university(id) ,
+year int 
+);  
+
+
+GO
+
+--16
+CREATE TABLE informaciya_o_dissertaciyah(  
+id int PRIMARY KEY IDENTITY ,
+fio varchar(100) ,
+work_place varchar(1000) ,
+iht_shifr varchar(100) ,
+iht_nomi varchar(1000) ,
+disser_name varchar(1000) ,
+kengash_shifr varchar(100) ,
+kengash_email varchar(100) ,
+date date,
+year int ,
+id_university int FOREIGN KEY REFERENCES university(id) 
+);  
+
+--17
+
+--НЕТУ!
+
+GO
+
+--23
+CREATE TABLE summi_mejdunarodnih_grantov(  
+id int PRIMARY KEY IDENTITY ,
+grant_name varchar(1000) ,
+grant_summa float ,
+buyurtma_name varchar(1000) ,
+buyurtma_summa float ,
+id_university int FOREIGN KEY REFERENCES university(id) ,
+year int,
+filename varchar(100) , 
+);  
+
+GO
+
+--24
+CREATE TABLE summi_respublikanskih_grantov(  
+id int PRIMARY KEY IDENTITY ,
+iqtisodiyot_tarmogi varchar(1000) ,
+buyurtma_name varchar(1000) ,
+buyurtma_summa float ,
+grant_name varchar(1000) ,
+grant_summa float ,
+id_university int FOREIGN KEY REFERENCES university(id) ,
+year int ,
+filename   varchar(100)  
+);  
+
+GO
+
+--15
+CREATE TABLE effektivnost_nir_sertifikat(  
+id int PRIMARY KEY IDENTITY ,
+otm_name varchar(100) ,
+fio varchar(300) ,
+sertifikat_name varchar(100) ,
+sertifikat_date varchar(100) ,
+sertifikat_number varchar(100) ,
+filename varchar(100) ,
+id_university int FOREIGN KEY REFERENCES university(id) ,
+year int 
+);  
+
+GO
+
+CREATE TABLE effektivnost_nir_patent(  
+id int PRIMARY KEY IDENTITY ,
+otm_name varchar(100) ,
+fio varchar(300) ,
+sertifikat_name varchar(100) ,
+sertifikat_date varchar(100) ,
+sertifikat_number varchar(100) ,
+filename varchar(100) ,
+id_university int FOREIGN KEY REFERENCES university(id) ,
+year int 
+);  
+
+GO
+
+CREATE TABLE effektivnost_nir_dalolatnoma(  
+id int PRIMARY KEY IDENTITY ,
+otm_name varchar(100) ,
+fio varchar(300) ,
+sertifikat_name varchar(100) ,
+sertifikat_date varchar(100) ,
+sertifikat_number varchar(100) ,
+filename varchar(100) ,
+id_university int FOREIGN KEY REFERENCES university(id) ,
+year int ,
+);  
+ 
+
+GO
+
+--25
+CREATE TABLE granti_po_vidam_issledovaniy(  
+id int PRIMARY KEY IDENTITY ,
+tormog_name varchar(100) ,
+buyurtma_name varchar(100) ,
+fundamental bit ,
+amaliy bit ,
+innovatsion bit ,
+lizenziya bit ,
+yarmarka bit ,
+summa float ,
+id_university int FOREIGN KEY REFERENCES university(id) ,
+year int ,
+filename varchar(100) 
+);  
+
+GO
+
+--22
+CREATE TABLE osnashennost_laboratoriy (  
+id int PRIMARY KEY IDENTITY ,
+id_university int FOREIGN KEY REFERENCES university(id) ,
+year int ,
+fan_name varchar(1000) ,
+lab_asbob_name varchar(100) ,
+lab_holat varchar(100) ,
+yordam_asbob_name varchar(500) ,
+yordam_holat varchar(100) 
+);  
+
+--26
+--сложная таблица
+
+GO
+
+--27
+CREATE TABLE nalichie_elektronnoy_literaturi(  
+id int PRIMARY KEY IDENTITY ,
+id_university int FOREIGN KEY REFERENCES university(id) ,
+year int ,
+napravlenie varchar(100) ,
+nazvaniya_predmetov varchar(1000) ,
+osn_literatura varchar(1000) ,
+nalichie_uzb bit ,
+nalichie_rus bit ,
+nalichie_angl bit 
+);  
+
+GO
+
+--28
+CREATE TABLE stepen_vnedreniya_ikt(
+id int PRIMARY KEY IDENTITY ,
+id_university int FOREIGN KEY REFERENCES university(id) ,
+year int ,
+pc_count int,
+pc_in_local_netw_count int,
+pc_with_intenet_count int,
+last_years_pc_count int,
+internet_speed float,
+admin_emails_count int,
+pps_emails_count int,
+web_service_types float,
+study_monitoring float,
+research_monitoring float,
+pps_baza float,
+student_baza float,
+finance float,
+admins_count int,
+pps_count int,
+students_count int
+);
+
+GO
+
+--29
+CREATE TABLE nalichie_informacii_o_vuze_v_internete(  
+id int PRIMARY KEY IDENTITY ,
+id_university int FOREIGN KEY REFERENCES university(id) ,
+year int ,
+vuz_name varchar(200) ,
+vuz_web float ,
+vuz_int_rate float ,
+vuz_uz_rate float 
+);  
+
+--30
+--сложная таблица
+
+GO
+
+--31
+CREATE TABLE nalichie_multimedia_v_auditorii(  
+id int PRIMARY KEY IDENTITY ,
+id_university int FOREIGN KEY REFERENCES university(id) ,
+year int ,
+vuz_name varchar(150) ,
+rooms_total_count int ,
+rooms_with_multimedia int 
+);  

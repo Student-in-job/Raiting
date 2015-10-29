@@ -199,7 +199,11 @@
   <data name="TopHeader" xml:space="preserve">
     <value>Top university in Uzbekistan</value>
   </data>
-  <data name="UZ" xml:space="preserve">
+  <data name="UZCyrillic" xml:space="preserve">
+    <value>Узбек</value>
+    <comment>!!! Перевод не требуется !!!</comment>
+  </data>
+  <data name="UZLatin" xml:space="preserve">
     <value>O`zbek</value>
     <comment>!!! Перевод не требуется !!! Can`t touch this !!!</comment>
   </data>
