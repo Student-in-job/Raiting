@@ -24,18 +24,29 @@ namespace RatingUniversity.Controllers
 
         //
         // GET: /KnowledgeAndQualification/AssessmentByTest
-        public ActionResult AssessmentByTest(int year)
+        public ActionResult AssessmentByTest(int? year)
         {
+            if (year == null)
+                year = DateTime.Now.Year;
+            ViewBag.year = year;
             this.CreateActive(9);
             ViewBag.active = this.active;
             ViewBag.Title = "Оценка знанийpo студентов (по результатам выборочного тестирования студентов по специальным профильным дисциплинам)";
             return View(db.I10_rezultati_attestacii_u_studentov.Where(model => model.YEAR == year).OrderByDescending(model => model.mark).ToList());
         }
 
-
         //
-        // GET: /KnowledgeAndQualification/
-
+        // GET: /KnowledgeAndQualification/AssessmentByWorkers
+        public ActionResult AssessmentByWorkers(int? year)
+        {
+            if (year == null)
+                year = DateTime.Now.Year;
+            ViewBag.year = year;
+            this.CreateActive(10);
+            ViewBag.active = this.active;
+            ViewBag.Title = "Оценка квалификации выпускников вуза по результатам опроса работодателей";
+            return View(db.I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami.Where(model => model.YEAR == year).OrderByDescending(model => model.mark).ToList());
+        } 
         //
         // GET: /KnowledgeAndQualification/
         public ActionResult Index()

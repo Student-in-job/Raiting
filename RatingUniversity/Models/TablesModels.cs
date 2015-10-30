@@ -40,6 +40,12 @@ namespace RatingUniversity.Models
 		public DbSet<Monitoring> Monitoring { get; set; }
 		public DbSet<university> University { get; set; }
 
+        /*
+        public TablesContext():base("TablesContext")
+        {
+            Database.SetInitializer<TablesContext>(new DropCreateDatabaseIfModelChanges<TablesContext>());
+        }
+        */
 	}
 
 
@@ -335,14 +341,15 @@ namespace RatingUniversity.Models
 		public DateTime? Srok { get; set; }
 	}
 
-	public class university
+	/*
+    public class university
 	{
 		public int id { get; set; }
 		public string name { get; set; }
 		public int? id_branch { get; set; }
 		public int? id_region { get; set; }
 	}
-
+    */
 /*
 	public class Role
 	{

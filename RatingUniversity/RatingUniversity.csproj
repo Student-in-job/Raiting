@@ -188,6 +188,7 @@
     <Compile Include="Controllers\Jadval7Controller.cs" />
     <Compile Include="Controllers\Jadval8Controller.cs" />
     <Compile Include="Controllers\Jadval9Controller.cs" />
+    <Compile Include="Controllers\KnowledgeAndQualificationController.cs" />
     <Compile Include="Controllers\MonitoringController.cs" />
     <Compile Include="Controllers\QualityOfEducationalWorkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -562,6 +563,9 @@
     <Content Include="Views\Jadval1_2\Index.cshtml" />
     <Content Include="Views\Jadval5\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutSideMenu.cshtml" />
+    <Content Include="Views\KnowledgeAndQualification\AssessmentByWorkers.cshtml" />
+    <Content Include="Views\KnowledgeAndQualification\DisplayTemplates\Double.cshtml" />
+    <Content Include="Views\KnowledgeAndQualification\AssessmentByTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

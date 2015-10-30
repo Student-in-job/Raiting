@@ -196,7 +196,7 @@ GO
 
 --- 2.2
 CREATE VIEW I11 AS 
-SELECT university.id as ID, university.name as name, 
+SELECT university.id as ID, university.name as name, raiting.r, raiting.r1, 
 (raiting.r1/CASE raiting.r WHEN 0 THEN 1 ELSE raiting.r END)*100 AS I11,
 YEAR
 FROM raiting INNER JOIN university
@@ -205,7 +205,7 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami AS 
-SELECT ID, name, I11, 3*I11/(SELECT MAX(I11) FROM I11 WHERE I11.YEAR = YEAR) AS mark, YEAR
+SELECT ID, name, r, r1, I11, 3*I11/(SELECT MAX(I11) FROM I11 WHERE I11.YEAR = YEAR) AS mark, YEAR
 FROM I11;
 
 GO
@@ -379,6 +379,59 @@ GO
 CREATE VIEW I20_obespechennost_irc_uchebnoy_literaturoy AS 
 SELECT ID, name, I201, I20, 3*I20/(SELECT MAX(I20) FROM I20 WHERE I20.YEAR = YEAR) AS mark, YEAR
 FROM I20;
+
+GO
+
+--- 4.2
+CREATE VIEW I21 AS 
+SELECT university.id as ID, university.name as name,
+(raiting.x1/CASE raiting.x2 WHEN 0 THEN 1 ELSE raiting.x2 END)+((raiting.x3+raiting.x4+raiting.x5)/3*CASE raiting.x1 WHEN 0 THEN 1 ELSE raiting.x1 END)
++raiting.x6+(raiting.x7/CASE raiting.x9 WHEN 0 THEN 1 ELSE raiting.x9 END)+(raiting.x8/CASE raiting.x10 WHEN 0 THEN 1 ELSE raiting.x10 END)+raiting.x11+raiting.x12+raiting.x13+raiting.x14+raiting.x15+raiting.x16 AS I21,
+YEAR
+FROM raiting INNER JOIN university
+	ON raiting.id_university = university.id;
+
+GO
+
+CREATE VIEW I21_stepen_vnedreniya_ikt_v_uchebniy_process AS 
+SELECT ID, name, I21, 6*I21/(SELECT MAX(I21) FROM I21 WHERE I21.YEAR = YEAR) AS mark, YEAR
+FROM I21;
+
+GO
+
+--- 4.3
+CREATE VIEW I22 AS 
+SELECT university.id as ID, university.name as name,
+(1-raiting.ra/(Select count(id) from university))+(1-raiting.u/(Select count(id) from university))+raiting.s AS I22,
+1-raiting.ra/(Select count(id) from university) AS I221,
+1-raiting.u/(Select count(id) from university) AS I222,
+YEAR
+FROM raiting INNER JOIN university
+	ON raiting.id_university = university.id;
+
+GO
+
+CREATE VIEW I22_dostupnost_informacii_o_vuze_v_internete AS 
+SELECT ID, name, I22, I221, I222, 3*I22/(SELECT MAX(I22) FROM I22 WHERE I22.YEAR = YEAR) AS mark, YEAR
+FROM I22;
+
+GO
+
+--- 4.4
+CREATE VIEW I23 AS 
+SELECT university.id as ID, university.name as name,
+(2*raiting.p17/CASE raiting.p18 WHEN 0 THEN 1 ELSE raiting.p18 END)+raiting.p19/CASE raiting.p20 WHEN 0 THEN 1 ELSE raiting.p20 END AS I23,
+raiting.p17/CASE raiting.p18 WHEN 0 THEN 1 ELSE raiting.p18 END AS I231,
+raiting.p19/CASE raiting.p20 WHEN 0 THEN 1 ELSE raiting.p20 END AS I232,
+YEAR
+FROM raiting INNER JOIN university
+	ON raiting.id_university = university.id;
+
+GO
+
+CREATE VIEW I23_osnashennost_laboratornim_oborudovaniem AS 
+SELECT ID, name, I23, I231, I232, 3*I23/(SELECT MAX(I23) FROM I23 WHERE I23.YEAR = YEAR) AS mark, YEAR
+FROM I23;
 
 GO
 
