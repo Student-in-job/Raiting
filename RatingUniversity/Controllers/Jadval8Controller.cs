@@ -133,20 +133,20 @@ namespace RatingUniversity.Controllers
 
 			var adapter_s = new OleDbDataAdapter("SELECT * FROM [List2$]", connectionString);
 			var ds_s = new DataSet();
-			adapter_s.Fill(ds, "T2");
-			DataTable data_s = ds.Tables["T2"];
+			adapter_s.Fill(ds_s, "T2");
+			DataTable data_s = ds_s.Tables["T2"];
 
-			for (int i = 4; i < data.Rows.Count - 7; i++)
+			for (int i = 4; i < data_s.Rows.Count - 7; i++)
 			{
 				Jadval8 NewUpload = new Jadval8();
-				NewUpload.FullName = Convert.ToString(data.Rows[i][2]);
-				NewUpload.State_otm_nomi = Convert.ToString(data.Rows[i][3]);
-				NewUpload.Talim_yonalish = Convert.ToString(data.Rows[i][4]);
-				NewUpload.Loyiha_nomi = Convert.ToString(data.Rows[i][5]);
-				NewUpload.Konferensiya_nomi = Convert.ToString(data.Rows[i][6]);
+				NewUpload.FullName = Convert.ToString(data_s.Rows[i][2]);
+				NewUpload.State_otm_nomi = Convert.ToString(data_s.Rows[i][3]);
+				NewUpload.Talim_yonalish = Convert.ToString(data_s.Rows[i][4]);
+				NewUpload.Loyiha_nomi = Convert.ToString(data_s.Rows[i][5]);
+				NewUpload.Konferensiya_nomi = Convert.ToString(data_s.Rows[i][6]);
 				NewUpload.Student_oqituvchi = 2;
-				NewUpload.Asos = Convert.ToString(data.Rows[i][1]);
-				NewUpload.Asos_fayl = "#"+ Convert.ToString(data.Rows[i][7]);
+				NewUpload.Asos = Convert.ToString(data_s.Rows[i][1]);
+				NewUpload.Asos_fayl = "#" + Convert.ToString(data_s.Rows[i][7]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
 				NewUpload.UniversityId = UniverId;
 
@@ -156,8 +156,14 @@ namespace RatingUniversity.Controllers
 			using (TablesContext db = new TablesContext())
 			{
 				int yil = Int32.Parse(DateTime.Now.Year.ToString());
-				IQueryable<Jadval8> deleteRows = db.Jadval8.Where(x => x.Year == yil).Where(y => y.UniversityId == UniverId).Where(x => x.Student_oqituvchi == profstud);
+				IQueryable<Jadval8> deleteRows = db.Jadval8.Where(x => x.Year == yil).Where(y => y.UniversityId == UniverId).Where(x => x.Student_oqituvchi == 1);
 				foreach (var row in deleteRows)
+				{
+					db.Jadval8.Remove(row);
+				}
+				db.SaveChanges();
+				IQueryable<Jadval8> deleteRows2 = db.Jadval8.Where(x => x.Year == yil).Where(y => y.UniversityId == UniverId).Where(x => x.Student_oqituvchi == 2);
+				foreach (var row in deleteRows2)
 				{
 					db.Jadval8.Remove(row);
 				}

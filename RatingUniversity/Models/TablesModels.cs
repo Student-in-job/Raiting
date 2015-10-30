@@ -335,7 +335,7 @@ namespace RatingUniversity.Models
 		public DateTime? Srok { get; set; }
 	}
 
-	public class university
+	public class University
 	{
 		public int id { get; set; }
 		public string name { get; set; }
