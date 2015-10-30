@@ -1,0 +1,110 @@
+﻿@model IEnumerable<RatingUniversity.Models.Jadval_talimsifati_1_2>
+@{
+	Layout = "~/Views/Shared/_LayoutSideMenu.cshtml";
+	ViewBag.Title = "Jadval1_2";
+}
+
+<h2>Universitetlar reytingi</h2>
+
+
+<a href="/Jadval1_2/Download">Загрузить шаблон</a>
+
+<h3>Прикрепить файл</h3>
+@using (Html.BeginForm("Upload", "Jadval1_2", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+	<input type="file" name="files" />
+	<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+}
+
+@if (ViewBag.bor == true)
+{
+	<h3>Ma'lumotlar:</h3>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.T)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N41)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N51)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N42)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N52)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N43)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N53)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.I2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UniversityId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.T)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N41)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N51)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N42)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N52)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N43)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N53)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.I2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UniversityId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+    </tr>
+}
+
+</table>
+}

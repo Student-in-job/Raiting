@@ -10,6 +10,9 @@ using System.Data.Entity;
 using System.Data.OleDb;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using RatingUniversity.Classes;
+using PagedList;
+using PagedList.Mvc;
 
 namespace RatingUniversity.Controllers
 {
@@ -17,19 +20,38 @@ namespace RatingUniversity.Controllers
     {
         //
         // GET: /Jadval11/
-        public ActionResult Index()
-        {
+		public ActionResult Index(int? page)
+		{
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
-			//IQueryable<Jadval1> poisk_reyting = db.Jadval1.Where(pr => pr.Year == yil);
-
-			var list = db.Jadval11.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
+			int UniverId = 24;
+			var list = db.Jadval11.Where(pr => pr.Year == yil).Where(y => y.UniversityId == UniverId).OrderBy(j => j.Year);
 			ViewBag.bor = true;
 			if (list.Count() == 0)
 				ViewBag.bor = false;
-			//return View(await list.ToListAsync());
-			return View(list.ToList());
-        }
+
+			int? status_table = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.J11).FirstOrDefault();
+			ViewBag.status = status_table;
+			DateTime? status_dt = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
+			ViewBag.status_date = 0;
+			ViewBag.date = status_dt;
+			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
+
+			ViewBag.role = 0;
+			//nuzjno dobavit Yesli (user == podtverjditel) ViewBag.role = 1;
+			ViewBag.UniverId = UniverId;
+//			return View(list.ToList());
+			int pageSize = 50;
+			int pageNumber = (page ?? 1);
+			return View(list.ToPagedList(pageNumber, pageSize));
+		}
+
+		public ActionResult Tasdiqlash(int UniverId = 0)
+		{
+			int yil = Int32.Parse(DateTime.Now.Year.ToString());
+			MonitoringUpdate.Update(UniverId, "J11", 1, yil);
+			return RedirectToAction("Index", "Jadval11");
+		}
 
 		public FileResult Download()
 		{
@@ -96,6 +118,7 @@ namespace RatingUniversity.Controllers
 
 		private static void GetExcelData_Jadval11(DataTable data)
 		{
+			int UniverId = 24;
 			List<Jadval11> uploadExl = new List<Jadval11>();
 			for (int i = 5; i < data.Rows.Count - 8; i++)
 			{
@@ -110,8 +133,9 @@ namespace RatingUniversity.Controllers
 				NewUpload.OquvqullanmaCertificate = Convert.ToString(data.Rows[i][8]);
 				NewUpload.OquvmajmuaName = Convert.ToString(data.Rows[i][9]);
 				NewUpload.OquvmajmuaCertificate = Convert.ToString(data.Rows[i][10]);
+				NewUpload.AsosFile = "#" + Convert.ToString(data.Rows[i][11]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
-				NewUpload.UniversityId = 24;
+				NewUpload.UniversityId = UniverId;
 
 				uploadExl.Add(NewUpload);
 			}
@@ -119,7 +143,7 @@ namespace RatingUniversity.Controllers
 			using (TablesContext db = new TablesContext())
 			{
 				int yil = Int32.Parse(DateTime.Now.Year.ToString());
-				IQueryable<Jadval11> deleteRows = db.Jadval11.Where(x => x.Year == yil);
+				IQueryable<Jadval11> deleteRows = db.Jadval11.Where(x => x.Year == yil).Where(y => y.UniversityId == UniverId);
 				foreach (var row in deleteRows)
 				{
 					db.Jadval11.Remove(row);
@@ -129,10 +153,57 @@ namespace RatingUniversity.Controllers
 				foreach (var t in uploadExl)
 					db.Jadval11.Add(t);
 				db.SaveChanges();
+				MonitoringUpdate.Update(UniverId, "J11", 0, yil);
 			}
 
 		}
 
+		public ActionResult UploadData(IEnumerable<HttpPostedFileBase> files, int id)
+		{
+			if (files != null)
+			{
+				string fileName;
+				string filepath;
+				string fileExtension;
+
+				foreach (var f in files)
+				{
+					SetFileDetails(f, out fileName, out filepath, out fileExtension);
+
+					if (fileExtension == ".pdf")
+					{
+						//Save the uploaded file to the application folder.
+						string yil = DateTime.Now.Year.ToString();
+						string ID_upl = "24";
+						string savepath = Server.MapPath("~/Files/Upload/") + yil + "/" + ID_upl + "/J11/";
+						Directory.CreateDirectory(savepath);
+						string savedFiles = savepath + id.ToString() + "_" + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
+						f.SaveAs(savedFiles);
+						TablesContext db = new TablesContext();
+						Jadval11 j = db.Jadval11.Find(id);
+						j.AsosFile = id.ToString() + "_" + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
+						db.Entry(j).State = EntityState.Modified;
+						db.SaveChanges();
+					}
+					else
+					{
+						//TODO: Send Alert to the users file not supported.
+						//						return Content("Faqat pdf fayl yuklanishi kerak!");
+
+						return Content("" +
+						"<HTML>" +
+						"<HEAD>" +
+						"<META HTTP-EQUIV='REFRESH' CONTENT='3; URL=" + HttpContext.Request.UrlReferrer.ToString() + "'>" +
+						"</HEAD>" +
+						"<BODY>" +
+						"Faqat pdf fayl yuklanishi kerak!" +
+						"</BODY>" +
+						"</HTML>");
+					}
+				}
+			}
+			return RedirectToAction("Index", "Jadval11");
+		}
 
 	}
 }

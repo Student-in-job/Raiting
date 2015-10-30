@@ -11,7 +11,11 @@ using System.Data.OleDb;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Net;
-using RatingUniversity.Models;
+using RatingUniversity.Classes;
+
+using PagedList;
+using PagedList.Mvc;
+
 //using System.Threading.Tasks;
 //using Microsoft.Office.Interop.Excel;
 
@@ -21,15 +25,39 @@ namespace RatingUniversity.Controllers
     {
         //
         // GET: /Jadval1/
-		public ActionResult Index()
-        {
+		public ActionResult Index(int? page)
+		{
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
-			var list = db.Jadval1.Where(pr => pr.Year == yil).OrderBy(j => j.Year).OrderBy(j => j.Reyting);
+			int UniverId = 24;
+			var list = db.Jadval1.Where(pr => pr.Year == yil).OrderBy(j => j.Year).OrderBy(j=>j.Reyting);
 			ViewBag.bor = true;
+			if (list.Count() == 0)
 				ViewBag.bor = false;
-			return View(list.ToList());
-        }
+
+			int? status_table = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.J1).FirstOrDefault();
+			ViewBag.status = status_table;
+			DateTime? status_dt = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
+			ViewBag.status_date = 0;
+			ViewBag.date = status_dt;
+			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
+
+			ViewBag.role = 0;
+			//nuzjno dobavit Yesli (user == podtverjditel) ViewBag.role = 1;
+			ViewBag.UniverId = UniverId;
+			//return View(list.ToList());
+
+			int pageSize = 50;
+			int pageNumber = (page ?? 1);
+			return View(list.ToPagedList(pageNumber, pageSize));
+		}
+
+		public ActionResult Tasdiqlash(int UniverId = 0)
+		{
+			int yil = Int32.Parse(DateTime.Now.Year.ToString());
+			MonitoringUpdate.Update(UniverId, "J1", 1, yil);
+			return RedirectToAction("Index", "Jadval1");
+		}
 
 		public FileResult Download()
 		{
@@ -132,6 +160,8 @@ namespace RatingUniversity.Controllers
 				foreach (var t in uploadExl)
 					db.Jadval1.Add(t);
 				db.SaveChanges();
+				MonitoringUpdate.Update(0, "J1", 0, yil);
+
 			}
 		}
 	}

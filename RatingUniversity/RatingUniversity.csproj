@@ -40,6 +40,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -161,23 +167,27 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Classes\Classes.cs" />
+    <Compile Include="Classes\MonitoringUpdate.cs" />
+    <Compile Include="Classes\Transliteration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Jadval19Controller.cs" />
     <Compile Include="Controllers\Jadval1Controller.cs" />
     <Compile Include="Controllers\Jadval10Controller.cs" />
     <Compile Include="Controllers\Jadval11Controller.cs" />
     <Compile Include="Controllers\Jadval18Controller.cs" />
+    <Compile Include="Controllers\Jadval1_2Controller.cs" />
     <Compile Include="Controllers\Jadval1_7Controller.cs" />
     <Compile Include="Controllers\Jadval20Controller.cs" />
     <Compile Include="Controllers\Jadval21Controller.cs" />
     <Compile Include="Controllers\Jadval2Controller.cs" />
     <Compile Include="Controllers\Jadval2_1Controller.cs" />
+    <Compile Include="Controllers\Jadval2_2Controller.cs" />
+    <Compile Include="Controllers\Jadval32Controller.cs" />
     <Compile Include="Controllers\Jadval5Controller.cs" />
     <Compile Include="Controllers\Jadval6Controller.cs" />
     <Compile Include="Controllers\Jadval7Controller.cs" />
     <Compile Include="Controllers\Jadval8Controller.cs" />
     <Compile Include="Controllers\Jadval9Controller.cs" />
-    <Compile Include="Controllers\KnowledgeAndQualificationController.cs" />
     <Compile Include="Controllers\MonitoringController.cs" />
     <Compile Include="Controllers\QualityOfEducationalWorkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -425,6 +435,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom.min.css" />
     <Content Include="Content\flipclock.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -440,8 +451,6 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
-    <Content Include="Images\ru.png" />
-    <Content Include="Images\uz.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Final Raiting.edmx">
@@ -523,7 +532,7 @@
     <Content Include="Views\QualityOfEducationalWork\Create.cshtml" />
     <Content Include="Views\QualityOfEducationalWork\Details.cshtml" />
     <Content Include="Views\QualityOfEducationalWork\DolyaPPS.cshtml" />
-    <Content Include="Views\Shared\_LayoutSideMenu.cshtml" />
+    <Content Include="Views\Shared\_LayoutSideMenuEdit.cshtml" />
     <Content Include="Views\QualityOfEducationalWork\DisplayTemplates\Double.cshtml" />
     <Content Include="Views\QualityOfEducationalWork\NumberOfEducationMatherials.cshtml" />
     <Content Include="Views\QualityOfEducationalWork\SurveyOfStudents.cshtml" />
@@ -537,7 +546,6 @@
     <Content Include="Views\Jadval11\Index.cshtml" />
     <Content Include="Views\Jadval18\Index.cshtml" />
     <Content Include="Views\Jadval2\Index.cshtml" />
-    <Content Include="Views\Jadval5\Index.cshtml" />
     <Content Include="Views\Jadval6\Index.cshtml" />
     <Content Include="Views\Jadval7\Index.cshtml" />
     <Content Include="Views\Jadval8\Index.cshtml" />
@@ -548,9 +556,12 @@
     <Content Include="Views\Jadval1_7\Index.cshtml" />
     <Content Include="Views\Jadval2_1\Index.cshtml" />
     <Content Include="Views\Jadval1\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutSideMenuEdit.cshtml" />
-    <Content Include="Views\KnowledgeAndQualification\AssessmentByTest.cshtml" />
-    <Content Include="Views\KnowledgeAndQualification\DisplayTemplates\Double.cshtml" />
+    <Content Include="Views\Monitoring\Index.cshtml" />
+    <Content Include="Views\Jadval32\Index.cshtml" />
+    <Content Include="Views\Jadval2_2\Index.cshtml" />
+    <Content Include="Views\Jadval1_2\Index.cshtml" />
+    <Content Include="Views\Jadval5\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutSideMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

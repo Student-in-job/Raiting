@@ -1,41 +1,59 @@
-﻿@model IEnumerable<RatingUniversity.Jadval1>
-@using RatingUniversity.Resources
-	
-@{ Layout = "~/Views/Shared/_LayoutSideMenu.cshtml"; }
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<RatingUniversity.Models.Jadval1>
 
-<!--<h2>@ResourceRu.Title</h2>-->
-  	<h2>Top университет - 300</h2>
-
-	<a href="/Jadval1/Download">Загрузить шаблон</a>
+	<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 
-	<h3>Прикрепить файл</h3>
+	@{ Layout = "~/Views/Shared/_LayoutSideMenu.cshtml"; }
 
-	@using (Html.BeginForm("Upload", "Jadval1", FormMethod.Post, new { enctype = "multipart/form-data" }))
+	<h2>Top университет - 300</h2>
+
+	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
-		<input type="file" name="files" />
-	<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+		<a href="/Jadval1/Download">Загрузить шаблон</a>
+		<h3>Прикрепить файл</h3>
+
+		using (Html.BeginForm("Upload", "Jadval1", FormMethod.Post, new { enctype = "multipart/form-data" }))
+		{
+			<input type="file" name="files" />
+			<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+		}
+	}
+	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 1)
+	{
+		<h3>Ma'lumotlarni kiritish uchun vaqtingiz tugadi</h3>
+	}
+	@if (ViewBag.status == 1)
+	{
+		<h3>Ma'lumotlarni tasdiqlangan</h3>
+	}
+	@if (ViewBag.status == 0)
+	{
+		<h3>Ma'lumotlar tasdiqlanmagan</h3>
+	}
+	@if (ViewBag.status == 0 && ViewBag.role == 1)
+	{
+		<a href="/Jadval1/Tasdiqlash">Подтверждать</a>
 	}
 
 	@if (ViewBag.bor == true)
-	{
-		<h3>Данные:</h3>	
+	{ 
+		<h3>Данные:</h3>
 		<table class="table">
 			<tr>
 				<th>
-					@Html.DisplayNameFor(model => model.OtmName)
+					Otm nomi
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.State)
+					Davlat
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Reyting)
+					Reyting
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Year)
+					Yil
 				</th>
 			</tr>
-
 			@foreach (var item in Model)
 			{
 				<tr>
@@ -53,6 +71,10 @@
 					</td>
 				</tr>
 			}
-
 		</table>
+		<br />
+
+	@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+		
 	}

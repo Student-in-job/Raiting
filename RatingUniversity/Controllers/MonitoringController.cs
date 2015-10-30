@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RatingUniversity.Models;
 
 namespace RatingUniversity.Controllers
 {
@@ -12,8 +13,14 @@ namespace RatingUniversity.Controllers
         // GET: /Monitoring/
         public ActionResult Index()
         {
+			TablesContext db = new TablesContext();
+			int yil = Int32.Parse(DateTime.Now.Year.ToString());
+			var list = db.Monitoring.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
+			ViewBag.bor = true;
+			if (list.Count() == 0)
+				ViewBag.bor = false;
+			return View(list.ToList());
 
-            return View();
         }
 	}
 }
