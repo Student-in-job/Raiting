@@ -18,5 +18,7 @@ namespace RatingUniversity.Models
         public string name { get; set; }
         public Nullable<double> I101 { get; set; }
         public Nullable<int> YEAR { get; set; }
+        public Nullable<double> tsi { get; set; }
+        public Nullable<double> tsti { get; set; }
     }
 }

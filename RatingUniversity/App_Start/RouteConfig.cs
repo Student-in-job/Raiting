@@ -18,6 +18,13 @@ namespace RatingUniversity
                 url: "{controller}/{action}/{id}",
                 defaults: new { culture="ru", controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "KnowledgeAndQualificationController",
+                url: "{controller}/{action}/year/{year}",
+                defaults: new { /*controller="KnowledgeAndQualification", action = "AssessmentByTest", */culture="ru", year = UrlParameter.Optional }
+                );
         }
+
     }
 }

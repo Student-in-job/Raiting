@@ -455,6 +455,8 @@ warning 6002: The table/view 'URaiting.dbo.I10' does not have a primary key defi
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="tsi" Type="float" />
+          <Property Name="tsti" Type="float" />
           <Property Name="I10" Type="float" />
           <Property Name="YEAR" Type="int" />
         </EntityType>
@@ -466,6 +468,8 @@ warning 6002: The table/view 'URaiting.dbo.I10_rezultati_attestacii_u_studentov'
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="tsi" Type="float" />
+          <Property Name="tsti" Type="float" />
           <Property Name="I10" Type="float" />
           <Property Name="mark" Type="float" />
           <Property Name="YEAR" Type="int" />
@@ -478,6 +482,8 @@ warning 6002: The table/view 'URaiting.dbo.I11' does not have a primary key defi
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="r" Type="float" />
+          <Property Name="r1" Type="float" />
           <Property Name="I11" Type="float" />
           <Property Name="YEAR" Type="int" />
         </EntityType>
@@ -489,6 +495,8 @@ warning 6002: The table/view 'URaiting.dbo.I11_ocenka_kvalifikacii_vipusknikov_r
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="r" Type="float" />
+          <Property Name="r1" Type="float" />
           <Property Name="I11" Type="float" />
           <Property Name="mark" Type="float" />
           <Property Name="YEAR" Type="int" />
@@ -1378,6 +1386,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
             <DefiningQuery>SELECT 
     [I10].[ID] AS [ID], 
     [I10].[name] AS [name], 
+    [I10].[tsi] AS [tsi], 
+    [I10].[tsti] AS [tsti], 
     [I10].[I10] AS [I10], 
     [I10].[YEAR] AS [YEAR]
     FROM [dbo].[I10] AS [I10]</DefiningQuery>
@@ -1386,6 +1396,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
             <DefiningQuery>SELECT 
     [I10_rezultati_attestacii_u_studentov].[ID] AS [ID], 
     [I10_rezultati_attestacii_u_studentov].[name] AS [name], 
+    [I10_rezultati_attestacii_u_studentov].[tsi] AS [tsi], 
+    [I10_rezultati_attestacii_u_studentov].[tsti] AS [tsti], 
     [I10_rezultati_attestacii_u_studentov].[I10] AS [I10], 
     [I10_rezultati_attestacii_u_studentov].[mark] AS [mark], 
     [I10_rezultati_attestacii_u_studentov].[YEAR] AS [YEAR]
@@ -1395,6 +1407,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
             <DefiningQuery>SELECT 
     [I11].[ID] AS [ID], 
     [I11].[name] AS [name], 
+    [I11].[r] AS [r], 
+    [I11].[r1] AS [r1], 
     [I11].[I11] AS [I11], 
     [I11].[YEAR] AS [YEAR]
     FROM [dbo].[I11] AS [I11]</DefiningQuery>
@@ -1403,6 +1417,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
             <DefiningQuery>SELECT 
     [I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami].[ID] AS [ID], 
     [I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami].[name] AS [name], 
+    [I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami].[r] AS [r], 
+    [I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami].[r1] AS [r1], 
     [I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami].[I11] AS [I11], 
     [I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami].[mark] AS [mark], 
     [I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami].[YEAR] AS [YEAR]
@@ -2586,6 +2602,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="I101" Type="Double" />
           <Property Name="YEAR" Type="Int32" />
+          <Property Name="tsi" Type="Double" />
+          <Property Name="tsti" Type="Double" />
         </EntityType>
         <EntityType Name="I10_rezultati_attestacii_u_studentov">
           <Key>
@@ -2596,6 +2614,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <Property Name="I10" Type="Double" />
           <Property Name="mark" Type="Double" />
           <Property Name="YEAR" Type="Int32" />
+          <Property Name="tsi" Type="Double" />
+          <Property Name="tsti" Type="Double" />
         </EntityType>
         <EntityType Name="I11">
           <Key>
@@ -2605,6 +2625,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="I111" Type="Double" />
           <Property Name="YEAR" Type="Int32" />
+          <Property Name="r" Type="Double" />
+          <Property Name="r1" Type="Double" />
         </EntityType>
         <EntityType Name="I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami">
           <Key>
@@ -2615,6 +2637,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <Property Name="I11" Type="Double" />
           <Property Name="mark" Type="Double" />
           <Property Name="YEAR" Type="Int32" />
+          <Property Name="r" Type="Double" />
+          <Property Name="r1" Type="Double" />
         </EntityType>
         <EntityType Name="I12">
           <Key>
@@ -3830,6 +3854,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <EntitySetMapping Name="I10">
             <EntityTypeMapping TypeName="URaitingModel.I10">
               <MappingFragment StoreEntitySet="I10">
+                <ScalarProperty Name="tsti" ColumnName="tsti" />
+                <ScalarProperty Name="tsi" ColumnName="tsi" />
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
                 <ScalarProperty Name="I101" ColumnName="I10" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -3840,6 +3866,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <EntitySetMapping Name="I10_rezultati_attestacii_u_studentov">
             <EntityTypeMapping TypeName="URaitingModel.I10_rezultati_attestacii_u_studentov">
               <MappingFragment StoreEntitySet="I10_rezultati_attestacii_u_studentov">
+                <ScalarProperty Name="tsti" ColumnName="tsti" />
+                <ScalarProperty Name="tsi" ColumnName="tsi" />
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
                 <ScalarProperty Name="mark" ColumnName="mark" />
                 <ScalarProperty Name="I10" ColumnName="I10" />
@@ -3851,6 +3879,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <EntitySetMapping Name="I11">
             <EntityTypeMapping TypeName="URaitingModel.I11">
               <MappingFragment StoreEntitySet="I11">
+                <ScalarProperty Name="r1" ColumnName="r1" />
+                <ScalarProperty Name="r" ColumnName="r" />
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
                 <ScalarProperty Name="I111" ColumnName="I11" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -3861,6 +3891,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <EntitySetMapping Name="I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami">
             <EntityTypeMapping TypeName="URaitingModel.I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami">
               <MappingFragment StoreEntitySet="I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami">
+                <ScalarProperty Name="r1" ColumnName="r1" />
+                <ScalarProperty Name="r" ColumnName="r" />
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
                 <ScalarProperty Name="mark" ColumnName="mark" />
                 <ScalarProperty Name="I11" ColumnName="I11" />
