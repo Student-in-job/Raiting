@@ -21,7 +21,7 @@ namespace RatingUniversity.Controllers
         //Set up active menu item
         private void CreateActive(int Position)
         {
-            for (int index = 0; index < 9; index++)
+            for (int index = 0; index < 13; index++)
             {
                 string value = (index == Position) ? "class=active" : string.Empty;
                 this.active.Add(value);
@@ -44,7 +44,7 @@ namespace RatingUniversity.Controllers
             this.CreateActive(1);
             ViewBag.active = this.active;
             ViewBag.Title = "Уровень качества преподавания (по результатам опроса студентов)";
-            return View(db.I2_uroven_kachestva_prepodavaniya.OrderByDescending(model => model.i2).ToList());
+            return View(db.I2_uroven_kachestva_prepodavaniya.OrderByDescending(model => model.mark).ToList());
         }
 
         // GET: /QualityOfEducationalWork/NumberOfEducationMatherials
@@ -62,7 +62,7 @@ namespace RatingUniversity.Controllers
             this.CreateActive(3);
             ViewBag.active = this.active;
             ViewBag.Title = "Доля иностранных преподавателей и иностранных студентов (соответственно в % от общей численности)";
-            return View(db.I4_dolya_inostrannih_prepodavateley_i_studentov.OrderByDescending(model => model.I4));
+            return View(db.I4_dolya_inostrannih_prepodavateley_i_studentov.OrderByDescending(model => model.mark).ToList());
         }
 
         // GET: /QualityOfEducationalWork/ForeignUniversitiesExchange
@@ -71,7 +71,7 @@ namespace RatingUniversity.Controllers
             this.CreateActive(4);
             ViewBag.active = this.active;
             ViewBag.Title = "Участие преподавателей и студентов в программах обмена с зарубежными вузами";
-            return View(db.I5_uchastie_v_programme_obmena.OrderByDescending(model => model.I5));
+            return View(db.I5_uchastie_v_programme_obmena.OrderByDescending(model => model.mark).ToList());
         }
 
         //GET: /QualityOfEducationalWork/CourcesInEnglish
@@ -81,7 +81,7 @@ namespace RatingUniversity.Controllers
             this.CreateActive(5);
             ViewBag.active = this.active;
             ViewBag.Title = "Количество учебных курсов по направлениям образования (специальностям) с преподаванием на иностранных языках (в % от общего количества)";
-            return View(db.I6_kolichestvo_uchebnih_kursov_na_inostrannom.OrderByDescending(model => model.I6));
+            return View(db.I6_kolichestvo_uchebnih_kursov_na_inostrannom.OrderByDescending(model => model.mark).ToList());
         }
 
         //GET: /QualityOfEducationalWork/ForeignLanguage
@@ -90,7 +90,7 @@ namespace RatingUniversity.Controllers
             this.CreateActive(6);
             ViewBag.active = this.active;
             ViewBag.Title = "Уровень владения профессорско-преподавательским составом иностранными языками и информационно-коммуникационными технологиями";
-            return View(db.I7_uroven_angliyskogo_i_ikt_u_pps.OrderByDescending(model => model.I7));
+            return View(db.I7_uroven_angliyskogo_i_ikt_u_pps.OrderByDescending(model => model.mark).ToList());
         }
 
         //GET: /QualityOfEducationalWork/ForeignLecturesParticipants
@@ -99,7 +99,7 @@ namespace RatingUniversity.Controllers
             this.CreateActive(7);
             ViewBag.active = this.active;
             ViewBag.Title = "Доля преподавателей вуза, участвующих в проведении лекций (семинаров, практических занятий, тренингов) в аккредитованных зарубежных вузах, входящих в число 300 лучших вузов мира (в % от общего количества)";
-            return View(db.I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah.OrderByDescending(model => model.I8));
+            return View(db.I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah.OrderByDescending(model => model.mark).ToList());
         }
 
         //GET: /QualityOfEducationalWork/SSPOTraining
@@ -108,7 +108,7 @@ namespace RatingUniversity.Controllers
             this.CreateActive(8);
             ViewBag.active = this.active;
             ViewBag.Title = "Численность ППС, проводящего учебные занятия в учреждениях ССПО";
-            return View(db.I9_dolya_pps_prepodayushego_v_sspo.OrderByDescending(model => model.I9));
+            return View(db.I9_dolya_pps_prepodayushego_v_sspo.OrderByDescending(model => model.mark).ToList());
         }
         #endregion
 

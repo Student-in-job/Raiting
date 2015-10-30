@@ -1,93 +1,33 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="row">
-    <div class="col-md-3">
-        <section id="leftSideMenu">
-            <div class="accordion" id="accordion2">
-                <div class="accordion-group panel panel-default">
-                    <div class="accordion-heading panel-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                            <strong>I. Уровень качества преподавания</strong> <span class="caret"></span>
-                        </a>
-                    </div>
-                    <div id="collapseOne" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li @ViewBag.active[0]><a href="../QualityOfEducationalWork/DolyaPPS">Доля профессорско-преподавательского состава (ППС), имеющего степень PhD (ученую степень доктора, кандидата наук), магистра (дипломированного специалиста) зарубежных высших образовательных учреждений (вузов), входящих в число 500 лучших вузов мира</a></li>
-                                <li @ViewBag.active[1]><a href="../QualityOfEducationalWork/SurveyOfStudents">Уровень качества преподавания (по результатам опроса студентов)</a></li>
-                                <li @ViewBag.active[2]><a href="../QualityOfEducationalWork/NumberOfEducationMatherials">Количество учебников, учебных пособий и учебно-методических комплексов, изданных в установленном порядке в течение года преподавателями вуза (в расчете на 100 человек ППС)</a></li>
-                                <li @ViewBag.active[3]><a href="../QualityOfEducationalWork/NumberOfForeigners">Доля иностранных преподавателей и иностранных студентов (соответственно в % к общей численности)</a></li>
-                                <li @ViewBag.active[4]><a href="../QualityOfEducationalWork/ForeignUniversitiesExchange">Участие преподавателей и студентов в программах обмена с зарубежными вузами</a></li>
-                                <li @ViewBag.active[5]><a href="../QualityOfEducationalWork/CourcesInEnglish">Количество учебных курсов по направлениям образования (специальностям) с преподаванием на иностранных языках (в % от общего количества)</a></li>
-                                <li @ViewBag.active[6]><a href="../QualityOfEducationalWork/ForeignLanguage">Уровень владения ППС иностранным языком и информационно-коммуникационными технологиями</a></li>
-                                <li @ViewBag.active[7]><a href="../QualityOfEducationalWork/ForeignLecturesParticipants">Доля преподавателей вуза, участвующих в проведении лекций (семинаров, практических занятий, тренингов) в аккредитованных зарубежных вузах, входящих в число 500 лучших вузов мира</a></li>
-                                <li @ViewBag.active[8]><a href="../QualityOfEducationalWork/SSPOTraining">Количество ППС, проводящего учебные занятия в учреждениях ССПО</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-group panel panel-default">
-                    <div class="accordion-heading panel-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                            <strong>II. Уровень знания студентов и квалификация выпускников</strong> <span class="caret"></span>
-                        </a>
-                    </div>
-                    <div id="collapseTwo" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Оценка знаний студентов (по результатам выборочного тестирования студентов по специальным профильным дисциплинам)</a></li>
-                                <li><a href="#">Оценка квалификации выпускников вуза по результатам опроса работодателей</a></li>
-                                <li><a href="#">Доля выпускников, трудоустроенных по специальности в течение 6 месяцев после окончания вуза</a></li>
-                                <li><a href="#">Количество студентов, удостоенных наград (дипломов) и занявших призовые места на международных и республиканских олимпиадах и престижных конкурсах</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-group panel panel-default">
-                    <div class="accordion-heading panel-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                            <strong>III. Уровень научного потенциала высшего учебного заведения</strong> <span class="caret"></span>
-                        </a>
-                    </div>
-                    <div id="collapseThree" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Цитируемость публикаций ППС вуза по данным международных индексов</a></li>
-                                <li><a href="#">Количество статей, опубликованных в зарубежных реферируемых научных журналах, республиканских научных журналах (включенных в список ВАК), изданных монографий в течение года</a></li>
-                                <li><a href="#">Количество утвержденных Президиумом ВАК РУз, в течение года докторских диссертаций, защищенных сотрудниками высшего учебного заведения, профессоров-преподавателей, имеющих ученые степени (ученые звания)</a></li>
-                                <li><a href="#">Финансовые средства, полученные от научно-исследовательской деятельности (в расчете на 1 ППС)</a></li>
-                                <li><a href="#">Эффективность проводимых научно-изыскательских работ</a></li>
-                                <li><a href="#">Степень оснащенности научных лабораторий современным оборудованием экспериментально-лабораторной базы для проведения научно-изыскательских работ</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-group panel panel-default">
-                    <div class="accordion-heading panel-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-                            <strong>IV. Уровень оснащенности материально-технической базы и внедрения ИКТ</strong> <span class="caret"></span>
-                        </a>
-                    </div>
-                    <div id="collapseFour" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li></li>
-                                <li><a href="#">Обеспеченность ИРЦ учебной литературой в соответствии с требованиями учебных программ, а также электронными версиями учебной литературы</a></li>
-                                <li><a href="#">Степень использования средств ИКТ в учебном процессе и научно-исследовательской работе, компьютерной техники, а также обновляемость компьютерного парка</a></li>
-                                <li><a href="#">Степень доступности и качества информации о вузе в сети Интернет (качество дизайна веб-сайта, достаточность учебно-научных и информационных ресурсов, обновляемость материалов, а также посещаемость веб-сайта)</a></li>
-                                <li><a href="#">Степень оснащенности материально-технической базы вуза современным лабораторным оборудованием и инвентарем, мультимедийной учебно-презентационной техникой</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+	<div class="col-md-3">
+		<section id="leftSideMenu">
+			<ul class="nav nav-pills nav-stacked">
+				<li><a href="../Jadval1">Jadval1</a></li>
+				<li><a href="../Jadval2">Jadval2</a></li>
+				<li><a href="../Jadval3">Jadval3</a></li>
+				<li><a href="../Jadval4">Jadval4</a></li>
+				<li><a href="../Jadval5">Jadval5</a></li>
+				<li><a href="../Jadval6">Jadval6</a></li>
+				<li><a href="../Jadval7">Jadval7</a></li>
+				<li><a href="../Jadval8">Jadval8</a></li>
+				<li><a href="../Jadval9">Jadval9</a></li>
+				<li><a href="../Jadval10">Jadval10</a></li>
+				<li><a href="../Jadval11">Jadval11</a></li>
+				<li><a href="../Jadval12">Jadval12</a></li>
+				<li><a href="../Jadval13">Jadval13</a></li>
+				<li><a href="../Jadval14">Jadval14</a></li>
+				<li><a href="../Jadval15">Jadval15</a></li>
+				<li><a href="../Jadval16">Jadval16</a></li>
+				<li><a href="../Jadval17">Jadval17</a></li>
+			</ul>
+		</section>
+	</div>
 
-        </section>
-    </div>
-
-    <div class="col-md-9">
-        @RenderBody()
-    </div>
+	<div class="col-md-9">
+		@RenderBody()
+	</div>
 </div>

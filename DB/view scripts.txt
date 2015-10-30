@@ -180,7 +180,7 @@ GO
 
 --- 2.1
 CREATE VIEW I10 AS 
-SELECT university.id as ID, university.name as name, 
+SELECT university.id as ID, university.name as name, tsi, tsti,
 (raiting.tsi/CASE raiting.tsti WHEN 0 THEN 1 ELSE raiting.tsti END)*100 AS I10,
 YEAR
 FROM raiting INNER JOIN university
@@ -189,7 +189,7 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I10_rezultati_attestacii_u_studentov AS 
-SELECT ID, name, I10, 8*I10/CASE (SELECT MAX(I10) FROM I10 WHERE I10.YEAR = YEAR) WHEN 0 THEN 1 ELSE (SELECT MAX(I10) FROM I10 WHERE I10.YEAR = YEAR) END AS mark, YEAR
+SELECT ID, name, tsi, tsti, I10, 8*I10/CASE (SELECT MAX(I10) FROM I10 WHERE I10.YEAR = YEAR) WHEN 0 THEN 1 ELSE (SELECT MAX(I10) FROM I10 WHERE I10.YEAR = YEAR) END AS mark, YEAR
 FROM I10;
 
 GO

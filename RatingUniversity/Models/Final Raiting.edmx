@@ -455,6 +455,8 @@ warning 6002: The table/view 'URaiting.dbo.I10' does not have a primary key defi
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="tsi" Type="float" />
+          <Property Name="tsti" Type="float" />
           <Property Name="I10" Type="float" />
           <Property Name="YEAR" Type="int" />
         </EntityType>
@@ -466,6 +468,8 @@ warning 6002: The table/view 'URaiting.dbo.I10_rezultati_attestacii_u_studentov'
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="tsi" Type="float" />
+          <Property Name="tsti" Type="float" />
           <Property Name="I10" Type="float" />
           <Property Name="mark" Type="float" />
           <Property Name="YEAR" Type="int" />
@@ -1378,6 +1382,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
             <DefiningQuery>SELECT 
     [I10].[ID] AS [ID], 
     [I10].[name] AS [name], 
+    [I10].[tsi] AS [tsi], 
+    [I10].[tsti] AS [tsti], 
     [I10].[I10] AS [I10], 
     [I10].[YEAR] AS [YEAR]
     FROM [dbo].[I10] AS [I10]</DefiningQuery>
@@ -1386,6 +1392,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
             <DefiningQuery>SELECT 
     [I10_rezultati_attestacii_u_studentov].[ID] AS [ID], 
     [I10_rezultati_attestacii_u_studentov].[name] AS [name], 
+    [I10_rezultati_attestacii_u_studentov].[tsi] AS [tsi], 
+    [I10_rezultati_attestacii_u_studentov].[tsti] AS [tsti], 
     [I10_rezultati_attestacii_u_studentov].[I10] AS [I10], 
     [I10_rezultati_attestacii_u_studentov].[mark] AS [mark], 
     [I10_rezultati_attestacii_u_studentov].[YEAR] AS [YEAR]
@@ -2586,6 +2594,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="I101" Type="Double" />
           <Property Name="YEAR" Type="Int32" />
+          <Property Name="tsi" Type="Double" />
+          <Property Name="tsti" Type="Double" />
         </EntityType>
         <EntityType Name="I10_rezultati_attestacii_u_studentov">
           <Key>
@@ -2596,6 +2606,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <Property Name="I10" Type="Double" />
           <Property Name="mark" Type="Double" />
           <Property Name="YEAR" Type="Int32" />
+          <Property Name="tsi" Type="Double" />
+          <Property Name="tsti" Type="Double" />
         </EntityType>
         <EntityType Name="I11">
           <Key>
@@ -3830,6 +3842,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <EntitySetMapping Name="I10">
             <EntityTypeMapping TypeName="URaitingModel.I10">
               <MappingFragment StoreEntitySet="I10">
+                <ScalarProperty Name="tsti" ColumnName="tsti" />
+                <ScalarProperty Name="tsi" ColumnName="tsi" />
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
                 <ScalarProperty Name="I101" ColumnName="I10" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -3840,6 +3854,8 @@ warning 6002: The table/view 'URaiting.dbo.I9_dolya_pps_prepodayushego_v_sspo' d
           <EntitySetMapping Name="I10_rezultati_attestacii_u_studentov">
             <EntityTypeMapping TypeName="URaitingModel.I10_rezultati_attestacii_u_studentov">
               <MappingFragment StoreEntitySet="I10_rezultati_attestacii_u_studentov">
+                <ScalarProperty Name="tsti" ColumnName="tsti" />
+                <ScalarProperty Name="tsi" ColumnName="tsi" />
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
                 <ScalarProperty Name="mark" ColumnName="mark" />
                 <ScalarProperty Name="I10" ColumnName="I10" />
