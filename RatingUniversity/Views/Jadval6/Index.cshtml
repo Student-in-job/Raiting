@@ -6,7 +6,8 @@
 		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Universitetlar reytingi</h2>
+	<h2>Таълим олаётган  хорижий талабалар  ҳақида
+</h2>
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -41,28 +42,28 @@
 		<table class="table">
 			<tr>
 				<th>
-					@Html.DisplayNameFor(model => model.FullName)
+					Ф.И.Ш
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.State)
+					Давлати
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Yonalish)
+					Таълим йўналиши
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Mag_mutaxassislik)
+					Магистратура мутахассислиги
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Asos)
+					Асос (буйруқ, қарор, шартнома ва бошқалар)*
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Asos_fayl)
+					Файл
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Year)
+					Йил
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.UniversityId)
+					UniversityId
 				</th>
 			</tr>
 

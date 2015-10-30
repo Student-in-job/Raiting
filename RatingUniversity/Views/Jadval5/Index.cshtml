@@ -6,7 +6,9 @@
 		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Universitetlar reytingi</h2>
+	<h2>Етакчи хорижий мамлакатларнинг таълим муассасаларидан таклиф этилиб, дарс бераётган
+хорижий ўқитувчилар ҳақидаги
+</h2>
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -41,25 +43,25 @@
 		<table class="table">
 			<tr>
 				<th>
-					FullName
+					Ф.И.Ш
 				</th>
 				<th>
-					Davlat_ishjoy
+					Давлати  ва иш жойи
 				</th>
 				<th>
-					Speciality
+					Мутахассислиги
 				</th>
 				<th>
-					Subject
+					Дарс берадиган фани
 				</th>
 				<th>
-					Asos
+					Асос (буйруқ, қарор, шартнома ва бошқалар)*
 				</th>
 				<th>
-					Asos_fayl
+					Файл
 				</th>
 				<th>
-					Year
+					Йил
 				</th>
 				<th>
 					UniversityId

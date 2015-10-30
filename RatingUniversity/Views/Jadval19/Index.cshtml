@@ -7,7 +7,8 @@
 		ViewBag.Title = "Jadval19";
 	}
 
-	<h2>Universitetlar reytingi</h2>
+	<h2>Талабаларининг халқаро ва республика олимпиадаларида
+ҳамда нуфузли танловларда мукофотлар (дипломлар) ва совринли ўринлар билан тақдирланганлиги ҳақида</h2>
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -42,43 +43,43 @@
 		<table class="table">
 			<tr>
 				<th>
-					@Html.DisplayNameFor(model => model.FullName)
+					Талабаларнинг ф.и.ш
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.TanlovTuri)
+					Танлов тури
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.TanlovName)
+					Халқаро, республика  олимпиадалари ва нуфузли танловлар номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Tanlov_joy_date)
+					Ўтказилган жой ва санаси
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.SubjectName)
+					Олимпиада фанлари ва танлов номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.EgallaganPosition)
+					Эгаллаган ўрни
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.DiplomSeria)
+					Диплом серияси
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.DiplomNumber)
+					Диплом рақами
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.SovrinName)
+					Соврин номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Description)
+					Изоҳ
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.AsosFile)
+					Файл
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Year)
+					Йил
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.UniversityId)
+					UniversityId
 				</th>
 			</tr>
 

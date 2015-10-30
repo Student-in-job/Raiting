@@ -6,7 +6,8 @@
 		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Universitetlar reytingi</h2>
+	<h2>Хорижий (хамкорликдаги) лойихалар, хорижий халқаро конференциялар ва семинарлар иштирокчилари хақидаги
+</h2>
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -41,31 +42,31 @@
 		<table class="table">
 			<tr>
 				<th>
-					FullName
+					Ф.И.Ш.
 				</th>
 				<th>
-					State_otm_nomi
+					Хорижий Давлат ва ОТМ номи
 				</th>
 				<th>
-					Talim_yonalish
+					Таълим йўналиши (мутахассислик) номи
 				</th>
 				<th>
-					Loyiha_nomi
+					Хорижий ва хамкорликда бажарилаётган лойихалар номи
 				</th>
 				<th>
-					Konferensiya_nomi
+					Халқаро хорижий конференция ва семинарлар номи
 				</th>
 				<th>
-					Student_oqituvchi
+					Ўқитувчи/студент
 				</th>
 				<th>
-					Asos
+					Хамкорлик  дастурига асос бўлувчи ҳужжат номи ва имзоланган санаси*
 				</th>
 				<th>
-					Asos_fayl
+					Файл
 				</th>
 				<th>
-					Year
+					Йил
 				</th>
 				<th>
 					UniversityId
@@ -91,7 +92,8 @@
 						@Html.DisplayFor(modelItem => item.Konferensiya_nomi)
 					</td>
 					<td>
-						@Html.DisplayFor(modelItem => item.Student_oqituvchi)
+						@if (item.Student_oqituvchi == 1) { <p>Ўқитувчи</p>}
+						else { <p>студент</p>}
 					</td>
 					<td>
 						@Html.DisplayFor(modelItem => item.Asos)

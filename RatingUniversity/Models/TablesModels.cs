@@ -348,7 +348,7 @@ namespace RatingUniversity.Models
 		public int? id_branch { get; set; }
 		public int? id_region { get; set; }
 	}
-    */
+    
 /*
 	public class Role
 	{

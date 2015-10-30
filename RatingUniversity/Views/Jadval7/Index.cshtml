@@ -6,7 +6,8 @@
 		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Universitetlar reytingi</h2>
+	<h2>Хориж олий таълим муассасалари билан алмашув дастурлари иштирокчилари ҳақида
+</h2>
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -41,37 +42,37 @@
 		<table class="table">
 			<tr>
 				<th>
-					@Html.DisplayNameFor(model => model.FullName_uzb)
+					Алмашув дастурлари асосида Хорижий ОТМларида таълим олаётган талабаларнинг Ф.И.Ш
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.State_uzb)
+					Давлат ва ОТМ номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Mutaxassislik_uzb)
+					Таълим йўналиши (мутахассислик) номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.FullName_xorij)
+					Алмашув дастурлари асосидаОТМда таълим олаётган хорижлик талабаларнинг Ф.И.Ш
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.State_xorij)
+					Давлат ва ОТМ номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Mutaxassislik_xorij)
+					Таълим йўналиши (мутахассислик) номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Asos)
+					Алмашув дастурига асос бўлувчи ҳужжат номи ва имзоланган санаси*
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Asos_fayl)
+					Файл
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Bak_mag)
+					Бакалавр/Магистратура
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Year)
+					Йил
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.UniversityId)
+					UniversityId
 				</th>
 			</tr>
 
@@ -110,7 +111,8 @@
 						}
 					</td>
 					<td>
-						@Html.DisplayFor(modelItem => item.Bak_mag)
+						@if (item.Bak_mag == 0) {<p>бакалавр</p>}
+						else {<p>магистр</p>}
 					</td>
 					<td>
 						@Html.DisplayFor(modelItem => item.Year)

@@ -7,7 +7,8 @@
 		ViewBag.Title = "Jadval21";
 	}
 
-	<h2>Universitetlar reytingi</h2>
+	<h2>Магистратура битирувчилари ва улардан ўқишни тугатгандан кейин 6 ой мобайнида мутахассислиги бўйича ишга жойлашганлари ҳақида маълумот
+</h2>
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -42,28 +43,28 @@
 		<table class="table">
 			<tr>
 				<th>
-					@Html.DisplayNameFor(model => model.fio)
+					Фамилияси,исми, шарифи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Mutaxassislik_shifr)
+					Мутахассислик шифри
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Mutaxassislik_nomi)
+					Мутахассислик номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Ish_nomi)
+					Ишга жойлашган корхона (ташкилот ва б.) тўлиқ номи ва почта манзили
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Ish_lavozimi)
+					Шу жумладан мутахассислиги бўйича ишга кирганларнинг лавозими*
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Asos_fayl)
+					Файл
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Year)
+					Йил
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.UniversityId)
+					UniversityId
 				</th>
 			</tr>
 

@@ -7,7 +7,7 @@
 		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Universitetlar reytingi</h2>
+	<h2>Профессор-ўқитувчиларидан ўрта махсус, касб-ҳунар таълими муассасаларида ўриндошлик асосида ишлаётганлари ҳақида</h2>
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
 		<a href="/Jadval18/Download">Загрузить шаблон</a>
@@ -43,34 +43,34 @@
 		<table class="table">
 			<tr>
 				<th>
-					@Html.DisplayNameFor(model => model.FullName)
+					Асосий штатдаги профессор-ўқитувчиларнинг Ф.И.Ш
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Khk_ak_Name)
+					Ўрта махсус, касб-ҳунар таълими муассасаларида номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Post)
+					Лавозими
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Subject)
+					Дарс бераётган фани
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Orindosh)
+					Ўриндош
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Soatbay)
+					Соатбай
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Asos)
+					Буйруқ рақами ва санаси
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.AsosFile)
+					Файл
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Year)
+					Йил
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.UniversityId)
+					UniversityId
 				</th>
 			</tr>
 
