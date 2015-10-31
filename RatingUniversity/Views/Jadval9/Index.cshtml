@@ -3,10 +3,11 @@
 	<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 	@{
-		Layout = "~/Views/Shared/_LayoutSideMenu.cshtml";
+		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Universitetlar reytingi</h2>
+	<h2>Асосий шататдаги профессор-ўқитувчиларидан 300 та энг яхши хорижий олий таълим муассасаларида охирги 3 йилда дарс (маъруза, семинар ва амалий машғулот) ўтганлари ҳақидаги
+</h2>
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
 		<a href="/Jadval9/Download">Загрузить шаблон</a>
@@ -40,28 +41,28 @@
 		<table class="table">
 			<tr>
 				<th>
-					@Html.DisplayNameFor(model => model.FullName)
+					Ф.И.Ш
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.State_otm)
+					Хорижий давлат ва ОТМ номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Speciality)
+					Мутахассислиги
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Subject)
+					Дарс берадиган фани
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Asos)
+					Асос (буйруқ, қарор, шартнома ва бошқалар)*
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Asos_fayl)
+					Файл
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Year)
+					Йил
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.UniversityId)
+					UniversityId
 				</th>
 			</tr>
 

@@ -2,10 +2,11 @@
 @model PagedList.IPagedList<RatingUniversity.Models.Jadval11>
 	<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 	@{
-		Layout = "~/Views/Shared/_LayoutSideMenu.cshtml";
+		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Universitetlar reytingi</h2>
+	<h2>Асосий штатдаги профессор-ўқитувчиларнинг 2014 йилда нашр этган монография, нашрга тавсия этилган дарслик, ўқув қўлланма ва ўқув услубий мажмуалари ҳақида
+</h2>
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -40,43 +41,43 @@
 		<table class="table">
 			<tr>
 				<th>
-					@Html.DisplayNameFor(model => model.FullName)
+					Муаллифларнинг Ф.И.Ш
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Speciality)
+					Ихтисослик шифри ва номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.MonographName)
+					Монография номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.MongographYear)
+					Монография нашр йили
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.DarslikName)
+					Дарслик номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.DarslikCertificate)
+					Мувофиқлаштирувчи Кенгашдан ўтганлиги тўғрисидага гувоҳнома рақами ва санаси
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.OquvqullanmaName)
+					Ўқув қўлланма номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.OquvqullanmaCertificate)
+					Мувофиқлаштирувчи Кенгашдан ўтганлиги тўғрисидага гувоҳнома рақами ва санаси
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.OquvmajmuaName)
+					Ўқув услубий мажмуа номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.OquvmajmuaCertificate)
+					Мувофиқлаштирувчи Кенгашдан ўтганлиги тўғрисидага гувоҳнома рақами ва санаси
 				</th>
 				<th>
-					@Html.DisplayNameFor(model=>model.AsosFile)
+					Файл
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Year)
+					Йил
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.UniversityId)
+					UniversityId
 				</th>
 			</tr>
 

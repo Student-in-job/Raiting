@@ -3,10 +3,11 @@
 	<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 	@{
-		Layout = "~/Views/Shared/_LayoutSideMenu.cshtml";
+		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Universitetlar reytingi</h2>
+	<h2>Хорижий (хамкорликдаги) лойихалар, хорижий халқаро конференциялар ва семинарлар иштирокчилари хақидаги
+</h2>
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -41,34 +42,34 @@
 		<table class="table">
 			<tr>
 				<th>
-					@Html.DisplayNameFor(model => model.FullName)
+					Ф.И.Ш.
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.State_otm_nomi)
+					Хорижий Давлат ва ОТМ номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Talim_yonalish)
+					Таълим йўналиши (мутахассислик) номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Loyiha_nomi)
+					Хорижий ва хамкорликда бажарилаётган лойихалар номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Konferensiya_nomi)
+					Халқаро хорижий конференция ва семинарлар номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Student_oqituvchi)
+					Ўқитувчи/студент
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Asos)
+					Хамкорлик  дастурига асос бўлувчи ҳужжат номи ва имзоланган санаси*
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Asos_fayl)
+					Файл
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Year)
+					Йил
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.UniversityId)
+					UniversityId
 				</th>
 			</tr>
 
@@ -91,7 +92,8 @@
 						@Html.DisplayFor(modelItem => item.Konferensiya_nomi)
 					</td>
 					<td>
-						@Html.DisplayFor(modelItem => item.Student_oqituvchi)
+						@if (item.Student_oqituvchi == 1) { <p>Ўқитувчи</p>}
+						else { <p>студент</p>}
 					</td>
 					<td>
 						@Html.DisplayFor(modelItem => item.Asos)

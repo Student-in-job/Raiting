@@ -6,7 +6,9 @@
 		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Universitetlar reytingi</h2>
+	<h2>Етакчи хорижий мамлакатларнинг таълим муассасаларидан таклиф этилиб, дарс бераётган
+хорижий ўқитувчилар ҳақидаги
+</h2>
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -41,28 +43,28 @@
 		<table class="table">
 			<tr>
 				<th>
-					
+					Ф.И.Ш
 				</th>
 				<th>
-					
+					Давлати  ва иш жойи
 				</th>
 				<th>
-					
+					Мутахассислиги
 				</th>
 				<th>
-					
+					Дарс берадиган фани
 				</th>
 				<th>
-					
+					Асос (буйруқ, қарор, шартнома ва бошқалар)*
 				</th>
 				<th>
-					
+					Файл
 				</th>
 				<th>
-					
+					Йил
 				</th>
 				<th>
-					
+					UniversityId
 				</th>
 			</tr>
 
@@ -105,5 +107,5 @@
 			}
 
 		</table>
-	@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 	}

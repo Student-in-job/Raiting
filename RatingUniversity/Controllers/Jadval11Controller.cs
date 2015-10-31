@@ -126,7 +126,10 @@ namespace RatingUniversity.Controllers
 				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
 				NewUpload.Speciality = Convert.ToString(data.Rows[i][2]);
 				NewUpload.MonographName = Convert.ToString(data.Rows[i][3]);
-				NewUpload.MongographYear = Convert.ToInt32(data.Rows[i][4]);
+				int tt = 0;
+				string ss = Convert.ToString(data.Rows[i][4]);
+				Int32.TryParse(ss, out tt);
+				NewUpload.MongographYear=tt;
 				NewUpload.DarslikName = Convert.ToString(data.Rows[i][5]);
 				NewUpload.DarslikCertificate = Convert.ToString(data.Rows[i][6]);
 				NewUpload.OquvqullanmaName = Convert.ToString(data.Rows[i][7]);

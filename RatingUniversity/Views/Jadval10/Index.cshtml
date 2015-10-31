@@ -3,10 +3,11 @@
 	<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 	@{
-		Layout = "~/Views/Shared/_LayoutSideMenu.cshtml";
+		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 		ViewBag.Title = "Jadval10";
 	}
 
+	<h2>Таълим йўналишлари (мутахассисликлар) бўйича хорижий тилда дарс берилаётган курслар (фанлар) ҳақида </h2>
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
 		<a href="/Jadval10/Download">Загрузить шаблон</a>
@@ -40,34 +41,34 @@
 		<table class="table">
 			<tr>
 				<th>
-					@Html.DisplayNameFor(model => model.DirectionCode)
+					коди
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.DirectionName)
+					номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.SubjectName)
+					Хорижий тилда дарс берилаётган фанлар номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.ForeignLanguage)
+					Хорижий тил номи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.EducationCourse)
+					Таълим босқичи
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.StudentCount)
+					Таълим олаётган талабалар сони
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Asos)
+					Хорижий тилда таълим беришга асос бўлувчи ҳужжат номи ва имзоланган санаси
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.AsosFile)
+					Файл
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.Year)
+					Йил
 				</th>
 				<th>
-					@Html.DisplayNameFor(model => model.UniversityId)
+					UniversityId
 				</th>
 			</tr>
 
