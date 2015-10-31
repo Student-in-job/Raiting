@@ -196,7 +196,7 @@ GO
 
 --- 2.2
 CREATE VIEW I11 AS 
-SELECT university.id as ID, university.name as name, raiting.r, raiting.r1, 
+SELECT university.id as ID, university.name as name
 (raiting.r1/CASE raiting.r WHEN 0 THEN 1 ELSE raiting.r END)*100 AS I11,
 YEAR
 FROM raiting INNER JOIN university
@@ -205,14 +205,14 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami AS 
-SELECT ID, name, r, r1, I11, 3*I11/(SELECT MAX(I11) FROM I11 WHERE I11.YEAR = YEAR) AS mark, YEAR
+SELECT ID, name, I11, 3*I11/(SELECT MAX(I11) FROM I11 WHERE I11.YEAR = YEAR) AS mark, YEAR
 FROM I11;
 
 GO
 
 --- 2.3
 CREATE VIEW I12 AS 
-SELECT university.id as ID, university.name as name, 
+SELECT university.id as ID, university.name as name,
 5*raiting.p10/CASE raiting.p11 WHEN 0 THEN 1 ELSE raiting.p11 END AS I12,
 raiting.p10/CASE raiting.p11 WHEN 0 THEN 1 ELSE raiting.p11 END AS I12_1,
 YEAR
@@ -368,8 +368,9 @@ GO
 --- 4.1
 CREATE VIEW I20 AS 
 SELECT university.id as ID, university.name as name,
-(2*raiting.k2+raiting.m)/(2*CASE raiting.l WHEN 0 THEN 1 ELSE raiting.l END) AS I20,
+(2*raiting.k2+raiting.m)/(CASE raiting.l WHEN 0 THEN 1 ELSE raiting.l END) AS I20,
 raiting.k2/CASE raiting.l WHEN 0 THEN 1 ELSE raiting.l END AS I201,
+raiting.m/CASE raiting.l WHEN 0 THEN 1 ELSE raiting.l END AS I202,
 YEAR
 FROM raiting INNER JOIN university
 	ON raiting.id_university = university.id;
@@ -377,7 +378,7 @@ FROM raiting INNER JOIN university
 GO
 
 CREATE VIEW I20_obespechennost_irc_uchebnoy_literaturoy AS 
-SELECT ID, name, I201, I20, 3*I20/(SELECT MAX(I20) FROM I20 WHERE I20.YEAR = YEAR) AS mark, YEAR
+SELECT ID, name, I201, I202, I20, 3*I20/(SELECT MAX(I20) FROM I20 WHERE I20.YEAR = YEAR) AS mark, YEAR
 FROM I20;
 
 GO
@@ -510,19 +511,38 @@ WHERE
 
 GO
 		
----
+--- 4 Уровень оснащенности материально-технической базы и внедрения ИКТ
 
 CREATE VIEW I4_TOTAL AS
 SELECT u.id as ID, u.name as name,
-
-r.YEAR
+I20.mark as I20, I21.mark as I21, I22.mark as I22, I23.mark as I23,
+I20.mark + I21.mark + I22.mark + I23.mark as, r.YEAR
 FROM
 	university u
 		INNER JOIN raiting r ON r.id_university = u.id
-		LEFT JOIN I20_obespechennost_irc_uchebnoy_literaturoy I20
+		LEFT JOIN I20_obespechennost_irc_uchebnoy_literaturoy I20 ON u.id = I20.id
+		LEFT JOIN I21_stepen_vnedreniya_ikt_v_uchebniy_process I21 ON u.id = I21.id
+		LEFT JOIN I22_dostupnost_informacii_o_vuze_v_internete I22 ON u.id = I22.id
+		LEFT JOIN I23_osnashennost_laboratornim_oborudovaniem I23 ON u.id = I23.id
 WHERE
-	I14.YEAR = I15.YEAR
-		AND I15.YEAR = I16.YEAR
-		AND I16.YEAR = I17.YEAR
-		AND I17.YEAR = I18.YEAR
-		AND I18.YEAR = I19.YEAR
+	I20.YEAR = I21.YEAR
+		AND I21.YEAR = I22.YEAR
+		AND I22.YEAR = I23.YEAR
+		
+--- Общий рейтинг
+
+CREATE VIEW RAITING_TOTAL AS
+SELECT u.id as ID, u.name as name,
+I1.mark as I1, I2.mark as I2, I3.mark as I3, I4.mark as I4,
+I1.mark + I2.mark + I3.mark + I4.mark as mark, r.YEAR
+FROM
+	university u
+		INNER JOIN raiting r ON r.id_university = u.id
+		LEFT JOIN I1_TOTAL I1 ON u.id = I1.id
+		LEFT JOIN I2_TOTAL I2 ON u.id = I2.id
+		LEFT JOIN I3_TOTAL I3 ON u.id = I3.id
+		LEFT JOIN I4_TOTAL I4 ON u.id = I4.id
+WHERE
+	I1.YEAR = I2.YEAR
+		AND I2.YEAR = I3.YEAR
+		AND I3.YEAR = I4.YEAR

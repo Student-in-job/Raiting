@@ -189,6 +189,9 @@
   <data name="MainMenuHome" xml:space="preserve">
     <value>Главная</value>
   </data>
+  <data name="MainMenuRaiting" xml:space="preserve">
+    <value>Рейтинг</value>
+  </data>
   <data name="PageTitle" xml:space="preserve">
     <value>Рейтинг ВУЗ-ов Узбекистана</value>
     <comment>&lt;head&gt;&lt;title&gt;Page title is here&lt;/title&gt;&lt;/head&gt;</comment>

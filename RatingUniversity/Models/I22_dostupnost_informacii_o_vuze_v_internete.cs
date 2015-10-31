@@ -12,16 +12,14 @@ namespace RatingUniversity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class branch
+    public partial class I22_dostupnost_informacii_o_vuze_v_internete
     {
-        public branch()
-        {
-            this.university = new HashSet<university>();
-        }
-    
-        public int id { get; set; }
+        public int ID { get; set; }
         public string name { get; set; }
-    
-        public virtual ICollection<university> university { get; set; }
+        public Nullable<double> I22 { get; set; }
+        public Nullable<double> I221 { get; set; }
+        public Nullable<double> I222 { get; set; }
+        public Nullable<double> mark { get; set; }
+        public Nullable<int> YEAR { get; set; }
     }
 }

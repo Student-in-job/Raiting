@@ -1,0 +1,51 @@
+﻿@model IEnumerable<RatingUniversity.Models.I22_dostupnost_informacii_o_vuze_v_internete>
+
+@{ Layout = "~/Views/Shared/_LayoutSideMenu.cshtml"; }
+
+<h3>@ViewBag.Title</h3>
+
+<table class="table table-striped" style="font-size:14px;">
+    <thead>
+        <tr>
+            <th>Рейтинг</th>
+            <th>Название высшего учебного заведения</th>
+            <th>Рейтинг веб-сайта вуза в рейтинговой системе веб-сайтов университетов мира Webometrics</th>
+            <th>Рейтинг веб-сайта вуза в рейтинговой системе национальной поисковой системы <u>www.uz</u></th>
+            <th>Доступность информации о вузе в Интернете (качество вэб-сайта, наличие необходимой информации о вузе, публикаций и материалов, контактных данных для электронных запросов пользователей, обновляемость сайта и другие</th>
+            <th>Показатель доступности информации о вузе в Интернете (качество вэб-сайта, наличие необходимой информации о вузе, публикаций и материалов, контактных данных для электронных запросов пользователей, обновляемость сайта и другие</th>
+            <th>Год проведения рейтинга</th>
+        </tr>
+    </thead>
+
+@{var position=0;}
+@foreach (var item in Model)
+{
+    position++;
+    <tbody>
+        <tr>
+            <td>
+                @position
+            </td>
+            <td width="35%">
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.I221)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.I222)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.I22)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YEAR)
+            </td>
+        </tr>
+    </tbody>
+}
+
+</table>

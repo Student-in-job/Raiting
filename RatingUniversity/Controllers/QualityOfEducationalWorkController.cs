@@ -15,18 +15,6 @@ namespace RatingUniversity.Controllers
     public class QualityOfEducationalWorkController : Controller
     {
         private URaitingEntities db = new URaitingEntities();
-
-        public List<string> active = new List<string>();
-        
-        //Set up active menu item
-        private void CreateActive(int Position)
-        {
-            for (int index = 0; index < 13; index++)
-            {
-                string value = (index == Position) ? "class=active" : string.Empty;
-                this.active.Add(value);
-            }
-        }
         
         #region Качество учебно-методической работы и преподавания
         // GET: /QualityOfEducationalWork/DolyaPPS
@@ -35,8 +23,7 @@ namespace RatingUniversity.Controllers
             if (year == null)
                 year = DateTime.Now.Year;
             ViewBag.year = year;
-            this.CreateActive(0);
-            ViewBag.active = this.active;
+            ViewBag.active = Functions.CreateActive(0);
             ViewBag.Title = "Доля профессорско-преподавательского состава (ППС), имеющего степень PhD (ученую степень доктора, кандидата наук), магистра (дипломированного специалиста) зарубежных высших образовательных учреждений (вузов), входящих в число 500 лучших вузов мира";
             return View(db.I1_dolya_pps_s_uchenoy_stepenyu.Where(model => model.YEAR == year).OrderByDescending(model => model.mark).ToList());
         }
@@ -47,8 +34,7 @@ namespace RatingUniversity.Controllers
             if (year == null)
                 year = DateTime.Now.Year;
             ViewBag.year = year;
-            this.CreateActive(1);
-            ViewBag.active = this.active;
+            ViewBag.active = Functions.CreateActive(1);
             ViewBag.Title = "Уровень качества преподавания (по результатам опроса студентов)";
             return View(db.I2_uroven_kachestva_prepodavaniya.Where(model => model.YEAR == year).OrderByDescending(model => model.mark).ToList());
         }
@@ -59,8 +45,7 @@ namespace RatingUniversity.Controllers
             if (year == null)
                 year = DateTime.Now.Year;
             ViewBag.year = year;
-            this.CreateActive(2);
-            ViewBag.active = this.active;
+            ViewBag.active = Functions.CreateActive(2);
             ViewBag.Title = "Количество учебников, учебных пособий и учебно-методических комплексов, изданных в установленном порядке в течение года преподавателями вуза (в расчете на 100 человек ППС)";
             return View(db.I3_kolichestvo_uchebnikov_i_posobiy.Where(model => model.YEAR == year).OrderByDescending(model => model.I3).ToList());
         }
@@ -71,8 +56,7 @@ namespace RatingUniversity.Controllers
             if (year == null)
                 year = DateTime.Now.Year;
             ViewBag.year = year;
-            this.CreateActive(3);
-            ViewBag.active = this.active;
+            ViewBag.active = Functions.CreateActive(3);
             ViewBag.Title = "Доля иностранных преподавателей и иностранных студентов (соответственно в % от общей численности)";
             return View(db.I4_dolya_inostrannih_prepodavateley_i_studentov.Where(model => model.YEAR == year).OrderByDescending(model => model.mark).ToList());
         }
@@ -83,8 +67,7 @@ namespace RatingUniversity.Controllers
             if (year == null)
                 year = DateTime.Now.Year;
             ViewBag.year = year;
-            this.CreateActive(4);
-            ViewBag.active = this.active;
+            ViewBag.active = Functions.CreateActive(4);
             ViewBag.Title = "Участие преподавателей и студентов в программах обмена с зарубежными вузами";
             return View(db.I5_uchastie_v_programme_obmena.Where(model => model.YEAR == year).OrderByDescending(model => model.mark).ToList());
         }
@@ -96,8 +79,7 @@ namespace RatingUniversity.Controllers
             if (year == null)
                 year = DateTime.Now.Year;
             ViewBag.year = year;
-            this.CreateActive(5);
-            ViewBag.active = this.active;
+            ViewBag.active = Functions.CreateActive(5);
             ViewBag.Title = "Количество учебных курсов по направлениям образования (специальностям) с преподаванием на иностранных языках (в % от общего количества)";
             return View(db.I6_kolichestvo_uchebnih_kursov_na_inostrannom.Where(model => model.YEAR == year).OrderByDescending(model => model.mark).ToList());
         }
@@ -108,8 +90,7 @@ namespace RatingUniversity.Controllers
             if (year == null)
                 year = DateTime.Now.Year;
             ViewBag.year = year;
-            this.CreateActive(6);
-            ViewBag.active = this.active;
+            ViewBag.active = Functions.CreateActive(6);
             ViewBag.Title = "Уровень владения профессорско-преподавательским составом иностранными языками и информационно-коммуникационными технологиями";
             return View(db.I7_uroven_angliyskogo_i_ikt_u_pps.Where(model => model.YEAR == year).OrderByDescending(model => model.mark).ToList());
         }
@@ -120,8 +101,7 @@ namespace RatingUniversity.Controllers
             if (year == null)
                 year = DateTime.Now.Year;
             ViewBag.year = year;
-            this.CreateActive(7);
-            ViewBag.active = this.active;
+            ViewBag.active = Functions.CreateActive(7);
             ViewBag.Title = "Доля преподавателей вуза, участвующих в проведении лекций (семинаров, практических занятий, тренингов) в аккредитованных зарубежных вузах, входящих в число 300 лучших вузов мира (в % от общего количества)";
             return View(db.I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah.Where(model => model.YEAR == year).OrderByDescending(model => model.mark).ToList());
         }
@@ -131,9 +111,8 @@ namespace RatingUniversity.Controllers
         {
             if (year == null)
                 year = DateTime.Now.Year;
-            ViewBag.year = year; 
-            this.CreateActive(8);
-            ViewBag.active = this.active;
+            ViewBag.year = year;
+            ViewBag.active = Functions.CreateActive(8);
             ViewBag.Title = "Численность ППС, проводящего учебные занятия в учреждениях ССПО";
             return View(db.I9_dolya_pps_prepodayushego_v_sspo.Where(model => model.YEAR == year).OrderByDescending(model => model.mark).ToList());
         }

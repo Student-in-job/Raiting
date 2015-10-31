@@ -12,11 +12,14 @@ namespace RatingUniversity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class I6
+    public partial class I23_osnashennost_laboratornim_oborudovaniem
     {
         public int ID { get; set; }
         public string name { get; set; }
-        public Nullable<double> I61 { get; set; }
+        public Nullable<double> I23 { get; set; }
+        public Nullable<double> I231 { get; set; }
+        public Nullable<double> I232 { get; set; }
+        public Nullable<double> mark { get; set; }
         public Nullable<int> YEAR { get; set; }
     }
 }

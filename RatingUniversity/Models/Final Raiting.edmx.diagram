@@ -4,99 +4,82 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1da6668662a24de495e1f02f7a930428" Name="Diagram1">
-        <EntityTypeShape EntityType="URaitingModel.branch" Width="1.5" PointX="0.75" PointY="47.5" />
-        <EntityTypeShape EntityType="URaitingModel.chislennost_pps_vuza" Width="1.5" PointX="5.25" PointY="83" />
-        <EntityTypeShape EntityType="URaitingModel.citiruemost_publikaciy_pps_vuza" Width="1.5" PointX="5.25" PointY="9.5" />
-        <EntityTypeShape EntityType="URaitingModel.darslik" Width="1.5" PointX="5.25" PointY="57.25" />
-        <EntityTypeShape EntityType="URaitingModel.effektivnost_nir_dalolatnoma" Width="1.5" PointX="5.25" PointY="42.75" />
-        <EntityTypeShape EntityType="URaitingModel.effektivnost_nir_patent" Width="1.5" PointX="5.25" PointY="39" />
-        <EntityTypeShape EntityType="URaitingModel.effektivnost_nir_sertifikat" Width="1.5" PointX="5.25" PointY="60.75" />
-        <EntityTypeShape EntityType="URaitingModel.granti_po_vidam_issledovaniy" Width="1.5" PointX="5.25" PointY="34.75" />
-        <EntityTypeShape EntityType="URaitingModel.informaciya_o_dissertaciyah" Width="1.5" PointX="5.25" PointY="5.375" />
-        <EntityTypeShape EntityType="URaitingModel.kolichestvo_izdannih_mejdunarodnih_statey" Width="1.5" PointX="5.25" PointY="46.375" />
-        <EntityTypeShape EntityType="URaitingModel.kolichestvo_izdannih_mestnih_statey" Width="1.5" PointX="5.25" PointY="30.875" />
-        <EntityTypeShape EntityType="URaitingModel.majmua" Width="1.5" PointX="5.25" PointY="94.5" />
-        <EntityTypeShape EntityType="URaitingModel.monografiya" Width="1.5" PointX="5.25" PointY="53.75" />
-        <EntityTypeShape EntityType="URaitingModel.nalichie_elektronnoy_literaturi" Width="1.5" PointX="5.25" PointY="13" />
-        <EntityTypeShape EntityType="URaitingModel.nalichie_informacii_o_vuze_v_internete" Width="1.5" PointX="5.25" PointY="50.5" />
-        <EntityTypeShape EntityType="URaitingModel.nalichie_multimedia_v_auditorii" Width="1.5" PointX="5.25" PointY="64.5" />
-        <EntityTypeShape EntityType="URaitingModel.osnashennost_laboratoriy" Width="1.5" PointX="5.25" PointY="16.625" />
-        <EntityTypeShape EntityType="URaitingModel.qullanma" Width="1.5" PointX="5.25" PointY="27.375" />
-        <EntityTypeShape EntityType="URaitingModel.raiting" Width="1.5" PointX="5.25" PointY="67.625" />
-        <EntityTypeShape EntityType="URaitingModel.region" Width="1.5" PointX="0.75" PointY="50.5" />
-        <EntityTypeShape EntityType="URaitingModel.stepen_vnedreniya_ikt" Width="1.5" PointX="5.25" PointY="88.875" />
-        <EntityTypeShape EntityType="URaitingModel.summi_mejdunarodnih_grantov" Width="1.5" PointX="5.25" PointY="23.875" />
-        <EntityTypeShape EntityType="URaitingModel.summi_respublikanskih_grantov" Width="1.5" PointX="5.25" PointY="20.125" />
-        <EntityTypeShape EntityType="URaitingModel.university" Width="1.5" PointX="3" PointY="48.25" />
-        <EntityTypeShape EntityType="URaitingModel.I1" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="URaitingModel.I1_dolya_pps_s_uchenoy_stepenyu" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="URaitingModel.I1_TOTAL" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="URaitingModel.I10" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="URaitingModel.I10_rezultati_attestacii_u_studentov" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="URaitingModel.I11" Width="1.5" PointX="0.75" PointY="7.75" />
-        <EntityTypeShape EntityType="URaitingModel.I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami" Width="1.5" PointX="7.75" PointY="3.75" />
-        <EntityTypeShape EntityType="URaitingModel.I12" Width="1.5" PointX="7.75" PointY="6.75" />
-        <EntityTypeShape EntityType="URaitingModel.I12_dolya_trudoustroennih_vipusknikov" Width="1.5" PointX="8.75" PointY="0.75" />
-        <EntityTypeShape EntityType="URaitingModel.I13" Width="1.5" PointX="9.75" PointY="3.75" />
-        <EntityTypeShape EntityType="URaitingModel.I13_kolichestvo_studentov_udostoennih_nagrad" Width="1.5" PointX="9.75" PointY="7.75" />
-        <EntityTypeShape EntityType="URaitingModel.I14" Width="1.5" PointX="10.75" PointY="0.75" />
-        <EntityTypeShape EntityType="URaitingModel.I14_citiruemost_publikaciy_pps" Width="1.5" PointX="0.75" PointY="10.75" />
-        <EntityTypeShape EntityType="URaitingModel.I15" Width="1.5" PointX="11.75" PointY="3.75" />
-        <EntityTypeShape EntityType="URaitingModel.I15_kolichestvo_izdannih_statey" Width="1.5" PointX="11.75" PointY="7.75" />
-        <EntityTypeShape EntityType="URaitingModel.I16" Width="1.5" PointX="7.75" PointY="11.75" />
-        <EntityTypeShape EntityType="URaitingModel.I16_kolichestvo_sotrudnikov_utverjdennih_vak" Width="1.5" PointX="9.75" PointY="11.75" />
-        <EntityTypeShape EntityType="URaitingModel.I17" Width="1.5" PointX="11.75" PointY="11.75" />
-        <EntityTypeShape EntityType="URaitingModel.I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost" Width="1.5" PointX="13.75" PointY="0.75" />
-        <EntityTypeShape EntityType="URaitingModel.I18" Width="1.5" PointX="13.75" PointY="4.75" />
-        <EntityTypeShape EntityType="URaitingModel.I18_effektivnost_provodimih_nauchnih_rabot" Width="1.5" PointX="13.75" PointY="8.75" />
-        <EntityTypeShape EntityType="URaitingModel.I19" Width="1.5" PointX="13.75" PointY="12.75" />
-        <EntityTypeShape EntityType="URaitingModel.I19_stepen_osnashennosti_laboratoriy_oborudovaniem" Width="1.5" PointX="0.75" PointY="14.75" />
-        <EntityTypeShape EntityType="URaitingModel.I2" Width="1.5" PointX="15.75" PointY="0.75" />
-        <EntityTypeShape EntityType="URaitingModel.I2_1" Width="1.5" PointX="15.75" PointY="3.75" />
-        <EntityTypeShape EntityType="URaitingModel.I2_1_uroven_kachestva_prepodavaniya" Width="1.5" PointX="15.75" PointY="7.75" />
-        <EntityTypeShape EntityType="URaitingModel.I2_TOTAL" Width="1.5" PointX="7.75" PointY="15.75" />
-        <EntityTypeShape EntityType="URaitingModel.I2_uroven_kachestva_prepodavaniya" Width="1.5" PointX="9.75" PointY="15.75" />
-        <EntityTypeShape EntityType="URaitingModel.I20" Width="1.5" PointX="15.75" PointY="11.75" />
-        <EntityTypeShape EntityType="URaitingModel.I20_obespechennost_irc_uchebnoy_literaturoy" Width="1.5" PointX="15.75" PointY="14.75" />
-        <EntityTypeShape EntityType="URaitingModel.I3" Width="1.5" PointX="11.75" PointY="16.75" />
-        <EntityTypeShape EntityType="URaitingModel.I3_kolichestvo_uchebnikov_i_posobiy" Width="1.5" PointX="17.75" PointY="0.75" />
-        <EntityTypeShape EntityType="URaitingModel.I3_TOTAL" Width="1.5" PointX="17.75" PointY="4.75" />
-        <EntityTypeShape EntityType="URaitingModel.I4" Width="1.5" PointX="17.75" PointY="8.75" />
-        <EntityTypeShape EntityType="URaitingModel.I4_dolya_inostrannih_prepodavateley_i_studentov" Width="1.5" PointX="17.75" PointY="11.75" />
-        <EntityTypeShape EntityType="URaitingModel.I5" Width="1.5" PointX="13.75" PointY="17.75" />
-        <EntityTypeShape EntityType="URaitingModel.I5_uchastie_v_programme_obmena" Width="1.5" PointX="17.75" PointY="15.75" />
-        <EntityTypeShape EntityType="URaitingModel.I6" Width="1.5" PointX="0.75" PointY="18.75" />
-        <EntityTypeShape EntityType="URaitingModel.I6_kolichestvo_uchebnih_kursov_na_inostrannom" Width="1.5" PointX="19.75" PointY="0.75" />
-        <EntityTypeShape EntityType="URaitingModel.I7" Width="1.5" PointX="19.75" PointY="3.75" />
-        <EntityTypeShape EntityType="URaitingModel.I7_uroven_angliyskogo_i_ikt_u_pps" Width="1.5" PointX="19.75" PointY="6.75" />
-        <EntityTypeShape EntityType="URaitingModel.I8" Width="1.5" PointX="7.75" PointY="19.75" />
-        <EntityTypeShape EntityType="URaitingModel.I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah" Width="1.5" PointX="19.75" PointY="10.75" />
-        <EntityTypeShape EntityType="URaitingModel.I9" Width="1.5" PointX="19.75" PointY="13.75" />
-        <EntityTypeShape EntityType="URaitingModel.I9_dolya_pps_prepodayushego_v_sspo" Width="1.5" PointX="15.75" PointY="19.75" />
-        <AssociationConnector Association="URaitingModel.FK__universit__id_br__145C0A3F" />
-        <AssociationConnector Association="URaitingModel.FK__chislenno__id_un__10216507" />
-        <AssociationConnector Association="URaitingModel.FK__citiruemo__id_un__7C1A6C5A" />
-        <AssociationConnector Association="URaitingModel.FK__darslik__id_univ__04AFB25B" />
-        <AssociationConnector Association="URaitingModel.FK__effektivn__id_un__214BF109" />
-        <AssociationConnector Association="URaitingModel.FK__effektivn__id_un__1E6F845E" />
-        <AssociationConnector Association="URaitingModel.FK__effektivn__id_un__1B9317B3" />
-        <AssociationConnector Association="URaitingModel.FK__granti_po__id_un__24285DB4" />
-        <AssociationConnector Association="URaitingModel.FK__informaci__id_un__12FDD1B2" />
-        <AssociationConnector Association="URaitingModel.FK__kolichest__id_un__0A688BB1" />
-        <AssociationConnector Association="URaitingModel.FK__kolichest__id_un__0D44F85C" />
-        <AssociationConnector Association="URaitingModel.FK__majmua__id_unive__7EF6D905" />
-        <AssociationConnector Association="URaitingModel.FK__monografi__id_un__078C1F06" />
-        <AssociationConnector Association="URaitingModel.FK__nalichie___id_un__29E1370A" />
-        <AssociationConnector Association="URaitingModel.FK__nalichie___id_un__2F9A1060" />
-        <AssociationConnector Association="URaitingModel.FK__nalichie___id_un__32767D0B" />
-        <AssociationConnector Association="URaitingModel.FK__osnashenn__id_un__2704CA5F" />
-        <AssociationConnector Association="URaitingModel.FK__qullanma__id_uni__01D345B0" />
-        <AssociationConnector Association="URaitingModel.FK__raiting__id_univ__182C9B23" />
-        <AssociationConnector Association="URaitingModel.FK__universit__id_re__15502E78" />
-        <AssociationConnector Association="URaitingModel.FK__stepen_vn__id_un__2CBDA3B5" />
-        <AssociationConnector Association="URaitingModel.FK__summi_mej__id_un__15DA3E5D" />
-        <AssociationConnector Association="URaitingModel.FK__summi_res__id_un__18B6AB08" />
+      <Diagram DiagramId="1da6668662a24de495e1f02f7a930428" Name="Diagram1" ZoomLevel="58">
+        <EntityTypeShape EntityType="URaitingModel.chislennost_pps_vuza" Width="1.5" PointX="5.25" PointY="77.5" />
+        <EntityTypeShape EntityType="URaitingModel.citiruemost_publikaciy_pps_vuza" Width="1.5" PointX="5.25" PointY="32.5" />
+        <EntityTypeShape EntityType="URaitingModel.effektivnost_nir_dalolatnoma" Width="1.5" PointX="5.25" PointY="62.375" />
+        <EntityTypeShape EntityType="URaitingModel.effektivnost_nir_patent" Width="1.5" PointX="5.25" PointY="13.375" />
+        <EntityTypeShape EntityType="URaitingModel.effektivnost_nir_sertifikat" Width="1.5" PointX="5.25" PointY="48.875" />
+        <EntityTypeShape EntityType="URaitingModel.granti_po_vidam_issledovaniy" Width="1.5" PointX="5.25" PointY="44.5" />
+        <EntityTypeShape EntityType="URaitingModel.informaciya_o_dissertaciyah" Width="1.5" PointX="5.25" PointY="36.125" />
+        <EntityTypeShape EntityType="URaitingModel.kolichestvo_izdannih_mejdunarodnih_statey" Width="1.5" PointX="5.25" PointY="28.125" />
+        <EntityTypeShape EntityType="URaitingModel.kolichestvo_izdannih_mestnih_statey" Width="1.5" PointX="5.25" PointY="40.375" />
+        <EntityTypeShape EntityType="URaitingModel.majmua" Width="1.5" PointX="5.25" PointY="9.75" />
+        <EntityTypeShape EntityType="URaitingModel.Monitorings" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="URaitingModel.monografiya" Width="1.5" PointX="5.25" PointY="52.875" />
+        <EntityTypeShape EntityType="URaitingModel.nalichie_elektronnoy_literaturi" Width="1.5" PointX="5.25" PointY="5.875" />
+        <EntityTypeShape EntityType="URaitingModel.nalichie_informacii_o_vuze_v_internete" Width="1.5" PointX="5.25" PointY="17.25" />
+        <EntityTypeShape EntityType="URaitingModel.nalichie_multimedia_v_auditorii" Width="1.5" PointX="5.25" PointY="83.5" />
+        <EntityTypeShape EntityType="URaitingModel.osnashennost_laboratoriy" Width="1.5" PointX="5.25" PointY="24.5" />
+        <EntityTypeShape EntityType="URaitingModel.qullanma" Width="1.5" PointX="5.25" PointY="73.75" />
+        <EntityTypeShape EntityType="URaitingModel.raiting" Width="1.5" PointX="5.25" PointY="86.75" />
+        <EntityTypeShape EntityType="URaitingModel.region" Width="1.5" PointX="0.75" PointY="55" />
+        <EntityTypeShape EntityType="URaitingModel.stepen_vnedreniya_ikt" Width="1.5" PointX="5.25" PointY="56.5" />
+        <EntityTypeShape EntityType="URaitingModel.summi_mejdunarodnih_grantov" Width="1.5" PointX="5.25" PointY="66.25" />
+        <EntityTypeShape EntityType="URaitingModel.summi_respublikanskih_grantov" Width="1.5" PointX="5.25" PointY="69.875" />
+        <EntityTypeShape EntityType="URaitingModel.university" Width="1.5" PointX="3" PointY="52.625" />
+        <EntityTypeShape EntityType="URaitingModel.I1_dolya_pps_s_uchenoy_stepenyu" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="URaitingModel.I1_TOTAL" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="URaitingModel.I10_rezultati_attestacii_u_studentov" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="URaitingModel.I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami" Width="1.5" PointX="9.75" PointY="4.75" />
+        <EntityTypeShape EntityType="URaitingModel.I12_dolya_trudoustroennih_vipusknikov" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="URaitingModel.I13_kolichestvo_studentov_udostoennih_nagrad" Width="1.5" PointX="11.75" PointY="8.75" />
+        <EntityTypeShape EntityType="URaitingModel.I14_citiruemost_publikaciy_pps" Width="1.5" PointX="7.75" PointY="12.75" />
+        <EntityTypeShape EntityType="URaitingModel.I15_kolichestvo_izdannih_statey" Width="1.5" PointX="11.75" PointY="12.75" />
+        <EntityTypeShape EntityType="URaitingModel.I16_kolichestvo_sotrudnikov_utverjdennih_vak" Width="1.5" PointX="13.75" PointY="3.75" />
+        <EntityTypeShape EntityType="URaitingModel.I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost" Width="1.5" PointX="13.75" PointY="11.75" />
+        <EntityTypeShape EntityType="URaitingModel.I18_effektivnost_provodimih_nauchnih_rabot" Width="1.5" PointX="15.75" PointY="4.75" />
+        <EntityTypeShape EntityType="URaitingModel.I19_stepen_osnashennosti_laboratoriy_oborudovaniem" Width="1.5" PointX="15.75" PointY="12.75" />
+        <EntityTypeShape EntityType="URaitingModel.I2_1_uroven_kachestva_prepodavaniya" Width="1.5" PointX="9.75" PointY="16.75" />
+        <EntityTypeShape EntityType="URaitingModel.I2_TOTAL" Width="1.5" PointX="11.75" PointY="16.75" />
+        <EntityTypeShape EntityType="URaitingModel.I2_uroven_kachestva_prepodavaniya" Width="1.5" PointX="13.75" PointY="16.75" />
+        <EntityTypeShape EntityType="URaitingModel.I20_obespechennost_irc_uchebnoy_literaturoy" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="URaitingModel.I3_kolichestvo_uchebnikov_i_posobiy" Width="1.5" PointX="17.75" PointY="7.75" />
+        <EntityTypeShape EntityType="URaitingModel.I3_TOTAL" Width="1.5" PointX="17.75" PointY="11.75" />
+        <EntityTypeShape EntityType="URaitingModel.I4_dolya_inostrannih_prepodavateley_i_studentov" Width="1.5" PointX="17.75" PointY="18.75" />
+        <EntityTypeShape EntityType="URaitingModel.I5_uchastie_v_programme_obmena" Width="1.5" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="URaitingModel.I6_kolichestvo_uchebnih_kursov_na_inostrannom" Width="1.5" PointX="19.75" PointY="7.75" />
+        <EntityTypeShape EntityType="URaitingModel.I7_uroven_angliyskogo_i_ikt_u_pps" Width="1.5" PointX="19.75" PointY="13.75" />
+        <EntityTypeShape EntityType="URaitingModel.I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah" Width="1.5" PointX="7.75" PointY="20.75" />
+        <EntityTypeShape EntityType="URaitingModel.I9_dolya_pps_prepodayushego_v_sspo" Width="1.5" PointX="11.75" PointY="20.75" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_chislennost_pps_vuza_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_effektivnost_nir_dalolatnoma_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_effektivnost_nir_patent_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_effektivnost_nir_sertifikat_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_granti_po_vidam_issledovaniy_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_informaciya_o_dissertaciyah_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_majmuas_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_monografiyas_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_nalichie_elektronnoy_literaturi_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_nalichie_informacii_o_vuze_v_internete_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_nalichie_multimedia_v_auditorii_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_osnashennost_laboratoriy_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_qullanmas_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK__raiting__id_univ__2739D489" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_universities_dbo_regions_region_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_stepen_vnedreniya_ikt_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_summi_mejdunarodnih_grantov_dbo_universities_university_id" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_summi_respublikanskih_grantov_dbo_universities_university_id" />
+        <EntityTypeShape EntityType="URaitingModel.darslik" Width="1.5" PointX="5.25" PointY="107.375" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_darsliks_dbo_universities_university_id" />
+        <EntityTypeShape EntityType="URaitingModel.I21_stepen_vnedreniya_ikt_v_uchebniy_process" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="URaitingModel.I22_dostupnost_informacii_o_vuze_v_internete" Width="1.5" PointX="7.75" PointY="8.75" />
+        <EntityTypeShape EntityType="URaitingModel.I23_osnashennost_laboratornim_oborudovaniem" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="URaitingModel.I4_TOTAL" Width="1.5" PointX="20.375" PointY="0.75" />
+        <EntityTypeShape EntityType="URaitingModel.RAITING_TOTAL" Width="1.5" PointX="3.375" PointY="20.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

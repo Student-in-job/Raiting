@@ -16,10 +16,10 @@ namespace RatingUniversity.Models
     {
         public int ID { get; set; }
         public string name { get; set; }
+        public Nullable<double> tsi { get; set; }
+        public Nullable<double> tsti { get; set; }
         public Nullable<double> I10 { get; set; }
         public Nullable<double> mark { get; set; }
         public Nullable<int> YEAR { get; set; }
-        public Nullable<double> tsi { get; set; }
-        public Nullable<double> tsti { get; set; }
     }
 }

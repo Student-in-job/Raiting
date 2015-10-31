@@ -12,12 +12,15 @@ namespace RatingUniversity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class I20
+    public partial class I4_TOTAL
     {
         public int ID { get; set; }
         public string name { get; set; }
-        public Nullable<double> I201 { get; set; }
-        public Nullable<double> I2011 { get; set; }
+        public Nullable<double> I20 { get; set; }
+        public Nullable<double> I21 { get; set; }
+        public Nullable<double> I22 { get; set; }
+        public Nullable<double> I23 { get; set; }
+        public Nullable<double> mark { get; set; }
         public Nullable<int> YEAR { get; set; }
     }
 }

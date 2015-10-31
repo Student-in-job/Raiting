@@ -213,7 +213,7 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Топ ВУЗ-ов.
+        ///   Looks up a localized string similar to Топ ВУЗ-ов Узбекистана.
         /// </summary>
         public static string HomePageHeader
         {
@@ -224,7 +224,7 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Какая-нибудь актульная и полезная инфа... Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы, Много-много инфы....
+        ///   Looks up a localized string similar to Ресурс будет запущен через.
         /// </summary>
         public static string HomePageHeaderInfo
         {
@@ -235,7 +235,7 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Топ университетов.
+        ///   Looks up a localized string similar to Рейтинг университетов Узбекистана.
         /// </summary>
         public static string HomePageRatingHeader
         {
@@ -330,6 +330,17 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("MainMenuHome", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Рейтинг.
+        /// </summary>
+        public static string MainMenuRaiting
+        {
+            get
+            {
+                return ResourceManager.GetString("MainMenuRaiting", resourceCulture);
             }
         }
 

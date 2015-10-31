@@ -1,0 +1,93 @@
+﻿@*using PagedList.Mvc;*@
+    @model IEnumerable<RatingUniversity.Models.chislennost_pps_vuza>
+
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
+
+    @{
+        <a href="/Table3/Download">Скачать шаблон</a>
+        <h3>Прикрепить файл</h3>
+
+        using (Html.BeginForm("Upload", "Table3", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="files" />
+            <input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+        }
+    }
+
+    <div style="height:80px;">&nbsp;</div>
+    <div>
+                          <h3>Данные:</h3>
+                          <table class="table">
+                              <tr>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                              </tr>
+                              @foreach (var item in Model)
+                              {
+                                  <tr>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.ass_shtat)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.urindosh)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.saotbay)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.as_fan_nom)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.as_fan_doc)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.as_doz)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.as_ass)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.ur_prof)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.ur_doc)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.ur_katta)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.ur_ass)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.so_prof)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.so_doc)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.so_katta)
+                                      </td>
+                                      <td>
+                                          @Html.DisplayFor(modelItem => item.so_ass)
+                                      </td>
+                                  </tr>
+                              }
+                          </table>
+        </div>
