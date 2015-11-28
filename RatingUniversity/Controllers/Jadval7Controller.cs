@@ -134,10 +134,10 @@ namespace RatingUniversity.Controllers
 
 			var adapter_mag = new OleDbDataAdapter("SELECT * FROM [List2$]", connectionString);
 			var ds_mag = new DataSet();
-			adapter_mag.Fill(ds, "T2");
-			DataTable data_mag = ds.Tables["T2"];
+			adapter_mag.Fill(ds_mag, "T1");
+			DataTable data_mag = ds_mag.Tables["T1"];
 
-			for (int i = 4; i < data_mag.Rows.Count - 7; i++)
+			for (int i = 4; i < data_mag.Rows.Count - 3; i++)
 			{
 				Jadval7 NewUpload = new Jadval7();
 				NewUpload.FullName_uzb = Convert.ToString(data_mag.Rows[i][2]);
@@ -147,7 +147,7 @@ namespace RatingUniversity.Controllers
 				NewUpload.State_xorij = Convert.ToString(data_mag.Rows[i][6]);
 				NewUpload.Mutaxassislik_xorij = Convert.ToString(data_mag.Rows[i][7]);
 				NewUpload.Asos = Convert.ToString(data_mag.Rows[i][1]);
-				NewUpload.Asos_fayl = "#"+Convert.ToString(data.Rows[i][8]);
+				NewUpload.Asos_fayl = "#"+Convert.ToString(data_mag.Rows[i][8]);
 				NewUpload.Bak_mag = 1;
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
 				NewUpload.UniversityId = UniverId;

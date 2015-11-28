@@ -107,19 +107,14 @@ namespace RatingUniversity.Controllers
 			//Create a connection string to access the data of Excel file by the help of Microsoft ACE OLEDB providers.
 			var connectionString = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=Excel 12.0;", savedExcelFiles);
 
+			int UniverId = 24;
+			List<Jadval11> uploadExl = new List<Jadval11>();
+
 			//Fill the DataSet by the Sheets.
 			var adapter = new OleDbDataAdapter("SELECT * FROM [List1$]", connectionString);
 			var ds = new DataSet();
 			adapter.Fill(ds, "T1");
 			DataTable data = ds.Tables["T1"];
-
-			GetExcelData_Jadval11(data);
-		}
-
-		private static void GetExcelData_Jadval11(DataTable data)
-		{
-			int UniverId = 24;
-			List<Jadval11> uploadExl = new List<Jadval11>();
 			for (int i = 5; i < data.Rows.Count - 8; i++)
 			{
 				Jadval11 NewUpload = new Jadval11();
@@ -129,14 +124,60 @@ namespace RatingUniversity.Controllers
 				int tt = 0;
 				string ss = Convert.ToString(data.Rows[i][4]);
 				Int32.TryParse(ss, out tt);
-				NewUpload.MongographYear=tt;
-				NewUpload.DarslikName = Convert.ToString(data.Rows[i][5]);
-				NewUpload.DarslikCertificate = Convert.ToString(data.Rows[i][6]);
-				NewUpload.OquvqullanmaName = Convert.ToString(data.Rows[i][7]);
-				NewUpload.OquvqullanmaCertificate = Convert.ToString(data.Rows[i][8]);
-				NewUpload.OquvmajmuaName = Convert.ToString(data.Rows[i][9]);
-				NewUpload.OquvmajmuaCertificate = Convert.ToString(data.Rows[i][10]);
-				NewUpload.AsosFile = "#" + Convert.ToString(data.Rows[i][11]);
+				NewUpload.MongographYear = tt;
+				NewUpload.AsosFile = "#" + Convert.ToString(data.Rows[i][5]);
+				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
+				NewUpload.UniversityId = UniverId;
+
+				uploadExl.Add(NewUpload);
+			}
+			adapter = new OleDbDataAdapter("SELECT * FROM [List2$]", connectionString);
+			ds = new DataSet();
+			adapter.Fill(ds, "T2");
+			data = ds.Tables["T2"];
+			for (int i = 5; i < data.Rows.Count - 8; i++)
+			{
+				Jadval11 NewUpload = new Jadval11();
+				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
+				NewUpload.Speciality = Convert.ToString(data.Rows[i][2]);
+				NewUpload.DarslikName = Convert.ToString(data.Rows[i][3]);
+				NewUpload.DarslikCertificate = Convert.ToString(data.Rows[i][4]);
+				NewUpload.AsosFile = "#" + Convert.ToString(data.Rows[i][5]);
+				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
+				NewUpload.UniversityId = UniverId;
+
+				uploadExl.Add(NewUpload);
+			}
+
+			adapter = new OleDbDataAdapter("SELECT * FROM [List3$]", connectionString);
+			ds = new DataSet();
+			adapter.Fill(ds, "T3");
+			data = ds.Tables["T3"];
+			for (int i = 5; i < data.Rows.Count - 8; i++)
+			{
+				Jadval11 NewUpload = new Jadval11();
+				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
+				NewUpload.Speciality = Convert.ToString(data.Rows[i][2]);
+				NewUpload.OquvqullanmaName = Convert.ToString(data.Rows[i][3]);
+				NewUpload.OquvqullanmaCertificate = Convert.ToString(data.Rows[i][4]);
+				NewUpload.AsosFile = "#" + Convert.ToString(data.Rows[i][5]);
+				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
+				NewUpload.UniversityId = UniverId;
+
+				uploadExl.Add(NewUpload);
+			}
+			adapter = new OleDbDataAdapter("SELECT * FROM [List4$]", connectionString);
+			ds = new DataSet();
+			adapter.Fill(ds, "T4");
+			data = ds.Tables["T4"];
+			for (int i = 5; i < data.Rows.Count - 7; i++)
+			{
+				Jadval11 NewUpload = new Jadval11();
+				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
+				NewUpload.Speciality = Convert.ToString(data.Rows[i][2]);
+				NewUpload.OquvmajmuaName = Convert.ToString(data.Rows[i][3]);
+				NewUpload.OquvmajmuaCertificate = Convert.ToString(data.Rows[i][4]);
+				NewUpload.AsosFile = "#" + Convert.ToString(data.Rows[i][5]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
 				NewUpload.UniversityId = UniverId;
 
@@ -158,8 +199,8 @@ namespace RatingUniversity.Controllers
 				db.SaveChanges();
 				MonitoringUpdate.Update(UniverId, "J11", 0, yil);
 			}
-
 		}
+
 
 		public ActionResult UploadData(IEnumerable<HttpPostedFileBase> files, int id)
 		{
@@ -206,6 +247,23 @@ namespace RatingUniversity.Controllers
 				}
 			}
 			return RedirectToAction("Index", "Jadval11");
+		}
+		public ActionResult Status(int? id)
+		{
+			if (id == null)
+			{
+				return RedirectToAction("Index");
+			}
+			using (TablesContext db = new TablesContext())
+			{
+				Jadval11 j2 = db.Jadval11.Find(id);
+				if (j2 == null) return RedirectToAction("Index");
+				if (j2.Status == null) j2.Status = 1;
+				else j2.Status = null;
+				db.Entry(j2).State = EntityState.Modified;
+				db.SaveChanges();
+			}
+			return RedirectToAction("Index");
 		}
 
 	}

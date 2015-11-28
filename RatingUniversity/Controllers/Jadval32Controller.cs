@@ -115,9 +115,10 @@ namespace RatingUniversity.Controllers
 			int UniverId = 24;
 
 			List<Jadval32> uploadExl = new List<Jadval32>();
-			for (int i = 4; i < data.Rows.Count - 5; i++)
+			for (int i = 4; i < data.Rows.Count-5; i++)
 			{
 				Jadval32 NewUpload = new Jadval32();
+				if (data.Rows[i][1] == null) break;
 				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
 				NewUpload.BirthDate = Convert.ToDateTime(data.Rows[i][2]);
 				NewUpload.Post = Convert.ToString(data.Rows[i][3]);
@@ -146,6 +147,7 @@ namespace RatingUniversity.Controllers
 
 			for (int i = 4; i < data.Rows.Count - 5; i++)
 			{
+				if (data.Rows[i][1] == null) break;
 				Jadval32 NewUpload = new Jadval32();
 				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
 				NewUpload.BirthDate = Convert.ToDateTime(data.Rows[i][2]);
@@ -174,6 +176,7 @@ namespace RatingUniversity.Controllers
 
 			for (int i = 4; i < data.Rows.Count - 5; i++)
 			{
+				if (data.Rows[i][1] == null) break;
 				Jadval32 NewUpload = new Jadval32();
 				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
 				NewUpload.BirthDate = Convert.ToDateTime(data.Rows[i][2]);

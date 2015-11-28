@@ -135,8 +135,9 @@ namespace RatingUniversity.Controllers
 		private static void GetExcelData_Jadval1(DataTable data)
 		{
 			List<Jadval1> uploadExl = new List<Jadval1>();
-			for (int i = 4; i < data.Rows.Count - 4; i++)
+			for (int i = 4; i < data.Rows.Count; i++)
 			{
+				if (i == 305) break;
 				Jadval1 NewUpload = new Jadval1();
 				NewUpload.OtmName = Convert.ToString(data.Rows[i][1]);
 				NewUpload.State = Convert.ToString(data.Rows[i][2]);

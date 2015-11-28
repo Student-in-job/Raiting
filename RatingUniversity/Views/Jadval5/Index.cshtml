@@ -42,6 +42,10 @@
 		<h3>Ma'lumotlar:</h3>
 		<table class="table">
 			<tr>
+				@if (ViewBag.status == 0 && ViewBag.role == 1)
+				{
+					<th>Статус</th>
+				}
 				<th>
 					Ф.И.Ш
 				</th>
@@ -70,7 +74,19 @@
 
 			@foreach (var item in Model)
 			{
-				<tr>
+				<tr @(item.Status==null ? "" : "class=danger")>
+					@if (ViewBag.status == 0 && ViewBag.role == 1)
+					{
+					<td>
+						@if (item.Status == null) {
+							<a href="/Jadval2/Status/@item.Id">Не принимать</a>
+								}
+								else {
+							<a href="/Jadval2/Status/@item.Id">Принимать</a>
+
+								}
+					</td>
+						}
 					<td>
 						@Html.DisplayFor(modelItem => item.FullName)
 					</td>

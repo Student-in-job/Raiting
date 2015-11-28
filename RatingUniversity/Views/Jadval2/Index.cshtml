@@ -7,8 +7,9 @@
 	}
 
 
-	<h2>300 та энг яхши хорижий ОТМлари  даражаси (РhD) ёки магистрлик димломига эга бўлган асосий штатдаги профессор-ўқитувчилар  ҳақида
-</h2>
+	<h2>
+		300 та энг яхши хорижий ОТМлари  даражаси (РhD) ёки магистрлик димломига эга бўлган асосий штатдаги профессор-ўқитувчилар  ҳақида
+	</h2>
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -42,6 +43,10 @@
 		<h3>Ma'lumotlar:</h3>
 		<table class="table">
 			<tr>
+				@if (ViewBag.status == 0 && ViewBag.role == 1)
+				{
+					<th>Статус</th>
+				}
 				<th>Асосий штатдаги профессор-ўқитувчиларнинг Ф.И.Ш</th>
 				<th>Илмий даража берган хориж ОТМ номи</th>
 				<th>PhD (фан доктори, фан номзоди) Диплом серияси</th>
@@ -57,12 +62,27 @@
 
 			@foreach (var item in Model)
 			{
-				<tr>
+				<tr @(item.Status == null ? "" : "class=danger")>
+					@if (ViewBag.status == 0 && ViewBag.role == 1)
+					{
+						<td>
+							@if (item.Status == null)
+							{
+								<a href="/Jadval2/Status/@item.Id">Не принимать</a>
+							}
+							else
+							{
+								<a href="/Jadval2/Status/@item.Id">Принимать</a>
+
+							}
+						</td>
+					}
+
 					<td>
 						@Html.DisplayFor(modelItem => item.FullName)
 					</td>
 					<td>
-						@Html.DisplayFor(modelItem => item.Jadval1_Id)
+						@Html.DisplayFor(modelItem => item.Davlat)
 					</td>
 					<td>
 						@Html.DisplayFor(modelItem => item.Phd_seriya)
@@ -104,5 +124,5 @@
 			}
 
 		</table>
-	@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+		@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 	}
