@@ -15,7 +15,7 @@
                         <div class="accordion-inner">
                             <ul class="nav nav-pills nav-stacked">
                                 <li @ViewBag.active[0]><a href="~/QualityOfEducationalWork/DolyaPPS/year/@ViewBag.year">Доля профессорско-преподавательского состава (ППС), имеющего степень PhD (ученую степень доктора, кандидата наук), магистра (дипломированного специалиста) зарубежных высших образовательных учреждений (вузов), входящих в число 500 лучших вузов мира</a></li>
-                                <li @ViewBag.active[1]><a href="~/QualityOfEducationalWork/SurveyOfStudentsyear/@ViewBag.year">Уровень качества преподавания (по результатам опроса студентов)</a></li>
+                                <li @ViewBag.active[1]><a href="~/QualityOfEducationalWork/SurveyOfStudents/year/@ViewBag.year">Уровень качества преподавания (по результатам опроса студентов)</a></li>
                                 <li @ViewBag.active[2]><a href="~/QualityOfEducationalWork/NumberOfEducationMatherials/year/@ViewBag.year">Количество учебников, учебных пособий и учебно-методических комплексов, изданных в установленном порядке в течение года преподавателями вуза (в расчете на 100 человек ППС)</a></li>
                                 <li @ViewBag.active[3]><a href="~/QualityOfEducationalWork/NumberOfForeigners/year/@ViewBag.year">Доля иностранных преподавателей и иностранных студентов (соответственно в % к общей численности)</a></li>
                                 <li @ViewBag.active[4]><a href="~/QualityOfEducationalWork/ForeignUniversitiesExchange/year/@ViewBag.year">Участие преподавателей и студентов в программах обмена с зарубежными вузами</a></li>
@@ -38,8 +38,8 @@
                             <ul class="nav nav-pills nav-stacked">
                                 <li @ViewBag.active[9]><a href="~/KnowledgeAndQualification/AssessmentByTest/year/@ViewBag.year">Оценка знаний студентов (по результатам выборочного тестирования студентов по специальным профильным дисциплинам)</a></li>
                                 <li @ViewBag.active[10]><a href="~/KnowledgeAndQualification/AssessmentByWorkers/year/@ViewBag.year">Оценка квалификации выпускников вуза по результатам опроса работодателей</a></li>
-                                <li @ViewBag.active[11]><a href="~/KnowledgeAndQualification/AssessmentByTest/year/@ViewBag.year">Доля выпускников, трудоустроенных по специальности в течение 6 месяцев после окончания вуза</a></li>
-                                <li @ViewBag.active[12]><a href="~/KnowledgeAndQualification/AssessmentByTest/year/@ViewBag.year">Количество студентов, удостоенных наград (дипломов) и занявших призовые места на международных и республиканских олимпиадах и престижных конкурсах</a></li>
+                                <li @ViewBag.active[11]><a href="~/KnowledgeAndQualification/NumberOfWorkingStudents/year/@ViewBag.year">Доля выпускников, трудоустроенных по специальности в течение 6 месяцев после окончания вуза</a></li>
+                                <li @ViewBag.active[12]><a href="~/KnowledgeAndQualification/NumberOfHonoredStudents/year/@ViewBag.year">Количество студентов, удостоенных наград (дипломов) и занявших призовые места на международных и республиканских олимпиадах и престижных конкурсах</a></li>
                             </ul>
                         </div>
                     </div>
@@ -53,12 +53,12 @@
                     <div id="collapseThree" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Цитируемость публикаций ППС вуза по данным международных индексов</a></li>
-                                <li><a href="#">Количество статей, опубликованных в зарубежных реферируемых научных журналах, республиканских научных журналах (включенных в список ВАК), изданных монографий в течение года</a></li>
-                                <li><a href="#">Количество утвержденных Президиумом ВАК РУз, в течение года докторских диссертаций, защищенных сотрудниками высшего учебного заведения, профессоров-преподавателей, имеющих ученые степени (ученые звания)</a></li>
-                                <li><a href="#">Финансовые средства, полученные от научно-исследовательской деятельности (в расчете на 1 ППС)</a></li>
-                                <li><a href="#">Эффективность проводимых научно-изыскательских работ</a></li>
-                                <li><a href="#">Степень оснащенности научных лабораторий современным оборудованием экспериментально-лабораторной базы для проведения научно-изыскательских работ</a></li>
+                                <li @ViewBag.active[13]><a href="~/SciencePotential/Citation/year/@ViewBag.year">Цитируемость публикаций ППС вуза по данным международных индексов</a></li>
+                                <li @ViewBag.active[14]><a href="~/SciencePotential/NumberOfPapers/year/@ViewBag.year">Количество статей, опубликованных в зарубежных реферируемых научных журналах, республиканских научных журналах (включенных в список ВАК), изданных монографий в течение года</a></li>
+                                <li @ViewBag.active[15]><a href="~/SciencePotential/NumberOfAcademics/year/@ViewBag.year">Количество утвержденных Президиумом ВАК РУз, в течение года докторских диссертаций, защищенных сотрудниками высшего учебного заведения, профессоров-преподавателей, имеющих ученые степени (ученые звания)</a></li>
+                                <li @ViewBag.active[16]><a href="~/SciencePotential/AmountOfFinance/year/@ViewBag.year">Финансовые средства, полученные от научно-исследовательской деятельности (в расчете на 1 ППС)</a></li>
+                                <li @ViewBag.active[17]><a href="~/SciencePotential/EffectivityOfWork/year/@ViewBag.year">Эффективность проводимых научно-изыскательских работ</a></li>
+                                <li @ViewBag.active[18]><a href="~/SciencePotential/LabEquipment/year/@ViewBag.year">Степень оснащенности научных лабораторий современным оборудованием экспериментально-лабораторной базы для проведения научно-изыскательских работ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -72,11 +72,10 @@
                     <div id="collapseFour" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <ul class="nav nav-pills nav-stacked">
-                                <li></li>
-                                <li><a href="#">Обеспеченность ИРЦ учебной литературой в соответствии с требованиями учебных программ, а также электронными версиями учебной литературы</a></li>
-                                <li><a href="#">Степень использования средств ИКТ в учебном процессе и научно-исследовательской работе, компьютерной техники, а также обновляемость компьютерного парка</a></li>
-                                <li><a href="#">Степень доступности и качества информации о вузе в сети Интернет (качество дизайна веб-сайта, достаточность учебно-научных и информационных ресурсов, обновляемость материалов, а также посещаемость веб-сайта)</a></li>
-                                <li><a href="#">Степень оснащенности материально-технической базы вуза современным лабораторным оборудованием и инвентарем, мультимедийной учебно-презентационной техникой</a></li>
+                                <li @ViewBag.active[19]><a href="~/LevelOfMTSAndICT/LibraryState/year/@ViewBag.year">Обеспеченность ИРЦ учебной литературой в соответствии с требованиями учебных программ, а также электронными версиями учебной литературы</a></li>
+                                <li @ViewBag.active[20]><a href="~/LevelOfMTSAndICT/UseOfICT/year/@ViewBag.year">Степень использования средств ИКТ в учебном процессе и научно-исследовательской работе, компьютерной техники, а также обновляемость компьютерного парка</a></li>
+                                <li @ViewBag.active[21]><a href="~/LevelOfMTSAndICT/InternetState/year/@ViewBag.year">Степень доступности и качества информации о вузе в сети Интернет (качество дизайна веб-сайта, достаточность учебно-научных и информационных ресурсов, обновляемость материалов, а также посещаемость веб-сайта)</a></li>
+                                <li @ViewBag.active[22]><a href="~/LevelOfMTSAndICT/ModernLab/year/@ViewBag.year">Степень оснащенности материально-технической базы вуза современным лабораторным оборудованием и инвентарем, мультимедийной учебно-презентационной техникой</a></li>
                             </ul>
                         </div>
                     </div>

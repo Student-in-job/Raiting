@@ -189,6 +189,9 @@
   <data name="MainMenuHome" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="MainMenuRaiting" xml:space="preserve">
+    <value>Reytingi</value>
+  </data>
   <data name="PageTitle" xml:space="preserve">
     <value>Rating of universities</value>
   </data>

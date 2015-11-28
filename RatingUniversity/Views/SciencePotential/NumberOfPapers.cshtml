@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RatingUniversity.Models.I15_kolichestvo_izdannih_statey>
+
+@{ Layout = "~/Views/Shared/_LayoutSideMenu.cshtml"; }
+
+<h3>@ViewBag.Title</h3>
+
+<table class="table table-striped" style="font-size:14px;">
+    <tr>
+        <th rowspan="2">Рейтинг</th>
+        <th rowspan="2">Название высшего учебного заведения</th>
+        <th colspan="3">Количество</th>
+        <th rowspan="2">Количество статей, изданных в зарубежных реферируемых научных журналах, республиканских научных изданиях (включенных в список ВАК), опубликованных монографий (в расчете на 1 ППС)</th>
+        <th rowspan="2">Показатель количества статей, изданных в зарубежных реферируемых научных журналах, республиканских научных изданиях (включенных в список ВАК), опубликованных монографий (в расчете на 1 ППС)</th>
+        <th rowspan="2">Год проведения рейтинга</th>
+    </tr>
+    <tr>
+        <th>научных статей в зарубежных журналах</th>
+        <th>изданных монографий</th>
+        <th>научных статей в республиканских научных журналах (по списку ВАК)</th>
+    </tr>
+
+@{var position=0;}
+@foreach (var item in Model)
+{
+    position++;
+    <tr>
+        <td>
+            @position
+        </td>
+        <td width="35%">
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.I151)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.I152)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.I153)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.I15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YEAR)
+        </td>
+    </tr>
+}
+
+</table>

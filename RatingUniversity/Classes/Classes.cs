@@ -25,5 +25,21 @@ namespace RatingUniversity.Classes
             }
         }
 
+        public static List<string> CreateActive(int Position)
+        {
+            return Functions.CreateActive(Position, 23);
+        }
+
+        public static List<string> CreateActive(int Position, int maxValue)
+        {
+            List<string> active = new List<string>();
+            for (int index = 0; index < maxValue; index++)
+            {
+                string value = (index == Position) ? "class=active" : string.Empty;
+                active.Add(value);
+            }
+            return active;
+        }
+
     }
 }

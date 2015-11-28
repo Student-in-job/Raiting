@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-3">
+        <section id="leftSideMenu">
+            <ul class="nav nav-pills nav-stacked">
+               <li @ViewBag.active[0]><a href="~/Raiting/QualityOfEducationalWork/year/@ViewBag.year">Уровень качества преподавания</a></li>
+               <li @ViewBag.active[1]><a href="~/Raiting/KnowledgeAndQualification/year/@ViewBag.year">Уровень знания студентов и квалификация выпускников</a></li>
+               <li @ViewBag.active[2]><a href="~/Raiting/SciencePotential/year/@ViewBag.year">Уровень научного потенциала высшего учебного заведения</a></li>
+               <li @ViewBag.active[3]><a href="~/Raiting/LevelOfMTSAndICT/year/@ViewBag.year">Уровень оснащенности материально-технической базы и внедрения ИКТ</a></li>
+            </ul>
+
+        </section>
+    </div>
+
+    <div class="col-md-9">
+        @RenderBody()
+    </div>
+</div>

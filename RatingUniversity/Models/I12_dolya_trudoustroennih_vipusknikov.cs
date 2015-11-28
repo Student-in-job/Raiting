@@ -16,6 +16,8 @@ namespace RatingUniversity.Models
     {
         public int ID { get; set; }
         public string name { get; set; }
+        public Nullable<double> p10 { get; set; }
+        public Nullable<double> p11 { get; set; }
         public Nullable<double> I12_1 { get; set; }
         public Nullable<double> I12 { get; set; }
         public Nullable<double> mark { get; set; }

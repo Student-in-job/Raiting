@@ -12,16 +12,12 @@ namespace RatingUniversity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class I18
+    public partial class I21_stepen_vnedreniya_ikt_v_uchebniy_process
     {
         public int ID { get; set; }
         public string name { get; set; }
-        public Nullable<double> I181 { get; set; }
-        public Nullable<double> I1811 { get; set; }
-        public Nullable<double> I182 { get; set; }
-        public Nullable<double> I183 { get; set; }
-        public Nullable<double> I184 { get; set; }
-        public Nullable<double> I185 { get; set; }
+        public Nullable<double> I21 { get; set; }
+        public Nullable<double> mark { get; set; }
         public Nullable<int> YEAR { get; set; }
     }
 }

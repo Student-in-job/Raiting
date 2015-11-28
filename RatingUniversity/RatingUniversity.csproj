@@ -167,9 +167,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Classes\Classes.cs" />
+    <Compile Include="Classes\CustomFile.cs" />
+    <Compile Include="Classes\ExcelFile.cs" />
     <Compile Include="Classes\MonitoringUpdate.cs" />
     <Compile Include="Classes\Transliteration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseInputDataController.cs" />
     <Compile Include="Controllers\Jadval19Controller.cs" />
     <Compile Include="Controllers\Jadval1Controller.cs" />
     <Compile Include="Controllers\Jadval10Controller.cs" />
@@ -189,15 +192,15 @@
     <Compile Include="Controllers\Jadval8Controller.cs" />
     <Compile Include="Controllers\Jadval9Controller.cs" />
     <Compile Include="Controllers\KnowledgeAndQualificationController.cs" />
+    <Compile Include="Controllers\LevelOfMTSAndICTController.cs" />
     <Compile Include="Controllers\MonitoringController.cs" />
     <Compile Include="Controllers\QualityOfEducationalWorkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RaitingController.cs" />
-    <Compile Include="Models\branch.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Controllers\SciencePotentialController.cs" />
+    <Compile Include="Controllers\Table3Controller.cs" />
     <Compile Include="Models\chislennost_pps_vuza.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
@@ -237,67 +240,39 @@
     <Compile Include="Langs\Resource.Designer.cs" />
     <Compile Include="Langs\Resource.uz.Designer.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Final Raiting1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Final Raiting.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\granti_po_vidam_issledovaniy.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\I1.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\I10.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I10_rezultati_attestacii_u_studentov.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I11.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\I12.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I12_dolya_trudoustroennih_vipusknikov.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I13.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\I13_kolichestvo_studentov_udostoennih_nagrad.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\I14.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I14_citiruemost_publikaciy_pps.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I15.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\I15_kolichestvo_izdannih_statey.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\I16.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I16_kolichestvo_sotrudnikov_utverjdennih_vak.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I17.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I18.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\I18_effektivnost_provodimih_nauchnih_rabot.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\I19.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I19_stepen_osnashennosti_laboratoriy_oborudovaniem.cs">
@@ -309,16 +284,16 @@
     <Compile Include="Models\I1_TOTAL.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I2.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\I20.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\I20_obespechennost_irc_uchebnoy_literaturoy.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I2_1.cs">
+    <Compile Include="Models\I21_stepen_vnedreniya_ikt_v_uchebniy_process.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\I22_dostupnost_informacii_o_vuze_v_internete.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\I23_osnashennost_laboratornim_oborudovaniem.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I2_1_uroven_kachestva_prepodavaniya.cs">
@@ -330,46 +305,28 @@
     <Compile Include="Models\I2_uroven_kachestva_prepodavaniya.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I3.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\I3_kolichestvo_uchebnikov_i_posobiy.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I3_TOTAL.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I4.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\I4_dolya_inostrannih_prepodavateley_i_studentov.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I5.cs">
+    <Compile Include="Models\I4_TOTAL.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I5_uchastie_v_programme_obmena.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I6.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\I6_kolichestvo_uchebnih_kursov_na_inostrannom.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\I7.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I7_uroven_angliyskogo_i_ikt_u_pps.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I8.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\I9.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I9_dolya_pps_prepodayushego_v_sspo.cs">
@@ -389,6 +346,9 @@
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Monitorings.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\monografiya.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
@@ -408,6 +368,9 @@
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\raiting.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RAITING_TOTAL.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\region.cs">
@@ -437,6 +400,7 @@
     <Content Include="Content\custom.min.css" />
     <Content Include="Content\flipclock.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Some.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -456,7 +420,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Final Raiting.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Final Raiting.Designer.cs</LastGenOutput>
+      <LastGenOutput>Final Raiting1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Models\Final Raiting.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -566,11 +530,33 @@
     <Content Include="Views\KnowledgeAndQualification\AssessmentByWorkers.cshtml" />
     <Content Include="Views\KnowledgeAndQualification\DisplayTemplates\Double.cshtml" />
     <Content Include="Views\KnowledgeAndQualification\AssessmentByTest.cshtml" />
+    <Content Include="Views\KnowledgeAndQualification\NumberOfWorkingStudents.cshtml" />
+    <Content Include="Views\KnowledgeAndQualification\NumberOfHonoredStudents.cshtml" />
+    <Content Include="Views\SciencePotential\DisplayTemplates\Double.cshtml" />
+    <Content Include="Views\SciencePotential\Citation.cshtml" />
+    <Content Include="Views\SciencePotential\NumberOfAcademics.cshtml" />
+    <Content Include="Views\SciencePotential\NumberOfPapers.cshtml" />
+    <Content Include="Views\SciencePotential\LabEquipment.cshtml" />
+    <Content Include="Views\SciencePotential\AmountOfFinance.cshtml" />
+    <Content Include="Views\SciencePotential\EffectivityOfWork.cshtml" />
+    <Content Include="Views\LevelOfMTSAndICT\DisplayTemplates\Double.cshtml" />
+    <Content Include="Views\LevelOfMTSAndICT\LibraryState.cshtml" />
+    <Content Include="Views\LevelOfMTSAndICT\UseOfICT.cshtml" />
+    <Content Include="Views\LevelOfMTSAndICT\ModernLab.cshtml" />
+    <Content Include="Views\LevelOfMTSAndICT\InternetState.cshtml" />
+    <Content Include="Views\Raiting\DisplayTemplates\Double.cshtml" />
+    <Content Include="Views\Shared\_LayoutSideMenuRaiting.cshtml" />
+    <Content Include="Views\Raiting\QualityOfEducationalWork.cshtml" />
+    <Content Include="Views\Raiting\SciencePotential.cshtml" />
+    <Content Include="Views\Raiting\KnowledgeAndQualification.cshtml" />
+    <Content Include="Views\Raiting\LevelOfMTSAndICT.cshtml" />
+    <Content Include="Views\Raiting\Index.cshtml" />
+    <Content Include="Views\Table3\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Files\Upload\" />
-    <Folder Include="Views\Raiting\" />
+    <Folder Include="Views\BaseInputData\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

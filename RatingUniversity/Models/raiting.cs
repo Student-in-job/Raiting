@@ -84,6 +84,29 @@ namespace RatingUniversity.Models
         public Nullable<double> k2 { get; set; }
         public Nullable<double> m { get; set; }
         public Nullable<double> L { get; set; }
+        public Nullable<double> x1 { get; set; }
+        public Nullable<double> x2 { get; set; }
+        public Nullable<double> x3 { get; set; }
+        public Nullable<double> x4 { get; set; }
+        public Nullable<double> x5 { get; set; }
+        public Nullable<double> x6 { get; set; }
+        public Nullable<double> x7 { get; set; }
+        public Nullable<double> x8 { get; set; }
+        public Nullable<double> x9 { get; set; }
+        public Nullable<double> x10 { get; set; }
+        public Nullable<double> x11 { get; set; }
+        public Nullable<double> x12 { get; set; }
+        public Nullable<double> x13 { get; set; }
+        public Nullable<double> x14 { get; set; }
+        public Nullable<double> x15 { get; set; }
+        public Nullable<double> x16 { get; set; }
+        public Nullable<double> ra { get; set; }
+        public Nullable<double> u { get; set; }
+        public Nullable<double> s { get; set; }
+        public Nullable<double> p17 { get; set; }
+        public Nullable<double> p18 { get; set; }
+        public Nullable<double> p19 { get; set; }
+        public Nullable<double> p20 { get; set; }
     
         public virtual university university { get; set; }
     }
