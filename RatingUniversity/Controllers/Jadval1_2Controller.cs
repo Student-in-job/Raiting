@@ -62,7 +62,7 @@ namespace RatingUniversity.Controllers
 			OleDbCommand MyCommand = new OleDbCommand();
 			oledbcon.Open();
 			MyCommand.Connection = oledbcon;
-			int xi = 3;
+			int xi = 5;
 			foreach (var l in list)
 			{
 				string sql = "update [List1$A" + xi.ToString() + ":A" + xi.ToString() + "] set F1=(@param1);";
@@ -154,7 +154,7 @@ namespace RatingUniversity.Controllers
 		private static void GetExcelData_Jadval1_2(DataTable data)
 		{
 			List<Jadval_talimsifati_1_2> uploadExl = new List<Jadval_talimsifati_1_2>();
-			for (int i = 1; i < data.Rows.Count; i++)
+			for (int i = 3; i < data.Rows.Count; i++)
 			{
 				Jadval_talimsifati_1_2 NewUpload = new Jadval_talimsifati_1_2();
 				if (data.Rows[i][0].ToString() == "") break;

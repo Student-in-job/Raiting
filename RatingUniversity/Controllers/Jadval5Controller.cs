@@ -119,7 +119,7 @@ namespace RatingUniversity.Controllers
 		{
 			int UniverId = 24;
 			List<Jadval5> uploadExl = new List<Jadval5>();
-			for (int i = 4; i < data.Rows.Count - 7; i++)
+			for (int i = 4; i < data.Rows.Count-7; i++)
 			{
 				Jadval5 NewUpload = new Jadval5();
 				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
@@ -199,6 +199,23 @@ namespace RatingUniversity.Controllers
 			return RedirectToAction("Index", "Jadval5");
 		}
 
+		public ActionResult Status(int? id)
+		{
+			if (id == null)
+			{
+				return RedirectToAction("Index");
+			}
+			using (TablesContext db = new TablesContext())
+			{
+				Jadval5 j5 = db.Jadval5.Find(id);
+				if (j5 == null) return RedirectToAction("Index");
+				if (j5.Status == null) j5.Status = 1;
+				else j5.Status = null;
+				db.Entry(j5).State = EntityState.Modified;
+				db.SaveChanges();
+			}
+			return RedirectToAction("Index");
+		}
 
 	}
 }

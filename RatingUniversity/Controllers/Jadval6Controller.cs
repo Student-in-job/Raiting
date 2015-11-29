@@ -201,6 +201,23 @@ namespace RatingUniversity.Controllers
 			return RedirectToAction("Index", "Jadval6");
 		}
 
+		public ActionResult Status(int? id)
+		{
+			if (id == null)
+			{
+				return RedirectToAction("Index");
+			}
+			using (TablesContext db = new TablesContext())
+			{
+				Jadval6 j2 = db.Jadval6.Find(id);
+				if (j2 == null) return RedirectToAction("Index");
+				if (j2.Status == null) j2.Status = 1;
+				else j2.Status = null;
+				db.Entry(j2).State = EntityState.Modified;
+				db.SaveChanges();
+			}
+			return RedirectToAction("Index");
+		}
 
 	}
 }

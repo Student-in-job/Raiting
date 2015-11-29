@@ -137,6 +137,7 @@ namespace RatingUniversity.Models
 		public String OquvqullanmaCertificate { get; set; }
 		public String OquvmajmuaName { get; set; }
 		public String OquvmajmuaCertificate { get; set; }
+		public int? Status { get; set; }
 		public String AsosFile { get; set; }
 		public Int16 Year { get; set; }
 		public Int32 UniversityId { get; set; }
@@ -167,6 +168,7 @@ namespace RatingUniversity.Models
 		public String DiplomNumber { get; set; }
 		public String SovrinName { get; set; }
 		public String Description { get; set; }
+		public int? Status { get; set; }
 		public String AsosFile { get; set; }
 		public Int16 Year { get; set; }
 		public Int32 UniversityId { get; set; }
@@ -176,6 +178,7 @@ namespace RatingUniversity.Models
 	{
 		public Int32 Id { get; set; }
 		public String FullName { get; set; }
+		public String Davlat { get; set; }
 		public Int32 Jadval1_Id { get; set; }
 		public String Phd_seriya { get; set; }
 		public String Phd_nomer { get; set; }
@@ -183,6 +186,7 @@ namespace RatingUniversity.Models
 		public String Mag_nomer { get; set; }
 		public String Speciality { get; set; }
 		public String Ishga_qabul_buyruq { get; set; }
+		public int? Status { get; set; }
 		public Int16 Year { get; set; }
 		public Int32 UniversityId { get; set; }
 		public String AsosFile { get; set; }
@@ -238,6 +242,7 @@ namespace RatingUniversity.Models
 		public String Davlat_ishjoy { get; set; }
 		public String Speciality { get; set; }
 		public String Subject { get; set; }
+		public int? Status { get; set; }
 		public String Asos { get; set; }
 		public String Asos_fayl { get; set; }
 		public Int16 Year { get; set; }
@@ -250,6 +255,7 @@ namespace RatingUniversity.Models
 		public String State { get; set; }
 		public String Yonalish { get; set; }
 		public String Mag_mutaxassislik { get; set; }
+		public int? Status { get; set; }
 		public String Asos { get; set; }
 		public String Asos_fayl { get; set; }
 		public Int16 Year { get; set; }

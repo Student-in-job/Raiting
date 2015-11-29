@@ -125,7 +125,8 @@ namespace RatingUniversity.Controllers
 			{
 				Jadval2 NewUpload = new Jadval2();
 				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
-				NewUpload.Jadval1_Id = Convert.ToInt32(data.Rows[i][2]);
+				NewUpload.Davlat = Convert.ToString(data.Rows[i][2]);
+				//NewUpload.Jadval1_Id = Convert.ToInt32(data.Rows[i][2]);
 				NewUpload.Phd_seriya = Convert.ToString(data.Rows[i][3]);
 				NewUpload.Phd_nomer = Convert.ToString(data.Rows[i][4]);
 				NewUpload.Mag_seriya = Convert.ToString(data.Rows[i][5]);
@@ -204,6 +205,22 @@ namespace RatingUniversity.Controllers
 			return RedirectToAction("Index", "Jadval2");
 		}
 
-
+		public ActionResult Status(int? id)
+		{
+			if (id==null)
+			{
+				return RedirectToAction("Index");
+			}
+			using (TablesContext db = new TablesContext())
+			{
+				Jadval2 j2 = db.Jadval2.Find(id);
+				if (j2 == null) return RedirectToAction("Index");
+				if (j2.Status == null) j2.Status = 1;
+				else j2.Status = null;
+				db.Entry(j2).State = EntityState.Modified;
+				db.SaveChanges();
+			}
+			return RedirectToAction("Index");
+		}
 	}
 }
