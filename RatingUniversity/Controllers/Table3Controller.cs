@@ -18,12 +18,14 @@ namespace RatingUniversity.Controllers
             base.Initialize(requestContext);
             this.fileName = "3_chislennost_pps_vuza.xlsx";
             this.listName = "chislennost_pps_vuza";
+            this.startRow = 8;
+            this.endRow = 2;
         }
 
         protected override void FormListOfData(DataTable table)
         {
             this.records = new List<chislennost_pps_vuza>();
-            for (int i = 8; i < table.Rows.Count-2; i++)
+            for (int i = this.startRow; i < table.Rows.Count-this.endRow; i++)
             {
                 chislennost_pps_vuza record = new chislennost_pps_vuza();
                 if (table.Rows[i][0] != null) record.ass_shtat = Convert.ToInt32(table.Rows[i][0]);

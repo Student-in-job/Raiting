@@ -17,6 +17,8 @@ namespace RatingUniversity.Controllers
         protected ExcelFile excelFile;
         protected string listName;
         protected int id = 46;
+        protected int startRow;
+        protected int endRow;
 
         protected void ReadDataFromExcelFiles()
         {

@@ -436,6 +436,52 @@
       <LastGenOutput>Final Raiting.cs</LastGenOutput>
     </Content>
     <Content Include="Content\bootstrap.min.css.bak" />
+    <Content Include="Files\11_kolichestvo_izdannoy_uchebnoy_literaturi.xlsx" />
+    <Content Include="Files\12_citiruemost_publikaciy_pps_vuza.xlsx" />
+    <Content Include="Files\13_kolichestvo_izdannih_mejdunarodnih_ statey.xlsx" />
+    <Content Include="Files\14_kolichestvo_izdannih_mestnih_ statey.xlsx" />
+    <Content Include="Files\15_effektivnost_nir.xlsx" />
+    <Content Include="Files\16_informaciya_o_dissertaciyah.xlsx" />
+    <Content Include="Files\22_osnashennost_laboratoriy.xlsx" />
+    <Content Include="Files\23_summi_mejdunarodnih_grantov.xlsx" />
+    <Content Include="Files\24_summi_respublikanskih_grantov.xlsx" />
+    <Content Include="Files\25_granti_po_vidam_issledovaniy.xlsx" />
+    <Content Include="Files\27_nalichie_elektronnoy_literaturi.xlsx" />
+    <Content Include="Files\28_stepen_vnedreniya_ikt_v_uchebniy_process.xlsx" />
+    <Content Include="Files\29_nalichie_informacii_o_vuze_v_internete.xlsx" />
+    <Content Include="Files\31_nalichie_multimedia_v_auditorii.xlsx" />
+    <Content Include="Files\3_chislennost_pps_vuza.xlsx" />
+    <Content Include="Files\table1.xls" />
+    <Content Include="Files\table10.xls" />
+    <Content Include="Files\table11.xls" />
+    <Content Include="Files\table18.xls" />
+    <Content Include="Files\table19.xls" />
+    <Content Include="Files\table1_2 - Copy.xls" />
+    <Content Include="Files\table1_2.xls" />
+    <Content Include="Files\table1_2_2015_10_22__08_06_14.xls" />
+    <Content Include="Files\table1_2_2015_10_31__10_25_54.xls" />
+    <Content Include="Files\table1_7 - Copy.xlsx" />
+    <Content Include="Files\table1_7.xls" />
+    <Content Include="Files\table1_7_2015_10_22__08_06_27.xls" />
+    <Content Include="Files\table2.xls" />
+    <Content Include="Files\table20.xls" />
+    <Content Include="Files\table21.xls" />
+    <Content Include="Files\table2_1 - Copy.xlsx" />
+    <Content Include="Files\table2_1.xls" />
+    <Content Include="Files\table2_1_2015_10_22__08_06_48.xls" />
+    <Content Include="Files\table2_2 - Copy.xls" />
+    <Content Include="Files\table2_2.xls" />
+    <Content Include="Files\table2_2_2015_10_21__12_44_32.xls" />
+    <Content Include="Files\table3.xls" />
+    <Content Include="Files\table32.xls" />
+    <Content Include="Files\table4.xls" />
+    <Content Include="Files\table5.xls" />
+    <Content Include="Files\table6.xls" />
+    <Content Include="Files\table7.xls" />
+    <Content Include="Files\table8.xls" />
+    <Content Include="Files\table9.xls" />
+    <Content Include="Files\test-zero-weight.xlsx" />
+    <Content Include="Files\test.xlsx" />
     <None Include="Properties\PublishProfiles\Vitaliy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
@@ -555,7 +601,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Files\Upload\" />
     <Folder Include="Views\BaseInputData\" />
   </ItemGroup>
   <ItemGroup>

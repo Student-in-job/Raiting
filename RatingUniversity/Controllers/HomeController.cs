@@ -40,7 +40,7 @@ namespace RatingUniversity.Controllers
         {
             CultureInfo currentCulrute = Thread.CurrentThread.CurrentCulture;
             ViewBag.lang = currentCulrute.Name.Substring(0, 5);
-            ViewBag.timeLeft = Functions.GetLeftTime("01-11-2015 00:00:00");
+            ViewBag.timeLeft = Functions.GetLeftTime("01-12-2015 00:00:00");
             ViewBag.year = 2013;
             return View();
         }
