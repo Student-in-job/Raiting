@@ -120,11 +120,38 @@
   <data name="ButtonLearnMore" xml:space="preserve">
     <value>Learn more</value>
   </data>
+  <data name="ChooseFile" xml:space="preserve">
+    <value>faylni tanlash</value>
+  </data>
+  <data name="CitatDataHeader" xml:space="preserve">
+    <value>профессор-ўқитувчилари томонидан чоп этилган материалларнинг иқтибослик (чоп этилган материалларга мурожаатлар сони) даражаси ҳақида</value>
+  </data>
+  <data name="CitatFIO" xml:space="preserve">
+    <value>Муаллиф (лар) Ф.И.Ш.</value>
+  </data>
+  <data name="CitatInfo" xml:space="preserve">
+    <value>Чоп этилган материаллар номи ва қайси тилда</value>
+  </data>
+  <data name="CitatLink" xml:space="preserve">
+    <value>Чоп этилган материалларнинг Google Scholar ёки бошқа халқаро қидирув тизимларидаги Интернет манзили (Гипер ҳавола)</value>
+  </data>
+  <data name="CitatNote" xml:space="preserve">
+    <value>(муаллиф ОТМда фаолият олиб борган барча йиллар бўйича)</value>
+  </data>
+  <data name="CitatSource" xml:space="preserve">
+    <value>Манба (журнал, китоб ёки бошқа) номи, нашр этилган йили (ва журнал сони)</value>
+  </data>
+  <data name="CitatUsage" xml:space="preserve">
+    <value>Google Scholar ёки бошқа халқаро қидирув тизимлари асосида аниқланган ушбу материалларга мурожаатлар сони*</value>
+  </data>
+  <data name="Common" xml:space="preserve">
+    <value>Жами</value>
+  </data>
   <data name="FooterCopyrightAllRightReserved" xml:space="preserve">
     <value>All right reserved.</value>
   </data>
   <data name="FooterCopyrightDev" xml:space="preserve">
-    <value>Yaratuvch</value>
+    <value>Yaratuvchi</value>
   </data>
   <data name="FooterCopyrightDtm" xml:space="preserve">
     <value>Davlat Test Markazi</value>
@@ -148,19 +175,19 @@
     <value>TUIT</value>
   </data>
   <data name="HomePageChanges" xml:space="preserve">
-    <value>Changes</value>
+    <value>O'zgartirishlar</value>
   </data>
   <data name="HomePageChartHeader" xml:space="preserve">
-    <value>Chart</value>
+    <value>Диаграмма</value>
   </data>
   <data name="HomePageChartHeaderInfo" xml:space="preserve">
     <value>Here are the materials to work with the system.</value>
   </data>
   <data name="HomePageHeader" xml:space="preserve">
-    <value>Rating of universities</value>
+    <value>Oliy ta'lim muassasalarining reytingi</value>
   </data>
   <data name="HomePageHeaderInfo" xml:space="preserve">
-    <value>The information system is designed to meet the challenges of collecting, processing and storage of information required to calculate the ranking of educational institutions.</value>
+    <value>Ресурс запущен</value>
   </data>
   <data name="HomePageRatingHeader" xml:space="preserve">
     <value>Top universities</value>
@@ -169,38 +196,128 @@
     <value>Some text...</value>
   </data>
   <data name="HomePageTitle" xml:space="preserve">
-    <value>Home</value>
+    <value>Bosh sahifa</value>
   </data>
   <data name="HomePageUniversity" xml:space="preserve">
-    <value>University</value>
+    <value>Oliy ta'lim muassasa</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>ma'lumot</value>
   </data>
   <data name="MainMenuAbout" xml:space="preserve">
-    <value>About</value>
+    <value>Resurs haqida</value>
   </data>
   <data name="MainMenuAddData" xml:space="preserve">
     <value>Upload Data</value>
   </data>
   <data name="MainMenuContact" xml:space="preserve">
-    <value>Contact</value>
+    <value>Aloqa</value>
   </data>
   <data name="MainMenuEduQuality" xml:space="preserve">
     <value>Education Quality</value>
   </data>
   <data name="MainMenuHome" xml:space="preserve">
-    <value>Home</value>
+    <value>Bosh sahifa</value>
   </data>
   <data name="MainMenuRaiting" xml:space="preserve">
     <value>Reytingi</value>
   </data>
+  <data name="MDUQDarslik" xml:space="preserve">
+    <value>Дарслик</value>
+  </data>
+  <data name="MDUQDataHeader_1" xml:space="preserve">
+    <value>Асосий штатдаги профессор-ўқитувчиларнинг</value>
+  </data>
+  <data name="MDUQDataHeader_2" xml:space="preserve">
+    <value>йилда нашр этган монография, нашрга тайёрлаган дарслик, ўқув қўлланма ва ўқув услубий мажмуалари ҳақида</value>
+  </data>
+  <data name="MDUQFileName" xml:space="preserve">
+    <value>Юкланган файл номи</value>
+  </data>
+  <data name="MDUQFIO" xml:space="preserve">
+    <value>Муаллифларнинг Ф.И.Ш.</value>
+  </data>
+  <data name="MDUQMajmua" xml:space="preserve">
+    <value>Ўқув услубий мажмуа</value>
+  </data>
+  <data name="MDUQMonografiya" xml:space="preserve">
+    <value>Монография</value>
+  </data>
+  <data name="MDUQName" xml:space="preserve">
+    <value>Номи</value>
+  </data>
+  <data name="MDUQNumber" xml:space="preserve">
+    <value>Мувофиқлаштирувчи Кенгашдан ўтганлиги тўғрисидага гувоҳнома рақами ва санаси</value>
+  </data>
+  <data name="MDUQQullanma" xml:space="preserve">
+    <value>Ўқув қўлланма</value>
+  </data>
+  <data name="MDUQSpec" xml:space="preserve">
+    <value>Ихтисослик шифри ва номи</value>
+  </data>
+  <data name="MDUQYear" xml:space="preserve">
+    <value>Нашр йили</value>
+  </data>
   <data name="PageTitle" xml:space="preserve">
-    <value>Rating of universities</value>
+    <value>Oliy ta'lim muassasalarining reytingi</value>
+  </data>
+  <data name="PPSAmount" xml:space="preserve">
+    <value>Профессор-ўқитувчилар сони</value>
+  </data>
+  <data name="PPSAssistant" xml:space="preserve">
+    <value>Ассистент ёки ўқитувчи</value>
+  </data>
+  <data name="PPSBasicHeader" xml:space="preserve">
+    <value>Асосий штатдагилар</value>
+  </data>
+  <data name="PPSBasicStaff" xml:space="preserve">
+    <value>Асосий штат</value>
+  </data>
+  <data name="PPSDataHeader" xml:space="preserve">
+    <value>da faoliyat ko'rsatayotgan  professor-o'qituvchilar to'g'risida umumiy ma`lumot</value>
+  </data>
+  <data name="PPSDocent" xml:space="preserve">
+    <value>Доцент (илмий даражасиз)</value>
+  </data>
+  <data name="PPSDocentPhD" xml:space="preserve">
+    <value>Доценты</value>
+  </data>
+  <data name="PPSHourly" xml:space="preserve">
+    <value>Соатбай</value>
+  </data>
+  <data name="PPSHourlyHeader" xml:space="preserve">
+    <value>Соатбайлар</value>
+  </data>
+  <data name="PPSphD" xml:space="preserve">
+    <value>Фан доктори</value>
+  </data>
+  <data name="PPSphDeX" xml:space="preserve">
+    <value>Фан номзоди</value>
+  </data>
+  <data name="PPSProfessor" xml:space="preserve">
+    <value>Профессор  (илмий даражасиз)</value>
+  </data>
+  <data name="PPSProfessorPhD" xml:space="preserve">
+    <value>Профессора</value>
+  </data>
+  <data name="PPSTeacher" xml:space="preserve">
+    <value>Катта ўқитувчи</value>
+  </data>
+  <data name="PPSVisitingHeader" xml:space="preserve">
+    <value>Ўриндошлар</value>
+  </data>
+  <data name="PPSVisitingStaff" xml:space="preserve">
+    <value>Ўриндош</value>
   </data>
   <data name="RU" xml:space="preserve">
     <value>Русский</value>
     <comment>!!! Перевод не требуется !!!  Can`t touch this !!!</comment>
   </data>
   <data name="TopHeader" xml:space="preserve">
-    <value>Top university in Uzbekistan</value>
+    <value>Uzbekiston oliy ta'lim muassasalarining reytingi</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>yuborish</value>
   </data>
   <data name="UZCyrillic" xml:space="preserve">
     <value>Узбек</value>
@@ -209,5 +326,170 @@
   <data name="UZLatin" xml:space="preserve">
     <value>O`zbek</value>
     <comment>!!! Перевод не требуется !!! Can`t touch this !!!</comment>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Юкланган файл номи</value>
+  </data>
+  <data name="PaperAuthorsCount" xml:space="preserve">
+    <value>Муаллифлар сони</value>
+  </data>
+  <data name="PaperDataHeader_1" xml:space="preserve">
+    <value>жорий  йилда хорижий илмий журналларда (мақолаларнинг аннотациялари рефератив журналларда бериладиган нашрларда) 
+нашр этилган илмий мақолалар  ҳақида</value>
+  </data>
+  <data name="PaperDataHeader_2" xml:space="preserve">
+    <value>жорий  йилда махаллий илмий
+журналларда (ОАКнинг рўйхатига киритилган илмий журналларда) нашр этилган илмий мақолалар  ҳақида</value>
+  </data>
+  <data name="PaperFIO" xml:space="preserve">
+    <value>Муаллифнинг Ф.И.Ш</value>
+  </data>
+  <data name="PaperJournalInfo" xml:space="preserve">
+    <value>Хорижий илмий журнал, нашр этилган давлат номи</value>
+  </data>
+  <data name="PaperJournalName" xml:space="preserve">
+    <value>Илмий журнал номи</value>
+  </data>
+  <data name="PaperLink" xml:space="preserve">
+    <value>Электрон мақолаларнинг интернет манзили (Гипер ҳавола)</value>
+  </data>
+  <data name="PaperName" xml:space="preserve">
+    <value>Илмий мақола номи</value>
+  </data>
+  <data name="PaperYear" xml:space="preserve">
+    <value>Нашр йили,  бетлари</value>
+  </data>
+  <data name="PaperCountry" xml:space="preserve">
+    <value>Хорижий илмий журнал, нашр этилган давлат номи</value>
+  </data>
+  <data name="AttachFile" xml:space="preserve">
+    <value>файлни маҳкамлаш </value>
+  </data>
+  <data name="DownloadTemplate" xml:space="preserve">
+    <value>Скачать шаблон</value>
+  </data>
+  <data name="EfNIRCode" xml:space="preserve">
+    <value>Сертификат (патент) қайд рақами*</value>
+  </data>
+  <data name="EfNIRDalolatnoma" xml:space="preserve">
+    <value>Ташкилотлар олинган АКТлар</value>
+  </data>
+  <data name="EfNIRDataHeader" xml:space="preserve">
+    <value>профессор-ўқитувчилар томонидан жорий  йилда  интеллектуал мулк воситаларига олинган сертификат (патент)лар ва ташкилотлардан олинган (жорий этилганлик тўғрисида) АКТлар ҳақида</value>
+  </data>
+  <data name="EfNIRFIO" xml:space="preserve">
+    <value>Асосий штатдаги профессор-ўқитувчиларнинг Ф.И.Ш.</value>
+  </data>
+  <data name="EfNIRName" xml:space="preserve">
+    <value>Сертификат (патент), АКТ берилган ишланманинг  номи</value>
+  </data>
+  <data name="EfNIROrganization" xml:space="preserve">
+    <value>Берилган cанаси ва АКТ берилган ташкилот номи</value>
+  </data>
+  <data name="EfNIRPatent" xml:space="preserve">
+    <value>Патентлар</value>
+  </data>
+  <data name="EfNIRSertificate" xml:space="preserve">
+    <value>Сертификатлар</value>
+  </data>
+  <data name="EfNIRUniversityName" xml:space="preserve">
+    <value>ОТМлар номи</value>
+  </data>
+  <data name="InfoThesisCode" xml:space="preserve">
+    <value>шифри</value>
+  </data>
+  <data name="InfoThesisCodeName" xml:space="preserve">
+    <value>номи</value>
+  </data>
+  <data name="InfoThesisCouncil" xml:space="preserve">
+    <value>Махсус кенгаш шифри</value>
+  </data>
+  <data name="InfoThesisCouncilEmail" xml:space="preserve">
+    <value>Махсус кенгашнинг почта манзили</value>
+  </data>
+  <data name="InfoThesisDataHeader" xml:space="preserve">
+    <value>Жорий йилда олий таълим муассасаларининг асосий штатида ишлаётган профессор-  
+ўқитувчилари томонидан ҳимоя қилинган докторлик диссертациялари ҳақида</value>
+  </data>
+  <data name="InfoThesisDate" xml:space="preserve">
+    <value>Илмий даража  бериш тўғрисидаги Махсус кенгаш қарорининг ОАК томонидан тасдиқланган  сани</value>
+  </data>
+  <data name="InfoThesisFIO" xml:space="preserve">
+    <value>Диссертантнинг Ф.И.Ш</value>
+  </data>
+  <data name="InfoThesisName" xml:space="preserve">
+    <value>Диссертация мавзуси</value>
+  </data>
+  <data name="InfoThesisSpecialization" xml:space="preserve">
+    <value>Ихтисослик</value>
+  </data>
+  <data name="InfoThesisUniversity" xml:space="preserve">
+    <value>Иш жойи (ОТМ номи)</value>
+  </data>
+  <data name="ManageUniversityBranch" xml:space="preserve">
+    <value>Qaysi OTMning filiali bo'ladi</value>
+  </data>
+  <data name="ManageUniversityName_RU" xml:space="preserve">
+    <value>OTMning nomi rus tilida</value>
+  </data>
+  <data name="ManageUniversityName_UZ" xml:space="preserve">
+    <value>OTMning nomi o'zbek tilida</value>
+  </data>
+  <data name="ManageUniversityRegion" xml:space="preserve">
+    <value>OTMning regioni</value>
+  </data>
+  <data name="AccountCheckKey" xml:space="preserve">
+    <value>Nazorat kalit</value>
+  </data>
+  <data name="AccountCode" xml:space="preserve">
+    <value>Kodi</value>
+  </data>
+  <data name="AccountConfirmPassword" xml:space="preserve">
+    <value>Parolni qayta kiriting</value>
+  </data>
+  <data name="AccountCreate" xml:space="preserve">
+    <value>Создать нового пользователя</value>
+  </data>
+  <data name="AccountEmail" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="AccountErrEmail" xml:space="preserve">
+    <value>Email имеет не верный формат</value>
+  </data>
+  <data name="AccountErrKeyNotMatch" xml:space="preserve">
+    <value>Nazorat kalit noto'g'ri</value>
+  </data>
+  <data name="AccountErrPasswordLength" xml:space="preserve">
+    <value>Длинна пароля должны быть хотя бы {2} символов</value>
+  </data>
+  <data name="AccountErrPasswordNotMatch" xml:space="preserve">
+    <value>Parollar aniq emas</value>
+  </data>
+  <data name="AccountErrRequired" xml:space="preserve">
+    <value>Поле {0} обязательно к заполнению</value>
+  </data>
+  <data name="AccountErrUnique" xml:space="preserve">
+    <value>Пользователь с таким {0} уже зарегистрирован</value>
+  </data>
+  <data name="AccountErrUniversityExist" xml:space="preserve">
+    <value>OTM alaqachon roy'xatdan otildi</value>
+  </data>
+  <data name="AccountLogin" xml:space="preserve">
+    <value>Кириш</value>
+  </data>
+  <data name="AccountLogout" xml:space="preserve">
+    <value>Chiqish</value>
+  </data>
+  <data name="AccountPassword" xml:space="preserve">
+    <value>Parol</value>
+  </data>
+  <data name="AccountRegister" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="AccountRememberMe" xml:space="preserve">
+    <value>Meni eslash?</value>
+  </data>
+  <data name="AccountUniversity" xml:space="preserve">
+    <value>Oliy ta'lim muassasa</value>
   </data>
 </root>

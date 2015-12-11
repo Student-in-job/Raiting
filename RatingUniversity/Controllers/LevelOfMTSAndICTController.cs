@@ -5,12 +5,34 @@ using System.Web;
 using System.Web.Mvc;
 using RatingUniversity.Models;
 using RatingUniversity.Classes;
+using System.Threading;
+using System.Globalization;
 
 namespace RatingUniversity.Controllers
 {
     public class LevelOfMTSAndICTController : Controller
     {
-        private URaitingEntities db = new URaitingEntities();
+        private TablesContext db = new TablesContext();
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+            if (Session["CurrentCulture"] != null)
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(Session["CurrentCulture"].ToString());
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Session["CurrentCulture"].ToString());
+            }
+            string culture = Thread.CurrentThread.CurrentCulture.ToString();
+            if (culture.IndexOf("ru") != -1)
+            {
+                ViewBag.lang = "RU";
+                ViewBag.alfabet = "RU";
+            }
+            else
+            {
+                ViewBag.lang = "UZ";
+                ViewBag.alfabet = (culture.IndexOf("Cyrl") != -1) ? "CY" : "LT";
+            }
+        }
 
         // GET: /LevelOfMTSAndICT/LibraryState
         public ActionResult LibraryState(int? year)

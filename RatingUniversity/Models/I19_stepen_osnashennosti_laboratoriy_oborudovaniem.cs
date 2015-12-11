@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I19_stepen_osnashennosti_laboratoriy_oborudovaniem
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> Z1 { get; set; }
         public Nullable<double> Z2 { get; set; }
         public Nullable<double> Z3 { get; set; }

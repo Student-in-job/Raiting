@@ -1,0 +1,32 @@
+﻿@model IEnumerable<RatingUniversity.Models.university>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_RU, ViewBag.lang, ViewBag.alfabet);
+        </th>
+        <th>
+            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_UZ, ViewBag.lang, ViewBag.alfabet);
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name_RU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name_UZ)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

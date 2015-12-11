@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I15_kolichestvo_izdannih_statey
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I151 { get; set; }
         public Nullable<double> I152 { get; set; }
         public Nullable<double> I153 { get; set; }

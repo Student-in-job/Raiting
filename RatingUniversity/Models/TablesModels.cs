@@ -4,19 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 
 namespace RatingUniversity.Models
 {
-	public class TablesModels
-	{
-	}
-
-	//public class TestContext : DbContext
-	//{
-	//	public DbSet<Monitoring> Monitoring { get; set; }
-	//}
-
 	public class TablesContext : DbContext
 	{		
 		public DbSet<Jadval1> Jadval1 { get; set; }
@@ -38,344 +30,93 @@ namespace RatingUniversity.Models
 		public DbSet<Jadval_talababilim_2_1> Jadval_talababilim_2_1 { get; set; }
 		public DbSet<Jadval_talimsifati_1_2> Jadvaltalimsifati_1_2 { get; set; }
 		public DbSet<Monitoring> Monitoring { get; set; }
-		public DbSet<university> University { get; set; }
 
-        /*
-        public TablesContext():base("TablesContext")
+        public virtual DbSet<branch> branch { get; set; }
+        public virtual DbSet<chislennost_pps_vuza> chislennost_pps_vuza { get; set; }
+        public virtual DbSet<citiruemost_publikaciy_pps_vuza> citiruemost_publikaciy_pps_vuza { get; set; }
+        public virtual DbSet<darslik> darslik { get; set; }
+        public virtual DbSet<effektivnost_nir_dalolatnoma> effektivnost_nir_dalolatnoma { get; set; }
+        public virtual DbSet<effektivnost_nir_patent> effektivnost_nir_patent { get; set; }
+        public virtual DbSet<effektivnost_nir_sertifikat> effektivnost_nir_sertifikat { get; set; }
+        public virtual DbSet<granti_po_vidam_issledovaniy> granti_po_vidam_issledovaniy { get; set; }
+        public virtual DbSet<majmua> majmua { get; set; }
+        public virtual DbSet<monografiya> monografiya { get; set; }
+        public virtual DbSet<nalichie_elektronnoy_literaturi> nalichie_elektronnoy_literaturi { get; set; }
+        public virtual DbSet<nalichie_informacii_o_vuze_v_internete> nalichie_informacii_o_vuze_v_internete { get; set; }
+        public virtual DbSet<nalichie_multimedia_v_auditorii> nalichie_multimedia_v_auditorii { get; set; }
+        public virtual DbSet<osnashennost_laboratoriy> osnashennost_laboratoriy { get; set; }
+        public virtual DbSet<qullanma> qullanma { get; set; }
+        public virtual DbSet<raiting> raiting { get; set; }
+        public virtual DbSet<region> region { get; set; }
+        public virtual DbSet<stepen_vnedreniya_ikt> stepen_vnedreniya_ikt { get; set; }
+        public virtual DbSet<summi_mejdunarodnih_grantov> summi_mejdunarodnih_grantov { get; set; }
+        public virtual DbSet<summi_respublikanskih_grantov> summi_respublikanskih_grantov { get; set; }
+        public virtual DbSet<university> university { get; set; }
+        public virtual DbSet<I1> I1 { get; set; }
+        public virtual DbSet<I1_dolya_pps_s_uchenoy_stepenyu> I1_dolya_pps_s_uchenoy_stepenyu { get; set; }
+        public virtual DbSet<I1_TOTAL> I1_TOTAL { get; set; }
+        public virtual DbSet<I10> I10 { get; set; }
+        public virtual DbSet<I10_rezultati_attestacii_u_studentov> I10_rezultati_attestacii_u_studentov { get; set; }
+        public virtual DbSet<I11> I11 { get; set; }
+        public virtual DbSet<I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami> I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami { get; set; }
+        public virtual DbSet<I12> I12 { get; set; }
+        public virtual DbSet<I12_dolya_trudoustroennih_vipusknikov> I12_dolya_trudoustroennih_vipusknikov { get; set; }
+        public virtual DbSet<I13> I13 { get; set; }
+        public virtual DbSet<I13_kolichestvo_studentov_udostoennih_nagrad> I13_kolichestvo_studentov_udostoennih_nagrad { get; set; }
+        public virtual DbSet<I14> I14 { get; set; }
+        public virtual DbSet<I14_citiruemost_publikaciy_pps> I14_citiruemost_publikaciy_pps { get; set; }
+        public virtual DbSet<I15> I15 { get; set; }
+        public virtual DbSet<I15_kolichestvo_izdannih_statey> I15_kolichestvo_izdannih_statey { get; set; }
+        public virtual DbSet<I16> I16 { get; set; }
+        public virtual DbSet<I16_kolichestvo_sotrudnikov_utverjdennih_vak> I16_kolichestvo_sotrudnikov_utverjdennih_vak { get; set; }
+        public virtual DbSet<I17> I17 { get; set; }
+        public virtual DbSet<I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost> I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost { get; set; }
+        public virtual DbSet<I18> I18 { get; set; }
+        public virtual DbSet<I18_effektivnost_provodimih_nauchnih_rabot> I18_effektivnost_provodimih_nauchnih_rabot { get; set; }
+        public virtual DbSet<I19> I19 { get; set; }
+        public virtual DbSet<I19_stepen_osnashennosti_laboratoriy_oborudovaniem> I19_stepen_osnashennosti_laboratoriy_oborudovaniem { get; set; }
+        public virtual DbSet<I2> I2 { get; set; }
+        public virtual DbSet<I2_1> I2_1 { get; set; }
+        public virtual DbSet<I2_1_uroven_kachestva_prepodavaniya> I2_1_uroven_kachestva_prepodavaniya { get; set; }
+        public virtual DbSet<I2_TOTAL> I2_TOTAL { get; set; }
+        public virtual DbSet<I2_uroven_kachestva_prepodavaniya> I2_uroven_kachestva_prepodavaniya { get; set; }
+        public virtual DbSet<I20> I20 { get; set; }
+        public virtual DbSet<I20_obespechennost_irc_uchebnoy_literaturoy> I20_obespechennost_irc_uchebnoy_literaturoy { get; set; }
+        public virtual DbSet<I21> I21 { get; set; }
+        public virtual DbSet<I21_stepen_vnedreniya_ikt_v_uchebniy_process> I21_stepen_vnedreniya_ikt_v_uchebniy_process { get; set; }
+        public virtual DbSet<I22> I22 { get; set; }
+        public virtual DbSet<I22_dostupnost_informacii_o_vuze_v_internete> I22_dostupnost_informacii_o_vuze_v_internete { get; set; }
+        public virtual DbSet<I23> I23 { get; set; }
+        public virtual DbSet<I23_osnashennost_laboratornim_oborudovaniem> I23_osnashennost_laboratornim_oborudovaniem { get; set; }
+        public virtual DbSet<I3> I3 { get; set; }
+        public virtual DbSet<I3_kolichestvo_uchebnikov_i_posobiy> I3_kolichestvo_uchebnikov_i_posobiy { get; set; }
+        public virtual DbSet<I3_TOTAL> I3_TOTAL { get; set; }
+        public virtual DbSet<I4> I4 { get; set; }
+        public virtual DbSet<I4_dolya_inostrannih_prepodavateley_i_studentov> I4_dolya_inostrannih_prepodavateley_i_studentov { get; set; }
+        public virtual DbSet<I4_TOTAL> I4_TOTAL { get; set; }
+        public virtual DbSet<I5> I5 { get; set; }
+        public virtual DbSet<I5_uchastie_v_programme_obmena> I5_uchastie_v_programme_obmena { get; set; }
+        public virtual DbSet<I6> I6 { get; set; }
+        public virtual DbSet<I6_kolichestvo_uchebnih_kursov_na_inostrannom> I6_kolichestvo_uchebnih_kursov_na_inostrannom { get; set; }
+        public virtual DbSet<I7> I7 { get; set; }
+        public virtual DbSet<I7_uroven_angliyskogo_i_ikt_u_pps> I7_uroven_angliyskogo_i_ikt_u_pps { get; set; }
+        public virtual DbSet<I8> I8 { get; set; }
+        public virtual DbSet<I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah> I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah { get; set; }
+        public virtual DbSet<I9> I9 { get; set; }
+        public virtual DbSet<I9_dolya_pps_prepodayushego_v_sspo> I9_dolya_pps_prepodayushego_v_sspo { get; set; }
+        public virtual DbSet<RAITING_TOTAL> RAITING_TOTAL { get; set; }
+        public virtual DbSet<kolichestvo_izdannih_mejdunarodnih_statey> kolichestvo_izdannih_mejdunarodnih_statey { get; set; }
+        public virtual DbSet<kolichestvo_izdannih_mestnih_statey> kolichestvo_izdannih_mestnih_statey { get; set; }
+        public virtual DbSet<informaciya_o_dissertaciyah> informaciya_o_dissertaciyah { get; set; }
+
+        public TablesContext()
+            : base("name=TablesContext")
+        { }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer<TablesContext>(new DropCreateDatabaseIfModelChanges<TablesContext>());
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            base.OnModelCreating(modelBuilder);
         }
-        */
 	}
-
-
-
-	public class Jadval_AKTdaraja_1_7
-	{
-		public Int32 Id { get; set; }
-		public Int32 P { get; set; }//obshiy kolichenstvo
-		public Int32 P7 { get; set; }//inostranniy sdavshiy udavletvоritelno
-		public Int32 P8 { get; set; }//akt sdavshiy udоvletvоritelno
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-	}
-
-	public class Jadval_bitiruvchi_2_2
-	{
-		public Int32 Id { get; set; }
-		public Int32 R { get; set; }//Obshiy
-		public Int32 R1 { get; set; }//Udovletvоritelniy
-		public Int32 UniversityId { get; set; }
-		public Int16 Year { get; set; }
-	}
-
-	public class Jadval_talababilim_2_1
-	{
-		public Int32 Id { get; set; }
-		public Int32 T_All { get; set; }//obsiy kolichenstvo studentov
-		public Int32 T_Qualified { get; set; }//Kol. studentov puluchevshiy xoroshiy otsenki
-		public Int32 UniversityId { get; set; }
-		public Int16 Year { get; set; }
-	}
-
-	public class Jadval_talimsifati_1_2
-	{
-		public Int32 Id { get; set; }
-		public Int32? T { get; set; }
-		public Int32? N1 { get; set; }
-		public Int32? N2 { get; set; }
-		public Int32? N3 { get; set; }
-		public Int32? N41 { get; set; }
-		public Int32? N51 { get; set; }
-		public Int32? N42 { get; set; }
-		public Int32? N52 { get; set; }
-		public Int32? N43 { get; set; }
-		public Int32? N53 { get; set; }
-		public Int32? I2 { get; set; }
-		public Int32 UniversityId { get; set; }
-		public Int16 Year { get; set; }
-	}
-
-	public class Jadval1
-	{
-		public Int32 Id { get; set; }
-		[Display(Name = "Название")]
-		public String OtmName { get; set; }
-		[Display(Name = "Страна")]
-		public String State { get; set; }
-		[Display(Name = "Рейтинг")]
-		public Int32 Reyting { get; set; }
-		[Display(Name = "Год")]
-		public Int16 Year { get; set; }
-		public Int32? UniversityId { get; set; }
-	}
-
-	public class Jadval10
-	{
-		public Int32 Id { get; set; }
-		public String DirectionCode { get; set; }
-		public String DirectionName { get; set; }
-		public String SubjectName { get; set; }
-		public String ForeignLanguage { get; set; }
-		public Int32 EducationCourse { get; set; }
-		public Int32 StudentCount { get; set; }
-		public String Asos { get; set; }
-		public String AsosFile { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-	}
-	public class Jadval11
-	{
-		public Int32 Id { get; set; }
-		public String FullName { get; set; }
-		public String Speciality { get; set; }
-		public String MonographName { get; set; }
-		public Int32 MongographYear { get; set; }
-		public String DarslikName { get; set; }
-		public String DarslikCertificate { get; set; }
-		public String OquvqullanmaName { get; set; }
-		public String OquvqullanmaCertificate { get; set; }
-		public String OquvmajmuaName { get; set; }
-		public String OquvmajmuaCertificate { get; set; }
-		public int? Status { get; set; }
-		public String AsosFile { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-	}
-	public class Jadval18
-	{
-		public Int32 Id { get; set; }
-		public String FullName { get; set; }
-		public String Khk_ak_Name { get; set; }
-		public String Post { get; set; }
-		public String Subject { get; set; }
-		public String Orindosh { get; set; }//turini String yo Int32 qilish kere???
-		public String Soatbay { get; set; }//turini String yo Int32 qilish kere???
-		public String Asos { get; set; }
-		public String AsosFile { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-	}
-	public class Jadval19
-	{
-		public Int32 Id { get; set; }
-		public String FullName { get; set; }
-		public String TanlovName { get; set; }
-		public String Tanlov_joy_date { get; set; }
-		public String SubjectName { get; set; }
-		public String EgallaganPosition { get; set; }
-		public String DiplomSeria { get; set; }
-		public String DiplomNumber { get; set; }
-		public String SovrinName { get; set; }
-		public String Description { get; set; }
-		public int? Status { get; set; }
-		public String AsosFile { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-		public Int32 TanlovTuri { get; set; }//1-OTM yo'nalishiga mos xalqaro,2 - OTM yo'nalishiga mos resp,3 - OTM yo'nalishiga mosmas xalqaro, 4 - OTM yo'nalishiga mosmas resp
-	}
-	public class Jadval2
-	{
-		public Int32 Id { get; set; }
-		public String FullName { get; set; }
-		public String Davlat { get; set; }
-		public Int32 Jadval1_Id { get; set; }
-		public String Phd_seriya { get; set; }
-		public String Phd_nomer { get; set; }
-		public String Mag_seriya { get; set; }
-		public String Mag_nomer { get; set; }
-		public String Speciality { get; set; }
-		public String Ishga_qabul_buyruq { get; set; }
-		public int? Status { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-		public String AsosFile { get; set; }
-	}
-	public class Jadval20
-	{
-		public Int32 Id { get; set; }
-		public String FullName { get; set; }
-		public String Talim_yonalish_shifri { get; set; }
-		public String Talim_yonalish_nomi { get; set; }
-		public String Ish_nomi { get; set; }
-		public String Ish_lavozimi { get; set; }
-		public String Asos_fayl { get; set; }
-		public String Mag_otm { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-	}
-	public class Jadval21
-	{
-		public Int32 Id { get; set; }
-		public String fio { get; set; }
-		public String Mutaxassislik_shifr { get; set; }
-		public String Mutaxassislik_nomi { get; set; }
-		public String Ish_nomi { get; set; }
-		public String Ish_lavozimi { get; set; }
-		public String Asos_fayl { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-	}
-	public class Jadval32
-	{
-		public Int32 Id { get; set; }
-		public String FullName { get; set; }
-		public DateTime? BirthDate { get; set; }
-		public String Post { get; set; }
-		public Double stavka { get; set; }
-		public String GraduatedOtm { get; set; }
-		public String Diplom_ixtisoslik { get; set; }
-		public String Diplom_mutaxassislik { get; set; }
-		public String Ilmiy_daraja { get; set; }
-		public String Ilmiy_unvon { get; set; }
-		public Int32 Qaysi_yildan_kafedrada_ishlaydi { get; set; }
-		public Int32 Oxirgi_malaka_oshirgan_yili { get; set; }
-		public String Subjects { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-		public Int32 Turi { get; set; }/*1 - asosiy, 2-o'rindosh, 3-soatbay*/
-	}
-	public class Jadval5
-	{
-		public Int32 Id { get; set; }
-		public String FullName { get; set; }
-		public String Davlat_ishjoy { get; set; }
-		public String Speciality { get; set; }
-		public String Subject { get; set; }
-		public int? Status { get; set; }
-		public String Asos { get; set; }
-		public String Asos_fayl { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-	}
-	public class Jadval6
-	{
-		public Int32 Id { get; set; }
-		public String FullName { get; set; }
-		public String State { get; set; }
-		public String Yonalish { get; set; }
-		public String Mag_mutaxassislik { get; set; }
-		public int? Status { get; set; }
-		public String Asos { get; set; }
-		public String Asos_fayl { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-	}
-	public class Jadval7
-	{
-		public Int32 Id { get; set; }
-		public String FullName_uzb { get; set; }
-		public String State_uzb { get; set; }
-		public String Mutaxassislik_uzb { get; set; }
-		public String FullName_xorij { get; set; }
-		public String State_xorij { get; set; }
-		public String Mutaxassislik_xorij { get; set; }
-		public String Asos { get; set; }
-		public String Asos_fayl { get; set; }
-		public Int32 Bak_mag { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-	}
-	public class Jadval8
-	{
-		public Int32 Id { get; set; }
-		public String FullName { get; set; }
-		public String State_otm_nomi { get; set; }
-		public String Talim_yonalish { get; set; }
-		public String Loyiha_nomi { get; set; }
-		public String Konferensiya_nomi { get; set; }
-		public Int32 Student_oqituvchi { get; set; }
-		public String Asos { get; set; }
-		public String Asos_fayl { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-	}
-	public class Jadval9
-	{
-		public Int32 Id { get; set; }
-		public String FullName { get; set; }
-		public String State_otm { get; set; }
-		public String Speciality { get; set; }
-		public String Subject { get; set; }
-		public String Asos { get; set; }
-		public String Asos_fayl { get; set; }
-		public Int16 Year { get; set; }
-		public Int32 UniversityId { get; set; }
-	}
-
-	public class Monitoring
-	{
-		public Int32 Id {get;set;}
-		public Int32? J1 { get; set; }
-		public Int32? J2 { get; set; }
-		public Int32? J3 { get; set; }
-		public Int32? J4 { get; set; }
-		public Int32? J5 { get; set; }
-		public Int32? J6 { get; set; }
-		public Int32? J7 { get; set; }
-		public Int32? J8 { get; set; }
-		public Int32? J9 { get; set; }
-		public Int32? J10 { get; set; }
-		public Int32? J11 { get; set; }
-		public Int32? J12 { get; set; }
-		public Int32? J13 { get; set; }
-		public Int32? J14 { get; set; }
-		public Int32? J15 { get; set; }
-		public Int32? J16 { get; set; }
-		public Int32? J17 { get; set; }
-		public Int32? J18 { get; set; }
-		public Int32? J19 { get; set; }
-		public Int32? J20 { get; set; }
-		public Int32? J21 { get; set; }
-		public Int32? J22 { get; set; }
-		public Int32? J23 { get; set; }
-		public Int32? J24 { get; set; }
-		public Int32? J25 { get; set; }
-		public Int32? J26 { get; set; }
-		public Int32? J27 { get; set; }
-		public Int32? J28 { get; set; }
-		public Int32? J29 { get; set; }
-		public Int32? J30 { get; set; }
-		public Int32? J31 { get; set; }
-		public Int32? J32 { get; set; }
-		public Int32? J1_2 { get; set; }
-		public Int32? J1_7 { get; set; }
-		public Int32? J2_1 { get; set; }
-		public Int32? J2_2 { get; set; }
-		public Int32 Year { get; set; }
-		public Int32 UniverId { get; set; }
-		public DateTime? Srok { get; set; }
-	}
-
-	public class University
-	{
-		public int id { get; set; }
-		public string name { get; set; }
-		public int? id_branch { get; set; }
-		public int? id_region { get; set; }
-	}
-    
-/*
-	public class Role
-	{
-		public Int32 Id;
-		public String Name;
-	}
-	public class Universitet
-	{
-		public Int32 Id;
-		public String Name;
-	}
-	public class User
-	{
-		public Int32 Id { get; set; }
-		public String FullName { get; set; }
-		public String Login { get; set; }
-		public String Password { get; set; }
-		public String Email { get; set; }
-		public Int32 RoleId { get; set; }
-		public Int32 UniversityId { get; set; }
-	}
-*/
-
 }

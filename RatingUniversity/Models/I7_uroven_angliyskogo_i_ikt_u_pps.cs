@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I7_uroven_angliyskogo_i_ikt_u_pps
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I71 { get; set; }
         public Nullable<double> I72 { get; set; }
         public Nullable<double> I7 { get; set; }

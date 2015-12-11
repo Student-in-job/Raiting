@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I13_kolichestvo_studentov_udostoennih_nagrad
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I131 { get; set; }
         public Nullable<double> I132 { get; set; }
         public Nullable<double> I133 { get; set; }

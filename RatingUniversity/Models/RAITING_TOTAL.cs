@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class RAITING_TOTAL
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I1 { get; set; }
         public Nullable<double> I2 { get; set; }
         public Nullable<double> I3 { get; set; }

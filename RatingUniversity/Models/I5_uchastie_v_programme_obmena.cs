@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I5_uchastie_v_programme_obmena
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I51 { get; set; }
         public Nullable<double> I52_1 { get; set; }
         public Nullable<double> I52_2 { get; set; }

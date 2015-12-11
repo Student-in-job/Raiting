@@ -2720,10 +2720,11 @@ var FlipClock;
 
   /* Create various aliases for convenience */
 
-  FlipClock.Lang['ru']      = FlipClock.Lang.Russian;
+  FlipClock.Lang['ru']    = FlipClock.Lang.Russian;
   FlipClock.Lang['ru-ru'] = FlipClock.Lang.Russian;
   FlipClock.Lang['ru-Ru'] = FlipClock.Lang.Russian;
   FlipClock.Lang['ru-RU'] = FlipClock.Lang.Russian;
+  FlipClock.Lang['RU-RU'] = FlipClock.Lang.Russian;
   FlipClock.Lang['russian']  = FlipClock.Lang.Russian;
 
 }(jQuery));
@@ -2820,8 +2821,11 @@ var FlipClock;
     FlipClock.Lang['uz-uz'] = FlipClock.Lang.Uzbek;
     FlipClock.Lang['uz-Uz'] = FlipClock.Lang.Uzbek;
     FlipClock.Lang['uz-UZ'] = FlipClock.Lang.Uzbek;
+    FlipClock.Lang['UZ-UZ'] = FlipClock.Lang.Uzbek;
     FlipClock.Lang['uzbek'] = FlipClock.Lang.Uzbek;
     FlipClock.Lang['uz-Cy'] = FlipClock.Lang.UzbekCyrillic;
     FlipClock.Lang['uz-La'] = FlipClock.Lang.Uzbek;
+    FlipClock.Lang['UZ-CY'] = FlipClock.Lang.UzbekCyrillic;
+    FlipClock.Lang['UZ-LT'] = FlipClock.Lang.Uzbek;
 
 }(jQuery));

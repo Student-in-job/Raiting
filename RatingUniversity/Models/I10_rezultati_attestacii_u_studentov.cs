@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I10_rezultati_attestacii_u_studentov
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> tsi { get; set; }
         public Nullable<double> tsti { get; set; }
         public Nullable<double> I10 { get; set; }

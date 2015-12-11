@@ -1,0 +1,185 @@
+﻿@*using PagedList.Mvc;*@
+    @model RatingUniversity.Models.Table11
+
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
+
+    @{
+        <a href="~/Table11/Download">Скачать шаблон</a>
+        <h3>Прикрепить файл</h3>
+
+        using (Html.BeginForm("Upload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="files" />
+            <input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+        }
+    }
+    <div style="height:80px;">&nbsp;</div>
+    <div>
+        <h3 style="text-align:center;font-weight:bold">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+        <h4 style="text-align:center;font-weight: bold">
+            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQDataHeader_1, ViewBag.lang, ViewBag.alfabet)
+            @DateTime.Now.Year
+            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQDataHeader_2, ViewBag.lang, ViewBag.alfabet)
+        </h4>
+        <h4 style="text-align:center;font-weight: bold;text-transform:capitalize">
+            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Information, ViewBag.lang, ViewBag.alfabet)
+        </h4>
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQMonografiya, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li><a href="#tabs-2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQDarslik, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li><a href="#tabs-3">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQQullanma, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li><a href="#tabs-4">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQMajmua, ViewBag.lang, ViewBag.alfabet)</a></li>
+            </ul>
+            <div id="tabs-1">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width:38px;">№</th>
+                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQSpec, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQName</th>
+                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQYear</th>
+                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQFileName</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                        var index = 0;
+                        foreach(var monografiya in Model.monografiya)
+                        {
+                            index++;
+                            <tr>
+                                <td>@index</td>
+                                <td>@RatingUniversity.Classes.Functions.Translate(monografiya.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                                <td>@RatingUniversity.Classes.Functions.Translate(monografiya.kod_spec, ViewBag.lang, ViewBag.alfabet)</td>
+                                <td>@monografiya.monograf_name</td>
+                                <td>@monografiya.monograf_year</td>
+                                <td>@monografiya.filename</td>
+                            </tr>
+                        }
+                        }
+                        <tr>
+                            <td colspan="2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                            <td colspan="4">@index</td>
+                        <tr>
+                    </tbody>
+                </table>    
+            </div>
+            <div id="tabs-2">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width:35px;">№</th>
+                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQSpec, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQName</th>
+                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQNumber</th>
+                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQFileName</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            index = 0;
+                            foreach (var darslik in Model.darslik)
+                            {
+                                index++;
+                                <tr>
+                                    <td>@index</td>
+                                    <td>@RatingUniversity.Classes.Functions.Translate(darslik.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                                    <td>@RatingUniversity.Classes.Functions.Translate(darslik.kod_spec, ViewBag.lang, ViewBag.alfabet)</td>
+                                    <td>@darslik.ucheb_name</td>
+                                    <td>@darslik.ucheb_number</td>
+                                    <td>@darslik.filename</td>
+                                </tr>
+                            }
+                        }
+                        <tr>
+                            <td colspan="2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                            <td colspan="4">@index</td>
+                        <tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="tabs-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width:35px;">№</th>
+                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQSpec, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQName</th>
+                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQNumber</th>
+                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQFileName</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            index = 0;
+                            foreach (var qullanma in Model.qullanma)
+                            {
+                                index++;
+                                <tr>
+                                    <td>@index</td>
+                                    <td>@RatingUniversity.Classes.Functions.Translate(qullanma.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                                    <td>@RatingUniversity.Classes.Functions.Translate(qullanma.kod_spec, ViewBag.lang, ViewBag.alfabet)</td>
+                                    <td>@qullanma.posobie_name</td>
+                                    <td>@qullanma.posobie_number</td>
+                                    <td>@qullanma.filename</td>
+                                </tr>
+                            }
+                        }
+                        <tr>
+                            <td colspan="2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                            <td colspan="4">@index</td>
+                        <tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="tabs-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width:35px;">№</th>
+                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQSpec, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQName</th>
+                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQNumber</th>
+                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQFileName</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            index = 0;
+                            foreach (var majmua in Model.majmua)
+                            {
+                                index++;
+                                <tr>
+                                    <td>@index</td>
+                                    <td>@RatingUniversity.Classes.Functions.Translate(majmua.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                                    <td>@RatingUniversity.Classes.Functions.Translate(majmua.kod_spec, ViewBag.lang, ViewBag.alfabet)</td>
+                                    <td>@majmua.metodich_name</td>
+                                    <td>@majmua.metodich_number</td>
+                                    <td>@majmua.filename</td>
+                                </tr>
+                            }
+                        }
+                        <tr>
+                            <td colspan="2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                            <td colspan="4">@index</td>
+                        <tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+            
+@Scripts.Render("~/Scripts/jquery-ui-1.10.4.custom.min.js")
+@Styles.Render("~/Content/jquery-ui-1.10.4.custom.min.css")
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>

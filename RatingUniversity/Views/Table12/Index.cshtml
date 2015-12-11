@@ -1,0 +1,59 @@
+﻿@*using PagedList.Mvc;*@
+    @model IEnumerable<RatingUniversity.Models.citiruemost_publikaciy_pps_vuza>
+
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
+
+    @{
+        <a href="~/Table12/Download">Скачать шаблон</a>
+        <h3>Прикрепить файл</h3>
+
+        using (Html.BeginForm("Upload", "Table12", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="files" />
+            <input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+        }
+    }
+    <div style="height:80px;">&nbsp;</div>
+    <div>
+        <h3 style="text-align:center;font-weight:bold">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+        <h4 style="text-align:center;font-weight: bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+        <h4 style="text-align:center;font-weight: bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Information, ViewBag.lang, ViewBag.alfabet)</h4>
+        <h4 style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatNote, ViewBag.lang, ViewBag.alfabet)</h4>
+        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
+            <thead>
+            <tr>
+                <th style="width:38px;">№</th>
+                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatSource, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatInfo, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatLink, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatUsage, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+            </thead>
+            <tbody>
+            @{
+                int index = 1;
+                int sum = 0;
+                foreach (var item in Model)
+                {
+                    index++;
+                    <tr>
+                        <td>@index</td>
+                        <td>@RatingUniversity.Classes.Functions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                        <td>@Html.DisplayFor(modelItem => item.source)</td>
+                        <td>@Html.DisplayFor(modelItem => item.info)</td>
+                        <td><a href="@item.link">@Html.DisplayFor(modelItem => item.link)</a></td>
+                        <td>@Html.DisplayFor(modelItem => item.usage)</td>
+                    </tr>
+                    sum += (item.usage != null) ? (int)item.usage : 0;
+                }
+            }
+                <tr>
+                    <td colspan="2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td colspan="4">@sum</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>

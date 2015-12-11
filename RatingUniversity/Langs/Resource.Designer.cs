@@ -70,6 +70,215 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Проверочный ключ.
+        /// </summary>
+        public static string AccountCheckKey
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountCheckKey", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Код.
+        /// </summary>
+        public static string AccountCode
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountCode", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Подтвердите пароль.
+        /// </summary>
+        public static string AccountConfirmPassword
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountConfirmPassword", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Создать нового пользователя.
+        /// </summary>
+        public static string AccountCreate
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountCreate", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to E-mail.
+        /// </summary>
+        public static string AccountEmail
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountEmail", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Email имеет не верный формат.
+        /// </summary>
+        public static string AccountErrEmail
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountErrEmail", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Проверочный ключ введен неправильно.
+        /// </summary>
+        public static string AccountErrKeyNotMatch
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountErrKeyNotMatch", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Длина пароля должна быть хотя бы {2} символов.
+        /// </summary>
+        public static string AccountErrPasswordLength
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountErrPasswordLength", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Пароли не совпадают.
+        /// </summary>
+        public static string AccountErrPasswordNotMatch
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountErrPasswordNotMatch", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Поле {0} обязательно к заполнению.
+        /// </summary>
+        public static string AccountErrRequired
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountErrRequired", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Пользователь с таким {0} уже зарегистрирован.
+        /// </summary>
+        public static string AccountErrUnique
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountErrUnique", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to ВУЗ уже зарегистрирован.
+        /// </summary>
+        public static string AccountErrUniversityExist
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountErrUniversityExist", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Вход.
+        /// </summary>
+        public static string AccountLogin
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountLogin", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Выход.
+        /// </summary>
+        public static string AccountLogout
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountLogout", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Пароль.
+        /// </summary>
+        public static string AccountPassword
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountPassword", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Регистрация.
+        /// </summary>
+        public static string AccountRegister
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountRegister", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to запомнить меня?.
+        /// </summary>
+        public static string AccountRememberMe
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountRememberMe", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Высшее учебеное заведение.
+        /// </summary>
+        public static string AccountUniversity
+        {
+            get
+            {
+                return ResourceManager.GetString("AccountUniversity", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Прикрепить файл.
+        /// </summary>
+        public static string AttachFile
+        {
+            get
+            {
+                return ResourceManager.GetString("AttachFile", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Подробнее.
         /// </summary>
         public static string ButtonLearnMore
@@ -77,6 +286,227 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("ButtonLearnMore", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to выберите файл.
+        /// </summary>
+        public static string ChooseFile
+        {
+            get
+            {
+                return ResourceManager.GetString("ChooseFile", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to о степени цитирования (количество ссылок на опубликованные материалы).
+        /// </summary>
+        public static string CitatDataHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("CitatDataHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Ф.И.О. автора (ов).
+        /// </summary>
+        public static string CitatFIO
+        {
+            get
+            {
+                return ResourceManager.GetString("CitatFIO", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название опубликованного материала и на каком языке.
+        /// </summary>
+        public static string CitatInfo
+        {
+            get
+            {
+                return ResourceManager.GetString("CitatInfo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Интернет-адрес (Гипер ссылка) опубликованных материалов в Google Scholar
+        ///или других международных поисковых системах.
+        /// </summary>
+        public static string CitatLink
+        {
+            get
+            {
+                return ResourceManager.GetString("CitatLink", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to (автор работает в вузе на протяжении многих лет).
+        /// </summary>
+        public static string CitatNote
+        {
+            get
+            {
+                return ResourceManager.GetString("CitatNote", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название источника (журнал, книга или др.), год издания (номер журнала).
+        /// </summary>
+        public static string CitatSource
+        {
+            get
+            {
+                return ResourceManager.GetString("CitatSource", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Выявление количества спросов на материалы, опубликованные в Google Scholar или других поисковых системах.
+        /// </summary>
+        public static string CitatUsage
+        {
+            get
+            {
+                return ResourceManager.GetString("CitatUsage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Всего.
+        /// </summary>
+        public static string Common
+        {
+            get
+            {
+                return ResourceManager.GetString("Common", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Скачать шаблон.
+        /// </summary>
+        public static string DownloadTemplate
+        {
+            get
+            {
+                return ResourceManager.GetString("DownloadTemplate", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Номер регистрации сертификата (патента)*.
+        /// </summary>
+        public static string EfNIRCode
+        {
+            get
+            {
+                return ResourceManager.GetString("EfNIRCode", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to АКТы внедрения.
+        /// </summary>
+        public static string EfNIRDalolatnoma
+        {
+            get
+            {
+                return ResourceManager.GetString("EfNIRDalolatnoma", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to о получении профессорами-преподавателями в текущем году сертификатов (патентов) на интеллектуальную собственность и полученных от организаций актов (о внедрении).
+        /// </summary>
+        public static string EfNIRDataHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("EfNIRDataHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Ф.И.О. профессоров-преподавателей основного штата.
+        /// </summary>
+        public static string EfNIRFIO
+        {
+            get
+            {
+                return ResourceManager.GetString("EfNIRFIO", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название разработки, полученной АКТа, сертификат (патент).
+        /// </summary>
+        public static string EfNIRName
+        {
+            get
+            {
+                return ResourceManager.GetString("EfNIRName", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название предприятия, предоставившего АКТ и дата выдачи.
+        /// </summary>
+        public static string EfNIROrganization
+        {
+            get
+            {
+                return ResourceManager.GetString("EfNIROrganization", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Патенты.
+        /// </summary>
+        public static string EfNIRPatent
+        {
+            get
+            {
+                return ResourceManager.GetString("EfNIRPatent", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Сертификаты.
+        /// </summary>
+        public static string EfNIRSertificate
+        {
+            get
+            {
+                return ResourceManager.GetString("EfNIRSertificate", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название ВУЗа.
+        /// </summary>
+        public static string EfNIRUniversityName
+        {
+            get
+            {
+                return ResourceManager.GetString("EfNIRUniversityName", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название загруженного файла.
+        /// </summary>
+        public static string FileName
+        {
+            get
+            {
+                return ResourceManager.GetString("FileName", resourceCulture);
             }
         }
 
@@ -279,6 +709,127 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to сведения.
+        /// </summary>
+        public static string Information
+        {
+            get
+            {
+                return ResourceManager.GetString("Information", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to шифр.
+        /// </summary>
+        public static string InfoThesisCode
+        {
+            get
+            {
+                return ResourceManager.GetString("InfoThesisCode", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to название.
+        /// </summary>
+        public static string InfoThesisCodeName
+        {
+            get
+            {
+                return ResourceManager.GetString("InfoThesisCodeName", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Шифр специального совета.
+        /// </summary>
+        public static string InfoThesisCouncil
+        {
+            get
+            {
+                return ResourceManager.GetString("InfoThesisCouncil", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Почтовый адрес специального совета.
+        /// </summary>
+        public static string InfoThesisCouncilEmail
+        {
+            get
+            {
+                return ResourceManager.GetString("InfoThesisCouncilEmail", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to о защите докторских диссертаций   профессорами-преподавателями основного штата вуза в текущем году.
+        /// </summary>
+        public static string InfoThesisDataHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("InfoThesisDataHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Дата утверждения ВАКом приказа о присвоении ученой степени.
+        /// </summary>
+        public static string InfoThesisDate
+        {
+            get
+            {
+                return ResourceManager.GetString("InfoThesisDate", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Ф.И.О. диссертанта.
+        /// </summary>
+        public static string InfoThesisFIO
+        {
+            get
+            {
+                return ResourceManager.GetString("InfoThesisFIO", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Тема диссертации.
+        /// </summary>
+        public static string InfoThesisName
+        {
+            get
+            {
+                return ResourceManager.GetString("InfoThesisName", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Специализация.
+        /// </summary>
+        public static string InfoThesisSpecialization
+        {
+            get
+            {
+                return ResourceManager.GetString("InfoThesisSpecialization", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Место работы (название ВУЗа).
+        /// </summary>
+        public static string InfoThesisUniversity
+        {
+            get
+            {
+                return ResourceManager.GetString("InfoThesisUniversity", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to О проекте.
         /// </summary>
         public static string MainMenuAbout
@@ -345,6 +896,182 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Филиалом какого ВУЗа является.
+        /// </summary>
+        public static string ManageUniversityBranch
+        {
+            get
+            {
+                return ResourceManager.GetString("ManageUniversityBranch", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название ВУЗа на русском языке.
+        /// </summary>
+        public static string ManageUniversityName_RU
+        {
+            get
+            {
+                return ResourceManager.GetString("ManageUniversityName_RU", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название ВУЗа на узбекском языке.
+        /// </summary>
+        public static string ManageUniversityName_UZ
+        {
+            get
+            {
+                return ResourceManager.GetString("ManageUniversityName_UZ", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Регион в котором находится.
+        /// </summary>
+        public static string ManageUniversityRegion
+        {
+            get
+            {
+                return ResourceManager.GetString("ManageUniversityRegion", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Учебник.
+        /// </summary>
+        public static string MDUQDarslik
+        {
+            get
+            {
+                return ResourceManager.GetString("MDUQDarslik", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to СВЕДЕНИЯ об опубликованных в .
+        /// </summary>
+        public static string MDUQDataHeader_1
+        {
+            get
+            {
+                return ResourceManager.GetString("MDUQDataHeader_1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to году профессорами-преподавателями основного штата монографий, подготовленных к изданию учебников, учебных пособий и учебно-методических комплексов.
+        /// </summary>
+        public static string MDUQDataHeader_2
+        {
+            get
+            {
+                return ResourceManager.GetString("MDUQDataHeader_2", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название загруженного файла.
+        /// </summary>
+        public static string MDUQFileName
+        {
+            get
+            {
+                return ResourceManager.GetString("MDUQFileName", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Ф.И.О. авторов.
+        /// </summary>
+        public static string MDUQFIO
+        {
+            get
+            {
+                return ResourceManager.GetString("MDUQFIO", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Учебно-методический комплекс.
+        /// </summary>
+        public static string MDUQMajmua
+        {
+            get
+            {
+                return ResourceManager.GetString("MDUQMajmua", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Монография.
+        /// </summary>
+        public static string MDUQMonografiya
+        {
+            get
+            {
+                return ResourceManager.GetString("MDUQMonografiya", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название.
+        /// </summary>
+        public static string MDUQName
+        {
+            get
+            {
+                return ResourceManager.GetString("MDUQName", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Номер и дата свидетельства о прохождении Координационного Совета.
+        /// </summary>
+        public static string MDUQNumber
+        {
+            get
+            {
+                return ResourceManager.GetString("MDUQNumber", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Учебное пособие.
+        /// </summary>
+        public static string MDUQQullanma
+        {
+            get
+            {
+                return ResourceManager.GetString("MDUQQullanma", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Шифр специальности.
+        /// </summary>
+        public static string MDUQSpec
+        {
+            get
+            {
+                return ResourceManager.GetString("MDUQSpec", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Год издания.
+        /// </summary>
+        public static string MDUQYear
+        {
+            get
+            {
+                return ResourceManager.GetString("MDUQYear", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Рейтинг ВУЗ-ов Узбекистана.
         /// </summary>
         public static string PageTitle
@@ -352,6 +1079,292 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("PageTitle", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Число авторов.
+        /// </summary>
+        public static string PaperAuthorsCount
+        {
+            get
+            {
+                return ResourceManager.GetString("PaperAuthorsCount", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Страна публикации зарубежного научного журнала.
+        /// </summary>
+        public static string PaperCountry
+        {
+            get
+            {
+                return ResourceManager.GetString("PaperCountry", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to о публикации научных статей в текущем году в зарубежных научных журналах (аннотации статей в издательствах реферативных журналов).
+        /// </summary>
+        public static string PaperDataHeader_1
+        {
+            get
+            {
+                return ResourceManager.GetString("PaperDataHeader_1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to об опубликованных научных статьях текущего года в местных научных журналах  (научные журналы, признанные ВАКом).
+        /// </summary>
+        public static string PaperDataHeader_2
+        {
+            get
+            {
+                return ResourceManager.GetString("PaperDataHeader_2", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Ф.И.О. автора.
+        /// </summary>
+        public static string PaperFIO
+        {
+            get
+            {
+                return ResourceManager.GetString("PaperFIO", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Зарубежный научный журнал, с указанием страны.
+        /// </summary>
+        public static string PaperJournalInfo
+        {
+            get
+            {
+                return ResourceManager.GetString("PaperJournalInfo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название научного журнала.
+        /// </summary>
+        public static string PaperJournalName
+        {
+            get
+            {
+                return ResourceManager.GetString("PaperJournalName", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Интернет-адрес (Гипер ссылка) электронной статьи.
+        /// </summary>
+        public static string PaperLink
+        {
+            get
+            {
+                return ResourceManager.GetString("PaperLink", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название научной статьи.
+        /// </summary>
+        public static string PaperName
+        {
+            get
+            {
+                return ResourceManager.GetString("PaperName", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Год издания, страницы.
+        /// </summary>
+        public static string PaperYear
+        {
+            get
+            {
+                return ResourceManager.GetString("PaperYear", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Число профессоров-преподавателей.
+        /// </summary>
+        public static string PPSAmount
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSAmount", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Ассистенты или преподаватели.
+        /// </summary>
+        public static string PPSAssistant
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSAssistant", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to На основных штатах.
+        /// </summary>
+        public static string PPSBasicHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSBasicHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Основной штат.
+        /// </summary>
+        public static string PPSBasicStaff
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSBasicStaff", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Общие сведения о профессорcко-преподавательском составе, осуществляющем деятельность в ВУЗЕ.
+        /// </summary>
+        public static string PPSDataHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSDataHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Доценты (без ученой степени).
+        /// </summary>
+        public static string PPSDocent
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSDocent", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Доценты.
+        /// </summary>
+        public static string PPSDocentPhD
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSDocentPhD", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Почасовики.
+        /// </summary>
+        public static string PPSHourly
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSHourly", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Почасовики.
+        /// </summary>
+        public static string PPSHourlyHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSHourlyHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Доктора наук.
+        /// </summary>
+        public static string PPSphD
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSphD", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Кандидаты наук.
+        /// </summary>
+        public static string PPSphDeX
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSphDeX", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Профессора (без ученой степени).
+        /// </summary>
+        public static string PPSProfessor
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSProfessor", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Профессора.
+        /// </summary>
+        public static string PPSProfessorPhD
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSProfessorPhD", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Старшие преподаватели.
+        /// </summary>
+        public static string PPSTeacher
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSTeacher", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Совместители.
+        /// </summary>
+        public static string PPSVisitingHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSVisitingHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Совместители.
+        /// </summary>
+        public static string PPSVisitingStaff
+        {
+            get
+            {
+                return ResourceManager.GetString("PPSVisitingStaff", resourceCulture);
             }
         }
 
@@ -374,6 +1387,17 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("TopHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to отправить.
+        /// </summary>
+        public static string Upload
+        {
+            get
+            {
+                return ResourceManager.GetString("Upload", resourceCulture);
             }
         }
 

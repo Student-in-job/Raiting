@@ -356,3 +356,29 @@ UPDATE raiting SET ty =  411 WHERE id_university =  55 ;
 UPDATE raiting SET ty =  397 WHERE id_university =  56 ;
 UPDATE raiting SET ty =  181 WHERE id_university =  57 ;
 
+ALTER TABLE university ADD name_UZ varchar(500);
+GO
+
+EXEC sp_rename 'dbo.university.name', 'name_RU', 'COLUMN';
+GO
+
+ALTER TABLE region ADD name_UZ varchar(500);
+GO
+
+EXEC sp_rename 'dbo.region.name', 'name_RU', 'COLUMN';
+GO
+
+INSERT INTO region(name_ru, name_uz) VALUES ('Ташкент' ,'Toshkent' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Республика Каракалпакстан' ,'Qoraqalpog’iston Respublikasi' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Андижанская область' ,'Andijon viloyati' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Бухарская область' ,'Buxoro viloyati' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Джизакская область' ,'Jizzah viloyati' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Кашкадарьинская область' ,'Qashqadaryo viloyati' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Навоийская область' ,'Navoiy viloyati' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Наманганская область' ,'Namangan viloyati' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Самаркандская область' ,'Samarqand viloyati' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Сурхандарьинская область' ,'Surxondaryo viloyati' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Сырдарьинская область' ,'Sirdaryo viloyati' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Ташкентская область' ,'Toshkent viloyati' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Ферганская область' ,'Farg’ona viloyati' ) ;
+INSERT INTO region(name_ru, name_uz) VALUES ('Хорезмская область' ,'Xorazm viloyati' ) ;

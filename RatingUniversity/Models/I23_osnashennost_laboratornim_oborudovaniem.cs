@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I23_osnashennost_laboratornim_oborudovaniem
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I23 { get; set; }
         public Nullable<double> I231 { get; set; }
         public Nullable<double> I232 { get; set; }

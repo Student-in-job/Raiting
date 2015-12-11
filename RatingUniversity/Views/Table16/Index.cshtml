@@ -1,0 +1,64 @@
+﻿@*using PagedList.Mvc;*@
+    @model IEnumerable<RatingUniversity.Models.informaciya_o_dissertaciyah>
+
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
+
+    @{
+        <a href="~/Table16/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        <h3>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</h3>
+
+        using (Html.BeginForm("Upload", "Table16", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="files" />
+            <input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+        }
+    }
+    <div style="height:80px;">&nbsp;</div>
+    <div>
+        <h3 style="text-align:center;font-weight:bold">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+        <h4 style="text-align:center;font-weight: bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.InfoThesisDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="width:38px;">№</th>
+                    <th rowspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.InfoThesisFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th rowspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.InfoThesisUniversity, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.InfoThesisSpecialization, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th rowspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.InfoThesisName, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th rowspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.InfoThesisCouncil, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th rowspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.InfoThesisCouncilEmail, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th rowspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.InfoThesisDate, ViewBag.lang, ViewBag.alfabet)</th>
+                </tr>
+                <tr>
+                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.InfoThesisCode, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.InfoThesisCodeName, ViewBag.lang, ViewBag.alfabet)</th>
+                </tr>
+            </thead>
+            <tbody>
+            @{
+                int index = 0;
+                foreach (var item in Model)
+                {
+                    index++;
+                    <tr>
+                        <td>@index</td>
+                        <td>@RatingUniversity.Classes.Functions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                        <td>@Html.DisplayFor(modelItem => item.work_place)</td>
+                        <td>@Html.DisplayFor(modelItem => item.iht_shifr)</td>
+                        <td>@Html.DisplayFor(modelItem => item.iht_nomi)</td>
+                        <td>@Html.DisplayFor(modelItem => item.disser_name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.kengash_shifr)</td>
+                        <td>@Html.DisplayFor(modelItem => item.kengash_email)</td>
+                        <td>@Html.DisplayFor(modelItem => item.date)</td>
+                    </tr>
+                }
+            }
+                <tr>
+                    <td colspan="2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td colspan="7">@index</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>

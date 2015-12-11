@@ -22,10 +22,9 @@ namespace RatingUniversity.Models
         public string disser_name { get; set; }
         public string kengash_shifr { get; set; }
         public string kengash_email { get; set; }
-        public Nullable<System.DateTime> date { get; set; }
+        public string date { get; set; }
         public Nullable<int> year { get; set; }
         public Nullable<int> id_university { get; set; }
-        public Nullable<int> university_id { get; set; }
     
         public virtual university university { get; set; }
     }

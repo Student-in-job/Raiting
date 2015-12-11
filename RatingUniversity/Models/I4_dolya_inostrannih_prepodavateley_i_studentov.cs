@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I4_dolya_inostrannih_prepodavateley_i_studentov
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I41 { get; set; }
         public Nullable<double> I42 { get; set; }
         public Nullable<double> I4 { get; set; }

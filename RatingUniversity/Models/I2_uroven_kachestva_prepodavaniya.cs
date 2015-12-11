@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I2_uroven_kachestva_prepodavaniya
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> p1 { get; set; }
         public Nullable<double> t { get; set; }
         public Nullable<double> i2 { get; set; }

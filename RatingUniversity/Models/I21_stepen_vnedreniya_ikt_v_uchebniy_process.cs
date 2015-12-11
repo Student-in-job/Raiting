@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I21_stepen_vnedreniya_ikt_v_uchebniy_process
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I21 { get; set; }
         public Nullable<double> mark { get; set; }
         public Nullable<int> YEAR { get; set; }

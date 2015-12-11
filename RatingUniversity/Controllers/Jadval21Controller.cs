@@ -13,11 +13,36 @@ using System.Data.SqlClient;
 using RatingUniversity.Classes;
 using PagedList;
 using PagedList.Mvc;
+using System.Globalization;
+using System.Threading;
 
 namespace RatingUniversity.Controllers
 {
     public class Jadval21Controller : Controller
     {
+        int active;
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            this.active = 23;
+            base.Initialize(requestContext);
+            if (Session["CurrentCulture"] != null)
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(Session["CurrentCulture"].ToString());
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Session["CurrentCulture"].ToString());
+            }
+            string culture = Thread.CurrentThread.CurrentCulture.ToString();
+            if (culture.IndexOf("ru") != -1)
+            {
+                ViewBag.lang = "RU";
+                ViewBag.alfabet = "RU";
+            }
+            else
+            {
+                ViewBag.lang = "UZ";
+                ViewBag.alfabet = (culture.IndexOf("Cyrl") != -1) ? "CY" : "LT";
+            }
+            ViewBag.active = Functions.CreateActive(this.active, 34);
+        }
         //
         // GET: /Jadval21/
 		public ActionResult Index(int? page)

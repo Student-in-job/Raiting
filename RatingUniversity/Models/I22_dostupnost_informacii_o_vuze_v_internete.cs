@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I22_dostupnost_informacii_o_vuze_v_internete
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I22 { get; set; }
         public Nullable<double> I221 { get; set; }
         public Nullable<double> I222 { get; set; }

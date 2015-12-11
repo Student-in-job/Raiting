@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using RatingUniversity.Classes;
 
 namespace RatingUniversity.Classes
 {
@@ -41,5 +42,32 @@ namespace RatingUniversity.Classes
             return active;
         }
 
+        public static string Translate(string source, string lang, string alfabet)
+        {
+            string result;
+            if (lang == "RU")
+            {
+                result = Transliteration.ToKiril(source);
+            }
+            else if (alfabet == "CY")
+            {
+                result = Transliteration.ToKiril(source);
+            }
+            else
+            {
+                result = Transliteration.ToLatin(source);
+            }
+            return result;
+        }
+
+        public static string CreateURl(string url)
+        {
+            string result = "";
+            if ((url != null) && (url != ""))
+            {
+                result = "http://" + url.Replace("http://", "").TrimStart(' ');
+            }
+            return result;
+        }
     }
 }

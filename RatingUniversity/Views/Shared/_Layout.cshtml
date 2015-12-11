@@ -3,14 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - @RatingUniversity.Langs.Resource.PageTitle</title>
+    <title>@RatingUniversity.Classes.Functions.Translate(ViewBag.Title, ViewBag.lang, ViewBag.alfabet) - @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PageTitle, ViewBag.lang, ViewBag.alfabet)</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/flipclock.css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/flipclock.js")
+    @Styles.Render("~/Content/custom.min.css")
+    @Scripts.Render("~/Scripts/custom.js")
 </head>
 <body>
     <div id="top-header" class="" style="height:auto;font-size:36px;font-weight:600;padding:10px 35px 10px 0;text-align:right;background:url(@Request.Url.GetLeftPart(UriPartial.Authority)/Images/background.jpg) no-repeat #fafafa;">
-        <div style="" class="text-primary">@RatingUniversity.Langs.Resource.TopHeader</div>
+        <div style="" class="text-primary">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.TopHeader, ViewBag.lang, ViewBag.alfabet)</div>
     </div>
     <div class="navbar navbar-inverse">
         <div class="container">
@@ -23,29 +28,50 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink(@RatingUniversity.Langs.Resource.MainMenuHome, "Index", "Home")</li>
+                    <li><a href="~/Home/Index">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuHome, ViewBag.lang, ViewBag.alfabet)</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@RatingUniversity.Langs.Resource.MainMenuRaiting <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuRaiting, ViewBag.lang, ViewBag.alfabet) <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <div style="padding:0;width:182%;" class="container navbar-default nav navbar-nav">
-                                <li><a href="~/Raiting/index/year/2013">2013</a></li>
-                                <li><a href="~/Raiting/index/year/2014">2014</a></li>
-                                <li><a href="~/Raiting/index/year/2015">2015</a></li>
+                                @{
+                                    for(int year = 2013; year <= DateTime.Now.Year; year++)
+                                    {
+                                        <li><a href="~/Raiting/index/year/@year">@year</a></li>
+                                    }
+                                }
                             </div>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@RatingUniversity.Langs.Resource.MainMenuEduQuality <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuEduQuality, ViewBag.lang, ViewBag.alfabet) <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <div style="padding:0;width:182%;" class="container navbar-default nav navbar-nav">
-                                <li><a href="~/QualityOfEducationalWork/index/year/2013">2013</a></li>
-                                <li><a href="~/QualityOfEducationalWork/index/year/2014">2014</a></li>
-                                <li><a href="~/QualityOfEducationalWork/index/year/2015">2015</a></li>
+                                @{
+                                    for (int year = 2013; year <= DateTime.Now.Year; year++)
+                                    {
+                                        <li><a href="~/QualityOfEducationalWork/index/year/@year">@year</a></li>
+                                    }
+                                }
                             </div>
                         </ul>
                     </li>
-                    <li>@Html.ActionLink(@RatingUniversity.Langs.Resource.MainMenuAddData, "Index", "Jadval1")</li>
-                    <li>@Html.ActionLink(@RatingUniversity.Langs.Resource.MainMenuAbout, "About", "Home")</li>
+                    @{
+                        if(ViewBag.isAdmin != null)
+                        { 
+                            if(ViewBag.isAdmin)
+                            {
+                                <li>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@RatingUniversity.Classes.Functions.Translate("Manage users", ViewBag.lang, ViewBag.alfabet) <span class="caret"></span></a> 
+                                    <ul class="dropdown-menu">
+                                        <li><a href="~/University/index">Manage universities</a></li>
+                                        <li><a href="~/Manage/index">Manage users</a></li>
+                                    </ul>
+                                </li>
+                            }
+                        }
+                    }
+                    <li><a href="~/Jadval1/Index">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuAddData, ViewBag.lang, ViewBag.alfabet)</a></li>
+                    <li><a href="~/Home/About">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuAbout, ViewBag.lang, ViewBag.alfabet)</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
                 <ul class="nav navbar-nav navbar-right">
@@ -72,19 +98,18 @@
         <hr />
         <footer>
             <div class="col-md-4">
-                <p>Copyright © 2014 - @DateTime.Now.Year <a href="http://edu.uz/" title="@RatingUniversity.Langs.Resource.FooterCopyrightMinistry">Edu.uz</a> & <a href="http://dtm.uz/" title="@RatingUniversity.Langs.Resource.FooterCopyrightDtm">DTM.uz</a></p>
+                <p>Copyright © 2014 - @DateTime.Now.Year <a href="http://edu.uz/" title="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.FooterCopyrightMinistry, ViewBag.lang, ViewBag.alfabet)">Edu.uz</a> & <a href="http://dtm.uz/" title="@RatingUniversity.Langs.Resource.FooterCopyrightDtm">DTM.uz</a></p>
                 <p>@RatingUniversity.Langs.Resource.FooterCopyrightAllRightReserved</p>
             </div>
-            <div class="col-md-4 text-muted">@RatingUniversity.Langs.Resource.FooterCopyrightInfo</div>
-            <div class="col-md-4">@RatingUniversity.Langs.Resource.FooterCopyrightDev <a href="http://tuit.uz/" title="@RatingUniversity.Langs.Resource.FooterCopyrightTuit">@RatingUniversity.Langs.Resource.FooterCopyrightTuitAbbr</a> & <a href="http://nuu.uz/" title="@RatingUniversity.Langs.Resource.FooterCopyrightNuu">@RatingUniversity.Langs.Resource.FooterCopyrightNuuAbbr</a></div>
+            <div class="col-md-4 text-muted">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.FooterCopyrightInfo, ViewBag.lang, ViewBag.alfabet)</div>
+            <div class="col-md-4">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.FooterCopyrightDev, ViewBag.lang, ViewBag.alfabet)
+                <a href="http://tuit.uz/" title="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.FooterCopyrightTuit, ViewBag.lang, ViewBag.alfabet)">@RatingUniversity.Langs.Resource.FooterCopyrightTuitAbbr</a>
+                &
+                <a href="http://nuu.uz/" title="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.FooterCopyrightNuu, ViewBag.lang, ViewBag.alfabet)">@RatingUniversity.Langs.Resource.FooterCopyrightNuuAbbr</a></div>
         </footer>
     </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/Scripts/flipclock.js")
+    
     @RenderSection("scripts", required: false)
-    @Styles.Render("~/Content/custom.min.css")
-    @Scripts.Render("~/Scripts/custom.js")
     <script type="text/javascript">
         var clock;
         $(document).ready(function () {
@@ -92,15 +117,15 @@
             clock = $('.clock').FlipClock({
                 clockFace: 'DailyCounter',
                 autoStart: false,
-                language: '@ViewBag.lang',
+                language: '@ViewBag.lang-@ViewBag.alfabet',
                 callbacks: {
                     stop: function () {
                         $('.message').html('The clock has stopped!')
                     }
                 }
             });
-            clock.setTime(@ViewBag.timeLeft);
-            clock.setCountdown(true);
+            clock.setTime(@ViewBag.time);
+            clock.setCountdown(@ViewBag.Reverse);
             clock.start();
         });
     </script>

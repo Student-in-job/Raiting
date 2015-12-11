@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I14_citiruemost_publikaciy_pps
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I141 { get; set; }
         public Nullable<double> I142 { get; set; }
         public Nullable<double> I14 { get; set; }

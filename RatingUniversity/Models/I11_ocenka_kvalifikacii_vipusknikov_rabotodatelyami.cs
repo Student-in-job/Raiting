@@ -15,9 +15,8 @@ namespace RatingUniversity.Models
     public partial class I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami
     {
         public int ID { get; set; }
-        public string name { get; set; }
-        public Nullable<double> r { get; set; }
-        public Nullable<double> r1 { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I11 { get; set; }
         public Nullable<double> mark { get; set; }
         public Nullable<int> YEAR { get; set; }

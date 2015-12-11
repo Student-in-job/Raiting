@@ -20,7 +20,8 @@ namespace RatingUniversity.Models
         }
     
         public int id { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
     
         public virtual ICollection<university> university { get; set; }
     }

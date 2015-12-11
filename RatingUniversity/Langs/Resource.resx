@@ -120,6 +120,34 @@
   <data name="ButtonLearnMore" xml:space="preserve">
     <value>Подробнее</value>
   </data>
+  <data name="ChooseFile" xml:space="preserve">
+    <value>выберите файл</value>
+  </data>
+  <data name="CitatDataHeader" xml:space="preserve">
+    <value>о степени цитирования (количество ссылок на опубликованные материалы)</value>
+  </data>
+  <data name="CitatFIO" xml:space="preserve">
+    <value>Ф.И.О. автора (ов)</value>
+  </data>
+  <data name="CitatInfo" xml:space="preserve">
+    <value>Название опубликованного материала и на каком языке</value>
+  </data>
+  <data name="CitatLink" xml:space="preserve">
+    <value>Интернет-адрес (Гипер ссылка) опубликованных материалов в Google Scholar
+или других международных поисковых системах</value>
+  </data>
+  <data name="CitatNote" xml:space="preserve">
+    <value>(автор работает в вузе на протяжении многих лет)</value>
+  </data>
+  <data name="CitatSource" xml:space="preserve">
+    <value>Название источника (журнал, книга или др.), год издания (номер журнала)</value>
+  </data>
+  <data name="CitatUsage" xml:space="preserve">
+    <value>Выявление количества спросов на материалы, опубликованные в Google Scholar или других поисковых системах</value>
+  </data>
+  <data name="Common" xml:space="preserve">
+    <value>Всего</value>
+  </data>
   <data name="FooterCopyrightAllRightReserved" xml:space="preserve">
     <value>Все права защищены.</value>
   </data>
@@ -160,7 +188,7 @@
     <value>Топ ВУЗ-ов Узбекистана</value>
   </data>
   <data name="HomePageHeaderInfo" xml:space="preserve">
-    <value>Ресурс будет запущен через</value>
+    <value>Ресурс запущен </value>
   </data>
   <data name="HomePageRatingHeader" xml:space="preserve">
     <value>Рейтинг университетов Узбекистана</value>
@@ -173,6 +201,9 @@
   </data>
   <data name="HomePageUniversity" xml:space="preserve">
     <value>Название</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>сведения</value>
   </data>
   <data name="MainMenuAbout" xml:space="preserve">
     <value>О проекте</value>
@@ -192,9 +223,93 @@
   <data name="MainMenuRaiting" xml:space="preserve">
     <value>Рейтинг</value>
   </data>
+  <data name="MDUQDarslik" xml:space="preserve">
+    <value>Учебник</value>
+  </data>
+  <data name="MDUQDataHeader_1" xml:space="preserve">
+    <value>СВЕДЕНИЯ об опубликованных в </value>
+  </data>
+  <data name="MDUQDataHeader_2" xml:space="preserve">
+    <value>году профессорами-преподавателями основного штата монографий, подготовленных к изданию учебников, учебных пособий и учебно-методических комплексов</value>
+  </data>
+  <data name="MDUQFileName" xml:space="preserve">
+    <value>Название загруженного файла</value>
+  </data>
+  <data name="MDUQFIO" xml:space="preserve">
+    <value>Ф.И.О. авторов</value>
+  </data>
+  <data name="MDUQMajmua" xml:space="preserve">
+    <value>Учебно-методический комплекс</value>
+  </data>
+  <data name="MDUQMonografiya" xml:space="preserve">
+    <value>Монография</value>
+  </data>
+  <data name="MDUQName" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="MDUQNumber" xml:space="preserve">
+    <value>Номер и дата свидетельства о прохождении Координационного Совета</value>
+  </data>
+  <data name="MDUQQullanma" xml:space="preserve">
+    <value>Учебное пособие</value>
+  </data>
+  <data name="MDUQSpec" xml:space="preserve">
+    <value>Шифр специальности</value>
+  </data>
+  <data name="MDUQYear" xml:space="preserve">
+    <value>Год издания</value>
+  </data>
   <data name="PageTitle" xml:space="preserve">
     <value>Рейтинг ВУЗ-ов Узбекистана</value>
     <comment>&lt;head&gt;&lt;title&gt;Page title is here&lt;/title&gt;&lt;/head&gt;</comment>
+  </data>
+  <data name="PPSAmount" xml:space="preserve">
+    <value>Число профессоров-преподавателей</value>
+  </data>
+  <data name="PPSAssistant" xml:space="preserve">
+    <value>Ассистенты или преподаватели</value>
+  </data>
+  <data name="PPSBasicHeader" xml:space="preserve">
+    <value>На основных штатах</value>
+  </data>
+  <data name="PPSBasicStaff" xml:space="preserve">
+    <value>Основной штат</value>
+  </data>
+  <data name="PPSDataHeader" xml:space="preserve">
+    <value>Общие сведения о профессорcко-преподавательском составе, осуществляющем деятельность в ВУЗЕ</value>
+  </data>
+  <data name="PPSDocent" xml:space="preserve">
+    <value>Доценты (без ученой степени)</value>
+  </data>
+  <data name="PPSDocentPhD" xml:space="preserve">
+    <value>Доценты</value>
+  </data>
+  <data name="PPSHourly" xml:space="preserve">
+    <value>Почасовики</value>
+  </data>
+  <data name="PPSHourlyHeader" xml:space="preserve">
+    <value>Почасовики</value>
+  </data>
+  <data name="PPSphD" xml:space="preserve">
+    <value>Доктора наук</value>
+  </data>
+  <data name="PPSphDeX" xml:space="preserve">
+    <value>Кандидаты наук</value>
+  </data>
+  <data name="PPSProfessor" xml:space="preserve">
+    <value>Профессора (без ученой степени)</value>
+  </data>
+  <data name="PPSProfessorPhD" xml:space="preserve">
+    <value>Профессора</value>
+  </data>
+  <data name="PPSTeacher" xml:space="preserve">
+    <value>Старшие преподаватели</value>
+  </data>
+  <data name="PPSVisitingHeader" xml:space="preserve">
+    <value>Совместители</value>
+  </data>
+  <data name="PPSVisitingStaff" xml:space="preserve">
+    <value>Совместители</value>
   </data>
   <data name="RU" xml:space="preserve">
     <value>Русский</value>
@@ -204,6 +319,9 @@
     <value>Рейтинг Высших образовательных учреждений</value>
     <comment>&lt;div id="top-header"&gt;&lt;div class="text-primary"&gt;Top Header is here&lt;/div&gt;&lt;/div&gt;</comment>
   </data>
+  <data name="Upload" xml:space="preserve">
+    <value>отправить</value>
+  </data>
   <data name="UZCyrillic" xml:space="preserve">
     <value>Узбек</value>
     <comment>!!! Перевод не требуется !!!</comment>
@@ -211,5 +329,167 @@
   <data name="UZLatin" xml:space="preserve">
     <value>O`zbek</value>
     <comment>!!! Перевод не требуется !!! Can`t touch this !!!</comment>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Название загруженного файла</value>
+  </data>
+  <data name="PaperAuthorsCount" xml:space="preserve">
+    <value>Число авторов</value>
+  </data>
+  <data name="PaperDataHeader_1" xml:space="preserve">
+    <value>о публикации научных статей в текущем году в зарубежных научных журналах (аннотации статей в издательствах реферативных журналов)</value>
+  </data>
+  <data name="PaperDataHeader_2" xml:space="preserve">
+    <value>об опубликованных научных статьях текущего года в местных научных журналах  (научные журналы, признанные ВАКом)</value>
+  </data>
+  <data name="PaperFIO" xml:space="preserve">
+    <value>Ф.И.О. автора</value>
+  </data>
+  <data name="PaperJournalInfo" xml:space="preserve">
+    <value>Зарубежный научный журнал, с указанием страны</value>
+  </data>
+  <data name="PaperJournalName" xml:space="preserve">
+    <value>Название научного журнала</value>
+  </data>
+  <data name="PaperLink" xml:space="preserve">
+    <value>Интернет-адрес (Гипер ссылка) электронной статьи</value>
+  </data>
+  <data name="PaperName" xml:space="preserve">
+    <value>Название научной статьи</value>
+  </data>
+  <data name="PaperYear" xml:space="preserve">
+    <value>Год издания, страницы</value>
+  </data>
+  <data name="PaperCountry" xml:space="preserve">
+    <value>Страна публикации зарубежного научного журнала</value>
+  </data>
+  <data name="AttachFile" xml:space="preserve">
+    <value>Прикрепить файл</value>
+  </data>
+  <data name="DownloadTemplate" xml:space="preserve">
+    <value>Скачать шаблон</value>
+  </data>
+  <data name="EfNIRCode" xml:space="preserve">
+    <value>Номер регистрации сертификата (патента)*</value>
+  </data>
+  <data name="EfNIRDalolatnoma" xml:space="preserve">
+    <value>АКТы внедрения</value>
+  </data>
+  <data name="EfNIRDataHeader" xml:space="preserve">
+    <value>о получении профессорами-преподавателями в текущем году сертификатов (патентов) на интеллектуальную собственность и полученных от организаций актов (о внедрении)</value>
+  </data>
+  <data name="EfNIRFIO" xml:space="preserve">
+    <value>Ф.И.О. профессоров-преподавателей основного штата</value>
+  </data>
+  <data name="EfNIRName" xml:space="preserve">
+    <value>Название разработки, полученной АКТа, сертификат (патент)</value>
+  </data>
+  <data name="EfNIROrganization" xml:space="preserve">
+    <value>Название предприятия, предоставившего АКТ и дата выдачи</value>
+  </data>
+  <data name="EfNIRPatent" xml:space="preserve">
+    <value>Патенты</value>
+  </data>
+  <data name="EfNIRSertificate" xml:space="preserve">
+    <value>Сертификаты</value>
+  </data>
+  <data name="EfNIRUniversityName" xml:space="preserve">
+    <value>Название ВУЗа</value>
+  </data>
+  <data name="InfoThesisCode" xml:space="preserve">
+    <value>шифр</value>
+  </data>
+  <data name="InfoThesisCodeName" xml:space="preserve">
+    <value>название</value>
+  </data>
+  <data name="InfoThesisCouncil" xml:space="preserve">
+    <value>Шифр специального совета</value>
+  </data>
+  <data name="InfoThesisCouncilEmail" xml:space="preserve">
+    <value>Почтовый адрес специального совета</value>
+  </data>
+  <data name="InfoThesisDataHeader" xml:space="preserve">
+    <value>о защите докторских диссертаций   профессорами-преподавателями основного штата вуза в текущем году</value>
+  </data>
+  <data name="InfoThesisDate" xml:space="preserve">
+    <value>Дата утверждения ВАКом приказа о присвоении ученой степени</value>
+  </data>
+  <data name="InfoThesisFIO" xml:space="preserve">
+    <value>Ф.И.О. диссертанта</value>
+  </data>
+  <data name="InfoThesisName" xml:space="preserve">
+    <value>Тема диссертации</value>
+  </data>
+  <data name="InfoThesisSpecialization" xml:space="preserve">
+    <value>Специализация</value>
+  </data>
+  <data name="InfoThesisUniversity" xml:space="preserve">
+    <value>Место работы (название ВУЗа)</value>
+  </data>
+  <data name="ManageUniversityBranch" xml:space="preserve">
+    <value>Филиалом какого ВУЗа является</value>
+  </data>
+  <data name="ManageUniversityName_RU" xml:space="preserve">
+    <value>Название ВУЗа на русском языке</value>
+  </data>
+  <data name="ManageUniversityName_UZ" xml:space="preserve">
+    <value>Название ВУЗа на узбекском языке</value>
+  </data>
+  <data name="ManageUniversityRegion" xml:space="preserve">
+    <value>Регион в котором находится</value>
+  </data>
+  <data name="AccountEmail" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="AccountLogin" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="AccountLogout" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="AccountPassword" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="AccountCheckKey" xml:space="preserve">
+    <value>Проверочный ключ</value>
+  </data>
+  <data name="AccountCode" xml:space="preserve">
+    <value>Код</value>
+  </data>
+  <data name="AccountConfirmPassword" xml:space="preserve">
+    <value>Подтвердите пароль</value>
+  </data>
+  <data name="AccountCreate" xml:space="preserve">
+    <value>Создать нового пользователя</value>
+  </data>
+  <data name="AccountErrEmail" xml:space="preserve">
+    <value>Email имеет не верный формат</value>
+  </data>
+  <data name="AccountErrKeyNotMatch" xml:space="preserve">
+    <value>Проверочный ключ введен неправильно</value>
+  </data>
+  <data name="AccountErrPasswordLength" xml:space="preserve">
+    <value>Длина пароля должна быть хотя бы {2} символов</value>
+  </data>
+  <data name="AccountErrPasswordNotMatch" xml:space="preserve">
+    <value>Пароли не совпадают</value>
+  </data>
+  <data name="AccountErrRequired" xml:space="preserve">
+    <value>Поле {0} обязательно к заполнению</value>
+  </data>
+  <data name="AccountErrUnique" xml:space="preserve">
+    <value>Пользователь с таким {0} уже зарегистрирован</value>
+  </data>
+  <data name="AccountErrUniversityExist" xml:space="preserve">
+    <value>ВУЗ уже зарегистрирован</value>
+  </data>
+  <data name="AccountRegister" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="AccountRememberMe" xml:space="preserve">
+    <value>запомнить меня?</value>
+  </data>
+  <data name="AccountUniversity" xml:space="preserve">
+    <value>Высшее учебеное заведение</value>
   </data>
 </root>

@@ -7,16 +7,20 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using RatingUniversity.Models;
+using System.Threading;
+using System.Data;
+
 
 namespace RatingUniversity.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseViewController
     {
         private ApplicationUserManager _userManager;
-
+        
         public AccountController()
         {
         }
@@ -142,6 +146,8 @@ namespace RatingUniversity.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            TablesContext tables = new TablesContext();
+            ViewBag.universities = tables.university.ToList();
             return View();
         }
 
@@ -152,26 +158,35 @@ namespace RatingUniversity.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            TablesContext tables = new TablesContext();
+            ViewBag.universities = tables.university.ToList();
+           
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, University_ID = int.Parse(model.University_ID) };
+                var resultUser = await UserManager.CreateAsync(user, model.Password);
+                if (resultUser.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    var resultRole = await UserManager.AddToRoleAsync(user.Id, "user");
 
-                    return RedirectToAction("Index", "Home");
+                    if (resultRole.Succeeded)
+                    {
+
+                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                        // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                        // Send an email with this link
+                        // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                        // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                        // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                        return RedirectToAction("Index", "Home");
+                    }
+                    AddErrors(resultRole);
                 }
-                AddErrors(result);
+                AddErrors(resultUser);
             }
 
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 

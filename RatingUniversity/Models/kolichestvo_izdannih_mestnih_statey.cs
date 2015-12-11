@@ -20,11 +20,10 @@ namespace RatingUniversity.Models
         public string paper { get; set; }
         public string paper_year { get; set; }
         public string link { get; set; }
-        public string coauthor_count { get; set; }
+        public Nullable<double> coauthor_count { get; set; }
         public string filename { get; set; }
         public Nullable<int> year { get; set; }
         public Nullable<int> id_university { get; set; }
-        public Nullable<int> university_id { get; set; }
     
         public virtual university university { get; set; }
     }

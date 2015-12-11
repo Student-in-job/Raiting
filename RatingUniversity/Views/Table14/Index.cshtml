@@ -1,0 +1,56 @@
+﻿@*using PagedList.Mvc;*@
+    @model IEnumerable<RatingUniversity.Models.kolichestvo_izdannih_mestnih_statey>
+
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
+
+    @{
+        <a href="~/Table14/Download">Скачать шаблон</a>
+        <h3>Прикрепить файл</h3>
+
+        using (Html.BeginForm("Upload", "Table14", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="files" />
+            <input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+        }
+    }
+    <div style="height:80px;">&nbsp;</div>
+    <div>
+        <h3 style="text-align:center;font-weight:bold">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+        <h4 style="text-align:center;font-weight: bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PaperDataHeader_2, ViewBag.lang, ViewBag.alfabet)</h4>
+        <h4 style="text-align:center;font-weight: bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Information, ViewBag.lang, ViewBag.alfabet)</h4>
+        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
+            <thead>
+            <tr>
+                <th style="width:38px">№</th>
+                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PaperFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PaperJournalName, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PaperName, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PaperYear, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PaperLink, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PaperAuthorsCount, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.FileName, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+            </thead>
+            <tbody>
+            @{
+                int index = 1;
+                foreach (var item in Model)
+                {
+                    index++;
+                    <tr>
+                        <td>@index</td>
+                        <td>@RatingUniversity.Classes.Functions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                        <td>@Html.DisplayFor(modelItem => item.journal)</td>
+                        <td>@Html.DisplayFor(modelItem => item.paper)</td>
+                        <td>@RatingUniversity.Classes.Functions.Translate(item.paper_year, ViewBag.lang, ViewBag.alfabet)</td>
+                        <td><a href="@RatingUniversity.Classes.Functions.CreateURl(item.link)">@Html.DisplayFor(modelItem => item.link)</a></td>
+                        <td>@Html.DisplayFor(modelItem => item.coauthor_count)</td>
+                        <td></td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+        </div>

@@ -1,14 +1,14 @@
 ﻿@model RatingUniversity.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AccountRegister, ViewBag.lang, ViewBag.alfabet);
 }
 
-<h2>@ViewBag.Title page</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
+    <h4>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AccountCreate, ViewBag.lang, ViewBag.alfabet)</h4>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
@@ -30,8 +30,20 @@
         </div>
     </div>
     <div class="form-group">
+        @Html.LabelFor(m => m.University_ID, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.University_ID, new System.Web.Mvc.SelectList(ViewBag.Universities, "id", "name_" + ViewBag.lang),  new { @class = "form-control", @style = "max-width: 500px"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Check_code, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Check_code, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+            <input type="submit" class="btn btn-default" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AccountRegister, ViewBag.lang, ViewBag.alfabet)" />
         </div>
     </div>
 }

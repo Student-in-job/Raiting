@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I6_kolichestvo_uchebnih_kursov_na_inostrannom
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I6 { get; set; }
         public Nullable<double> mark { get; set; }
         public Nullable<int> YEAR { get; set; }

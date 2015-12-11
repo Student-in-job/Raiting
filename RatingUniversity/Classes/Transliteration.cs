@@ -7,11 +7,14 @@ namespace RatingUniversity.Classes
 {
 	public class Transliteration
 	{
-		public static string ToLatin(string source)
+        public static string ToLatin(string source)
 		{
 			Dictionary<string, string> words = new Dictionary<string, string>();
-			string _source = source;
-			if (_source[0] == 'Е') _source = "Ye" + _source.Remove(0, 1);
+            string _source = source;
+
+            if ((source == string.Empty) || (source == null)) return _source;
+            
+            if (_source[0] == 'Е') _source = "Ye" + _source.Remove(0, 1);
 			if (_source[0] == 'е') _source = "ye" + _source.Remove(0, 1);
 
 
@@ -107,7 +110,8 @@ namespace RatingUniversity.Classes
 			Dictionary<string, string> words = new Dictionary<string, string>();
 
 			string _source = source;
-			_source = _source.Replace("O'", "Ў");
+            if ((source == string.Empty) || (source == null)) return _source;
+            _source = _source.Replace("O'", "Ў");
 			_source = _source.Replace("G'", "Ғ");
 			_source = _source.Replace("O`", "Ў");
 			_source = _source.Replace("G`", "Ғ");
@@ -132,6 +136,7 @@ namespace RatingUniversity.Classes
 			_source = _source.Replace("sh", "ш");
 			_source = _source.Replace("ch", "ч");
 			_source = _source.Replace("ts", "ц");
+            _source = _source.Replace("`", "ъ");
 
 			if (_source[0] == 'E') _source = "Э" + _source.Remove(0, 1);
 			if (_source[0] == 'e') _source = "э" + _source.Remove(0, 1);

@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I18_effektivnost_provodimih_nauchnih_rabot
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I181 { get; set; }
         public Nullable<double> I182 { get; set; }
         public Nullable<double> I183 { get; set; }

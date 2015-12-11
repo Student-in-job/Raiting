@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I171 { get; set; }
         public Nullable<double> I172 { get; set; }
         public Nullable<double> I173 { get; set; }

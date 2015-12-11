@@ -15,9 +15,8 @@ namespace RatingUniversity.Models
     public partial class I12_dolya_trudoustroennih_vipusknikov
     {
         public int ID { get; set; }
-        public string name { get; set; }
-        public Nullable<double> p10 { get; set; }
-        public Nullable<double> p11 { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I12_1 { get; set; }
         public Nullable<double> I12 { get; set; }
         public Nullable<double> mark { get; set; }

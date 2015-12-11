@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I3_TOTAL
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I14 { get; set; }
         public Nullable<double> I15 { get; set; }
         public Nullable<double> I16 { get; set; }

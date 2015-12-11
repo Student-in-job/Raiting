@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I1_dolya_pps_s_uchenoy_stepenyu
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I11 { get; set; }
         public Nullable<double> I12 { get; set; }
         public Nullable<double> I1 { get; set; }

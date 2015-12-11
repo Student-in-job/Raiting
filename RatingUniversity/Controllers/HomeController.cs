@@ -9,19 +9,8 @@ using RatingUniversity.Classes;
 
 namespace RatingUniversity.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseViewController
     {
-        //initilizing culture on controller initialization
-        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
-        {
-            base.Initialize(requestContext);
-            if (Session["CurrentCulture"] != null)
-            {
-                Thread.CurrentThread.CurrentCulture = new CultureInfo(Session["CurrentCulture"].ToString());
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Session["CurrentCulture"].ToString());
-            }
-        }
-
         //// changing culture
         public ActionResult ChangeCulture(string lang)
         {
@@ -36,11 +25,14 @@ namespace RatingUniversity.Controllers
             return Redirect(returnLink);
         }
 
-        public ActionResult Index()
+        public override ActionResult Index()
         {
-            CultureInfo currentCulrute = Thread.CurrentThread.CurrentCulture;
-            ViewBag.lang = currentCulrute.Name.Substring(0, 5);
-            ViewBag.timeLeft = Functions.GetLeftTime("01-12-2015 00:00:00");
+            //CultureInfo currentCulrute = Thread.CurrentThread.CurrentCulture;
+            //ViewBag.lang = currentCulrute.Name.Substring(0, 5);
+            int time = Functions.GetLeftTime("01-12-2015 00:00:00");
+            ViewBag.Reverse = (time < 0) ? "false" : "true";
+            time = (time < 0) ? -time : time;
+            ViewBag.time = time;
             ViewBag.year = 2013;
             return View();
         }

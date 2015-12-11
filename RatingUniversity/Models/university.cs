@@ -18,6 +18,7 @@ namespace RatingUniversity.Models
         {
             this.chislennost_pps_vuza = new HashSet<chislennost_pps_vuza>();
             this.citiruemost_publikaciy_pps_vuza = new HashSet<citiruemost_publikaciy_pps_vuza>();
+            this.darslik = new HashSet<darslik>();
             this.effektivnost_nir_dalolatnoma = new HashSet<effektivnost_nir_dalolatnoma>();
             this.effektivnost_nir_patent = new HashSet<effektivnost_nir_patent>();
             this.effektivnost_nir_sertifikat = new HashSet<effektivnost_nir_sertifikat>();
@@ -36,18 +37,18 @@ namespace RatingUniversity.Models
             this.stepen_vnedreniya_ikt = new HashSet<stepen_vnedreniya_ikt>();
             this.summi_mejdunarodnih_grantov = new HashSet<summi_mejdunarodnih_grantov>();
             this.summi_respublikanskih_grantov = new HashSet<summi_respublikanskih_grantov>();
-            this.darslik = new HashSet<darslik>();
         }
     
         public int id { get; set; }
-        public string name { get; set; }
-        public Nullable<int> id_branch { get; set; }
+        public string name_RU { get; set; }
         public Nullable<int> id_region { get; set; }
-        public Nullable<int> branch_id { get; set; }
-        public Nullable<int> region_id { get; set; }
+        public Nullable<int> id_branch { get; set; }
+        public string name_UZ { get; set; }
     
+        public virtual branch branch { get; set; }
         public virtual ICollection<chislennost_pps_vuza> chislennost_pps_vuza { get; set; }
         public virtual ICollection<citiruemost_publikaciy_pps_vuza> citiruemost_publikaciy_pps_vuza { get; set; }
+        public virtual ICollection<darslik> darslik { get; set; }
         public virtual ICollection<effektivnost_nir_dalolatnoma> effektivnost_nir_dalolatnoma { get; set; }
         public virtual ICollection<effektivnost_nir_patent> effektivnost_nir_patent { get; set; }
         public virtual ICollection<effektivnost_nir_sertifikat> effektivnost_nir_sertifikat { get; set; }
@@ -67,6 +68,5 @@ namespace RatingUniversity.Models
         public virtual ICollection<stepen_vnedreniya_ikt> stepen_vnedreniya_ikt { get; set; }
         public virtual ICollection<summi_mejdunarodnih_grantov> summi_mejdunarodnih_grantov { get; set; }
         public virtual ICollection<summi_respublikanskih_grantov> summi_respublikanskih_grantov { get; set; }
-        public virtual ICollection<darslik> darslik { get; set; }
     }
 }

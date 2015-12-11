@@ -7,30 +7,61 @@ using System.IO;
 using RatingUniversity.Models;
 using RatingUniversity.Classes;
 using System.Data;
+using System.Threading;
+using System.Globalization;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin;
+using Microsoft.Owin.Security;
 
 namespace RatingUniversity.Controllers
 {
-    public class BaseInputDataController : Controller
+    public class BaseInputDataController : BaseViewController
     {
         protected string fileName;
         protected string fileFullName;
         protected ExcelFile excelFile;
         protected string listName;
-        protected int id = 46;
         protected int startRow;
         protected int endRow;
+        protected string lang;
+        protected string alfabet;
+        protected List<string> listNames;
+        protected int active;
+
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+            ViewBag.active = Functions.CreateActive(this.active, 34);
+        }
 
         protected void ReadDataFromExcelFiles()
         {
             this.excelFile = new ExcelFile(this.fileFullName);
-            DataTable table = this.excelFile.ReadData(this.listName);
-
-            this.FormListOfData(table);
-            this.DeleteData();
-            this.SaveData();
+            if ((this.listName != string.Empty) && (this.listName != null))
+            {
+                DataTable table = this.excelFile.ReadData(this.listName);
+                this.FormListOfData(table);
+                this.DeleteData();
+                this.SaveData();
+            }
+            else if (this.listNames != null)
+            {
+                foreach (string list in this.listNames)
+                {
+                    DataTable table = this.excelFile.ReadData(list);
+                    this.FormListOfData(table, list);
+                }
+                this.DeleteData();
+                this.SaveData();
+            }
+            
         }
 
         protected virtual void FormListOfData(DataTable table)
+        { }
+
+        protected virtual void FormListOfData(DataTable table, string tableName)
         { }
 
         protected virtual void DeleteData()
@@ -41,11 +72,13 @@ namespace RatingUniversity.Controllers
 
         //
         // GET: /BaseInputData/
-        public virtual ActionResult Index()
+        [Authorize(Roles="user")]
+        public override ActionResult Index()
         {
             return View();
         }
 
+        [Authorize(Roles="user")]
         public FileResult Download()
         {
             string fullFileName = Server.MapPath("~/Files/"+this.fileName);
@@ -54,6 +87,7 @@ namespace RatingUniversity.Controllers
             return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, client_fileName);
         }
 
+        [Authorize(Roles="user")]
         [HttpPost]
         public ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
         {
@@ -74,7 +108,7 @@ namespace RatingUniversity.Controllers
                         string savePath = Server.MapPath("~/Files/Upload/") + DateTime.Now.Year.ToString() + "/" + this.id.ToString() + "/";
                         if (!Directory.Exists(savePath))
                             Directory.CreateDirectory(savePath);
-                        this.fileFullName = savePath + Path.GetFileNameWithoutExtension(this.fileFullName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
+                        this.fileFullName = savePath + Path.GetFileNameWithoutExtension(file.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
                         file.SaveAs(this.fileFullName);
 
                         //Read Data From ExcelFiles.

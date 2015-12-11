@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I16_kolichestvo_sotrudnikov_utverjdennih_vak
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I161 { get; set; }
         public Nullable<double> I162 { get; set; }
         public Nullable<double> I16 { get; set; }

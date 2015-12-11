@@ -19,12 +19,9 @@ namespace RatingUniversity
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Database.SetInitializer<TablesContext>(null);//for modify models
-
-/*			TestContext db = new TestContext();
-			db.Monitoring.Add(new Monitoring() { J1 = 9, Year = 2015, UniverId = 4 });
-			db.SaveChanges();
- */           
+            //Database.SetInitializer<ApplicationDbContext>(new AppDbInitializer());
+            //Database.SetInitializer<TablesContext>(new DropCreateDatabaseIfModelChanges<TablesContext>());
+              
         }
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)

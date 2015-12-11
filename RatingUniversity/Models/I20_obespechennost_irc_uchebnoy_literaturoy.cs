@@ -15,11 +15,12 @@ namespace RatingUniversity.Models
     public partial class I20_obespechennost_irc_uchebnoy_literaturoy
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I201 { get; set; }
+        public Nullable<double> I202 { get; set; }
         public Nullable<double> I20 { get; set; }
         public Nullable<double> mark { get; set; }
         public Nullable<int> YEAR { get; set; }
-        public Nullable<double> I202 { get; set; }
     }
 }

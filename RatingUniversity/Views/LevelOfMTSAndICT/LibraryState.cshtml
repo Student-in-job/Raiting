@@ -21,13 +21,14 @@
 @foreach (var item in Model)
 {
     position++;
+    string name = (ViewBag.lang == "RU") ? item.name_RU : item.name_UZ;
     <tbody>
         <tr>
             <td>
                 @position
             </td>
             <td width="35%">
-                @Html.DisplayFor(modelItem => item.name)
+                @RatingUniversity.Classes.Functions.Translate(name, ViewBag.lang, ViewBag.alfabet)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.I201)

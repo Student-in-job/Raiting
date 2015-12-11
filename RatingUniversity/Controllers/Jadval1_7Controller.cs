@@ -12,10 +12,36 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Net;
 using RatingUniversity.Classes;
+using System.Globalization;
+using System.Threading;
+
 namespace RatingUniversity.Controllers
 {
     public class Jadval1_7Controller : Controller
     {
+        int active;
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            this.active = 2;
+            base.Initialize(requestContext);
+            if (Session["CurrentCulture"] != null)
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(Session["CurrentCulture"].ToString());
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Session["CurrentCulture"].ToString());
+            }
+            string culture = Thread.CurrentThread.CurrentCulture.ToString();
+            if (culture.IndexOf("ru") != -1)
+            {
+                ViewBag.lang = "RU";
+                ViewBag.alfabet = "RU";
+            }
+            else
+            {
+                ViewBag.lang = "UZ";
+                ViewBag.alfabet = (culture.IndexOf("Cyrl") != -1) ? "CY" : "LT";
+            }
+            ViewBag.active = Functions.CreateActive(this.active, 34);
+        }
         //
         // GET: /Jadval1_7/
 		public ActionResult Index()
@@ -76,7 +102,7 @@ namespace RatingUniversity.Controllers
 				MyCommand.CommandType = CommandType.Text;
 				MyCommand.CommandText = sql;
 				MyCommand.Parameters.Clear();
-				MyCommand.Parameters.Add("param2", OleDbType.VarChar).Value = l.name;
+				MyCommand.Parameters.Add("param2", OleDbType.VarChar).Value = l.name_UZ;
 				MyCommand.ExecuteNonQuery();
 				xi++;
 			}

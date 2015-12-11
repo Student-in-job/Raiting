@@ -15,7 +15,8 @@ namespace RatingUniversity.Models
     public partial class I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah
     {
         public int ID { get; set; }
-        public string name { get; set; }
+        public string name_RU { get; set; }
+        public string name_UZ { get; set; }
         public Nullable<double> I8 { get; set; }
         public Nullable<double> mark { get; set; }
         public Nullable<int> YEAR { get; set; }
