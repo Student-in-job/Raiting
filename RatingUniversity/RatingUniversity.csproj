@@ -474,8 +474,6 @@
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\ResourceRu.Designer.cs" />
-    <Compile Include="Resources\ResourceUz.Designer.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -712,8 +710,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Langs\Resource.resx" />
     <EmbeddedResource Include="Langs\Resource.uz.resx" />
-    <EmbeddedResource Include="Resources\ResourceRu.resx" />
-    <EmbeddedResource Include="Resources\ResourceUz.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

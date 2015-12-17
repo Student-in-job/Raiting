@@ -73,7 +73,7 @@ namespace RatingUniversity.Controllers
         //
         // GET: /BaseInputData/
         [Authorize(Roles="user")]
-        public override ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View();
         }

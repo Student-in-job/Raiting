@@ -61,12 +61,5 @@ namespace RatingUniversity.Controllers
                 }
             }
         }
-        
-        //
-        // GET: /BaseView/
-        public virtual ActionResult Index()
-        {
-            return View();
-        }
 	}
 }

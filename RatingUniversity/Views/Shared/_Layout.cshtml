@@ -61,7 +61,7 @@
                             if(ViewBag.isAdmin)
                             {
                                 <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@RatingUniversity.Classes.Functions.Translate("Manage users", ViewBag.lang, ViewBag.alfabet) <span class="caret"></span></a> 
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@RatingUniversity.Classes.Functions.Translate("Manage", ViewBag.lang, ViewBag.alfabet) <span class="caret"></span></a> 
                                     <ul class="dropdown-menu">
                                         <li><a href="~/University/index">Manage universities</a></li>
                                         <li><a href="~/Manage/index">Manage users</a></li>
@@ -70,7 +70,7 @@
                             }
                         }
                     }
-                    <li><a href="~/Jadval1/Index">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuAddData, ViewBag.lang, ViewBag.alfabet)</a></li>
+                    <li><a href="~/Jadval1/Index/page/1">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuAddData, ViewBag.lang, ViewBag.alfabet)</a></li>
                     <li><a href="~/Home/About">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuAbout, ViewBag.lang, ViewBag.alfabet)</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")

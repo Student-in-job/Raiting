@@ -23,53 +23,36 @@ using PagedList.Mvc;
 
 namespace RatingUniversity.Controllers
 {
-    public class Jadval1Controller : Controller
+    public class Jadval1Controller : BaseViewController
     {
-        int active;
+        int active = 0;
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
-            this.active = 0;
             base.Initialize(requestContext);
-            if (Session["CurrentCulture"] != null)
-            {
-                Thread.CurrentThread.CurrentCulture = new CultureInfo(Session["CurrentCulture"].ToString());
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Session["CurrentCulture"].ToString());
-            }
-            string culture = Thread.CurrentThread.CurrentCulture.ToString();
-            if (culture.IndexOf("ru") != -1)
-            {
-                ViewBag.lang = "RU";
-                ViewBag.alfabet = "RU";
-            }
-            else
-            {
-                ViewBag.lang = "UZ";
-                ViewBag.alfabet = (culture.IndexOf("Cyrl") != -1) ? "CY" : "LT";
-            }
             ViewBag.active = Functions.CreateActive(this.active, 34);
         }
         //
         // GET: /Jadval1/
+        [Authorize(Roles="admin, user")]
 		public ActionResult Index(int? page)
 		{
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
-			int UniverId = 24;
 			var list = db.Jadval1.Where(pr => pr.Year == yil).OrderBy(j => j.Year).OrderBy(j=>j.Reyting);
 			ViewBag.bor = true;
 			if (list.Count() == 0)
 				ViewBag.bor = false;
 
-			int? status_table = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.J1).FirstOrDefault();
+			int? status_table = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == this.id).Select(z => z.J1).FirstOrDefault();
 			ViewBag.status = status_table;
-			DateTime? status_dt = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
+			DateTime? status_dt = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == this.id).Select(z => z.Srok).FirstOrDefault();
 			ViewBag.status_date = 0;
 			ViewBag.date = status_dt;
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
 
 			ViewBag.role = 0;
 			//nuzjno dobavit Yesli (user == podtverjditel) ViewBag.role = 1;
-			ViewBag.UniverId = UniverId;
+			ViewBag.UniverId = this.id;
 			//return View(list.ToList());
 
 			int pageSize = 50;
@@ -77,6 +60,7 @@ namespace RatingUniversity.Controllers
 			return View(list.ToPagedList(pageNumber, pageSize));
 		}
 
+        [Authorize(Roles = "admin")]
 		public ActionResult Tasdiqlash(int UniverId = 0)
 		{
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
@@ -84,6 +68,7 @@ namespace RatingUniversity.Controllers
 			return RedirectToAction("Index", "Jadval1");
 		}
 
+        [Authorize(Roles = "admin")]
 		public FileResult Download()
 		{
 			string filename = Server.MapPath("~/Files/table1.xls");
@@ -93,6 +78,7 @@ namespace RatingUniversity.Controllers
 		}
 
 		[HttpPost]
+        [Authorize(Roles = "admin")]
 		public ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
 		{
 			if (files != null)
@@ -110,7 +96,7 @@ namespace RatingUniversity.Controllers
 					{
 						//Save the uploaded file to the application folder.
 						string yil = DateTime.Now.Year.ToString();
-						string ID_upl = "24";
+						string ID_upl = "admin";
 						string savepath = Server.MapPath("~/Files/Upload/") + yil + "/" + ID_upl+"/";
 						Directory.CreateDirectory(savepath);
 						string savedExcelFiles = savepath + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
@@ -169,7 +155,7 @@ namespace RatingUniversity.Controllers
 				//if (data.Rows[i][3] != null) Int32.TryParse(data.Rows[i][3], NewUpload.Reyting);
 				NewUpload.Reyting = Convert.ToInt32(data.Rows[i][3]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
-				NewUpload.UniversityId = 24;
+				//NewUpload.UniversityId = 24;
 				uploadExl.Add(NewUpload);
 			}
 

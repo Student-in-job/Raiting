@@ -17,7 +17,7 @@ namespace RatingUniversity.Controllers
         //
         // GET: /University/
         [Authorize(Roles = "admin")]
-        public override ActionResult Index()
+        public ActionResult Index()
         {
             return View(this.db.university.OrderBy(m => m.id).ToList());
         }

@@ -25,7 +25,7 @@ namespace RatingUniversity.Controllers
             return Redirect(returnLink);
         }
 
-        public override ActionResult Index()
+        public ActionResult Index()
         {
             //CultureInfo currentCulrute = Thread.CurrentThread.CurrentCulture;
             //ViewBag.lang = currentCulrute.Name.Substring(0, 5);
