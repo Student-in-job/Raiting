@@ -32,7 +32,9 @@ namespace RatingUniversity.Controllers
 		{
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
+			int UniverId=this.id;
 			var list = db.Jadvaltalimsifati_1_2.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
+			if (User.IsInRole("user")) list = db.Jadvaltalimsifati_1_2.Where(pr => pr.Year == yil).Where(uid=>uid.UniversityId==UniverId).OrderBy(j => j.Year);
 			ViewBag.bor = true;
 			if (list.Count() == 0)
 				ViewBag.bor = false;
@@ -45,8 +47,8 @@ namespace RatingUniversity.Controllers
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
 
 			ViewBag.role = 0;
-			//nuzjno dobavit Yesli (user == podtverjditel) ViewBag.role = 1;
-            ViewBag.UniverId = this.id;
+			if (User.IsInRole("admin")) ViewBag.role = 1;
+			ViewBag.UniverId = this.id;
 			return View(list.ToList());
 		}
 

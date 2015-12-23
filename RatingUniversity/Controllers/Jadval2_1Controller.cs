@@ -17,7 +17,7 @@ using System.Globalization;
 
 namespace RatingUniversity.Controllers
 {
-    public class Jadval2_1Controller : Controller
+	public class Jadval2_1Controller : BaseViewController
     {
         int active;
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
@@ -44,12 +44,14 @@ namespace RatingUniversity.Controllers
         }
         //
         // GET: /Jadval2_1/
+		[Authorize(Roles = "admin, user")]
 		public ActionResult Index()
 		{
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
-			int UniverId = 24;
+			int UniverId = this.id;
 			var list = db.Jadval_talababilim_2_1.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
+			if (User.IsInRole("user")) list = db.Jadval_talababilim_2_1.Where(pr => pr.Year == yil).Where(uid=>uid.UniversityId==UniverId).OrderBy(j => j.Year);
 			ViewBag.bor = true;
 			if (list.Count() == 0)
 				ViewBag.bor = false;
@@ -62,11 +64,12 @@ namespace RatingUniversity.Controllers
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
 
 			ViewBag.role = 0;
-			//nuzjno dobavit Yesli (user == podtverjditel) ViewBag.role = 1;
+			if (User.IsInRole("admin")) ViewBag.role = 1;
 			ViewBag.UniverId = UniverId;
 			return View(list.ToList());
 		}
 
+		[Authorize(Roles = "admin")]
 		public ActionResult Tasdiqlash(int UniverId = 0)
 		{
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
@@ -75,11 +78,12 @@ namespace RatingUniversity.Controllers
 		}
 
 
+		[Authorize(Roles = "admin, user")]
 		public FileResult Download()
 		{
 			string filename_original = Server.MapPath("~/Files/table2_1.xls");
 			string dt = DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss");
-			string filename = Server.MapPath("~/Files/table2_1" + dt + ".xls");
+			string filename = Server.MapPath("~/Files/downloads/table2_1" + dt + ".xls");
 			System.IO.File.Copy(filename_original, filename);
 
 			OleDbConnection oledbcon = new OleDbConnection(string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 12.0 xml;HDR=No'", filename));
@@ -113,6 +117,7 @@ namespace RatingUniversity.Controllers
 		}
 
 		[HttpPost]
+		[Authorize(Roles = "user")]
 		public ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
 		{
 			if (files != null)

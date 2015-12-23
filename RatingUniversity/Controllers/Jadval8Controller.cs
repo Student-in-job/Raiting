@@ -18,7 +18,7 @@ using System.Threading;
 
 namespace RatingUniversity.Controllers
 {
-    public class Jadval8Controller : Controller
+	public class Jadval8Controller : BaseViewController
     {
         int active;
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
@@ -45,11 +45,15 @@ namespace RatingUniversity.Controllers
         }
         //
         // GET: /Jadval8/
-		public ActionResult Index(int? page)
+		[Authorize(Roles = "admin, user")]
+		public ActionResult Index(int? id, int? page)
 		{
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
-			int UniverId = 24;
+			int? UniverId = this.id;
+			if (id == null && User.IsInRole("admin")) return View("ListUniver");
+			else if (id != null && User.IsInRole("admin")) UniverId = id;
+
 			var list = db.Jadval8.Where(pr => pr.Year == yil).Where(y => y.UniversityId == UniverId).OrderBy(j => j.Year);
 			ViewBag.bor = true;
 			if (list.Count() == 0)
@@ -63,7 +67,7 @@ namespace RatingUniversity.Controllers
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
 
 			ViewBag.role = 0;
-			//nuzjno dobavit Yesli (user == podtverjditel) ViewBag.role = 1;
+			if (User.IsInRole("admin")) ViewBag.role = 1;
 			ViewBag.UniverId = UniverId;
 //			return View(list.ToList());
 			int pageSize = 50;
@@ -71,12 +75,14 @@ namespace RatingUniversity.Controllers
 			return View(list.ToPagedList(pageNumber, pageSize));
 		}
 
+		[Authorize(Roles = "admin")]
 		public ActionResult Tasdiqlash(int UniverId = 0)
 		{
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
 			MonitoringUpdate.Update(UniverId, "J8", 1, yil);
 			return RedirectToAction("Index", "Jadval8");
 		}
+		[Authorize(Roles = "admin, user")]
 		public FileResult Download()
 		{
 			string filename = Server.MapPath("~/Files/table8.xls");
@@ -86,6 +92,7 @@ namespace RatingUniversity.Controllers
 		}
 
 		[HttpPost]
+		[Authorize(Roles = "user")]
 		public ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
 		{
 			if (files != null)
@@ -101,7 +108,7 @@ namespace RatingUniversity.Controllers
 					{
 						//Save the uploaded file to the application folder.
 						string yil = DateTime.Now.Year.ToString();
-						string ID_upl = "24";
+						string ID_upl = this.id.ToString();
 						string savepath = Server.MapPath("~/Files/Upload/") + yil + "/" + ID_upl + "/";
 						Directory.CreateDirectory(savepath);
 						string savedExcelFiles = savepath + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
@@ -132,7 +139,7 @@ namespace RatingUniversity.Controllers
 			var connectionString = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=Excel 12.0;", savedExcelFiles);
 
 			//Fill the DataSet by the Sheets.
-			int UniverId = 24;
+			int UniverId = this.id;
 			List<Jadval8> uploadExl = new List<Jadval8>();
 
 			var adapter = new OleDbDataAdapter("SELECT * FROM [List1$]", connectionString);
@@ -202,6 +209,7 @@ namespace RatingUniversity.Controllers
 
 		}
 
+		[Authorize(Roles = "user")]
 		public ActionResult UploadData(IEnumerable<HttpPostedFileBase> files, int id)
 		{
 			if (files != null)
@@ -218,7 +226,7 @@ namespace RatingUniversity.Controllers
 					{
 						//Save the uploaded file to the application folder.
 						string yil = DateTime.Now.Year.ToString();
-						string ID_upl = "24";
+						string ID_upl = this.id.ToString();
 						string savepath = Server.MapPath("~/Files/Upload/") + yil + "/" + ID_upl + "/J8/";
 						Directory.CreateDirectory(savepath);
 						string savedFiles = savepath + id.ToString() + "_" + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;

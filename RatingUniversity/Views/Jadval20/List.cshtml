@@ -1,0 +1,30 @@
+﻿@model IEnumerable<RatingUniversity.Models.university>
+
+@{
+    ViewBag.Title = "Список вузов";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name_RU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name_UZ)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href="/Jadval20/Index/@item.id">@Html.DisplayFor(modelItem => item.name_RU)</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name_UZ)
+        </td>
+    </tr>
+}
+
+</table>

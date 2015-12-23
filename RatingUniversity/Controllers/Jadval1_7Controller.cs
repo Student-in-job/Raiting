@@ -17,7 +17,7 @@ using System.Threading;
 
 namespace RatingUniversity.Controllers
 {
-    public class Jadval1_7Controller : Controller
+    public class Jadval1_7Controller : BaseViewController
     {
         int active;
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
@@ -44,13 +44,16 @@ namespace RatingUniversity.Controllers
         }
         //
         // GET: /Jadval1_7/
+		[Authorize(Roles = "admin, user")]
 		public ActionResult Index()
 		{
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
-			int UniverId = 24;
+			int UniverId = this.id;
 			var list = db.Jadval_AKTdaraja_1_7.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
-			ViewBag.bor = true;
+			if (User.IsInRole("user")) list = db.Jadval_AKTdaraja_1_7.Where(pr => pr.Year == yil).Where(uid=>uid.UniversityId==UniverId).OrderBy(j => j.Year); ;
+
+			ViewBag.bor = true; 
 			if (list.Count() == 0)
 				ViewBag.bor = false;
 
@@ -62,11 +65,12 @@ namespace RatingUniversity.Controllers
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
 
 			ViewBag.role = 0;
-			//nuzjno dobavit Yesli (user == podtverjditel) ViewBag.role = 1;
+			if (User.IsInRole("admin")) ViewBag.role = 1;
 			ViewBag.UniverId = UniverId;
 			return View(list.ToList());
 		}
 
+		[Authorize(Roles = "admin")]
 		public ActionResult Tasdiqlash(int UniverId = 0)
 		{
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
@@ -76,16 +80,17 @@ namespace RatingUniversity.Controllers
 
 
 
+		[Authorize(Roles = "admin, user")]
 		public FileResult Download()
 		{
 			string filename_original = Server.MapPath("~/Files/table1_7.xls");
 			string dt = DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss");
-			string filename = Server.MapPath("~/Files/table1_7" + dt + ".xls");
+			string filename = Server.MapPath("~/Files/downloads/table1_7" + dt + ".xls");
 			System.IO.File.Copy(filename_original, filename);
 
 			OleDbConnection oledbcon = new OleDbConnection(string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 12.0 xml;HDR=No'", filename));
 			TablesContext db = new TablesContext();
-			var list = db.Database.SqlQuery<university>(@"select u.id, u.name, u.id_branch, u.id_region from university u ORDER BY u.name");
+			var list = db.Database.SqlQuery<university>(@"select u.id, u.name_UZ, u.name_RU, u.id_branch, u.id_region from university u ORDER BY u.name"+ViewBag.lang);
 			OleDbCommand MyCommand = new OleDbCommand();
 			oledbcon.Open();
 			MyCommand.Connection = oledbcon;
@@ -102,7 +107,7 @@ namespace RatingUniversity.Controllers
 				MyCommand.CommandType = CommandType.Text;
 				MyCommand.CommandText = sql;
 				MyCommand.Parameters.Clear();
-				MyCommand.Parameters.Add("param2", OleDbType.VarChar).Value = l.name_UZ;
+				MyCommand.Parameters.Add("param2", OleDbType.VarChar).Value = (ViewBag.lang == "RU") ? l.name_RU : l.name_UZ;
 				MyCommand.ExecuteNonQuery();
 				xi++;
 			}
@@ -114,6 +119,7 @@ namespace RatingUniversity.Controllers
 		}
 
 		[HttpPost]
+		[Authorize(Roles = "user")]
 		public ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
 		{
 			if (files != null)
@@ -131,7 +137,8 @@ namespace RatingUniversity.Controllers
 					{
 						//Save the uploaded file to the application folder.
 						string yil = DateTime.Now.Year.ToString();
-						string ID_upl = "24";
+						//string ID_upl = this.id.ToString();
+						string ID_upl = "admin";
 						string savepath = Server.MapPath("~/Files/Upload/") + yil + "/" + ID_upl + "/";
 						Directory.CreateDirectory(savepath);
 						string savedExcelFiles = savepath + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;

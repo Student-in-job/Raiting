@@ -691,6 +691,19 @@
     <Content Include="Views\University\Edit.cshtml" />
     <Content Include="Views\University\Create.cshtml" />
     <Content Include="Views\University\Delete.cshtml" />
+    <Content Include="Views\Jadval10\List.cshtml" />
+    <Content Include="Views\Jadval11\List.cshtml" />
+    <Content Include="Views\Jadval18\List.cshtml" />
+    <Content Include="Views\Jadval19\List.cshtml" />
+    <Content Include="Views\Jadval2\List.cshtml" />
+    <Content Include="Views\Jadval20\List.cshtml" />
+    <Content Include="Views\Jadval21\List.cshtml" />
+    <Content Include="Views\Jadval32\List.cshtml" />
+    <Content Include="Views\Jadval5\List.cshtml" />
+    <Content Include="Views\Jadval6\List.cshtml" />
+    <Content Include="Views\Jadval7\List.cshtml" />
+    <Content Include="Views\Jadval8\List.cshtml" />
+    <Content Include="Views\Jadval9\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
