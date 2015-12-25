@@ -20,7 +20,7 @@ namespace RatingUniversity.Classes
 				{
 					//dlya vsex unuiverov dobavit stroku
 					TablesContext udb = new TablesContext();
-					var list = udb.Database.SqlQuery<university>(@"select u.id, u.name, u.id_branch, u.id_region from university u ORDER BY u.name");
+					var list = udb.Database.SqlQuery<university>(@"select u.id, u.name_UZ, u.name_RU, u.id_branch, u.id_region from university u ORDER BY u.name_UZ");
 					foreach (var l in list)
 					{
 						int cc = db.Monitoring.Where(x => x.Year == yil && x.UniverId == UniverId).Count();

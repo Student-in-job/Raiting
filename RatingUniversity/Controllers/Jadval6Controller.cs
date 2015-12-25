@@ -51,7 +51,7 @@ namespace RatingUniversity.Controllers
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
 			int? UniverId = this.id;
-			if (id == null && User.IsInRole("admin")) return View("ListUniver");
+			if (id == null && User.IsInRole("admin")) return View("List");
 			else if (id != null && User.IsInRole("admin")) UniverId = id;
 
 			var list = db.Jadval6.Where(pr => pr.Year == yil).Where(y => y.UniversityId == UniverId).OrderBy(j => j.Year);
