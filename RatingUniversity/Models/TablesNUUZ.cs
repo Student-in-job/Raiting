@@ -79,7 +79,8 @@ namespace RatingUniversity.Models
         public String AsosFile { get; set; }
         public Int16 Year { get; set; }
         public Int32 UniversityId { get; set; }
-    }
+		public int? Status { get; set; }
+	}
     public class Jadval11
     {
         public Int32 Id { get; set; }
@@ -111,7 +112,8 @@ namespace RatingUniversity.Models
         public String AsosFile { get; set; }
         public Int16 Year { get; set; }
         public Int32 UniversityId { get; set; }
-    }
+		public int? Status { get; set; }
+	}
     public class Jadval19
     {
         public Int32 Id { get; set; }
@@ -159,7 +161,8 @@ namespace RatingUniversity.Models
         public String Mag_otm { get; set; }
         public Int16 Year { get; set; }
         public Int32 UniversityId { get; set; }
-    }
+		public int? Status { get; set; }
+	}
     public class Jadval21
     {
         public Int32 Id { get; set; }
@@ -171,7 +174,8 @@ namespace RatingUniversity.Models
         public String Asos_fayl { get; set; }
         public Int16 Year { get; set; }
         public Int32 UniversityId { get; set; }
-    }
+		public int? Status { get; set; }
+	}
     public class Jadval32
     {
         public Int32 Id { get; set; }
@@ -190,7 +194,8 @@ namespace RatingUniversity.Models
         public Int16 Year { get; set; }
         public Int32 UniversityId { get; set; }
         public Int32 Turi { get; set; }/*1 - asosiy, 2-o'rindosh, 3-soatbay*/
-    }
+		public int? Status { get; set; }
+	}
     public class Jadval5
     {
         public Int32 Id { get; set; }
@@ -231,7 +236,8 @@ namespace RatingUniversity.Models
         public Int32 Bak_mag { get; set; }
         public Int16 Year { get; set; }
         public Int32 UniversityId { get; set; }
-    }
+		public int? Status { get; set; }
+	}
     public class Jadval8
     {
         public Int32 Id { get; set; }
@@ -245,7 +251,8 @@ namespace RatingUniversity.Models
         public String Asos_fayl { get; set; }
         public Int16 Year { get; set; }
         public Int32 UniversityId { get; set; }
-    }
+		public int? Status { get; set; }
+	}
     public class Jadval9
     {
         public Int32 Id { get; set; }
@@ -257,7 +264,8 @@ namespace RatingUniversity.Models
         public String Asos_fayl { get; set; }
         public Int16 Year { get; set; }
         public Int32 UniversityId { get; set; }
-    }
+		public int? Status { get; set; }
+	}
 
     public class Monitoring
     {

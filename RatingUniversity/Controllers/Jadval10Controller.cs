@@ -25,22 +25,6 @@ namespace RatingUniversity.Controllers
         {
             this.active = 12;
             base.Initialize(requestContext);
-            if (Session["CurrentCulture"] != null)
-            {
-                Thread.CurrentThread.CurrentCulture = new CultureInfo(Session["CurrentCulture"].ToString());
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Session["CurrentCulture"].ToString());
-            }
-            string culture = Thread.CurrentThread.CurrentCulture.ToString();
-            if (culture.IndexOf("ru") != -1)
-            {
-                ViewBag.lang = "RU";
-                ViewBag.alfabet = "RU";
-            }
-            else
-            {
-                ViewBag.lang = "UZ";
-                ViewBag.alfabet = (culture.IndexOf("Cyrl") != -1) ? "CY" : "LT";
-            }
             ViewBag.active = Functions.CreateActive(this.active, 34);
         }
         //
@@ -51,7 +35,7 @@ namespace RatingUniversity.Controllers
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
 			int? UniverId = this.id;
-			if (id==null && User.IsInRole("admin")) return View("List");
+			if (id == null && User.IsInRole("admin")) return View("List", db.university.ToList());
 			else if (id != null && User.IsInRole("admin")) UniverId = id;
 
 			var list = db.Jadval10.Where(pr => pr.Year == yil).Where(y => y.UniversityId == UniverId).OrderBy(j => j.Year);
@@ -59,9 +43,9 @@ namespace RatingUniversity.Controllers
 			if (list.Count() == 0)
 				ViewBag.bor = false;
 
-			int? status_table = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.J10).FirstOrDefault();
+			int? status_table = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.J10).FirstOrDefault();
 			ViewBag.status = status_table;
-			DateTime? status_dt = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
+			DateTime? status_dt = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
 			ViewBag.status_date = 0;
 			ViewBag.date = status_dt;
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
@@ -166,6 +150,7 @@ namespace RatingUniversity.Controllers
 				NewUpload.Asos = Convert.ToString(data.Rows[i][3]);
 				NewUpload.AsosFile = "#"+Convert.ToString(data.Rows[i][8]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
+				NewUpload.Status = 1;
 				NewUpload.UniversityId = UniverId;
 
 				uploadExl.Add(NewUpload);
@@ -235,9 +220,28 @@ namespace RatingUniversity.Controllers
 					}
 				}
 			}
-			return RedirectToAction("Index", "Jadval10");
+			return Redirect(Request.UrlReferrer.ToString());
+//			return RedirectToAction("Index", "Jadval10");
 		}
 
+		[Authorize(Roles = "admin")]
+		public ActionResult Status(int? id)
+		{
+			if (id == null)
+			{
+				return RedirectToAction("Index");
+			}
+			using (TablesContext db = new TablesContext())
+			{
+				Jadval10 j2 = db.Jadval10.Find(id);
+				if (j2 == null) Redirect(Request.UrlReferrer.ToString());
+				if (j2.Status == 1) j2.Status = 0;
+				else j2.Status = 1;
+				db.Entry(j2).State = EntityState.Modified;
+				db.SaveChanges();
+			}
+			return Redirect(Request.UrlReferrer.ToString());
+		}
 
 	}
 }

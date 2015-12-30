@@ -12,13 +12,13 @@
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
-		<a href="/Jadval21/Download">Загрузить шаблон</a>
-		<h3>Прикрепить файл</h3>
+		<a href="/Jadval21/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        <h3>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</h3>
 
 		using (Html.BeginForm("Upload", "Jadval21", FormMethod.Post, new { enctype = "multipart/form-data" }))
 		{
 			<input type="file" name="files" />
-			<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+	<input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
 		}
 	}
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 1)
@@ -42,6 +42,10 @@
 		<h3>Ma'lumotlar:</h3>
 		<table class="table">
 			<tr>
+				@if (ViewBag.status == 0 && ViewBag.role == 1)
+				{
+					<th>Статус</th>
+				}
 				<th>
 					Фамилияси,исми, шарифи
 				</th>
@@ -70,7 +74,21 @@
 
 			@foreach (var item in Model)
 			{
-				<tr>
+				<tr @(item.Status == 1 ? "" : "class=danger")>
+					@if (ViewBag.status == 0 && ViewBag.role == 1)
+					{
+						<td>
+							@if (item.Status == 1)
+							{
+								<a href="/Jadval21/Status/@item.Id">Не принимать</a>
+							}
+							else
+							{
+								<a href="/Jadval21/Status/@item.Id">Принимать</a>
+
+							}
+						</td>
+					}
 					<td>
 						@Html.DisplayFor(modelItem => item.fio)
 					</td>

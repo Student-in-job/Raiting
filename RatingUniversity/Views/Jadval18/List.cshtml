@@ -3,27 +3,43 @@
 @{
     ViewBag.Title = "Список вузов";
 }
+@{
+	Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
+}
+
 
 <h2>@ViewBag.Title</h2>
-
+				  	
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.name_RU)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.name_UZ)
-        </th>
+		@if (ViewBag.lang == "RU")
+		{
+			<th>
+				Список вузов
+			</th>
+		}
+		@if (ViewBag.lang == "UZ")
+		{
+			<th>
+				Universitetlar ro'yxati
+			</th>
+		}
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @if (ViewBag.lang=="RU")
+		{
+			<td>
             <a href="/Jadval18/Index/@item.id">@Html.DisplayFor(modelItem => item.name_RU)</a>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.name_UZ)
-        </td>
+			</td>
+		}
+		@if (ViewBag.lang=="UZ")
+		{
+		<td>
+			<a href="/Jadval18/Index/@item.id">@Html.DisplayFor(modelItem => item.name_UZ)</a>
+		</td>
+		}
     </tr>
 }
 

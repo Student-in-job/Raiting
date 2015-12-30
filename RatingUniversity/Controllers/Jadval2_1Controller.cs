@@ -24,22 +24,6 @@ namespace RatingUniversity.Controllers
         {
             this.active = 4;
             base.Initialize(requestContext);
-            if (Session["CurrentCulture"] != null)
-            {
-                Thread.CurrentThread.CurrentCulture = new CultureInfo(Session["CurrentCulture"].ToString());
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Session["CurrentCulture"].ToString());
-            }
-            string culture = Thread.CurrentThread.CurrentCulture.ToString();
-            if (culture.IndexOf("ru") != -1)
-            {
-                ViewBag.lang = "RU";
-                ViewBag.alfabet = "RU";
-            }
-            else
-            {
-                ViewBag.lang = "UZ";
-                ViewBag.alfabet = (culture.IndexOf("Cyrl") != -1) ? "CY" : "LT";
-            }
             ViewBag.active = Functions.CreateActive(this.active, 34);
         }
         //
@@ -51,14 +35,15 @@ namespace RatingUniversity.Controllers
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
 			int UniverId = this.id;
 			var list = db.Jadval_talababilim_2_1.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
-			if (User.IsInRole("user")) list = db.Jadval_talababilim_2_1.Where(pr => pr.Year == yil).Where(uid=>uid.UniversityId==UniverId).OrderBy(j => j.Year);
+			if (User.IsInRole("user")) list = db.Jadval_talababilim_2_1.Where(pr => pr.Year == yil).Where(uid => uid.UniversityId == UniverId).OrderBy(j => j.Year);
+			if (User.IsInRole("admin")) list = db.Jadval_talababilim_2_1.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
 			ViewBag.bor = true;
 			if (list.Count() == 0)
 				ViewBag.bor = false;
 
-			int? status_table = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.J2_1).FirstOrDefault();
+			int? status_table = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.J2_1).FirstOrDefault();
 			ViewBag.status = status_table;
-			DateTime? status_dt = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
+			DateTime? status_dt = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
 			ViewBag.status_date = 0;
 			ViewBag.date = status_dt;
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;

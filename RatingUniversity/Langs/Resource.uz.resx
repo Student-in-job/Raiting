@@ -492,4 +492,76 @@
   <data name="AccountUniversity" xml:space="preserve">
     <value>Oliy ta'lim muassasa</value>
   </data>
+  <data name="T1_God" xml:space="preserve">
+    <value>Yil</value>
+  </data>
+  <data name="T1_OtmName" xml:space="preserve">
+    <value>ОТМ номи</value>
+  </data>
+  <data name="T1_Reyting" xml:space="preserve">
+    <value>Рейтинг кўрсаткичи</value>
+  </data>
+  <data name="T1_Strana" xml:space="preserve">
+    <value>Давлат</value>
+  </data>
+  <data name="T1_Zagolovok" xml:space="preserve">
+    <value>300 та энг яхши хорижий олий таълим муассасалари тўғрисидаги М А Ъ Л У М О Т</value>
+  </data>
+  <data name="T2_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T2_FISH" xml:space="preserve">
+    <value>Асосий штатдаги профессор-ўқитувчиларнинг Ф.И.Ш</value>
+  </data>
+  <data name="T2_magistr_nomer" xml:space="preserve">
+    <value>Магистрлик (дипломли мутахассис) диплом рақами</value>
+  </data>
+  <data name="T2_magistr_seriya" xml:space="preserve">
+    <value>Магистрлик (дипломли мутахассис) диплом серияси</value>
+  </data>
+  <data name="T2_OTM" xml:space="preserve">
+    <value>Илмий даража берган хориж ОТМ номи</value>
+  </data>
+  <data name="T2_Phd_nomer" xml:space="preserve">
+    <value>PhD (фан доктори, фан номзоди) диплом рақами</value>
+  </data>
+  <data name="T2_Phd_seriya" xml:space="preserve">
+    <value>PhD (фан доктори, фан номзоди) диплом серияси</value>
+  </data>
+  <data name="T2_prikaz" xml:space="preserve">
+    <value>Ишга қабул қилинганлиги тўғрисидаги буйруқ рақами ва санаси</value>
+  </data>
+  <data name="T2_specialnost" xml:space="preserve">
+    <value>Мутахассислиги номи</value>
+  </data>
+  <data name="T2_Zagolovok" xml:space="preserve">
+    <value>300 та энг яхши хорижий ОТМлари даражаси (РhD) ёки магистрлик димломига эга бўлган асосий штатдаги профессор-ўқитувчилар ҳақида</value>
+  </data>
+  <data name="Top300" xml:space="preserve">
+    <value>Top universitet - 300</value>
+  </data>
+  <data name="T1_2_kol_otvet" xml:space="preserve">
+    <value>баҳолар сони</value>
+  </data>
+  <data name="T1_2_kol_stud" xml:space="preserve">
+    <value>Сўровномада иштирок этган талабалар сони</value>
+  </data>
+  <data name="T1_2_kol_vopros" xml:space="preserve">
+    <value>саволлар сони</value>
+  </data>
+  <data name="T1_2_N1" xml:space="preserve">
+    <value>Ўқув машғулотлари материаллари янгилиги ва мазмунининг сифати</value>
+  </data>
+  <data name="T1_2_N2" xml:space="preserve">
+    <value>Ўқув машғулотларини ташкиллаштириш ва таълим бериш сифати</value>
+  </data>
+  <data name="T1_2_N3" xml:space="preserve">
+    <value>Талабалар билимини баҳолаш объективлиги</value>
+  </data>
+  <data name="T1_2_VUZ" xml:space="preserve">
+    <value>Олий таълим муассасалари номи</value>
+  </data>
+  <data name="T1_2_Zagolovok" xml:space="preserve">
+    <value>Таълим бериш сифат даражаси (талабалардан олинган сўровнома натижалари бўйича)</value>
+  </data>
 </root>

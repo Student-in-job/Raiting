@@ -4,18 +4,19 @@
 	ViewBag.Title = "Jadval1_2";
 }
 
-<h2>Universitetlar reytingi</h2>
+<h2>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_2_Zagolovok, ViewBag.lang, ViewBag.alfabet)</h2>
 
-
-<a href="/Jadval1_2/Download">Загрузить шаблон</a>
-
-<h3>Прикрепить файл</h3>
-@using (Html.BeginForm("Upload", "Jadval1_2", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@if (ViewBag.role == 1)
+{ 
+<a href="/Jadval1_2/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        <h3>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</h3>
+using (Html.BeginForm("Upload", "Jadval1_2", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 	<input type="file" name="files" />
-	<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+	<input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
 }
-
+}
+	
 @if (ViewBag.bor == true)
 {
 	<h3>Ma'lumotlar:</h3>

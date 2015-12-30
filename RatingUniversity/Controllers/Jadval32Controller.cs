@@ -26,7 +26,7 @@ namespace RatingUniversity.Controllers
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
 			int? UniverId = this.id;
-			if (id == null && User.IsInRole("admin")) return View("List");
+			if (id == null && User.IsInRole("admin")) return View("List", db.university.ToList());
 			else if (id != null && User.IsInRole("admin")) UniverId = id;
 
 			var list = db.Jadval32.Where(pr => pr.Year == yil).Where(y => y.UniversityId == UniverId).OrderBy(j => j.Year);
@@ -34,9 +34,9 @@ namespace RatingUniversity.Controllers
 			if (list.Count() == 0)
 				ViewBag.bor = false;
 
-			int? status_table = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.J32).FirstOrDefault();
+			int? status_table = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.J32).FirstOrDefault();
 			ViewBag.status = status_table;
-			DateTime? status_dt = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
+			DateTime? status_dt = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
 			ViewBag.status_date = 0;
 			ViewBag.date = status_dt;
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
@@ -143,6 +143,7 @@ namespace RatingUniversity.Controllers
 				//NewUpload.Asos_fayl = Convert.ToString(data.Rows[i][8]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
 				NewUpload.UniversityId = UniverId;
+				NewUpload.Status = 1;
 
 				uploadExl.Add(NewUpload);
 			
@@ -173,6 +174,7 @@ namespace RatingUniversity.Controllers
 				//NewUpload.Asos_fayl = Convert.ToString(data.Rows[i][8]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
 				NewUpload.UniversityId = UniverId;
+				NewUpload.Status = 1;
 
 				uploadExl.Add(NewUpload);
 
@@ -202,6 +204,7 @@ namespace RatingUniversity.Controllers
 				//NewUpload.Asos_fayl = Convert.ToString(data.Rows[i][8]);
 				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
 				NewUpload.UniversityId = UniverId;
+				NewUpload.Status = 1;
 
 				uploadExl.Add(NewUpload);
 
@@ -224,5 +227,25 @@ namespace RatingUniversity.Controllers
 			}
 
 		}
+
+		[Authorize(Roles = "admin")]
+		public ActionResult Status(int? id)
+		{
+			if (id == null)
+			{
+				return RedirectToAction("Index");
+			}
+			using (TablesContext db = new TablesContext())
+			{
+				Jadval32 j2 = db.Jadval32.Find(id);
+				if (j2 == null) Redirect(Request.UrlReferrer.ToString());
+				if (j2.Status == 1) j2.Status = 0;
+				else j2.Status = 1;
+				db.Entry(j2).State = EntityState.Modified;
+				db.SaveChanges();
+			}
+			return Redirect(Request.UrlReferrer.ToString());
+		}
+
 	}
 }

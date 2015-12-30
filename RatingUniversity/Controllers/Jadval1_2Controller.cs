@@ -34,14 +34,15 @@ namespace RatingUniversity.Controllers
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
 			int UniverId=this.id;
 			var list = db.Jadvaltalimsifati_1_2.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
-			if (User.IsInRole("user")) list = db.Jadvaltalimsifati_1_2.Where(pr => pr.Year == yil).Where(uid=>uid.UniversityId==UniverId).OrderBy(j => j.Year);
+			if (User.IsInRole("user")) list = db.Jadvaltalimsifati_1_2.Where(pr => pr.Year == yil).Where(uid => uid.UniversityId == UniverId).OrderBy(j => j.Year);
+			if (User.IsInRole("admin")) list = db.Jadvaltalimsifati_1_2.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
 			ViewBag.bor = true;
 			if (list.Count() == 0)
 				ViewBag.bor = false;
 
-            int? status_table = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == this.id).Select(z => z.J1_2).FirstOrDefault();
+            int? status_table = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == this.id).Select(z => z.J1_2).FirstOrDefault();
 			ViewBag.status = status_table;
-            DateTime? status_dt = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == this.id).Select(z => z.Srok).FirstOrDefault();
+            DateTime? status_dt = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == this.id).Select(z => z.Srok).FirstOrDefault();
 			ViewBag.status_date = 0;
 			ViewBag.date = status_dt;
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;

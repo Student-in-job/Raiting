@@ -492,4 +492,76 @@
   <data name="AccountUniversity" xml:space="preserve">
     <value>Высшее учебеное заведение</value>
   </data>
+  <data name="T1_God" xml:space="preserve">
+    <value>Год</value>
+  </data>
+  <data name="T1_OtmName" xml:space="preserve">
+    <value>Наименование вуза</value>
+  </data>
+  <data name="T1_Reyting" xml:space="preserve">
+    <value>Показатели рейтинга</value>
+  </data>
+  <data name="T1_Strana" xml:space="preserve">
+    <value>Страна</value>
+  </data>
+  <data name="T1_Zagolovok" xml:space="preserve">
+    <value>СВЕДЕНИЯ о 300 лучших зарубежных высших образовательных заведениях</value>
+  </data>
+  <data name="T2_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T2_FISH" xml:space="preserve">
+    <value>Ф.И.О. профессоров-преподавателей основного штата</value>
+  </data>
+  <data name="T2_magistr_nomer" xml:space="preserve">
+    <value>Номер диплома магистра (дипломированный специалист)</value>
+  </data>
+  <data name="T2_magistr_seriya" xml:space="preserve">
+    <value>Серия диплома магистра (дипломированный специалист)</value>
+  </data>
+  <data name="T2_OTM" xml:space="preserve">
+    <value>Наименование вуза, присвоившего ученую степень</value>
+  </data>
+  <data name="T2_Phd_nomer" xml:space="preserve">
+    <value>Номер диплома PhD (кандидат наук, доктор наук)</value>
+  </data>
+  <data name="T2_Phd_seriya" xml:space="preserve">
+    <value>Серия диплома PhD (кандидат наук, доктор наук)</value>
+  </data>
+  <data name="T2_prikaz" xml:space="preserve">
+    <value>Номер и дата приказа о приеме на работу</value>
+  </data>
+  <data name="T2_specialnost" xml:space="preserve">
+    <value>Название специальности</value>
+  </data>
+  <data name="T2_Zagolovok" xml:space="preserve">
+    <value>СВЕДЕНИЯ о профессорах-преподавателях основного штата, имеющих диплом магистра или степень (РhD) 300 лучших зарубежных высших образовательных заведений</value>
+  </data>
+  <data name="Top300" xml:space="preserve">
+    <value>Top университет - 300</value>
+  </data>
+  <data name="T1_2_kol_otvet" xml:space="preserve">
+    <value>количество оценок</value>
+  </data>
+  <data name="T1_2_kol_stud" xml:space="preserve">
+    <value>Число студентов, принявших участие в опросе</value>
+  </data>
+  <data name="T1_2_kol_vopros" xml:space="preserve">
+    <value>количество вопросов</value>
+  </data>
+  <data name="T1_2_N1" xml:space="preserve">
+    <value>Новизна учебных материалов и качество их содержания</value>
+  </data>
+  <data name="T1_2_N2" xml:space="preserve">
+    <value>Организация учебных занятий и качество обучения</value>
+  </data>
+  <data name="T1_2_N3" xml:space="preserve">
+    <value>Объективность оценки знаний студентов</value>
+  </data>
+  <data name="T1_2_VUZ" xml:space="preserve">
+    <value>Наименование высшего образовательного заведения</value>
+  </data>
+  <data name="T1_2_Zagolovok" xml:space="preserve">
+    <value>Степень качества образования (по результатам опроса студентов)</value>
+  </data>
 </root>

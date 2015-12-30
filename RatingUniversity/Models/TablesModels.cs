@@ -29,7 +29,7 @@ namespace RatingUniversity.Models
 		public DbSet<Jadval_bitiruvchi_2_2> Jadval_bitiruvchi_2_2 { get; set; }
 		public DbSet<Jadval_talababilim_2_1> Jadval_talababilim_2_1 { get; set; }
 		public DbSet<Jadval_talimsifati_1_2> Jadvaltalimsifati_1_2 { get; set; }
-		public DbSet<Monitoring> Monitoring { get; set; }
+		public DbSet<Monitorings> Monitorings { get; set; }
 
         public virtual DbSet<branch> branch { get; set; }
         public virtual DbSet<chislennost_pps_vuza> chislennost_pps_vuza { get; set; }

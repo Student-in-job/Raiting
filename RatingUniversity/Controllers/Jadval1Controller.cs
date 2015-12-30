@@ -43,9 +43,9 @@ namespace RatingUniversity.Controllers
 			if (list.Count() == 0)
 				ViewBag.bor = false;
 
-			int? status_table = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == this.id).Select(z => z.J1).FirstOrDefault();
+			int? status_table = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == this.id).Select(z => z.J1).FirstOrDefault();
 			ViewBag.status = status_table;
-			DateTime? status_dt = db.Monitoring.Where(x => x.Year == yil).Where(y => y.UniverId == this.id).Select(z => z.Srok).FirstOrDefault();
+			DateTime? status_dt = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == this.id).Select(z => z.Srok).FirstOrDefault();
 			ViewBag.status_date = 0;
 			ViewBag.date = status_dt;
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
