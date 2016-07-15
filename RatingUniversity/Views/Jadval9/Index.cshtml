@@ -6,7 +6,11 @@
 		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Асосий шататдаги профессор-ўқитувчиларидан 300 та энг яхши хорижий олий таълим муассасаларида охирги 3 йилда дарс (маъруза, семинар ва амалий машғулот) ўтганлари ҳақидаги
+	<h2>
+		@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T9_zagolovok, ViewBag.lang, ViewBag.alfabet)
+
+		
+		Асосий шататдаги профессор-ўқитувчиларидан 300 та энг яхши хорижий олий таълим муассасаларида охирги 3 йилда дарс (маъруза, семинар ва амалий машғулот) ўтганлари ҳақидаги
 </h2>
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -37,33 +41,32 @@
 	}
 	@if (ViewBag.bor == true)
 	{
-		<h3>Ma'lumotlar:</h3>
-		<table class="table">
+		<table class="table table-bordered">
 			<tr>
 				@if (ViewBag.status == 0 && ViewBag.role == 1)
 				{
 					<th>Статус</th>
 				}
 				<th>
-					Ф.И.Ш
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T9_fish, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Хорижий давлат ва ОТМ номи
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T9_xorijiy_otm, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Мутахассислиги
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T9_mutaxassislik, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Дарс берадиган фани
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T9_fan, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Асос (буйруқ, қарор, шартнома ва бошқалар)*
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T9_asos, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Файл
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T9_fayl, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Йил
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_God, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
 					UniversityId

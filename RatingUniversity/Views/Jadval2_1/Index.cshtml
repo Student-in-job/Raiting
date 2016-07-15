@@ -5,7 +5,9 @@
 	ViewBag.Title = "Jadval2_1";
 }
 
-<h2>Universitetlar reytingi</h2>
+<h2>
+	@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_1_zagolovok, ViewBag.lang, ViewBag.alfabet)
+</h2>
 @if (ViewBag.role == 1)
 {
 
@@ -20,39 +22,39 @@ using (Html.BeginForm("Upload", "Jadval2_1", FormMethod.Post, new { enctype = "m
 }
 @if (ViewBag.bor == true)
 {
-	<h3>Ma'lumotlar:</h3>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.T_All)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.T_Qualified)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UniversityId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Year)
-        </th>
-    </tr>
+	<table class="table table-bordered">
+		<tr>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_1_soni, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_1_ijobiy, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_1_otm, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_God, ViewBag.lang, ViewBag.alfabet)
+			</th>
+		</tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.T_All)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.T_Qualified)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UniversityId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Year)
-        </td>
-    </tr>
-}
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.T_All)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.T_Qualified)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UniversityId)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Year)
+				</td>
+			</tr>
+		}
 
-</table>
+	</table>
 }

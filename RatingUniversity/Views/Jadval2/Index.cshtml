@@ -38,85 +38,84 @@
 	}
 	@if (ViewBag.bor == true)
 	{
-		<h3>Ma'lumotlar:</h3>
-		<table class="table">
-			<tr>
+	<table class="table table-bordered">
+		<tr>
+			@if (ViewBag.status == 0 && ViewBag.role == 1)
+			{
+				<th>Статус</th>
+			}
+			<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_FISH, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_OTM, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_Phd_seriya, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_Phd_nomer, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_magistr_seriya, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_magistr_nomer, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_specialnost, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_prikaz, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_fayl, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_God, ViewBag.lang, ViewBag.alfabet)</th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr @(item.Status == 1 ? "" : "class=danger")>
 				@if (ViewBag.status == 0 && ViewBag.role == 1)
 				{
-					<th>Статус</th>
+					<td>
+						@if (item.Status == 1)
+						{
+							<a href="/Jadval2/Status/@item.Id">Не принимать</a>
+						}
+						else
+						{
+							<a href="/Jadval2/Status/@item.Id">Принимать</a>
+
+						}
+					</td>
 				}
-				<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_FISH, ViewBag.lang, ViewBag.alfabet)</th>
-				<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_OTM, ViewBag.lang, ViewBag.alfabet)</th>
-				<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_Phd_seriya, ViewBag.lang, ViewBag.alfabet)</th>
-				<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_Phd_nomer, ViewBag.lang, ViewBag.alfabet)</th>
-				<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_magistr_seriya, ViewBag.lang, ViewBag.alfabet)</th>
-				<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_magistr_nomer, ViewBag.lang, ViewBag.alfabet)</th>
-				<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_specialnost, ViewBag.lang, ViewBag.alfabet)</th>
-				<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_prikaz, ViewBag.lang, ViewBag.alfabet)</th>
-				<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_fayl, ViewBag.lang, ViewBag.alfabet)</th>
-				<th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_God, ViewBag.lang, ViewBag.alfabet)</th>
-			</tr>
 
-			@foreach (var item in Model)
-			{
-				<tr @(item.Status == 1 ? "" : "class=danger")>
-					@if (ViewBag.status == 0 && ViewBag.role == 1)
+				<td>
+					@Html.DisplayFor(modelItem => item.FullName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Davlat)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Phd_seriya)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Phd_nomer)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Mag_seriya)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Mag_nomer)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Speciality)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Ishga_qabul_buyruq)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AsosFile)
+					<br />
+					@using (Html.BeginForm("UploadData", "Jadval2", FormMethod.Post, new { enctype = "multipart/form-data" }))
 					{
-						<td>
-							@if (item.Status == 1)
-							{
-								<a href="/Jadval2/Status/@item.Id">Не принимать</a>
-							}
-							else
-							{
-								<a href="/Jadval2/Status/@item.Id">Принимать</a>
-
-							}
-						</td>
+						<input type="file" name="files" />
+						<input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.Id)" />
+						<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
 					}
 
-					<td>
-						@Html.DisplayFor(modelItem => item.FullName)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Davlat)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Phd_seriya)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Phd_nomer)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Mag_seriya)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Mag_nomer)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Speciality)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Ishga_qabul_buyruq)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.AsosFile)
-						<br />
-						@using (Html.BeginForm("UploadData", "Jadval2", FormMethod.Post, new { enctype = "multipart/form-data" }))
-						{
-							<input type="file" name="files" />
-							<input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.Id)" />
-							<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
-						}
 
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Year)
+				</td>
+			</tr>
+		}
 
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Year)
-					</td>
-				</tr>
-			}
-
-		</table>
+	</table>
 		@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 	}

@@ -6,7 +6,9 @@
 		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Хориж олий таълим муассасалари билан алмашув дастурлари иштирокчилари ҳақида
+	<h2>
+		
+		@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T7_zagolovok, ViewBag.lang, ViewBag.alfabet)
 </h2>
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
@@ -38,109 +40,110 @@
 	}
 	@if (ViewBag.bor == true)
 	{
-		<h3>Ma'lumotlar:</h3>
-		<table class="table">
-			<tr>
+	<table class="table table-bordered">
+		<tr>
+			@if (ViewBag.status == 0 && ViewBag.role == 1)
+			{
+				<th>Статус</th>
+			}
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T7_almashuv_fish, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T7_bakalavriat, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T7_yonalish, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T7_xorij_talaba_FISH, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T7_xorij_davlat, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T7_xorij_yonalish, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T7_almashuv_xujjat, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T7_fayl, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T7_bakalavr_magistratura, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_God, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				UniversityId
+			</th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr @(item.Status == 1 ? "" : "class=danger")>
 				@if (ViewBag.status == 0 && ViewBag.role == 1)
 				{
-					<th>Статус</th>
-				}
-				<th>
-					Алмашув дастурлари асосида Хорижий ОТМларида таълим олаётган талабаларнинг Ф.И.Ш
-				</th>
-				<th>
-					Давлат ва ОТМ номи
-				</th>
-				<th>
-					Таълим йўналиши (мутахассислик) номи
-				</th>
-				<th>
-					Алмашув дастурлари асосидаОТМда таълим олаётган хорижлик талабаларнинг Ф.И.Ш
-				</th>
-				<th>
-					Давлат ва ОТМ номи
-				</th>
-				<th>
-					Таълим йўналиши (мутахассислик) номи
-				</th>
-				<th>
-					Алмашув дастурига асос бўлувчи ҳужжат номи ва имзоланган санаси*
-				</th>
-				<th>
-					Файл
-				</th>
-				<th>
-					Бакалавр/Магистратура
-				</th>
-				<th>
-					Йил
-				</th>
-				<th>
-					UniversityId
-				</th>
-			</tr>
-
-			@foreach (var item in Model)
-			{
-				<tr @(item.Status == 1 ? "" : "class=danger")>
-					@if (ViewBag.status == 0 && ViewBag.role == 1)
-					{
-						<td>
-							@if (item.Status == 1)
-							{
-								<a href="/Jadval7/Status/@item.Id">Не принимать</a>
-							}
-							else
-							{
-								<a href="/Jadval7/Status/@item.Id">Принимать</a>
-
-							}
-						</td>
-					}
 					<td>
-						@Html.DisplayFor(modelItem => item.FullName_uzb)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.State_uzb)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Mutaxassislik_uzb)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.FullName_xorij)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.State_xorij)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Mutaxassislik_xorij)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Asos)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Asos_fayl)
-						<br />
-						@using (Html.BeginForm("UploadData", "Jadval7", FormMethod.Post, new { enctype = "multipart/form-data" }))
+						@if (item.Status == 1)
 						{
-							<input type="file" name="files" />
-							<input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.Id)" />
-							<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+							<a href="/Jadval7/Status/@item.Id">Не принимать</a>
+						}
+						else
+						{
+							<a href="/Jadval7/Status/@item.Id">Принимать</a>
+
 						}
 					</td>
-					<td>
-						@if (item.Bak_mag == 0) {<p>бакалавр</p>}
-						else {<p>магистр</p>}
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Year)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.UniversityId)
-					</td>
-				</tr>
-			}
+				}
+				<td>
+					@Html.DisplayFor(modelItem => item.FullName_uzb)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.State_uzb)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Mutaxassislik_uzb)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.FullName_xorij)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.State_xorij)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Mutaxassislik_xorij)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Asos)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Asos_fayl)
+					<br />
+					@using (Html.BeginForm("UploadData", "Jadval7", FormMethod.Post, new { enctype = "multipart/form-data" }))
+					{
+						<input type="file" name="files" />
+						<input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.Id)" />
+						<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+					}
+				</td>
+				<td>
+					@if (item.Bak_mag == 0)
+					{<p>бакалавр</p>}
+					else
+					{<p>магистр</p>}
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Year)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UniversityId)
+				</td>
+			</tr>
+		}
 
-		</table>
+	</table>
 	@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 	}

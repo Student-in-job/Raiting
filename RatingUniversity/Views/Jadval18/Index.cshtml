@@ -7,7 +7,9 @@
 		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Профессор-ўқитувчиларидан ўрта махсус, касб-ҳунар таълими муассасаларида ўриндошлик асосида ишлаётганлари ҳақида</h2>
+	<h2>
+		@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T18_zagolovok, ViewBag.lang, ViewBag.alfabet)
+	</h2>
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
 		<a href="/Jadval18/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
@@ -38,104 +40,103 @@
 
 	@if (ViewBag.bor == true)
 	{
-		<h3>Ma'lumotlar:</h3>
 
-		<table class="table">
-			<tr>
+	<table class="table table-bordered">
+		<tr>
+			@if (ViewBag.status == 0 && ViewBag.role == 1)
+			{
+				<th>Статус</th>
+			}
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T18_fish, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T18_khk, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T18_lavozim, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T18_fan, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T18_orindosh, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T18_soatbay, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T18_buyruq, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T19_fayl, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_God, ViewBag.lang, ViewBag.alfabet)
+			</th>
+			<th>
+				UniversityId
+			</th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr @(item.Status == 1 ? "" : "class=danger")>
 				@if (ViewBag.status == 0 && ViewBag.role == 1)
 				{
-					<th>Статус</th>
-				}
-				<th>
-					Асосий штатдаги профессор-ўқитувчиларнинг Ф.И.Ш
-				</th>
-				<th>
-					Ўрта махсус, касб-ҳунар таълими муассасаларида номи
-				</th>
-				<th>
-					Лавозими
-				</th>
-				<th>
-					Дарс бераётган фани
-				</th>
-				<th>
-					Ўриндош
-				</th>
-				<th>
-					Соатбай
-				</th>
-				<th>
-					Буйруқ рақами ва санаси
-				</th>
-				<th>
-					Файл
-				</th>
-				<th>
-					Йил
-				</th>
-				<th>
-					UniversityId
-				</th>
-			</tr>
-
-			@foreach (var item in Model)
-			{
-				<tr @(item.Status == 1 ? "" : "class=danger")>
-					@if (ViewBag.status == 0 && ViewBag.role == 1)
-					{
-						<td>
-							@if (item.Status == 1)
-							{
-								<a href="/Jadval18/Status/@item.Id">Не принимать</a>
-							}
-							else
-							{
-								<a href="/Jadval18/Status/@item.Id">Принимать</a>
-
-							}
-						</td>
-					}
 					<td>
-						@Html.DisplayFor(modelItem => item.FullName)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Khk_ak_Name)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Post)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Subject)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Orindosh)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Soatbay)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Asos)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.AsosFile)
-						<br />
-						@using (Html.BeginForm("UploadData", "Jadval18", FormMethod.Post, new { enctype = "multipart/form-data" }))
+						@if (item.Status == 1)
 						{
-							<input type="file" name="files" />
-							<input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.Id)" />
-							<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+							<a href="/Jadval18/Status/@item.Id">Не принимать</a>
 						}
+						else
+						{
+							<a href="/Jadval18/Status/@item.Id">Принимать</a>
 
+						}
 					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Year)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.UniversityId)
-					</td>
-				</tr>
-			}
+				}
+				<td>
+					@Html.DisplayFor(modelItem => item.FullName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Khk_ak_Name)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Post)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Subject)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Orindosh)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Soatbay)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Asos)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AsosFile)
+					<br />
+					@using (Html.BeginForm("UploadData", "Jadval18", FormMethod.Post, new { enctype = "multipart/form-data" }))
+					{
+						<input type="file" name="files" />
+						<input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.Id)" />
+						<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+					}
 
-		</table>
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Year)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UniversityId)
+				</td>
+			</tr>
+		}
+
+	</table>
 	@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 	}

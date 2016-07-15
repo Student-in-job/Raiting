@@ -5,8 +5,9 @@
 		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	}
 
-	<h2>Асосий штатдаги профессор-ўқитувчиларнинг 2014 йилда нашр этган монография, нашрга тавсия этилган дарслик, ўқув қўлланма ва ўқув услубий мажмуалари ҳақида
-</h2>
+	<h2>
+		@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T11_zagolovok, ViewBag.lang, ViewBag.alfabet)
+	</h2>
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -37,48 +38,47 @@
 	}
 	@if (ViewBag.bor == true)
 	{
-		<h3>Ma'lumotlar:</h3>
-		<table class="table">
+		<table class="table table-bordered">
 			<tr>
 				@if (ViewBag.status == 0 && ViewBag.role == 1)
 				{
 					<th>Статус</th>
 				}
 				<th>
-					Муаллифларнинг Ф.И.Ш
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T11_muallif, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Ихтисослик шифри ва номи
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T11_ixtisoslik, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Монография номи
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T11_monografiya, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Монография нашр йили
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T11_nashr_yili, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Дарслик номи
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T11_darslik, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Мувофиқлаштирувчи Кенгашдан ўтганлиги тўғрисидага гувоҳнома рақами ва санаси
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T11_kengash, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Ўқув қўлланма номи
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T11_oquv_qollanma, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Мувофиқлаштирувчи Кенгашдан ўтганлиги тўғрисидага гувоҳнома рақами ва санаси
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T11_kengash, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Ўқув услубий мажмуа номи
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T11_oquv_uslubiy_majmua, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Мувофиқлаштирувчи Кенгашдан ўтганлиги тўғрисидага гувоҳнома рақами ва санаси
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T11_kengash, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Файл
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T11_fayl, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Йил
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_God, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
 					UniversityId

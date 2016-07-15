@@ -564,4 +564,362 @@
   <data name="T1_2_Zagolovok" xml:space="preserve">
     <value>Степень качества образования (по результатам опроса студентов)</value>
   </data>
+  <data name="T10_fan" xml:space="preserve">
+    <value>Наименования дисциплин, обучаемых на иностранном языке</value>
+  </data>
+  <data name="T10_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T10_horijiy_til" xml:space="preserve">
+    <value>Название иностранного языка</value>
+  </data>
+  <data name="T10_hujjat" xml:space="preserve">
+    <value>Документ, являющийся основанием для проведения обучения на иностранном языке, дата с подписью</value>
+  </data>
+  <data name="T10_talaba_soni" xml:space="preserve">
+    <value>Количество обучаемых студентов</value>
+  </data>
+  <data name="T10_talim_bosqichi" xml:space="preserve">
+    <value>Уровень образования</value>
+  </data>
+  <data name="T10_yonalish" xml:space="preserve">
+    <value>Образовательные направления (специальности) с обучением на иностранном языке</value>
+  </data>
+  <data name="T10_zagolovok" xml:space="preserve">
+    <value>СВЕДЕНИЯ о курсах (дисциплинах), проводимых на иностранном языке по образовательному направлению (специальности)</value>
+  </data>
+  <data name="T11_darslik" xml:space="preserve">
+    <value>Учебник</value>
+  </data>
+  <data name="T11_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T11_ixtisoslik" xml:space="preserve">
+    <value>Наименование и шифр специальности</value>
+  </data>
+  <data name="T11_kengash" xml:space="preserve">
+    <value>Номер и дата выдачи свидетельства о прохождении на Координационном Совете</value>
+  </data>
+  <data name="T11_monografiya" xml:space="preserve">
+    <value>Монография</value>
+  </data>
+  <data name="T11_muallif" xml:space="preserve">
+    <value>Ф.И.О. авторов</value>
+  </data>
+  <data name="T11_nashr_yili" xml:space="preserve">
+    <value>Год издания</value>
+  </data>
+  <data name="T11_nomi" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="T11_oquv_qollanma" xml:space="preserve">
+    <value>Учебное пособие</value>
+  </data>
+  <data name="T11_oquv_uslubiy_majmua" xml:space="preserve">
+    <value>Учебно-методический комплекс</value>
+  </data>
+  <data name="T18_buyruq" xml:space="preserve">
+    <value>Номер и число приказа</value>
+  </data>
+  <data name="T18_fan" xml:space="preserve">
+    <value>Дисциплина преподавания</value>
+  </data>
+  <data name="T18_fish" xml:space="preserve">
+    <value>Ф.И.О. профессоров-преподавателей основного штата</value>
+  </data>
+  <data name="T18_khk" xml:space="preserve">
+    <value>Наименование средних специальных, профессиональных образовательных заведений</value>
+  </data>
+  <data name="T18_lavozim" xml:space="preserve">
+    <value>должность</value>
+  </data>
+  <data name="T18_orindosh" xml:space="preserve">
+    <value>совместительство</value>
+  </data>
+  <data name="T18_soatbay" xml:space="preserve">
+    <value>почасовик</value>
+  </data>
+  <data name="T18_zagolovok" xml:space="preserve">
+    <value>CВЕДЕНИЯ о профессорах-преподавателях, работающих по совместительству в средних специальных, профессиональных образовательных заведениях</value>
+  </data>
+  <data name="T19_diplom" xml:space="preserve">
+    <value>Диплом</value>
+  </data>
+  <data name="T19_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T19_fish" xml:space="preserve">
+    <value>Ф.И.О. студентов</value>
+  </data>
+  <data name="T19_izoh" xml:space="preserve">
+    <value>Примечание</value>
+  </data>
+  <data name="T19_joy_sana" xml:space="preserve">
+    <value>Место и дата проведения</value>
+  </data>
+  <data name="T19_olimpiada_fani" xml:space="preserve">
+    <value>Название конкурса и предметы олимпиады</value>
+  </data>
+  <data name="T19_orni" xml:space="preserve">
+    <value>Занявшие места</value>
+  </data>
+  <data name="T19_otm" xml:space="preserve">
+    <value>Наименование вуза</value>
+  </data>
+  <data name="T19_raqam" xml:space="preserve">
+    <value>номер</value>
+  </data>
+  <data name="T19_respublika_mos" xml:space="preserve">
+    <value>Республиканские предметные олимпиады  и престижные конкурсы ( в соответствии с направлениями вуза)</value>
+  </data>
+  <data name="T19_respublika_mosmas" xml:space="preserve">
+    <value>Республиканские предметные олимпиады и престижные конкурсы ( не соответствующие  направлениям вуза)</value>
+  </data>
+  <data name="T19_seriya" xml:space="preserve">
+    <value>серия</value>
+  </data>
+  <data name="T19_sovrin" xml:space="preserve">
+    <value>Наименование награды</value>
+  </data>
+  <data name="T19_xalqaro_mos" xml:space="preserve">
+    <value>Международные предметные олимпиады  и престижные конкурсы ( в соответствии с направлениями вуза)</value>
+  </data>
+  <data name="T19_xalqaro_mosmas" xml:space="preserve">
+    <value>Международные предметные олимпиады и престижные конкурсы ( не соответствующие  направлениям вуза)</value>
+  </data>
+  <data name="T19_xalqaro_olimpiada_nomi" xml:space="preserve">
+    <value>Названия международных, республиканских олимпиад и престижных конкурсов</value>
+  </data>
+  <data name="T19_zagolovok" xml:space="preserve">
+    <value>СВЕДЕНИЯ о студентах, занявших призовые места в студенческих международных и республиканских олимпиадах, а также престижных конкурсах и получивших награждения (дипломы)</value>
+  </data>
+  <data name="T1_7_akt_soni" xml:space="preserve">
+    <value>Число удовлетворительно сдавших ИКТ</value>
+  </data>
+  <data name="T1_7_chet_tili_soni" xml:space="preserve">
+    <value>Число удовлетворительно сдавших иностранный язык</value>
+  </data>
+  <data name="T1_7_oqituvchi_soni" xml:space="preserve">
+    <value>Общее число профессоров-преподавателей</value>
+  </data>
+  <data name="T1_7_otm_nomi" xml:space="preserve">
+    <value>Название высшего образовательного заведения</value>
+  </data>
+  <data name="T1_7_zogolovok" xml:space="preserve">
+    <value>Степень знания профессорами-преподавателями иностранного языка и ИКТ</value>
+  </data>
+  <data name="T20_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T20_fish" xml:space="preserve">
+    <value>Фамилия, имя, отчество</value>
+  </data>
+  <data name="T20_korxona" xml:space="preserve">
+    <value>Место трудоустройства: предприятие (организация), с указанием полного названия и почтового индекса</value>
+  </data>
+  <data name="T20_lavozim" xml:space="preserve">
+    <value>Из них, работающие на должностях в соответствии со специальностью</value>
+  </data>
+  <data name="T20_mag_muassasa" xml:space="preserve">
+    <value>Поступившие в магистратуру, с полным наименованием образовательного учреждения и указанием почтового индекса</value>
+  </data>
+  <data name="T20_yonalish_nomi" xml:space="preserve">
+    <value>наименование образовательного направления</value>
+  </data>
+  <data name="T20_yonalish_shifr" xml:space="preserve">
+    <value>Шифр образовательного направления</value>
+  </data>
+  <data name="T20_zagolovok" xml:space="preserve">
+    <value>бакалавриат битирувчилари ва улардан  ўқишни тугатгандан кейин 6 ой мобайнида мутахассислиги бўйича ишга ва таълимнинг кейинги босқичларига ўқишга жойлашганлари ҳақида
+М А Ъ Л У М О Т</value>
+  </data>
+  <data name="T21_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T21_fish" xml:space="preserve">
+    <value>Фамилия, имя, отчество</value>
+  </data>
+  <data name="T21_korxona" xml:space="preserve">
+    <value>Место трудоустройства: предприятие (организация и др.), с указанием полного названия и почтового адреса ( с указанием электронной почты)</value>
+  </data>
+  <data name="T21_lavozim" xml:space="preserve">
+    <value>Из них, работающие на должностях в соответствии со специальностью</value>
+  </data>
+  <data name="T21_nomi" xml:space="preserve">
+    <value>Наименование специальности</value>
+  </data>
+  <data name="T21_shifr" xml:space="preserve">
+    <value>Шифр специальности</value>
+  </data>
+  <data name="T21_zagolovok" xml:space="preserve">
+    <value>СВЕДЕНИЯ о выпускниках магистратуры, их трудоустройстве по специальности в течение 6 месяцев после окончания учебы</value>
+  </data>
+  <data name="T2_1_fish" xml:space="preserve">
+    <value>Ф.И.О.</value>
+  </data>
+  <data name="T2_1_ijobiy" xml:space="preserve">
+    <value>Число студентов, получивших положительные оценки при тестировании</value>
+  </data>
+  <data name="T2_1_otm" xml:space="preserve">
+    <value>Наименование высшего учебного заведения</value>
+  </data>
+  <data name="T2_1_soni" xml:space="preserve">
+    <value>Число студентов, принявших участие в тестировании</value>
+  </data>
+  <data name="T2_1_zagolovok" xml:space="preserve">
+    <value>Оценка знаний студентов</value>
+  </data>
+  <data name="T2_2_otm" xml:space="preserve">
+    <value>Наименование высшего учебного заведения</value>
+  </data>
+  <data name="T2_2_soralgansoni" xml:space="preserve">
+    <value>Число опрошенных выпускников</value>
+  </data>
+  <data name="T2_2_taqrizsoni" xml:space="preserve">
+    <value>Число положительных рецензий работодателей на выпускников</value>
+  </data>
+  <data name="T2_2_zagolovok" xml:space="preserve">
+    <value>Оценка квалификации выпускников по результатам анкетирования работодателей</value>
+  </data>
+  <data name="T5_asos" xml:space="preserve">
+    <value>Основание (приказ, решение, договор и др)</value>
+  </data>
+  <data name="T5_dars_beradigan_fan" xml:space="preserve">
+    <value>Дисциплина</value>
+  </data>
+  <data name="T5_davlat" xml:space="preserve">
+    <value>Страна и место работы</value>
+  </data>
+  <data name="T5_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T5_Fish" xml:space="preserve">
+    <value>Ф.И.О.</value>
+  </data>
+  <data name="T5_mutaxassislik" xml:space="preserve">
+    <value>Специальность</value>
+  </data>
+  <data name="T5_Zagolovok" xml:space="preserve">
+    <value>СВЕДЕНИЯ о преподавателях, приглашенных для проведения занятий из зарубежных образовательных заведений</value>
+  </data>
+  <data name="T6_asos" xml:space="preserve">
+    <value>Основание (приказ, решение, договор и др)</value>
+  </data>
+  <data name="T6_davlat" xml:space="preserve">
+    <value>Страна</value>
+  </data>
+  <data name="T6_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T6_fish" xml:space="preserve">
+    <value>Ф.И.О.</value>
+  </data>
+  <data name="T6_magistratura" xml:space="preserve">
+    <value>Специальность магистратуры</value>
+  </data>
+  <data name="T6_talimyonalish" xml:space="preserve">
+    <value>Направление обучения</value>
+  </data>
+  <data name="T6_zagolovok" xml:space="preserve">
+    <value>СВЕДЕНИЯ об обучающихся иностранных студентах</value>
+  </data>
+  <data name="T7_almashuv_fish" xml:space="preserve">
+    <value>Ф.И.О. студентов, обучающихся в зарубежных вузах на основании программы обмена</value>
+  </data>
+  <data name="T7_almashuv_xujjat" xml:space="preserve">
+    <value>Документ, являющийся основанием программы обмена, дата с подписью</value>
+  </data>
+  <data name="T7_bakalavriat" xml:space="preserve">
+    <value>Страна и название вуза</value>
+  </data>
+  <data name="T7_bakalavr_magistratura" xml:space="preserve">
+    <value>Бакалавриат / Магистратура</value>
+  </data>
+  <data name="T7_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T7_magistratura" xml:space="preserve">
+    <value>Магистратура</value>
+  </data>
+  <data name="T7_xorij_davlat" xml:space="preserve">
+    <value>Страна и название вуза</value>
+  </data>
+  <data name="T7_xorij_talaba_FISH" xml:space="preserve">
+    <value>Ф.И.О иностранных студентов, обучающихся в вузе на основании программы обмена</value>
+  </data>
+  <data name="T7_xorij_yonalish" xml:space="preserve">
+    <value>Наименование образовательного направления (специальности)</value>
+  </data>
+  <data name="T7_yonalish" xml:space="preserve">
+    <value>Наименование образовательного направления (специальности)</value>
+  </data>
+  <data name="T7_zagolovok" xml:space="preserve">
+    <value>СВЕДЕНИЯ об участниках программы по обмену с зарубежными вузами</value>
+  </data>
+  <data name="T8_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T8_fish" xml:space="preserve">
+    <value>Ф.И.О.</value>
+  </data>
+  <data name="T8_hamkorlik_hujjat" xml:space="preserve">
+    <value>Документ, являющийся основанием программы сотрудничества, дата с подписью</value>
+  </data>
+  <data name="T8_konf_seminar" xml:space="preserve">
+    <value>Названия международных зарубежных конференций и семинаров</value>
+  </data>
+  <data name="T8_loyiha" xml:space="preserve">
+    <value>Название зарубежного проекта, выполняемый в сотрудничестве</value>
+  </data>
+  <data name="T8_oqit_stud" xml:space="preserve">
+    <value>Профессора-преподаватели / Студенты</value>
+  </data>
+  <data name="T8_prof_oqituvchilar" xml:space="preserve">
+    <value>Профессора-преподаватели</value>
+  </data>
+  <data name="T8_talabalar" xml:space="preserve">
+    <value>Студенты (бакалавриат и магистратура)</value>
+  </data>
+  <data name="T8_xorijiy_davlat" xml:space="preserve">
+    <value>Иностранное государство и название вуза</value>
+  </data>
+  <data name="T8_yonalish" xml:space="preserve">
+    <value>Наименование образовательного направления (специальности)</value>
+  </data>
+  <data name="T8_zagolovok" xml:space="preserve">
+    <value>СВЕДЕНИЯ об участниках семинаров и зарубежных международных конференций, зарубежных проектов (в сотрудничестве)</value>
+  </data>
+  <data name="T9_asos" xml:space="preserve">
+    <value>Основание (приказ, решение, договор и др)</value>
+  </data>
+  <data name="T9_fan" xml:space="preserve">
+    <value>Дисциплина проводимого занятия</value>
+  </data>
+  <data name="T9_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T9_fish" xml:space="preserve">
+    <value>Ф.И.О.</value>
+  </data>
+  <data name="T9_mutaxassislik" xml:space="preserve">
+    <value>Специальность</value>
+  </data>
+  <data name="T9_xorijiy_otm" xml:space="preserve">
+    <value>Зарубежное государство и название вуза</value>
+  </data>
+  <data name="T9_zagolovok" xml:space="preserve">
+    <value>СВЕДЕНИЯ о проведении профессорами-преподавателями занятий (лекций, семинаров и практических занятий) в 300 лучших зарубежных высших образовательных заведениях за последние 3 года</value>
+  </data>
+  <data name="T19_tanlov_turi" xml:space="preserve">
+    <value>Вид конкурса</value>
+  </data>
+  <data name="T10_kodi" xml:space="preserve">
+    <value>код</value>
+  </data>
+  <data name="T10_nomi" xml:space="preserve">
+    <value>наименование</value>
+  </data>
+  <data name="T11_zagolovok" xml:space="preserve">
+    <value>СВЕДЕНИЯ о публикации монографий профессорами –преподавателями основного штата в 2015 году</value>
+  </data>
 </root>

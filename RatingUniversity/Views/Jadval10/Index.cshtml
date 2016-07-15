@@ -7,7 +7,9 @@
 		ViewBag.Title = "Jadval10";
 	}
 
-	<h2>Таълим йўналишлари (мутахассисликлар) бўйича хорижий тилда дарс берилаётган курслар (фанлар) ҳақида </h2>
+	<h2>
+		@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T10_zagolovok, ViewBag.lang, ViewBag.alfabet)
+	</h2>
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
 		<a href="/Jadval10/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
@@ -37,39 +39,38 @@
 	}
 	@if (ViewBag.bor == true)
 	{
-		<h3>Ma'lumotlar:</h3>
-		<table class="table">
+		<table class="table table-bordered">
 			<tr>
 				@if (ViewBag.status == 0 && ViewBag.role == 1)
 				{
 					<th>Статус</th>
 				}
 				<th>
-					коди
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T10_kodi, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					номи
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T10_nomi, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Хорижий тилда дарс берилаётган фанлар номи
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T10_fan, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Хорижий тил номи
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T10_horijiy_til, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Таълим босқичи
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T10_talim_bosqichi, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Таълим олаётган талабалар сони
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T10_talaba_soni, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Хорижий тилда таълим беришга асос бўлувчи ҳужжат номи ва имзоланган санаси
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T10_hujjat, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Файл
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T10_fayl, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
-					Йил
+					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_God, ViewBag.lang, ViewBag.alfabet)
 				</th>
 				<th>
 					UniversityId

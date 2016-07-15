@@ -564,4 +564,369 @@
   <data name="T1_2_Zagolovok" xml:space="preserve">
     <value>Таълим бериш сифат даражаси (талабалардан олинган сўровнома натижалари бўйича)</value>
   </data>
+  <data name="T10_fan" xml:space="preserve">
+    <value>Хорижий тилда дарс берилаётган фанлар номи</value>
+  </data>
+  <data name="T10_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T10_horijiy_til" xml:space="preserve">
+    <value>Хорижий тил номи</value>
+  </data>
+  <data name="T10_hujjat" xml:space="preserve">
+    <value>Хорижий тилда таълим беришга асос бўлувчи ҳужжат номи ва имзоланган санаси</value>
+  </data>
+  <data name="T10_talaba_soni" xml:space="preserve">
+    <value>Таълим олаётган талабалар сони</value>
+  </data>
+  <data name="T10_talim_bosqichi" xml:space="preserve">
+    <value>Таълим босқичи</value>
+  </data>
+  <data name="T10_yonalish" xml:space="preserve">
+    <value>Хорижий тилда таълим бериладиган таълим йўналишлари (мутахассисликлар)</value>
+  </data>
+  <data name="T10_zagolovok" xml:space="preserve">
+    <value>таълим йўналишлари (мутахассисликлар) бўйича хорижий тилда дарс берилаётган курслар (фанлар) ҳақида
+М А Ъ Л У М О Т</value>
+  </data>
+  <data name="T11_darslik" xml:space="preserve">
+    <value>Дарслик</value>
+  </data>
+  <data name="T11_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T11_ixtisoslik" xml:space="preserve">
+    <value>Ихтисослик шифри ва номи</value>
+  </data>
+  <data name="T11_kengash" xml:space="preserve">
+    <value>Мувофиқлаштирувчи Кенгашдан ўтганлиги тўғрисидаги гувоҳнома рақами ва санаси</value>
+  </data>
+  <data name="T11_monografiya" xml:space="preserve">
+    <value>Монография</value>
+  </data>
+  <data name="T11_muallif" xml:space="preserve">
+    <value>Муаллифларнинг Ф.И.Ш</value>
+  </data>
+  <data name="T11_nashr_yili" xml:space="preserve">
+    <value>нашр йили</value>
+  </data>
+  <data name="T11_nomi" xml:space="preserve">
+    <value>номи</value>
+  </data>
+  <data name="T11_oquv_qollanma" xml:space="preserve">
+    <value>Ўқув қўлланма</value>
+  </data>
+  <data name="T11_oquv_uslubiy_majmua" xml:space="preserve">
+    <value>Ўқув услубий мажмуа</value>
+  </data>
+  <data name="T18_buyruq" xml:space="preserve">
+    <value>Буйруқ рақами ва санаси</value>
+  </data>
+  <data name="T18_fan" xml:space="preserve">
+    <value>Дарс бераётган фани</value>
+  </data>
+  <data name="T18_fish" xml:space="preserve">
+    <value>Асосий штатдаги профессор-ўқитувчиларнинг Ф.И.Ш.</value>
+  </data>
+  <data name="T18_khk" xml:space="preserve">
+    <value>Ўрта махсус, касб-ҳунар таълими муассасалари номи</value>
+  </data>
+  <data name="T18_lavozim" xml:space="preserve">
+    <value>Лавозими</value>
+  </data>
+  <data name="T18_orindosh" xml:space="preserve">
+    <value>Ўриндош</value>
+  </data>
+  <data name="T18_soatbay" xml:space="preserve">
+    <value>Соатбай</value>
+  </data>
+  <data name="T18_zagolovok" xml:space="preserve">
+    <value>профессор-ўқитувчиларидан ўрта махсус, касб-ҳунар таълими муассасаларида ўриндошлик асосида ишлаётганлари ҳақида
+М А Ъ Л У М О Т</value>
+  </data>
+  <data name="T19_diplom" xml:space="preserve">
+    <value>Диплом</value>
+  </data>
+  <data name="T19_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T19_fish" xml:space="preserve">
+    <value>Талабаларнинг Ф.И.Ш.</value>
+  </data>
+  <data name="T19_izoh" xml:space="preserve">
+    <value>Изоҳ</value>
+  </data>
+  <data name="T19_joy_sana" xml:space="preserve">
+    <value>Ўтказилган жой ва санаси</value>
+  </data>
+  <data name="T19_olimpiada_fani" xml:space="preserve">
+    <value>Олимпиада фанлари ва танлов номи</value>
+  </data>
+  <data name="T19_orni" xml:space="preserve">
+    <value>Эгаллаган ўрни</value>
+  </data>
+  <data name="T19_otm" xml:space="preserve">
+    <value>ОТМ номи</value>
+  </data>
+  <data name="T19_raqam" xml:space="preserve">
+    <value>рақами</value>
+  </data>
+  <data name="T19_respublika_mos" xml:space="preserve">
+    <value>Республика фан олимпиадалари ва нуфузли танловлар (ОТМ йўналишларига  мос бўлган)</value>
+  </data>
+  <data name="T19_respublika_mosmas" xml:space="preserve">
+    <value>Республика фан олимпиадалари ва нуфузли танловлар  (ОТМ йўналишларига  мос бўлмаган)</value>
+  </data>
+  <data name="T19_seriya" xml:space="preserve">
+    <value>серияси</value>
+  </data>
+  <data name="T19_sovrin" xml:space="preserve">
+    <value>Соврин номи</value>
+  </data>
+  <data name="T19_xalqaro_mos" xml:space="preserve">
+    <value>Халқаро фан олимпиадалари ва нуфузли танловлар (ОТМ йўналишларига  мос бўлган)</value>
+  </data>
+  <data name="T19_xalqaro_mosmas" xml:space="preserve">
+    <value>Халқаро фан олимпиадалари ва нуфузли танловлар (ОТМ йўналишларига  мос бўлмаган)</value>
+  </data>
+  <data name="T19_xalqaro_olimpiada_nomi" xml:space="preserve">
+    <value>Халқаро, республика  олимпиадалари ва нуфузли танловлар номи</value>
+  </data>
+  <data name="T19_zagolovok" xml:space="preserve">
+    <value>талабаларининг  халқаро ва республика олимпиадаларида ҳамда нуфузли танловларда мукофотлар (дипломлар) ва совринли ўринлар билан тақдирланганлиги ҳақида 
+М А Ъ Л У М О Т</value>
+  </data>
+  <data name="T1_7_akt_soni" xml:space="preserve">
+    <value>АКТдан қониқарли топширганлар сони</value>
+  </data>
+  <data name="T1_7_chet_tili_soni" xml:space="preserve">
+    <value>Чет тилини қониқарли топширганлар сони</value>
+  </data>
+  <data name="T1_7_oqituvchi_soni" xml:space="preserve">
+    <value>Профессор-ўқитувчиларнинг умумий сони</value>
+  </data>
+  <data name="T1_7_otm_nomi" xml:space="preserve">
+    <value>Олий таълим муассасаси номи</value>
+  </data>
+  <data name="T1_7_zogolovok" xml:space="preserve">
+    <value>Профессор-ўқитувчиларнинг чет тили ва АКТни билиш даражаси</value>
+  </data>
+  <data name="T20_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T20_fish" xml:space="preserve">
+    <value>Фамилияси, исми, шарифи</value>
+  </data>
+  <data name="T20_korxona" xml:space="preserve">
+    <value>Ишга жойлашган корхона (ташкилот ва б.) тўлиқ номи ва почта манзили</value>
+  </data>
+  <data name="T20_lavozim" xml:space="preserve">
+    <value>Шу жумладан мутахассислиги бўйича ишга кирганларнинг лавозими</value>
+  </data>
+  <data name="T20_mag_muassasa" xml:space="preserve">
+    <value>Магистратурага кирганларнинг таълим муассасаси номи ва почта манзили</value>
+  </data>
+  <data name="T20_yonalish_nomi" xml:space="preserve">
+    <value>Таълим йўналиши номи</value>
+  </data>
+  <data name="T20_yonalish_shifr" xml:space="preserve">
+    <value>Таълим йўналиши шифри</value>
+  </data>
+  <data name="T20_zagolovok" xml:space="preserve">
+    <value>бакалавриат битирувчилари ва улардан  ўқишни тугатгандан кейин 6 ой мобайнида мутахассислиги бўйича ишга ва таълимнинг кейинги босқичларига ўқишга жойлашганлари ҳақида
+М А Ъ Л У М О Т</value>
+  </data>
+  <data name="T21_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T21_fish" xml:space="preserve">
+    <value>Фамилияси, исми, шарифи</value>
+  </data>
+  <data name="T21_korxona" xml:space="preserve">
+    <value>Ишга жойлашган корхона (ташкилот ва б.) тўлиқ номи ва почта манзили (электрон почта манзили)</value>
+  </data>
+  <data name="T21_lavozim" xml:space="preserve">
+    <value>Шу жумладан мутахассислиги бўйича ишга кирганларнинг лавозими</value>
+  </data>
+  <data name="T21_nomi" xml:space="preserve">
+    <value>Мутахассислик номи</value>
+  </data>
+  <data name="T21_shifr" xml:space="preserve">
+    <value>Мутахассислик шифри</value>
+  </data>
+  <data name="T21_zagolovok" xml:space="preserve">
+    <value>магистратура битирувчилари ва улардан  ўқишни тугатгандан кейин 6 ой мобайнида мутахассислиги бўйича ишга жойлашганлари ҳақида
+М А Ъ Л У М О Т</value>
+  </data>
+  <data name="T2_1_fish" xml:space="preserve">
+    <value>Ф.И.Ш.</value>
+  </data>
+  <data name="T2_1_ijobiy" xml:space="preserve">
+    <value>Тестдан ижобий баҳо олган талабалар сони</value>
+  </data>
+  <data name="T2_1_otm" xml:space="preserve">
+    <value>Олий таълим муассасаси номи</value>
+  </data>
+  <data name="T2_1_soni" xml:space="preserve">
+    <value>Тестда иштирок этган талабалар сони</value>
+  </data>
+  <data name="T2_2_otm" xml:space="preserve">
+    <value>Олий таълим муассасаси номи</value>
+  </data>
+  <data name="T2_2_soralgansoni" xml:space="preserve">
+    <value>Сўралган битирувчилар сони</value>
+  </data>
+  <data name="T2_2_taqrizsoni" xml:space="preserve">
+    <value>Иш берувчиларнинг битирувчилар ҳақидаги ижобий тақризлари сони</value>
+  </data>
+  <data name="T2_2_zagolovok" xml:space="preserve">
+    <value>Иш берувчилар сўровномаси натижалари бўйича битирувчилар малакасини баҳолаш</value>
+  </data>
+  <data name="T5_asos" xml:space="preserve">
+    <value>Асос (буйруқ, қарор, шартнома ва бошқалар)</value>
+  </data>
+  <data name="T5_dars_beradigan_fan" xml:space="preserve">
+    <value>Дарс берадиган фани</value>
+  </data>
+  <data name="T5_davlat" xml:space="preserve">
+    <value>Давлати  ва иш жойи</value>
+  </data>
+  <data name="T5_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T5_Fish" xml:space="preserve">
+    <value>Ф.И.Ш</value>
+  </data>
+  <data name="T5_mutaxassislik" xml:space="preserve">
+    <value>Мутахассислиги</value>
+  </data>
+  <data name="T5_Zagolovok" xml:space="preserve">
+    <value>етакчи хорижий мамлакатларнинг таълим муассасаларидан таклиф  этилиб, дарс бераётган хорижий ўқитувчилар ҳақидаги
+М А Ъ Л У М О Т</value>
+  </data>
+  <data name="T6_asos" xml:space="preserve">
+    <value>Асос (буйруқ, қарор, шартнома ва бошқалар)</value>
+  </data>
+  <data name="T6_davlat" xml:space="preserve">
+    <value>Давлати</value>
+  </data>
+  <data name="T6_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T6_fish" xml:space="preserve">
+    <value>Ф.И.Ш</value>
+  </data>
+  <data name="T6_magistratura" xml:space="preserve">
+    <value>Магистратура мутахассислиги</value>
+  </data>
+  <data name="T6_talimyonalish" xml:space="preserve">
+    <value>Таълим йўналиши</value>
+  </data>
+  <data name="T6_zagolovok" xml:space="preserve">
+    <value>таълим олаётган  хорижий талабалар  ҳақида
+М А Ъ Л У М О Т</value>
+  </data>
+  <data name="T7_almashuv_fish" xml:space="preserve">
+    <value>Алмашув дастурлари асосида хорижий ОТМларида таълим олаётган талабаларнинг Ф.И.Ш.</value>
+  </data>
+  <data name="T7_almashuv_xujjat" xml:space="preserve">
+    <value>Алмашув дастурига асос бўлувчи ҳужжат номи ва имзоланган санаси</value>
+  </data>
+  <data name="T7_bakalavriat" xml:space="preserve">
+    <value>Давлат ва ОТМ номи</value>
+  </data>
+  <data name="T7_bakalavr_magistratura" xml:space="preserve">
+    <value>Бакалавриат / Магистратура</value>
+  </data>
+  <data name="T7_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T7_magistratura" xml:space="preserve">
+    <value>Магистратура</value>
+  </data>
+  <data name="T7_xorij_davlat" xml:space="preserve">
+    <value>Давлат ва ОТМ номи</value>
+  </data>
+  <data name="T7_xorij_talaba_FISH" xml:space="preserve">
+    <value>Алмашув дастурлари асосида ОТМда таълим олаётган хорижлик талабаларнинг Ф.И.Ш</value>
+  </data>
+  <data name="T7_xorij_yonalish" xml:space="preserve">
+    <value>Таълим йўналиши (мутахассислик) номи</value>
+  </data>
+  <data name="T7_yonalish" xml:space="preserve">
+    <value>Таълим йўналиши (мутахассислик) номи</value>
+  </data>
+  <data name="T7_zagolovok" xml:space="preserve">
+    <value>хориж олий таълим муассасалари билан алмашув дастурлари иштирокчилари ҳақида 
+М А Ъ Л У М О Т</value>
+  </data>
+  <data name="T8_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T8_fish" xml:space="preserve">
+    <value>Ф.И.Ш.</value>
+  </data>
+  <data name="T8_hamkorlik_hujjat" xml:space="preserve">
+    <value>Ҳамкорлик  дастурига асос бўлувчи ҳужжат номи ва имзоланган санаси</value>
+  </data>
+  <data name="T8_konf_seminar" xml:space="preserve">
+    <value>Халқаро хорижий конференция ва семинарлар номи</value>
+  </data>
+  <data name="T8_loyiha" xml:space="preserve">
+    <value>Хорижий ва ҳамкорликда бажарилаётган лойиҳалар номи</value>
+  </data>
+  <data name="T8_oqit_stud" xml:space="preserve">
+    <value>Профессор-ўқитувчилар / талабалар</value>
+  </data>
+  <data name="T8_prof_oqituvchilar" xml:space="preserve">
+    <value>Профессор-ўқитувчилар</value>
+  </data>
+  <data name="T8_talabalar" xml:space="preserve">
+    <value>Талабалар (бакалавриат ва магистратура)</value>
+  </data>
+  <data name="T8_xorijiy_davlat" xml:space="preserve">
+    <value>Хорижий Давлат ва ОТМ номи</value>
+  </data>
+  <data name="T8_yonalish" xml:space="preserve">
+    <value>Таълим йўналиши (мутахассислик) номи</value>
+  </data>
+  <data name="T8_zagolovok" xml:space="preserve">
+    <value>хорижий (ҳамкорликдаги) лойиҳалар, хорижий халқаро конференциялар ва семинарлар иштирокчилари хақидаги 
+М А Ъ Л У М О Т</value>
+  </data>
+  <data name="T9_asos" xml:space="preserve">
+    <value>Асос (буйруқ, қарор, шартнома ва бошқалар)</value>
+  </data>
+  <data name="T9_fan" xml:space="preserve">
+    <value>Дарс берадиган фани</value>
+  </data>
+  <data name="T9_fayl" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="T9_fish" xml:space="preserve">
+    <value>Ф.И.Ш.</value>
+  </data>
+  <data name="T9_mutaxassislik" xml:space="preserve">
+    <value>Мутахассислиги</value>
+  </data>
+  <data name="T9_xorijiy_otm" xml:space="preserve">
+    <value>Хорижий давлат ва ОТМ номи</value>
+  </data>
+  <data name="T9_zagolovok" xml:space="preserve">
+    <value>Профессор-ўқитувчиларидан 300 та энг яхши хорижий олий таълим муассасаларида охирги 3 йилда дарс (маъруза, семинар ва амалий машғулот) ўтганлари ҳақидаги
+М А Ъ Л У М О Т</value>
+  </data>
+  <data name="T19_tanlov_turi" xml:space="preserve">
+    <value>Танлов тури</value>
+  </data>
+  <data name="T10_kodi" xml:space="preserve">
+    <value>код</value>
+  </data>
+  <data name="T10_nomi" xml:space="preserve">
+    <value>номи</value>
+  </data>
+  <data name="T11_zagolovok" xml:space="preserve">
+    <value>асосий штатдаги профессор-ўқитувчиларнинг 2015 йилда нашр этган монографиялари ҳақида
+М А Ъ Л У М О Т</value>
+  </data>
 </root>

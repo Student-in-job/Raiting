@@ -4,7 +4,9 @@
 	ViewBag.Title = "Jadval2_2";
 }
 
-<h2>Universitetlar reytingi</h2>
+<h2>
+	@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_2_zagolovok, ViewBag.lang, ViewBag.alfabet)
+</h2>
 
 @if (ViewBag.role == 1)
 {
@@ -20,20 +22,19 @@ using (Html.BeginForm("Upload", "Jadval2_2", FormMethod.Post, new { enctype = "m
 
 @if (ViewBag.bor == true)
 {
-	<h3>Ma'lumotlar:</h3>
-	<table class="table">
+	<table class="table table-bordered">
 		<tr>
 			<th>
-				@Html.DisplayNameFor(model => model.R)
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_2_soralgansoni, ViewBag.lang, ViewBag.alfabet)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.R1)
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_2_taqrizsoni, ViewBag.lang, ViewBag.alfabet)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.UniversityId)
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_2_otm, ViewBag.lang, ViewBag.alfabet)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.Year)
+				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_God, ViewBag.lang, ViewBag.alfabet)
 			</th>
 		</tr>
 

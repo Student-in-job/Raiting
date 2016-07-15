@@ -1468,6 +1468,61 @@ namespace RatingUniversity.Langs
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to Число удовлетворительно сдавших ИКТ.
+		/// </summary>
+		public static string T1_7_akt_soni
+		{
+			get
+			{
+				return ResourceManager.GetString("T1_7_akt_soni", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Число удовлетворительно сдавших иностранный язык.
+		/// </summary>
+		public static string T1_7_chet_tili_soni
+		{
+			get
+			{
+				return ResourceManager.GetString("T1_7_chet_tili_soni", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Общее число профессоров-преподавателей.
+		/// </summary>
+		public static string T1_7_oqituvchi_soni
+		{
+			get
+			{
+				return ResourceManager.GetString("T1_7_oqituvchi_soni", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Название высшего образовательного заведения.
+		/// </summary>
+		public static string T1_7_otm_nomi
+		{
+			get
+			{
+				return ResourceManager.GetString("T1_7_otm_nomi", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Степень знания профессорами-преподавателями иностранного языка и ИКТ.
+		/// </summary>
+		public static string T1_7_zogolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T1_7_zogolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to Год.
 		/// </summary>
 		public static string T1_God
@@ -1519,6 +1574,622 @@ namespace RatingUniversity.Langs
 			get
 			{
 				return ResourceManager.GetString("T1_Zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Наименования дисциплин, обучаемых на иностранном языке.
+		/// </summary>
+		public static string T10_fan
+		{
+			get
+			{
+				return ResourceManager.GetString("T10_fan", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Файл.
+		/// </summary>
+		public static string T10_fayl
+		{
+			get
+			{
+				return ResourceManager.GetString("T10_fayl", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Название иностранного языка.
+		/// </summary>
+		public static string T10_horijiy_til
+		{
+			get
+			{
+				return ResourceManager.GetString("T10_horijiy_til", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Документ, являющийся основанием для проведения обучения на иностранном языке, дата с подписью.
+		/// </summary>
+		public static string T10_hujjat
+		{
+			get
+			{
+				return ResourceManager.GetString("T10_hujjat", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to код.
+		/// </summary>
+		public static string T10_kodi
+		{
+			get
+			{
+				return ResourceManager.GetString("T10_kodi", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to наименование.
+		/// </summary>
+		public static string T10_nomi
+		{
+			get
+			{
+				return ResourceManager.GetString("T10_nomi", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Количество обучаемых студентов.
+		/// </summary>
+		public static string T10_talaba_soni
+		{
+			get
+			{
+				return ResourceManager.GetString("T10_talaba_soni", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Уровень образования.
+		/// </summary>
+		public static string T10_talim_bosqichi
+		{
+			get
+			{
+				return ResourceManager.GetString("T10_talim_bosqichi", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Образовательные направления (специальности) с обучением на иностранном языке.
+		/// </summary>
+		public static string T10_yonalish
+		{
+			get
+			{
+				return ResourceManager.GetString("T10_yonalish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to СВЕДЕНИЯ о курсах (дисциплинах), проводимых на иностранном языке по образовательному направлению (специальности).
+		/// </summary>
+		public static string T10_zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T10_zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Учебник.
+		/// </summary>
+		public static string T11_darslik
+		{
+			get
+			{
+				return ResourceManager.GetString("T11_darslik", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Файл.
+		/// </summary>
+		public static string T11_fayl
+		{
+			get
+			{
+				return ResourceManager.GetString("T11_fayl", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Наименование и шифр специальности.
+		/// </summary>
+		public static string T11_ixtisoslik
+		{
+			get
+			{
+				return ResourceManager.GetString("T11_ixtisoslik", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Номер и дата выдачи свидетельства о прохождении на Координационном Совете.
+		/// </summary>
+		public static string T11_kengash
+		{
+			get
+			{
+				return ResourceManager.GetString("T11_kengash", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Монография.
+		/// </summary>
+		public static string T11_monografiya
+		{
+			get
+			{
+				return ResourceManager.GetString("T11_monografiya", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Ф.И.О. авторов.
+		/// </summary>
+		public static string T11_muallif
+		{
+			get
+			{
+				return ResourceManager.GetString("T11_muallif", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Год издания.
+		/// </summary>
+		public static string T11_nashr_yili
+		{
+			get
+			{
+				return ResourceManager.GetString("T11_nashr_yili", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Название.
+		/// </summary>
+		public static string T11_nomi
+		{
+			get
+			{
+				return ResourceManager.GetString("T11_nomi", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Учебное пособие.
+		/// </summary>
+		public static string T11_oquv_qollanma
+		{
+			get
+			{
+				return ResourceManager.GetString("T11_oquv_qollanma", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Учебно-методический комплекс.
+		/// </summary>
+		public static string T11_oquv_uslubiy_majmua
+		{
+			get
+			{
+				return ResourceManager.GetString("T11_oquv_uslubiy_majmua", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to СВЕДЕНИЯ о публикации монографий профессорами –преподавателями основного штата в 2015 году.
+		/// </summary>
+		public static string T11_zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T11_zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Номер и число приказа.
+		/// </summary>
+		public static string T18_buyruq
+		{
+			get
+			{
+				return ResourceManager.GetString("T18_buyruq", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Дисциплина преподавания.
+		/// </summary>
+		public static string T18_fan
+		{
+			get
+			{
+				return ResourceManager.GetString("T18_fan", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Ф.И.О. профессоров-преподавателей основного штата.
+		/// </summary>
+		public static string T18_fish
+		{
+			get
+			{
+				return ResourceManager.GetString("T18_fish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Наименование средних специальных, профессиональных образовательных заведений.
+		/// </summary>
+		public static string T18_khk
+		{
+			get
+			{
+				return ResourceManager.GetString("T18_khk", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to должность.
+		/// </summary>
+		public static string T18_lavozim
+		{
+			get
+			{
+				return ResourceManager.GetString("T18_lavozim", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to совместительство.
+		/// </summary>
+		public static string T18_orindosh
+		{
+			get
+			{
+				return ResourceManager.GetString("T18_orindosh", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to почасовик.
+		/// </summary>
+		public static string T18_soatbay
+		{
+			get
+			{
+				return ResourceManager.GetString("T18_soatbay", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to CВЕДЕНИЯ о профессорах-преподавателях, работающих по совместительству в средних специальных, профессиональных образовательных заведениях.
+		/// </summary>
+		public static string T18_zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T18_zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Диплом.
+		/// </summary>
+		public static string T19_diplom
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_diplom", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Файл.
+		/// </summary>
+		public static string T19_fayl
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_fayl", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Ф.И.О. студентов.
+		/// </summary>
+		public static string T19_fish
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_fish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Примечание.
+		/// </summary>
+		public static string T19_izoh
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_izoh", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Место и дата проведения.
+		/// </summary>
+		public static string T19_joy_sana
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_joy_sana", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Название конкурса и предметы олимпиады.
+		/// </summary>
+		public static string T19_olimpiada_fani
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_olimpiada_fani", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Занявшие места.
+		/// </summary>
+		public static string T19_orni
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_orni", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Наименование вуза.
+		/// </summary>
+		public static string T19_otm
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_otm", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to номер.
+		/// </summary>
+		public static string T19_raqam
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_raqam", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Республиканские предметные олимпиады  и престижные конкурсы ( в соответствии с направлениями вуза).
+		/// </summary>
+		public static string T19_respublika_mos
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_respublika_mos", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Республиканские предметные олимпиады и престижные конкурсы ( не соответствующие  направлениям вуза).
+		/// </summary>
+		public static string T19_respublika_mosmas
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_respublika_mosmas", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to серия.
+		/// </summary>
+		public static string T19_seriya
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_seriya", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Наименование награды.
+		/// </summary>
+		public static string T19_sovrin
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_sovrin", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Вид конкурса.
+		/// </summary>
+		public static string T19_tanlov_turi
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_tanlov_turi", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Международные предметные олимпиады  и престижные конкурсы ( в соответствии с направлениями вуза).
+		/// </summary>
+		public static string T19_xalqaro_mos
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_xalqaro_mos", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Международные предметные олимпиады и престижные конкурсы ( не соответствующие  направлениям вуза).
+		/// </summary>
+		public static string T19_xalqaro_mosmas
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_xalqaro_mosmas", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Названия международных, республиканских олимпиад и престижных конкурсов.
+		/// </summary>
+		public static string T19_xalqaro_olimpiada_nomi
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_xalqaro_olimpiada_nomi", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to СВЕДЕНИЯ о студентах, занявших призовые места в студенческих международных и республиканских олимпиадах, а также престижных конкурсах и получивших награждения (дипломы).
+		/// </summary>
+		public static string T19_zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T19_zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Ф.И.О..
+		/// </summary>
+		public static string T2_1_fish
+		{
+			get
+			{
+				return ResourceManager.GetString("T2_1_fish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Число студентов, получивших положительные оценки при тестировании.
+		/// </summary>
+		public static string T2_1_ijobiy
+		{
+			get
+			{
+				return ResourceManager.GetString("T2_1_ijobiy", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Наименование высшего учебного заведения.
+		/// </summary>
+		public static string T2_1_otm
+		{
+			get
+			{
+				return ResourceManager.GetString("T2_1_otm", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Число студентов, принявших участие в тестировании.
+		/// </summary>
+		public static string T2_1_soni
+		{
+			get
+			{
+				return ResourceManager.GetString("T2_1_soni", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Оценка знаний студентов.
+		/// </summary>
+		public static string T2_1_zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T2_1_zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Наименование высшего учебного заведения.
+		/// </summary>
+		public static string T2_2_otm
+		{
+			get
+			{
+				return ResourceManager.GetString("T2_2_otm", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Число опрошенных выпускников.
+		/// </summary>
+		public static string T2_2_soralgansoni
+		{
+			get
+			{
+				return ResourceManager.GetString("T2_2_soralgansoni", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Число положительных рецензий работодателей на выпускников.
+		/// </summary>
+		public static string T2_2_taqrizsoni
+		{
+			get
+			{
+				return ResourceManager.GetString("T2_2_taqrizsoni", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Оценка квалификации выпускников по результатам анкетирования работодателей.
+		/// </summary>
+		public static string T2_2_zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T2_2_zagolovok", resourceCulture);
 			}
 		}
 
@@ -1629,6 +2300,645 @@ namespace RatingUniversity.Langs
 			get
 			{
 				return ResourceManager.GetString("T2_Zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Файл.
+		/// </summary>
+		public static string T20_fayl
+		{
+			get
+			{
+				return ResourceManager.GetString("T20_fayl", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Фамилия, имя, отчество.
+		/// </summary>
+		public static string T20_fish
+		{
+			get
+			{
+				return ResourceManager.GetString("T20_fish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Место трудоустройства: предприятие (организация), с указанием полного названия и почтового индекса.
+		/// </summary>
+		public static string T20_korxona
+		{
+			get
+			{
+				return ResourceManager.GetString("T20_korxona", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Из них, работающие на должностях в соответствии со специальностью.
+		/// </summary>
+		public static string T20_lavozim
+		{
+			get
+			{
+				return ResourceManager.GetString("T20_lavozim", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Поступившие в магистратуру, с полным наименованием образовательного учреждения и указанием почтового индекса.
+		/// </summary>
+		public static string T20_mag_muassasa
+		{
+			get
+			{
+				return ResourceManager.GetString("T20_mag_muassasa", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to наименование образовательного направления.
+		/// </summary>
+		public static string T20_yonalish_nomi
+		{
+			get
+			{
+				return ResourceManager.GetString("T20_yonalish_nomi", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Шифр образовательного направления.
+		/// </summary>
+		public static string T20_yonalish_shifr
+		{
+			get
+			{
+				return ResourceManager.GetString("T20_yonalish_shifr", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to бакалавриат битирувчилари ва улардан  ўқишни тугатгандан кейин 6 ой мобайнида мутахассислиги бўйича ишга ва таълимнинг кейинги босқичларига ўқишга жойлашганлари ҳақида
+		///М А Ъ Л У М О Т.
+		/// </summary>
+		public static string T20_zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T20_zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Файл.
+		/// </summary>
+		public static string T21_fayl
+		{
+			get
+			{
+				return ResourceManager.GetString("T21_fayl", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Фамилия, имя, отчество.
+		/// </summary>
+		public static string T21_fish
+		{
+			get
+			{
+				return ResourceManager.GetString("T21_fish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Место трудоустройства: предприятие (организация и др.), с указанием полного названия и почтового адреса ( с указанием электронной почты).
+		/// </summary>
+		public static string T21_korxona
+		{
+			get
+			{
+				return ResourceManager.GetString("T21_korxona", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Из них, работающие на должностях в соответствии со специальностью.
+		/// </summary>
+		public static string T21_lavozim
+		{
+			get
+			{
+				return ResourceManager.GetString("T21_lavozim", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Наименование специальности.
+		/// </summary>
+		public static string T21_nomi
+		{
+			get
+			{
+				return ResourceManager.GetString("T21_nomi", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Шифр специальности.
+		/// </summary>
+		public static string T21_shifr
+		{
+			get
+			{
+				return ResourceManager.GetString("T21_shifr", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to СВЕДЕНИЯ о выпускниках магистратуры, их трудоустройстве по специальности в течение 6 месяцев после окончания учебы.
+		/// </summary>
+		public static string T21_zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T21_zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Основание (приказ, решение, договор и др).
+		/// </summary>
+		public static string T5_asos
+		{
+			get
+			{
+				return ResourceManager.GetString("T5_asos", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Дисциплина.
+		/// </summary>
+		public static string T5_dars_beradigan_fan
+		{
+			get
+			{
+				return ResourceManager.GetString("T5_dars_beradigan_fan", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Страна и место работы.
+		/// </summary>
+		public static string T5_davlat
+		{
+			get
+			{
+				return ResourceManager.GetString("T5_davlat", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Файл.
+		/// </summary>
+		public static string T5_fayl
+		{
+			get
+			{
+				return ResourceManager.GetString("T5_fayl", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Ф.И.О..
+		/// </summary>
+		public static string T5_Fish
+		{
+			get
+			{
+				return ResourceManager.GetString("T5_Fish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Специальность.
+		/// </summary>
+		public static string T5_mutaxassislik
+		{
+			get
+			{
+				return ResourceManager.GetString("T5_mutaxassislik", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to СВЕДЕНИЯ о преподавателях, приглашенных для проведения занятий из зарубежных образовательных заведений.
+		/// </summary>
+		public static string T5_Zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T5_Zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Основание (приказ, решение, договор и др).
+		/// </summary>
+		public static string T6_asos
+		{
+			get
+			{
+				return ResourceManager.GetString("T6_asos", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Страна.
+		/// </summary>
+		public static string T6_davlat
+		{
+			get
+			{
+				return ResourceManager.GetString("T6_davlat", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Файл.
+		/// </summary>
+		public static string T6_fayl
+		{
+			get
+			{
+				return ResourceManager.GetString("T6_fayl", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Ф.И.О..
+		/// </summary>
+		public static string T6_fish
+		{
+			get
+			{
+				return ResourceManager.GetString("T6_fish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Специальность магистратуры.
+		/// </summary>
+		public static string T6_magistratura
+		{
+			get
+			{
+				return ResourceManager.GetString("T6_magistratura", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Направление обучения.
+		/// </summary>
+		public static string T6_talimyonalish
+		{
+			get
+			{
+				return ResourceManager.GetString("T6_talimyonalish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to СВЕДЕНИЯ об обучающихся иностранных студентах.
+		/// </summary>
+		public static string T6_zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T6_zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Ф.И.О. студентов, обучающихся в зарубежных вузах на основании программы обмена.
+		/// </summary>
+		public static string T7_almashuv_fish
+		{
+			get
+			{
+				return ResourceManager.GetString("T7_almashuv_fish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Документ, являющийся основанием программы обмена, дата с подписью.
+		/// </summary>
+		public static string T7_almashuv_xujjat
+		{
+			get
+			{
+				return ResourceManager.GetString("T7_almashuv_xujjat", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Бакалавриат / Магистратура.
+		/// </summary>
+		public static string T7_bakalavr_magistratura
+		{
+			get
+			{
+				return ResourceManager.GetString("T7_bakalavr_magistratura", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Страна и название вуза.
+		/// </summary>
+		public static string T7_bakalavriat
+		{
+			get
+			{
+				return ResourceManager.GetString("T7_bakalavriat", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Файл.
+		/// </summary>
+		public static string T7_fayl
+		{
+			get
+			{
+				return ResourceManager.GetString("T7_fayl", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Магистратура.
+		/// </summary>
+		public static string T7_magistratura
+		{
+			get
+			{
+				return ResourceManager.GetString("T7_magistratura", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Страна и название вуза.
+		/// </summary>
+		public static string T7_xorij_davlat
+		{
+			get
+			{
+				return ResourceManager.GetString("T7_xorij_davlat", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Ф.И.О иностранных студентов, обучающихся в вузе на основании программы обмена.
+		/// </summary>
+		public static string T7_xorij_talaba_FISH
+		{
+			get
+			{
+				return ResourceManager.GetString("T7_xorij_talaba_FISH", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Наименование образовательного направления (специальности).
+		/// </summary>
+		public static string T7_xorij_yonalish
+		{
+			get
+			{
+				return ResourceManager.GetString("T7_xorij_yonalish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Наименование образовательного направления (специальности).
+		/// </summary>
+		public static string T7_yonalish
+		{
+			get
+			{
+				return ResourceManager.GetString("T7_yonalish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to СВЕДЕНИЯ об участниках программы по обмену с зарубежными вузами.
+		/// </summary>
+		public static string T7_zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T7_zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Файл.
+		/// </summary>
+		public static string T8_fayl
+		{
+			get
+			{
+				return ResourceManager.GetString("T8_fayl", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Ф.И.О..
+		/// </summary>
+		public static string T8_fish
+		{
+			get
+			{
+				return ResourceManager.GetString("T8_fish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Документ, являющийся основанием программы сотрудничества, дата с подписью.
+		/// </summary>
+		public static string T8_hamkorlik_hujjat
+		{
+			get
+			{
+				return ResourceManager.GetString("T8_hamkorlik_hujjat", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Названия международных зарубежных конференций и семинаров.
+		/// </summary>
+		public static string T8_konf_seminar
+		{
+			get
+			{
+				return ResourceManager.GetString("T8_konf_seminar", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Название зарубежного проекта, выполняемый в сотрудничестве.
+		/// </summary>
+		public static string T8_loyiha
+		{
+			get
+			{
+				return ResourceManager.GetString("T8_loyiha", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Профессора-преподаватели / Студенты.
+		/// </summary>
+		public static string T8_oqit_stud
+		{
+			get
+			{
+				return ResourceManager.GetString("T8_oqit_stud", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Профессора-преподаватели.
+		/// </summary>
+		public static string T8_prof_oqituvchilar
+		{
+			get
+			{
+				return ResourceManager.GetString("T8_prof_oqituvchilar", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Студенты (бакалавриат и магистратура).
+		/// </summary>
+		public static string T8_talabalar
+		{
+			get
+			{
+				return ResourceManager.GetString("T8_talabalar", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Иностранное государство и название вуза.
+		/// </summary>
+		public static string T8_xorijiy_davlat
+		{
+			get
+			{
+				return ResourceManager.GetString("T8_xorijiy_davlat", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Наименование образовательного направления (специальности).
+		/// </summary>
+		public static string T8_yonalish
+		{
+			get
+			{
+				return ResourceManager.GetString("T8_yonalish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to СВЕДЕНИЯ об участниках семинаров и зарубежных международных конференций, зарубежных проектов (в сотрудничестве).
+		/// </summary>
+		public static string T8_zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T8_zagolovok", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Основание (приказ, решение, договор и др).
+		/// </summary>
+		public static string T9_asos
+		{
+			get
+			{
+				return ResourceManager.GetString("T9_asos", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Дисциплина проводимого занятия.
+		/// </summary>
+		public static string T9_fan
+		{
+			get
+			{
+				return ResourceManager.GetString("T9_fan", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Файл.
+		/// </summary>
+		public static string T9_fayl
+		{
+			get
+			{
+				return ResourceManager.GetString("T9_fayl", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Ф.И.О..
+		/// </summary>
+		public static string T9_fish
+		{
+			get
+			{
+				return ResourceManager.GetString("T9_fish", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Специальность.
+		/// </summary>
+		public static string T9_mutaxassislik
+		{
+			get
+			{
+				return ResourceManager.GetString("T9_mutaxassislik", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Зарубежное государство и название вуза.
+		/// </summary>
+		public static string T9_xorijiy_otm
+		{
+			get
+			{
+				return ResourceManager.GetString("T9_xorijiy_otm", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to СВЕДЕНИЯ о проведении профессорами-преподавателями занятий (лекций, семинаров и практических занятий) в 300 лучших зарубежных высших образовательных заведениях за последние 3 года.
+		/// </summary>
+		public static string T9_zagolovok
+		{
+			get
+			{
+				return ResourceManager.GetString("T9_zagolovok", resourceCulture);
 			}
 		}
 

@@ -35,120 +35,119 @@
 	}
 	@if (ViewBag.bor == true)
 	{
-		<h3>Данные:</h3>
-		<table class="table">
-			<tr>
+	<table class="table table-bordered">
+		<tr>
+			@if (ViewBag.status == 0 && ViewBag.role == 1)
+			{
+				<th>Статус</th>
+			}
+			<th>
+				Асосий штатдаги профессор-ўқитувчиларнинг Ф.И.Ш
+			</th>
+			<th>
+				Туғилган йили
+			</th>
+			<th>
+				Лавозими
+			</th>
+			<th>
+				Ставкаси
+			</th>
+			<th>
+				Қайси ОТМни қачон тугатган
+			</th>
+			<th>
+				Диплом бўйича ихтисослиги
+			</th>
+			<th>
+				Диплом бўйича мутахассислиги
+			</th>
+			<th>
+				Илмий даражаси
+			</th>
+			<th>
+				Илмий унвони
+			</th>
+			<th>
+				Қайси йилдан кафедрада ишлайди
+			</th>
+			<th>
+				Охирги марта малака оширган йили
+			</th>
+			<th>
+				Қайси фанлардан дарс беради
+			</th>
+			<th>
+				Йил
+			</th>
+			<th>
+				UniversityId
+			</th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr @(item.Status == 1 ? "" : "class=danger")>
 				@if (ViewBag.status == 0 && ViewBag.role == 1)
 				{
-					<th>Статус</th>
+					<td>
+						@if (item.Status == 1)
+						{
+							<a href="/Jadval32/Status/@item.Id">Не принимать</a>
+						}
+						else
+						{
+							<a href="/Jadval32/Status/@item.Id">Принимать</a>
+
+						}
+					</td>
 				}
-				<th>
-					Асосий штатдаги профессор-ўқитувчиларнинг Ф.И.Ш
-				</th>
-				<th>
-					Туғилган йили
-				</th>
-				<th>
-					Лавозими
-				</th>
-				<th>
-					Ставкаси
-				</th>
-				<th>
-					Қайси ОТМни қачон тугатган
-				</th>
-				<th>
-					Диплом бўйича ихтисослиги
-				</th>
-				<th>
-					Диплом бўйича мутахассислиги
-				</th>
-				<th>
-					Илмий даражаси
-				</th>
-				<th>
-					Илмий унвони
-				</th>
-				<th>
-					Қайси йилдан кафедрада ишлайди
-				</th>
-				<th>
-					Охирги марта малака оширган йили
-				</th>
-				<th>
-					Қайси фанлардан дарс беради
-				</th>
-				<th>
-					Йил
-				</th>
-				<th>
-					UniversityId
-				</th>
+				<td>
+					@Html.DisplayFor(modelItem => item.FullName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.BirthDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Post)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.stavka)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.GraduatedOtm)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Diplom_ixtisoslik)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Diplom_mutaxassislik)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Ilmiy_daraja)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Ilmiy_unvon)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Qaysi_yildan_kafedrada_ishlaydi)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Oxirgi_malaka_oshirgan_yili)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Subjects)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Year)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UniversityId)
+				</td>
 			</tr>
+		}
 
-			@foreach (var item in Model)
-			{
-				<tr @(item.Status == 1 ? "" : "class=danger")>
-					@if (ViewBag.status == 0 && ViewBag.role == 1)
-					{
-						<td>
-							@if (item.Status == 1)
-							{
-								<a href="/Jadval32/Status/@item.Id">Не принимать</a>
-							}
-							else
-							{
-								<a href="/Jadval32/Status/@item.Id">Принимать</a>
-
-							}
-						</td>
-					}
-					<td>
-						@Html.DisplayFor(modelItem => item.FullName)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.BirthDate)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Post)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.stavka)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.GraduatedOtm)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Diplom_ixtisoslik)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Diplom_mutaxassislik)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Ilmiy_daraja)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Ilmiy_unvon)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Qaysi_yildan_kafedrada_ishlaydi)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Oxirgi_malaka_oshirgan_yili)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Subjects)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Year)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.UniversityId)
-					</td>
-				</tr>
-			}
-
-		</table>
+	</table>
 		@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 
 	}
