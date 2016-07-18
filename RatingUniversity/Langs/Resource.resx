@@ -922,4 +922,16 @@
   <data name="T11_zagolovok" xml:space="preserve">
     <value>СВЕДЕНИЯ о публикации монографий профессорами –преподавателями основного штата в 2015 году</value>
   </data>
+  <data name="DTM_danniye_ne_podtverjdeni" xml:space="preserve">
+    <value>Данные не подтверждены</value>
+  </data>
+  <data name="DTM_danniye_podtverjdeni" xml:space="preserve">
+    <value>Данные подтверждены</value>
+  </data>
+  <data name="DTM_podtverjdat" xml:space="preserve">
+    <value>Подтверждать</value>
+  </data>
+  <data name="DTM_vremya_istek" xml:space="preserve">
+    <value>Время истёк</value>
+  </data>
 </root>

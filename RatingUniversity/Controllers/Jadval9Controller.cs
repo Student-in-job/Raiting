@@ -53,6 +53,8 @@ namespace RatingUniversity.Controllers
 			ViewBag.role = 0;
 			if (User.IsInRole("admin")) ViewBag.role = 1;
 			ViewBag.UniverId = UniverId;
+			IQueryable<university> university = db.university.Where(model => model.id == UniverId);
+			ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
 //			return View(list.ToList());
 			int pageSize = 50;
 			int pageNumber = (page ?? 1);
@@ -135,8 +137,22 @@ namespace RatingUniversity.Controllers
 		{
 			int UniverId = this.id;
 			List<Jadval9> uploadExl = new List<Jadval9>();
-			for (int i = 4; i < data.Rows.Count - 7; i++)
+			bool flag = false;
+			for (int i = 1; i < data.Rows.Count; i++)
 			{
+				if ((data.Rows[i][0] != DBNull.Value) && (data.Rows[i][1] != DBNull.Value))
+				{
+					if (!flag)
+					{
+						flag = Convert.ToString(data.Rows[i][0]) == "1" && Convert.ToString(data.Rows[i][1]) == "2";
+						continue;
+					}
+				}
+				else
+				{
+					continue;
+				}
+				if (!flag) continue;
 				Jadval9 NewUpload = new Jadval9();
 				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
 				NewUpload.State_otm= Convert.ToString(data.Rows[i][2]);

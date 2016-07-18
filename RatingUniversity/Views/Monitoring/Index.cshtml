@@ -1,16 +1,13 @@
-﻿@model IEnumerable<RatingUniversity.Models.Monitoring>
+﻿@model List<RatingUniversity.Models.Monitorings>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Monitoring";
 }
 
-<h2>Index</h2>
+<h2>Monitoring</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
+<table class="table table-bordered">
+    <tr>@*
         <th>
             @Html.DisplayNameFor(model => model.J1)
         </th>
@@ -121,8 +118,120 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.UniverId)
-        </th>
-        <th></th>
+        </th>*@
+
+		<th>
+			J1
+		</th>
+		<th>
+			J2
+		</th>
+		<th>
+			J3
+		</th>
+		<th>
+			J4
+		</th>
+		<th>
+			J5
+		</th>
+		<th>
+			J6
+		</th>
+		<th>
+			J7
+		</th>
+		<th>
+			J8
+		</th>
+		<th>
+			J9
+		</th>
+		<th>
+			J10
+		</th>
+		<th>
+			J11
+		</th>
+		<th>
+			J12
+		</th>
+		<th>
+			J13
+		</th>
+		<th>
+			J14
+		</th>
+		<th>
+			J15
+		</th>
+		<th>
+			J16
+		</th>
+		<th>
+			J17
+		</th>
+		<th>
+			J18
+		</th>
+		<th>
+			J19
+		</th>
+		<th>
+			J20
+		</th>
+		<th>
+			J21
+		</th>
+		<th>
+			J22
+		</th>
+		<th>
+			J23
+		</th>
+		<th>
+			J24
+		</th>
+		<th>
+			J25
+		</th>
+		<th>
+			J26)	
+		</th>
+		<th>
+			J27
+		</th>
+		<th>
+			J28
+		</th>
+		<th>
+			J29
+		</th>
+		<th>
+			J30
+		</th>
+		<th>
+			J31
+		</th>
+		<th>
+			J1_2
+		</th>
+		<th>
+			J1_7
+		</th>
+		<th>
+			J2_1
+		</th>
+		<th>
+			J2_2
+		</th>
+		<th>
+			Year
+		</th>
+		<th>
+			UniverId
+		</th>
+
     </tr>
 
 @foreach (var item in Model) {
@@ -237,11 +346,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UniverId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

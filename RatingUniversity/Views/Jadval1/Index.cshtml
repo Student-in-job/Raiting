@@ -4,9 +4,9 @@
 	<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 
-	@{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
-
-	<h2>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Top300, ViewBag.lang, ViewBag.alfabet)</h2>
+	@{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
+	   int count = 1;
+	    }
 
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
@@ -36,11 +36,13 @@
 	{
 		<a href="/Jadval1/Tasdiqlash">Подтверждать</a>
 	}
+						   	<h4 class="text-center font-bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Top300, ViewBag.lang, ViewBag.alfabet)</h4>
 
 	@if (ViewBag.bor == true)
 	{ 
 		<table class="table table-bordered">
-			<tr>
+			<tr class="txtcenter">
+				<th>№</th>
 				<th>
 					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_OtmName, ViewBag.lang, ViewBag.alfabet)
 				</th>
@@ -57,6 +59,7 @@
 			@foreach (var item in Model)
 			{
 				<tr>
+					<td>@count</td>@{count++;}
 					<td>
 						@Html.DisplayFor(modelItem => item.OtmName)
 					</td>

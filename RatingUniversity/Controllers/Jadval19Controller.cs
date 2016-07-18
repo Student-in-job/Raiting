@@ -53,6 +53,8 @@ namespace RatingUniversity.Controllers
 			ViewBag.role = 0;
 			if (User.IsInRole("admin")) ViewBag.role = 1;
 			ViewBag.UniverId = UniverId;
+			IQueryable<university> university = db.university.Where(model => model.id == UniverId);
+			ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
 //			return View(list.ToList());
 			int pageSize = 50;
 			int pageNumber = (page ?? 1);
@@ -131,13 +133,28 @@ namespace RatingUniversity.Controllers
 
 			int UniverId = this.id;
 			List<Jadval19> uploadExl = new List<Jadval19>();
-			for (int i = 4; i < data.Rows.Count - 7; i++)
+			bool flag = false;
+			for (int i = 1; i < data.Rows.Count; i++)
 			{
+				if ((data.Rows[i][0] != DBNull.Value) && (data.Rows[i][1] != DBNull.Value))
+				{
+					if (!flag)
+					{
+						flag = Convert.ToString(data.Rows[i][0]) == "1" && Convert.ToString(data.Rows[i][1]) == "2";
+						continue;
+					}
+				}
+				else
+				{
+					continue;
+				}
+				if (!flag) continue;
 				Jadval19 NewUpload = new Jadval19();
-				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
-				NewUpload.TanlovName = Convert.ToString(data.Rows[i][2]);
-				NewUpload.Tanlov_joy_date = Convert.ToString(data.Rows[i][3]);
-				NewUpload.SubjectName = Convert.ToString(data.Rows[i][4]);
+				NewUpload.FullName = Convert.ToString(data.Rows[i][2]);
+				NewUpload.TanlovName = Convert.ToString(data.Rows[i][3]);
+				NewUpload.Tanlov_joy_date = Convert.ToString(data.Rows[i][4]);
+	
+				//NewUpload.SubjectName = Convert.ToString(data.Rows[i][1]);
 				NewUpload.SubjectName = Convert.ToString(data.Rows[i][5]);
 				NewUpload.EgallaganPosition = Convert.ToString(data.Rows[i][6]);
 				NewUpload.DiplomSeria = Convert.ToString(data.Rows[i][7]);
@@ -157,13 +174,27 @@ namespace RatingUniversity.Controllers
 			ds = new DataSet();
 			adapter.Fill(ds, "T2");
 			data = ds.Tables["T2"];
-			for (int i = 4; i < data.Rows.Count - 7; i++)
+			flag = false;
+			for (int i = 1; i < data.Rows.Count; i++)
 			{
+				if ((data.Rows[i][0] != DBNull.Value) && (data.Rows[i][1] != DBNull.Value))
+				{
+					if (!flag)
+					{
+						flag = Convert.ToString(data.Rows[i][0]) == "1" && Convert.ToString(data.Rows[i][1]) == "2";
+						continue;
+					}
+				}
+				else
+				{
+					continue;
+				}
+				if (!flag) continue;
 				Jadval19 NewUpload = new Jadval19();
-				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
-				NewUpload.TanlovName = Convert.ToString(data.Rows[i][2]);
-				NewUpload.Tanlov_joy_date = Convert.ToString(data.Rows[i][3]);
-				NewUpload.SubjectName = Convert.ToString(data.Rows[i][4]);
+				NewUpload.FullName = Convert.ToString(data.Rows[i][2]);
+				NewUpload.TanlovName = Convert.ToString(data.Rows[i][3]);
+				NewUpload.Tanlov_joy_date = Convert.ToString(data.Rows[i][4]);
+//				NewUpload.SubjectName = Convert.ToString(data.Rows[i][4]);
 				NewUpload.SubjectName = Convert.ToString(data.Rows[i][5]);
 				NewUpload.EgallaganPosition = Convert.ToString(data.Rows[i][6]);
 				NewUpload.DiplomSeria = Convert.ToString(data.Rows[i][7]);
@@ -182,13 +213,27 @@ namespace RatingUniversity.Controllers
 			ds = new DataSet();
 			adapter.Fill(ds, "T3");
 			data = ds.Tables["T3"];
-			for (int i = 4; i < data.Rows.Count - 7; i++)
+			flag = false;
+			for (int i = 1; i < data.Rows.Count; i++)
 			{
+				if ((data.Rows[i][0] != DBNull.Value) && (data.Rows[i][1] != DBNull.Value))
+				{
+					if (!flag)
+					{
+						flag = Convert.ToString(data.Rows[i][0]) == "1" && Convert.ToString(data.Rows[i][1]) == "2";
+						continue;
+					}
+				}
+				else
+				{
+					continue;
+				}
+				if (!flag) continue;
 				Jadval19 NewUpload = new Jadval19();
-				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
-				NewUpload.TanlovName = Convert.ToString(data.Rows[i][2]);
-				NewUpload.Tanlov_joy_date = Convert.ToString(data.Rows[i][3]);
-				NewUpload.SubjectName = Convert.ToString(data.Rows[i][4]);
+				NewUpload.FullName = Convert.ToString(data.Rows[i][2]);
+				NewUpload.TanlovName = Convert.ToString(data.Rows[i][3]);
+				NewUpload.Tanlov_joy_date = Convert.ToString(data.Rows[i][4]);
+				//NewUpload.SubjectName = Convert.ToString(data.Rows[i][4]);
 				NewUpload.SubjectName = Convert.ToString(data.Rows[i][5]);
 				NewUpload.EgallaganPosition = Convert.ToString(data.Rows[i][6]);
 				NewUpload.DiplomSeria = Convert.ToString(data.Rows[i][7]);
@@ -207,13 +252,27 @@ namespace RatingUniversity.Controllers
 			ds = new DataSet();
 			adapter.Fill(ds, "T4");
 			data = ds.Tables["T4"];
-			for (int i = 4; i < data.Rows.Count - 7; i++)
+			flag = false;
+			for (int i = 1; i < data.Rows.Count; i++)
 			{
+				if ((data.Rows[i][0] != DBNull.Value) && (data.Rows[i][1] != DBNull.Value))
+				{
+					if (!flag)
+					{
+						flag = Convert.ToString(data.Rows[i][0]) == "1" && Convert.ToString(data.Rows[i][1]) == "2";
+						continue;
+					}
+				}
+				else
+				{
+					continue;
+				}
+				if (!flag) continue;
 				Jadval19 NewUpload = new Jadval19();
-				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
-				NewUpload.TanlovName = Convert.ToString(data.Rows[i][2]);
-				NewUpload.Tanlov_joy_date = Convert.ToString(data.Rows[i][3]);
-				NewUpload.SubjectName = Convert.ToString(data.Rows[i][4]);
+				NewUpload.FullName = Convert.ToString(data.Rows[i][2]);
+				NewUpload.TanlovName = Convert.ToString(data.Rows[i][3]);
+				NewUpload.Tanlov_joy_date = Convert.ToString(data.Rows[i][4]);
+				//NewUpload.SubjectName = Convert.ToString(data.Rows[i][4]);
 				NewUpload.SubjectName = Convert.ToString(data.Rows[i][5]);
 				NewUpload.EgallaganPosition = Convert.ToString(data.Rows[i][6]);
 				NewUpload.DiplomSeria = Convert.ToString(data.Rows[i][7]);
@@ -245,49 +304,6 @@ namespace RatingUniversity.Controllers
 			}
 		}
 
-		private void GetExcelData_Jadval19(DataTable data)
-		{
-			int UniverId = this.id;
-			List<Jadval19> uploadExl = new List<Jadval19>();
-			for (int i = 5; i < data.Rows.Count - 8; i++)
-			{
-				Jadval19 NewUpload = new Jadval19();
-				//4ta listli!!!!!!!
-				NewUpload.FullName = Convert.ToString(data.Rows[i][1]);
-				NewUpload.TanlovName = Convert.ToString(data.Rows[i][2]);
-				NewUpload.Tanlov_joy_date = Convert.ToString(data.Rows[i][3]);
-				NewUpload.SubjectName = Convert.ToString(data.Rows[i][4]);
-				NewUpload.SubjectName = Convert.ToString(data.Rows[i][5]);
-				NewUpload.EgallaganPosition = Convert.ToString(data.Rows[i][6]);
-				NewUpload.DiplomSeria = Convert.ToString(data.Rows[i][7]);
-				NewUpload.DiplomNumber = Convert.ToString(data.Rows[i][8]);
-				NewUpload.SovrinName = Convert.ToString(data.Rows[i][9]);
-				NewUpload.Description = Convert.ToString(data.Rows[i][10]);
-				NewUpload.AsosFile = "#"+Convert.ToString(data.Rows[i][11]);
-				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
-				NewUpload.Status = 1;
-				NewUpload.UniversityId = UniverId;
-
-				uploadExl.Add(NewUpload);
-			}
-
-			using (TablesContext db = new TablesContext())
-			{
-				int yil = Int32.Parse(DateTime.Now.Year.ToString());
-				IQueryable<Jadval19> deleteRows = db.Jadval19.Where(x => x.Year == yil).Where(y => y.UniversityId == UniverId);
-				foreach (var row in deleteRows)
-				{
-					db.Jadval19.Remove(row);
-				}
-				db.SaveChanges();
-
-				foreach (var t in uploadExl)
-					db.Jadval19.Add(t);
-				db.SaveChanges();
-				MonitoringUpdate.Update(UniverId, "J19", 0, yil);
-			}
-
-		}
 
 		[Authorize(Roles = "user")]
 		public ActionResult UploadData(IEnumerable<HttpPostedFileBase> files, int id)

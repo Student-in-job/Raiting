@@ -53,6 +53,8 @@ namespace RatingUniversity.Controllers
 			ViewBag.role = 0;
 			if (User.IsInRole("admin")) ViewBag.role = 1;
 			ViewBag.UniverId = UniverId;
+			IQueryable<university> university = db.university.Where(model => model.id == UniverId);
+			ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
 //			return View(list.ToList());
 			int pageSize = 50;
 			int pageNumber = (page ?? 1);
@@ -138,8 +140,22 @@ namespace RatingUniversity.Controllers
 		{
 			int UniverId = this.id;
 			List<Jadval10> uploadExl = new List<Jadval10>();
-			for (int i = 5; i < data.Rows.Count - 8; i++)
+			bool flag = false;
+			for (int i = 1; i < data.Rows.Count; i++)
 			{
+				if ((data.Rows[i][0] != DBNull.Value) && (data.Rows[i][1] != DBNull.Value))
+				{
+					if (!flag)
+					{
+						flag = Convert.ToString(data.Rows[i][0]) == "1" && Convert.ToString(data.Rows[i][1]) == "2";
+						continue;
+					}
+				}
+				else
+				{
+					continue;
+				}
+				if (!flag) continue;
 				Jadval10 NewUpload = new Jadval10();
 				NewUpload.DirectionCode = Convert.ToString(data.Rows[i][1]);
 				NewUpload.DirectionName = Convert.ToString(data.Rows[i][2]);///jadval xato!!!!!!!!!!!!!!!!!!!

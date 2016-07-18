@@ -401,6 +401,50 @@ namespace RatingUniversity.Langs
 		}
 
 		/// <summary>
+		///   Looks up a localized string similar to Данные не подтверждены.
+		/// </summary>
+		public static string DTM_danniye_ne_podtverjdeni
+		{
+			get
+			{
+				return ResourceManager.GetString("DTM_danniye_ne_podtverjdeni", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Данные подтверждены.
+		/// </summary>
+		public static string DTM_danniye_podtverjdeni
+		{
+			get
+			{
+				return ResourceManager.GetString("DTM_danniye_podtverjdeni", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Подтверждать.
+		/// </summary>
+		public static string DTM_podtverjdat
+		{
+			get
+			{
+				return ResourceManager.GetString("DTM_podtverjdat", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Время истёк.
+		/// </summary>
+		public static string DTM_vremya_istek
+		{
+			get
+			{
+				return ResourceManager.GetString("DTM_vremya_istek", resourceCulture);
+			}
+		}
+
+		/// <summary>
 		///   Looks up a localized string similar to Номер регистрации сертификата (патента)*.
 		/// </summary>
 		public static string EfNIRCode

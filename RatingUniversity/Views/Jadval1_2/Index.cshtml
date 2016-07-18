@@ -2,9 +2,8 @@
 @{
 	Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	ViewBag.Title = "Jadval1_2";
+	int count = 1;	
 }
-
-<h2>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_2_Zagolovok, ViewBag.lang, ViewBag.alfabet)</h2>
 
 @if (ViewBag.role == 1)
 { 
@@ -16,54 +15,57 @@ using (Html.BeginForm("Upload", "Jadval1_2", FormMethod.Post, new { enctype = "m
 	<input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
 }
 }
+				  	<h4 class="text-center font-bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_2_Zagolovok, ViewBag.lang, ViewBag.alfabet)</h4>
 	
 @if (ViewBag.bor == true)
 {
 <table class="table table-bordered">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.T)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.N1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.N2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.N3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.N41)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.N51)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.N42)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.N52)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.N43)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.N53)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.I2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UniversityId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Year)
-        </th>
-    </tr>
+	<tr class="txtcenter">
+		<th>№</th>
+		<th>
+			@Html.DisplayNameFor(model => model.T)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.N1)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.N2)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.N3)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.N41)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.N51)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.N42)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.N52)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.N43)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.N53)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.I2)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.UniversityId)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Year)
+		</th>
+	</tr>
 
 @foreach (var item in Model) {
     <tr>
+		<td>@count</td>@{count++;}
         <td>
             @Html.DisplayFor(modelItem => item.T)
         </td>

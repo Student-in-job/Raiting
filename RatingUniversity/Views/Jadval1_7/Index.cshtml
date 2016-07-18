@@ -3,9 +3,8 @@
 @{
 	Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	ViewBag.Title = "Jadval1_7";
+	int count = 1;
 }
-
-<h2>Universitetlar reytingi</h2>
 
 @if (ViewBag.role == 1)
 {
@@ -20,29 +19,33 @@
 	<input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
 }
 }
+				  <h4 class="text-center font-bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_7_zogolovok, ViewBag.lang, ViewBag.alfabet)</h4>
+
 @if (ViewBag.bor == true)
 {
 <table class="table table-bordered">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.P)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.P7)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.P8)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Year)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UniversityId)
-        </th>
-    </tr>
+	<tr class="txtcenter">
+		<th>№</th>
+		<th>
+			@Html.DisplayNameFor(model => model.P)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.P7)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.P8)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Year)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.UniversityId)
+		</th>
+	</tr>
 
 @foreach (var item in Model) {
     <tr>
+		<td>@count</td>@{count++;}
         <td>
             @Html.DisplayFor(modelItem => item.P)
         </td>

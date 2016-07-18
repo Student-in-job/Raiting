@@ -15,11 +15,11 @@ namespace RatingUniversity.Controllers
         {
 			TablesContext db = new TablesContext();
 			int yil = Int32.Parse(DateTime.Now.Year.ToString());
-			var list = db.Monitorings.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
+			var list = db.Monitorings.Where(pr => pr.Year == yil).OrderBy(j => j.Year).ToList();
 			ViewBag.bor = true;
 			if (list.Count() == 0)
 				ViewBag.bor = false;
-			return View(list.ToList());
+			return View(list);
 
         }
 	}

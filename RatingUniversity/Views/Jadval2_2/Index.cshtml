@@ -2,11 +2,8 @@
 @{
 	Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	ViewBag.Title = "Jadval2_2";
+	int count = 1;
 }
-
-<h2>
-	@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_2_zagolovok, ViewBag.lang, ViewBag.alfabet)
-</h2>
 
 @if (ViewBag.role == 1)
 {
@@ -19,11 +16,13 @@ using (Html.BeginForm("Upload", "Jadval2_2", FormMethod.Post, new { enctype = "m
 	<input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
 }
 }
+				  <h4 class="text-center font-bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_2_zagolovok, ViewBag.lang, ViewBag.alfabet)</h4>
 
 @if (ViewBag.bor == true)
 {
 	<table class="table table-bordered">
-		<tr>
+		<tr class="txtcenter">
+			<th>№</th>
 			<th>
 				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T2_2_soralgansoni, ViewBag.lang, ViewBag.alfabet)
 			</th>
@@ -41,6 +40,7 @@ using (Html.BeginForm("Upload", "Jadval2_2", FormMethod.Post, new { enctype = "m
 		@foreach (var item in Model)
 		{
 			<tr>
+				<td>@count</td>@{count++;}
 				<td>
 					@Html.DisplayFor(modelItem => item.R)
 				</td>

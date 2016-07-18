@@ -929,4 +929,19 @@
     <value>асосий штатдаги профессор-ўқитувчиларнинг 2015 йилда нашр этган монографиялари ҳақида
 М А Ъ Л У М О Т</value>
   </data>
+  <data name="DTM_danniye_ne_podtverjdeni" xml:space="preserve">
+    <value>Ma'lumotlar tasdiqlanmagan</value>
+  </data>
+  <data name="DTM_danniye_podtverjdeni" xml:space="preserve">
+    <value>Ma'lumotlarni tasdiqlangan</value>
+  </data>
+  <data name="DTM_podtverjdat" xml:space="preserve">
+    <value>Tasdiqlash</value>
+  </data>
+  <data name="DTM_vremya_istek" xml:space="preserve">
+    <value>Ma'lumotlarni kiritish uchun vaqtingiz tugadi</value>
+  </data>
+  <data name="T2_1_zagolovok" xml:space="preserve">
+    <value>Talabalar bilimini baholash</value>
+  </data>
 </root>

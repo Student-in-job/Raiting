@@ -4,14 +4,9 @@
 
 	@{
 		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
+		int count = 1;
 	}
 
-	<h2>
-		@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T9_zagolovok, ViewBag.lang, ViewBag.alfabet)
-
-		
-		Асосий шататдаги профессор-ўқитувчиларидан 300 та энг яхши хорижий олий таълим муассасаларида охирги 3 йилда дарс (маъруза, семинар ва амалий машғулот) ўтганлари ҳақидаги
-</h2>
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
 	{
 		<a href="/Jadval9/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
@@ -25,24 +20,28 @@
 	}
 	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 1)
 	{
-		<h3>Ma'lumotlarni kiritish uchun vaqtingiz tugadi</h3>
+		<h5>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DTM_vremya_istek, ViewBag.lang, ViewBag.alfabet)</h5>
 	}
 	@if (ViewBag.status == 1)
 	{
-		<h3>Ma'lumotlarni tasdiqlangan</h3>
+		<h5>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DTM_danniye_podtverjdeni, ViewBag.lang, ViewBag.alfabet)</h5>
 	}
 	@if (ViewBag.status == 0)
 	{
-		<h3>Ma'lumotlar tasdiqlanmagan</h3>
+		<h5>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DTM_danniye_ne_podtverjdeni, ViewBag.lang, ViewBag.alfabet)</h5>
 	}
 	@if (ViewBag.status == 0 && ViewBag.role == 1)
 	{
-		<a href="/Jadval9/Tasdiqlash/@ViewBag.UniverId">Подтверждать</a>
+		<a href="/Jadval9/Tasdiqlash/@ViewBag.UniverId">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DTM_podtverjdat, ViewBag.lang, ViewBag.alfabet)</a>
 	}
+						   	<h3 class="text-center font-bold">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+						   <h4 class="text-center font-bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T9_zagolovok, ViewBag.lang, ViewBag.alfabet)</h4>
+
 	@if (ViewBag.bor == true)
 	{
 		<table class="table table-bordered">
-			<tr>
+			<tr class="txtcenter">
+				<th>№</th>
 				@if (ViewBag.status == 0 && ViewBag.role == 1)
 				{
 					<th>Статус</th>
@@ -68,14 +67,12 @@
 				<th>
 					@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_God, ViewBag.lang, ViewBag.alfabet)
 				</th>
-				<th>
-					UniversityId
-				</th>
 			</tr>
 
 			@foreach (var item in Model)
 			{
 				<tr @(item.Status == 1 ? "" : "class=danger")>
+					<td>@count</td>@{count++;}
 					@if (ViewBag.status == 0 && ViewBag.role == 1)
 					{
 						<td>
@@ -118,9 +115,6 @@
 					</td>
 					<td>
 						@Html.DisplayFor(modelItem => item.Year)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.UniversityId)
 					</td>
 				</tr>
 			}
