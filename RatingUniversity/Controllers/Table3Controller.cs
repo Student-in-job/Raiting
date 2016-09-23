@@ -119,9 +119,10 @@ namespace RatingUniversity.Controllers
         public override ActionResult Index()
         {
             ViewBag.file = this.fileName;
+            int year = DateTime.Now.Year;
             IQueryable<university> university = this.db.university.Where(model => model.id == this.id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.chislennost_pps_vuza.Where(model=>model.university_id==this.id).ToList());
+            return View(this.db.chislennost_pps_vuza.Where(model=>model.university_id==this.id && model.year == year).ToList());
         }
 	}
 }
