@@ -704,10 +704,10 @@
     <Content Include="Views\Jadval7\List.cshtml" />
     <Content Include="Views\Jadval8\List.cshtml" />
     <Content Include="Views\Jadval9\List.cshtml" />
+    <Content Include="Views\BaseInputData\ListIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\BaseInputData\" />
     <Folder Include="Views\BaseView\" />
   </ItemGroup>
   <ItemGroup>

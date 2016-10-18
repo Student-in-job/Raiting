@@ -72,10 +72,19 @@ namespace RatingUniversity.Controllers
 
         //
         // GET: /BaseInputData/
-        [Authorize(Roles="user")]
-        public virtual ActionResult Index()
+        //[Authorize(Roles="user")]
+        //public virtual ActionResult Index()
+        //{
+        //    return View();
+        //}
+        
+        [Authorize(Roles = "admin")]
+        public virtual ActionResult ListIndex(string controllerName, int active)
         {
-            return View();
+            ViewBag.active = Functions.CreateActive(active, 34); 
+            TablesContext db = new TablesContext();
+            ViewBag.controller = controllerName;
+            return View(db.university.ToList());
         }
 
         [Authorize(Roles="user")]

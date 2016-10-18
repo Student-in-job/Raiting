@@ -171,16 +171,28 @@ namespace RatingUniversity.Controllers
             //MonitoringUpdate.Update(0, "J15", 0, yil);
         }
         //
-        // GET: /Table11/
-        public override ActionResult Index()
+        // GET: /Table15/
+        public ActionResult Index(int? id)
         {
+            if (this.id == 0)
+            {
+                if (id == null)
+                {
+                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table15", active = this.active });
+                }
+            }
+            else
+            {
+                id = this.id;
+            }
             ViewBag.file = this.fileName;
-            IQueryable<university> university = this.db.university.Where(model => model.id == this.id);
+            int year = DateTime.Now.Year;
+            IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             Table15 modelTable = new Table15();
-            modelTable.sertificat = this.db.effektivnost_nir_sertifikat.Where(model => model.university_id == this.id).ToList();
-            modelTable.patent = this.db.effektivnost_nir_patent.Where(model => model.university_id == this.id).ToList();
-            modelTable.dalolatnoma = this.db.effektivnost_nir_dalolatnoma.Where(model => model.university_id == this.id).ToList();
+            modelTable.sertificat = this.db.effektivnost_nir_sertifikat.Where(model => model.university_id == id && model.year == year).ToList();
+            modelTable.patent = this.db.effektivnost_nir_patent.Where(model => model.university_id == id && model.year == year).ToList();
+            modelTable.dalolatnoma = this.db.effektivnost_nir_dalolatnoma.Where(model => model.university_id == id && model.year == year).ToList();
             return View(modelTable);
         }
 	}

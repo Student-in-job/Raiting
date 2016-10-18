@@ -2661,6 +2661,306 @@ GO
 -- Data for table dbo.chislennost_pps_vuza  (LIMIT 0,500)
 --
 
+SET IDENTITY_INSERT [dbo].[university] ON
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (1, N'Андижанский государственный университет', 3, NULL, N'Andijon davlat universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (2, N'Андижанский машиностроительный институт', 3, NULL, N'Andijon mashinasozlik instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (3, N'Андижанский медицинский институт', 3, NULL, N'Andijon davlat tibbiyot instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (4, N'Андижанский сельскохозяйственный институт', 3, NULL, N'Andijon qishloq xo`jaligi instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (5, N'Бухарский государственный университет', 4, NULL, N'Buxoro davlat universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (6, N'Бухарский инженерно-технологический институт', 4, NULL, N'Buxoro muhandislik-texnologiya instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (7, N'Бухарский медицинский институт', 4, NULL, N'Buxoro davlat tibbiyot instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (8, N'Высшая школа национального танца и хареографии', 1, NULL, N'Milliy raqs va xoreografiya oliy maktabi', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (9, N'Государственная консерватория Узбекистана', 1, NULL, N'O`zbekiston Davlat Konservatoriyasi', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (10, N'Гулистанский государственный университет', 11, NULL, N'Guliston davlat universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (11, N'Джизакский государственный педагогический институт', 5, NULL, N'Jizzax davlat pedagogika instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (12, N'Джизакский политехнический институт', 5, NULL, N'Jizzax politexnika instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (13, N'Институт национального художества и дизайна', 1, NULL, N'Kamoliddin Behzod Nomidagi Milliy Rassomlik va Dizayn Instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (14, N'Каракалпакский государственный университет', 2, NULL, N'Qoraqalpoq davlat universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (15, N'Каршинский государственный университет', 6, NULL, N'Qarshi davlat universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (16, N'Каршинский инженерно-экономический институт', 6, NULL, N'Qarshi muhandislik - iqtisodiyot instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (17, N'Кокандский государственный педагогический институт', 6, NULL, N'Qo`qon davlat pedagogika instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (18, N'Навоинский государственный горный институт', 7, NULL, N'Navoiy davlat konchilik instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (19, N'Навоинский государственный педагогический институт', 7, NULL, N'Navoiy davlat pedagogika instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (20, N'Налоговая академия', 1, NULL, N'Soliq akademiyasi', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (21, N'Наманганский государственный университет', 8, NULL, N'Namangan davlat universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (22, N'Наманганский инженерно-педагогический институт', 8, NULL, N'Namangan muhandislik-pedagogika instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (23, N'Наманганский инженерно-технологический институт', 8, NULL, N'Namangan muhandislik-texnologiya instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (24, N'Национальный университет Узбекистана', 1, NULL, N'Mirzo Ulug''bek nomidagi O''zbekiston Milliy universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (25, N'Нукусский государственный педагогический институт', 2, NULL, N'Nukus davlat pedagogika instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (26, N'Самаркандский государственный архитектурно-строительный институт', 9, NULL, N'Samarqand davlat arxitektura-qurilish instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (27, N'Самаркандский государственный институт иностранных языков', 9, NULL, N'Samarqand davlat chet tillar instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (28, N'Самаркандский государственный университет', 9, NULL, N'Samarqand davlat universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (29, N'Самаркандский институт экономики и сервиса', 9, NULL, N'Samarqand iqtisodiyot va servis instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (30, N'Самаркандский медицинский институт', 9, NULL, N'Samarqand davlat tibbiyot instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (31, N'Самаркандский сельскохозяйственный институт', 9, NULL, N'Samarqand qishloq xo`jalik instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (32, N'Ташкентская медицинская академия', 1, NULL, N'Toshkent tibbiyot akademiyasi', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (33, N'Ташкентский автомобильно-дорожный институт', 1, NULL, N'Toshkent avtomobil-yo`llari instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (34, N'Ташкентский архитектурно-строительный институт', 1, NULL, N'Toshkent arxitektura-qurilish instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (35, N'Ташкентский государственный аграрный университет', 1, NULL, N'Toshkent davlat agrar universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (36, N'Ташкентский государственный институт востоковедения', 1, NULL, N'Toshkent davlat sharqshunoslik instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (37, N'Ташкентский государственный педагогический университет', 1, NULL, N'Toshkent Davlat pedagogika universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (38, N'Ташкентский государственный технический университет', 1, NULL, N'Toshkent davlat texnika universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (39, N'Ташкентский государственный экономический университет', 1, NULL, N'Toshkent Davlat Iqtisodiyot Universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (40, N'Ташкентский государственный юридический университет', 1, NULL, N'Toshkent davlat yuridik universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (41, N'Ташкентский институт инженеров железнодорожного транспорта', 1, NULL, N'Toshkent temir yo`l transporti muhandislari instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (42, N'Ташкентский институт ирригации и мелиорации', 1, NULL, N'Toshkent irrigatsiya va melioratsiya instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (43, N'Ташкентский институт текстильной и легкой промышленности', 1, NULL, N'Toshkent to''qimachilik va yengil sanoat instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (44, N'Ташкентский исламский университет', 1, NULL, N'Toshkent islom universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (45, N'Ташкентский медицинский педиатрический институт', 1, NULL, N'Toshkent pediatriya tibbiyot instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (46, N'Ташкентский университет информационных технологий', NULL, NULL, N'Toshkent axborot texnologiyalari universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (47, N'Ташкентский фармацевтический институт', 1, NULL, N'Toshkent farmatsevtika instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (48, N'Ташкентский финансовый институт', 1, NULL, N'Toshkent Moliya instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (49, N'Ташкентский химико-технологический институт', 1, NULL, N'Toshkent kimyo-texnologiya instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (50, N'Термезский государственный университет', 1, NULL, N'Termiz Davlat Universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (51, N'Узбекский государственный институт искусства и культуры', 1, NULL, N'O`zbekiston davlat san`at va madaniyat instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (52, N'Узбекский государственный институт физической культуры', 1, NULL, N'O`zbekiston davlat jismoniy tarbiya instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (53, N'Узбекский государственный университет мировых языков', 1, NULL, N'O`zbekiston davlat jahon tillari universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (54, N'Университет мировой экономики и дипломатии', 1, NULL, N'Jahon iqtisodiyoti va diplomatiya universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (55, N'Ургенчский государственный университет', 14, NULL, N'Urganch davlat universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (56, N'Ферганский государственный университет', 13, NULL, N'Farg`ona davlat universiteti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (57, N'Ферганский политехнический институт', 13, NULL, N'Farg`ona politexnika instituti', NULL, NULL)
+GO
+
+INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+VALUES 
+  (58, N'Ташкентский государственный стоматологический институт', 1, NULL, N'Toshkent Davlat Stomatologiya Instituti', NULL, NULL)
+GO
+
+SET IDENTITY_INSERT [dbo].[university] OFF
+GO
+
+--
+-- Data for table dbo.chislennost_pps_vuza  (LIMIT 0,500)
+--
+
 SET IDENTITY_INSERT [dbo].[chislennost_pps_vuza] ON
 GO
 
@@ -2941,53 +3241,53 @@ GO
 SET IDENTITY_INSERT [dbo].[Jadval10] ON
 GO
 
-INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId], [Status])
+INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId])
 VALUES 
   (1, N'5610200', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'Меҳмонхона хўжалиги менежменти', N'инглиз тили', 4, 23, N'БухДУ ректорининг
  2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'1_2004_10.7BBAD6EFC6554E8791CCBF730A438BA8_2015_11_30__04_46_36.pdf', 2015, 24, NULL)
+ 294-У(01)сонли буйруғи', N'1_2004_10.7BBAD6EFC6554E8791CCBF730A438BA8_2015_11_30__04_46_36.pdf', 2015, 24)
 GO
 
-INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId], [Status])
+INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId])
 VALUES 
   (2, N'5610200', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'Сервис тизими фаолияти асослари', N'инглиз тили', 4, 23, N'БухДУ ректорининг
  2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'#', 2015, 24, NULL)
+ 294-У(01)сонли буйруғи', N'#', 2015, 24)
 GO
 
-INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId], [Status])
+INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId])
 VALUES 
   (3, N'5610200', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'Жахон иқтисодиёти ва халқаро иқтисодий муносабатлар', N'инглиз тили', 3, 25, N'БухДУ ректорининг
  2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'#', 2015, 24, NULL)
+ 294-У(01)сонли буйруғи', N'#', 2015, 24)
 GO
 
-INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId], [Status])
+INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId])
 VALUES 
   (4, N'5610200', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'Олий математика', N'инглиз тили', 1, 25, N'БухДУ ректорининг
  2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'#', 2015, 24, NULL)
+ 294-У(01)сонли буйруғи', N'#', 2015, 24)
 GO
 
-INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId], [Status])
+INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId])
 VALUES 
   (5, N'5610200', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'Сиёсатшунослик', N'инглиз тили', 4, 23, N'БухДУ ректорининг
  2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'#', 2015, 24, NULL)
+ 294-У(01)сонли буйруғи', N'#', 2015, 24)
 GO
 
-INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId], [Status])
+INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId])
 VALUES 
   (6, N'5230100', N'Иктисодиёт (тармоклар ва сохалар)', N'Микроиқтисодиёт', N'инглиз тили', 2, 19, N'БухДУ ректорининг
  2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'#', 2015, 24, NULL)
+ 294-У(01)сонли буйруғи', N'#', 2015, 24)
 GO
 
-INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId], [Status])
+INSERT INTO [dbo].[Jadval10] ([Id], [DirectionCode], [DirectionName], [SubjectName], [ForeignLanguage], [EducationCourse], [StudentCount], [Asos], [AsosFile], [Year], [UniversityId])
 VALUES 
   (7, N'5230100', N'Иктисодиёт (тармоклар ва сохалар)', N'Менеджмент', N'инглиз тили', 2, 19, N'БухДУ ректорининг
  2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'#', 2015, 24, NULL)
+ 294-У(01)сонли буйруғи', N'#', 2015, 24)
 GO
 
 SET IDENTITY_INSERT [dbo].[Jadval10] OFF
@@ -3172,7 +3472,7 @@ GO
 
 INSERT INTO [dbo].[Jadval6] ([Id], [FullName], [State], [Yonalish], [Mag_mutaxassislik], [Status], [Asos], [Asos_fayl], [Year], [UniversityId])
 VALUES 
-  (1, N'Jumakulyyeva Umidahan Beshimovna', N'Туркманистон', N'Биология', N'-', NULL, N'№359-У', N'#', 2015, 24)
+  (1, N'Jumakulyyeva Umidahan Beshimovna', N'Туркманисто?', N'Биология', N'-', NULL, N'№359-У', N'#', 2015, 24)
 GO
 
 INSERT INTO [dbo].[Jadval6] ([Id], [FullName], [State], [Yonalish], [Mag_mutaxassislik], [Status], [Asos], [Asos_fayl], [Year], [UniversityId])
@@ -3280,19 +3580,19 @@ GO
 SET IDENTITY_INSERT [dbo].[Jadval7] ON
 GO
 
-INSERT INTO [dbo].[Jadval7] ([Id], [FullName_uzb], [State_uzb], [Mutaxassislik_uzb], [FullName_xorij], [State_xorij], [Mutaxassislik_xorij], [Asos], [Asos_fayl], [Bak_mag], [Year], [UniversityId], [Status])
+INSERT INTO [dbo].[Jadval7] ([Id], [FullName_uzb], [State_uzb], [Mutaxassislik_uzb], [FullName_xorij], [State_xorij], [Mutaxassislik_xorij], [Asos], [Asos_fayl], [Bak_mag], [Year], [UniversityId])
 VALUES 
-  (1, N'Давронхўжа Истамов Олимович', N'Руминия, Иоан Куза номли университет', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'-', N'-', N'-', N'Эрасмус Мундус дастури СИЛКРОУТ лойиҳаси грант келишуви,01.05.2014', N'#', 0, 2015, 24, NULL)
+  (1, N'Давронхўжа Истамов Олимович', N'Руминия, Иоан Куза номли университет', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'-', N'-', N'-', N'Эрасмус Мундус дастури СИЛКРОУТ лойиҳаси грант келишуви,01.05.2014', N'#', 0, 2015, 24)
 GO
 
-INSERT INTO [dbo].[Jadval7] ([Id], [FullName_uzb], [State_uzb], [Mutaxassislik_uzb], [FullName_xorij], [State_xorij], [Mutaxassislik_xorij], [Asos], [Asos_fayl], [Bak_mag], [Year], [UniversityId], [Status])
+INSERT INTO [dbo].[Jadval7] ([Id], [FullName_uzb], [State_uzb], [Mutaxassislik_uzb], [FullName_xorij], [State_xorij], [Mutaxassislik_xorij], [Asos], [Asos_fayl], [Bak_mag], [Year], [UniversityId])
 VALUES 
-  (2, N'Миршод Нарзуллаев Акмалович', N'Руминия, Иоан Куза номли университет', N'Иқтисодиёт', N'-', N'-', N'-', N'Эрасмус Мундус дастури СИЛКРОУТ лойиҳаси грант келишуви,01.05.2014', N'#', 0, 2015, 24, NULL)
+  (2, N'Миршод Нарзуллаев Акмалович', N'Руминия, Иоан Куза номли университет', N'Иқтисодиёт', N'-', N'-', N'-', N'Эрасмус Мундус дастури СИЛКРОУТ лойиҳаси грант келишуви,01.05.2014', N'#', 0, 2015, 24)
 GO
 
-INSERT INTO [dbo].[Jadval7] ([Id], [FullName_uzb], [State_uzb], [Mutaxassislik_uzb], [FullName_xorij], [State_xorij], [Mutaxassislik_xorij], [Asos], [Asos_fayl], [Bak_mag], [Year], [UniversityId], [Status])
+INSERT INTO [dbo].[Jadval7] ([Id], [FullName_uzb], [State_uzb], [Mutaxassislik_uzb], [FullName_xorij], [State_xorij], [Mutaxassislik_xorij], [Asos], [Asos_fayl], [Bak_mag], [Year], [UniversityId])
 VALUES 
-  (3, N'Умиджон Ғафуров Шарипович', N'Италия, Болония университети', N'Туроператорлик хизматларини ташкил этиш', N'-', N'-', N'-', N'Эрасмус Мундус дастури СИЛКРОУТ лойиҳаси грант келишуви,01.05.2014', N'#', 1, 2015, 24, NULL)
+  (3, N'Умиджон Ғафуров Шарипович', N'Италия, Болония университети', N'Туроператорлик хизматларини ташкил этиш', N'-', N'-', N'-', N'Эрасмус Мундус дастури СИЛКРОУТ лойиҳаси грант келишуви,01.05.2014', N'#', 1, 2015, 24)
 GO
 
 SET IDENTITY_INSERT [dbo].[Jadval7] OFF
@@ -4648,21 +4948,6 @@ SET IDENTITY_INSERT [dbo].[majmua] OFF
 GO
 
 --
--- Data for table dbo.Monitorings  (LIMIT 0,500)
---
-
-SET IDENTITY_INSERT [dbo].[Monitorings] ON
-GO
-
-INSERT INTO [dbo].[Monitorings] ([Id], [J1], [J2], [J3], [J4], [J5], [J6], [J7], [J8], [J9], [J10], [J11], [J12], [J13], [J14], [J15], [J16], [J17], [J18], [J19], [J20], [J21], [J22], [J23], [J24], [J25], [J26], [J27], [J28], [J29], [J30], [J31], [J32], [J1_2], [J1_7], [J2_1], [J2_2], [Year], [UniverId], [Srok])
-VALUES 
-  (1, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2015, 24, NULL)
-GO
-
-SET IDENTITY_INSERT [dbo].[Monitorings] OFF
-GO
-
---
 -- Data for table dbo.monografiya  (LIMIT 0,500)
 --
 
@@ -5054,298 +5339,83 @@ SET IDENTITY_INSERT [dbo].[raiting] OFF
 GO
 
 --
--- Data for table dbo.university  (LIMIT 0,500)
+-- Data for table dbo.region  (LIMIT 0,500)
 --
 
-SET IDENTITY_INSERT [dbo].[university] ON
+SET IDENTITY_INSERT [dbo].[region] ON
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (1, N'Андижанский государственный университет', NULL, NULL, NULL, NULL, NULL)
+  (1, N'Ташкент', N'Toshkent')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (2, N'Андижанский машиностроительный институт', NULL, NULL, NULL, NULL, NULL)
+  (2, N'Республика Каракалпакстан', N'Qoraqalpog’iston Respublikasi')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (3, N'Андижанский медицинский институт', NULL, NULL, NULL, NULL, NULL)
+  (3, N'Андижанская область', N'Andijon viloyati')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (4, N'Андижанский сельскохозяйственный институт', NULL, NULL, NULL, NULL, NULL)
+  (4, N'Бухарская область', N'Buxoro viloyati')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (5, N'Бухарский государственный университет', NULL, NULL, NULL, NULL, NULL)
+  (5, N'Джизакская область', N'Jizzah viloyati')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (6, N'Бухарский инженерно-технологический институт', NULL, NULL, NULL, NULL, NULL)
+  (6, N'Кашкадарьинская область', N'Qashqadaryo viloyati')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (7, N'Бухарский медицинский институт', NULL, NULL, NULL, NULL, NULL)
+  (7, N'Навоийская область', N'Navoiy viloyati')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (8, N'Высшая школа национального танца и хареографии', NULL, NULL, NULL, NULL, NULL)
+  (8, N'Наманганская область', N'Namangan viloyati')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (9, N'Государственная консерватория Узбекистана', NULL, NULL, NULL, NULL, NULL)
+  (9, N'Самаркандская область', N'Samarqand viloyati')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (10, N'Гулистанский государственный университет', NULL, NULL, NULL, NULL, NULL)
+  (10, N'Сурхандарьинская область', N'Surxondaryo viloyati')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (11, N'Джизакский государственный педагогический институт', NULL, NULL, NULL, NULL, NULL)
+  (11, N'Сырдарьинская область', N'Sirdaryo viloyati')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (12, N'Джизакский политехнический институт', NULL, NULL, NULL, NULL, NULL)
+  (12, N'Ташкентская область', N'Toshkent viloyati')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (13, N'Институт национального художества и дизайна', NULL, NULL, NULL, NULL, NULL)
+  (13, N'Ферганская область', N'Farg’ona viloyati')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
+INSERT INTO [dbo].[region] ([id], [name_RU], [name_UZ])
 VALUES 
-  (14, N'Каракалпакский государственный университет', NULL, NULL, NULL, NULL, NULL)
+  (14, N'Хорезмская область', N'Xorazm viloyati')
 GO
 
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (15, N'Каршинский государственный университет', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (16, N'Каршинский инженерно-экономический институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (17, N'Кокандский государственный педагогический институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (18, N'Навоинский государственный горный институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (19, N'Навоинский государственный педагогический институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (20, N'Налоговая академия', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (21, N'Наманганский государственный университет', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (22, N'Наманганский инженерно-педагогический институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (23, N'Наманганский инженерно-технологический институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (24, N'Национальный университет Узбекистана', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (25, N'Нукусский государственный педагогический институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (26, N'Самаркандский государственный архитектурно-строительный институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (27, N'Самаркандский государственный институт иностранных языков', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (28, N'Самаркандский государственный университет', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (29, N'Самаркандский институт экономики и сервиса', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (30, N'Самаркандский медицинский институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (31, N'Самаркандский сельскохозяйственный институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (32, N'Ташкентская медицинская академия', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (33, N'Ташкентский автомобильно-дорожный институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (34, N'Ташкентский архитектурно-строительный институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (35, N'Ташкентский государственный аграрный университет', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (36, N'Ташкентский государственный институт востоковедения', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (37, N'Ташкентский государственный педагогический университет', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (38, N'Ташкентский государственный технический университет', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (39, N'Ташкентский государственный экономический университет', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (40, N'Ташкентский государственный юридический университет', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (41, N'Ташкентский институт инженеров железнодорожного транспорта', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (42, N'Ташкентский институт ирригации и мелиорации', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (43, N'Ташкентский институт текстильной и легкой промышленности', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (44, N'Ташкентский исламский университет', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (45, N'Ташкентский медицинский педиатрический институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (46, N'Ташкентский университет информационных технологий', NULL, NULL, N'Toshkent axborot texnologiyalari universiteti', NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (47, N'Ташкентский фармацевтический институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (48, N'Ташкентский финансовый институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (49, N'Ташкентский химико-технологический институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (50, N'Термезский государственный университет', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (51, N'Узбекский государственный институт искусства и культуры', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (52, N'Узбекский государственный институт физической культуры', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (53, N'Узбекский государственный университет мировых языков', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (54, N'Университет мировой экономики и дипломатии', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (55, N'Ургенчский государственный университет', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (56, N'Ферганский государственный университет', NULL, NULL, NULL, NULL, NULL)
-GO
-
-INSERT INTO [dbo].[university] ([id], [name_RU], [id_region], [id_branch], [name_UZ], [branch_id], [region_id])
-VALUES 
-  (57, N'Ферганский политехнический институт', NULL, NULL, NULL, NULL, NULL)
-GO
-
-SET IDENTITY_INSERT [dbo].[university] OFF
+SET IDENTITY_INSERT [dbo].[region] OFF
 GO
 
 --

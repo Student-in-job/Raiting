@@ -80,13 +80,25 @@ namespace RatingUniversity.Controllers
             //MonitoringUpdate.Update(0, "J14", 0, yil);
         }
         //
-        // GET: /Table3/
-        public override ActionResult Index()
+        // GET: /Table14/
+        public ActionResult Index(int? id)
         {
+            if (this.id == 0)
+            {
+                if (id == null)
+                {
+                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table14", active = this.active });
+                }
+            }
+            else
+            {
+                id = this.id;
+            }
             ViewBag.file = this.fileName;
-            IQueryable<university> university = this.db.university.Where(model => model.id == this.id);
+            int year = DateTime.Now.Year;
+            IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.kolichestvo_izdannih_mestnih_statey.Where(model=>model.id_university==this.id).ToList());
+            return View(this.db.kolichestvo_izdannih_mestnih_statey.Where(model => model.id_university == id && model.year == year).ToList());
         }
 	}
 }

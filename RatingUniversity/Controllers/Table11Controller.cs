@@ -265,16 +265,28 @@ namespace RatingUniversity.Controllers
         }
         //
         // GET: /Table11/
-        public override ActionResult Index()
+        public ActionResult Index(int? id)
         {
+            if (this.id == 0)
+            {
+                if (id == null)
+                {
+                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table11", active = this.active });
+                }
+            }
+            else
+            {
+                id = this.id;
+            }
+            int year = DateTime.Now.Year;
             ViewBag.file = this.fileName;
-            IQueryable<university> university = this.db.university.Where(model => model.id == this.id);
+            IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             Table11 modelTable = new Table11();
-            modelTable.monografiya = this.db.monografiya.Where(model => model.university_id == this.id).ToList();
-            modelTable.darslik = this.db.darslik.Where(model => model.university_id == this.id).ToList();
-            modelTable.qullanma = this.db.qullanma.Where(model => model.university_id == this.id).ToList();
-            modelTable.majmua = this.db.majmua.Where(model => model.university_id == this.id).ToList();
+            modelTable.monografiya = this.db.monografiya.Where(model => model.university_id == id && model.year == year).ToList();
+            modelTable.darslik = this.db.darslik.Where(model => model.university_id == id && model.year == year).ToList();
+            modelTable.qullanma = this.db.qullanma.Where(model => model.university_id == id && model.year == year).ToList();
+            modelTable.majmua = this.db.majmua.Where(model => model.university_id == id && model.year == year).ToList();
             return View(modelTable);
         }
 	}

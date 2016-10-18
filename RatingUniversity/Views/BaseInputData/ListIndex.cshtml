@@ -1,0 +1,25 @@
+﻿    @model List<RatingUniversity.Models.university>
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+    @{
+        Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
+    }
+
+    <h2>@ViewBag.Title</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AccountUniversity, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            string name = (ViewBag.lang == "RU") ? item.name_RU : item.name_UZ;
+            <tr>
+                <td>
+                    <a href="/@ViewBag.controller/Index/@item.id">@RatingUniversity.Classes.Functions.Translate(name, ViewBag.lang, ViewBag.alfabet)</a>
+                </td>
+            </tr>
+        }
+
+    </table>

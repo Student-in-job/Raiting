@@ -116,13 +116,24 @@ namespace RatingUniversity.Controllers
         }
         //
         // GET: /Table3/
-        public override ActionResult Index()
+        public ActionResult Index(int? id)
         {
+            if (this.id == 0)
+            {
+                if (id == null)
+                {
+                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table3", active = this.active });
+                }
+            }
+            else
+            {
+                id = this.id;
+            }
             ViewBag.file = this.fileName;
             int year = DateTime.Now.Year;
-            IQueryable<university> university = this.db.university.Where(model => model.id == this.id);
+            IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.chislennost_pps_vuza.Where(model=>model.university_id==this.id && model.year == year).ToList());
+            return View(this.db.chislennost_pps_vuza.Where(model=>model.university_id==id && model.year == year).ToList());
         }
 	}
 }

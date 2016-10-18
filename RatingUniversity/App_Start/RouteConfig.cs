@@ -23,13 +23,13 @@ namespace RatingUniversity
                 name: "KnowledgeAndQualificationController",
                 url: "{controller}/{action}/year/{year}",
                 defaults: new { /*controller="KnowledgeAndQualification", action = "AssessmentByTest", */culture="ru", year = UrlParameter.Optional }
-                );
+            );
 
             routes.MapRoute(
                 name: "Jadval1Controller",
                 url: "{controller}/{action}/page/{id}",
                 defaults: new { controller = "Jadval1", action = "index" , culture = "ru", id = UrlParameter.Optional }
-                );
+            );
         }
 
     }

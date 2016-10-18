@@ -320,7 +320,7 @@
     <comment>&lt;div id="top-header"&gt;&lt;div class="text-primary"&gt;Top Header is here&lt;/div&gt;&lt;/div&gt;</comment>
   </data>
   <data name="Upload" xml:space="preserve">
-    <value>отправить</value>
+    <value>Отправить</value>
   </data>
   <data name="UZCyrillic" xml:space="preserve">
     <value>Узбек</value>
