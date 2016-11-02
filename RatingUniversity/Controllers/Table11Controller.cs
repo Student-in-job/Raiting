@@ -71,7 +71,7 @@ namespace RatingUniversity.Controllers
                     if (row[3] != DBNull.Value) record.monograf_name = Convert.ToString(row[3]);
                     if (row[4] != DBNull.Value) record.monograf_year = Convert.ToString(row[4]);
                     if (row[5] != DBNull.Value) record.filename = Convert.ToString(row[5]);
-                    record.university_id = this.id;
+                    record.id_university = this.id;
                     record.year = DateTime.Now.Year;
 
                     this.records0.Add(record);
@@ -116,7 +116,7 @@ namespace RatingUniversity.Controllers
                     if (row[3] != DBNull.Value) record.ucheb_name = Convert.ToString(row[3]);
                     if (row[4] != DBNull.Value) record.ucheb_number = Convert.ToString(row[4]);
                     if (row[5] != DBNull.Value) record.filename = Convert.ToString(row[5]);
-                    record.university_id = this.id;
+                    record.id_university = this.id;
                     record.year = DateTime.Now.Year;
 
                     this.records1.Add(record);
@@ -162,7 +162,7 @@ namespace RatingUniversity.Controllers
                     if (row[3] != DBNull.Value) record.posobie_name = Convert.ToString(row[3]);
                     if (row[4] != DBNull.Value) record.posobie_number = Convert.ToString(row[4]);
                     if (row[5] != DBNull.Value) record.filename = Convert.ToString(row[5]);
-                    record.university_id = this.id;
+                    record.id_university = this.id;
                     record.year = DateTime.Now.Year;
 
                     this.records2.Add(record);
@@ -208,7 +208,7 @@ namespace RatingUniversity.Controllers
                     if (row[3] != DBNull.Value) record.metodich_name = Convert.ToString(row[3]);
                     if (row[4] != DBNull.Value) record.metodich_number = Convert.ToString(row[4]);
                     if (row[5] != DBNull.Value) record.filename = Convert.ToString(row[5]);
-                    record.university_id = this.id;
+                    record.id_university = this.id;
                     record.year = DateTime.Now.Year;
 
                     this.records3.Add(record);
@@ -219,22 +219,22 @@ namespace RatingUniversity.Controllers
         protected override void DeleteData()
         {
             int year = DateTime.Now.Year;
-            IQueryable<monografiya> rowsToDelete0 = this.db.monografiya.Where(model => model.year == year && model.university_id == this.id);
+            IQueryable<monografiya> rowsToDelete0 = this.db.monografiya.Where(model => model.year == year && model.id_university == this.id);
             foreach (var row in rowsToDelete0)
             {
                 this.db.monografiya.Remove(row);
             }
-            IQueryable<darslik> rowsToDelete1 = this.db.darslik.Where(model => model.year == year && model.university_id == this.id);
+            IQueryable<darslik> rowsToDelete1 = this.db.darslik.Where(model => model.year == year && model.id_university == this.id);
             foreach (var row in rowsToDelete1)
             {
                 this.db.darslik.Remove(row);
             }
-            IQueryable<qullanma> rowsToDelete2 = this.db.qullanma.Where(model => model.year == year && model.university_id == this.id);
+            IQueryable<qullanma> rowsToDelete2 = this.db.qullanma.Where(model => model.year == year && model.id_university == this.id);
             foreach (var row in rowsToDelete2)
             {
                 this.db.qullanma.Remove(row);
             }
-            IQueryable<majmua> rowsToDelete3 = this.db.majmua.Where(model => model.year == year && model.university_id == this.id);
+            IQueryable<majmua> rowsToDelete3 = this.db.majmua.Where(model => model.year == year && model.id_university == this.id);
             foreach (var row in rowsToDelete3)
             {
                 this.db.majmua.Remove(row);
@@ -283,10 +283,10 @@ namespace RatingUniversity.Controllers
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             Table11 modelTable = new Table11();
-            modelTable.monografiya = this.db.monografiya.Where(model => model.university_id == id && model.year == year).ToList();
-            modelTable.darslik = this.db.darslik.Where(model => model.university_id == id && model.year == year).ToList();
-            modelTable.qullanma = this.db.qullanma.Where(model => model.university_id == id && model.year == year).ToList();
-            modelTable.majmua = this.db.majmua.Where(model => model.university_id == id && model.year == year).ToList();
+            modelTable.monografiya = this.db.monografiya.Where(model => model.id_university == id && model.year == year).ToList();
+            modelTable.darslik = this.db.darslik.Where(model => model.id_university == id && model.year == year).ToList();
+            modelTable.qullanma = this.db.qullanma.Where(model => model.id_university == id && model.year == year).ToList();
+            modelTable.majmua = this.db.majmua.Where(model => model.id_university == id && model.year == year).ToList();
             return View(modelTable);
         }
 	}

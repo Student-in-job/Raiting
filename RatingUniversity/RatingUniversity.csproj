@@ -207,6 +207,7 @@
     <Compile Include="Controllers\Table14Controller.cs" />
     <Compile Include="Controllers\Table15Controller.cs" />
     <Compile Include="Controllers\Table16Controller.cs" />
+    <Compile Include="Controllers\Table17Controller.cs" />
     <Compile Include="Controllers\Table3Controller.cs" />
     <Compile Include="Controllers\UniversityController.cs" />
     <Compile Include="Models\branch.cs">
@@ -251,11 +252,6 @@
     <Compile Include="Langs\Resource.Designer.cs" />
     <Compile Include="Langs\Resource.uz.Designer.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Final Raiting1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Final Raiting.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\granti_po_vidam_issledovaniy.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
@@ -709,6 +705,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BaseView\" />
+    <Folder Include="Views\Table17\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

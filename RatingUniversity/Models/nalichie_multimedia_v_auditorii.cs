@@ -20,7 +20,6 @@ namespace RatingUniversity.Models
         public string vuz_name { get; set; }
         public Nullable<int> rooms_total_count { get; set; }
         public Nullable<int> rooms_with_multimedia { get; set; }
-        public Nullable<int> university_id { get; set; }
     
         public virtual university university { get; set; }
     }

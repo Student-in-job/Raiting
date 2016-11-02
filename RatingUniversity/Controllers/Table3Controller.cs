@@ -87,7 +87,7 @@ namespace RatingUniversity.Controllers
                 if (row[14] != DBNull.Value) record.so_doc = Convert.ToInt32(row[14]);
                 if (row[15] != DBNull.Value) record.so_katta = Convert.ToInt32(row[15]);
                 if (row[16] != DBNull.Value) record.so_ass = Convert.ToInt32(row[16]);
-                record.university_id = this.id;
+                record.id_university = this.id;
                 record.year = DateTime.Now.Year;
 
                 this.records.Add(record);
@@ -97,7 +97,7 @@ namespace RatingUniversity.Controllers
         protected override void DeleteData()
         {
             int year = DateTime.Now.Year;
-            IQueryable<chislennost_pps_vuza> rowsToDelete = this.db.chislennost_pps_vuza.Where(model => model.year == year && model.university_id == this.id);
+            IQueryable<chislennost_pps_vuza> rowsToDelete = this.db.chislennost_pps_vuza.Where(model => model.year == year && model.id_university == this.id);
             foreach (var row in rowsToDelete)
             {
                 this.db.chislennost_pps_vuza.Remove(row);
@@ -133,7 +133,7 @@ namespace RatingUniversity.Controllers
             int year = DateTime.Now.Year;
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.chislennost_pps_vuza.Where(model=>model.university_id==id && model.year == year).ToList());
+            return View(this.db.chislennost_pps_vuza.Where(model=>model.id_university==id && model.year == year).ToList());
         }
 	}
 }

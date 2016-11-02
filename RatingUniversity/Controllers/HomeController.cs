@@ -29,7 +29,7 @@ namespace RatingUniversity.Controllers
         {
             //CultureInfo currentCulrute = Thread.CurrentThread.CurrentCulture;
             //ViewBag.lang = currentCulrute.Name.Substring(0, 5);
-            int time = Functions.GetLeftTime("01-12-2015 00:00:00");
+            int time = Functions.GetLeftTime("01-08-2016 00:00:00");
             ViewBag.Reverse = (time < 0) ? "false" : "true";
             time = (time < 0) ? -time : time;
             ViewBag.time = time;

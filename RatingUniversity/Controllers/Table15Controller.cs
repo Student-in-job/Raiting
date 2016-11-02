@@ -58,7 +58,7 @@ namespace RatingUniversity.Controllers
                     if (row[4] != DBNull.Value) record.sertifikat_date = Convert.ToString(row[4]);
                     if (row[5] != DBNull.Value) record.sertifikat_number = Convert.ToString(row[5]);
                     if (row[6] != DBNull.Value) record.filename = Convert.ToString(row[6]);
-                    record.university_id = this.id;
+                    record.id_university = this.id;
                     record.year = DateTime.Now.Year;
 
                     this.records0.Add(record);
@@ -91,7 +91,7 @@ namespace RatingUniversity.Controllers
                     if (row[4] != DBNull.Value) record.sertifikat_date = Convert.ToString(row[4]);
                     if (row[5] != DBNull.Value) record.sertifikat_number = Convert.ToString(row[5]);
                     if (row[6] != DBNull.Value) record.filename = Convert.ToString(row[6]); 
-                    record.university_id = this.id;
+                    record.id_university = this.id;
                     record.year = DateTime.Now.Year;
 
                     this.records1.Add(record);
@@ -124,7 +124,7 @@ namespace RatingUniversity.Controllers
                     if (row[4] != DBNull.Value) record.sertifikat_date = Convert.ToString(row[4]);
                     if (row[5] != DBNull.Value) record.sertifikat_number = Convert.ToString(row[5]);
                     if (row[6] != DBNull.Value) record.filename = Convert.ToString(row[6]); 
-                    record.university_id = this.id;
+                    record.id_university = this.id;
                     record.year = DateTime.Now.Year;
 
                     this.records2.Add(record);
@@ -135,17 +135,17 @@ namespace RatingUniversity.Controllers
         protected override void DeleteData()
         {
             int year = DateTime.Now.Year;
-            IQueryable<effektivnost_nir_sertifikat> rowsToDelete0 = this.db.effektivnost_nir_sertifikat.Where(model => model.year == year && model.university_id == this.id);
+            IQueryable<effektivnost_nir_sertifikat> rowsToDelete0 = this.db.effektivnost_nir_sertifikat.Where(model => model.year == year && model.id_university == this.id);
             foreach (var row in rowsToDelete0)
             {
                 this.db.effektivnost_nir_sertifikat.Remove(row);
             }
-            IQueryable<effektivnost_nir_patent> rowsToDelete1 = this.db.effektivnost_nir_patent.Where(model => model.year == year && model.university_id == this.id);
+            IQueryable<effektivnost_nir_patent> rowsToDelete1 = this.db.effektivnost_nir_patent.Where(model => model.year == year && model.id_university == this.id);
             foreach (var row in rowsToDelete1)
             {
                 this.db.effektivnost_nir_patent.Remove(row);
             }
-            IQueryable<effektivnost_nir_dalolatnoma> rowsToDelete2 = this.db.effektivnost_nir_dalolatnoma.Where(model => model.year == year && model.university_id == this.id);
+            IQueryable<effektivnost_nir_dalolatnoma> rowsToDelete2 = this.db.effektivnost_nir_dalolatnoma.Where(model => model.year == year && model.id_university == this.id);
             foreach (var row in rowsToDelete2)
             {
                 this.db.effektivnost_nir_dalolatnoma.Remove(row);
@@ -190,9 +190,9 @@ namespace RatingUniversity.Controllers
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             Table15 modelTable = new Table15();
-            modelTable.sertificat = this.db.effektivnost_nir_sertifikat.Where(model => model.university_id == id && model.year == year).ToList();
-            modelTable.patent = this.db.effektivnost_nir_patent.Where(model => model.university_id == id && model.year == year).ToList();
-            modelTable.dalolatnoma = this.db.effektivnost_nir_dalolatnoma.Where(model => model.university_id == id && model.year == year).ToList();
+            modelTable.sertificat = this.db.effektivnost_nir_sertifikat.Where(model => model.id_university == id && model.year == year).ToList();
+            modelTable.patent = this.db.effektivnost_nir_patent.Where(model => model.id_university == id && model.year == year).ToList();
+            modelTable.dalolatnoma = this.db.effektivnost_nir_dalolatnoma.Where(model => model.id_university == id && model.year == year).ToList();
             return View(modelTable);
         }
 	}
