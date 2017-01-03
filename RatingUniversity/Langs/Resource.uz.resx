@@ -944,4 +944,22 @@
   <data name="T2_1_zagolovok" xml:space="preserve">
     <value>Talabalar bilimini baholash</value>
   </data>
+  <data name="LabEquipment" xml:space="preserve">
+    <value>Мавжуд лаборатория асбоб-ускуналари номи**</value>
+  </data>
+  <data name="LabEquipmentAdd" xml:space="preserve">
+    <value>Мавжуд ёрдамчи асбоб-ускуналар номи**</value>
+  </data>
+  <data name="LabEquipmentAddState" xml:space="preserve">
+    <value>Мавжуд ёрдамчи асбоб-ускуналарнинг ишчи ҳолатдалиги (соз, носоз, эскирган ва бошқ.)</value>
+  </data>
+  <data name="LabEquipmentState" xml:space="preserve">
+    <value>Мавжуд лаборатория асбоб-ускуналарининг ишчи ҳолатдалиги (соз, носоз, эскирган ва бошқ).</value>
+  </data>
+  <data name="LabHeader" xml:space="preserve">
+    <value>ўқув жараёнида фойдаланилаётган лаборатория ва ёрдамчи асбоб-ускуналардан фойдаланиш  ҳақида МАЪЛУМОТ</value>
+  </data>
+  <data name="LabSubject" xml:space="preserve">
+    <value>Лаборатория ва ёрдамчи асбоб-ускуналардан фойдаланиб машғулот ўтказиладиган ўқув режалардаги фанлар номи</value>
+  </data>
 </root>

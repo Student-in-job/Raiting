@@ -207,9 +207,25 @@
     <Compile Include="Controllers\Table14Controller.cs" />
     <Compile Include="Controllers\Table15Controller.cs" />
     <Compile Include="Controllers\Table16Controller.cs" />
-    <Compile Include="Controllers\Table17Controller.cs" />
+    <Compile Include="Controllers\Table22Controller.cs" />
+    <Compile Include="Controllers\Table23Controller.cs" />
+    <Compile Include="Controllers\Table24Controller.cs" />
+    <Compile Include="Controllers\Table25Controller.cs" />
+    <Compile Include="Controllers\Table26Controller.cs" />
+    <Compile Include="Controllers\Table27Controller.cs" />
+    <Compile Include="Controllers\Table28Controller.cs" />
+    <Compile Include="Controllers\Table29Controller.cs" />
+    <Compile Include="Controllers\Table30Controller.cs" />
+    <Compile Include="Controllers\Table31Controller.cs" />
     <Compile Include="Controllers\Table3Controller.cs" />
     <Compile Include="Controllers\UniversityController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Langs\Resource.Designer.cs" />
+    <Compile Include="Langs\Resource.uz.Designer.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\branch.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
@@ -246,12 +262,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Final Raiting.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Langs\Resource.Designer.cs" />
-    <Compile Include="Langs\Resource.uz.Designer.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\granti_po_vidam_issledovaniy.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
@@ -535,14 +545,18 @@
     <Content Include="Images\uz.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap.min.css.bak" />
+    <Content Include="Files\14_kolichestvo_izdannih_mestnih_statey.xlsx" />
+    <Content Include="Files\3_chislennost_pps_vuza_Rus.xlsx" />
+    <Compile Include="Models\AppDbInitializer.cs" />
     <EntityDeploy Include="Models\Final Raiting.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Final Raiting1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Final Raiting.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Models\Final Raiting.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Final Raiting.edmx</DependentUpon>
-      <LastGenOutput>Final Raiting.Context1.cs</LastGenOutput>
+      <LastGenOutput>Final Raiting.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Final Raiting.edmx.diagram">
       <DependentUpon>Final Raiting.edmx</DependentUpon>
@@ -552,10 +566,6 @@
       <DependentUpon>Final Raiting.edmx</DependentUpon>
       <LastGenOutput>Final Raiting.cs</LastGenOutput>
     </Content>
-    <Content Include="Content\bootstrap.min.css.bak" />
-    <Content Include="Files\14_kolichestvo_izdannih_mestnih_statey.xlsx" />
-    <Content Include="Files\3_chislennost_pps_vuza_Rus.xlsx" />
-    <Compile Include="Models\AppDbInitializer.cs" />
     <None Include="Properties\PublishProfiles\Vitaliy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
@@ -701,11 +711,20 @@
     <Content Include="Views\Jadval8\List.cshtml" />
     <Content Include="Views\Jadval9\List.cshtml" />
     <Content Include="Views\BaseInputData\ListIndex.cshtml" />
+    <Content Include="Views\Table22\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BaseView\" />
-    <Folder Include="Views\Table17\" />
+    <Folder Include="Views\Table23\" />
+    <Folder Include="Views\Table24\" />
+    <Folder Include="Views\Table25\" />
+    <Folder Include="Views\Table26\" />
+    <Folder Include="Views\Table27\" />
+    <Folder Include="Views\Table28\" />
+    <Folder Include="Views\Table29\" />
+    <Folder Include="Views\Table30\" />
+    <Folder Include="Views\Table31\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

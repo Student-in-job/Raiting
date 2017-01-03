@@ -13,10 +13,10 @@ namespace RatingUniversity.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class URaitingEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public URaitingEntities()
-            : base("name=URaitingEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -37,6 +37,7 @@ namespace RatingUniversity.Models
         public virtual DbSet<kolichestvo_izdannih_mejdunarodnih_statey> kolichestvo_izdannih_mejdunarodnih_statey { get; set; }
         public virtual DbSet<kolichestvo_izdannih_mestnih_statey> kolichestvo_izdannih_mestnih_statey { get; set; }
         public virtual DbSet<majmua> majmua { get; set; }
+        public virtual DbSet<Monitorings> Monitorings { get; set; }
         public virtual DbSet<monografiya> monografiya { get; set; }
         public virtual DbSet<nalichie_elektronnoy_literaturi> nalichie_elektronnoy_literaturi { get; set; }
         public virtual DbSet<nalichie_informacii_o_vuze_v_internete> nalichie_informacii_o_vuze_v_internete { get; set; }

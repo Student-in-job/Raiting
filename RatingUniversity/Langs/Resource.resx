@@ -934,4 +934,22 @@
   <data name="DTM_vremya_istek" xml:space="preserve">
     <value>Время истёк</value>
   </data>
+  <data name="LabEquipment" xml:space="preserve">
+    <value>Название имеющегося лабораторного оборудования</value>
+  </data>
+  <data name="LabEquipmentAdd" xml:space="preserve">
+    <value>Название имеющегося вспомогательного оборудования</value>
+  </data>
+  <data name="LabEquipmentAddState" xml:space="preserve">
+    <value>Рабочее состояние (исправное, неисправное, устаревшее и др.) имеющегося вспомогательного оборудования</value>
+  </data>
+  <data name="LabEquipmentState" xml:space="preserve">
+    <value>Рабочее состояние (исправное, неисправное, устаревшее и др.) имеющегося лабораторного оборудования</value>
+  </data>
+  <data name="LabHeader" xml:space="preserve">
+    <value>Степень оснащенности научной экспериментально-лабораторной базы современным оборудованием</value>
+  </data>
+  <data name="LabSubject" xml:space="preserve">
+    <value>Дисциплины, предусмотренные учебным планом использование лабораторий и дополнительного оборудования</value>
+  </data>
 </root>
