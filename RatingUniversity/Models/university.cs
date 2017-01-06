@@ -30,7 +30,6 @@ namespace RatingUniversity.Models
             this.monografiya = new HashSet<monografiya>();
             this.nalichie_elektronnoy_literaturi = new HashSet<nalichie_elektronnoy_literaturi>();
             this.nalichie_informacii_o_vuze_v_internete = new HashSet<nalichie_informacii_o_vuze_v_internete>();
-            this.nalichie_multimedia_v_auditorii = new HashSet<nalichie_multimedia_v_auditorii>();
             this.osnashennost_laboratoriy = new HashSet<osnashennost_laboratoriy>();
             this.qullanma = new HashSet<qullanma>();
             this.raiting = new HashSet<raiting>();
@@ -44,6 +43,8 @@ namespace RatingUniversity.Models
         public Nullable<int> id_region { get; set; }
         public Nullable<int> id_branch { get; set; }
         public string name_UZ { get; set; }
+        public Nullable<int> branch_id { get; set; }
+        public Nullable<int> region_id { get; set; }
     
         public virtual branch branch { get; set; }
         public virtual ICollection<chislennost_pps_vuza> chislennost_pps_vuza { get; set; }
@@ -60,7 +61,6 @@ namespace RatingUniversity.Models
         public virtual ICollection<monografiya> monografiya { get; set; }
         public virtual ICollection<nalichie_elektronnoy_literaturi> nalichie_elektronnoy_literaturi { get; set; }
         public virtual ICollection<nalichie_informacii_o_vuze_v_internete> nalichie_informacii_o_vuze_v_internete { get; set; }
-        public virtual ICollection<nalichie_multimedia_v_auditorii> nalichie_multimedia_v_auditorii { get; set; }
         public virtual ICollection<osnashennost_laboratoriy> osnashennost_laboratoriy { get; set; }
         public virtual ICollection<qullanma> qullanma { get; set; }
         public virtual ICollection<raiting> raiting { get; set; }

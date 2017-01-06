@@ -18,7 +18,7 @@ namespace RatingUniversity.Models
         public Nullable<int> id_university { get; set; }
         public Nullable<int> year { get; set; }
         public string vuz_name { get; set; }
-        public Nullable<double> vuz_web { get; set; }
+        public string vuz_web { get; set; }
         public Nullable<double> vuz_int_rate { get; set; }
         public Nullable<double> vuz_uz_rate { get; set; }
     

@@ -13,7 +13,7 @@ namespace RatingUniversity.Controllers
     {
         //
         // GET: /Table30/
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             return View();
         }

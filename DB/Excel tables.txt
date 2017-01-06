@@ -301,7 +301,7 @@ id int PRIMARY KEY IDENTITY ,
 id_university int FOREIGN KEY REFERENCES university(id) ,
 year int ,
 vuz_name varchar(200) ,
-vuz_web float ,
+vuz_web varchar(200) ,
 vuz_int_rate float ,
 vuz_uz_rate float 
 );  
