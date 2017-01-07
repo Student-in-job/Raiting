@@ -31,7 +31,7 @@ namespace RatingUniversity.Langs
         private static global::System.Globalization.CultureInfo resourceCulture;
 
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public Resource()
+        internal Resource()
         {
         }
 
@@ -874,6 +874,83 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Гранты зарубежные и международные.
+        /// </summary>
+        public static string IntGrantGrant
+        {
+            get
+            {
+                return ResourceManager.GetString("IntGrantGrant", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to СВЕДЕНИЯ о размере средств, полученных в текущем году за счет грантов и заявок зарубежных научных фондов и научных центров.
+        /// </summary>
+        public static string IntGrantHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("IntGrantHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to В ста долларах США.
+        /// </summary>
+        public static string IntGrantInDollar
+        {
+            get
+            {
+                return ResourceManager.GetString("IntGrantInDollar", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to название.
+        /// </summary>
+        public static string IntGrantName
+        {
+            get
+            {
+                return ResourceManager.GetString("IntGrantName", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Заявки зарубежных и международных организаций.
+        /// </summary>
+        public static string IntGrantRequest
+        {
+            get
+            {
+                return ResourceManager.GetString("IntGrantRequest", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to сумма.
+        /// </summary>
+        public static string IntGrantSum
+        {
+            get
+            {
+                return ResourceManager.GetString("IntGrantSum", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Общая сумма.
+        /// </summary>
+        public static string IntGrantTotal
+        {
+            get
+            {
+                return ResourceManager.GetString("IntGrantTotal", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Название имеющегося лабораторного оборудования.
         /// </summary>
         public static string LabEquipment
@@ -936,6 +1013,83 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("LabSubject", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название темы государственного гранта.
+        /// </summary>
+        public static string LocalGrantGrant
+        {
+            get
+            {
+                return ResourceManager.GetString("LocalGrantGrant", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Количество средств (из расчета десять тысяч сумов).
+        /// </summary>
+        public static string LocalGrantGrantSum
+        {
+            get
+            {
+                return ResourceManager.GetString("LocalGrantGrantSum", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to СВЕДЕНИЯ о размере средств, полученных в текущем году за счет   исследований, проводимых по заявкам экономических сетей, государственных грантов.
+        /// </summary>
+        public static string LocalGrantHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("LocalGrantHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название заявки.
+        /// </summary>
+        public static string LocalGrantRequest
+        {
+            get
+            {
+                return ResourceManager.GetString("LocalGrantRequest", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название экономической сферы.
+        /// </summary>
+        public static string LocalGrantSphere
+        {
+            get
+            {
+                return ResourceManager.GetString("LocalGrantSphere", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Количество средств (из расчета десять тысяч сумов).
+        /// </summary>
+        public static string LocalGrantSum
+        {
+            get
+            {
+                return ResourceManager.GetString("LocalGrantSum", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Общее количество средств (из расчета сумов) (4 ст+6 ст).
+        /// </summary>
+        public static string LocalGrantTotal
+        {
+            get
+            {
+                return ResourceManager.GetString("LocalGrantTotal", resourceCulture);
             }
         }
 
@@ -3082,6 +3236,17 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("Upload", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название загруженного файла.
+        /// </summary>
+        public static string UploadFileName
+        {
+            get
+            {
+                return ResourceManager.GetString("UploadFileName", resourceCulture);
             }
         }
 

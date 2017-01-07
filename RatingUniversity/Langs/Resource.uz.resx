@@ -962,4 +962,52 @@
   <data name="LabSubject" xml:space="preserve">
     <value>Лаборатория ва ёрдамчи асбоб-ускуналардан фойдаланиб машғулот ўтказиладиган ўқув режалардаги фанлар номи</value>
   </data>
+  <data name="IntGrantGrant" xml:space="preserve">
+    <value>Хорижий ва халқаро ташкилотлар грантлари</value>
+  </data>
+  <data name="IntGrantHeader" xml:space="preserve">
+    <value>хорижий илмий фондлар  ва илмий марказларининг грантлари ва  буюртмалари ҳисобидан жорий  йилда олинган маблағлар миқдори  бўйича
+МАЪЛУМОТ</value>
+  </data>
+  <data name="IntGrantInDollar" xml:space="preserve">
+    <value>Юз АҚШ долларида</value>
+  </data>
+  <data name="IntGrantName" xml:space="preserve">
+    <value>номи</value>
+  </data>
+  <data name="IntGrantRequest" xml:space="preserve">
+    <value>Хорижий ва халқаро ташкилотлар буюртмалари</value>
+  </data>
+  <data name="IntGrantSum" xml:space="preserve">
+    <value>суммаси</value>
+  </data>
+  <data name="IntGrantTotal" xml:space="preserve">
+    <value>Жами суммаси</value>
+  </data>
+  <data name="UploadFileName" xml:space="preserve">
+    <value>Юкланган файл номи</value>
+  </data>
+  <data name="LocalGrantGrant" xml:space="preserve">
+    <value>Давлат гранти мавзуси номи</value>
+  </data>
+  <data name="LocalGrantGrantSum" xml:space="preserve">
+    <value>Маблағ миқдори (ўн минг сўм ҳисобидан)</value>
+  </data>
+  <data name="LocalGrantHeader" xml:space="preserve">
+    <value>иқтисодиёт тармоқлари буюртмалари бўйича ўтказилган
+тадқиқотлардан, шунингдек давлат грантлари ҳисобидан жорий йилда олинган маблағлар бўйича
+МАЪЛУМОТ</value>
+  </data>
+  <data name="LocalGrantRequest" xml:space="preserve">
+    <value>Буюртма номи</value>
+  </data>
+  <data name="LocalGrantSphere" xml:space="preserve">
+    <value>Иқтисодиёт тармоғи номи</value>
+  </data>
+  <data name="LocalGrantSum" xml:space="preserve">
+    <value>Маблағ миқдори (ўн минг сўм ҳисобидан)</value>
+  </data>
+  <data name="LocalGrantTotal" xml:space="preserve">
+    <value>Жами маблағ миқдори (сўм ҳисобидан) (4уст+6уст)</value>
+  </data>
 </root>

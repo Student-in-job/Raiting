@@ -1,15 +1,15 @@
 ﻿@*using PagedList.Mvc;*@
-    @model IEnumerable<RatingUniversity.Models.osnashennost_laboratoriy>
+    @model IEnumerable<RatingUniversity.Models.summi_mejdunarodnih_grantov>
 
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
     @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
 
     @{
-        <a href="~/Table16/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        <a href="~/Table23/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
         <h3>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</h3>
 
-        using (Html.BeginForm("Upload", "Table22", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        using (Html.BeginForm("Upload", "Table23", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <input type="file" name="files" />
             <input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
@@ -18,34 +18,41 @@
     <div style="height:80px;">&nbsp;</div>
     <div>
         <h3 style="text-align:center;font-weight:bold">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-        <h4 style="text-align:center;font-weight: bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.LabHeader, ViewBag.lang, ViewBag.alfabet)</h4>
-        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
+        <h4 style="text-align:center;font-weight: bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word;">
             <thead>
                 <tr>
-                    <th style="width:38px;">№</th>
-                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.LabSubject, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.LabEquipment, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.LabEquipmentState, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.LabEquipmentAdd, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.LabEquipmentAddState, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th rowspan="3" style="width: 38px; vertical-align: central">№</th>
+                    <th colspan="5" style="text-align: center;">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantInDollar, ViewBag.lang, ViewBag.alfabet)</th>
+                </tr>
+                <tr>
+                    <th colspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantGrant, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantRequest, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th rowspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantTotal, ViewBag.lang, ViewBag.alfabet)</th>
+                </tr>
+                <tr>
+                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantName, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantSum, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantName, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantSum, ViewBag.lang, ViewBag.alfabet)</th>
                 </tr>
             </thead>
             <tbody>
-            @{
-                int index = 0;
-                foreach (var item in Model)
-                {
-                    index++;
-                    <tr>
-                        <td>@index</td>
-                        <td>@Html.DisplayFor(modelItem => item.fan_name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.lab_asbob_name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.lab_holat)</td>
-                        <td>@Html.DisplayFor(modelItem => item.yordam_asbob_name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.yordam_holat)</td>
-                    </tr>
+                @{
+                    int index = 0;
+                    foreach (var item in Model)
+                    {
+                        index++;
+                        <tr>
+                            <td>@index</td>
+                            <td>@Html.DisplayFor(modelItem => item.grant_name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.grant_summa)</td>
+                            <td>@Html.DisplayFor(modelItem => item.buyurtma_name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.buyurtma_summa)</td>
+                            <td>@Html.DisplayFor(modelItem => item.grant_summa + item.buyurtma_summa)</td>
+                        </tr>
+                    }
                 }
-            }
             </tbody>
         </table>
-        </div>
+    </div>

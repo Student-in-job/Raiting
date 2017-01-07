@@ -328,7 +328,7 @@
   </data>
   <data name="UZLatin" xml:space="preserve">
     <value>O`zbek</value>
-    <comment>!!! Перевод не требуется !!! Can`t touch this !!!</comment>
+    <comment>!!! Перевод не требуется !!! Don`t touch this !!!</comment>
   </data>
   <data name="FileName" xml:space="preserve">
     <value>Название загруженного файла</value>
@@ -951,5 +951,50 @@
   </data>
   <data name="LabSubject" xml:space="preserve">
     <value>Дисциплины, предусмотренные учебным планом использование лабораторий и дополнительного оборудования</value>
+  </data>
+  <data name="IntGrantGrant" xml:space="preserve">
+    <value>Гранты зарубежные и международные</value>
+  </data>
+  <data name="IntGrantHeader" xml:space="preserve">
+    <value>СВЕДЕНИЯ о размере средств, полученных в текущем году за счет грантов и заявок зарубежных научных фондов и научных центров</value>
+  </data>
+  <data name="IntGrantInDollar" xml:space="preserve">
+    <value>В ста долларах США</value>
+  </data>
+  <data name="IntGrantName" xml:space="preserve">
+    <value>название</value>
+  </data>
+  <data name="IntGrantRequest" xml:space="preserve">
+    <value>Заявки зарубежных и международных организаций</value>
+  </data>
+  <data name="IntGrantSum" xml:space="preserve">
+    <value>сумма</value>
+  </data>
+  <data name="IntGrantTotal" xml:space="preserve">
+    <value>Общая сумма</value>
+  </data>
+  <data name="UploadFileName" xml:space="preserve">
+    <value>Название загруженного файла</value>
+  </data>
+  <data name="LocalGrantGrant" xml:space="preserve">
+    <value>Название темы государственного гранта</value>
+  </data>
+  <data name="LocalGrantGrantSum" xml:space="preserve">
+    <value>Количество средств (из расчета десять тысяч сумов)</value>
+  </data>
+  <data name="LocalGrantHeader" xml:space="preserve">
+    <value>СВЕДЕНИЯ о размере средств, полученных в текущем году за счет   исследований, проводимых по заявкам экономических сетей, государственных грантов</value>
+  </data>
+  <data name="LocalGrantRequest" xml:space="preserve">
+    <value>Название заявки</value>
+  </data>
+  <data name="LocalGrantSphere" xml:space="preserve">
+    <value>Название экономической сферы</value>
+  </data>
+  <data name="LocalGrantSum" xml:space="preserve">
+    <value>Количество средств (из расчета десять тысяч сумов)</value>
+  </data>
+  <data name="LocalGrantTotal" xml:space="preserve">
+    <value>Общее количество средств (из расчета сумов) (4 ст+6 ст)</value>
   </data>
 </root>

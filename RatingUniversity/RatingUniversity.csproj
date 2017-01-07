@@ -716,12 +716,18 @@
     <Content Include="Views\Jadval9\List.cshtml" />
     <Content Include="Views\BaseInputData\ListIndex.cshtml" />
     <Content Include="Views\Table22\Index.cshtml" />
+    <Content Include="Views\Table23\Index.cshtml" />
+    <Content Include="Views\Table23\DisplayTemplates\Double.cshtml" />
+    <Content Include="Views\Table23\DisplayTemplates\Single.cshtml" />
+    <Content Include="Views\Table22\DisplayTemplates\Double.cshtml" />
+    <Content Include="Views\Table22\DisplayTemplates\Single.cshtml" />
+    <Content Include="Views\Table24\DisplayTemplates\Double.cshtml" />
+    <Content Include="Views\Table24\DisplayTemplates\Single.cshtml" />
+    <Content Include="Views\Table24\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BaseView\" />
-    <Folder Include="Views\Table23\" />
-    <Folder Include="Views\Table24\" />
     <Folder Include="Views\Table25\" />
     <Folder Include="Views\Table26\" />
     <Folder Include="Views\Table27\" />
