@@ -109,6 +109,7 @@ namespace RatingUniversity.Models
         public virtual DbSet<kolichestvo_izdannih_mestnih_statey> kolichestvo_izdannih_mestnih_statey { get; set; }
         public virtual DbSet<informaciya_o_dissertaciyah> informaciya_o_dissertaciyah { get; set; }
 
+        public virtual DbSet<osnashennost_irc_literaturoy> osnashennost_irc_literaturoy { get; set; }
         public TablesContext()
             : base("name=TablesContext")
         { }

@@ -997,4 +997,64 @@
   <data name="LocalGrantTotal" xml:space="preserve">
     <value>Общее количество средств (из расчета сумов) (4 ст+6 ст)</value>
   </data>
+  <data name="GrantByTypeApplication" xml:space="preserve">
+    <value>Прикладной</value>
+  </data>
+  <data name="GrantByTypeFair" xml:space="preserve">
+    <value>Исследования, обеспечивающие средства на основании договора, подписанного на Республиканской ярмарке</value>
+  </data>
+  <data name="GrantByTypeFundamental" xml:space="preserve">
+    <value>Фундаментальный</value>
+  </data>
+  <data name="GrantByTypeHeader" xml:space="preserve">
+    <value>СВЕДЕНИЯ об исследованиях, проводимых согласно заявкам от экономических сфер в</value>
+  </data>
+  <data name="GrantByTypeInnovative" xml:space="preserve">
+    <value>Инновационный</value>
+  </data>
+  <data name="GrantByTypeLicenses" xml:space="preserve">
+    <value>Лицензионные соглашения</value>
+  </data>
+  <data name="GrantByTypeRequest" xml:space="preserve">
+    <value>Название заявки (проекта)</value>
+  </data>
+  <data name="GrantByTypeSphere" xml:space="preserve">
+    <value>Название экономической сферы</value>
+  </data>
+  <data name="GrantByTypeSum" xml:space="preserve">
+    <value>Доля средств (в сумах)</value>
+  </data>
+  <data name="IRBBookTextbook" xml:space="preserve">
+    <value>Название основной учебной литературы, указанной в рабочей учебной программе дисциплины</value>
+  </data>
+  <data name="IRCBookEadditional" xml:space="preserve">
+    <value>Наличие в ИРЦе основной учебной литературы (учебников и учебно-методических пособий), указанной в рабочей учебной программе дисциплины в электронном варианте</value>
+  </data>
+  <data name="IRCBookEbook" xml:space="preserve">
+    <value>Наличие в ИРЦе основной учебной литературы, указанной в рабочей учебной программе дисциплины в электронном варианте</value>
+  </data>
+  <data name="IRCBookEnglish" xml:space="preserve">
+    <value>На русском языке</value>
+  </data>
+  <data name="IRCBookHeader" xml:space="preserve">
+    <value>СВЕДЕНИЯ об учебной литературе Информационно-ресурсного центра в форме электронной книги</value>
+  </data>
+  <data name="IRCBookHeader1" xml:space="preserve">
+    <value>СВЕДЕНИЯ об оснащенности учебной литературой (учебниками и учебными пособиями) Информационно-ресурсного центра</value>
+  </data>
+  <data name="IRCBookIndex" xml:space="preserve">
+    <value>П/н</value>
+  </data>
+  <data name="IRCBookRussian" xml:space="preserve">
+    <value>На иностранном языке</value>
+  </data>
+  <data name="IRCBookSpeciality" xml:space="preserve">
+    <value>Название образовательного направления (специальности)</value>
+  </data>
+  <data name="IRCBookSubject" xml:space="preserve">
+    <value>Название дисциплин, определенных рабочим учебным планом</value>
+  </data>
+  <data name="IRCBookUzbek" xml:space="preserve">
+    <value>На узбекском языке</value>
+  </data>
 </root>

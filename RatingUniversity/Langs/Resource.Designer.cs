@@ -654,6 +654,105 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Прикладной.
+        /// </summary>
+        public static string GrantByTypeApplication
+        {
+            get
+            {
+                return ResourceManager.GetString("GrantByTypeApplication", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Исследования, обеспечивающие средства на основании договора, подписанного на Республиканской ярмарке.
+        /// </summary>
+        public static string GrantByTypeFair
+        {
+            get
+            {
+                return ResourceManager.GetString("GrantByTypeFair", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Фундаментальный.
+        /// </summary>
+        public static string GrantByTypeFundamental
+        {
+            get
+            {
+                return ResourceManager.GetString("GrantByTypeFundamental", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to СВЕДЕНИЯ об исследованиях, проводимых согласно заявкам от экономических сфер в.
+        /// </summary>
+        public static string GrantByTypeHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("GrantByTypeHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Инновационный.
+        /// </summary>
+        public static string GrantByTypeInnovative
+        {
+            get
+            {
+                return ResourceManager.GetString("GrantByTypeInnovative", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Лицензионные соглашения.
+        /// </summary>
+        public static string GrantByTypeLicenses
+        {
+            get
+            {
+                return ResourceManager.GetString("GrantByTypeLicenses", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название заявки (проекта).
+        /// </summary>
+        public static string GrantByTypeRequest
+        {
+            get
+            {
+                return ResourceManager.GetString("GrantByTypeRequest", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название экономической сферы.
+        /// </summary>
+        public static string GrantByTypeSphere
+        {
+            get
+            {
+                return ResourceManager.GetString("GrantByTypeSphere", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Доля средств (в сумах).
+        /// </summary>
+        public static string GrantByTypeSum
+        {
+            get
+            {
+                return ResourceManager.GetString("GrantByTypeSum", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Изменения.
         /// </summary>
         public static string HomePageChanges
@@ -947,6 +1046,127 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("IntGrantTotal", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название основной учебной литературы, указанной в рабочей учебной программе дисциплины.
+        /// </summary>
+        public static string IRBBookTextbook
+        {
+            get
+            {
+                return ResourceManager.GetString("IRBBookTextbook", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Наличие в ИРЦе основной учебной литературы (учебников и учебно-методических пособий), указанной в рабочей учебной программе дисциплины в электронном варианте.
+        /// </summary>
+        public static string IRCBookEadditional
+        {
+            get
+            {
+                return ResourceManager.GetString("IRCBookEadditional", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Наличие в ИРЦе основной учебной литературы, указанной в рабочей учебной программе дисциплины в электронном варианте.
+        /// </summary>
+        public static string IRCBookEbook
+        {
+            get
+            {
+                return ResourceManager.GetString("IRCBookEbook", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to На русском языке.
+        /// </summary>
+        public static string IRCBookEnglish
+        {
+            get
+            {
+                return ResourceManager.GetString("IRCBookEnglish", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to СВЕДЕНИЯ об учебной литературе Информационно-ресурсного центра в форме электронной книги.
+        /// </summary>
+        public static string IRCBookHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("IRCBookHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to СВЕДЕНИЯ об оснащенности учебной литературой (учебниками и учебными пособиями) Информационно-ресурсного центра.
+        /// </summary>
+        public static string IRCBookHeader1
+        {
+            get
+            {
+                return ResourceManager.GetString("IRCBookHeader1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to П/н.
+        /// </summary>
+        public static string IRCBookIndex
+        {
+            get
+            {
+                return ResourceManager.GetString("IRCBookIndex", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to На иностранном языке.
+        /// </summary>
+        public static string IRCBookRussian
+        {
+            get
+            {
+                return ResourceManager.GetString("IRCBookRussian", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название образовательного направления (специальности).
+        /// </summary>
+        public static string IRCBookSpeciality
+        {
+            get
+            {
+                return ResourceManager.GetString("IRCBookSpeciality", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название дисциплин, определенных рабочим учебным планом.
+        /// </summary>
+        public static string IRCBookSubject
+        {
+            get
+            {
+                return ResourceManager.GetString("IRCBookSubject", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to На узбекском языке.
+        /// </summary>
+        public static string IRCBookUzbek
+        {
+            get
+            {
+                return ResourceManager.GetString("IRCBookUzbek", resourceCulture);
             }
         }
 

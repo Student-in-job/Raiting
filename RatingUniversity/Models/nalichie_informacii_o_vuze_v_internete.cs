@@ -21,7 +21,9 @@ namespace RatingUniversity.Models
         public string vuz_web { get; set; }
         public Nullable<double> vuz_int_rate { get; set; }
         public Nullable<double> vuz_uz_rate { get; set; }
+        public Nullable<int> university_id { get; set; }
     
         public virtual university university { get; set; }
+        public virtual university university1 { get; set; }
     }
 }

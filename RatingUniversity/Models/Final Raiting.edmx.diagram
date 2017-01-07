@@ -105,6 +105,32 @@
         <AssociationConnector Association="URaitingModel.FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id" ManuallyRouted="false" />
         <AssociationConnector Association="URaitingModel.FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id" ManuallyRouted="false" />
         <AssociationConnector Association="URaitingModel.FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="URaitingModel.osnashennost_irc_literaturoy" Width="1.5" PointX="5.25" PointY="107.625" />
+        <EntityTypeShape EntityType="URaitingModel.osnashennost_laboratornim_oborudovaniem" Width="1.5" PointX="5.25" PointY="104.5" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_university_dbo_branch_branch_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_chislennost_pps_vuza_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_darslik_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_effektivnost_nir_patent_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_majmua_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_monografiya_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_nalichie_informacii_o_vuze_v_internete_dbo_university_university_id" />
+        <AssociationConnector Association="URaitingModel.FK__osnashenn__id_un__11158940" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_osnashennost_laboratoriy_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK__osnashenn__id_un__13F1F5EB" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_qullanma_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_raiting_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_university_dbo_region_region_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id1" />
+        <AssociationConnector Association="URaitingModel.FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

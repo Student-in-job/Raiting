@@ -1,0 +1,56 @@
+﻿@*using PagedList.Mvc;*@
+    @model IEnumerable<RatingUniversity.Models.osnashennost_irc_literaturoy>
+
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
+
+    @{
+        <a href="~/Table26/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        <h3>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</h3>
+
+        using (Html.BeginForm("Upload", "Table26", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="files" />
+            <input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+        }
+    }
+    <div style="height:80px;">&nbsp;</div>
+    <div>
+        <h3 style="text-align:center;font-weight:bold">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+        <h4 style="text-align:center;font-weight: bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IRCBookHeader1, ViewBag.lang, ViewBag.alfabet)</h4>
+        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word;">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="width: 38px;">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IRCBookIndex, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th rowspan="2" style="text-align:center;">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IRCBookSpeciality, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th rowspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IRCBookSubject, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th rowspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IRBBookTextbook, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="3" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IRCBookEadditional, ViewBag.lang, ViewBag.alfabet)</th>
+                </tr>
+                <tr>
+                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IRCBookUzbek, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IRCBookRussian, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IRCBookEnglish, ViewBag.lang, ViewBag.alfabet)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int index = 0;
+                    foreach (var item in Model)
+                    {
+                        index++;
+                        <tr>
+                            <td>@index</td>
+                            <td>@Html.DisplayFor(modelItem => item.napravlenie)</td>
+                            <td>@Html.DisplayFor(modelItem => item.nazvaniya_predmetov)</td>
+                            <td>@Html.DisplayFor(modelItem => item.osn_literatura)</td>
+                            <td>@Html.DisplayFor(modelItem => item.nalichie_uzb)</td>
+                            <td>@Html.DisplayFor(modelItem => item.nalichie_rus)</td>
+                            <td>@Html.DisplayFor(modelItem => item.nalichie_angl)</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>

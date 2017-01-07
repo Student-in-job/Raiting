@@ -454,7 +454,13 @@
     <Compile Include="Models\nalichie_multimedia_v_auditorii.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\osnashennost_irc_literaturoy.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\osnashennost_laboratoriy.cs">
+      <DependentUpon>Final Raiting.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\osnashennost_laboratornim_oborudovaniem.cs">
       <DependentUpon>Final Raiting.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\qullanma.cs">
@@ -724,13 +730,15 @@
     <Content Include="Views\Table24\DisplayTemplates\Double.cshtml" />
     <Content Include="Views\Table24\DisplayTemplates\Single.cshtml" />
     <Content Include="Views\Table24\Index.cshtml" />
+    <Content Include="Views\Table25\DisplayTemplates\Double.cshtml" />
+    <Content Include="Views\Table25\DisplayTemplates\Single.cshtml" />
+    <Content Include="Views\Table25\Index.cshtml" />
+    <Content Include="Views\Table26\Index.cshtml" />
+    <Content Include="Views\Table27\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BaseView\" />
-    <Folder Include="Views\Table25\" />
-    <Folder Include="Views\Table26\" />
-    <Folder Include="Views\Table27\" />
     <Folder Include="Views\Table28\" />
     <Folder Include="Views\Table29\" />
     <Folder Include="Views\Table30\" />

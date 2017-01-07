@@ -82,7 +82,7 @@ namespace RatingUniversity.Controllers
             {
                 if (id == null)
                 {
-                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table26", active = this.active });
+                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table27", active = this.active });
                 }
             }
             else

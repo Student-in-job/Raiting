@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="URaitingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="URaitingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="branch">
           <Key>
             <PropertyRef Name="id" />
@@ -37,6 +37,7 @@
           <Property Name="id_university" Type="int" />
           <Property Name="year" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="citiruemost_publikaciy_pps_vuza">
           <Key>
@@ -51,6 +52,7 @@
           <Property Name="year" Type="int" />
           <Property Name="id_university" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="darslik">
           <Key>
@@ -65,6 +67,7 @@
           <Property Name="year" Type="int" />
           <Property Name="id_university" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="effektivnost_nir_dalolatnoma">
           <Key>
@@ -80,6 +83,7 @@
           <Property Name="id_university" Type="int" />
           <Property Name="year" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="effektivnost_nir_patent">
           <Key>
@@ -95,6 +99,7 @@
           <Property Name="id_university" Type="int" />
           <Property Name="year" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="effektivnost_nir_sertifikat">
           <Key>
@@ -110,6 +115,7 @@
           <Property Name="id_university" Type="int" />
           <Property Name="year" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="granti_po_vidam_issledovaniy">
           <Key>
@@ -128,6 +134,7 @@
           <Property Name="year" Type="int" />
           <Property Name="filename" Type="nvarchar(max)" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="informaciya_o_dissertaciyah">
           <Key>
@@ -145,6 +152,7 @@
           <Property Name="year" Type="int" />
           <Property Name="id_university" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="kolichestvo_izdannih_mejdunarodnih_statey">
           <Key>
@@ -162,6 +170,7 @@
           <Property Name="year" Type="int" />
           <Property Name="id_university" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="kolichestvo_izdannih_mestnih_statey">
           <Key>
@@ -178,6 +187,7 @@
           <Property Name="year" Type="int" />
           <Property Name="id_university" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="majmua">
           <Key>
@@ -192,6 +202,7 @@
           <Property Name="year" Type="int" />
           <Property Name="id_university" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="Monitorings">
           <Key>
@@ -251,6 +262,7 @@
           <Property Name="year" Type="int" />
           <Property Name="id_university" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="nalichie_elektronnoy_literaturi">
           <Key>
@@ -266,6 +278,7 @@
           <Property Name="nalichie_rus" Type="bit" />
           <Property Name="nalichie_angl" Type="bit" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="nalichie_informacii_o_vuze_v_internete">
           <Key>
@@ -274,10 +287,11 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_university" Type="int" />
           <Property Name="year" Type="int" />
-          <Property Name="vuz_name" Type="varchar" MaxLength="200" />
-          <Property Name="vuz_web" Type="varchar" MaxLength="200" />
+          <Property Name="vuz_name" Type="nvarchar(max)" />
+          <Property Name="vuz_web" Type="nvarchar(max)" />
           <Property Name="vuz_int_rate" Type="float" />
           <Property Name="vuz_uz_rate" Type="float" />
+          <Property Name="university_id" Type="int" />
         </EntityType>
         <EntityType Name="nalichie_multimedia_v_auditorii">
           <Key>
@@ -289,6 +303,20 @@
           <Property Name="vuz_name" Type="nvarchar(max)" />
           <Property Name="rooms_total_count" Type="int" />
           <Property Name="rooms_with_multimedia" Type="int" />
+        </EntityType>
+        <EntityType Name="osnashennost_irc_literaturoy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_university" Type="int" />
+          <Property Name="year" Type="int" />
+          <Property Name="napravlenie" Type="varchar" MaxLength="100" />
+          <Property Name="nazvaniya_predmetov" Type="varchar" MaxLength="1000" />
+          <Property Name="osn_literatura" Type="varchar" MaxLength="1000" />
+          <Property Name="nalichie_uzb" Type="bit" />
+          <Property Name="nalichie_rus" Type="bit" />
+          <Property Name="nalichie_angl" Type="bit" />
         </EntityType>
         <EntityType Name="osnashennost_laboratoriy">
           <Key>
@@ -303,6 +331,18 @@
           <Property Name="yordam_asbob_name" Type="nvarchar(max)" />
           <Property Name="yordam_holat" Type="nvarchar(max)" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
+        </EntityType>
+        <EntityType Name="osnashennost_laboratornim_oborudovaniem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_university" Type="int" />
+          <Property Name="year" Type="int" />
+          <Property Name="nazvaniya_predmetov_s_lab" Type="varchar" MaxLength="1000" />
+          <Property Name="kolichestvo_lab_zanyatiy" Type="int" />
+          <Property Name="kolichestvo_polnostyu_osnashennih_lab" Type="int" />
         </EntityType>
         <EntityType Name="qullanma">
           <Key>
@@ -317,6 +357,7 @@
           <Property Name="year" Type="int" />
           <Property Name="id_university" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="raiting">
           <Key>
@@ -416,6 +457,7 @@
           <Property Name="p19" Type="float" />
           <Property Name="p20" Type="float" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="region">
           <Key>
@@ -449,6 +491,7 @@
           <Property Name="pps_count" Type="int" />
           <Property Name="students_count" Type="int" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="summi_mejdunarodnih_grantov">
           <Key>
@@ -463,6 +506,7 @@
           <Property Name="year" Type="int" />
           <Property Name="filename" Type="nvarchar(max)" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="summi_respublikanskih_grantov">
           <Key>
@@ -478,6 +522,7 @@
           <Property Name="year" Type="int" />
           <Property Name="filename" Type="nvarchar(max)" />
           <Property Name="university_id" Type="int" />
+          <Property Name="university_id1" Type="int" />
         </EntityType>
         <EntityType Name="university">
           <Key>
@@ -490,6 +535,8 @@
           <Property Name="name_UZ" Type="nvarchar(max)" />
           <Property Name="branch_id" Type="int" />
           <Property Name="region_id" Type="int" />
+          <Property Name="branch_id1" Type="int" />
+          <Property Name="region_id1" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'URaiting.dbo.I1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1292,19 +1339,31 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="mark" Type="float" />
           <Property Name="YEAR" Type="int" />
         </EntityType>
-        <Association Name="FK__nalichie___id_un__1209AD79">
+        <Association Name="FK__osnashenn__id_un__11158940">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
-          <End Role="nalichie_informacii_o_vuze_v_internete" Type="Self.nalichie_informacii_o_vuze_v_internete" Multiplicity="*" />
+          <End Role="osnashennost_irc_literaturoy" Type="Self.osnashennost_irc_literaturoy" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="university">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="nalichie_informacii_o_vuze_v_internete">
+            <Dependent Role="osnashennost_irc_literaturoy">
               <PropertyRef Name="id_university" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_chislennost_pps_vuza_dbo_university_university_id">
+        <Association Name="FK__osnashenn__id_un__13F1F5EB">
+          <End Role="university" Type="Self.university" Multiplicity="0..1" />
+          <End Role="osnashennost_laboratornim_oborudovaniem" Type="Self.osnashennost_laboratornim_oborudovaniem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="osnashennost_laboratornim_oborudovaniem">
+              <PropertyRef Name="id_university" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_chislennost_pps_vuza_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="chislennost_pps_vuza" Type="Self.chislennost_pps_vuza" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1312,11 +1371,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="chislennost_pps_vuza">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id">
+        <Association Name="FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="citiruemost_publikaciy_pps_vuza" Type="Self.citiruemost_publikaciy_pps_vuza" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1324,11 +1383,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="citiruemost_publikaciy_pps_vuza">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_darslik_dbo_university_university_id">
+        <Association Name="FK_dbo_darslik_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="darslik" Type="Self.darslik" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1336,11 +1395,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="darslik">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id">
+        <Association Name="FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="effektivnost_nir_dalolatnoma" Type="Self.effektivnost_nir_dalolatnoma" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1348,11 +1407,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="effektivnost_nir_dalolatnoma">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_effektivnost_nir_patent_dbo_university_university_id">
+        <Association Name="FK_dbo_effektivnost_nir_patent_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="effektivnost_nir_patent" Type="Self.effektivnost_nir_patent" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1360,11 +1419,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="effektivnost_nir_patent">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id">
+        <Association Name="FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="effektivnost_nir_sertifikat" Type="Self.effektivnost_nir_sertifikat" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1372,11 +1431,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="effektivnost_nir_sertifikat">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id">
+        <Association Name="FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="granti_po_vidam_issledovaniy" Type="Self.granti_po_vidam_issledovaniy" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1384,11 +1443,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="granti_po_vidam_issledovaniy">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id">
+        <Association Name="FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="informaciya_o_dissertaciyah" Type="Self.informaciya_o_dissertaciyah" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1396,11 +1455,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="informaciya_o_dissertaciyah">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id">
+        <Association Name="FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="kolichestvo_izdannih_mejdunarodnih_statey" Type="Self.kolichestvo_izdannih_mejdunarodnih_statey" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1408,11 +1467,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="kolichestvo_izdannih_mejdunarodnih_statey">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id">
+        <Association Name="FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="kolichestvo_izdannih_mestnih_statey" Type="Self.kolichestvo_izdannih_mestnih_statey" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1420,11 +1479,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="kolichestvo_izdannih_mestnih_statey">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_majmua_dbo_university_university_id">
+        <Association Name="FK_dbo_majmua_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="majmua" Type="Self.majmua" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1432,11 +1491,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="majmua">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_monografiya_dbo_university_university_id">
+        <Association Name="FK_dbo_monografiya_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="monografiya" Type="Self.monografiya" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1444,11 +1503,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="monografiya">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id">
+        <Association Name="FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="nalichie_elektronnoy_literaturi" Type="Self.nalichie_elektronnoy_literaturi" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1456,11 +1515,23 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="nalichie_elektronnoy_literaturi">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_nalichie_informacii_o_vuze_v_internete_dbo_university_university_id">
+          <End Role="university" Type="Self.university" Multiplicity="0..1" />
+          <End Role="nalichie_informacii_o_vuze_v_internete" Type="Self.nalichie_informacii_o_vuze_v_internete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="nalichie_informacii_o_vuze_v_internete">
               <PropertyRef Name="university_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_osnashennost_laboratoriy_dbo_university_university_id">
+        <Association Name="FK_dbo_osnashennost_laboratoriy_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="osnashennost_laboratoriy" Type="Self.osnashennost_laboratoriy" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1468,11 +1539,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="osnashennost_laboratoriy">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_qullanma_dbo_university_university_id">
+        <Association Name="FK_dbo_qullanma_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="qullanma" Type="Self.qullanma" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1480,11 +1551,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="qullanma">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_raiting_dbo_university_university_id">
+        <Association Name="FK_dbo_raiting_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="raiting" Type="Self.raiting" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1492,11 +1563,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="raiting">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id">
+        <Association Name="FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="stepen_vnedreniya_ikt" Type="Self.stepen_vnedreniya_ikt" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1504,11 +1575,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="stepen_vnedreniya_ikt">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id">
+        <Association Name="FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="summi_mejdunarodnih_grantov" Type="Self.summi_mejdunarodnih_grantov" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1516,11 +1587,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="summi_mejdunarodnih_grantov">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id">
+        <Association Name="FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id1">
           <End Role="university" Type="Self.university" Multiplicity="0..1" />
           <End Role="summi_respublikanskih_grantov" Type="Self.summi_respublikanskih_grantov" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1528,11 +1599,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="summi_respublikanskih_grantov">
-              <PropertyRef Name="university_id" />
+              <PropertyRef Name="university_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_university_dbo_branch_branch_id">
+        <Association Name="FK_dbo_university_dbo_branch_branch_id1">
           <End Role="branch" Type="Self.branch" Multiplicity="0..1" />
           <End Role="university" Type="Self.university" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1540,11 +1611,11 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="university">
-              <PropertyRef Name="branch_id" />
+              <PropertyRef Name="branch_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_university_dbo_region_region_id">
+        <Association Name="FK_dbo_university_dbo_region_region_id1">
           <End Role="region" Type="Self.region" Multiplicity="0..1" />
           <End Role="university" Type="Self.university" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1552,7 +1623,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="university">
-              <PropertyRef Name="region_id" />
+              <PropertyRef Name="region_id1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1574,7 +1645,9 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySet Name="nalichie_elektronnoy_literaturi" EntityType="Self.nalichie_elektronnoy_literaturi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="nalichie_informacii_o_vuze_v_internete" EntityType="Self.nalichie_informacii_o_vuze_v_internete" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="nalichie_multimedia_v_auditorii" EntityType="Self.nalichie_multimedia_v_auditorii" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="osnashennost_irc_literaturoy" EntityType="Self.osnashennost_irc_literaturoy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="osnashennost_laboratoriy" EntityType="Self.osnashennost_laboratoriy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="osnashennost_laboratornim_oborudovaniem" EntityType="Self.osnashennost_laboratornim_oborudovaniem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="qullanma" EntityType="Self.qullanma" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="raiting" EntityType="Self.raiting" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="region" EntityType="Self.region" Schema="dbo" store:Type="Tables" />
@@ -2224,97 +2297,104 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
     [RAITING_TOTAL].[YEAR] AS [YEAR]
     FROM [dbo].[RAITING_TOTAL] AS [RAITING_TOTAL]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__nalichie___id_un__1209AD79" Association="Self.FK__nalichie___id_un__1209AD79">
+          <AssociationSet Name="FK__osnashenn__id_un__11158940" Association="Self.FK__osnashenn__id_un__11158940">
             <End Role="university" EntitySet="university" />
-            <End Role="nalichie_informacii_o_vuze_v_internete" EntitySet="nalichie_informacii_o_vuze_v_internete" />
+            <End Role="osnashennost_irc_literaturoy" EntitySet="osnashennost_irc_literaturoy" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_chislennost_pps_vuza_dbo_university_university_id" Association="Self.FK_dbo_chislennost_pps_vuza_dbo_university_university_id">
+          <AssociationSet Name="FK__osnashenn__id_un__13F1F5EB" Association="Self.FK__osnashenn__id_un__13F1F5EB">
+            <End Role="university" EntitySet="university" />
+            <End Role="osnashennost_laboratornim_oborudovaniem" EntitySet="osnashennost_laboratornim_oborudovaniem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_chislennost_pps_vuza_dbo_university_university_id1" Association="Self.FK_dbo_chislennost_pps_vuza_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="chislennost_pps_vuza" EntitySet="chislennost_pps_vuza" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id" Association="Self.FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id1" Association="Self.FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="citiruemost_publikaciy_pps_vuza" EntitySet="citiruemost_publikaciy_pps_vuza" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_darslik_dbo_university_university_id" Association="Self.FK_dbo_darslik_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_darslik_dbo_university_university_id1" Association="Self.FK_dbo_darslik_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="darslik" EntitySet="darslik" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id" Association="Self.FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id1" Association="Self.FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="effektivnost_nir_dalolatnoma" EntitySet="effektivnost_nir_dalolatnoma" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_effektivnost_nir_patent_dbo_university_university_id" Association="Self.FK_dbo_effektivnost_nir_patent_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_effektivnost_nir_patent_dbo_university_university_id1" Association="Self.FK_dbo_effektivnost_nir_patent_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="effektivnost_nir_patent" EntitySet="effektivnost_nir_patent" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id" Association="Self.FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id1" Association="Self.FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="effektivnost_nir_sertifikat" EntitySet="effektivnost_nir_sertifikat" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id" Association="Self.FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id1" Association="Self.FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="granti_po_vidam_issledovaniy" EntitySet="granti_po_vidam_issledovaniy" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id" Association="Self.FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id1" Association="Self.FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="informaciya_o_dissertaciyah" EntitySet="informaciya_o_dissertaciyah" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id" Association="Self.FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id1" Association="Self.FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="kolichestvo_izdannih_mejdunarodnih_statey" EntitySet="kolichestvo_izdannih_mejdunarodnih_statey" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id" Association="Self.FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id1" Association="Self.FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="kolichestvo_izdannih_mestnih_statey" EntitySet="kolichestvo_izdannih_mestnih_statey" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_majmua_dbo_university_university_id" Association="Self.FK_dbo_majmua_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_majmua_dbo_university_university_id1" Association="Self.FK_dbo_majmua_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="majmua" EntitySet="majmua" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_monografiya_dbo_university_university_id" Association="Self.FK_dbo_monografiya_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_monografiya_dbo_university_university_id1" Association="Self.FK_dbo_monografiya_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="monografiya" EntitySet="monografiya" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id" Association="Self.FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id1" Association="Self.FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="nalichie_elektronnoy_literaturi" EntitySet="nalichie_elektronnoy_literaturi" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_osnashennost_laboratoriy_dbo_university_university_id" Association="Self.FK_dbo_osnashennost_laboratoriy_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_nalichie_informacii_o_vuze_v_internete_dbo_university_university_id" Association="Self.FK_dbo_nalichie_informacii_o_vuze_v_internete_dbo_university_university_id">
+            <End Role="university" EntitySet="university" />
+            <End Role="nalichie_informacii_o_vuze_v_internete" EntitySet="nalichie_informacii_o_vuze_v_internete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_osnashennost_laboratoriy_dbo_university_university_id1" Association="Self.FK_dbo_osnashennost_laboratoriy_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="osnashennost_laboratoriy" EntitySet="osnashennost_laboratoriy" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_qullanma_dbo_university_university_id" Association="Self.FK_dbo_qullanma_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_qullanma_dbo_university_university_id1" Association="Self.FK_dbo_qullanma_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="qullanma" EntitySet="qullanma" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_raiting_dbo_university_university_id" Association="Self.FK_dbo_raiting_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_raiting_dbo_university_university_id1" Association="Self.FK_dbo_raiting_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="raiting" EntitySet="raiting" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id" Association="Self.FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id1" Association="Self.FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="stepen_vnedreniya_ikt" EntitySet="stepen_vnedreniya_ikt" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id" Association="Self.FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id1" Association="Self.FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="summi_mejdunarodnih_grantov" EntitySet="summi_mejdunarodnih_grantov" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id" Association="Self.FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id">
+          <AssociationSet Name="FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id1" Association="Self.FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id1">
             <End Role="university" EntitySet="university" />
             <End Role="summi_respublikanskih_grantov" EntitySet="summi_respublikanskih_grantov" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_university_dbo_branch_branch_id" Association="Self.FK_dbo_university_dbo_branch_branch_id">
+          <AssociationSet Name="FK_dbo_university_dbo_branch_branch_id1" Association="Self.FK_dbo_university_dbo_branch_branch_id1">
             <End Role="branch" EntitySet="branch" />
             <End Role="university" EntitySet="university" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_university_dbo_region_region_id" Association="Self.FK_dbo_university_dbo_region_region_id">
+          <AssociationSet Name="FK_dbo_university_dbo_region_region_id1" Association="Self.FK_dbo_university_dbo_region_region_id1">
             <End Role="region" EntitySet="region" />
             <End Role="university" EntitySet="university" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="URaitingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -2325,6 +2405,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_university_dbo_branch_branch_id" FromRole="branch" ToRole="university" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_university_dbo_branch_branch_id1" FromRole="branch" ToRole="university" />
         </EntityType>
         <EntityType Name="chislennost_pps_vuza">
           <Key>
@@ -2352,6 +2433,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="year" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_chislennost_pps_vuza_dbo_university_university_id" FromRole="chislennost_pps_vuza" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_chislennost_pps_vuza_dbo_university_university_id1" FromRole="chislennost_pps_vuza" ToRole="university" />
         </EntityType>
         <EntityType Name="citiruemost_publikaciy_pps_vuza">
           <Key>
@@ -2367,6 +2450,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="id_university" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id" FromRole="citiruemost_publikaciy_pps_vuza" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id1" FromRole="citiruemost_publikaciy_pps_vuza" ToRole="university" />
         </EntityType>
         <EntityType Name="darslik">
           <Key>
@@ -2382,6 +2467,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="id_university" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_darslik_dbo_university_university_id" FromRole="darslik" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_darslik_dbo_university_university_id1" FromRole="darslik" ToRole="university" />
         </EntityType>
         <EntityType Name="effektivnost_nir_dalolatnoma">
           <Key>
@@ -2398,6 +2485,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="year" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id" FromRole="effektivnost_nir_dalolatnoma" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id1" FromRole="effektivnost_nir_dalolatnoma" ToRole="university" />
         </EntityType>
         <EntityType Name="effektivnost_nir_patent">
           <Key>
@@ -2414,6 +2503,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="year" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_effektivnost_nir_patent_dbo_university_university_id" FromRole="effektivnost_nir_patent" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_effektivnost_nir_patent_dbo_university_university_id1" FromRole="effektivnost_nir_patent" ToRole="university" />
         </EntityType>
         <EntityType Name="effektivnost_nir_sertifikat">
           <Key>
@@ -2430,6 +2521,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="year" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id" FromRole="effektivnost_nir_sertifikat" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id1" FromRole="effektivnost_nir_sertifikat" ToRole="university" />
         </EntityType>
         <EntityType Name="granti_po_vidam_issledovaniy">
           <Key>
@@ -2449,6 +2542,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="filename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id" FromRole="granti_po_vidam_issledovaniy" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id1" FromRole="granti_po_vidam_issledovaniy" ToRole="university" />
         </EntityType>
         <EntityType Name="informaciya_o_dissertaciyah">
           <Key>
@@ -2467,6 +2562,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="id_university" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id" FromRole="informaciya_o_dissertaciyah" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id1" FromRole="informaciya_o_dissertaciyah" ToRole="university" />
         </EntityType>
         <EntityType Name="kolichestvo_izdannih_mejdunarodnih_statey">
           <Key>
@@ -2485,6 +2582,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="id_university" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id" FromRole="kolichestvo_izdannih_mejdunarodnih_statey" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id1" FromRole="kolichestvo_izdannih_mejdunarodnih_statey" ToRole="university" />
         </EntityType>
         <EntityType Name="kolichestvo_izdannih_mestnih_statey">
           <Key>
@@ -2502,6 +2601,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="id_university" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id" FromRole="kolichestvo_izdannih_mestnih_statey" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id1" FromRole="kolichestvo_izdannih_mestnih_statey" ToRole="university" />
         </EntityType>
         <EntityType Name="majmua">
           <Key>
@@ -2517,6 +2618,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="id_university" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_majmua_dbo_university_university_id" FromRole="majmua" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_majmua_dbo_university_university_id1" FromRole="majmua" ToRole="university" />
         </EntityType>
         <EntityType Name="Monitorings">
           <Key>
@@ -2577,6 +2680,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="id_university" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_monografiya_dbo_university_university_id" FromRole="monografiya" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_monografiya_dbo_university_university_id1" FromRole="monografiya" ToRole="university" />
         </EntityType>
         <EntityType Name="nalichie_elektronnoy_literaturi">
           <Key>
@@ -2593,6 +2698,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="nalichie_angl" Type="Boolean" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id" FromRole="nalichie_elektronnoy_literaturi" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id1" FromRole="nalichie_elektronnoy_literaturi" ToRole="university" />
         </EntityType>
         <EntityType Name="nalichie_informacii_o_vuze_v_internete">
           <Key>
@@ -2601,11 +2708,13 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_university" Type="Int32" />
           <Property Name="year" Type="Int32" />
-          <Property Name="vuz_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="vuz_web" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="vuz_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vuz_web" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="vuz_int_rate" Type="Double" />
           <Property Name="vuz_uz_rate" Type="Double" />
           <NavigationProperty Name="university" Relationship="Self.FK__nalichie___id_un__1209AD79" FromRole="nalichie_informacii_o_vuze_v_internete" ToRole="university" />
+          <Property Name="university_id" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_nalichie_informacii_o_vuze_v_internete_dbo_university_university_id" FromRole="nalichie_informacii_o_vuze_v_internete" ToRole="university" />
         </EntityType>
         <EntityType Name="nalichie_multimedia_v_auditorii">
           <Key>
@@ -2632,6 +2741,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="yordam_holat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_osnashennost_laboratoriy_dbo_university_university_id" FromRole="osnashennost_laboratoriy" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_osnashennost_laboratoriy_dbo_university_university_id1" FromRole="osnashennost_laboratoriy" ToRole="university" />
         </EntityType>
         <EntityType Name="qullanma">
           <Key>
@@ -2647,6 +2758,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="id_university" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_qullanma_dbo_university_university_id" FromRole="qullanma" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_qullanma_dbo_university_university_id1" FromRole="qullanma" ToRole="university" />
         </EntityType>
         <EntityType Name="raiting">
           <Key>
@@ -2747,6 +2860,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="p20" Type="Double" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_raiting_dbo_university_university_id" FromRole="raiting" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_raiting_dbo_university_university_id1" FromRole="raiting" ToRole="university" />
         </EntityType>
         <EntityType Name="region">
           <Key>
@@ -2756,6 +2871,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="name_RU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="name_UZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_university_dbo_region_region_id" FromRole="region" ToRole="university" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_university_dbo_region_region_id1" FromRole="region" ToRole="university" />
         </EntityType>
         <EntityType Name="stepen_vnedreniya_ikt">
           <Key>
@@ -2782,6 +2898,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="students_count" Type="Int32" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id" FromRole="stepen_vnedreniya_ikt" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id1" FromRole="stepen_vnedreniya_ikt" ToRole="university" />
         </EntityType>
         <EntityType Name="summi_mejdunarodnih_grantov">
           <Key>
@@ -2797,6 +2915,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="filename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id" FromRole="summi_mejdunarodnih_grantov" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id1" FromRole="summi_mejdunarodnih_grantov" ToRole="university" />
         </EntityType>
         <EntityType Name="summi_respublikanskih_grantov">
           <Key>
@@ -2813,6 +2933,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="filename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="university_id" Type="Int32" />
           <NavigationProperty Name="university" Relationship="Self.FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id" FromRole="summi_respublikanskih_grantov" ToRole="university" />
+          <Property Name="university_id1" Type="Int32" />
+          <NavigationProperty Name="university1" Relationship="URaitingModel.FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id1" FromRole="summi_respublikanskih_grantov" ToRole="university" />
         </EntityType>
         <EntityType Name="university">
           <Key>
@@ -2847,6 +2969,32 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <NavigationProperty Name="stepen_vnedreniya_ikt" Relationship="Self.FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id" FromRole="university" ToRole="stepen_vnedreniya_ikt" />
           <NavigationProperty Name="summi_mejdunarodnih_grantov" Relationship="Self.FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id" FromRole="university" ToRole="summi_mejdunarodnih_grantov" />
           <NavigationProperty Name="summi_respublikanskih_grantov" Relationship="Self.FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id" FromRole="university" ToRole="summi_respublikanskih_grantov" />
+          <Property Name="branch_id1" Type="Int32" />
+          <Property Name="region_id1" Type="Int32" />
+          <NavigationProperty Name="branch1" Relationship="URaitingModel.FK_dbo_university_dbo_branch_branch_id1" FromRole="university" ToRole="branch" />
+          <NavigationProperty Name="chislennost_pps_vuza1" Relationship="URaitingModel.FK_dbo_chislennost_pps_vuza_dbo_university_university_id1" FromRole="university" ToRole="chislennost_pps_vuza" />
+          <NavigationProperty Name="citiruemost_publikaciy_pps_vuza1" Relationship="URaitingModel.FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id1" FromRole="university" ToRole="citiruemost_publikaciy_pps_vuza" />
+          <NavigationProperty Name="darslik1" Relationship="URaitingModel.FK_dbo_darslik_dbo_university_university_id1" FromRole="university" ToRole="darslik" />
+          <NavigationProperty Name="effektivnost_nir_dalolatnoma1" Relationship="URaitingModel.FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id1" FromRole="university" ToRole="effektivnost_nir_dalolatnoma" />
+          <NavigationProperty Name="effektivnost_nir_patent1" Relationship="URaitingModel.FK_dbo_effektivnost_nir_patent_dbo_university_university_id1" FromRole="university" ToRole="effektivnost_nir_patent" />
+          <NavigationProperty Name="effektivnost_nir_sertifikat1" Relationship="URaitingModel.FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id1" FromRole="university" ToRole="effektivnost_nir_sertifikat" />
+          <NavigationProperty Name="granti_po_vidam_issledovaniy1" Relationship="URaitingModel.FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id1" FromRole="university" ToRole="granti_po_vidam_issledovaniy" />
+          <NavigationProperty Name="informaciya_o_dissertaciyah1" Relationship="URaitingModel.FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id1" FromRole="university" ToRole="informaciya_o_dissertaciyah" />
+          <NavigationProperty Name="kolichestvo_izdannih_mejdunarodnih_statey1" Relationship="URaitingModel.FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id1" FromRole="university" ToRole="kolichestvo_izdannih_mejdunarodnih_statey" />
+          <NavigationProperty Name="kolichestvo_izdannih_mestnih_statey1" Relationship="URaitingModel.FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id1" FromRole="university" ToRole="kolichestvo_izdannih_mestnih_statey" />
+          <NavigationProperty Name="majmua1" Relationship="URaitingModel.FK_dbo_majmua_dbo_university_university_id1" FromRole="university" ToRole="majmua" />
+          <NavigationProperty Name="monografiya1" Relationship="URaitingModel.FK_dbo_monografiya_dbo_university_university_id1" FromRole="university" ToRole="monografiya" />
+          <NavigationProperty Name="nalichie_elektronnoy_literaturi1" Relationship="URaitingModel.FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id1" FromRole="university" ToRole="nalichie_elektronnoy_literaturi" />
+          <NavigationProperty Name="nalichie_informacii_o_vuze_v_internete1" Relationship="URaitingModel.FK_dbo_nalichie_informacii_o_vuze_v_internete_dbo_university_university_id" FromRole="university" ToRole="nalichie_informacii_o_vuze_v_internete" />
+          <NavigationProperty Name="osnashennost_irc_literaturoy" Relationship="URaitingModel.FK__osnashenn__id_un__11158940" FromRole="university" ToRole="osnashennost_irc_literaturoy" />
+          <NavigationProperty Name="osnashennost_laboratoriy1" Relationship="URaitingModel.FK_dbo_osnashennost_laboratoriy_dbo_university_university_id1" FromRole="university" ToRole="osnashennost_laboratoriy" />
+          <NavigationProperty Name="osnashennost_laboratornim_oborudovaniem" Relationship="URaitingModel.FK__osnashenn__id_un__13F1F5EB" FromRole="university" ToRole="osnashennost_laboratornim_oborudovaniem" />
+          <NavigationProperty Name="qullanma1" Relationship="URaitingModel.FK_dbo_qullanma_dbo_university_university_id1" FromRole="university" ToRole="qullanma" />
+          <NavigationProperty Name="raiting1" Relationship="URaitingModel.FK_dbo_raiting_dbo_university_university_id1" FromRole="university" ToRole="raiting" />
+          <NavigationProperty Name="region1" Relationship="URaitingModel.FK_dbo_university_dbo_region_region_id1" FromRole="university" ToRole="region" />
+          <NavigationProperty Name="stepen_vnedreniya_ikt1" Relationship="URaitingModel.FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id1" FromRole="university" ToRole="stepen_vnedreniya_ikt" />
+          <NavigationProperty Name="summi_mejdunarodnih_grantov1" Relationship="URaitingModel.FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id1" FromRole="university" ToRole="summi_mejdunarodnih_grantov" />
+          <NavigationProperty Name="summi_respublikanskih_grantov1" Relationship="URaitingModel.FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id1" FromRole="university" ToRole="summi_respublikanskih_grantov" />
         </EntityType>
         <EntityType Name="I1">
           <Key>
@@ -3974,7 +4122,420 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
             <End Role="university" EntitySet="university" />
             <End Role="summi_respublikanskih_grantov" EntitySet="summi_respublikanskih_grantov" />
           </AssociationSet>
+          <EntitySet Name="osnashennost_irc_literaturoy" EntityType="URaitingModel.osnashennost_irc_literaturoy" />
+          <EntitySet Name="osnashennost_laboratornim_oborudovaniem" EntityType="URaitingModel.osnashennost_laboratornim_oborudovaniem" />
+          <AssociationSet Name="FK_dbo_university_dbo_branch_branch_id1" Association="URaitingModel.FK_dbo_university_dbo_branch_branch_id1">
+            <End Role="branch" EntitySet="branch" />
+            <End Role="university" EntitySet="university" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_chislennost_pps_vuza_dbo_university_university_id1" Association="URaitingModel.FK_dbo_chislennost_pps_vuza_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="chislennost_pps_vuza" EntitySet="chislennost_pps_vuza" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id1" Association="URaitingModel.FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="citiruemost_publikaciy_pps_vuza" EntitySet="citiruemost_publikaciy_pps_vuza" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_darslik_dbo_university_university_id1" Association="URaitingModel.FK_dbo_darslik_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="darslik" EntitySet="darslik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id1" Association="URaitingModel.FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="effektivnost_nir_dalolatnoma" EntitySet="effektivnost_nir_dalolatnoma" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_effektivnost_nir_patent_dbo_university_university_id1" Association="URaitingModel.FK_dbo_effektivnost_nir_patent_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="effektivnost_nir_patent" EntitySet="effektivnost_nir_patent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id1" Association="URaitingModel.FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="effektivnost_nir_sertifikat" EntitySet="effektivnost_nir_sertifikat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id1" Association="URaitingModel.FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="granti_po_vidam_issledovaniy" EntitySet="granti_po_vidam_issledovaniy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id1" Association="URaitingModel.FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="informaciya_o_dissertaciyah" EntitySet="informaciya_o_dissertaciyah" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id1" Association="URaitingModel.FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="kolichestvo_izdannih_mejdunarodnih_statey" EntitySet="kolichestvo_izdannih_mejdunarodnih_statey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id1" Association="URaitingModel.FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="kolichestvo_izdannih_mestnih_statey" EntitySet="kolichestvo_izdannih_mestnih_statey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_majmua_dbo_university_university_id1" Association="URaitingModel.FK_dbo_majmua_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="majmua" EntitySet="majmua" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_monografiya_dbo_university_university_id1" Association="URaitingModel.FK_dbo_monografiya_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="monografiya" EntitySet="monografiya" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id1" Association="URaitingModel.FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="nalichie_elektronnoy_literaturi" EntitySet="nalichie_elektronnoy_literaturi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_nalichie_informacii_o_vuze_v_internete_dbo_university_university_id" Association="URaitingModel.FK_dbo_nalichie_informacii_o_vuze_v_internete_dbo_university_university_id">
+            <End Role="university" EntitySet="university" />
+            <End Role="nalichie_informacii_o_vuze_v_internete" EntitySet="nalichie_informacii_o_vuze_v_internete" />
+          </AssociationSet>
+          <AssociationSet Name="FK__osnashenn__id_un__11158940" Association="URaitingModel.FK__osnashenn__id_un__11158940">
+            <End Role="university" EntitySet="university" />
+            <End Role="osnashennost_irc_literaturoy" EntitySet="osnashennost_irc_literaturoy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_osnashennost_laboratoriy_dbo_university_university_id1" Association="URaitingModel.FK_dbo_osnashennost_laboratoriy_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="osnashennost_laboratoriy" EntitySet="osnashennost_laboratoriy" />
+          </AssociationSet>
+          <AssociationSet Name="FK__osnashenn__id_un__13F1F5EB" Association="URaitingModel.FK__osnashenn__id_un__13F1F5EB">
+            <End Role="university" EntitySet="university" />
+            <End Role="osnashennost_laboratornim_oborudovaniem" EntitySet="osnashennost_laboratornim_oborudovaniem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_qullanma_dbo_university_university_id1" Association="URaitingModel.FK_dbo_qullanma_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="qullanma" EntitySet="qullanma" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_raiting_dbo_university_university_id1" Association="URaitingModel.FK_dbo_raiting_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="raiting" EntitySet="raiting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_university_dbo_region_region_id1" Association="URaitingModel.FK_dbo_university_dbo_region_region_id1">
+            <End Role="region" EntitySet="region" />
+            <End Role="university" EntitySet="university" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id1" Association="URaitingModel.FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="stepen_vnedreniya_ikt" EntitySet="stepen_vnedreniya_ikt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id1" Association="URaitingModel.FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="summi_mejdunarodnih_grantov" EntitySet="summi_mejdunarodnih_grantov" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id1" Association="URaitingModel.FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id1">
+            <End Role="university" EntitySet="university" />
+            <End Role="summi_respublikanskih_grantov" EntitySet="summi_respublikanskih_grantov" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="osnashennost_irc_literaturoy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_university" Type="Int32" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="napravlenie" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nazvaniya_predmetov" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="osn_literatura" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="nalichie_uzb" Type="Boolean" />
+          <Property Name="nalichie_rus" Type="Boolean" />
+          <Property Name="nalichie_angl" Type="Boolean" />
+          <NavigationProperty Name="university" Relationship="URaitingModel.FK__osnashenn__id_un__11158940" FromRole="osnashennost_irc_literaturoy" ToRole="university" />
+        </EntityType>
+        <EntityType Name="osnashennost_laboratornim_oborudovaniem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_university" Type="Int32" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="nazvaniya_predmetov_s_lab" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="kolichestvo_lab_zanyatiy" Type="Int32" />
+          <Property Name="kolichestvo_polnostyu_osnashennih_lab" Type="Int32" />
+          <NavigationProperty Name="university" Relationship="URaitingModel.FK__osnashenn__id_un__13F1F5EB" FromRole="osnashennost_laboratornim_oborudovaniem" ToRole="university" />
+        </EntityType>
+        <Association Name="FK_dbo_university_dbo_branch_branch_id1">
+          <End Type="URaitingModel.branch" Role="branch" Multiplicity="0..1" />
+          <End Type="URaitingModel.university" Role="university" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branch">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="university">
+              <PropertyRef Name="branch_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_chislennost_pps_vuza_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.chislennost_pps_vuza" Role="chislennost_pps_vuza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="chislennost_pps_vuza">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.citiruemost_publikaciy_pps_vuza" Role="citiruemost_publikaciy_pps_vuza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="citiruemost_publikaciy_pps_vuza">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_darslik_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.darslik" Role="darslik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="darslik">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_effektivnost_nir_dalolatnoma_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.effektivnost_nir_dalolatnoma" Role="effektivnost_nir_dalolatnoma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="effektivnost_nir_dalolatnoma">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_effektivnost_nir_patent_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.effektivnost_nir_patent" Role="effektivnost_nir_patent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="effektivnost_nir_patent">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_effektivnost_nir_sertifikat_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.effektivnost_nir_sertifikat" Role="effektivnost_nir_sertifikat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="effektivnost_nir_sertifikat">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_granti_po_vidam_issledovaniy_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.granti_po_vidam_issledovaniy" Role="granti_po_vidam_issledovaniy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="granti_po_vidam_issledovaniy">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_informaciya_o_dissertaciyah_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.informaciya_o_dissertaciyah" Role="informaciya_o_dissertaciyah" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="informaciya_o_dissertaciyah">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_kolichestvo_izdannih_mejdunarodnih_statey_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.kolichestvo_izdannih_mejdunarodnih_statey" Role="kolichestvo_izdannih_mejdunarodnih_statey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kolichestvo_izdannih_mejdunarodnih_statey">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_kolichestvo_izdannih_mestnih_statey_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.kolichestvo_izdannih_mestnih_statey" Role="kolichestvo_izdannih_mestnih_statey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kolichestvo_izdannih_mestnih_statey">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_majmua_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.majmua" Role="majmua" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="majmua">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_monografiya_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.monografiya" Role="monografiya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="monografiya">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_nalichie_elektronnoy_literaturi_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.nalichie_elektronnoy_literaturi" Role="nalichie_elektronnoy_literaturi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="nalichie_elektronnoy_literaturi">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_nalichie_informacii_o_vuze_v_internete_dbo_university_university_id">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.nalichie_informacii_o_vuze_v_internete" Role="nalichie_informacii_o_vuze_v_internete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="nalichie_informacii_o_vuze_v_internete">
+              <PropertyRef Name="university_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__osnashenn__id_un__11158940">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.osnashennost_irc_literaturoy" Role="osnashennost_irc_literaturoy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="osnashennost_irc_literaturoy">
+              <PropertyRef Name="id_university" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_osnashennost_laboratoriy_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.osnashennost_laboratoriy" Role="osnashennost_laboratoriy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="osnashennost_laboratoriy">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__osnashenn__id_un__13F1F5EB">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.osnashennost_laboratornim_oborudovaniem" Role="osnashennost_laboratornim_oborudovaniem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="osnashennost_laboratornim_oborudovaniem">
+              <PropertyRef Name="id_university" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_qullanma_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.qullanma" Role="qullanma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="qullanma">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_raiting_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.raiting" Role="raiting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="raiting">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_university_dbo_region_region_id1">
+          <End Type="URaitingModel.region" Role="region" Multiplicity="0..1" />
+          <End Type="URaitingModel.university" Role="university" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="region">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="university">
+              <PropertyRef Name="region_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_stepen_vnedreniya_ikt_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.stepen_vnedreniya_ikt" Role="stepen_vnedreniya_ikt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="stepen_vnedreniya_ikt">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_summi_mejdunarodnih_grantov_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.summi_mejdunarodnih_grantov" Role="summi_mejdunarodnih_grantov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="summi_mejdunarodnih_grantov">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_summi_respublikanskih_grantov_dbo_university_university_id1">
+          <End Type="URaitingModel.university" Role="university" Multiplicity="0..1" />
+          <End Type="URaitingModel.summi_respublikanskih_grantov" Role="summi_respublikanskih_grantov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="university">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="summi_respublikanskih_grantov">
+              <PropertyRef Name="university_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3992,6 +4553,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="chislennost_pps_vuza">
             <EntityTypeMapping TypeName="URaitingModel.chislennost_pps_vuza">
               <MappingFragment StoreEntitySet="chislennost_pps_vuza">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="ass_shtat" ColumnName="ass_shtat" />
                 <ScalarProperty Name="urindosh" ColumnName="urindosh" />
@@ -4019,6 +4581,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="citiruemost_publikaciy_pps_vuza">
             <EntityTypeMapping TypeName="URaitingModel.citiruemost_publikaciy_pps_vuza">
               <MappingFragment StoreEntitySet="citiruemost_publikaciy_pps_vuza">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fio" ColumnName="fio" />
                 <ScalarProperty Name="source" ColumnName="source" />
@@ -4034,6 +4597,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="darslik">
             <EntityTypeMapping TypeName="URaitingModel.darslik">
               <MappingFragment StoreEntitySet="darslik">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fio" ColumnName="fio" />
                 <ScalarProperty Name="kod_spec" ColumnName="kod_spec" />
@@ -4049,6 +4613,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="effektivnost_nir_dalolatnoma">
             <EntityTypeMapping TypeName="URaitingModel.effektivnost_nir_dalolatnoma">
               <MappingFragment StoreEntitySet="effektivnost_nir_dalolatnoma">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="otm_name" ColumnName="otm_name" />
                 <ScalarProperty Name="fio" ColumnName="fio" />
@@ -4065,6 +4630,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="effektivnost_nir_patent">
             <EntityTypeMapping TypeName="URaitingModel.effektivnost_nir_patent">
               <MappingFragment StoreEntitySet="effektivnost_nir_patent">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="otm_name" ColumnName="otm_name" />
                 <ScalarProperty Name="fio" ColumnName="fio" />
@@ -4081,6 +4647,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="effektivnost_nir_sertifikat">
             <EntityTypeMapping TypeName="URaitingModel.effektivnost_nir_sertifikat">
               <MappingFragment StoreEntitySet="effektivnost_nir_sertifikat">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="otm_name" ColumnName="otm_name" />
                 <ScalarProperty Name="fio" ColumnName="fio" />
@@ -4097,6 +4664,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="granti_po_vidam_issledovaniy">
             <EntityTypeMapping TypeName="URaitingModel.granti_po_vidam_issledovaniy">
               <MappingFragment StoreEntitySet="granti_po_vidam_issledovaniy">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="tormog_name" ColumnName="tormog_name" />
                 <ScalarProperty Name="buyurtma_name" ColumnName="buyurtma_name" />
@@ -4116,6 +4684,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="informaciya_o_dissertaciyah">
             <EntityTypeMapping TypeName="URaitingModel.informaciya_o_dissertaciyah">
               <MappingFragment StoreEntitySet="informaciya_o_dissertaciyah">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fio" ColumnName="fio" />
                 <ScalarProperty Name="work_place" ColumnName="work_place" />
@@ -4134,6 +4703,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="kolichestvo_izdannih_mejdunarodnih_statey">
             <EntityTypeMapping TypeName="URaitingModel.kolichestvo_izdannih_mejdunarodnih_statey">
               <MappingFragment StoreEntitySet="kolichestvo_izdannih_mejdunarodnih_statey">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fio" ColumnName="fio" />
                 <ScalarProperty Name="country" ColumnName="country" />
@@ -4152,6 +4722,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="kolichestvo_izdannih_mestnih_statey">
             <EntityTypeMapping TypeName="URaitingModel.kolichestvo_izdannih_mestnih_statey">
               <MappingFragment StoreEntitySet="kolichestvo_izdannih_mestnih_statey">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fio" ColumnName="fio" />
                 <ScalarProperty Name="journal" ColumnName="journal" />
@@ -4169,6 +4740,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="majmua">
             <EntityTypeMapping TypeName="URaitingModel.majmua">
               <MappingFragment StoreEntitySet="majmua">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fio" ColumnName="fio" />
                 <ScalarProperty Name="kod_spec" ColumnName="kod_spec" />
@@ -4230,6 +4802,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="monografiya">
             <EntityTypeMapping TypeName="URaitingModel.monografiya">
               <MappingFragment StoreEntitySet="monografiya">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fio" ColumnName="fio" />
                 <ScalarProperty Name="kod_spec" ColumnName="kod_spec" />
@@ -4245,6 +4818,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="nalichie_elektronnoy_literaturi">
             <EntityTypeMapping TypeName="URaitingModel.nalichie_elektronnoy_literaturi">
               <MappingFragment StoreEntitySet="nalichie_elektronnoy_literaturi">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_university" ColumnName="id_university" />
                 <ScalarProperty Name="year" ColumnName="year" />
@@ -4261,6 +4835,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="nalichie_informacii_o_vuze_v_internete">
             <EntityTypeMapping TypeName="URaitingModel.nalichie_informacii_o_vuze_v_internete">
               <MappingFragment StoreEntitySet="nalichie_informacii_o_vuze_v_internete">
+                <ScalarProperty Name="university_id" ColumnName="university_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_university" ColumnName="id_university" />
                 <ScalarProperty Name="year" ColumnName="year" />
@@ -4286,6 +4861,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="osnashennost_laboratoriy">
             <EntityTypeMapping TypeName="URaitingModel.osnashennost_laboratoriy">
               <MappingFragment StoreEntitySet="osnashennost_laboratoriy">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_university" ColumnName="id_university" />
                 <ScalarProperty Name="year" ColumnName="year" />
@@ -4301,6 +4877,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="qullanma">
             <EntityTypeMapping TypeName="URaitingModel.qullanma">
               <MappingFragment StoreEntitySet="qullanma">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fio" ColumnName="fio" />
                 <ScalarProperty Name="kod_spec" ColumnName="kod_spec" />
@@ -4316,6 +4893,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="raiting">
             <EntityTypeMapping TypeName="URaitingModel.raiting">
               <MappingFragment StoreEntitySet="raiting">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_university" ColumnName="id_university" />
                 <ScalarProperty Name="year" ColumnName="year" />
@@ -4425,6 +5003,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="stepen_vnedreniya_ikt">
             <EntityTypeMapping TypeName="URaitingModel.stepen_vnedreniya_ikt">
               <MappingFragment StoreEntitySet="stepen_vnedreniya_ikt">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_university" ColumnName="id_university" />
                 <ScalarProperty Name="year" ColumnName="year" />
@@ -4451,6 +5030,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="summi_mejdunarodnih_grantov">
             <EntityTypeMapping TypeName="URaitingModel.summi_mejdunarodnih_grantov">
               <MappingFragment StoreEntitySet="summi_mejdunarodnih_grantov">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="grant_name" ColumnName="grant_name" />
                 <ScalarProperty Name="grant_summa" ColumnName="grant_summa" />
@@ -4466,6 +5046,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="summi_respublikanskih_grantov">
             <EntityTypeMapping TypeName="URaitingModel.summi_respublikanskih_grantov">
               <MappingFragment StoreEntitySet="summi_respublikanskih_grantov">
+                <ScalarProperty Name="university_id1" ColumnName="university_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="iqtisodiyot_tarmogi" ColumnName="iqtisodiyot_tarmogi" />
                 <ScalarProperty Name="buyurtma_name" ColumnName="buyurtma_name" />
@@ -4482,6 +5063,8 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <EntitySetMapping Name="university">
             <EntityTypeMapping TypeName="URaitingModel.university">
               <MappingFragment StoreEntitySet="university">
+                <ScalarProperty Name="region_id1" ColumnName="region_id1" />
+                <ScalarProperty Name="branch_id1" ColumnName="branch_id1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name_RU" ColumnName="name_RU" />
                 <ScalarProperty Name="id_region" ColumnName="id_region" />
@@ -5237,6 +5820,33 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
                 <ScalarProperty Name="I4" ColumnName="I4" />
                 <ScalarProperty Name="mark" ColumnName="mark" />
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="osnashennost_irc_literaturoy">
+            <EntityTypeMapping TypeName="URaitingModel.osnashennost_irc_literaturoy">
+              <MappingFragment StoreEntitySet="osnashennost_irc_literaturoy">
+                <ScalarProperty Name="nalichie_angl" ColumnName="nalichie_angl" />
+                <ScalarProperty Name="nalichie_rus" ColumnName="nalichie_rus" />
+                <ScalarProperty Name="nalichie_uzb" ColumnName="nalichie_uzb" />
+                <ScalarProperty Name="osn_literatura" ColumnName="osn_literatura" />
+                <ScalarProperty Name="nazvaniya_predmetov" ColumnName="nazvaniya_predmetov" />
+                <ScalarProperty Name="napravlenie" ColumnName="napravlenie" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="id_university" ColumnName="id_university" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="osnashennost_laboratornim_oborudovaniem">
+            <EntityTypeMapping TypeName="URaitingModel.osnashennost_laboratornim_oborudovaniem">
+              <MappingFragment StoreEntitySet="osnashennost_laboratornim_oborudovaniem">
+                <ScalarProperty Name="kolichestvo_polnostyu_osnashennih_lab" ColumnName="kolichestvo_polnostyu_osnashennih_lab" />
+                <ScalarProperty Name="kolichestvo_lab_zanyatiy" ColumnName="kolichestvo_lab_zanyatiy" />
+                <ScalarProperty Name="nazvaniya_predmetov_s_lab" ColumnName="nazvaniya_predmetov_s_lab" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="id_university" ColumnName="id_university" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

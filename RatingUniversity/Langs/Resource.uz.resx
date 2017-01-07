@@ -1010,4 +1010,64 @@
   <data name="LocalGrantTotal" xml:space="preserve">
     <value>Жами маблағ миқдори (сўм ҳисобидан) (4уст+6уст)</value>
   </data>
+  <data name="GrantByTypeApplication" xml:space="preserve">
+    <value>Амалий</value>
+  </data>
+  <data name="GrantByTypeFair" xml:space="preserve">
+    <value>Республика ярмаркасида тузилган шартнома асосидаги маблағи таъминланган тадқиқот</value>
+  </data>
+  <data name="GrantByTypeFundamental" xml:space="preserve">
+    <value>Фундаментал</value>
+  </data>
+  <data name="GrantByTypeHeader" xml:space="preserve">
+    <value>иқтисодиёт тармоқлари буюртмалари бўйича ўтказилган тадқиқотлар ҳақида МАЪЛУМОТ</value>
+  </data>
+  <data name="GrantByTypeInnovative" xml:space="preserve">
+    <value>Инновацион</value>
+  </data>
+  <data name="GrantByTypeLicenses" xml:space="preserve">
+    <value>Лицензион келишувлар</value>
+  </data>
+  <data name="GrantByTypeRequest" xml:space="preserve">
+    <value>Буюртма (лойиҳа) номи</value>
+  </data>
+  <data name="GrantByTypeSphere" xml:space="preserve">
+    <value>Иқтисодиёт тармоғи номи</value>
+  </data>
+  <data name="GrantByTypeSum" xml:space="preserve">
+    <value>Маблағ миқдори (сўм ҳисобидан)</value>
+  </data>
+  <data name="IRBBookTextbook" xml:space="preserve">
+    <value>Фан ишчи ўқув дастурида кўрсатилган асосий ўқув адабиётлари номи</value>
+  </data>
+  <data name="IRCBookEadditional" xml:space="preserve">
+    <value>Фан ишчи ўқув дастурида кўрсатилган асосий ўқув адабиётлари (дарслик ва ўқув қўлланмалар)нинг АРМда мавжудлиги (мавжуд «+»)</value>
+  </data>
+  <data name="IRCBookEbook" xml:space="preserve">
+    <value>Фан ишчи ўқув дастурида кўрсатилган асосий ўқув адабиётларнинг АРМда электрон шаклида мавжудлиги (мавжуд «+»)</value>
+  </data>
+  <data name="IRCBookEnglish" xml:space="preserve">
+    <value>Рус тилида</value>
+  </data>
+  <data name="IRCBookHeader" xml:space="preserve">
+    <value>Ахборот-ресурс марказидаги ўқув адабиётларнинг электрон китоблар шаклидагилари ҳақида МАЪЛУМОТ</value>
+  </data>
+  <data name="IRCBookHeader1" xml:space="preserve">
+    <value>Ахборот-ресурс марказининг ўқув адабиётлари (дарслик ва ўқув қўлланмалар) билан таъминланганлиги ҳақида МАЪЛУМОТ</value>
+  </data>
+  <data name="IRCBookIndex" xml:space="preserve">
+    <value>Т/р</value>
+  </data>
+  <data name="IRCBookRussian" xml:space="preserve">
+    <value>Хорижий тилда</value>
+  </data>
+  <data name="IRCBookSpeciality" xml:space="preserve">
+    <value>Таълим йўналишлари (мутахассисликлар) номи</value>
+  </data>
+  <data name="IRCBookSubject" xml:space="preserve">
+    <value>Таълим йўналишлари (мутахассисликлар) номи</value>
+  </data>
+  <data name="IRCBookUzbek" xml:space="preserve">
+    <value>Ўзбек тилида</value>
+  </data>
 </root>

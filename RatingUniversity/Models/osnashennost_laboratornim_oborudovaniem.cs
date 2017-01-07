@@ -12,20 +12,15 @@ namespace RatingUniversity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class osnashennost_laboratoriy
+    public partial class osnashennost_laboratornim_oborudovaniem
     {
         public int id { get; set; }
         public Nullable<int> id_university { get; set; }
         public Nullable<int> year { get; set; }
-        public string fan_name { get; set; }
-        public string lab_asbob_name { get; set; }
-        public string lab_holat { get; set; }
-        public string yordam_asbob_name { get; set; }
-        public string yordam_holat { get; set; }
-        public Nullable<int> university_id { get; set; }
-        public Nullable<int> university_id1 { get; set; }
+        public string nazvaniya_predmetov_s_lab { get; set; }
+        public Nullable<int> kolichestvo_lab_zanyatiy { get; set; }
+        public Nullable<int> kolichestvo_polnostyu_osnashennih_lab { get; set; }
     
         public virtual university university { get; set; }
-        public virtual university university1 { get; set; }
     }
 }

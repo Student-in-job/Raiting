@@ -103,5 +103,7 @@ namespace RatingUniversity.Models
         public virtual DbSet<I9> I9 { get; set; }
         public virtual DbSet<I9_dolya_pps_prepodayushego_v_sspo> I9_dolya_pps_prepodayushego_v_sspo { get; set; }
         public virtual DbSet<RAITING_TOTAL> RAITING_TOTAL { get; set; }
+        public virtual DbSet<osnashennost_irc_literaturoy> osnashennost_irc_literaturoy { get; set; }
+        public virtual DbSet<osnashennost_laboratornim_oborudovaniem> osnashennost_laboratornim_oborudovaniem { get; set; }
     }
 }
