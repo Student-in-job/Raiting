@@ -852,6 +852,204 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Общее количество компьютеров, соединенных к локальной сети.
+        /// </summary>
+        public static string ICTLevelCompConnected
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelCompConnected", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Общее количество используемых компьеров.
+        /// </summary>
+        public static string ICTLevelCompCount
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelCompCount", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Общее количество компьютеров, соединенных к сети Интернет.
+        /// </summary>
+        public static string ICTLevelCompInternet
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelCompInternet", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Общее количество новых компьютеров, приобретенных в последние 3 года.
+        /// </summary>
+        public static string ICTLevelCompNew
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelCompNew", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Информационная система управлние и планираваня финансовой диятельности (отметить в каком состоянии).
+        /// </summary>
+        public static string ICTLevelFinance
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelFinance", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to СВЕДЕНИЯ о текущем уровне внедрения информационно-коммуникационных технологий, обеспеченности компьютерами и степени использования информационных сетей в.
+        /// </summary>
+        public static string ICTLevelHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Информационая система и база данных расчета профессорско-преподователей и сатрудников (отметить в каком состоянии).
+        /// </summary>
+        public static string ICTLevelHRM
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelHRM", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Общая скорость сети Интернет (Мбит/с), (отметить в каком состоянии).
+        /// </summary>
+        public static string ICTLevelInternet
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelInternet", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Виды интерактивных служб онлайн (отметить действующие службы) через локальную сеть или Интернет (веб сайт, информационная система).
+        /// </summary>
+        public static string ICTLevelInterService
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelInterService", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Информационная система управления учебной диятильностью и проведение мониторинга (отметить в каком состоянии).
+        /// </summary>
+        public static string ICTLevelLMS
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelLMS", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Число электронных почтовых адресов руководящих работников на корпоративной электронной почте высшего образовательного заведения.
+        /// </summary>
+        public static string ICTLevelMail
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelMail", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Число электронных почтовых адресов профессоров-преподавателей на корпоративной электронной почте высшего образовательного заведения.
+        /// </summary>
+        public static string ICTLevelMailPPS
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelMailPPS", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Общее число руководящих работников вуза.
+        /// </summary>
+        public static string ICTLevelManagerCount
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelManagerCount", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Общее число профессоров – преподавателей вуза.
+        /// </summary>
+        public static string ICTLevelPPSCount
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelPPSCount", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Информационная система управления научной  диятильностью и проведение мониторинга (отметить в каком состоянии).
+        /// </summary>
+        public static string ICTLevelSMS
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelSMS", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Общее число студентов (бакалавров и магистров).
+        /// </summary>
+        public static string ICTLevelStudentCount
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelStudentCount", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Информационная система и база данных расчета контингента студентов (отметить в каком состоянии).
+        /// </summary>
+        public static string ICTLevelStudMS
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelStudMS", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название вуза.
+        /// </summary>
+        public static string ICTLevelUniversity
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelUniversity", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to сведения.
         /// </summary>
         public static string Information
@@ -1167,6 +1365,17 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("IRCBookUzbek", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to П/н.
+        /// </summary>
+        public static string ICTLevelNumber
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelNumber", resourceCulture);
             }
         }
 

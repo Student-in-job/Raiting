@@ -735,11 +735,13 @@
     <Content Include="Views\Table25\Index.cshtml" />
     <Content Include="Views\Table26\Index.cshtml" />
     <Content Include="Views\Table27\Index.cshtml" />
+    <Content Include="Views\Table28\DisplayTemplates\Double.cshtml" />
+    <Content Include="Views\Table28\DisplayTemplates\Single.cshtml" />
+    <Content Include="Views\Table28\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BaseView\" />
-    <Folder Include="Views\Table28\" />
     <Folder Include="Views\Table29\" />
     <Folder Include="Views\Table30\" />
     <Folder Include="Views\Table31\" />

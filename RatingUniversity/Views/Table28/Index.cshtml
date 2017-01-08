@@ -1,0 +1,77 @@
+﻿@*using PagedList.Mvc;*@
+@model IEnumerable<RatingUniversity.Models.stepen_vnedreniya_ikt>
+@using MyFunctions = RatingUniversity.Classes.Functions;
+@using Resource = RatingUniversity.Langs.Resource;
+
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
+
+    @{
+        <a href="~/Table28/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        <h3>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</h3>
+
+        using (Html.BeginForm("Upload", "Table28", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="files" />
+            <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+        }
+    }
+    <div style="height:80px;">&nbsp;</div>
+    <div>
+        <h3 style="text-align:center;font-weight:bold">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+        <h4 style="text-align:center;font-weight: bold">@MyFunctions.Translate(Resource.ICTLevelHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word;">
+            <thead>
+                <tr>
+                    <th style="width: 38px">@MyFunctions.Translate(Resource.ICTLevelNumber, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelUniversity, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelCompCount, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelCompConnected, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelCompInternet, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelCompNew, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelInternet, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelMail, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelMailPPS, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelInterService, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelLMS, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelSMS, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelHRM, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelStudMS, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelFinance, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelManagerCount, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelPPSCount, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelStudentCount, ViewBag.lang, ViewBag.alfabet)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int index = 0;
+                    foreach (var item in Model)
+                    {
+                        index++;
+                        <tr>
+                            <td>@index</td>
+                            <td>@Html.DisplayFor(modelItem => item.university)</td>
+                            <td>@Html.DisplayFor(modelItem => item.pc_count)</td>
+                            <td>@Html.DisplayFor(modelItem => item.pc_in_local_netw_count)</td>
+                            <td>@Html.DisplayFor(modelItem => item.pc_with_intenet_count)</td>
+                            <td>@Html.DisplayFor(modelItem => item.last_years_pc_count)</td>
+                            <td>@Html.DisplayFor(modelItem => item.internet_speed)</td>
+                            <td>@Html.DisplayFor(modelItem => item.admin_emails_count)</td>
+                            <td>@Html.DisplayFor(modelItem => item.pps_emails_count)</td>
+                            <td>@Html.DisplayFor(modelItem => item.web_service_types)</td>
+                            <td>@Html.DisplayFor(modelItem => item.study_monitoring)</td>
+                            <td>@Html.DisplayFor(modelItem => item.research_monitoring)</td>
+                            <td>@Html.DisplayFor(modelItem => item.pps_baza)</td>
+                            <td>@Html.DisplayFor(modelItem => item.student_baza)</td>
+                            <td>@Html.DisplayFor(modelItem => item.finance)</td>
+                            <td>@Html.DisplayFor(modelItem => item.admins_count)</td>
+                            <td>@Html.DisplayFor(modelItem => item.pps_count)</td>
+                            <td>@Html.DisplayFor(modelItem => item.students_count)</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>

@@ -1070,4 +1070,62 @@
   <data name="IRCBookUzbek" xml:space="preserve">
     <value>Ўзбек тилида</value>
   </data>
+  <data name="ICTLevelCompConnected" xml:space="preserve">
+    <value>Локал тармоққа уланган компьютерларнинг умумий сони</value>
+  </data>
+  <data name="ICTLevelCompCount" xml:space="preserve">
+    <value>Фойдаланилаётган компьютерларнинг умумий сони</value>
+  </data>
+  <data name="ICTLevelCompInternet" xml:space="preserve">
+    <value>Интернет тармоғига уланган компьютерларнинг умумий сони</value>
+  </data>
+  <data name="ICTLevelCompNew" xml:space="preserve">
+    <value>Охирги 3 йилда қабул қилинган янги компьютерларнинг умумий сони</value>
+  </data>
+  <data name="ICTLevelFinance" xml:space="preserve">
+    <value>Молиявий фаолиятни режалаштириш ва бошқариш ахборот тизими (мавжуд ҳолатни белгиланг)</value>
+  </data>
+  <data name="ICTLevelHeader" xml:space="preserve">
+    <value>ахборот-коммуникация технологияларини жорий этилганлик, компьютерлар билан таъминланганлик ҳамда ахборот тизимларидан фойдаланиш даражаси ҳақида 
+МАЪЛУМОТ</value>
+  </data>
+  <data name="ICTLevelHRM" xml:space="preserve">
+    <value>Профессор-ўқитувчилар ва ходимлар ҳисобини юритиш ахборот тизими маълумотлар базаси (мавжуд ҳолатни белгиланг)</value>
+  </data>
+  <data name="ICTLevelInternet" xml:space="preserve">
+    <value>Интернет тармоғининг умумий тезлиги (Мбит/с), (мавжуд ҳолатни белгиланг)</value>
+  </data>
+  <data name="ICTLevelInterService" xml:space="preserve">
+    <value>Локал ёки Интернт тармоғи (веб сайт, ахборот тизими) орқали кўрсатилаётган онлайн интерактив хизматлар турлари (мавжуд хизматларни белгиланг)</value>
+  </data>
+  <data name="ICTLevelLMS" xml:space="preserve">
+    <value>Ўқув фаолиятни бошқариш ва мониторингини юритиш ахборот тизими (мавжуд ҳолатни белгиланг)</value>
+  </data>
+  <data name="ICTLevelMail" xml:space="preserve">
+    <value>Олий таълим муассасасининг корпоратив электрон почта серверида бошқарув ходимларига тегишли бўлган электрон почта манзиллари сони</value>
+  </data>
+  <data name="ICTLevelMailPPS" xml:space="preserve">
+    <value>Олий таълим муассасасининг корпоратив электрон почта серверида профессор-ўқитувчиларга тегишли бўлган электрон почта манзиллари сони</value>
+  </data>
+  <data name="ICTLevelManagerCount" xml:space="preserve">
+    <value>ОТМ Бошқарув ходимларининг умумий сони</value>
+  </data>
+  <data name="ICTLevelNumber" xml:space="preserve">
+    <value>Т/р</value>
+  </data>
+  <data name="ICTLevelPPSCount" xml:space="preserve">
+    <value>Талабаларнинг (бакалавр ва магистр) умумий сони</value>
+  </data>
+  <data name="ICTLevelSMS" xml:space="preserve">
+    <value>Илмий фаолиятни бошқариш ва мониторингини юритиш ахборот тизими (мавжуд ҳолатни белгиланг)</value>
+  </data>
+  <data name="ICTLevelStudentCount" xml:space="preserve">
+    <value>ОТМ Профессор-ўқитувчиларнинг умумий сони</value>
+  </data>
+  <data name="ICTLevelStudMS" xml:space="preserve">
+    <value>Талабалар контингенти ҳисобини юритиш ахборот тизими ва маълумотлар базаси (мавжуд ҳолатни белгиланг)</value>
+  </data>
+  <data name="ICTLevelUniversity" xml:space="preserve">
+    <value>ОТМ номи</value>
+  </data>
 </root>

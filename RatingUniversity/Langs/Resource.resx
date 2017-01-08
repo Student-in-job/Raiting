@@ -1057,4 +1057,61 @@
   <data name="IRCBookUzbek" xml:space="preserve">
     <value>На узбекском языке</value>
   </data>
+  <data name="ICTLevelCompConnected" xml:space="preserve">
+    <value>Общее количество компьютеров, соединенных к локальной сети</value>
+  </data>
+  <data name="ICTLevelCompCount" xml:space="preserve">
+    <value>Общее количество используемых компьеров</value>
+  </data>
+  <data name="ICTLevelCompInternet" xml:space="preserve">
+    <value>Общее количество компьютеров, соединенных к сети Интернет</value>
+  </data>
+  <data name="ICTLevelCompNew" xml:space="preserve">
+    <value>Общее количество новых компьютеров, приобретенных в последние 3 года</value>
+  </data>
+  <data name="ICTLevelFinance" xml:space="preserve">
+    <value>Информационная система управлние и планираваня финансовой диятельности (отметить в каком состоянии)</value>
+  </data>
+  <data name="ICTLevelHeader" xml:space="preserve">
+    <value>СВЕДЕНИЯ о текущем уровне внедрения информационно-коммуникационных технологий, обеспеченности компьютерами и степени использования информационных сетей в</value>
+  </data>
+  <data name="ICTLevelHRM" xml:space="preserve">
+    <value>Информационая система и база данных расчета профессорско-преподователей и сатрудников (отметить в каком состоянии)</value>
+  </data>
+  <data name="ICTLevelInternet" xml:space="preserve">
+    <value>Общая скорость сети Интернет (Мбит/с), (отметить в каком состоянии)</value>
+  </data>
+  <data name="ICTLevelInterService" xml:space="preserve">
+    <value>Виды интерактивных служб онлайн (отметить действующие службы) через локальную сеть или Интернет (веб сайт, информационная система)</value>
+  </data>
+  <data name="ICTLevelLMS" xml:space="preserve">
+    <value>Информационная система управления учебной диятильностью и проведение мониторинга (отметить в каком состоянии)</value>
+  </data>
+  <data name="ICTLevelMail" xml:space="preserve">
+    <value>Число электронных почтовых адресов руководящих работников на корпоративной электронной почте высшего образовательного заведения</value>
+  </data>
+  <data name="ICTLevelMailPPS" xml:space="preserve">
+    <value>Число электронных почтовых адресов профессоров-преподавателей на корпоративной электронной почте высшего образовательного заведения</value>
+  </data>
+  <data name="ICTLevelManagerCount" xml:space="preserve">
+    <value>Общее число руководящих работников вуза</value>
+  </data>
+  <data name="ICTLevelNumber" xml:space="preserve">
+    <value>П/н</value>
+  </data>
+  <data name="ICTLevelPPSCount" xml:space="preserve">
+    <value>Общее число профессоров – преподавателей вуза</value>
+  </data>
+  <data name="ICTLevelSMS" xml:space="preserve">
+    <value>Информационная система управления научной  диятильностью и проведение мониторинга (отметить в каком состоянии)</value>
+  </data>
+  <data name="ICTLevelStudentCount" xml:space="preserve">
+    <value>Общее число студентов (бакалавров и магистров)</value>
+  </data>
+  <data name="ICTLevelStudMS" xml:space="preserve">
+    <value>Информационная система и база данных расчета контингента студентов (отметить в каком состоянии)</value>
+  </data>
+  <data name="ICTLevelUniversity" xml:space="preserve">
+    <value>Название вуза</value>
+  </data>
 </root>
