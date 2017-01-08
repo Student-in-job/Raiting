@@ -22,10 +22,7 @@ namespace RatingUniversity.Models
         public string lab_holat { get; set; }
         public string yordam_asbob_name { get; set; }
         public string yordam_holat { get; set; }
-        public Nullable<int> university_id { get; set; }
-        public Nullable<int> university_id1 { get; set; }
     
         public virtual university university { get; set; }
-        public virtual university university1 { get; set; }
     }
 }

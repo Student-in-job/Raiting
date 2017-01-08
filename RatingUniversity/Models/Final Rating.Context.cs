@@ -42,7 +42,9 @@ namespace RatingUniversity.Models
         public virtual DbSet<nalichie_elektronnoy_literaturi> nalichie_elektronnoy_literaturi { get; set; }
         public virtual DbSet<nalichie_informacii_o_vuze_v_internete> nalichie_informacii_o_vuze_v_internete { get; set; }
         public virtual DbSet<nalichie_multimedia_v_auditorii> nalichie_multimedia_v_auditorii { get; set; }
+        public virtual DbSet<osnashennost_irc_literaturoy> osnashennost_irc_literaturoy { get; set; }
         public virtual DbSet<osnashennost_laboratoriy> osnashennost_laboratoriy { get; set; }
+        public virtual DbSet<osnashennost_laboratornim_oborudovaniem> osnashennost_laboratornim_oborudovaniem { get; set; }
         public virtual DbSet<qullanma> qullanma { get; set; }
         public virtual DbSet<raiting> raiting { get; set; }
         public virtual DbSet<region> region { get; set; }
@@ -103,7 +105,5 @@ namespace RatingUniversity.Models
         public virtual DbSet<I9> I9 { get; set; }
         public virtual DbSet<I9_dolya_pps_prepodayushego_v_sspo> I9_dolya_pps_prepodayushego_v_sspo { get; set; }
         public virtual DbSet<RAITING_TOTAL> RAITING_TOTAL { get; set; }
-        public virtual DbSet<osnashennost_irc_literaturoy> osnashennost_irc_literaturoy { get; set; }
-        public virtual DbSet<osnashennost_laboratornim_oborudovaniem> osnashennost_laboratornim_oborudovaniem { get; set; }
     }
 }

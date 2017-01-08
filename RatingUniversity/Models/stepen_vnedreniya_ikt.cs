@@ -33,10 +33,7 @@ namespace RatingUniversity.Models
         public Nullable<int> admins_count { get; set; }
         public Nullable<int> pps_count { get; set; }
         public Nullable<int> students_count { get; set; }
-        public Nullable<int> university_id { get; set; }
-        public Nullable<int> university_id1 { get; set; }
     
         public virtual university university { get; set; }
-        public virtual university university1 { get; set; }
     }
 }

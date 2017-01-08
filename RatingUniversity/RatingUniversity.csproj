@@ -231,263 +231,263 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\branch.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\chislennost_pps_vuza.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\citiruemost_publikaciy_pps_vuza.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\darslik.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\effektivnost_nir_dalolatnoma.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\effektivnost_nir_patent.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\effektivnost_nir_sertifikat.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Final Raiting.Context.cs">
+    <Compile Include="Models\Final Rating.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Final Raiting.Context.tt</DependentUpon>
+      <DependentUpon>Final Rating.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Final Raiting.cs">
+    <Compile Include="Models\Final Rating.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Final Raiting.Designer.cs">
+    <Compile Include="Models\Final Rating.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Final Raiting.edmx</DependentUpon>
+      <DependentUpon>Final Rating.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\granti_po_vidam_issledovaniy.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I1.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I10.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I10_rezultati_attestacii_u_studentov.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I11.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I11_ocenka_kvalifikacii_vipusknikov_rabotodatelyami.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I12.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I12_dolya_trudoustroennih_vipusknikov.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I13.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I13_kolichestvo_studentov_udostoennih_nagrad.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I14.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I14_citiruemost_publikaciy_pps.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I15.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I15_kolichestvo_izdannih_statey.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I16.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I16_kolichestvo_sotrudnikov_utverjdennih_vak.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I17.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I17_summa_finansovih_sredstv_poluchennih_na_nauchnuyu_deyatelnost.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I18.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I18_effektivnost_provodimih_nauchnih_rabot.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I19.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I19_stepen_osnashennosti_laboratoriy_oborudovaniem.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I1_dolya_pps_s_uchenoy_stepenyu.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I1_TOTAL.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I2.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I20.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I20_obespechennost_irc_uchebnoy_literaturoy.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I21.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I21_stepen_vnedreniya_ikt_v_uchebniy_process.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I22.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I22_dostupnost_informacii_o_vuze_v_internete.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I23.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I23_osnashennost_laboratornim_oborudovaniem.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I2_1.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I2_1_uroven_kachestva_prepodavaniya.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I2_TOTAL.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I2_uroven_kachestva_prepodavaniya.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I3.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I3_kolichestvo_uchebnikov_i_posobiy.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I3_TOTAL.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I4.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I4_dolya_inostrannih_prepodavateley_i_studentov.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I4_TOTAL.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I5.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I5_uchastie_v_programme_obmena.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I6.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I6_kolichestvo_uchebnih_kursov_na_inostrannom.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I7.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I7_uroven_angliyskogo_i_ikt_u_pps.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I8.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I8_dolya_pps_prepodayushih_v_zarubejnih_vuzah.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I9.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\I9_dolya_pps_prepodayushego_v_sspo.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\informaciya_o_dissertaciyah.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\kolichestvo_izdannih_mejdunarodnih_statey.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\kolichestvo_izdannih_mestnih_statey.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\majmua.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Monitorings.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\monografiya.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\nalichie_elektronnoy_literaturi.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\nalichie_informacii_o_vuze_v_internete.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\nalichie_multimedia_v_auditorii.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\osnashennost_irc_literaturoy.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\osnashennost_laboratoriy.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\osnashennost_laboratornim_oborudovaniem.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\qullanma.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\raiting.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RAITING_TOTAL.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\region.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\stepen_vnedreniya_ikt.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\summi_mejdunarodnih_grantov.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\summi_respublikanskih_grantov.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TablesModels.cs" />
     <Compile Include="Models\TablesNUUZ.cs" />
     <Compile Include="Models\university.cs">
-      <DependentUpon>Final Raiting.tt</DependentUpon>
+      <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -559,22 +559,22 @@
     <Content Include="Files\14_kolichestvo_izdannih_mestnih_statey.xlsx" />
     <Content Include="Files\3_chislennost_pps_vuza_Rus.xlsx" />
     <Compile Include="Models\AppDbInitializer.cs" />
-    <EntityDeploy Include="Models\Final Raiting.edmx">
+    <EntityDeploy Include="Models\Final Rating.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Final Raiting.Designer.cs</LastGenOutput>
+      <LastGenOutput>Final Rating.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Final Raiting.Context.tt">
+    <Content Include="Models\Final Rating.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Final Raiting.edmx</DependentUpon>
-      <LastGenOutput>Final Raiting.Context.cs</LastGenOutput>
+      <DependentUpon>Final Rating.edmx</DependentUpon>
+      <LastGenOutput>Final Rating.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Final Raiting.edmx.diagram">
-      <DependentUpon>Final Raiting.edmx</DependentUpon>
+    <Content Include="Models\Final Rating.edmx.diagram">
+      <DependentUpon>Final Rating.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\Final Raiting.tt">
+    <Content Include="Models\Final Rating.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Final Raiting.edmx</DependentUpon>
-      <LastGenOutput>Final Raiting.cs</LastGenOutput>
+      <DependentUpon>Final Rating.edmx</DependentUpon>
+      <LastGenOutput>Final Rating.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\Vitaliy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

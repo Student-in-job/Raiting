@@ -30,34 +30,15 @@ namespace RatingUniversity.Models
             this.monografiya = new HashSet<monografiya>();
             this.nalichie_elektronnoy_literaturi = new HashSet<nalichie_elektronnoy_literaturi>();
             this.nalichie_informacii_o_vuze_v_internete = new HashSet<nalichie_informacii_o_vuze_v_internete>();
+            this.nalichie_multimedia_v_auditorii = new HashSet<nalichie_multimedia_v_auditorii>();
+            this.osnashennost_irc_literaturoy = new HashSet<osnashennost_irc_literaturoy>();
             this.osnashennost_laboratoriy = new HashSet<osnashennost_laboratoriy>();
+            this.osnashennost_laboratornim_oborudovaniem = new HashSet<osnashennost_laboratornim_oborudovaniem>();
             this.qullanma = new HashSet<qullanma>();
             this.raiting = new HashSet<raiting>();
             this.stepen_vnedreniya_ikt = new HashSet<stepen_vnedreniya_ikt>();
             this.summi_mejdunarodnih_grantov = new HashSet<summi_mejdunarodnih_grantov>();
             this.summi_respublikanskih_grantov = new HashSet<summi_respublikanskih_grantov>();
-            this.chislennost_pps_vuza1 = new HashSet<chislennost_pps_vuza>();
-            this.citiruemost_publikaciy_pps_vuza1 = new HashSet<citiruemost_publikaciy_pps_vuza>();
-            this.darslik1 = new HashSet<darslik>();
-            this.effektivnost_nir_dalolatnoma1 = new HashSet<effektivnost_nir_dalolatnoma>();
-            this.effektivnost_nir_patent1 = new HashSet<effektivnost_nir_patent>();
-            this.effektivnost_nir_sertifikat1 = new HashSet<effektivnost_nir_sertifikat>();
-            this.granti_po_vidam_issledovaniy1 = new HashSet<granti_po_vidam_issledovaniy>();
-            this.informaciya_o_dissertaciyah1 = new HashSet<informaciya_o_dissertaciyah>();
-            this.kolichestvo_izdannih_mejdunarodnih_statey1 = new HashSet<kolichestvo_izdannih_mejdunarodnih_statey>();
-            this.kolichestvo_izdannih_mestnih_statey1 = new HashSet<kolichestvo_izdannih_mestnih_statey>();
-            this.majmua1 = new HashSet<majmua>();
-            this.monografiya1 = new HashSet<monografiya>();
-            this.nalichie_elektronnoy_literaturi1 = new HashSet<nalichie_elektronnoy_literaturi>();
-            this.nalichie_informacii_o_vuze_v_internete1 = new HashSet<nalichie_informacii_o_vuze_v_internete>();
-            this.osnashennost_irc_literaturoy = new HashSet<osnashennost_irc_literaturoy>();
-            this.osnashennost_laboratoriy1 = new HashSet<osnashennost_laboratoriy>();
-            this.osnashennost_laboratornim_oborudovaniem = new HashSet<osnashennost_laboratornim_oborudovaniem>();
-            this.qullanma1 = new HashSet<qullanma>();
-            this.raiting1 = new HashSet<raiting>();
-            this.stepen_vnedreniya_ikt1 = new HashSet<stepen_vnedreniya_ikt>();
-            this.summi_mejdunarodnih_grantov1 = new HashSet<summi_mejdunarodnih_grantov>();
-            this.summi_respublikanskih_grantov1 = new HashSet<summi_respublikanskih_grantov>();
         }
     
         public int id { get; set; }
@@ -65,10 +46,6 @@ namespace RatingUniversity.Models
         public Nullable<int> id_region { get; set; }
         public Nullable<int> id_branch { get; set; }
         public string name_UZ { get; set; }
-        public Nullable<int> branch_id { get; set; }
-        public Nullable<int> region_id { get; set; }
-        public Nullable<int> branch_id1 { get; set; }
-        public Nullable<int> region_id1 { get; set; }
     
         public virtual branch branch { get; set; }
         public virtual ICollection<chislennost_pps_vuza> chislennost_pps_vuza { get; set; }
@@ -85,36 +62,15 @@ namespace RatingUniversity.Models
         public virtual ICollection<monografiya> monografiya { get; set; }
         public virtual ICollection<nalichie_elektronnoy_literaturi> nalichie_elektronnoy_literaturi { get; set; }
         public virtual ICollection<nalichie_informacii_o_vuze_v_internete> nalichie_informacii_o_vuze_v_internete { get; set; }
+        public virtual ICollection<nalichie_multimedia_v_auditorii> nalichie_multimedia_v_auditorii { get; set; }
+        public virtual ICollection<osnashennost_irc_literaturoy> osnashennost_irc_literaturoy { get; set; }
         public virtual ICollection<osnashennost_laboratoriy> osnashennost_laboratoriy { get; set; }
+        public virtual ICollection<osnashennost_laboratornim_oborudovaniem> osnashennost_laboratornim_oborudovaniem { get; set; }
         public virtual ICollection<qullanma> qullanma { get; set; }
         public virtual ICollection<raiting> raiting { get; set; }
         public virtual region region { get; set; }
         public virtual ICollection<stepen_vnedreniya_ikt> stepen_vnedreniya_ikt { get; set; }
         public virtual ICollection<summi_mejdunarodnih_grantov> summi_mejdunarodnih_grantov { get; set; }
         public virtual ICollection<summi_respublikanskih_grantov> summi_respublikanskih_grantov { get; set; }
-        public virtual branch branch1 { get; set; }
-        public virtual ICollection<chislennost_pps_vuza> chislennost_pps_vuza1 { get; set; }
-        public virtual ICollection<citiruemost_publikaciy_pps_vuza> citiruemost_publikaciy_pps_vuza1 { get; set; }
-        public virtual ICollection<darslik> darslik1 { get; set; }
-        public virtual ICollection<effektivnost_nir_dalolatnoma> effektivnost_nir_dalolatnoma1 { get; set; }
-        public virtual ICollection<effektivnost_nir_patent> effektivnost_nir_patent1 { get; set; }
-        public virtual ICollection<effektivnost_nir_sertifikat> effektivnost_nir_sertifikat1 { get; set; }
-        public virtual ICollection<granti_po_vidam_issledovaniy> granti_po_vidam_issledovaniy1 { get; set; }
-        public virtual ICollection<informaciya_o_dissertaciyah> informaciya_o_dissertaciyah1 { get; set; }
-        public virtual ICollection<kolichestvo_izdannih_mejdunarodnih_statey> kolichestvo_izdannih_mejdunarodnih_statey1 { get; set; }
-        public virtual ICollection<kolichestvo_izdannih_mestnih_statey> kolichestvo_izdannih_mestnih_statey1 { get; set; }
-        public virtual ICollection<majmua> majmua1 { get; set; }
-        public virtual ICollection<monografiya> monografiya1 { get; set; }
-        public virtual ICollection<nalichie_elektronnoy_literaturi> nalichie_elektronnoy_literaturi1 { get; set; }
-        public virtual ICollection<nalichie_informacii_o_vuze_v_internete> nalichie_informacii_o_vuze_v_internete1 { get; set; }
-        public virtual ICollection<osnashennost_irc_literaturoy> osnashennost_irc_literaturoy { get; set; }
-        public virtual ICollection<osnashennost_laboratoriy> osnashennost_laboratoriy1 { get; set; }
-        public virtual ICollection<osnashennost_laboratornim_oborudovaniem> osnashennost_laboratornim_oborudovaniem { get; set; }
-        public virtual ICollection<qullanma> qullanma1 { get; set; }
-        public virtual ICollection<raiting> raiting1 { get; set; }
-        public virtual region region1 { get; set; }
-        public virtual ICollection<stepen_vnedreniya_ikt> stepen_vnedreniya_ikt1 { get; set; }
-        public virtual ICollection<summi_mejdunarodnih_grantov> summi_mejdunarodnih_grantov1 { get; set; }
-        public virtual ICollection<summi_respublikanskih_grantov> summi_respublikanskih_grantov1 { get; set; }
     }
 }
