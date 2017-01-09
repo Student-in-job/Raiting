@@ -1,0 +1,48 @@
+﻿@*using PagedList.Mvc;*@
+@model IEnumerable<RatingUniversity.Models.nalichie_multimedia_v_auditorii>
+@using MyFunctions = RatingUniversity.Classes.Functions;
+@using Resource = RatingUniversity.Langs.Resource;
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
+
+    @{
+        <a href="~/Table31/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        <h3>@RatingUniversity.Classes.Functions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</h3>
+
+        using (Html.BeginForm("Upload", "Table31", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="files" />
+            <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+        }
+    }
+    <div style="height:80px;">&nbsp;</div>
+    <div>
+        <h3 style="text-align:center;font-weight:bold">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+        <h4 style="text-align:center;font-weight: bold">@MyFunctions.Translate(Resource.RoomEquipHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word;">
+            <thead>
+                <tr>
+                    <th style="width: 38px;">№</th>
+                    <th style="text-align:center;">@MyFunctions.Translate(Resource.RoomEquipUniversity, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.RoomEquipCount, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.RoomEquipMultimediaCount, ViewBag.lang, ViewBag.alfabet)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int index = 0;
+                    foreach (var item in Model)
+                    {
+                        index++;
+                        <tr>
+                            <td>@index</td>
+                            <td>@Html.DisplayFor(modelItem => item.vuz_name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.rooms_total_count)</td>
+                            <td>@Html.DisplayFor(modelItem => item.rooms_with_multimedia)</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>

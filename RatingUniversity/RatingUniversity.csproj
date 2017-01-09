@@ -740,11 +740,11 @@
     <Content Include="Views\Table28\Index.cshtml" />
     <Content Include="Views\Table29\Index.cshtml" />
     <Content Include="Views\Table30\Index.cshtml" />
+    <Content Include="Views\Table31\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BaseView\" />
-    <Folder Include="Views\Table31\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
