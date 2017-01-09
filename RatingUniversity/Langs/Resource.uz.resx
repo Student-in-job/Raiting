@@ -1128,4 +1128,47 @@
   <data name="ICTLevelUniversity" xml:space="preserve">
     <value>ОТМ номи</value>
   </data>
+  <data name="ModernLabCount" xml:space="preserve">
+    <value>Фан ишчи ўқув дастурида кўрсатилган лаборатория машғулотлари сони</value>
+  </data>
+  <data name="ModernLabFullCount" xml:space="preserve">
+    <value>Фан ишчи ўқув дастурида кўрсатилган лаборатория машғулотларини бажариш бўйича тўлиқ жиҳозланган ўқув лабораториялари (ҳар бир лаборатория машғулотни тўлиқ бажариш имконияти мажуд бўлган) сони</value>
+  </data>
+  <data name="ModernLabHeader" xml:space="preserve">
+    <value>замонавий ўқув лаборатория жиҳозлари ва инвентарлар билан жиҳозланганлиги ҳақида МАЪЛУМОТ</value>
+  </data>
+  <data name="ModernLabSpeciality" xml:space="preserve">
+    <value>Таълим йўналишлари (мутахассисликлар) номи</value>
+  </data>
+  <data name="ModernLabSubjects" xml:space="preserve">
+    <value>Ишчи ўқув режаларидаги лаборатория машғулотлари мавжуд бўлган фанлар номи</value>
+  </data>
+  <data name="RoomEquipCount" xml:space="preserve">
+    <value>Ўқув аудиторияларининг умумий сони</value>
+  </data>
+  <data name="RoomEquipHeader" xml:space="preserve">
+    <value>ўқув аудиторияларини замонавий ўқув-презентацион ва мультимедиа воситалари билан жиҳозланганлиги ҳақида
+МАЪЛУМОТ</value>
+  </data>
+  <data name="RoomEquipMultimediaCount" xml:space="preserve">
+    <value>Станционар ўқув презентацион ва мультимедиа қурилмалари билан жиҳозланган ўқув аудиториялари сони</value>
+  </data>
+  <data name="RoomEquipUniversity" xml:space="preserve">
+    <value>ОТМ номи</value>
+  </data>
+  <data name="WebHeader" xml:space="preserve">
+    <value>Интернетда ОТМ ҳақида маълумот олиш имконияти</value>
+  </data>
+  <data name="WebLocal" xml:space="preserve">
+    <value>ОТМ веб сайтининг Интернет тармоғидаги маҳаллий рейтинги (WWW.UZ миллий қидирув тизими бўйича рейтинги)</value>
+  </data>
+  <data name="WebMetrics" xml:space="preserve">
+    <value>ОТМ веб сайтининг Интернет тармоғидаги халқаро рейтинги (Webometrics бўйича рейтинги)</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>ОТМнинг Интернет тармоғидаги веб сайти манзили</value>
+  </data>
+  <data name="WebUniversity" xml:space="preserve">
+    <value>ОТМ номи</value>
+  </data>
 </root>

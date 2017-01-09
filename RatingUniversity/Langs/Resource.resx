@@ -1114,4 +1114,46 @@
   <data name="ICTLevelUniversity" xml:space="preserve">
     <value>Название вуза</value>
   </data>
+  <data name="ModernLabCount" xml:space="preserve">
+    <value>Количество лабораторных занятий, определенных рабочим учебным планом</value>
+  </data>
+  <data name="ModernLabFullCount" xml:space="preserve">
+    <value>Количество учебных лабораторий, полностью оборудованных для выполнения лабораторных занятий, определенных рабочим учебным планом</value>
+  </data>
+  <data name="ModernLabHeader" xml:space="preserve">
+    <value>СВЕДЕНИЯ об обеспечении современным лабораторным оборудованием и инвентарем</value>
+  </data>
+  <data name="ModernLabSpeciality" xml:space="preserve">
+    <value>Названия образовательного направления (специальности)</value>
+  </data>
+  <data name="ModernLabSubjects" xml:space="preserve">
+    <value>Дисциплины, лабораторные занятия которых отражены в рабочих учебных планах</value>
+  </data>
+  <data name="RoomEquipCount" xml:space="preserve">
+    <value>Общее количество учебных аудиторий</value>
+  </data>
+  <data name="RoomEquipHeader" xml:space="preserve">
+    <value>СВЕДЕНИЯ об оборудовании учебных лабораторий учебно-презентационным средствами и мультимедиа</value>
+  </data>
+  <data name="RoomEquipMultimediaCount" xml:space="preserve">
+    <value>Количество лабораторий со стационарным учебно-презентационным и мультимедиа оборудованием</value>
+  </data>
+  <data name="RoomEquipUniversity" xml:space="preserve">
+    <value>Название вуза</value>
+  </data>
+  <data name="WebHeader" xml:space="preserve">
+    <value>Возможность получения информации о ВУЗе из Интернета</value>
+  </data>
+  <data name="WebLocal" xml:space="preserve">
+    <value>Местный рейтинг(WWW.UZ национальная система рейтинга) веб-сайта ВУЗа в сети Интернет</value>
+  </data>
+  <data name="WebMetrics" xml:space="preserve">
+    <value>Международный рейтинг (рейтинг по Webometrics) веб-сайта ВУЗа в сети Интернет</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Адрес веб сайта вуза в системе Интернет</value>
+  </data>
+  <data name="WebUniversity" xml:space="preserve">
+    <value>Название вуза</value>
+  </data>
 </root>

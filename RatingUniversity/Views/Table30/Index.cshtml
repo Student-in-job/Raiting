@@ -1,0 +1,50 @@
+﻿@*using PagedList.Mvc;*@
+@model IEnumerable<RatingUniversity.Models.osnashennost_laboratornim_oborudovaniem>
+@using MyFunctions = RatingUniversity.Classes.Functions;
+@using Resource = RatingUniversity.Langs.Resource;
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
+
+    @{
+        <a href="~/Table30/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        <h3>@RatingUniversity.Classes.Functions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</h3>
+
+        using (Html.BeginForm("Upload", "Table30", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="files" />
+            <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+        }
+    }
+    <div style="height:80px;">&nbsp;</div>
+    <div>
+        <h3 style="text-align:center;font-weight:bold">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+        <h4 style="text-align:center;font-weight: bold">@MyFunctions.Translate(Resource.ModernLabHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word;">
+            <thead>
+                <tr>
+                    <th style="width: 38px;">№</th>
+                    <th style="text-align:center;">@MyFunctions.Translate(Resource.ModernLabSpeciality, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ModernLabSubjects, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ModernLabCount, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.ModernLabFullCount, ViewBag.lang, ViewBag.alfabet)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int index = 0;
+                    foreach (var item in Model)
+                    {
+                        index++;
+                        <tr>
+                            <td>@index</td>
+                            <td>@Html.DisplayFor(modelItem => item.napravlenie)</td>
+                            <td>@Html.DisplayFor(modelItem => item.nazvaniya_predmetov_s_lab)</td>
+                            <td>@Html.DisplayFor(modelItem => item.kolichestvo_lab_zanyatiy)</td>
+                            <td>@Html.DisplayFor(modelItem => item.kolichestvo_polnostyu_osnashennih_lab)</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>

@@ -20,6 +20,8 @@ namespace RatingUniversity.Models
         public string nazvaniya_predmetov_s_lab { get; set; }
         public Nullable<int> kolichestvo_lab_zanyatiy { get; set; }
         public Nullable<int> kolichestvo_polnostyu_osnashennih_lab { get; set; }
+        public Nullable<int> university_id { get; set; }
+        public string napravlenie { get; set; }
     
         public virtual university university { get; set; }
     }

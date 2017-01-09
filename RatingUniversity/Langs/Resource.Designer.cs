@@ -995,6 +995,17 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to П/н.
+        /// </summary>
+        public static string ICTLevelNumber
+        {
+            get
+            {
+                return ResourceManager.GetString("ICTLevelNumber", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Общее число профессоров – преподавателей вуза.
         /// </summary>
         public static string ICTLevelPPSCount
@@ -1365,17 +1376,6 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("IRCBookUzbek", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to П/н.
-        /// </summary>
-        public static string ICTLevelNumber
-        {
-            get
-            {
-                return ResourceManager.GetString("ICTLevelNumber", resourceCulture);
             }
         }
 
@@ -1765,6 +1765,61 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Количество лабораторных занятий, определенных рабочим учебным планом.
+        /// </summary>
+        public static string ModernLabCount
+        {
+            get
+            {
+                return ResourceManager.GetString("ModernLabCount", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Количество учебных лабораторий, полностью оборудованных для выполнения лабораторных занятий, определенных рабочим учебным планом.
+        /// </summary>
+        public static string ModernLabFullCount
+        {
+            get
+            {
+                return ResourceManager.GetString("ModernLabFullCount", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to СВЕДЕНИЯ об обеспечении современным лабораторным оборудованием и инвентарем.
+        /// </summary>
+        public static string ModernLabHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("ModernLabHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Названия образовательного направления (специальности).
+        /// </summary>
+        public static string ModernLabSpeciality
+        {
+            get
+            {
+                return ResourceManager.GetString("ModernLabSpeciality", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Дисциплины, лабораторные занятия которых отражены в рабочих учебных планах.
+        /// </summary>
+        public static string ModernLabSubjects
+        {
+            get
+            {
+                return ResourceManager.GetString("ModernLabSubjects", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Рейтинг ВУЗ-ов Узбекистана.
         /// </summary>
         public static string PageTitle
@@ -2058,6 +2113,50 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("PPSVisitingStaff", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Общее количество учебных аудиторий.
+        /// </summary>
+        public static string RoomEquipCount
+        {
+            get
+            {
+                return ResourceManager.GetString("RoomEquipCount", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to СВЕДЕНИЯ об оборудовании учебных лабораторий учебно-презентационным средствами и мультимедиа.
+        /// </summary>
+        public static string RoomEquipHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("RoomEquipHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Количество лабораторий со стационарным учебно-презентационным и мультимедиа оборудованием.
+        /// </summary>
+        public static string RoomEquipMultimediaCount
+        {
+            get
+            {
+                return ResourceManager.GetString("RoomEquipMultimediaCount", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название вуза.
+        /// </summary>
+        public static string RoomEquipUniversity
+        {
+            get
+            {
+                return ResourceManager.GetString("RoomEquipUniversity", resourceCulture);
             }
         }
 
@@ -3698,6 +3797,61 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("UZLatin", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Возможность получения информации о ВУЗе из Интернета.
+        /// </summary>
+        public static string WebHeader
+        {
+            get
+            {
+                return ResourceManager.GetString("WebHeader", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Местный рейтинг(WWW.UZ национальная система рейтинга) веб-сайта ВУЗа в сети Интернет.
+        /// </summary>
+        public static string WebLocal
+        {
+            get
+            {
+                return ResourceManager.GetString("WebLocal", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Международный рейтинг (рейтинг по Webometrics) веб-сайта ВУЗа в сети Интернет.
+        /// </summary>
+        public static string WebMetrics
+        {
+            get
+            {
+                return ResourceManager.GetString("WebMetrics", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Адрес веб сайта вуза в системе Интернет.
+        /// </summary>
+        public static string Website
+        {
+            get
+            {
+                return ResourceManager.GetString("Website", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Название вуза.
+        /// </summary>
+        public static string WebUniversity
+        {
+            get
+            {
+                return ResourceManager.GetString("WebUniversity", resourceCulture);
             }
         }
     }
