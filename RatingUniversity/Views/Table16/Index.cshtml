@@ -6,20 +6,26 @@
     @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
 
     @{
-        <a href="~/Table16/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
-        <h3>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</h3>
+        <div class="well well-sm">
+            <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table16/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        </div>
 
         using (Html.BeginForm("Upload", "Table16", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            <input type="file" name="files" />
-            <input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+            <fieldset>
+                <legend>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                <div class="input-group">
+                    <input type="file" class="form-control" name="files" />
+                    <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+                </div>
+            </fieldset>
         }
     }
-    <div style="height:80px;">&nbsp;</div>
-    <div>
-        <h3 style="text-align:center;font-weight:bold">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-        <h4 style="text-align:center;font-weight: bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.InfoThesisDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
-        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
+
+                          <h3 class="text-center">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+                          <h4 class="text-center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.InfoThesisDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+        
+    <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
             <thead>
                 <tr>
                     <th rowspan="2" style="width:38px;">№</th>
@@ -61,4 +67,3 @@
                 </tr>
             </tbody>
         </table>
-        </div>

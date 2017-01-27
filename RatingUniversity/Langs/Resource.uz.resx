@@ -1171,4 +1171,13 @@
   <data name="WebUniversity" xml:space="preserve">
     <value>ОТМ номи</value>
   </data>
+  <data name="MainMenuManage" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="MainMenuManageUniver" xml:space="preserve">
+    <value>Universities</value>
+  </data>
+  <data name="MainMenuManageUser" xml:space="preserve">
+    <value>Users</value>
+  </data>
 </root>

@@ -188,7 +188,7 @@
     <value>Топ ВУЗ-ов Узбекистана</value>
   </data>
   <data name="HomePageHeaderInfo" xml:space="preserve">
-    <value>Ресурс запущен </value>
+    <value>До начала сдачи документов осталось</value>
   </data>
   <data name="HomePageRatingHeader" xml:space="preserve">
     <value>Рейтинг университетов Узбекистана</value>
@@ -538,7 +538,7 @@
     <value>СВЕДЕНИЯ о профессорах-преподавателях основного штата, имеющих диплом магистра или степень (РhD) 300 лучших зарубежных высших образовательных заведений</value>
   </data>
   <data name="Top300" xml:space="preserve">
-    <value>Top университет - 300</value>
+    <value>TOP 300 университетов</value>
   </data>
   <data name="T1_2_kol_otvet" xml:space="preserve">
     <value>количество оценок</value>
@@ -1155,5 +1155,14 @@
   </data>
   <data name="WebUniversity" xml:space="preserve">
     <value>Название вуза</value>
+  </data>
+  <data name="MainMenuManage" xml:space="preserve">
+    <value>Управление</value>
+  </data>
+  <data name="MainMenuManageUniver" xml:space="preserve">
+    <value>Университетами</value>
+  </data>
+  <data name="MainMenuManageUser" xml:space="preserve">
+    <value>Пользователями</value>
   </data>
 </root>

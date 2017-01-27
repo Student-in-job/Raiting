@@ -9,17 +9,22 @@
 @if (ViewBag.role == 1)
 {
 
-<a href="/Jadval1_7/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        <div class="well well-sm">
+            <i class="glyphicon glyphicon-download-alt"></i> <a href="/Jadval1_7/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        </div>
+    using (Html.BeginForm("Upload", "Jadval1_7", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <fieldset>
+            <legend>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
 
-        <h3>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</h3>
-
-	using (Html.BeginForm("Upload", "Jadval1_7", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-	<input type="file" name="files" />
-	<input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+            <div class="input-group">
+                <input type="file" class="form-control" name="files" />
+                <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+            </div>
+        </fieldset>
+    }
 }
-}
-				  <h4 class="text-center font-bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_7_zogolovok, ViewBag.lang, ViewBag.alfabet)</h4>
+				  <h3 class="text-center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_7_zogolovok, ViewBag.lang, ViewBag.alfabet)</h3>
 
 @if (ViewBag.bor == true)
 {

@@ -1,15 +1,19 @@
 ﻿@model IEnumerable<RatingUniversity.Models.university>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@{
+    ViewBag.Title = "Список ВУЗов";
+}
+    <div class="well well-sm">
+        <i class="glyphicon glyphicon-plus"></i> @Html.ActionLink("Добавить", "Create")
+    </div>
+
 <table class="table table-bordered">
     <tr>
         <th>
-            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_RU, ViewBag.lang, ViewBag.alfabet);
+            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_RU, ViewBag.lang, ViewBag.alfabet)
         </th>
         <th>
-            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_UZ, ViewBag.lang, ViewBag.alfabet);
+            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_UZ, ViewBag.lang, ViewBag.alfabet)
         </th>
         <th></th>
     </tr>

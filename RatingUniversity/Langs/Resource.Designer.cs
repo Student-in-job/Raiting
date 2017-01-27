@@ -3854,5 +3854,29 @@ namespace RatingUniversity.Langs
                 return ResourceManager.GetString("WebUniversity", resourceCulture);
             }
         }
+
+        public static string MainMenuManage
+        {
+            get
+            {
+                return ResourceManager.GetString("MainMenuManage", resourceCulture);
+            }
+        }
+
+        public static string MainMenuManageUser
+        {
+            get
+            {
+                return ResourceManager.GetString("MainMenuManageUser", resourceCulture);
+            }
+        }
+
+        public static string MainMenuManageUniver
+        {
+            get
+            {
+                return ResourceManager.GetString("MainMenuManageUniver", resourceCulture);
+            }
+        }
     }
 }
