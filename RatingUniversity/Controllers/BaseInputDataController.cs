@@ -28,6 +28,8 @@ namespace RatingUniversity.Controllers
         protected string alfabet;
         protected List<string> listNames;
         protected int active;
+        protected string tableName;
+        protected string controllerName;
 
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
@@ -132,6 +134,15 @@ namespace RatingUniversity.Controllers
                 }
             }
             return RedirectToAction("Index");
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public ActionResult Approve(int id)
+        {
+            int year = DateTime.Now.Year;
+            MonitoringUpdate.Update(id, this.tableName, 1, year);
+            return RedirectToAction("index", this.controllerName, new { id = id });
         }
 	}
 }

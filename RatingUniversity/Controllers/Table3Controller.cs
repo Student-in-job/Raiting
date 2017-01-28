@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data;
 using RatingUniversity.Models;
+using RatingUniversity.Classes;
 
 namespace RatingUniversity.Controllers
 {
@@ -19,6 +20,8 @@ namespace RatingUniversity.Controllers
             base.Initialize(requestContext);
             this.fileName = "3_chislennost_pps_vuza.xlsx";
             this.listName = "chislennost_pps_vuza";
+            this.tableName = "J3";
+            this.controllerName = "Table3";
             //this.startRow = 8;
             //this.endRow = 2;
         }
@@ -130,10 +133,20 @@ namespace RatingUniversity.Controllers
                 id = this.id;
             }
             ViewBag.file = this.fileName;
+            ViewBag.id = id;
             int year = DateTime.Now.Year;
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             return View(this.db.chislennost_pps_vuza.Where(model=>model.id_university==id && model.year == year).ToList());
         }
+
+        //[Authorize(Roles = "admin")]
+        //[HttpPost]
+        //public ActionResult Approve(int id)
+        //{
+        //    int year = DateTime.Now.Year;
+        //    MonitoringUpdate.Update(id, this.tableName, 1, year);
+        //    return RedirectToAction("index", this.controllerName, new { id = id });
+        //}
 	}
 }

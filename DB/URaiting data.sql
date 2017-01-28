@@ -14,6 +14,86 @@ NOCHECK CONSTRAINT FK__universit__id_re__17036CC0
 GO
 
 --
+-- Data for table dbo.region  (LIMIT 0,500)
+--
+
+SET IDENTITY_INSERT dbo.region ON
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (1, N'Ташкент', N'Toshkent')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (2, N'Республика Каракалпакстан', N'Qoraqalpog’iston Respublikasi')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (3, N'Андижанская область', N'Andijon viloyati')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (4, N'Бухарская область', N'Buxoro viloyati')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (5, N'Джизакская область', N'Jizzah viloyati')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (6, N'Кашкадарьинская область', N'Qashqadaryo viloyati')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (7, N'Навоийская область', N'Navoiy viloyati')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (8, N'Наманганская область', N'Namangan viloyati')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (9, N'Самаркандская область', N'Samarqand viloyati')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (10, N'Сурхандарьинская область', N'Surxondaryo viloyati')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (11, N'Сырдарьинская область', N'Sirdaryo viloyati')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (12, N'Ташкентская область', N'Toshkent viloyati')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (13, N'Ферганская область', N'Farg’ona viloyati')
+GO
+
+INSERT INTO dbo.region (id, name_RU, name_UZ)
+VALUES 
+  (14, N'Хорезмская область', N'Xorazm viloyati')
+GO
+
+SET IDENTITY_INSERT dbo.region OFF
+GO
+
+--
 -- Data for table dbo.university  (LIMIT 0,500)
 --
 
@@ -311,475 +391,6 @@ VALUES
 GO
 
 SET IDENTITY_INSERT dbo.university OFF
-GO
-
---
--- Data for table dbo.Jadval10  (LIMIT 0,500)
---
-
-SET IDENTITY_INSERT dbo.Jadval10 ON
-GO
-
-INSERT INTO dbo.Jadval10 (Id, DirectionCode, DirectionName, SubjectName, ForeignLanguage, EducationCourse, StudentCount, Asos, AsosFile, Year, UniversityId, Status)
-VALUES 
-  (1, N'5610200', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'Меҳмонхона хўжалиги менежменти', N'инглиз тили', 4, 23, N'БухДУ ректорининг
- 2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'1_2004_10.7BBAD6EFC6554E8791CCBF730A438BA8_2015_11_30__04_46_36.pdf', 2015, 24, NULL)
-GO
-
-INSERT INTO dbo.Jadval10 (Id, DirectionCode, DirectionName, SubjectName, ForeignLanguage, EducationCourse, StudentCount, Asos, AsosFile, Year, UniversityId, Status)
-VALUES 
-  (2, N'5610200', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'Сервис тизими фаолияти асослари', N'инглиз тили', 4, 23, N'БухДУ ректорининг
- 2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'#', 2015, 24, NULL)
-GO
-
-INSERT INTO dbo.Jadval10 (Id, DirectionCode, DirectionName, SubjectName, ForeignLanguage, EducationCourse, StudentCount, Asos, AsosFile, Year, UniversityId, Status)
-VALUES 
-  (3, N'5610200', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'Жахон иқтисодиёти ва халқаро иқтисодий муносабатлар', N'инглиз тили', 3, 25, N'БухДУ ректорининг
- 2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'#', 2015, 24, NULL)
-GO
-
-INSERT INTO dbo.Jadval10 (Id, DirectionCode, DirectionName, SubjectName, ForeignLanguage, EducationCourse, StudentCount, Asos, AsosFile, Year, UniversityId, Status)
-VALUES 
-  (4, N'5610200', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'Олий математика', N'инглиз тили', 1, 25, N'БухДУ ректорининг
- 2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'#', 2015, 24, NULL)
-GO
-
-INSERT INTO dbo.Jadval10 (Id, DirectionCode, DirectionName, SubjectName, ForeignLanguage, EducationCourse, StudentCount, Asos, AsosFile, Year, UniversityId, Status)
-VALUES 
-  (5, N'5610200', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'Сиёсатшунослик', N'инглиз тили', 4, 23, N'БухДУ ректорининг
- 2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'#', 2015, 24, NULL)
-GO
-
-INSERT INTO dbo.Jadval10 (Id, DirectionCode, DirectionName, SubjectName, ForeignLanguage, EducationCourse, StudentCount, Asos, AsosFile, Year, UniversityId, Status)
-VALUES 
-  (6, N'5230100', N'Иктисодиёт (тармоклар ва сохалар)', N'Микроиқтисодиёт', N'инглиз тили', 2, 19, N'БухДУ ректорининг
- 2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'#', 2015, 24, NULL)
-GO
-
-INSERT INTO dbo.Jadval10 (Id, DirectionCode, DirectionName, SubjectName, ForeignLanguage, EducationCourse, StudentCount, Asos, AsosFile, Year, UniversityId, Status)
-VALUES 
-  (7, N'5230100', N'Иктисодиёт (тармоклар ва сохалар)', N'Менеджмент', N'инглиз тили', 2, 19, N'БухДУ ректорининг
- 2014 йил 22 сентябрдаги
- 294-У(01)сонли буйруғи', N'#', 2015, 24, NULL)
-GO
-
-SET IDENTITY_INSERT dbo.Jadval10 OFF
-GO
-
---
--- Data for table dbo.Jadval11  (LIMIT 0,500)
---
-
-SET IDENTITY_INSERT dbo.Jadval11 ON
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (1, N'Ихтиярова Гулнора Акмаловна', N'05.19.03', N'Многофункциональные смешанные загустители для печатания ткани”', 2014, N'', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (2, N'Ёдгоров Нодир Джалолович', N'13.00.02', N'Чизмачиликда фазовий алмаштиришларни ўқитиш жараёнида ўқувчиларнинг билиш фаолиятини ривожлантириш', 2014, N'', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (3, N'Чориев Таваккал Равшанович', N'10.00.02', N'Забон ва услуби асарҳои публитсистии Садриддин Айнй', 2014, N'', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (4, N'Қаххарова Дилдора Сиддиковна', N'10.00.07', N'Инклюзив таълим технологияси', 2014, N'', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (5, N'Қувватова Дилрабо Хабибовна', N'10.00.02', N'ХХ аср иккинчи ярмида ўзбек поэмаси', 2014, N'', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (6, N'Жўраева Малоҳат Мухаммадиевна', N'10.00.07', N'Француз ва ўзбек эртаклари матнида модаллик категориясининг лингвокогнитив тадқиқи', 2014, N'', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (7, N'Назаров Ўткир Ўктамович', N'10.00.02', N'Романда бадиий хронотопнинг ўзига хослиги', 2014, N'', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (8, N'Музаффаров Фируз Давронович', N'09.00.03', N'Ғаззолий инсонга оид таълимотининг илмий-фалсафий асослари', 2014, N'', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (9, N'Қаҳҳоров Сиддик Қаҳҳорович, Самиев Камолиддин Аъзамович, Жўраев Ҳусниддин Олтинбойевич', N'15.06.04.', N'Қуёш қурилмаларидаги жараёнларни моделлаштириш', 2014, N'', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (10, N'Абдукабил Абдунабиевич Тўлаганогв', N'ББК 38.39', N'', 0, N'', N'', N'Местная Сырьевая база строительных материалов', N'2014 йил', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (11, N'Мавлонов А, Қодиров А', N'', N'Ўлкашунослик атласи Бухоро вилояти', 2014, N'', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (12, N'Таваккал Чориев', N'', N'', 0, N'Забони модари 3', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (13, N'Таваккал Чориев', N'', N'', 0, N'Забони модари 2', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (14, N'Таваккал Чориев', N'', N'', 0, N'Забони тожики 8', N'', N'', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (15, N'Абдуллаев Сухроб Саайфуллаевич', N'5110800- Тасвирий санъат ва мухандислик графикаси', N'', 0, N'', N'', N'Инклюзивтаълим технологияси', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (16, N'Л.Олимов, Эшонов Э. Махмудова З.', N'5110800- тасвирий санъат ва мухандислик графикаси', N'', 0, N'', N'', N'Тасвирий санъат ўқитиш методика', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (17, N'Қобилов Шавкат Рашидович', N'психология, педагогика ва психология', N'', 0, N'', N'', N'Психодиагностика', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (18, N'Ғанижон Худоев', N'Мусиқий таълим', N'', 0, N'', N'', N'Ғижжак чолғуси ижрочилик анъаналари', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (19, N'Тулаганов Абдукабил Абдунабиевич', N'', N'', 0, N'', N'', N'Воздействие  сульфатов на бетон(Й.Штарк,Ф.Беллман,П. Нобест,Б.Вихт)', N'220-085', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (20, N'Тулаганов Абдукабил Абдунабиевич', N'511000,5340200, 52 30 200,5340 400,5341000', N'', 0, N'', N'', N'"Немисча-ўзбекча-русча" қурилиш луғати', N'312-077', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (21, N'Тулаганов Абдукабил Абдунабиевич', N'архитектура ва қурилиш йўналиш бакалавр ва магистратура', N'', 0, N'', N'', N'Замонавий қурилиш материаллари,буюмлари ва технологиялари', N'220-082', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (22, N'Маъмуров Баходир Бахшуллаевич', N'5111700-БТСТТ,511800-МТ', N'', 0, N'', N'', N'Оилада соғлом бола тарбияси', N'335-022', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (23, N'Маъмуров Баходир Бахшуллаевич', N'5111700-БТСТТ,511800-МТ', N'', 0, N'', N'', N'Болалар ривожланишида жисмоний тарбия назарияси ва методикаси', N'335-015', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (24, N'Ибрагимов Алишер Каромативич', N'5 111 200-Жисмоний маданият', N'', 0, N'', N'', N'Ёш қўл тўпичиларни тайёрлаш методикаси', N'335-017', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (25, N'Мехриддин Абдуллаев,Л.Смургина', N'5 111 200-Жисмоний маданият', N'', 0, N'', N'', N'Организация физкультурно оздоровительных и спортивных мероприятий общеобразовательной школе', N'335-025', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (26, N'Мехридин Абдуллаев', N'5 111 200-Жисмоний маданият', N'', 0, N'', N'', N'Енгил атлетика', N'335- 019', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval11 (Id, FullName, Speciality, MonographName, MongographYear, DarslikName, DarslikCertificate, OquvqullanmaName, OquvqullanmaCertificate, OquvmajmuaName, OquvmajmuaCertificate, Status, AsosFile, Year, UniversityId)
-VALUES 
-  (27, N'Жўраева Зулхумор Ражабовна', N'512 0100- Филология ва тил ўргатиш', N'', 0, N'', N'', N'Основы филологического анализа художественного текста', N'', N'', N'', NULL, N'#', 2015, 24)
-GO
-
-SET IDENTITY_INSERT dbo.Jadval11 OFF
-GO
-
---
--- Data for table dbo.Jadval5  (LIMIT 0,500)
---
-
-SET IDENTITY_INSERT dbo.Jadval5 ON
-GO
-
-INSERT INTO dbo.Jadval5 (Id, FullName, Davlat_ishjoy, Speciality, Subject, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (1007, N'Ли Чул Су (Lee Chul Soo)', N'Жанубий Корея', N'Компьютер технологиялари', N'Электрон хукумат тизими ташкил этиш Ахборот коммуникация технологиялари бўйича маслаҳатчи', NULL, N'28.02.2014й.,131-02 сон –буйруқ 2ИГ, 20.02.2014й.-Шартнома 20.02.2014-18.02.2015', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval5 (Id, FullName, Davlat_ishjoy, Speciality, Subject, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (1008, N'Юн Ран-Хи (Yoon Ranhee)', N'Жанубий Корея', N'Санъатшунослик', N'Корейс тили', NULL, N'28.01.2014й.60 сон –буйруқ 22.01.2014-25.11.2015й.', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval5 (Id, FullName, Davlat_ishjoy, Speciality, Subject, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (1009, N'Шин Жонгжин (Shin Jongjin)', N'Жанубий Корея', N'Компьютер технологиялари', N'Ахборот технологиялари', NULL, N'20.11.2014й.60 сон –буйруқ 20.11.2014-08.08.2015й.', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval5 (Id, FullName, Davlat_ishjoy, Speciality, Subject, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (1010, N'Ли Чул Су (Lee Chul Soo)', N'Жанубий Корея', N'Компьютер технологиялари', N'Электрон хукумат тизими ташкил этиш Ахборот коммуникация технологиялари бўйича маслаҳатчи', 1, N'28.02.2014й.,131-02 сон –буйруқ 2ИГ, 20.02.2014й.-Шартнома 20.02.2014-18.02.2015', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval5 (Id, FullName, Davlat_ishjoy, Speciality, Subject, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (1011, N'Юн Ран-Хи (Yoon Ranhee)', N'Жанубий Корея', N'Санъатшунослик', N'Корейс тили', 1, N'28.01.2014й.60 сон –буйруқ 22.01.2014-25.11.2015й.', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval5 (Id, FullName, Davlat_ishjoy, Speciality, Subject, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (1012, N'Шин Жонгжин (Shin Jongjin)', N'Жанубий Корея', N'Компьютер технологиялари', N'Ахборот технологиялари', 1, N'20.11.2014й.60 сон –буйруқ 20.11.2014-08.08.2015й.', N'#', 2016, 46)
-GO
-
-SET IDENTITY_INSERT dbo.Jadval5 OFF
-GO
-
---
--- Data for table dbo.Jadval6  (LIMIT 0,500)
---
-
-SET IDENTITY_INSERT dbo.Jadval6 ON
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (1, N'Jumakulyyeva Umidahan Beshimovna', N'Туркманисто?', N'Биология', N'-', NULL, N'№359-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (2, N'Allakulov  Zakir Yusupovich', N'Туркманистон', N'Амалий математика ва информатика', N'-', NULL, N'№391-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (3, N'Choyanova Mahrijemal Yolbarsovna', N'Туркманистон', N'Амалий математика ва информатика', N'-', NULL, N'№391-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (4, N'Jumayeva Rana Shamuradovna', N'Туркманистон', N'Рус тили', N'-', NULL, N'№391-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (5, N'Sattarov Murat Zakirdjanovich', N'Туркманистон', N'Инглиз тили', N'-', NULL, N'№391-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (6, N'Annashova Jemal Reyimbayevna', N'Туркманистон', N'Инглиз тили', N'-', NULL, N'№391-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (7, N'Bayramova Nurana Bayramovna', N'Туркманистон', N'Инглиз тили', N'-', NULL, N'№391-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (8, N'Baltayeva Guller Berdimuradovna', N'Туркманистон', N'Инглиз тили', N'-', NULL, N'№391-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (9, N'Yakshiyeva Gulustan Babaxanovna', N'Туркманистон', N'Инглиз тили', N'-', NULL, N'№340-У(01)', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (10, N'Sobirova Inobat Ilxambayevna', N'Туркманистон', N'Инглиз тили', N'-', NULL, N'№340-У(01)', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (11, N'Seyidov Mansur Shakirjanovich', N'Туркманистон', N'Инглиз тили', N'-', NULL, N'№340-У(01)', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (12, N'Charyyeva Gozel Chariyevna', N'Туркманистон', N'Инглиз тили', N'-', NULL, N'№374-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (13, N'Matnazarova Hilala Narmatovna', N'Туркманистон', N'Бошланғич таълим ва спорт-тарбиявий иш', N'-', NULL, N'№317-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (14, N'Kaharova Zilola Usmanovna', N'Туркманистон', N'Бошланғич таълим ва спорт-тарбиявий иш', N'-', NULL, N'№317-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (15, N'Azymov Ikram Agadjanovich', N'Туркманистон', N'Экология ва атроф-муҳит муҳофазаси', N'-', NULL, N'№374-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (16, N'Bernayeva Aziza Aymuradovna', N'Туркманистон', N'Иқтисодиёт', N'-', NULL, N'№374-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (17, N'Rahimbayeva Adolat Ilhomboyevna', N'Туркманистон', N'Инглиз тили', N'-', NULL, N'№288-У(01)', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (18, N'Hurchyna Oksana', N'Украина', N'Инглиз тили', N'-', NULL, N'№317-У', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (19, N'Salomov Firdavs Maxmadovich', N'Тожикистон', N'Чет тили ва адабиёти (инглиз тили)', N'-', NULL, N'№288-У(01)', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (20, N'Solieva Nigora Gufronovna', N'Тожикистон', N'Иқтисодиёт', N'-', NULL, N'№288-У(01)', N'#', 2015, 24)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (21, N'Тян Станислав Николаевич', N'Қозоғистон фуқароси', N'Информатика ва АТ йўналиши', N'', 1, N'12.10.2012даги 1063-сонли буйруқ, 3 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (22, N'Нажметдинов Ашурбай', N'Қозоғистон фуқароси', N'Информатика ва АТ йўналиши', N'', 1, N'12.10.2012даги 1063-сонли буйруқ, 3 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (23, N'Ким Руслан Витальевич', N'Россия Федерацияси', N'Махсус ёритиш технологиялари йўналиши', N'', 1, N'12.10.2012даги 1063-сонли буйруқ, 3 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (24, N'Ким Кристина Руслановна', N'Россия Федерацияси', N'Телекоммуникация технологиялари', N'', 1, N'12.10.2012даги 1063-сонли буйруқ, 3 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (25, N'Бредихин Никита', N'Туркманистон', N'Компьютер графикаси ва дизайн', N'', 1, N'12.10.2012даги 1063-сонли буйруқ, 3 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (26, N'Асламов Шадаб Хожи Мохаммад', N'Афғонистон', N'АКТ соҳасида иқтисодиёт ва менежмент', N'', 1, N'26.09.2013даги 1011-сонли буйруқ, 2 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (27, N'Цой Юрий Станиславович', N'Россия', N'АКТ соҳасида иқтисодиёт ва менежмент', N'', 1, N'26.09.2013даги 1011-сонли буйруқ, 2 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (28, N'Ролдугина Карина Андреевна', N'Россия', N'Почта алоқаси технологияси', N'', 1, N'26.09.2013даги 1011-сонли буйруқ, 2 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (29, N'Ширинов Джахангир Каримжонович', N'Қозоғистон', N'Компьютер инжиниринги', N'', 1, N'26.09.2013даги 1011-сонли буйруқ, 2 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (30, N'Абаев Аслан Муратович', N'Россия', N'Дастурий инжиниринг', N'', 1, N'26.09.2013даги 1011-сонли буйруқ, 2 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (31, N'Абламитов Абдухамид', N'Қозоғистон', N'Телекоммуникация технологиялари', N'', 1, N'26.09.2013даги 1011-сонли буйруқ, 2 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (32, N'Махмадов Далер Хандуллоевич', N'Тожикистон', N'АКТ соҳасида иқтисодиёт ва менежмент', N'', 1, N'08.10.2014даги 1153-сонли буйруқ, 1 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (33, N'Мун Игорь Владимирович', N'Туркманистон', N'Дастурий инжиниринг', N'', 1, N'08.10.2014даги 1153-сонли буйруқ, 1 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (34, N'Югай Владислав Сергеевич', N'Қозоғистон', N'АКТ соҳасида иқтисодиёт ва менежмент', N'', 1, N'08.10.2014даги 1153-сонли буйруқ, 1 курс', N'#', 2016, 46)
-GO
-
-INSERT INTO dbo.Jadval6 (Id, FullName, State, Yonalish, Mag_mutaxassislik, Status, Asos, Asos_fayl, Year, UniversityId)
-VALUES 
-  (35, N'Абдусаломова Барно Камилжан кизи', N'Россия Федерацияси', N'АКТ соҳасида иқтисодиёт ва менежмент', N'', 1, N'08.10.2014даги 1153-сонли буйруқ, 1 курс', N'#', 2016, 46)
-GO
-
-SET IDENTITY_INSERT dbo.Jadval6 OFF
-GO
-
---
--- Data for table dbo.Jadval7  (LIMIT 0,500)
---
-
-SET IDENTITY_INSERT dbo.Jadval7 ON
-GO
-
-INSERT INTO dbo.Jadval7 (Id, FullName_uzb, State_uzb, Mutaxassislik_uzb, FullName_xorij, State_xorij, Mutaxassislik_xorij, Asos, Asos_fayl, Bak_mag, Year, UniversityId, Status)
-VALUES 
-  (1, N'Давронхўжа Истамов Олимович', N'Руминия, Иоан Куза номли университет', N'Меҳмонхона хўжалигини ташкил этиш ва бошқариш', N'-', N'-', N'-', N'Эрасмус Мундус дастури СИЛКРОУТ лойиҳаси грант келишуви,01.05.2014', N'#', 0, 2015, 24, NULL)
-GO
-
-INSERT INTO dbo.Jadval7 (Id, FullName_uzb, State_uzb, Mutaxassislik_uzb, FullName_xorij, State_xorij, Mutaxassislik_xorij, Asos, Asos_fayl, Bak_mag, Year, UniversityId, Status)
-VALUES 
-  (2, N'Миршод Нарзуллаев Акмалович', N'Руминия, Иоан Куза номли университет', N'Иқтисодиёт', N'-', N'-', N'-', N'Эрасмус Мундус дастури СИЛКРОУТ лойиҳаси грант келишуви,01.05.2014', N'#', 0, 2015, 24, NULL)
-GO
-
-INSERT INTO dbo.Jadval7 (Id, FullName_uzb, State_uzb, Mutaxassislik_uzb, FullName_xorij, State_xorij, Mutaxassislik_xorij, Asos, Asos_fayl, Bak_mag, Year, UniversityId, Status)
-VALUES 
-  (3, N'Умиджон Ғафуров Шарипович', N'Италия, Болония университети', N'Туроператорлик хизматларини ташкил этиш', N'-', N'-', N'-', N'Эрасмус Мундус дастури СИЛКРОУТ лойиҳаси грант келишуви,01.05.2014', N'#', 1, 2015, 24, NULL)
-GO
-
-SET IDENTITY_INSERT dbo.Jadval7 OFF
-GO
-
---
--- Data for table dbo.Monitorings  (LIMIT 0,500)
---
-
-SET IDENTITY_INSERT dbo.Monitorings ON
-GO
-
-INSERT INTO dbo.Monitorings (Id, J1, J2, J3, J4, J5, J6, J7, J8, J9, J10, J11, J12, J13, J14, J15, J16, J17, J18, J19, J20, J21, J22, J23, J24, J25, J26, J27, J28, J29, J30, J31, J32, J1_2, J1_7, J2_1, J2_2, Year, UniverId, Srok)
-VALUES 
-  (1, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2016, 46, NULL)
-GO
-
-SET IDENTITY_INSERT dbo.Monitorings OFF
 GO
 
 --
@@ -1082,85 +693,7 @@ GO
 SET IDENTITY_INSERT dbo.raiting OFF
 GO
 
---
--- Data for table dbo.region  (LIMIT 0,500)
---
 
-SET IDENTITY_INSERT dbo.region ON
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (1, N'Ташкент', N'Toshkent')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (2, N'Республика Каракалпакстан', N'Qoraqalpog’iston Respublikasi')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (3, N'Андижанская область', N'Andijon viloyati')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (4, N'Бухарская область', N'Buxoro viloyati')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (5, N'Джизакская область', N'Jizzah viloyati')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (6, N'Кашкадарьинская область', N'Qashqadaryo viloyati')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (7, N'Навоийская область', N'Navoiy viloyati')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (8, N'Наманганская область', N'Namangan viloyati')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (9, N'Самаркандская область', N'Samarqand viloyati')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (10, N'Сурхандарьинская область', N'Surxondaryo viloyati')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (11, N'Сырдарьинская область', N'Sirdaryo viloyati')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (12, N'Ташкентская область', N'Toshkent viloyati')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (13, N'Ферганская область', N'Farg’ona viloyati')
-GO
-
-INSERT INTO dbo.region (id, name_RU, name_UZ)
-VALUES 
-  (14, N'Хорезмская область', N'Xorazm viloyati')
-GO
-
-SET IDENTITY_INSERT dbo.region OFF
-GO
 
 --
 -- Enable foreign keys

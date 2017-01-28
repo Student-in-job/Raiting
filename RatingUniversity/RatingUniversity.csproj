@@ -291,6 +291,9 @@
     <Compile Include="Models\citiruemost_publikaciy_pps_vuza.cs">
       <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>Final Rating.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\darslik.cs">
       <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
@@ -630,6 +633,8 @@
       <DependentUpon>Final Rating.edmx</DependentUpon>
       <LastGenOutput>Final Rating.cs</LastGenOutput>
     </Content>
+    <Content Include="Files\26_osnashennost_irc_literaturoy.xlsx" />
+    <Content Include="Files\30_osnashennost_laboratornim_oborudovaniem.xlsx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\flipclock.js" />

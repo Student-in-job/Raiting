@@ -35,7 +35,7 @@ namespace RatingUniversity.Classes
 				
 				if (c == 0 && UniverId!=0)
 				{
-					string sql = "insert Monitorings(Year, UniverId) Values("+yil.ToString()+", "+UniverId.ToString()+") ";
+                    string sql = "insert Monitorings(Year, UniverId, " + fld_name + ") Values(" + yil.ToString() + ", " + UniverId.ToString() + ", " + status + ") ";
 					db.Database.ExecuteSqlCommand(sql);
 					db.SaveChanges();
 

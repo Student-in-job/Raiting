@@ -10,7 +10,6 @@ namespace RatingUniversity.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "RatingUniversity.Models.TablesContext";
         }
 
         protected override void Seed(RatingUniversity.Models.TablesContext context)

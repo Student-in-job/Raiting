@@ -37,5 +37,11 @@ namespace RatingUniversity.Classes
             this.command.CommandText = "P3_1_citiruemost_publikaciy_pps_vuza";
             return this.execProc(id_university, year);
         }
+
+        public int P3_3_kolichestvo_sotrudnikov_vuza(int id_university, int year)
+        {
+            this.command.CommandText = "P3_3_kolichestvo_sotrudnikov_vuza";
+            return this.execProc(id_university, year);
+        }
     }
 }

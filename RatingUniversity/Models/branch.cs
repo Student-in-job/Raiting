@@ -17,13 +17,11 @@ namespace RatingUniversity.Models
         public branch()
         {
             this.university = new HashSet<university>();
-            this.university1 = new HashSet<university>();
         }
     
         public int id { get; set; }
         public string name { get; set; }
     
         public virtual ICollection<university> university { get; set; }
-        public virtual ICollection<university> university1 { get; set; }
     }
 }
