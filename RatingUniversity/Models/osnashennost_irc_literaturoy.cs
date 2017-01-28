@@ -24,7 +24,9 @@ namespace RatingUniversity.Models
         public Nullable<bool> nalichie_rus { get; set; }
         public Nullable<bool> nalichie_angl { get; set; }
         public Nullable<int> university_id { get; set; }
+        public Nullable<int> university_id1 { get; set; }
     
         public virtual university university { get; set; }
+        public virtual university university1 { get; set; }
     }
 }

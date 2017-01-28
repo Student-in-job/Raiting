@@ -17,6 +17,7 @@ namespace RatingUniversity.Models
         public region()
         {
             this.university = new HashSet<university>();
+            this.university1 = new HashSet<university>();
         }
     
         public int id { get; set; }
@@ -24,5 +25,6 @@ namespace RatingUniversity.Models
         public string name_UZ { get; set; }
     
         public virtual ICollection<university> university { get; set; }
+        public virtual ICollection<university> university1 { get; set; }
     }
 }

@@ -29,11 +29,11 @@ namespace RatingUniversity.Controllers
         {
             //CultureInfo currentCulrute = Thread.CurrentThread.CurrentCulture;
             //ViewBag.lang = currentCulrute.Name.Substring(0, 5);
-            int time = Functions.GetLeftTime("01-08-2016 00:00:00");
+            int time = Functions.GetLeftTime("01-02-2017 00:00:00");
             ViewBag.Reverse = (time < 0) ? "false" : "true";
             time = (time < 0) ? -time : time;
             ViewBag.time = time;
-            ViewBag.year = 2013;
+            ViewBag.year = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["startYear"]);
             return View();
         }
 
