@@ -107,7 +107,6 @@ namespace RatingUniversity.Models
         public Nullable<double> p18 { get; set; }
         public Nullable<double> p19 { get; set; }
         public Nullable<double> p20 { get; set; }
-        public Nullable<int> university_id { get; set; }
     
         public virtual university university { get; set; }
     }

@@ -225,6 +225,7 @@
     <Compile Include="Classes\CustomFile.cs" />
     <Compile Include="Classes\ExcelFile.cs" />
     <Compile Include="Classes\MonitoringUpdate.cs" />
+    <Compile Include="Classes\Procedures.cs" />
     <Compile Include="Classes\Transliteration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseInputDataController.cs" />
@@ -288,6 +289,9 @@
       <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\citiruemost_publikaciy_pps_vuza.cs">
+      <DependentUpon>Final Rating.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
       <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\darslik.cs">
@@ -590,8 +594,6 @@
     <Content Include="Files\table7.xls" />
     <Content Include="Files\table8.xls" />
     <Content Include="Files\table9.xls" />
-    <Content Include="Files\test-zero-weight.xlsx" />
-    <Content Include="Files\test.xlsx" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\background.jpg" />
@@ -631,6 +633,8 @@
       <DependentUpon>Final Rating.edmx</DependentUpon>
       <LastGenOutput>Final Rating.cs</LastGenOutput>
     </Content>
+    <Content Include="Files\26_osnashennost_irc_literaturoy.xlsx" />
+    <Content Include="Files\30_osnashennost_laboratornim_oborudovaniem.xlsx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\flipclock.js" />

@@ -25,7 +25,34 @@ namespace RatingUniversity.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<branch> branch { get; set; }
+        public virtual DbSet<chislennost_pps_vuza> chislennost_pps_vuza { get; set; }
+        public virtual DbSet<citiruemost_publikaciy_pps_vuza> citiruemost_publikaciy_pps_vuza { get; set; }
+        public virtual DbSet<darslik> darslik { get; set; }
+        public virtual DbSet<effektivnost_nir_dalolatnoma> effektivnost_nir_dalolatnoma { get; set; }
+        public virtual DbSet<effektivnost_nir_patent> effektivnost_nir_patent { get; set; }
+        public virtual DbSet<effektivnost_nir_sertifikat> effektivnost_nir_sertifikat { get; set; }
+        public virtual DbSet<granti_po_vidam_issledovaniy> granti_po_vidam_issledovaniy { get; set; }
+        public virtual DbSet<informaciya_o_dissertaciyah> informaciya_o_dissertaciyah { get; set; }
+        public virtual DbSet<kolichestvo_izdannih_mejdunarodnih_statey> kolichestvo_izdannih_mejdunarodnih_statey { get; set; }
+        public virtual DbSet<kolichestvo_izdannih_mestnih_statey> kolichestvo_izdannih_mestnih_statey { get; set; }
+        public virtual DbSet<majmua> majmua { get; set; }
         public virtual DbSet<Monitorings> Monitorings { get; set; }
+        public virtual DbSet<monografiya> monografiya { get; set; }
+        public virtual DbSet<nalichie_elektronnoy_literaturi> nalichie_elektronnoy_literaturi { get; set; }
+        public virtual DbSet<nalichie_informacii_o_vuze_v_internete> nalichie_informacii_o_vuze_v_internete { get; set; }
+        public virtual DbSet<nalichie_multimedia_v_auditorii> nalichie_multimedia_v_auditorii { get; set; }
+        public virtual DbSet<osnashennost_irc_literaturoy> osnashennost_irc_literaturoy { get; set; }
+        public virtual DbSet<osnashennost_laboratoriy> osnashennost_laboratoriy { get; set; }
+        public virtual DbSet<osnashennost_laboratornim_oborudovaniem> osnashennost_laboratornim_oborudovaniem { get; set; }
+        public virtual DbSet<qullanma> qullanma { get; set; }
+        public virtual DbSet<raiting> raiting { get; set; }
+        public virtual DbSet<region> region { get; set; }
+        public virtual DbSet<stepen_vnedreniya_ikt> stepen_vnedreniya_ikt { get; set; }
+        public virtual DbSet<summi_mejdunarodnih_grantov> summi_mejdunarodnih_grantov { get; set; }
+        public virtual DbSet<summi_respublikanskih_grantov> summi_respublikanskih_grantov { get; set; }
+        public virtual DbSet<university> university { get; set; }
         public virtual DbSet<I1> I1 { get; set; }
         public virtual DbSet<I1_dolya_pps_s_uchenoy_stepenyu> I1_dolya_pps_s_uchenoy_stepenyu { get; set; }
         public virtual DbSet<I1_TOTAL> I1_TOTAL { get; set; }
@@ -79,31 +106,5 @@ namespace RatingUniversity.Models
         public virtual DbSet<I9> I9 { get; set; }
         public virtual DbSet<I9_dolya_pps_prepodayushego_v_sspo> I9_dolya_pps_prepodayushego_v_sspo { get; set; }
         public virtual DbSet<RAITING_TOTAL> RAITING_TOTAL { get; set; }
-        public virtual DbSet<branch> branch { get; set; }
-        public virtual DbSet<chislennost_pps_vuza> chislennost_pps_vuza { get; set; }
-        public virtual DbSet<citiruemost_publikaciy_pps_vuza> citiruemost_publikaciy_pps_vuza { get; set; }
-        public virtual DbSet<darslik> darslik { get; set; }
-        public virtual DbSet<effektivnost_nir_dalolatnoma> effektivnost_nir_dalolatnoma { get; set; }
-        public virtual DbSet<effektivnost_nir_patent> effektivnost_nir_patent { get; set; }
-        public virtual DbSet<effektivnost_nir_sertifikat> effektivnost_nir_sertifikat { get; set; }
-        public virtual DbSet<granti_po_vidam_issledovaniy> granti_po_vidam_issledovaniy { get; set; }
-        public virtual DbSet<informaciya_o_dissertaciyah> informaciya_o_dissertaciyah { get; set; }
-        public virtual DbSet<kolichestvo_izdannih_mejdunarodnih_statey> kolichestvo_izdannih_mejdunarodnih_statey { get; set; }
-        public virtual DbSet<kolichestvo_izdannih_mestnih_statey> kolichestvo_izdannih_mestnih_statey { get; set; }
-        public virtual DbSet<majmua> majmua { get; set; }
-        public virtual DbSet<monografiya> monografiya { get; set; }
-        public virtual DbSet<nalichie_elektronnoy_literaturi> nalichie_elektronnoy_literaturi { get; set; }
-        public virtual DbSet<nalichie_informacii_o_vuze_v_internete> nalichie_informacii_o_vuze_v_internete { get; set; }
-        public virtual DbSet<nalichie_multimedia_v_auditorii> nalichie_multimedia_v_auditorii { get; set; }
-        public virtual DbSet<osnashennost_irc_literaturoy> osnashennost_irc_literaturoy { get; set; }
-        public virtual DbSet<osnashennost_laboratoriy> osnashennost_laboratoriy { get; set; }
-        public virtual DbSet<osnashennost_laboratornim_oborudovaniem> osnashennost_laboratornim_oborudovaniem { get; set; }
-        public virtual DbSet<qullanma> qullanma { get; set; }
-        public virtual DbSet<raiting> raiting { get; set; }
-        public virtual DbSet<region> region { get; set; }
-        public virtual DbSet<stepen_vnedreniya_ikt> stepen_vnedreniya_ikt { get; set; }
-        public virtual DbSet<summi_mejdunarodnih_grantov> summi_mejdunarodnih_grantov { get; set; }
-        public virtual DbSet<summi_respublikanskih_grantov> summi_respublikanskih_grantov { get; set; }
-        public virtual DbSet<university> university { get; set; }
     }
 }

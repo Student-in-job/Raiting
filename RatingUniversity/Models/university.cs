@@ -46,8 +46,6 @@ namespace RatingUniversity.Models
         public Nullable<int> id_region { get; set; }
         public Nullable<int> id_branch { get; set; }
         public string name_UZ { get; set; }
-        public Nullable<int> branch_id { get; set; }
-        public Nullable<int> region_id { get; set; }
     
         public virtual branch branch { get; set; }
         public virtual ICollection<chislennost_pps_vuza> chislennost_pps_vuza { get; set; }

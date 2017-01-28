@@ -25,7 +25,6 @@ namespace RatingUniversity.Models
         public string date { get; set; }
         public Nullable<int> year { get; set; }
         public Nullable<int> id_university { get; set; }
-        public Nullable<int> university_id { get; set; }
     
         public virtual university university { get; set; }
     }

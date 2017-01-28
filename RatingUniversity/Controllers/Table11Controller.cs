@@ -26,8 +26,8 @@ namespace RatingUniversity.Controllers
             this.listNames.Add("darslik");
             this.listNames.Add("qullanma");
             this.listNames.Add("majmua");
-            //this.startRow = 8;
-            //this.endRow = 2;
+            this.controllerName = "Table11";
+            this.tableName = "J10";
         }
 
         protected override void FormListOfData(System.Data.DataTable table, string listName)
@@ -35,20 +35,6 @@ namespace RatingUniversity.Controllers
             if (listName == this.listNames[0])
             {
                 this.records0 = new List<monografiya>();
-                /*
-                for (int i = this.startRow; i < table.Rows.Count - this.endRow; i++)
-                {
-                    monografiya record = new monografiya();
-                    if (table.Rows[i][1] != DBNull.Value) record.fio = Functions.Translate(Convert.ToString(table.Rows[i][1]), "UZ", "LT");
-                    if (table.Rows[i][2] != DBNull.Value) record.kod_spec = Functions.Translate(Convert.ToString(table.Rows[i][2]), "UZ", "LT");
-                    if (table.Rows[i][3] != DBNull.Value) record.monograf_name = Convert.ToString(table.Rows[i][3]);
-                    if (table.Rows[i][4] != DBNull.Value) record.monograf_year = Convert.ToString(table.Rows[i][4]);
-                    if (table.Rows[i][5] != DBNull.Value) record.filename = Convert.ToString(table.Rows[i][5]);
-                    record.university_id = this.id;
-                    record.year = DateTime.Now.Year;
-
-                    this.records0.Add(record);
-                }*/
                 bool flag = false;
                 foreach(System.Data.DataRow row in table.Rows)
                 {
@@ -80,20 +66,6 @@ namespace RatingUniversity.Controllers
             else if (listName == this.listNames[1])
             {
                 this.records1 = new List<darslik>();
-                /*
-                for (int i = this.startRow; i < table.Rows.Count - this.endRow; i++)
-                {
-                    darslik record = new darslik();
-                    if (table.Rows[i][1] != DBNull.Value) record.fio = Functions.Translate(Convert.ToString(table.Rows[i][1]), "UZ", "LT");
-                    if (table.Rows[i][2] != DBNull.Value) record.kod_spec = Functions.Translate(Convert.ToString(table.Rows[i][2]), "UZ", "LT");
-                    if (table.Rows[i][3] != DBNull.Value) record.ucheb_name = Convert.ToString(table.Rows[i][3]);
-                    if (table.Rows[i][4] != DBNull.Value) record.ucheb_number = Convert.ToString(table.Rows[i][4]);
-                    if (table.Rows[i][5] != DBNull.Value) record.filename = Convert.ToString(table.Rows[i][5]);
-                    record.university_id = this.id;
-                    record.year = DateTime.Now.Year;
-
-                    this.records1.Add(record);
-                }*/
                 bool flag = false;
                 foreach (System.Data.DataRow row in table.Rows)
                 {
@@ -125,21 +97,6 @@ namespace RatingUniversity.Controllers
             else if (listName == this.listNames[2])
             {
                 this.records2 = new List<qullanma>();
-                /*
-                for (int i = this.startRow; i < table.Rows.Count - this.endRow; i++)
-                {
-                    qullanma record = new qullanma();
-                    if (table.Rows[i][1] != DBNull.Value) record.fio = Functions.Translate(Convert.ToString(table.Rows[i][1]), "UZ", "LT");
-                    if (table.Rows[i][2] != DBNull.Value) record.kod_spec = Functions.Translate(Convert.ToString(table.Rows[i][2]), "UZ", "LT");
-                    if (table.Rows[i][3] != DBNull.Value) record.posobie_name = Convert.ToString(table.Rows[i][3]);
-                    if (table.Rows[i][4] != DBNull.Value) record.posobie_number = Convert.ToString(table.Rows[i][4]);
-                    if (table.Rows[i][5] != DBNull.Value) record.filename = Convert.ToString(table.Rows[i][5]);
-                    record.university_id = this.id;
-                    record.year = DateTime.Now.Year;
-
-                    this.records2.Add(record);
-                }
-                */
                 bool flag = false;
                 foreach (System.Data.DataRow row in table.Rows)
                 {
@@ -171,21 +128,6 @@ namespace RatingUniversity.Controllers
             else if (listName == this.listNames[3])
             {
                 this.records3 = new List<majmua>();
-                /*
-                for (int i = this.startRow; i < table.Rows.Count - this.endRow; i++)
-                {
-                    majmua record = new majmua();
-                    if (table.Rows[i][1] != DBNull.Value) record.fio = Functions.Translate(Convert.ToString(table.Rows[i][1]), "UZ", "LT");
-                    if (table.Rows[i][2] != DBNull.Value) record.kod_spec = Functions.Translate(Convert.ToString(table.Rows[i][2]), "UZ", "LT");
-                    if (table.Rows[i][3] != DBNull.Value) record.metodich_name = Convert.ToString(table.Rows[i][3]);
-                    if (table.Rows[i][4] != DBNull.Value) record.metodich_number = Convert.ToString(table.Rows[i][4]);
-                    if (table.Rows[i][5] != DBNull.Value) record.filename = Convert.ToString(table.Rows[i][5]);
-                    record.university_id = this.id;
-                    record.year = DateTime.Now.Year;
-
-                    this.records3.Add(record);
-                }
-                */
                 bool flag = false;
                 foreach (System.Data.DataRow row in table.Rows)
                 {
@@ -261,6 +203,7 @@ namespace RatingUniversity.Controllers
                 this.db.majmua.Add(newRecord);
             }
             this.db.SaveChanges();
+            base.SaveData();
             //MonitoringUpdate.Update(0, "J11", 0, yil);
         }
         //
@@ -288,6 +231,16 @@ namespace RatingUniversity.Controllers
             modelTable.qullanma = this.db.qullanma.Where(model => model.id_university == id && model.year == year).ToList();
             modelTable.majmua = this.db.majmua.Where(model => model.id_university == id && model.year == year).ToList();
             return View(modelTable);
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public override ActionResult Approve(int id)
+        {
+            Procedures proc = new Procedures();
+            int year = DateTime.Now.Year;
+            int result = proc.P3_3_kolichestvo_sotrudnikov_vuza(id, year);
+            return base.Approve(id);
         }
 	}
 }

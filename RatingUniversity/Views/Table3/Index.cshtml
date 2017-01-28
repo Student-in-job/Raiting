@@ -1,58 +1,74 @@
 ﻿@*using PagedList.Mvc;*@
-    @model IEnumerable<RatingUniversity.Models.chislennost_pps_vuza>
-
+@model IEnumerable<RatingUniversity.Models.chislennost_pps_vuza>
+@using MyFunctions = RatingUniversity.Classes.Functions;
+@using Resource = RatingUniversity.Langs.Resource;
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
     @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
 
     @{
-        <div class="well well-sm">
-            <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table3/Download">Скачать шаблон</a>
-        </div>
-        
-        using (Html.BeginForm("Upload", "Table3", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        if (!ViewBag.isAdmin)
+            { 
+            <div class="well well-sm">
+                <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table3/Download">Скачать шаблон</a>
+            </div>
+            using (Html.BeginForm("Upload", "Table3", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <fieldset>
+                    <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                    <div class="input-group">
+                        <input type="file" class="form-control" name="files" />
+                        <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+                    </div>
+                </fieldset>
+            }
+        }
+        else
         {
-            <fieldset>
-                <legend>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
-                <div class="input-group">
-                    <input type="file" class="form-control" name="files" />
-                    <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
-                </div>
-            </fieldset>
+             using (Html.BeginForm("Approve", "Table3", FormMethod.Post))
+            {
+                <fieldset>
+                    <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                    <div class="input-group">
+                        <input type="hidden" class="form-control" name="id" value="@ViewBag.id" />
+                        <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="Approve" /></span>
+                    </div>
+                </fieldset>
+            }
         }
     }
 
-        <h3 class="text-center">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-        <h4 class="text-center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+        <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+        <h4 class="text-center">@MyFunctions.Translate(Resource.PPSDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
         <table class="table table-bordered" style="width:1000px;table-layout:fixed;word-wrap:break-word">
             <thead>
                 <tr>
-                    <th colspan="17" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSAmount, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="17" style="text-align:center">@MyFunctions.Translate(Resource.PPSAmount, ViewBag.lang, ViewBag.alfabet)</th>
                 </tr>
                 <tr>
-                    <th colspan="4" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th colspan="3" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSBasicHeader, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th colspan="6" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSVisitingHeader, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th colspan="4" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSHourlyHeader, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="4" style="text-align:center">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="3" style="text-align:center">@MyFunctions.Translate(Resource.PPSBasicHeader, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="6" style="text-align:center">@MyFunctions.Translate(Resource.PPSVisitingHeader, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="4" style="text-align:center">@MyFunctions.Translate(Resource.PPSHourlyHeader, ViewBag.lang, ViewBag.alfabet)</th>
                 </tr>
                 <tr>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSBasicStaff, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSVisitingStaff, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSHourly, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSphDeX, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSphD, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSProfessor, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSDocent, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSTeacher, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSAssistant, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSProfessorPhD, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSDocentPhD, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSTeacher, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSAssistant, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSProfessorPhD, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSDocentPhD, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSTeacher, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PPSAssistant, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSBasicStaff, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSVisitingStaff, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSHourly, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSphDeX, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSphD, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSProfessor, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSDocent, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSTeacher, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSAssistant, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSProfessorPhD, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSDocentPhD, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSTeacher, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSAssistant, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSProfessorPhD, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSDocentPhD, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSTeacher, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>@MyFunctions.Translate(Resource.PPSAssistant, ViewBag.lang, ViewBag.alfabet)</th>
                 </tr>
             </thead>
             <tbody>
