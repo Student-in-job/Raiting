@@ -70,7 +70,10 @@ namespace RatingUniversity.Controllers
         { }
 
         protected virtual void SaveData()
-        { }
+        {
+            int year = DateTime.Now.Year;
+            MonitoringUpdate.Update(id, this.tableName, 0, year);
+        }
 
         //
         // GET: /BaseInputData/
@@ -138,7 +141,7 @@ namespace RatingUniversity.Controllers
 
         [Authorize(Roles = "admin")]
         [HttpPost]
-        public ActionResult Approve(int id)
+        public virtual ActionResult Approve(int id)
         {
             int year = DateTime.Now.Year;
             MonitoringUpdate.Update(id, this.tableName, 1, year);

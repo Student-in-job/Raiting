@@ -22,40 +22,11 @@ namespace RatingUniversity.Controllers
             this.listName = "chislennost_pps_vuza";
             this.tableName = "J3";
             this.controllerName = "Table3";
-            //this.startRow = 8;
-            //this.endRow = 2;
         }
 
         protected override void FormListOfData(DataTable table)
         {
             this.records = new List<chislennost_pps_vuza>();
-            /*
-            for (int i = this.startRow; i < table.Rows.Count-this.endRow; i++)
-            {
-                chislennost_pps_vuza record = new chislennost_pps_vuza();
-                if (table.Rows[i][0] != DBNull.Value) record.ass_shtat = Convert.ToInt32(table.Rows[i][0]);
-                if (table.Rows[i][1] != DBNull.Value) record.urindosh = Convert.ToInt32(table.Rows[i][1]);
-                if (table.Rows[i][2] != DBNull.Value) record.saotbay = Convert.ToInt32(table.Rows[i][2]);
-                if (table.Rows[i][3] != DBNull.Value) record.as_fan_nom = Convert.ToInt32(table.Rows[i][3]);
-                if (table.Rows[i][4] != DBNull.Value) record.as_fan_doc = Convert.ToInt32(table.Rows[i][4]);
-                if (table.Rows[i][5] != DBNull.Value) record.as_prof = Convert.ToInt32(table.Rows[i][5]);
-                if (table.Rows[i][6] != DBNull.Value) record.as_doz = Convert.ToInt32(table.Rows[i][6]);
-                if (table.Rows[i][7] != DBNull.Value) record.as_katta = Convert.ToInt32(table.Rows[i][7]);
-                if (table.Rows[i][8] != DBNull.Value) record.as_ass = Convert.ToInt32(table.Rows[i][8]);
-                if (table.Rows[i][9] != DBNull.Value) record.ur_prof = Convert.ToInt32(table.Rows[i][9]);
-                if (table.Rows[i][10] != DBNull.Value) record.ur_doc = Convert.ToInt32(table.Rows[i][10]);
-                if (table.Rows[i][11] != DBNull.Value) record.ur_katta = Convert.ToInt32(table.Rows[i][11]);
-                if (table.Rows[i][12] != DBNull.Value) record.ur_ass = Convert.ToInt32(table.Rows[i][12]);
-                if (table.Rows[i][13] != DBNull.Value) record.so_prof = Convert.ToInt32(table.Rows[i][13]);
-                if (table.Rows[i][14] != DBNull.Value) record.so_doc = Convert.ToInt32(table.Rows[i][14]);
-                if (table.Rows[i][15] != DBNull.Value) record.so_katta = Convert.ToInt32(table.Rows[i][15]);
-                if (table.Rows[i][16] != DBNull.Value) record.so_ass = Convert.ToInt32(table.Rows[i][16]);
-                record.university_id = this.id;
-                record.year = DateTime.Now.Year;
-
-                this.records.Add(record);
-            }
-            */
             bool flag = false;
             foreach (System.Data.DataRow row in table.Rows)
             {
@@ -115,7 +86,7 @@ namespace RatingUniversity.Controllers
                 this.db.chislennost_pps_vuza.Add(newRecord);
             }
             this.db.SaveChanges();
-            //MonitoringUpdate.Update(0, "J1", 0, yil);
+            base.SaveData();
         }
         //
         // GET: /Table3/
@@ -140,13 +111,14 @@ namespace RatingUniversity.Controllers
             return View(this.db.chislennost_pps_vuza.Where(model=>model.id_university==id && model.year == year).ToList());
         }
 
-        //[Authorize(Roles = "admin")]
-        //[HttpPost]
-        //public ActionResult Approve(int id)
-        //{
-        //    int year = DateTime.Now.Year;
-        //    MonitoringUpdate.Update(id, this.tableName, 1, year);
-        //    return RedirectToAction("index", this.controllerName, new { id = id });
-        //}
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public override ActionResult Approve(int id)
+        {
+            Procedures proc = new Procedures();
+            int year = DateTime.Now.Year;
+            int result = proc.P3_3_kolichestvo_sotrudnikov_vuza(id, year);
+            return base.Approve(id);
+        }
 	}
 }

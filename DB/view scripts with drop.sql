@@ -610,7 +610,8 @@ WHERE
 		AND I5.YEAR = I6.YEAR
 		AND I6.YEAR = I7.YEAR
 		AND I7.YEAR = I8.YEAR
-		AND I8.YEAR = I9.YEAR;
+		AND I8.YEAR = I9.YEAR
+		AND r.YEAR = I1.YEAR;
 GO
 		
 --- 2 Уровень знания студентов и квалификация выпускников
@@ -632,7 +633,8 @@ FROM
 WHERE
 	I10.YEAR = I11.YEAR
 		AND I11.YEAR = I12.YEAR
-		AND I12.YEAR = I13.YEAR;
+		AND I12.YEAR = I13.YEAR
+		AND r.YEAR = I10.YEAR;
 GO
 		
 --- 3 Уровень научного потенциала высшего учебного заведения
@@ -658,7 +660,8 @@ WHERE
 		AND I15.YEAR = I16.YEAR
 		AND I16.YEAR = I17.YEAR
 		AND I17.YEAR = I18.YEAR
-		AND I18.YEAR = I19.YEAR;
+		AND I18.YEAR = I19.YEAR
+		AND r.YEAR = I14.YEAR;
 GO
 		
 --- 4 Уровень оснащенности материально-технической базы и внедрения ИКТ
@@ -681,6 +684,7 @@ WHERE
 	I20.YEAR = I21.YEAR
 		AND I21.YEAR = I22.YEAR
 		AND I22.YEAR = I23.YEAR
+		AND r.YEAR = I20.YEAR;
 GO
 
 --- Общий рейтинг
@@ -703,4 +707,5 @@ WHERE
 	I1.YEAR = I2.YEAR
 		AND I2.YEAR = I3.YEAR
 		AND I3.YEAR = I4.YEAR
+		AND r.YEAR = I1.YEAR;
 GO

@@ -25,13 +25,13 @@
         }
         else
         {
-             using (Html.BeginForm("Upload", "Table3", FormMethod.Post))
+             using (Html.BeginForm("Approve", "Table3", FormMethod.Post))
             {
                 <fieldset>
                     <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
                     <div class="input-group">
                         <input type="hidden" class="form-control" name="id" value="@ViewBag.id" />
-                        <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+                        <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="Approve" /></span>
                     </div>
                 </fieldset>
             }
@@ -39,7 +39,7 @@
     }
 
         <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-        <h4 class="text-center">@My.Functions.Translate(Resource.PPSDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+        <h4 class="text-center">@MyFunctions.Translate(Resource.PPSDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
         <table class="table table-bordered" style="width:1000px;table-layout:fixed;word-wrap:break-word">
             <thead>
                 <tr>
