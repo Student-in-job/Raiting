@@ -6,26 +6,31 @@
     @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
 
     @{
-        <a href="~/Table11/Download">Скачать шаблон</a>
-        <h3>Прикрепить файл</h3>
+        <div class="well well-sm">
+            <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table11/Download">Скачать шаблон</a>
+        </div>
 
         using (Html.BeginForm("Upload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            <input type="file" name="files" />
-            <input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
-        }
+            <fieldset>
+                <legend>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                <div class="input-group">
+                    <input type="file" class="form-control" name="files" />
+                    <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+                </div>
+            </fieldset>        }
     }
-    <div style="height:80px;">&nbsp;</div>
-    <div>
-        <h3 style="text-align:center;font-weight:bold">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-        <h4 style="text-align:center;font-weight: bold">
+
+
+        <h3 class="text-center">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+        <h4 class="text-center">
             @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQDataHeader_1, ViewBag.lang, ViewBag.alfabet)
             @DateTime.Now.Year
             @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQDataHeader_2, ViewBag.lang, ViewBag.alfabet)
         </h4>
-        <h4 style="text-align:center;font-weight: bold;text-transform:capitalize">
+        <h5 class="text-center text-uppercase">
             @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Information, ViewBag.lang, ViewBag.alfabet)
-        </h4>
+        </h5>
         <div id="tabs">
             <ul>
                 <li><a href="#tabs-1">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQMonografiya, ViewBag.lang, ViewBag.alfabet)</a></li>
@@ -174,7 +179,7 @@
                 </table>
             </div>
         </div>
-    </div>
+
             
 @Scripts.Render("~/Scripts/jquery-ui-1.10.4.custom.min.js")
 @Styles.Render("~/Content/jquery-ui-1.10.4.custom.min.css")

@@ -7,106 +7,112 @@
 
 @if (ViewBag.role == 1)
 { 
-<a href="/Jadval1_2/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
-        <h3>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</h3>
-using (Html.BeginForm("Upload", "Jadval1_2", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-	<input type="file" name="files" />
-	<input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+           <div class="well well-sm">
+            <i class="glyphicon glyphicon-download-alt"></i> <a href="/Jadval1_2/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+           </div>
+    using (Html.BeginForm("Upload", "Jadval1_2", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {    
+            <fieldset>
+                <legend>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                <div class="input-group">
+                    <input type="file" class="form-control" name="files" />
+                    <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+                </div>
+            </fieldset>
+     }
 }
-}
-				  	<h4 class="text-center font-bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_2_Zagolovok, ViewBag.lang, ViewBag.alfabet)</h4>
-	
-@if (ViewBag.bor == true)
-{
-<table class="table table-bordered">
-	<tr class="txtcenter">
-		<th>№</th>
-		<th>
-			@Html.DisplayNameFor(model => model.T)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.N1)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.N2)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.N3)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.N41)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.N51)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.N42)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.N52)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.N43)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.N53)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.I2)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.UniversityId)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.Year)
-		</th>
-	</tr>
+                    <h3 class="text-center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_2_Zagolovok, ViewBag.lang, ViewBag.alfabet)</h3>
 
-@foreach (var item in Model) {
-    <tr>
-		<td>@count</td>@{count++;}
-        <td>
-            @Html.DisplayFor(modelItem => item.T)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.N1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.N2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.N3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.N41)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.N51)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.N42)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.N52)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.N43)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.N53)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.I2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UniversityId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Year)
-        </td>
-    </tr>
+                    @if (ViewBag.bor == true)
+{
+                        <table class="table table-bordered">
+                            <tr class="txtcenter">
+                                <th>№</th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.T)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.N1)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.N2)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.N3)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.N41)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.N51)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.N42)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.N52)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.N43)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.N53)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.I2)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.UniversityId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Year)
+                                </th>
+                            </tr>
+
+                            @foreach (var item in Model) {
+                                <tr>
+                                    <td>@count</td>@{count++;}
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.T)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.N1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.N2)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.N3)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.N41)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.N51)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.N42)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.N52)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.N43)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.N53)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.I2)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UniversityId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Year)
+                                    </td>
+                                </tr>
 }
 
-</table>
+                        </table>
 }
