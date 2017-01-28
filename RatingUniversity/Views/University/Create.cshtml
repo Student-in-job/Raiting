@@ -4,55 +4,57 @@
     ViewBag.Title = "Добавить ВУЗ";
 }
 
-@using (Html.BeginForm("Create", "University", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
+<h4>Добавить ВУЗ</h4>
+<hr />
 
-    <div class="well form-horizontal">
-        <h4>Добавить ВУЗ</h4>
-        <hr />
+<div class="form-horizontal">
+    @using (Html.BeginForm("Create", "University", FormMethod.Post))
+    {
+
+        @Html.AntiForgeryToken()
+
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            <label for="name_ru" class="control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_RU, ViewBag.lang, ViewBag.alfabet)</label>
-            <div>
+            <label for="name_ru" class="col-sm-4 control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_RU, ViewBag.lang, ViewBag.alfabet)</label>
+            <div class="col-sm-8">
                 @Html.TextBoxFor(model => model.name_RU, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.name_RU)
             </div>
         </div>
 
         <div class="form-group">
-            <label for="name_uz" class="control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_UZ, ViewBag.lang, ViewBag.alfabet)</label>
-            <div>
+            <label for="name_uz" class="col-sm-4 control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_UZ, ViewBag.lang, ViewBag.alfabet)</label>
+            <div class="col-sm-8">
                 @Html.TextBoxFor(model => model.name_UZ, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.name_UZ)
             </div>
         </div>
 
         <div class="form-group">
-            <label for="id_region" class="control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityRegion, ViewBag.lang, ViewBag.alfabet)</label>
-            <div>
+            <label for="id_region" class="col-sm-4 control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityRegion, ViewBag.lang, ViewBag.alfabet)</label>
+            <div class="col-sm-8">
                 @Html.DropDownListFor(m => m.id_region, new System.Web.Mvc.SelectList(ViewBag.Regions, "id", "name_" + ViewBag.lang), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_region)
             </div>
         </div>
 
         <div class="form-group">
-            <label for="id_branch" class="control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityBranch, ViewBag.lang, ViewBag.alfabet)</label>
-            <div>
+            <label for="id_branch" class="col-sm-4 control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityBranch, ViewBag.lang, ViewBag.alfabet)</label>
+            <div class="col-sm-8">
                 @Html.TextBoxFor(m => m.id_branch, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_branch)
             </div>
         </div>
 
         <div class="form-group">
-            <div>
+            <div class="col-sm-offset-4 col-sm-8">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </div>
-    </div>
-}
+    }
+</div>
 
 <div class="well well-sm>
-    <i class="glyphicon glyphicon-arrow-left"></i> @Html.ActionLink("Венуться к списку ВУЗов", "Index")
+    <i class="glyphicon glyphicon-arrow-left"></i> @Html.ActionLink("Венуться к списку", "Index")
 </div>
