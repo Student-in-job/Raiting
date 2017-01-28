@@ -1,24 +1,42 @@
 ﻿@*using PagedList.Mvc;*@
-    @model IEnumerable<RatingUniversity.Models.citiruemost_publikaciy_pps_vuza>
-
+@model IEnumerable<RatingUniversity.Models.citiruemost_publikaciy_pps_vuza>
+@using MyFunctions = RatingUniversity.Classes.Functions;
+@using Resource = RatingUniversity.Langs.Resource;
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
     @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
 
     @{
-        <div class="well well-sm">
-            <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table12/Download">Скачать шаблон</a>
-        </div>
+        if (!ViewBag.isAdmin)
+        { 
+            <div class="well well-sm">
+                <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table12/Download">Скачать шаблон</a>
+            </div>
 
-        using (Html.BeginForm("Upload", "Table12", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            using (Html.BeginForm("Upload", "Table12", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <fieldset>
+                    <legend>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                    <div class="input-group">
+                        <input type="file" class="form-control" name="files" />
+                        <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+                    </div>
+                </fieldset>        
+            }
+        }
+        else
         {
-            <fieldset>
-                <legend>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
-                <div class="input-group">
-                    <input type="file" class="form-control" name="files" />
-                    <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
-                </div>
-            </fieldset>        }
+             using (Html.BeginForm("Approve", "Table12", FormMethod.Post))
+            {
+                <fieldset>
+                    <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                    <div class="input-group">
+                        <input type="hidden" class="form-control" name="id" value="@ViewBag.id" />
+                        <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="Approve" /></span>
+                    </div>
+                </fieldset>
+            }
+        }
     }
     <div style="height:80px;">&nbsp;</div>
     <div>
@@ -53,12 +71,12 @@
                         <td><a href="@item.link">@Html.DisplayFor(modelItem => item.link)</a></td>
                         <td>@Html.DisplayFor(modelItem => item.usage)</td>
                     </tr>
-                    sum += (item.usage != null) ? (int)item.usage : 0;
+                    //sum += (item.usage != null) ? (int)item.usage : 0;
                 }
             }
                 <tr>
                     <td colspan="2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
-                    <td colspan="4">@sum</td>
+                    <td colspan="4">@index</td>
                 </tr>
             </tbody>
         </table>

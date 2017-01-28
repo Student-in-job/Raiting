@@ -20,8 +20,8 @@ namespace RatingUniversity.Controllers
             base.Initialize(requestContext);
             this.fileName = "12_citiruemost_publikaciy_pps_vuza.xlsx";
             this.listName = "citiruemost_publikaciy_pps_vuza";
-            //this.startRow = 8;
-            //this.endRow = 2;
+            this.controllerName = "Table12";
+            this.tableName = "J12";
         }
 
         protected override void FormListOfData(DataTable table)
@@ -74,10 +74,10 @@ namespace RatingUniversity.Controllers
                 this.db.citiruemost_publikaciy_pps_vuza.Add(newRecord);
             }
             this.db.SaveChanges();
-            //MonitoringUpdate.Update(0, "J12", 0, yil);
+            base.SaveData();
         }
         //
-        // GET: /Table3/
+        // GET: /Table12/
         public ActionResult Index(int? id)
         {
             if (this.id == 0)
@@ -91,11 +91,22 @@ namespace RatingUniversity.Controllers
             {
                 id = this.id;
             }
+            ViewBag.id = id;
             ViewBag.file = this.fileName;
             int year = DateTime.Now.Year;
             IQueryable<university> university = this.db.university.Where(model => model.id == id );
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             return View(this.db.citiruemost_publikaciy_pps_vuza.Where(model => model.id_university == id && model.year == year).ToList());
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public override ActionResult Approve(int id)
+        {
+            Procedures proc = new Procedures();
+            int year = DateTime.Now.Year;
+            int result = proc.P3_1_citiruemost_publikaciy_pps_vuza(id, year);
+            return base.Approve(id);
         }
 	}
 }
