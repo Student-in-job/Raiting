@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'd:\Git Repositories\Raiting\RatingUniversity\Models\Final Rating.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Project\raiting2015\RatingUniversity\Models\Final Rating.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
