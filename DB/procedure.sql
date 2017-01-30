@@ -15,8 +15,8 @@ AS
 DECLARE  @count int, @id int, @count_uz_rus int, @count_angl int
 
 begin 
---SET @count_uz_rus=(SELECT sum(usage) FROM citiruemost_publikaciy_pps_vuza WHERE id_university=@id_university AND year=@year)
---SET @count_ang=(SELECT sum(usage) FROM citiruemost_publikaciy_pps_vuza WHERE id_university=@id_university AND year=@year)
+SET @count_uz_rus=(SELECT sum(usage) FROM citiruemost_publikaciy_pps_vuza WHERE id_university=@id_university AND year=@year)
+SET @count_ang=(SELECT sum(usage) FROM citiruemost_publikaciy_pps_vuza WHERE id_university=@id_university AND year=@year)
 
 SET @id=(SELECT id FROM raiting
 	WHERE id_university=@id_university AND year=@year)
