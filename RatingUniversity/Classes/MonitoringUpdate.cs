@@ -12,7 +12,6 @@ namespace RatingUniversity.Classes
 	{
 		public static void Update(int UniverId, string fld_name, int status, int yil)
 		{
-
 			using (TablesContext db = new TablesContext())
 			{
 				int c = db.Monitorings.Where(x => x.Year == yil && x.UniverId == UniverId).Count();
@@ -53,5 +52,20 @@ namespace RatingUniversity.Classes
 
 		}
 
+        public static int GetStatus(int idUniversity, string tableName, int year)
+        {
+            using (TablesContext db = new TablesContext())
+            {
+                var list = db.Monitorings.Where(model => model.Year == year && model.UniverId == idUniversity);
+                if (list.Count() == 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+        }
 	}
 }

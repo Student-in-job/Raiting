@@ -19,14 +19,17 @@ namespace RatingUniversity.Controllers
             this.active = 14;
             base.Initialize(requestContext);
             this.fileName = "12_citiruemost_publikaciy_pps_vuza.xlsx";
-            this.listName = "citiruemost_publikaciy_pps_vuza";
+            this.listNames = new List<string>();
+            this.listNames.Add("eng_lang");
+            this.listNames.Add("rus_uzb_lang");
             this.controllerName = "Table12";
             this.tableName = "J12";
         }
 
-        protected override void FormListOfData(DataTable table)
+        protected override void FormListOfData(DataTable table, string listName)
         {
-            this.records = new List<citiruemost_publikaciy_pps_vuza>();
+            if (this.records == null)
+                this.records = new List<citiruemost_publikaciy_pps_vuza>();
             bool flag = false;
             foreach (System.Data.DataRow row in table.Rows)
             {
@@ -49,6 +52,7 @@ namespace RatingUniversity.Controllers
                 if (row[3] != DBNull.Value) record.info = Convert.ToString(row[3]);
                 if (row[4] != DBNull.Value) record.link = Convert.ToString(row[4]);
                 if (row[5] != DBNull.Value) record.usage = Convert.ToInt32(row[5]);
+                record.lang = (listName == this.listNames[0]) ? (byte)1 : (byte)0;
                 record.id_university = this.id;
                 record.year = DateTime.Now.Year;
 

@@ -14,6 +14,11 @@ namespace RatingUniversity.Models
     
     public partial class citiruemost_publikaciy_pps_vuza
     {
+        public citiruemost_publikaciy_pps_vuza()
+        {
+            this.lang = 1;
+        }
+    
         public int id { get; set; }
         public string fio { get; set; }
         public string source { get; set; }
@@ -22,6 +27,7 @@ namespace RatingUniversity.Models
         public Nullable<int> usage { get; set; }
         public Nullable<int> year { get; set; }
         public Nullable<int> id_university { get; set; }
+        public byte lang { get; set; }
     
         public virtual university university { get; set; }
     }

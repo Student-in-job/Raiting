@@ -1,6 +1,7 @@
 ﻿@*using PagedList.Mvc;*@
-    @model RatingUniversity.Models.Table11
-
+@model RatingUniversity.Models.Table11
+@using MyFunctions = RatingUniversity.Classes.Functions;
+@using Resource = RatingUniversity.Langs.Resource;
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
     @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
@@ -13,7 +14,7 @@
         using (Html.BeginForm("Upload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <fieldset>
-                <legend>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
                 <div class="input-group">
                     <input type="file" class="form-control" name="files" />
                     <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
@@ -22,32 +23,32 @@
     }
 
 
-        <h3 class="text-center">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+        <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
         <h4 class="text-center">
-            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQDataHeader_1, ViewBag.lang, ViewBag.alfabet)
+            @MyFunctions.Translate(Resource.MDUQDataHeader_1, ViewBag.lang, ViewBag.alfabet)
             @DateTime.Now.Year
-            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQDataHeader_2, ViewBag.lang, ViewBag.alfabet)
+            @MyFunctions.Translate(Resource.MDUQDataHeader_2, ViewBag.lang, ViewBag.alfabet)
         </h4>
         <h5 class="text-center text-uppercase">
-            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Information, ViewBag.lang, ViewBag.alfabet)
+            @MyFunctions.Translate(Resource.Information, ViewBag.lang, ViewBag.alfabet)
         </h5>
         <div id="tabs">
             <ul>
-                <li><a href="#tabs-1">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQMonografiya, ViewBag.lang, ViewBag.alfabet)</a></li>
-                <li><a href="#tabs-2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQDarslik, ViewBag.lang, ViewBag.alfabet)</a></li>
-                <li><a href="#tabs-3">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQQullanma, ViewBag.lang, ViewBag.alfabet)</a></li>
-                <li><a href="#tabs-4">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQMajmua, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li><a href="#tabs-1">@MyFunctions.Translate(Resource.MDUQMonografiya, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li><a href="#tabs-2">@MyFunctions.Translate(Resource.MDUQDarslik, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li><a href="#tabs-3">@MyFunctions.Translate(Resource.MDUQQullanma, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li><a href="#tabs-4">@MyFunctions.Translate(Resource.MDUQMajmua, ViewBag.lang, ViewBag.alfabet)</a></li>
             </ul>
             <div id="tabs-1">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th style="width:38px;">№</th>
-                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQFIO, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQSpec, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQName</th>
-                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQYear</th>
-                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQFileName</th>
+                            <th style="text-align:center">@MyFunctions.Translate(Resource.MDUQFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@MyFunctions.Translate(Resource.MDUQSpec, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@Resource.MDUQName</th>
+                            <th style="text-align:center">@Resource.MDUQYear</th>
+                            <th style="text-align:center">@Resource.MDUQFileName</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,8 +59,8 @@
                             index++;
                             <tr>
                                 <td>@index</td>
-                                <td>@RatingUniversity.Classes.Functions.Translate(monografiya.fio, ViewBag.lang, ViewBag.alfabet)</td>
-                                <td>@RatingUniversity.Classes.Functions.Translate(monografiya.kod_spec, ViewBag.lang, ViewBag.alfabet)</td>
+                                <td>@MyFunctions.Translate(monografiya.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                                <td>@MyFunctions.Translate(monografiya.kod_spec, ViewBag.lang, ViewBag.alfabet)</td>
                                 <td>@monografiya.monograf_name</td>
                                 <td>@monografiya.monograf_year</td>
                                 <td>@monografiya.filename</td>
@@ -67,7 +68,7 @@
                         }
                         }
                         <tr>
-                            <td colspan="2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                            <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
                             <td colspan="4">@index</td>
                         <tr>
                     </tbody>
@@ -78,11 +79,11 @@
                     <thead>
                         <tr>
                             <th style="width:35px;">№</th>
-                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQFIO, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQSpec, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQName</th>
-                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQNumber</th>
-                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQFileName</th>
+                            <th style="text-align:center">@MyFunctions.Translate(RatingUniversity.Langs.Resource.MDUQFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@MyFunctions.Translate(RatingUniversity.Langs.Resource.MDUQSpec, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@Resource.MDUQName</th>
+                            <th style="text-align:center">@Resource.MDUQNumber</th>
+                            <th style="text-align:center">@Resource.MDUQFileName</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -93,8 +94,8 @@
                                 index++;
                                 <tr>
                                     <td>@index</td>
-                                    <td>@RatingUniversity.Classes.Functions.Translate(darslik.fio, ViewBag.lang, ViewBag.alfabet)</td>
-                                    <td>@RatingUniversity.Classes.Functions.Translate(darslik.kod_spec, ViewBag.lang, ViewBag.alfabet)</td>
+                                    <td>@MyFunctions.Translate(darslik.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                                    <td>@MyFunctions.Translate(darslik.kod_spec, ViewBag.lang, ViewBag.alfabet)</td>
                                     <td>@darslik.ucheb_name</td>
                                     <td>@darslik.ucheb_number</td>
                                     <td>@darslik.filename</td>
@@ -102,7 +103,7 @@
                             }
                         }
                         <tr>
-                            <td colspan="2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                            <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
                             <td colspan="4">@index</td>
                         <tr>
                     </tbody>
@@ -113,11 +114,11 @@
                     <thead>
                         <tr>
                             <th style="width:35px;">№</th>
-                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQFIO, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQSpec, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQName</th>
-                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQNumber</th>
-                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQFileName</th>
+                            <th style="text-align:center">@MyFunctions.Translate(Resource.MDUQFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@MyFunctions.Translate(Resource.MDUQSpec, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@Resource.MDUQName</th>
+                            <th style="text-align:center">@Resource.MDUQNumber</th>
+                            <th style="text-align:center">@Resource.MDUQFileName</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -128,8 +129,8 @@
                                 index++;
                                 <tr>
                                     <td>@index</td>
-                                    <td>@RatingUniversity.Classes.Functions.Translate(qullanma.fio, ViewBag.lang, ViewBag.alfabet)</td>
-                                    <td>@RatingUniversity.Classes.Functions.Translate(qullanma.kod_spec, ViewBag.lang, ViewBag.alfabet)</td>
+                                    <td>@MyFunctions.Translate(qullanma.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                                    <td>@MyFunctions.Translate(qullanma.kod_spec, ViewBag.lang, ViewBag.alfabet)</td>
                                     <td>@qullanma.posobie_name</td>
                                     <td>@qullanma.posobie_number</td>
                                     <td>@qullanma.filename</td>
@@ -137,7 +138,7 @@
                             }
                         }
                         <tr>
-                            <td colspan="2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                            <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
                             <td colspan="4">@index</td>
                         <tr>
                     </tbody>
@@ -148,11 +149,11 @@
                     <thead>
                         <tr>
                             <th style="width:35px;">№</th>
-                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQFIO, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MDUQSpec, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQName</th>
-                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQNumber</th>
-                            <th style="text-align:center">@RatingUniversity.Langs.Resource.MDUQFileName</th>
+                            <th style="text-align:center">@MyFunctions.Translate(Resource.MDUQFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@MyFunctions.Translate(Resource.MDUQSpec, ViewBag.lang, ViewBag.alfabet)</th>
+                            <th style="text-align:center">@Resource.MDUQName</th>
+                            <th style="text-align:center">@Resource.MDUQNumber</th>
+                            <th style="text-align:center">@Resource.MDUQFileName</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -163,8 +164,8 @@
                                 index++;
                                 <tr>
                                     <td>@index</td>
-                                    <td>@RatingUniversity.Classes.Functions.Translate(majmua.fio, ViewBag.lang, ViewBag.alfabet)</td>
-                                    <td>@RatingUniversity.Classes.Functions.Translate(majmua.kod_spec, ViewBag.lang, ViewBag.alfabet)</td>
+                                    <td>@MyFunctions.Translate(majmua.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                                    <td>@MyFunctions.Translate(majmua.kod_spec, ViewBag.lang, ViewBag.alfabet)</td>
                                     <td>@majmua.metodich_name</td>
                                     <td>@majmua.metodich_number</td>
                                     <td>@majmua.filename</td>
@@ -172,7 +173,7 @@
                             }
                         }
                         <tr>
-                            <td colspan="2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                            <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
                             <td colspan="4">@index</td>
                         <tr>
                     </tbody>

@@ -2673,6 +2673,7 @@ warning 6002: The table/view 'URaiting.dbo.RAITING_TOTAL' does not have a primar
           <Property Name="year" Type="Int32" />
           <Property Name="id_university" Type="Int32" />
           <NavigationProperty Name="university" Relationship="URaitingModel.FK_dbo_citiruemost_publikaciy_pps_vuza_dbo_university_university_id1" FromRole="citiruemost_publikaciy_pps_vuza" ToRole="university" />
+          <Property Name="lang" Type="Byte" Nullable="false" DefaultValue="1" />
         </EntityType>
         <EntityType Name="darslik">
           <Key>

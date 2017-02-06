@@ -118,6 +118,7 @@ namespace RatingUniversity.Controllers
             Procedures proc = new Procedures();
             int year = DateTime.Now.Year;
             int result = proc.P3_3_kolichestvo_sotrudnikov_vuza(id, year);
+            MonitoringUpdate.Update(id, this.tableName, 2, year);
             return base.Approve(id);
         }
 	}
