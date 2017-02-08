@@ -17,13 +17,13 @@ namespace RatingUniversity.Controllers
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
             this.active = 14;
-            base.Initialize(requestContext);
             this.fileName = "12_citiruemost_publikaciy_pps_vuza.xlsx";
             this.listNames = new List<string>();
             this.listNames.Add("eng_lang");
             this.listNames.Add("rus_uzb_lang");
             this.controllerName = "Table12";
             this.tableName = "J12";
+            base.Initialize(requestContext);
         }
 
         protected override void FormListOfData(DataTable table, string listName)

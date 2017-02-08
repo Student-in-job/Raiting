@@ -366,7 +366,7 @@
     <value>файлни маҳкамлаш </value>
   </data>
   <data name="DownloadTemplate" xml:space="preserve">
-    <value>Скачать шаблон</value>
+    <value>Шаблонни юклаб олиш</value>
   </data>
   <data name="EfNIRCode" xml:space="preserve">
     <value>Сертификат (патент) қайд рақами*</value>
@@ -1172,12 +1172,15 @@
     <value>ОТМ номи</value>
   </data>
   <data name="MainMenuManage" xml:space="preserve">
-    <value>Manage</value>
+    <value>Boshqarish</value>
   </data>
   <data name="MainMenuManageUniver" xml:space="preserve">
     <value>Universities</value>
   </data>
   <data name="MainMenuManageUser" xml:space="preserve">
     <value>Users</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>Tasdiqlash</value>
   </data>
 </root>

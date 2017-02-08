@@ -27,7 +27,7 @@ namespace RatingUniversity.Controllers
             this.listNames.Add("qullanma");
             this.listNames.Add("majmua");
             this.controllerName = "Table11";
-            this.tableName = "J10";
+            this.tableName = "J10";            
         }
 
         protected override void FormListOfData(System.Data.DataTable table, string listName)
@@ -58,7 +58,7 @@ namespace RatingUniversity.Controllers
                     if (row[4] != DBNull.Value) record.monograf_year = Convert.ToString(row[4]);
                     if (row[5] != DBNull.Value) record.filename = Convert.ToString(row[5]);
                     record.id_university = this.id;
-                    record.year = DateTime.Now.Year;
+                    record.year = this.year;//DateTime.Now.Year;
 
                     this.records0.Add(record);
                 }
@@ -89,7 +89,7 @@ namespace RatingUniversity.Controllers
                     if (row[4] != DBNull.Value) record.ucheb_number = Convert.ToString(row[4]);
                     if (row[5] != DBNull.Value) record.filename = Convert.ToString(row[5]);
                     record.id_university = this.id;
-                    record.year = DateTime.Now.Year;
+                    record.year = this.year;//DateTime.Now.Year;
 
                     this.records1.Add(record);
                 }
@@ -120,7 +120,7 @@ namespace RatingUniversity.Controllers
                     if (row[4] != DBNull.Value) record.posobie_number = Convert.ToString(row[4]);
                     if (row[5] != DBNull.Value) record.filename = Convert.ToString(row[5]);
                     record.id_university = this.id;
-                    record.year = DateTime.Now.Year;
+                    record.year = this.year;//DateTime.Now.Year;
 
                     this.records2.Add(record);
                 }
@@ -151,7 +151,7 @@ namespace RatingUniversity.Controllers
                     if (row[4] != DBNull.Value) record.metodich_number = Convert.ToString(row[4]);
                     if (row[5] != DBNull.Value) record.filename = Convert.ToString(row[5]);
                     record.id_university = this.id;
-                    record.year = DateTime.Now.Year;
+                    record.year = this.year;//DateTime.Now.Year;
 
                     this.records3.Add(record);
                 }
@@ -204,32 +204,31 @@ namespace RatingUniversity.Controllers
             }
             this.db.SaveChanges();
             base.SaveData();
-            //MonitoringUpdate.Update(0, "J11", 0, yil);
+            MonitoringUpdate.Update(this.id, this.tableName, 0, this.year);
         }
         //
         // GET: /Table11/
+        [Authorize(Roles="user")]
         public ActionResult Index(int? id)
         {
-            if (this.id == 0)
+            if ((this.id == 0) && (id == null))
             {
-                if (id == null)
-                {
-                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table11", active = this.active });
-                }
+                return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = this.controllerName, active = this.active });
             }
-            else
+            else if (id == null)
             {
                 id = this.id;
             }
-            int year = DateTime.Now.Year;
             ViewBag.file = this.fileName;
+            ViewBag.id = id;
+            ViewBag.Status = MonitoringUpdate.GetStatus(id, this.tableName, this.year);
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             Table11 modelTable = new Table11();
-            modelTable.monografiya = this.db.monografiya.Where(model => model.id_university == id && model.year == year).ToList();
-            modelTable.darslik = this.db.darslik.Where(model => model.id_university == id && model.year == year).ToList();
-            modelTable.qullanma = this.db.qullanma.Where(model => model.id_university == id && model.year == year).ToList();
-            modelTable.majmua = this.db.majmua.Where(model => model.id_university == id && model.year == year).ToList();
+            modelTable.monografiya = this.db.monografiya.Where(model => model.id_university == id && model.year == this.year).ToList();
+            modelTable.darslik = this.db.darslik.Where(model => model.id_university == id && model.year == this.year).ToList();
+            modelTable.qullanma = this.db.qullanma.Where(model => model.id_university == id && model.year == this.year).ToList();
+            modelTable.majmua = this.db.majmua.Where(model => model.id_university == id && model.year == this.year).ToList();
             return View(modelTable);
         }
 
@@ -238,8 +237,7 @@ namespace RatingUniversity.Controllers
         public override ActionResult Approve(int id)
         {
             Procedures proc = new Procedures();
-            int year = DateTime.Now.Year;
-            int result = proc.P3_3_kolichestvo_sotrudnikov_vuza(id, year);
+            int result = proc.P1_3_rolvo_uchebnikov_posobiy_umk(id, this.year);
             return base.Approve(id);
         }
 	}

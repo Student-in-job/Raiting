@@ -268,6 +268,17 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Утвердить.
+        /// </summary>
+        public static string Approve
+        {
+            get
+            {
+                return ResourceManager.GetString("Approve", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Прикрепить файл.
         /// </summary>
         public static string AttachFile
@@ -797,7 +808,7 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Ресурс запущен .
+        ///   Looks up a localized string similar to До начала сдачи документов осталось.
         /// </summary>
         public static string HomePageHeaderInfo
         {
@@ -1574,6 +1585,39 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("MainMenuHome", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Управление.
+        /// </summary>
+        public static string MainMenuManage
+        {
+            get
+            {
+                return ResourceManager.GetString("MainMenuManage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Университетами.
+        /// </summary>
+        public static string MainMenuManageUniver
+        {
+            get
+            {
+                return ResourceManager.GetString("MainMenuManageUniver", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Пользователями.
+        /// </summary>
+        public static string MainMenuManageUser
+        {
+            get
+            {
+                return ResourceManager.GetString("MainMenuManageUser", resourceCulture);
             }
         }
 
@@ -3735,7 +3779,7 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Top университет - 300.
+        ///   Looks up a localized string similar to TOP 300 университетов.
         /// </summary>
         public static string Top300
         {
@@ -3852,30 +3896,6 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("WebUniversity", resourceCulture);
-            }
-        }
-
-        public static string MainMenuManage
-        {
-            get
-            {
-                return ResourceManager.GetString("MainMenuManage", resourceCulture);
-            }
-        }
-
-        public static string MainMenuManageUser
-        {
-            get
-            {
-                return ResourceManager.GetString("MainMenuManageUser", resourceCulture);
-            }
-        }
-
-        public static string MainMenuManageUniver
-        {
-            get
-            {
-                return ResourceManager.GetString("MainMenuManageUniver", resourceCulture);
             }
         }
     }

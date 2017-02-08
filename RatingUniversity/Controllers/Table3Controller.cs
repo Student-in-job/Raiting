@@ -62,7 +62,7 @@ namespace RatingUniversity.Controllers
                 if (row[15] != DBNull.Value) record.so_katta = Convert.ToInt32(row[15]);
                 if (row[16] != DBNull.Value) record.so_ass = Convert.ToInt32(row[16]);
                 record.id_university = this.id;
-                record.year = DateTime.Now.Year;
+                record.year = this.year;//DateTime.Now.Year;
 
                 this.records.Add(record);
             }
@@ -87,28 +87,26 @@ namespace RatingUniversity.Controllers
             }
             this.db.SaveChanges();
             base.SaveData();
+            MonitoringUpdate.Update(this.id, this.tableName, 0, this.year);
         }
         //
         // GET: /Table3/
         public ActionResult Index(int? id)
         {
-            if (this.id == 0)
+            if ((this.id == 0) && (id == null))
             {
-                if (id == null)
-                {
-                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table3", active = this.active });
-                }
+                return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = this.controllerName, active = this.active });
             }
-            else
+            else if (id == null)
             {
                 id = this.id;
             }
             ViewBag.file = this.fileName;
             ViewBag.id = id;
-            int year = DateTime.Now.Year;
+            ViewBag.Status = MonitoringUpdate.GetStatus(id, this.tableName, this.year);
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.chislennost_pps_vuza.Where(model=>model.id_university==id && model.year == year).ToList());
+            return View(this.db.chislennost_pps_vuza.Where(model=>model.id_university==id && model.year == this.year).ToList());
         }
 
         [Authorize(Roles = "admin")]
@@ -116,9 +114,8 @@ namespace RatingUniversity.Controllers
         public override ActionResult Approve(int id)
         {
             Procedures proc = new Procedures();
-            int year = DateTime.Now.Year;
-            int result = proc.P3_3_kolichestvo_sotrudnikov_vuza(id, year);
-            MonitoringUpdate.Update(id, this.tableName, 2, year);
+            int result = proc.P3_3_kolichestvo_sotrudnikov_vuza(id, this.year);
+            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
             return base.Approve(id);
         }
 	}

@@ -1,25 +1,55 @@
 ﻿@*using PagedList.Mvc;*@
-@model RatingUniversity.Models.Table11
-@using MyFunctions = RatingUniversity.Classes.Functions;
-@using Resource = RatingUniversity.Langs.Resource;
+    @model RatingUniversity.Models.Table11
+    @using MyFunctions = RatingUniversity.Classes.Functions;
+    @using Resource = RatingUniversity.Langs.Resource;
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
     @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
 
     @{
-        <div class="well well-sm">
-            <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table11/Download">Скачать шаблон</a>
-        </div>
-
-        using (Html.BeginForm("Upload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        if (!ViewBag.isAdmin)
+        { 
+            <div class="well well-sm">
+                <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table11/Download">Скачать шаблон</a>
+            </div>
+            if ((ViewBag.status==0) || (ViewBag.status == -1))
+            { 
+                
+                using (Html.BeginForm("Upload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <fieldset>
+                        <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                        <div class="input-group">
+                            <input type="file" class="form-control" name="files" />
+                            <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+                        </div>
+                    </fieldset>        
+                }
+            }
+            if (ViewBag.status == 1)
+            {
+                <fieldset>
+                    <div>
+                        <span>@MyFunctions.Translate(@Resource.DTM_danniye_podtverjdeni, ViewBag.lang, ViewBag.alfabet)</span>
+                    </div>
+                </fieldset> 
+            }
+        }
+        else
         {
-            <fieldset>
-                <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
-                <div class="input-group">
-                    <input type="file" class="form-control" name="files" />
-                    <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
-                </div>
-            </fieldset>        }
+            if (ViewBag.status == 0)
+            { 
+                using (Html.BeginForm("Approve", "Table11", FormMethod.Post))
+                {
+                    <fieldset>
+                        <div class="input-group">
+                            <input type="hidden" class="form-control" name="id" value="@ViewBag.id" />
+                            <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Approve, ViewBag.lang, ViewBag.alfabet)" /></span>
+                        </div>
+                    </fieldset>
+                }
+            }
+        }
     }
 
 
@@ -182,10 +212,10 @@
         </div>
 
             
-@Scripts.Render("~/Scripts/jquery-ui-1.10.4.custom.min.js")
-@Styles.Render("~/Content/jquery-ui-1.10.4.custom.min.css")
-<script>
-    $(function () {
-        $("#tabs").tabs();
-    });
-</script>
+    @Scripts.Render("~/Scripts/jquery-ui-1.10.4.custom.min.js")
+    @Styles.Render("~/Content/jquery-ui-1.10.4.custom.min.css")
+    <script>
+        $(function () {
+            $("#tabs").tabs();
+        });
+    </script>

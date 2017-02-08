@@ -22,19 +22,22 @@ namespace RatingUniversity.Controllers
         protected string fileFullName;
         protected ExcelFile excelFile;
         protected string listName;
-        protected int startRow;
-        protected int endRow;
+        //protected int startRow;
+        //protected int endRow;
         protected string lang;
         protected string alfabet;
         protected List<string> listNames;
         protected int active;
         protected string tableName;
         protected string controllerName;
+        protected int year;
 
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
             base.Initialize(requestContext);
             ViewBag.active = Functions.CreateActive(this.active, 34);
+            this.year = DateTime.Now.Year;
+            //ViewBag.status = MonitoringUpdate.GetStatus(this.id, this.tableName, this.year);
         }
 
         protected void ReadDataFromExcelFiles()

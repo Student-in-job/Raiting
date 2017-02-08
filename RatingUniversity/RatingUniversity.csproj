@@ -55,6 +55,7 @@
         </ObjectGroup>
       </Objects>
     </PublishDatabaseSettings>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -599,6 +600,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\background.jpg" />
     <Content Include="Images\bullet.png" />
+    <Content Include="Images\global.svg" />
     <Content Include="Images\orderedList0.png" />
     <Content Include="Images\orderedList1.png" />
     <Content Include="Images\orderedList2.png" />

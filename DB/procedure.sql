@@ -1,5 +1,29 @@
 --EXEC P3_11 @year = 2014, @id_university=1
 
+--1.3
+CREATE PROCEDURE P1_3_rolvo_uchebnikov_posobiy_umk
+@id_university int,
+@year int
+AS
+DECLARE  @count int, @id int, @count_uchebniki int, @count_posobiya int, @count_umk int
+begin
+SET @id=(SELECT id FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+SET @count_uchebniki = (SELECT count(id) FROM darslik
+	WHERE id_university=@id_university AND year=@year)
+SET @count_posobiya = (SELECT count(id) FROM qullanma
+	WHERE id_university=@id_university AND year=@year)
+SET @count_umk = (SELECT count(id) FROM majmua
+	WHERE id_university=@id_university AND year=@year)
+SET @count=(SELECT count(id) FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+if (@count=0)
+	INSERT INTO raiting(s1, s2, s3, year, id_university) VALUES (@count_uchebniki, @count_posobiya, @count_umk, @year, @id_university)
+else
+	UPDATE raiting set s1=@count_uchebniki, s2=@count_posobiya, s3=@count_umk WHERE id=@id
+end
+
+GO
 
 --3.1 or i14
 CREATE PROCEDURE P3_1_citiruemost_publikaciy_pps_vuza

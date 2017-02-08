@@ -35,7 +35,6 @@ namespace RatingUniversity.Models
             this.osnashennost_laboratoriy = new HashSet<osnashennost_laboratoriy>();
             this.osnashennost_laboratornim_oborudovaniem = new HashSet<osnashennost_laboratornim_oborudovaniem>();
             this.qullanma = new HashSet<qullanma>();
-            this.raiting = new HashSet<raiting>();
             this.stepen_vnedreniya_ikt = new HashSet<stepen_vnedreniya_ikt>();
             this.summi_mejdunarodnih_grantov = new HashSet<summi_mejdunarodnih_grantov>();
             this.summi_respublikanskih_grantov = new HashSet<summi_respublikanskih_grantov>();
@@ -46,6 +45,8 @@ namespace RatingUniversity.Models
         public Nullable<int> id_region { get; set; }
         public Nullable<int> id_branch { get; set; }
         public string name_UZ { get; set; }
+        public Nullable<int> branch_id { get; set; }
+        public Nullable<int> region_id { get; set; }
     
         public virtual branch branch { get; set; }
         public virtual ICollection<chislennost_pps_vuza> chislennost_pps_vuza { get; set; }
@@ -67,7 +68,6 @@ namespace RatingUniversity.Models
         public virtual ICollection<osnashennost_laboratoriy> osnashennost_laboratoriy { get; set; }
         public virtual ICollection<osnashennost_laboratornim_oborudovaniem> osnashennost_laboratornim_oborudovaniem { get; set; }
         public virtual ICollection<qullanma> qullanma { get; set; }
-        public virtual ICollection<raiting> raiting { get; set; }
         public virtual region region { get; set; }
         public virtual ICollection<stepen_vnedreniya_ikt> stepen_vnedreniya_ikt { get; set; }
         public virtual ICollection<summi_mejdunarodnih_grantov> summi_mejdunarodnih_grantov { get; set; }
