@@ -14,9 +14,8 @@
     @Scripts.Render("~/Scripts/custom.js")
 </head>
 <body>
-    <div id="top-header" class="" style="height:auto;font-size:36px;font-weight:600;padding:10px 35px 10px 0;text-align:right;background:url(@Request.Url.GetLeftPart(UriPartial.Authority)/Images/background.jpg) no-repeat #fafafa;">
-        <div style="" class="text-primary">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.TopHeader, ViewBag.lang, ViewBag.alfabet)</div>
-    </div>
+    <div id="top-header" class="" style="height:13em;width:100%;background:url(@Request.Url.GetLeftPart(UriPartial.Authority)/Images/header.png) center no-repeat #fff;background-size:contain;"></div>
+    <!--<div style="padding:1em;text-align:center;font-size:24px;font-weight:bold;" class="text-primary">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.TopHeader, ViewBag.lang, ViewBag.alfabet)</div>-->
     <div class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
