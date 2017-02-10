@@ -82,8 +82,10 @@ CREATE PROCEDURE P3_3_kolichestvo_sotrudnikov_vuza
 @id_university int,
 @year int
 AS
-DECLARE  @count int, @id int, @count_dis int, @count_uch int, @count_neuch int
+DECLARE  @count int, @id int, @count_pps int, @count_dis int, @count_uch int, @count_neuch int
 begin 
+SET @count_pps =(SELECT ass_shtat FROM chislennost_pps_vuza
+	WHERE id_university=@id_university AND year=@year)
 SET @count_dis=(SELECT count(disser_name) FROM informaciya_o_dissertaciyah
 	WHERE id_university=@id_university AND year=@year)
 SET @count_uch=(SELECT as_fan_doc+as_fan_nom FROM chislennost_pps_vuza
@@ -95,8 +97,8 @@ SET @id=(SELECT id FROM raiting
 SET @count=(SELECT count(id) FROM raiting
 	WHERE id_university=@id_university AND year=@year)
 if (@count=0)
-INSERT INTO raiting(d, z, v, year, id_university) VALUES (@count_dis, @count_uch, @count_neuch, @year, @id_university)
-else UPDATE raiting set d=@count_dis, z=@count_uch, v=@count_neuch WHERE id=@id
+INSERT INTO raiting(p, d, z, v, year, id_university) VALUES (@count_pps, @count_dis, @count_uch, @count_neuch, @year, @id_university)
+else UPDATE raiting set d=@count_dis, z=@count_uch, v=@count_neuch, p=@count_pps WHERE id=@id
 end
 
 GO

@@ -29,3 +29,11 @@ tr.txtcenter th {
 .font-bold {
 font-weight: bold;
 }
+
+.info-success {
+    padding:15px;
+    font-size:larger;
+    color:green;
+    font-weight:600;
+    text-transform:uppercase;
+}

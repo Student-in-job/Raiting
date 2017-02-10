@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using System.Configuration;
 using RatingUniversity.Classes;
 
 namespace RatingUniversity.Controllers
@@ -29,11 +30,11 @@ namespace RatingUniversity.Controllers
         {
             //CultureInfo currentCulrute = Thread.CurrentThread.CurrentCulture;
             //ViewBag.lang = currentCulrute.Name.Substring(0, 5);
-            int time = Functions.GetLeftTime("01-02-2017 00:00:00");
+            int time = Functions.GetLeftTime(ConfigurationManager.AppSettings["endDate"]);
             ViewBag.Reverse = (time < 0) ? "false" : "true";
             time = (time < 0) ? -time : time;
             ViewBag.time = time;
-            ViewBag.year = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["startYear"]);
+            ViewBag.year = Convert.ToInt32(ConfigurationManager.AppSettings["startYear"]);
             return View();
         }
 

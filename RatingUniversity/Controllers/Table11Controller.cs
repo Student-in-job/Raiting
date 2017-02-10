@@ -27,7 +27,7 @@ namespace RatingUniversity.Controllers
             this.listNames.Add("qullanma");
             this.listNames.Add("majmua");
             this.controllerName = "Table11";
-            this.tableName = "J10";            
+            this.tableName = "J11";            
         }
 
         protected override void FormListOfData(System.Data.DataTable table, string listName)
@@ -160,23 +160,22 @@ namespace RatingUniversity.Controllers
 
         protected override void DeleteData()
         {
-            int year = DateTime.Now.Year;
-            IQueryable<monografiya> rowsToDelete0 = this.db.monografiya.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<monografiya> rowsToDelete0 = this.db.monografiya.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete0)
             {
                 this.db.monografiya.Remove(row);
             }
-            IQueryable<darslik> rowsToDelete1 = this.db.darslik.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<darslik> rowsToDelete1 = this.db.darslik.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete1)
             {
                 this.db.darslik.Remove(row);
             }
-            IQueryable<qullanma> rowsToDelete2 = this.db.qullanma.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<qullanma> rowsToDelete2 = this.db.qullanma.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete2)
             {
                 this.db.qullanma.Remove(row);
             }
-            IQueryable<majmua> rowsToDelete3 = this.db.majmua.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<majmua> rowsToDelete3 = this.db.majmua.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete3)
             {
                 this.db.majmua.Remove(row);
@@ -238,6 +237,8 @@ namespace RatingUniversity.Controllers
         {
             Procedures proc = new Procedures();
             int result = proc.P1_3_rolvo_uchebnikov_posobiy_umk(id, this.year);
+            result = proc.P3_2_kolichestvo_izdannih_statey(id, year);
+            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
             return base.Approve(id);
         }
 	}
