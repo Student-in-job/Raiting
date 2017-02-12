@@ -1273,4 +1273,13 @@
   <data name="Table9" xml:space="preserve">
     <value>ППС проводившие зянятия в течении последних 3 лет в топ 300 ВУЗах</value>
   </data>
+  <data name="Back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="WrongExcel" xml:space="preserve">
+    <value>Отправлен не Excel файл</value>
+  </data>
+  <data name="WrongPDF" xml:space="preserve">
+    <value>Отправлен не PDF файл</value>
+  </data>
 </root>

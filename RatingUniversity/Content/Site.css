@@ -37,3 +37,14 @@ font-weight: bold;
     font-weight:600;
     text-transform:uppercase;
 }
+
+.error-message {
+    font-size:large;
+    color:red;
+    font-weight:bold;
+    text-transform:uppercase;
+    padding:25px;
+    background-color:lightcoral;
+    display:block;
+    text-align:center;
+}

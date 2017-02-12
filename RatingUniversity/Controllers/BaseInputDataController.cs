@@ -22,8 +22,6 @@ namespace RatingUniversity.Controllers
         protected string fileFullName;
         protected ExcelFile excelFile;
         protected string listName;
-        //protected int startRow;
-        //protected int endRow;
         protected string lang;
         protected string alfabet;
         protected List<string> listNames;
@@ -37,28 +35,34 @@ namespace RatingUniversity.Controllers
             base.Initialize(requestContext);
             ViewBag.active = Functions.CreateActive(this.active, 34);
             this.year = DateTime.Now.Year;
-            //ViewBag.status = MonitoringUpdate.GetStatus(this.id, this.tableName, this.year);
         }
 
         protected void ReadDataFromExcelFiles()
         {
-            this.excelFile = new ExcelFile(this.fileFullName);
-            if ((this.listName != string.Empty) && (this.listName != null))
+            try
             {
-                DataTable table = this.excelFile.ReadData(this.listName);
-                this.FormListOfData(table);
-                this.DeleteData();
-                this.SaveData();
-            }
-            else if (this.listNames != null)
-            {
-                foreach (string list in this.listNames)
+                this.excelFile = new ExcelFile(this.fileFullName);
+                if ((this.listName != string.Empty) && (this.listName != null))
                 {
-                    DataTable table = this.excelFile.ReadData(list);
-                    this.FormListOfData(table, list);
+                    DataTable table = this.excelFile.ReadData(this.listName);
+                    this.FormListOfData(table);
+                    this.DeleteData();
+                    this.SaveData();
                 }
-                this.DeleteData();
-                this.SaveData();
+                else if (this.listNames != null)
+                {
+                    foreach (string list in this.listNames)
+                    {
+                        DataTable table = this.excelFile.ReadData(list);
+                        this.FormListOfData(table, list);
+                    }
+                    this.DeleteData();
+                    this.SaveData();
+                }
+            }
+            catch (Exception exp)
+            {
+                throw new Exception(exp.Message);
             }
             
         }
@@ -108,38 +112,46 @@ namespace RatingUniversity.Controllers
         [HttpPost]
         public ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
         {
-            if (files != null)
+            try
             {
-                string fileName;
-                string fileExtension;
-
-                foreach (var file in files)
+                if (files != null)
                 {
-                    //Set file details.
-                    fileName = Path.GetFileName(file.FileName);
-                    fileExtension = Path.GetExtension(file.FileName);
+                    string fileName;
+                    string fileExtension;
 
-                    if (fileExtension == ".xls" || fileExtension == ".xlsx")
+                    foreach (var file in files)
                     {
-                        //Save the uploaded file to the application folder.
-                        string savePath = Server.MapPath("~/Files/Upload/") + DateTime.Now.Year.ToString() + "/" + this.id.ToString() + "/";
-                        if (!Directory.Exists(savePath))
-                            Directory.CreateDirectory(savePath);
-                        this.fileFullName = savePath + Path.GetFileNameWithoutExtension(file.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
-                        file.SaveAs(this.fileFullName);
+                        //Set file details.
+                        fileName = Path.GetFileName(file.FileName);
+                        fileExtension = Path.GetExtension(file.FileName);
 
-                        //Read Data From ExcelFiles.
-                        this.ReadDataFromExcelFiles();
-                    }
-                    else
-                    {
-                        Response.Write("Error file");
-                        Response.End();
-                        //TODO: Send Alert to the users file not supported.
+                        if (fileExtension == ".xls" || fileExtension == ".xlsx")
+                        {
+                            //Save the uploaded file to the application folder.
+                            string savePath = Server.MapPath("~/Files/Upload/") + DateTime.Now.Year.ToString() + "/" + this.id.ToString() + "/";
+                            if (!Directory.Exists(savePath))
+                                Directory.CreateDirectory(savePath);
+                            this.fileFullName = savePath + Path.GetFileNameWithoutExtension(file.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
+                            file.SaveAs(this.fileFullName);
+
+                            //Read Data From ExcelFiles.
+                            this.ReadDataFromExcelFiles();
+                        }
+                        else
+                        {
+                            ViewBag.Error = ErrorCodes.NotExcel;
+                            return View("ErrorFile");
+                            //TODO: Send Alert to the users file not supported.
+                        }
                     }
                 }
+                return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
+            catch (Exception exp)
+            {
+                ViewBag.ErrorMessage = exp.Message;
+                return View("Error", new HandleErrorInfo(exp, this.controllerName, "Upload"));
+            }
         }
 
         [Authorize(Roles = "admin")]

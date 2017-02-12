@@ -802,6 +802,7 @@
     <Content Include="Views\Table29\Index.cshtml" />
     <Content Include="Views\Table30\Index.cshtml" />
     <Content Include="Views\Table31\Index.cshtml" />
+    <Content Include="Views\Shared\ErrorFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />

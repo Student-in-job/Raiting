@@ -70,4 +70,10 @@ namespace RatingUniversity.Classes
             return result;
         }
     }
+
+    public enum ErrorCodes
+    {
+        NotExcel,
+        NotPDF
+    }
 }

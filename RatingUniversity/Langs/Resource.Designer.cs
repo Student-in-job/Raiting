@@ -290,6 +290,17 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Назад.
+        /// </summary>
+        public static string Back
+        {
+            get
+            {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Подробнее.
         /// </summary>
         public static string ButtonLearnMore
@@ -3790,7 +3801,7 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to талабалардан олинган сўровнома.
+        ///   Looks up a localized string similar to Опросы студентов.
         /// </summary>
         public static string Table1_2
         {
@@ -3801,7 +3812,7 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Асосий штат чет тили ва АКТни билиш даражаси.
+        ///   Looks up a localized string similar to Знания ППС иностранных языков и ИКТ.
         /// </summary>
         public static string Table1_7
         {
@@ -3933,7 +3944,7 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Талабалар билимини баҳолаш.
+        ///   Looks up a localized string similar to Оценка знаний студентов.
         /// </summary>
         public static string Table2_1
         {
@@ -3944,7 +3955,7 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Иш берувчилар сўровномаси натижалари бўйича битирувчилар малакасини баҳолаш.
+        ///   Looks up a localized string similar to Отзыв работодателей.
         /// </summary>
         public static string Table2_2
         {
@@ -4281,6 +4292,28 @@ namespace RatingUniversity.Langs
             get
             {
                 return ResourceManager.GetString("WebUniversity", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Отправлен не Excel файл.
+        /// </summary>
+        public static string WrongExcel
+        {
+            get
+            {
+                return ResourceManager.GetString("WrongExcel", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Отправлен не PDF файл.
+        /// </summary>
+        public static string WrongPDF
+        {
+            get
+            {
+                return ResourceManager.GetString("WrongPDF", resourceCulture);
             }
         }
     }
