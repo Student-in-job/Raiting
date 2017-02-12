@@ -1,46 +1,74 @@
 ﻿@*using PagedList.Mvc;*@
     @model IEnumerable<RatingUniversity.Models.summi_mejdunarodnih_grantov>
-
+    @using MyFunctions = RatingUniversity.Classes.Functions;
+    @using Resource = RatingUniversity.Langs.Resource;
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
-    @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
-
+    @{ 
+        Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
     @{
-        <div class="well well-sm">
-            <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table23/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
-        </div>
- 
-        using (Html.BeginForm("Upload", "Table23", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        if (!ViewBag.isAdmin)
         {
-            <fieldset>
-                <legend>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
-                <div class="input-group">
-                    <input type="file" class="form-control" name="files" />
-                    <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
-                </div>
-            </fieldset>
+            <div class="well well-sm">
+                <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table23/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+            </div>
+ 
+            if ((ViewBag.status == 0) || (ViewBag.status == -1))
+            {
+                using (Html.BeginForm("Upload", "Table23", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <fieldset>
+                        <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                        <div class="input-group">
+                            <input type="file" class="form-control" name="files" />
+                            <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+                        </div>
+                    </fieldset>
+                }
+            }
+        }
+        else
+        {
+            if (ViewBag.status == 0)
+            { 
+                using (Html.BeginForm("Approve", "Table23", FormMethod.Post))
+                {
+                    <fieldset>
+                        <div class="input-group">
+                            <input type="hidden" class="form-control" name="id" value="@ViewBag.id" />
+                            <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Approve, ViewBag.lang, ViewBag.alfabet)" /></span>
+                        </div>
+                    </fieldset>
+                }
+            }
+        }
+        if (ViewBag.status == 1)
+        {
+            <div>
+                <p class="bg-success text-center info-success" style="padding:15px;font-size:larger;color:green;font-weight:600">@MyFunctions.Translate(Resource.DTM_danniye_podtverjdeni, ViewBag.lang, ViewBag.alfabet)</p>
+            </div>
         }
     }
 
-                          <h3 class="text-center">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-                          <h4 class="text-center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+                          <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+                          <h4 class="text-center">@MyFunctions.Translate(Resource.IntGrantHeader, ViewBag.lang, ViewBag.alfabet)</h4>
 
         <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word;">
             <thead>
                 <tr>
                     <th rowspan="3" style="width: 38px; vertical-align: central">№</th>
-                    <th colspan="5" style="text-align: center;">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantInDollar, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="5" style="text-align: center;">@MyFunctions.Translate(Resource.IntGrantInDollar, ViewBag.lang, ViewBag.alfabet)</th>
                 </tr>
                 <tr>
-                    <th colspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantGrant, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th colspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantRequest, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th rowspan="2" style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantTotal, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IntGrantGrant, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IntGrantRequest, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IntGrantTotal, ViewBag.lang, ViewBag.alfabet)</th>
                 </tr>
                 <tr>
-                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantName, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantSum, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantName, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.IntGrantSum, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.IntGrantName, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.IntGrantSum, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.IntGrantName, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th style="text-align:center">@MyFunctions.Translate(Resource.IntGrantSum, ViewBag.lang, ViewBag.alfabet)</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,13 +77,14 @@
                     foreach (var item in Model)
                     {
                         index++;
+                        double? summa = item.grant_summa + item.buyurtma_summa;
                         <tr>
                             <td>@index</td>
                             <td>@Html.DisplayFor(modelItem => item.grant_name)</td>
                             <td>@Html.DisplayFor(modelItem => item.grant_summa)</td>
                             <td>@Html.DisplayFor(modelItem => item.buyurtma_name)</td>
                             <td>@Html.DisplayFor(modelItem => item.buyurtma_summa)</td>
-                            <td>@Html.DisplayFor(modelItem => item.grant_summa + item.buyurtma_summa)</td>
+                            <td>@Html.DisplayFor(modelItem => summa)</td>
                         </tr>
                     }
                 }

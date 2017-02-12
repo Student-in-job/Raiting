@@ -19,8 +19,8 @@ namespace RatingUniversity.Controllers
             base.Initialize(requestContext);
             this.fileName = "28_stepen_vnedreniya_ikt_v_uchebniy_process.xlsx";
             this.listName = "stepen_vnedreniya_ikt";
-            //this.startRow = 8;
-            //this.endRow = 2;
+            this.controllerName = "Table28";
+            this.tableName = "J28";
         }
         protected override void FormListOfData(DataTable table)
         {
@@ -59,7 +59,7 @@ namespace RatingUniversity.Controllers
                 if (row[15] != DBNull.Value) record.pps_count = Convert.ToInt32(row[15]);
                 if (row[16] != DBNull.Value) record.students_count = Convert.ToInt32(row[16]);
                 record.id_university = this.id;
-                record.year = DateTime.Now.Year;
+                record.year = this.year;
 
                 this.records.Add(record);
             }
@@ -67,8 +67,7 @@ namespace RatingUniversity.Controllers
 
         protected override void DeleteData()
         {
-            int year = DateTime.Now.Year;
-            IQueryable<stepen_vnedreniya_ikt> rowsToDelete = this.db.stepen_vnedreniya_ikt.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<stepen_vnedreniya_ikt> rowsToDelete = this.db.stepen_vnedreniya_ikt.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete)
             {
                 this.db.stepen_vnedreniya_ikt.Remove(row);
@@ -83,27 +82,36 @@ namespace RatingUniversity.Controllers
                 this.db.stepen_vnedreniya_ikt.Add(newRecord);
             }
             this.db.SaveChanges();
+            MonitoringUpdate.Update(this.id, this.tableName, 0, this.year);
         }
         //
         // GET: /Table28/
         public ActionResult Index(int? id)
         {
-            if (this.id == 0)
+            if ((this.id == 0) && (id == null))
             {
-                if (id == null)
-                {
-                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table28", active = this.active });
-                }
+                return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = this.controllerName, active = this.active });
             }
-            else
+            else if (id == null)
             {
                 id = this.id;
             }
-            ViewBag.file = this.fileName;
-            int year = DateTime.Now.Year;
+            ViewBag.id = id;
+            ViewBag.Status = MonitoringUpdate.GetStatus(id, this.tableName, this.year);
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.stepen_vnedreniya_ikt.Where(model => model.id_university == id && model.year == year).ToList());
+            return View(this.db.stepen_vnedreniya_ikt.Where(model => model.id_university == id && model.year == this.year).ToList());
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public override ActionResult Approve(int id)
+        {
+            Procedures proc = new Procedures();
+            int year = this.year;
+            int result = proc.P4_2_stepen_vnedreniya_ikt(id, year);
+            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
+            return base.Approve(id);
         }
 	}
 }

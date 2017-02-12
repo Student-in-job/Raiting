@@ -19,6 +19,8 @@ namespace RatingUniversity.Controllers
             base.Initialize(requestContext);
             this.fileName = "25_granti_po_vidam_issledovaniy.xlsx";
             this.listName = "granti_po_vidam_issledovaniy";
+            this.controllerName = "Table25";
+            this.tableName = "J25";
             //this.startRow = 8;
             //this.endRow = 2;
         }
@@ -44,14 +46,18 @@ namespace RatingUniversity.Controllers
                 granti_po_vidam_issledovaniy record = new granti_po_vidam_issledovaniy();
                 if (row[1] != DBNull.Value) record.tormog_name = Convert.ToString(row[1]);
                 if (row[2] != DBNull.Value) record.buyurtma_name = Convert.ToString(row[2]);
-                if (row[3] != DBNull.Value) record.fundamental = Convert.ToBoolean(row[3]);
-                if (row[4] != DBNull.Value) record.amaliy = Convert.ToBoolean(row[4]);
-                if (row[5] != DBNull.Value) record.innovatsion = Convert.ToBoolean(row[5]);
-                if (row[6] != DBNull.Value) record.lizenziya = Convert.ToBoolean(row[6]);
-                if (row[7] != DBNull.Value) record.yarmarka = Convert.ToBoolean(row[7]);
-                if (row[8] != DBNull.Value) record.summa = Convert.ToDouble(row[8]);
+                if (row[3] != DBNull.Value) record.fundamental = Convert.ToDouble(row[3]);
+                else record.fundamental = 0;
+                if (row[4] != DBNull.Value) record.amaliy = Convert.ToDouble(row[4]);
+                else record.amaliy = 0;
+                if (row[5] != DBNull.Value) record.innovatsion = Convert.ToDouble(row[5]);
+                else record.innovatsion = 0;
+                if (row[6] != DBNull.Value) record.lizenziya = Convert.ToDouble(row[6]);
+                else record.lizenziya = 0;
+                if (row[7] != DBNull.Value) record.yarmarka = Convert.ToDouble(row[7]);
+                else record.yarmarka = 0;
                 record.id_university = this.id;
-                record.year = DateTime.Now.Year;
+                record.year = this.year;
 
                 this.records.Add(record);
             }
@@ -59,8 +65,7 @@ namespace RatingUniversity.Controllers
 
         protected override void DeleteData()
         {
-            int year = DateTime.Now.Year;
-            IQueryable<granti_po_vidam_issledovaniy> rowsToDelete = this.db.granti_po_vidam_issledovaniy.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<granti_po_vidam_issledovaniy> rowsToDelete = this.db.granti_po_vidam_issledovaniy.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete)
             {
                 this.db.granti_po_vidam_issledovaniy.Remove(row);
@@ -75,27 +80,36 @@ namespace RatingUniversity.Controllers
                 this.db.granti_po_vidam_issledovaniy.Add(newRecord);
             }
             this.db.SaveChanges();
+            MonitoringUpdate.Update(this.id, this.tableName, 0, this.year);
         }
         //
         // GET: /Table25/
         public ActionResult Index(int? id)
         {
-            if (this.id == 0)
+            if ((this.id == 0) && (id == null))
             {
-                if (id == null)
-                {
-                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table25", active = this.active });
-                }
+                return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = this.controllerName, active = this.active });
             }
-            else
+            else if (id == null)
             {
                 id = this.id;
             }
-            ViewBag.file = this.fileName;
-            int year = DateTime.Now.Year;
+            ViewBag.id = id;
+            ViewBag.Status = MonitoringUpdate.GetStatus(id, this.tableName, this.year);
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.granti_po_vidam_issledovaniy.Where(model => model.id_university == id && model.year == year).ToList());
+            return View(this.db.granti_po_vidam_issledovaniy.Where(model => model.id_university == id && model.year == this.year).ToList());
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public override ActionResult Approve(int id)
+        {
+            Procedures proc = new Procedures();
+            int year = this.year;
+            int result = proc.P3_5_effektivnost_provodimih_nir(id, year);
+            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
+            return base.Approve(id);
         }
 	}
 }

@@ -16,13 +16,13 @@ namespace RatingUniversity.Models
     {
         public university()
         {
+            this.granti_po_vidam_issledovaniy = new HashSet<granti_po_vidam_issledovaniy>();
             this.chislennost_pps_vuza = new HashSet<chislennost_pps_vuza>();
             this.citiruemost_publikaciy_pps_vuza = new HashSet<citiruemost_publikaciy_pps_vuza>();
             this.darslik = new HashSet<darslik>();
             this.effektivnost_nir_dalolatnoma = new HashSet<effektivnost_nir_dalolatnoma>();
             this.effektivnost_nir_patent = new HashSet<effektivnost_nir_patent>();
             this.effektivnost_nir_sertifikat = new HashSet<effektivnost_nir_sertifikat>();
-            this.granti_po_vidam_issledovaniy = new HashSet<granti_po_vidam_issledovaniy>();
             this.informaciya_o_dissertaciyah = new HashSet<informaciya_o_dissertaciyah>();
             this.kolichestvo_izdannih_mejdunarodnih_statey = new HashSet<kolichestvo_izdannih_mejdunarodnih_statey>();
             this.kolichestvo_izdannih_mestnih_statey = new HashSet<kolichestvo_izdannih_mestnih_statey>();
@@ -35,6 +35,7 @@ namespace RatingUniversity.Models
             this.osnashennost_laboratoriy = new HashSet<osnashennost_laboratoriy>();
             this.osnashennost_laboratornim_oborudovaniem = new HashSet<osnashennost_laboratornim_oborudovaniem>();
             this.qullanma = new HashSet<qullanma>();
+            this.raiting = new HashSet<raiting>();
             this.stepen_vnedreniya_ikt = new HashSet<stepen_vnedreniya_ikt>();
             this.summi_mejdunarodnih_grantov = new HashSet<summi_mejdunarodnih_grantov>();
             this.summi_respublikanskih_grantov = new HashSet<summi_respublikanskih_grantov>();
@@ -45,9 +46,8 @@ namespace RatingUniversity.Models
         public Nullable<int> id_region { get; set; }
         public Nullable<int> id_branch { get; set; }
         public string name_UZ { get; set; }
-        public Nullable<int> branch_id { get; set; }
-        public Nullable<int> region_id { get; set; }
     
+        public virtual ICollection<granti_po_vidam_issledovaniy> granti_po_vidam_issledovaniy { get; set; }
         public virtual branch branch { get; set; }
         public virtual ICollection<chislennost_pps_vuza> chislennost_pps_vuza { get; set; }
         public virtual ICollection<citiruemost_publikaciy_pps_vuza> citiruemost_publikaciy_pps_vuza { get; set; }
@@ -55,7 +55,6 @@ namespace RatingUniversity.Models
         public virtual ICollection<effektivnost_nir_dalolatnoma> effektivnost_nir_dalolatnoma { get; set; }
         public virtual ICollection<effektivnost_nir_patent> effektivnost_nir_patent { get; set; }
         public virtual ICollection<effektivnost_nir_sertifikat> effektivnost_nir_sertifikat { get; set; }
-        public virtual ICollection<granti_po_vidam_issledovaniy> granti_po_vidam_issledovaniy { get; set; }
         public virtual ICollection<informaciya_o_dissertaciyah> informaciya_o_dissertaciyah { get; set; }
         public virtual ICollection<kolichestvo_izdannih_mejdunarodnih_statey> kolichestvo_izdannih_mejdunarodnih_statey { get; set; }
         public virtual ICollection<kolichestvo_izdannih_mestnih_statey> kolichestvo_izdannih_mestnih_statey { get; set; }
@@ -68,6 +67,7 @@ namespace RatingUniversity.Models
         public virtual ICollection<osnashennost_laboratoriy> osnashennost_laboratoriy { get; set; }
         public virtual ICollection<osnashennost_laboratornim_oborudovaniem> osnashennost_laboratornim_oborudovaniem { get; set; }
         public virtual ICollection<qullanma> qullanma { get; set; }
+        public virtual ICollection<raiting> raiting { get; set; }
         public virtual region region { get; set; }
         public virtual ICollection<stepen_vnedreniya_ikt> stepen_vnedreniya_ikt { get; set; }
         public virtual ICollection<summi_mejdunarodnih_grantov> summi_mejdunarodnih_grantov { get; set; }

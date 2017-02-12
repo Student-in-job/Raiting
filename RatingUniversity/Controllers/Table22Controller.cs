@@ -21,7 +21,6 @@ namespace RatingUniversity.Controllers
             this.listName = "osnashennost_laboratoriy";
             this.controllerName = "Table22";
             this.tableName = "J22";
-            //this.endRow = 2;
         }
         protected override void FormListOfData(DataTable table)
         {
@@ -100,7 +99,7 @@ namespace RatingUniversity.Controllers
         {
             Procedures proc = new Procedures();
             int year = this.year;
-            int result = proc.P3_5_effektivnost_provodimih_nir(id, year);
+            //int result = proc.P3_5_effektivnost_provodimih_nir(id, year);
             MonitoringUpdate.Update(id, this.tableName, 1, this.year);
             return base.Approve(id);
         }

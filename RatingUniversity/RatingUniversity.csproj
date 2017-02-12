@@ -293,9 +293,6 @@
     <Compile Include="Models\citiruemost_publikaciy_pps_vuza.cs">
       <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\C__MigrationHistory.cs">
-      <DependentUpon>Final Rating.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\darslik.cs">
       <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>

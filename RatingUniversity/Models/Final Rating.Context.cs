@@ -25,7 +25,6 @@ namespace RatingUniversity.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<branch> branch { get; set; }
         public virtual DbSet<chislennost_pps_vuza> chislennost_pps_vuza { get; set; }
         public virtual DbSet<citiruemost_publikaciy_pps_vuza> citiruemost_publikaciy_pps_vuza { get; set; }

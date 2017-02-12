@@ -21,7 +21,7 @@ namespace RatingUniversity
 
             //Database.SetInitializer<TablesContext>(null);
             Database.SetInitializer<ApplicationDbContext>(new AppDbInitializer());
-            //Database.SetInitializer<TablesContext>(new DropCreateDatabaseIfModelChanges<TablesContext>());
+            Database.SetInitializer<TablesContext>(new DropCreateDatabaseIfModelChanges<TablesContext>());
             //Database.SetInitializer<TablesContext>(new DropCreateDatabaseAlways<TablesContext>());
               
         }
