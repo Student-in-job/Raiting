@@ -1,4 +1,6 @@
-﻿@{
+﻿@using MyFunctions = RatingUniversity.Classes.Functions;
+@using Resource = RatingUniversity.Langs.Resource;
+@{
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -6,40 +8,40 @@
 	<div class="col-md-3">
 		<section id="leftSideMenu">
 			<ul class="nav nav-pills nav-stacked">
-                <li @ViewBag.active[0]><a href="~/Jadval1">Table1</a></li>
-                <li @ViewBag.active[1]><a href="~/Jadval1_2">Table 1_2</a></li>
-                <li @ViewBag.active[2]><a href="~/Jadval1_7">Table 1_7</a></li>
-				<li @ViewBag.active[3]><a href="~/Jadval2">Table2</a></li>
-                <li @ViewBag.active[4]><a href="~/Jadval2_1">Table 2_1</a></li>
-                <li @ViewBag.active[5]><a href="~/Jadval2_2">Table 2_2</a></li>
-				<li @ViewBag.active[6]><a href="~/Table3">Table3</a></li>
-				<li @ViewBag.active[7]><a href="~/Jadval5">Table5</a></li>
-				<li @ViewBag.active[8]><a href="~/Jadval6">Table6</a></li>
-				<li @ViewBag.active[9]><a href="~/Jadval7">Table7</a></li>
-				<li @ViewBag.active[10]><a href="~/Jadval8">Table8</a></li>
-				<li @ViewBag.active[11]><a href="~/Jadval9">Table9</a></li>
-				<li @ViewBag.active[12]><a href="~/Jadval10">Table10</a></li>
-				<li @ViewBag.active[13]><a href="~/Table11">Table11</a></li>
-				<li @ViewBag.active[14]><a href="~/Table12">Table12</a></li>
-				<li @ViewBag.active[15]><a href="~/Table13">Table13</a></li>
-				<li @ViewBag.active[16]><a href="~/Table14">Table14</a></li>
-				<li @ViewBag.active[17]><a href="~/Table15">Table15</a></li>
-				<li @ViewBag.active[18]><a href="~/Table16">Table16</a></li>
+                <li @ViewBag.active[0]><a href="~/Jadval1">@MyFunctions.Translate(Resource.Table1, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[1]><a href="~/Jadval1_2">@MyFunctions.Translate(Resource.Table1_2, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[2]><a href="~/Jadval1_7">@MyFunctions.Translate(Resource.Table1_7, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[3]><a href="~/Jadval2">@MyFunctions.Translate(Resource.Table2, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[4]><a href="~/Jadval2_1">@MyFunctions.Translate(Resource.Table2_1, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[5]><a href="~/Jadval2_2">@MyFunctions.Translate(Resource.Table2_2, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[6]><a href="~/Table3">@MyFunctions.Translate(Resource.Table3, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[7]><a href="~/Jadval5">@MyFunctions.Translate(Resource.Table5, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[8]><a href="~/Jadval6">@MyFunctions.Translate(Resource.Table6, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[9]><a href="~/Jadval7">@MyFunctions.Translate(Resource.Table7, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[10]><a href="~/Jadval8">@MyFunctions.Translate(Resource.Table8, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[11]><a href="~/Jadval9">@MyFunctions.Translate(Resource.Table9, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[12]><a href="~/Jadval10">@MyFunctions.Translate(Resource.Table10, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[13]><a href="~/Table11">@MyFunctions.Translate(Resource.Table11, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[14]><a href="~/Table12">@MyFunctions.Translate(Resource.Table12, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[15]><a href="~/Table13">@MyFunctions.Translate(Resource.Table13, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[16]><a href="~/Table14">@MyFunctions.Translate(Resource.Table14, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[17]><a href="~/Table15">@MyFunctions.Translate(Resource.Table15, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[18]><a href="~/Table16">@MyFunctions.Translate(Resource.Table16, ViewBag.lang, ViewBag.alfabet)</a></li>
 				@*<li @ViewBag.active[19]><a href="~/Table17">Table17</a></li>*@
-				<li @ViewBag.active[20]><a href="~/Jadval18">Table18</a></li>
-				<li @ViewBag.active[21]><a href="~/Jadval19">Table19</a></li>
-				<li @ViewBag.active[22]><a href="~/Jadval20">Table20</a></li>
-				<li @ViewBag.active[23]><a href="~/Jadval21">Table21</a></li>
-                <li @ViewBag.active[24]><a href="~/Table22">Table22</a></li>
-                <li @ViewBag.active[25]><a href="~/Table23">Table23</a></li>
-                <li @ViewBag.active[26]><a href="~/Table24">Table24</a></li>
-                <li @ViewBag.active[27]><a href="~/Table25">Table25</a></li>
-                <li @ViewBag.active[28]><a href="~/Table26">Table26</a></li>
-                <li @ViewBag.active[29]><a href="~/Table27">Table27</a></li>
-                <li @ViewBag.active[30]><a href="~/Table28">Table28</a></li>
-                <li @ViewBag.active[31]><a href="~/Table29">Table29</a></li>
-                <li @ViewBag.active[32]><a href="~/Table30">Table30</a></li>
-                <li @ViewBag.active[33]><a href="~/Table31">Table31</a></li>
+				<li @ViewBag.active[20]><a href="~/Jadval18">@MyFunctions.Translate(Resource.Table18, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[21]><a href="~/Jadval19">@MyFunctions.Translate(Resource.Table19, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[22]><a href="~/Jadval20">@MyFunctions.Translate(Resource.Table20, ViewBag.lang, ViewBag.alfabet)</a></li>
+				<li @ViewBag.active[23]><a href="~/Jadval21">@MyFunctions.Translate(Resource.Table21, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[24]><a href="~/Table22">@MyFunctions.Translate(Resource.Table22, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[25]><a href="~/Table23">@MyFunctions.Translate(Resource.Table23, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[26]><a href="~/Table24">@MyFunctions.Translate(Resource.Table24, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[27]><a href="~/Table25">@MyFunctions.Translate(Resource.Table25, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[28]><a href="~/Table26">@MyFunctions.Translate(Resource.Table26, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[29]><a href="~/Table27">@MyFunctions.Translate(Resource.Table27, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[30]><a href="~/Table28">@MyFunctions.Translate(Resource.Table28, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[31]><a href="~/Table29">@MyFunctions.Translate(Resource.Table29, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[32]><a href="~/Table30">@MyFunctions.Translate(Resource.Table30, ViewBag.lang, ViewBag.alfabet)</a></li>
+                <li @ViewBag.active[33]><a href="~/Table31">@MyFunctions.Translate(Resource.Table31, ViewBag.lang, ViewBag.alfabet)</a></li>
 			</ul>
 		</section>
 	</div>

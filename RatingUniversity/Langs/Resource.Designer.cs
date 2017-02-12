@@ -3779,6 +3779,391 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Топ 300 ВУЗов.
+        /// </summary>
+        public static string Table1
+        {
+            get
+            {
+                return ResourceManager.GetString("Table1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to талабалардан олинган сўровнома.
+        /// </summary>
+        public static string Table1_2
+        {
+            get
+            {
+                return ResourceManager.GetString("Table1_2", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Асосий штат чет тили ва АКТни билиш даражаси.
+        /// </summary>
+        public static string Table1_7
+        {
+            get
+            {
+                return ResourceManager.GetString("Table1_7", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Занятия на анлийском в ВУЗе.
+        /// </summary>
+        public static string Table10
+        {
+            get
+            {
+                return ResourceManager.GetString("Table10", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Монографии, учебники, учебные пособия, УМК.
+        /// </summary>
+        public static string Table11
+        {
+            get
+            {
+                return ResourceManager.GetString("Table11", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Изданные материалы (журналы, книги).
+        /// </summary>
+        public static string Table12
+        {
+            get
+            {
+                return ResourceManager.GetString("Table12", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Международные статьи.
+        /// </summary>
+        public static string Table13
+        {
+            get
+            {
+                return ResourceManager.GetString("Table13", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Республиканские статьи.
+        /// </summary>
+        public static string Table14
+        {
+            get
+            {
+                return ResourceManager.GetString("Table14", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Сертификаты и патенты.
+        /// </summary>
+        public static string Table15
+        {
+            get
+            {
+                return ResourceManager.GetString("Table15", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Сведения о защите докторских.
+        /// </summary>
+        public static string Table16
+        {
+            get
+            {
+                return ResourceManager.GetString("Table16", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Table17
+        {
+            get
+            {
+                return ResourceManager.GetString("Table17", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to ППС работающий на 0,5 ставки в колледжах.
+        /// </summary>
+        public static string Table18
+        {
+            get
+            {
+                return ResourceManager.GetString("Table18", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Призеры олимпиад.
+        /// </summary>
+        public static string Table19
+        {
+            get
+            {
+                return ResourceManager.GetString("Table19", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Доктора в топ 300 ВУЗах.
+        /// </summary>
+        public static string Table2
+        {
+            get
+            {
+                return ResourceManager.GetString("Table2", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Талабалар билимини баҳолаш.
+        /// </summary>
+        public static string Table2_1
+        {
+            get
+            {
+                return ResourceManager.GetString("Table2_1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Иш берувчилар сўровномаси натижалари бўйича битирувчилар малакасини баҳолаш.
+        /// </summary>
+        public static string Table2_2
+        {
+            get
+            {
+                return ResourceManager.GetString("Table2_2", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Трудоустройство выпускников бакалавров.
+        /// </summary>
+        public static string Table20
+        {
+            get
+            {
+                return ResourceManager.GetString("Table20", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Трудоустройство выпускников магистров.
+        /// </summary>
+        public static string Table21
+        {
+            get
+            {
+                return ResourceManager.GetString("Table21", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Информация о лабораториях ВУЗа.
+        /// </summary>
+        public static string Table22
+        {
+            get
+            {
+                return ResourceManager.GetString("Table22", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Международные гранты.
+        /// </summary>
+        public static string Table23
+        {
+            get
+            {
+                return ResourceManager.GetString("Table23", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Научные гранты.
+        /// </summary>
+        public static string Table24
+        {
+            get
+            {
+                return ResourceManager.GetString("Table24", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Договора.
+        /// </summary>
+        public static string Table25
+        {
+            get
+            {
+                return ResourceManager.GetString("Table25", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Учебная литература.
+        /// </summary>
+        public static string Table26
+        {
+            get
+            {
+                return ResourceManager.GetString("Table26", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Электронные книги.
+        /// </summary>
+        public static string Table27
+        {
+            get
+            {
+                return ResourceManager.GetString("Table27", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Уровень ИКТ.
+        /// </summary>
+        public static string Table28
+        {
+            get
+            {
+                return ResourceManager.GetString("Table28", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Сведения о ВУЗе в интернете.
+        /// </summary>
+        public static string Table29
+        {
+            get
+            {
+                return ResourceManager.GetString("Table29", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to ППС ВУЗа.
+        /// </summary>
+        public static string Table3
+        {
+            get
+            {
+                return ResourceManager.GetString("Table3", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Современные учебные лаборатории.
+        /// </summary>
+        public static string Table30
+        {
+            get
+            {
+                return ResourceManager.GetString("Table30", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Современные учебные классы.
+        /// </summary>
+        public static string Table31
+        {
+            get
+            {
+                return ResourceManager.GetString("Table31", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Контингент ВУЗа.
+        /// </summary>
+        public static string Table4
+        {
+            get
+            {
+                return ResourceManager.GetString("Table4", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Преподаватели преподающие за рубежом.
+        /// </summary>
+        public static string Table5
+        {
+            get
+            {
+                return ResourceManager.GetString("Table5", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Зарубежные стеденты.
+        /// </summary>
+        public static string Table6
+        {
+            get
+            {
+                return ResourceManager.GetString("Table6", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Обмен с зарубежными ВУЗами.
+        /// </summary>
+        public static string Table7
+        {
+            get
+            {
+                return ResourceManager.GetString("Table7", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Участники международных конференций, проектов.
+        /// </summary>
+        public static string Table8
+        {
+            get
+            {
+                return ResourceManager.GetString("Table8", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to ППС проводившие зянятия в течении последних 3 лет в топ 300 ВУЗах.
+        /// </summary>
+        public static string Table9
+        {
+            get
+            {
+                return ResourceManager.GetString("Table9", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to TOP 300 университетов.
         /// </summary>
         public static string Top300

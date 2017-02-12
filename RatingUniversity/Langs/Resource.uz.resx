@@ -187,13 +187,13 @@
     <value>Oliy ta'lim muassasalarining reytingi</value>
   </data>
   <data name="HomePageHeaderInfo" xml:space="preserve">
-    <value>Ресурс запущен</value>
+    <value>Ресурс юритилган</value>
   </data>
   <data name="HomePageRatingHeader" xml:space="preserve">
     <value>Top universities</value>
   </data>
   <data name="HomePageRatingHeaderInfo" xml:space="preserve">
-    <value>Some text...</value>
+    <value />
   </data>
   <data name="HomePageTitle" xml:space="preserve">
     <value>Bosh sahifa</value>
@@ -208,13 +208,13 @@
     <value>Resurs haqida</value>
   </data>
   <data name="MainMenuAddData" xml:space="preserve">
-    <value>Upload Data</value>
+    <value>Маълумотлар юкланиш</value>
   </data>
   <data name="MainMenuContact" xml:space="preserve">
     <value>Aloqa</value>
   </data>
   <data name="MainMenuEduQuality" xml:space="preserve">
-    <value>Education Quality</value>
+    <value>Рейтинги критериялар</value>
   </data>
   <data name="MainMenuHome" xml:space="preserve">
     <value>Bosh sahifa</value>
@@ -448,7 +448,7 @@
     <value>Parolni qayta kiriting</value>
   </data>
   <data name="AccountCreate" xml:space="preserve">
-    <value>Создать нового пользователя</value>
+    <value>Янги пользователь яратиш</value>
   </data>
   <data name="AccountEmail" xml:space="preserve">
     <value>E-mail</value>
@@ -484,7 +484,7 @@
     <value>Parol</value>
   </data>
   <data name="AccountRegister" xml:space="preserve">
-    <value>Регистрация</value>
+    <value>Ro`yxatdan o`tish</value>
   </data>
   <data name="AccountRememberMe" xml:space="preserve">
     <value>Meni eslash?</value>
@@ -1178,9 +1178,114 @@
     <value>Universities</value>
   </data>
   <data name="MainMenuManageUser" xml:space="preserve">
-    <value>Users</value>
+    <value>Фойдаланувчилар</value>
   </data>
   <data name="Approve" xml:space="preserve">
     <value>Tasdiqlash</value>
+  </data>
+  <data name="Table1" xml:space="preserve">
+    <value>ОТМ топ 300 </value>
+  </data>
+  <data name="Table10" xml:space="preserve">
+    <value>Хорижий тилда дарс берилаётган курслар</value>
+  </data>
+  <data name="Table11" xml:space="preserve">
+    <value>Дарслик, ўқув қўлланма ва ЎУМ</value>
+  </data>
+  <data name="Table12" xml:space="preserve">
+    <value>Чоп этилган материаллар (журнал, китоб)</value>
+  </data>
+  <data name="Table13" xml:space="preserve">
+    <value>Хорижий мақоллар</value>
+  </data>
+  <data name="Table14" xml:space="preserve">
+    <value>Махаллий мақоллар</value>
+  </data>
+  <data name="Table15" xml:space="preserve">
+    <value>Сертификатлар ва патентлар</value>
+  </data>
+  <data name="Table16" xml:space="preserve">
+    <value>Ҳимоя қилинган докторлик диссертациялари ҳақида маълумот</value>
+  </data>
+  <data name="Table17" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Table18" xml:space="preserve">
+    <value>Касб-ҳунар ТМ 0,5 ставка ишлаётган профессор-ўқитувчилар</value>
+  </data>
+  <data name="Table19" xml:space="preserve">
+    <value>Олимпиадаларида совринли ўринлар билан тақдирланган </value>
+  </data>
+  <data name="Table1_2" xml:space="preserve">
+    <value>талабалардан олинган сўровнома</value>
+  </data>
+  <data name="Table1_7" xml:space="preserve">
+    <value>Асосий штат чет тили ва АКТни билиш даражаси</value>
+  </data>
+  <data name="Table2" xml:space="preserve">
+    <value>Докторлар топ 300 ОТМда</value>
+  </data>
+  <data name="Table20" xml:space="preserve">
+    <value>Бакалавр битирувчилари ишга ва ўқишга жойлаши</value>
+  </data>
+  <data name="Table21" xml:space="preserve">
+    <value>Магистратура  ишга ва ўқишга жойлаши</value>
+  </data>
+  <data name="Table22" xml:space="preserve">
+    <value>ОТМда лабораториялар</value>
+  </data>
+  <data name="Table23" xml:space="preserve">
+    <value>Илмий фондлар  ва илмий марказларининг грантлари</value>
+  </data>
+  <data name="Table24" xml:space="preserve">
+    <value>Давлат грантлари</value>
+  </data>
+  <data name="Table25" xml:space="preserve">
+    <value>Иқтисодиёт тармоқлари буюртмалари</value>
+  </data>
+  <data name="Table26" xml:space="preserve">
+    <value>Ўқув адабиётлари</value>
+  </data>
+  <data name="Table27" xml:space="preserve">
+    <value>Электрон китоблар</value>
+  </data>
+  <data name="Table28" xml:space="preserve">
+    <value>ИКТ даражаси</value>
+  </data>
+  <data name="Table29" xml:space="preserve">
+    <value>ОТМ ҳақида интернетда маълумот</value>
+  </data>
+  <data name="Table2_1" xml:space="preserve">
+    <value>Талабалар билимини баҳолаш</value>
+  </data>
+  <data name="Table2_2" xml:space="preserve">
+    <value>Иш берувчилар сўровномаси натижалари бўйича битирувчилар малакасини баҳолаш</value>
+  </data>
+  <data name="Table3" xml:space="preserve">
+    <value>ОТМ профессор-ўқитувчилар</value>
+  </data>
+  <data name="Table30" xml:space="preserve">
+    <value>Замонавий ўқув лаборатория</value>
+  </data>
+  <data name="Table31" xml:space="preserve">
+    <value>Замонавий ўқув аудиториялар</value>
+  </data>
+  <data name="Table4" xml:space="preserve">
+    <value>ОТМ контингент</value>
+  </data>
+  <data name="Table5" xml:space="preserve">
+    <value>Хорижий ОТМда дарс бераётган ўқитувчилар </value>
+  </data>
+  <data name="Table6" xml:space="preserve">
+    <value>Хорижий талабалар</value>
+  </data>
+  <data name="Table7" xml:space="preserve">
+    <value>Хориж ОТМлари билан алмашув</value>
+  </data>
+  <data name="Table8" xml:space="preserve">
+    <value>Хорижий лойихалар, конференциялар иштирокчилари</value>
+  </data>
+  <data name="Table9" xml:space="preserve">
+    <value>Профессор-ўқитувчиларидан топ 300 ОТМда охирги 3 йилда дарс ўтганлари ҳақидаги</value>
   </data>
 </root>

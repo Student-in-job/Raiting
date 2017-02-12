@@ -6,9 +6,9 @@
 
 	@{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 	   int count = 1;
-	    }
+	    }    
 
-	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
+	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role == 1)
     {
         <div class="well well-sm">
             <i class="glyphicon glyphicon-download-alt"></i> <a href="/Jadval1/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>

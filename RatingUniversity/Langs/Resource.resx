@@ -1168,4 +1168,109 @@
   <data name="Approve" xml:space="preserve">
     <value>Утвердить</value>
   </data>
+  <data name="Table1" xml:space="preserve">
+    <value>Топ 300 ВУЗов</value>
+  </data>
+  <data name="Table10" xml:space="preserve">
+    <value>Занятия на анлийском в ВУЗе</value>
+  </data>
+  <data name="Table11" xml:space="preserve">
+    <value>Монографии, учебники, учебные пособия, УМК</value>
+  </data>
+  <data name="Table12" xml:space="preserve">
+    <value>Изданные материалы (журналы, книги)</value>
+  </data>
+  <data name="Table13" xml:space="preserve">
+    <value>Международные статьи</value>
+  </data>
+  <data name="Table14" xml:space="preserve">
+    <value>Республиканские статьи</value>
+  </data>
+  <data name="Table15" xml:space="preserve">
+    <value>Сертификаты и патенты</value>
+  </data>
+  <data name="Table16" xml:space="preserve">
+    <value>Сведения о защите докторских</value>
+  </data>
+  <data name="Table17" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Table18" xml:space="preserve">
+    <value>ППС работающий на 0,5 ставки в колледжах</value>
+  </data>
+  <data name="Table19" xml:space="preserve">
+    <value>Призеры олимпиад</value>
+  </data>
+  <data name="Table1_2" xml:space="preserve">
+    <value>Опросы студентов</value>
+  </data>
+  <data name="Table1_7" xml:space="preserve">
+    <value>Знания ППС иностранных языков и ИКТ</value>
+  </data>
+  <data name="Table2" xml:space="preserve">
+    <value>Доктора в топ 300 ВУЗах</value>
+  </data>
+  <data name="Table20" xml:space="preserve">
+    <value>Трудоустройство выпускников бакалавров</value>
+  </data>
+  <data name="Table21" xml:space="preserve">
+    <value>Трудоустройство выпускников магистров</value>
+  </data>
+  <data name="Table22" xml:space="preserve">
+    <value>Информация о лабораториях ВУЗа</value>
+  </data>
+  <data name="Table23" xml:space="preserve">
+    <value>Международные гранты</value>
+  </data>
+  <data name="Table24" xml:space="preserve">
+    <value>Научные гранты</value>
+  </data>
+  <data name="Table25" xml:space="preserve">
+    <value>Договора</value>
+  </data>
+  <data name="Table26" xml:space="preserve">
+    <value>Учебная литература</value>
+  </data>
+  <data name="Table27" xml:space="preserve">
+    <value>Электронные книги</value>
+  </data>
+  <data name="Table28" xml:space="preserve">
+    <value>Уровень ИКТ</value>
+  </data>
+  <data name="Table29" xml:space="preserve">
+    <value>Сведения о ВУЗе в интернете</value>
+  </data>
+  <data name="Table2_1" xml:space="preserve">
+    <value>Оценка знаний студентов</value>
+  </data>
+  <data name="Table2_2" xml:space="preserve">
+    <value>Отзыв работодателей</value>
+  </data>
+  <data name="Table3" xml:space="preserve">
+    <value>ППС ВУЗа</value>
+  </data>
+  <data name="Table30" xml:space="preserve">
+    <value>Современные учебные лаборатории</value>
+  </data>
+  <data name="Table31" xml:space="preserve">
+    <value>Современные учебные классы</value>
+  </data>
+  <data name="Table4" xml:space="preserve">
+    <value>Контингент ВУЗа</value>
+  </data>
+  <data name="Table5" xml:space="preserve">
+    <value>Преподаватели преподающие за рубежом</value>
+  </data>
+  <data name="Table6" xml:space="preserve">
+    <value>Зарубежные стеденты</value>
+  </data>
+  <data name="Table7" xml:space="preserve">
+    <value>Обмен с зарубежными ВУЗами</value>
+  </data>
+  <data name="Table8" xml:space="preserve">
+    <value>Участники международных конференций, проектов</value>
+  </data>
+  <data name="Table9" xml:space="preserve">
+    <value>ППС проводившие зянятия в течении последних 3 лет в топ 300 ВУЗах</value>
+  </data>
 </root>

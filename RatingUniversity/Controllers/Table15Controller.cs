@@ -25,8 +25,8 @@ namespace RatingUniversity.Controllers
             this.listNames.Add("sertifikat");
             this.listNames.Add("patent");
             this.listNames.Add("dalolatnoma");
-            //this.startRow = 8;
-            //this.endRow = 2;
+            this.controllerName = "Table15";
+            this.tableName = "J15";
         }
 
         protected override void FormListOfData(System.Data.DataTable table, string listName)
@@ -59,7 +59,7 @@ namespace RatingUniversity.Controllers
                     if (row[5] != DBNull.Value) record.sertifikat_number = Convert.ToString(row[5]);
                     if (row[6] != DBNull.Value) record.filename = Convert.ToString(row[6]);
                     record.id_university = this.id;
-                    record.year = DateTime.Now.Year;
+                    record.year = this.year;
 
                     this.records0.Add(record);
                 }
@@ -92,7 +92,7 @@ namespace RatingUniversity.Controllers
                     if (row[5] != DBNull.Value) record.sertifikat_number = Convert.ToString(row[5]);
                     if (row[6] != DBNull.Value) record.filename = Convert.ToString(row[6]); 
                     record.id_university = this.id;
-                    record.year = DateTime.Now.Year;
+                    record.year = this.year;
 
                     this.records1.Add(record);
                 }
@@ -125,7 +125,7 @@ namespace RatingUniversity.Controllers
                     if (row[5] != DBNull.Value) record.sertifikat_number = Convert.ToString(row[5]);
                     if (row[6] != DBNull.Value) record.filename = Convert.ToString(row[6]); 
                     record.id_university = this.id;
-                    record.year = DateTime.Now.Year;
+                    record.year = this.year;
 
                     this.records2.Add(record);
                 }
@@ -134,18 +134,17 @@ namespace RatingUniversity.Controllers
 
         protected override void DeleteData()
         {
-            int year = DateTime.Now.Year;
-            IQueryable<effektivnost_nir_sertifikat> rowsToDelete0 = this.db.effektivnost_nir_sertifikat.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<effektivnost_nir_sertifikat> rowsToDelete0 = this.db.effektivnost_nir_sertifikat.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete0)
             {
                 this.db.effektivnost_nir_sertifikat.Remove(row);
             }
-            IQueryable<effektivnost_nir_patent> rowsToDelete1 = this.db.effektivnost_nir_patent.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<effektivnost_nir_patent> rowsToDelete1 = this.db.effektivnost_nir_patent.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete1)
             {
                 this.db.effektivnost_nir_patent.Remove(row);
             }
-            IQueryable<effektivnost_nir_dalolatnoma> rowsToDelete2 = this.db.effektivnost_nir_dalolatnoma.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<effektivnost_nir_dalolatnoma> rowsToDelete2 = this.db.effektivnost_nir_dalolatnoma.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete2)
             {
                 this.db.effektivnost_nir_dalolatnoma.Remove(row);
@@ -168,32 +167,40 @@ namespace RatingUniversity.Controllers
                 this.db.effektivnost_nir_dalolatnoma.Add(newRecord);
             }
             this.db.SaveChanges();
-            //MonitoringUpdate.Update(0, "J15", 0, yil);
+            MonitoringUpdate.Update(this.id, this.tableName, 0, this.year);
         }
         //
         // GET: /Table15/
         public ActionResult Index(int? id)
         {
-            if (this.id == 0)
+            if ((this.id == 0) && (id == null))
             {
-                if (id == null)
-                {
-                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table15", active = this.active });
-                }
+                return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = this.controllerName, active = this.active });
             }
-            else
+            else if (id == null)
             {
                 id = this.id;
             }
-            ViewBag.file = this.fileName;
-            int year = DateTime.Now.Year;
+            ViewBag.id = id;
+            ViewBag.Status = MonitoringUpdate.GetStatus(id, this.tableName, this.year);
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             Table15 modelTable = new Table15();
-            modelTable.sertificat = this.db.effektivnost_nir_sertifikat.Where(model => model.id_university == id && model.year == year).ToList();
-            modelTable.patent = this.db.effektivnost_nir_patent.Where(model => model.id_university == id && model.year == year).ToList();
-            modelTable.dalolatnoma = this.db.effektivnost_nir_dalolatnoma.Where(model => model.id_university == id && model.year == year).ToList();
+            modelTable.sertificat = this.db.effektivnost_nir_sertifikat.Where(model => model.id_university == id && model.year == this.year).ToList();
+            modelTable.patent = this.db.effektivnost_nir_patent.Where(model => model.id_university == id && model.year == this.year).ToList();
+            modelTable.dalolatnoma = this.db.effektivnost_nir_dalolatnoma.Where(model => model.id_university == id && model.year == this.year).ToList();
             return View(modelTable);
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public override ActionResult Approve(int id)
+        {
+            Procedures proc = new Procedures();
+            int year = this.year;
+            int result = proc.P3_5_effektivnost_provodimih_nir(id, year);
+            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
+            return base.Approve(id);
         }
 	}
 }
