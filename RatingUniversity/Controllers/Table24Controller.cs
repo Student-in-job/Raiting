@@ -28,7 +28,7 @@ namespace RatingUniversity.Controllers
             bool flag = false;
             foreach (System.Data.DataRow row in table.Rows)
             {
-                if ((row[0] != DBNull.Value) && (row[1] != DBNull.Value) && (row[2] != DBNull.Value) && (row[3] != DBNull.Value))
+                if ((row[0] != DBNull.Value) && ((row[1] != DBNull.Value) || (row[2] != DBNull.Value) || (row[3] != DBNull.Value)))
                 {
                     if (!flag)
                     {
