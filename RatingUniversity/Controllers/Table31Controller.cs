@@ -19,8 +19,8 @@ namespace RatingUniversity.Controllers
             base.Initialize(requestContext);
             this.fileName = "31_nalichie_multimedia_v_auditorii.xlsx";
             this.listName = "nalichie_multimedia_v_auditorii";
-            //this.startRow = 8;
-            //this.endRow = 2;
+            this.controllerName = "Table31";
+            this.tableName = "J31";
         }
         protected override void FormListOfData(DataTable table)
         {
@@ -46,7 +46,7 @@ namespace RatingUniversity.Controllers
                 if (row[2] != DBNull.Value) record.rooms_total_count = Convert.ToInt32(row[2]);
                 if (row[3] != DBNull.Value) record.rooms_with_multimedia = Convert.ToInt32(row[3]);
                 record.id_university = this.id;
-                record.year = DateTime.Now.Year;
+                record.year = this.year;
 
                 this.records.Add(record);
             }
@@ -54,8 +54,7 @@ namespace RatingUniversity.Controllers
 
         protected override void DeleteData()
         {
-            int year = DateTime.Now.Year;
-            IQueryable<nalichie_multimedia_v_auditorii> rowsToDelete = this.db.nalichie_multimedia_v_auditorii.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<nalichie_multimedia_v_auditorii> rowsToDelete = this.db.nalichie_multimedia_v_auditorii.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete)
             {
                 this.db.nalichie_multimedia_v_auditorii.Remove(row);
@@ -70,27 +69,36 @@ namespace RatingUniversity.Controllers
                 this.db.nalichie_multimedia_v_auditorii.Add(newRecord);
             }
             this.db.SaveChanges();
+            MonitoringUpdate.Update(this.id, this.tableName, 0, this.year);
         }
         //
         // GET: /Table31/
         public ActionResult Index(int? id)
         {
-            if (this.id == 0)
+            if ((this.id == 0) && (id == null))
             {
-                if (id == null)
-                {
-                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table31", active = this.active });
-                }
+                return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = this.controllerName, active = this.active });
             }
-            else
+            else if (id == null)
             {
                 id = this.id;
             }
-            ViewBag.file = this.fileName;
-            int year = DateTime.Now.Year;
+            ViewBag.id = id;
+            ViewBag.Status = MonitoringUpdate.GetStatus(id, this.tableName, this.year);
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.nalichie_multimedia_v_auditorii.Where(model => model.id_university == id && model.year == year).ToList());
+            return View(this.db.nalichie_multimedia_v_auditorii.Where(model => model.id_university == id && model.year == this.year).ToList());
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public override ActionResult Approve(int id)
+        {
+            Procedures proc = new Procedures();
+            int year = this.year;
+            int result = proc.P4_4_stepen_osnashennosti_laboratoriy(id, year);
+            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
+            return base.Approve(id);
         }
 	}
 }

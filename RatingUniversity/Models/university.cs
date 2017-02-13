@@ -16,13 +16,13 @@ namespace RatingUniversity.Models
     {
         public university()
         {
+            this.granti_po_vidam_issledovaniy = new HashSet<granti_po_vidam_issledovaniy>();
             this.chislennost_pps_vuza = new HashSet<chislennost_pps_vuza>();
             this.citiruemost_publikaciy_pps_vuza = new HashSet<citiruemost_publikaciy_pps_vuza>();
             this.darslik = new HashSet<darslik>();
             this.effektivnost_nir_dalolatnoma = new HashSet<effektivnost_nir_dalolatnoma>();
             this.effektivnost_nir_patent = new HashSet<effektivnost_nir_patent>();
             this.effektivnost_nir_sertifikat = new HashSet<effektivnost_nir_sertifikat>();
-            this.granti_po_vidam_issledovaniy = new HashSet<granti_po_vidam_issledovaniy>();
             this.informaciya_o_dissertaciyah = new HashSet<informaciya_o_dissertaciyah>();
             this.kolichestvo_izdannih_mejdunarodnih_statey = new HashSet<kolichestvo_izdannih_mejdunarodnih_statey>();
             this.kolichestvo_izdannih_mestnih_statey = new HashSet<kolichestvo_izdannih_mestnih_statey>();
@@ -47,6 +47,7 @@ namespace RatingUniversity.Models
         public Nullable<int> id_branch { get; set; }
         public string name_UZ { get; set; }
     
+        public virtual ICollection<granti_po_vidam_issledovaniy> granti_po_vidam_issledovaniy { get; set; }
         public virtual branch branch { get; set; }
         public virtual ICollection<chislennost_pps_vuza> chislennost_pps_vuza { get; set; }
         public virtual ICollection<citiruemost_publikaciy_pps_vuza> citiruemost_publikaciy_pps_vuza { get; set; }
@@ -54,7 +55,6 @@ namespace RatingUniversity.Models
         public virtual ICollection<effektivnost_nir_dalolatnoma> effektivnost_nir_dalolatnoma { get; set; }
         public virtual ICollection<effektivnost_nir_patent> effektivnost_nir_patent { get; set; }
         public virtual ICollection<effektivnost_nir_sertifikat> effektivnost_nir_sertifikat { get; set; }
-        public virtual ICollection<granti_po_vidam_issledovaniy> granti_po_vidam_issledovaniy { get; set; }
         public virtual ICollection<informaciya_o_dissertaciyah> informaciya_o_dissertaciyah { get; set; }
         public virtual ICollection<kolichestvo_izdannih_mejdunarodnih_statey> kolichestvo_izdannih_mejdunarodnih_statey { get; set; }
         public virtual ICollection<kolichestvo_izdannih_mestnih_statey> kolichestvo_izdannih_mestnih_statey { get; set; }

@@ -19,14 +19,17 @@ namespace RatingUniversity.Controllers
             this.active = 14;
             base.Initialize(requestContext);
             this.fileName = "12_citiruemost_publikaciy_pps_vuza.xlsx";
-            this.listName = "citiruemost_publikaciy_pps_vuza";
+            this.listNames = new List<string>();
+            this.listNames.Add("eng_lang");
+            this.listNames.Add("rus_uzb_lang");
             this.controllerName = "Table12";
             this.tableName = "J12";
         }
 
-        protected override void FormListOfData(DataTable table)
+        protected override void FormListOfData(DataTable table, string listName)
         {
-            this.records = new List<citiruemost_publikaciy_pps_vuza>();
+            if (this.records == null)
+                this.records = new List<citiruemost_publikaciy_pps_vuza>();
             bool flag = false;
             foreach (System.Data.DataRow row in table.Rows)
             {
@@ -49,8 +52,9 @@ namespace RatingUniversity.Controllers
                 if (row[3] != DBNull.Value) record.info = Convert.ToString(row[3]);
                 if (row[4] != DBNull.Value) record.link = Convert.ToString(row[4]);
                 if (row[5] != DBNull.Value) record.usage = Convert.ToInt32(row[5]);
+                record.lang = (listName == this.listNames[0]) ? (byte)1 : (byte)0;
                 record.id_university = this.id;
-                record.year = DateTime.Now.Year;
+                record.year = this.year;//DateTime.Now.Year;
 
                 this.records.Add(record);
             }
@@ -58,8 +62,7 @@ namespace RatingUniversity.Controllers
 
         protected override void DeleteData()
         {
-            int year = DateTime.Now.Year;
-            IQueryable<citiruemost_publikaciy_pps_vuza> rowsToDelete = this.db.citiruemost_publikaciy_pps_vuza.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<citiruemost_publikaciy_pps_vuza> rowsToDelete = this.db.citiruemost_publikaciy_pps_vuza.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete)
             {
                 this.db.citiruemost_publikaciy_pps_vuza.Remove(row);
@@ -75,28 +78,25 @@ namespace RatingUniversity.Controllers
             }
             this.db.SaveChanges();
             base.SaveData();
+            MonitoringUpdate.Update(this.id, this.tableName, 0, this.year);
         }
         //
         // GET: /Table12/
         public ActionResult Index(int? id)
         {
-            if (this.id == 0)
+            if ((this.id == 0) && (id == null))
             {
-                if (id == null)
-                {
-                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table12", active = this.active });
-                }
+                return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = this.controllerName, active = this.active });
             }
-            else
+            else if (id == null)
             {
                 id = this.id;
             }
             ViewBag.id = id;
-            ViewBag.file = this.fileName;
-            int year = DateTime.Now.Year;
-            IQueryable<university> university = this.db.university.Where(model => model.id == id );
+            ViewBag.Status = MonitoringUpdate.GetStatus(id, this.tableName, this.year);
+            IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.citiruemost_publikaciy_pps_vuza.Where(model => model.id_university == id && model.year == year).ToList());
+            return View(this.db.citiruemost_publikaciy_pps_vuza.Where(model => model.id_university == id && model.year == this.year).ToList());
         }
 
         [Authorize(Roles = "admin")]
@@ -104,8 +104,9 @@ namespace RatingUniversity.Controllers
         public override ActionResult Approve(int id)
         {
             Procedures proc = new Procedures();
-            int year = DateTime.Now.Year;
+            int year = this.year;
             int result = proc.P3_1_citiruemost_publikaciy_pps_vuza(id, year);
+            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
             return base.Approve(id);
         }
 	}

@@ -19,8 +19,8 @@ namespace RatingUniversity.Controllers
             base.Initialize(requestContext);
             this.fileName = "24_summi_respublikanskih_grantov.xlsx";
             this.listName = "summi_uzb_grantov";
-            //this.startRow = 8;
-            //this.endRow = 2;
+            this.controllerName = "Table24";
+            this.tableName = "J24";
         }
         protected override void FormListOfData(DataTable table)
         {
@@ -28,7 +28,7 @@ namespace RatingUniversity.Controllers
             bool flag = false;
             foreach (System.Data.DataRow row in table.Rows)
             {
-                if ((row[0] != DBNull.Value) && (row[1] != DBNull.Value))
+                if ((row[0] != DBNull.Value) && (row[1] != DBNull.Value) && (row[2] != DBNull.Value) && (row[3] != DBNull.Value))
                 {
                     if (!flag)
                     {
@@ -45,11 +45,12 @@ namespace RatingUniversity.Controllers
                 if (row[1] != DBNull.Value) record.iqtisodiyot_tarmogi = Convert.ToString(row[1]);
                 if (row[2] != DBNull.Value) record.buyurtma_name = Convert.ToString(row[2]);
                 if (row[3] != DBNull.Value) record.buyurtma_summa = Convert.ToDouble(row[3]);
+                else record.buyurtma_summa = 0;
                 if (row[4] != DBNull.Value) record.grant_name = Convert.ToString(row[4]);
                 if (row[5] != DBNull.Value) record.grant_summa = Convert.ToDouble(row[5]);
-                //if (row[6] != DBNull.Value) record.grant_summa = Convert.ToDouble(row[6]);
+                else record.grant_summa = 0;
                 record.id_university = this.id;
-                record.year = DateTime.Now.Year;
+                record.year = this.year;
 
                 this.records.Add(record);
             }
@@ -57,8 +58,7 @@ namespace RatingUniversity.Controllers
 
         protected override void DeleteData()
         {
-            int year = DateTime.Now.Year;
-            IQueryable<summi_respublikanskih_grantov> rowsToDelete = this.db.summi_respublikanskih_grantov.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<summi_respublikanskih_grantov> rowsToDelete = this.db.summi_respublikanskih_grantov.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete)
             {
                 this.db.summi_respublikanskih_grantov.Remove(row);
@@ -73,27 +73,36 @@ namespace RatingUniversity.Controllers
                 this.db.summi_respublikanskih_grantov.Add(newRecord);
             }
             this.db.SaveChanges();
+            MonitoringUpdate.Update(this.id, this.tableName, 0, this.year);
         } 
         //
         // GET: /Table24/
         public ActionResult Index(int? id)
         {
-            if (this.id == 0)
+            if ((this.id == 0) && (id == null))
             {
-                if (id == null)
-                {
-                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table24", active = this.active });
-                }
+                return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = this.controllerName, active = this.active });
             }
-            else
+            else if (id == null)
             {
                 id = this.id;
             }
-            ViewBag.file = this.fileName;
-            int year = DateTime.Now.Year;
+            ViewBag.id = id;
+            ViewBag.Status = MonitoringUpdate.GetStatus(id, this.tableName, this.year);
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.summi_respublikanskih_grantov.Where(model => model.id_university == id && model.year == year).ToList());
+            return View(this.db.summi_respublikanskih_grantov.Where(model => model.id_university == id && model.year == this.year).ToList());
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public override ActionResult Approve(int id)
+        {
+            Procedures proc = new Procedures();
+            int year = this.year;
+            int result = proc.P3_4_summa_finansovih_sredstv_na_issledovaniya(id, year);
+            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
+            return base.Approve(id);
         }
 	}
 }

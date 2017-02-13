@@ -17,15 +17,14 @@ namespace RatingUniversity.Models
         public int id { get; set; }
         public string tormog_name { get; set; }
         public string buyurtma_name { get; set; }
-        public Nullable<bool> fundamental { get; set; }
-        public Nullable<bool> amaliy { get; set; }
-        public Nullable<bool> innovatsion { get; set; }
-        public Nullable<bool> lizenziya { get; set; }
-        public Nullable<bool> yarmarka { get; set; }
-        public Nullable<double> summa { get; set; }
-        public Nullable<int> id_university { get; set; }
+        public Nullable<double> fundamental { get; set; }
+        public Nullable<double> amaliy { get; set; }
+        public Nullable<double> innovatsion { get; set; }
+        public Nullable<double> lizenziya { get; set; }
+        public Nullable<double> yarmarka { get; set; }
         public Nullable<int> year { get; set; }
         public string filename { get; set; }
+        public Nullable<int> id_university { get; set; }
     
         public virtual university university { get; set; }
     }

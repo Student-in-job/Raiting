@@ -1,9 +1,13 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
-
+@using MyFunctions = RatingUniversity.Classes.Functions;
+@using Resource = RatingUniversity.Langs.Resource;
 @{
     ViewBag.Title = "Error";
 }
+@{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
 
 <h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<span class="error-message">@ViewBag.ErrorMessage</span>
+
+<a href="@Request.UrlReferrer.AbsolutePath" class="btn btn-primary">@MyFunctions.Translate(Resource.Back, ViewBag.lang, ViewBag.alfabet)</a>
 

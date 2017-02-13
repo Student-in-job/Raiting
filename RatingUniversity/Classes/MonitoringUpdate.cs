@@ -5,6 +5,8 @@ using System.Web;
 using System.Data;
 using System.Data.Entity;
 using RatingUniversity.Models;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace RatingUniversity.Classes
 {
@@ -12,7 +14,6 @@ namespace RatingUniversity.Classes
 	{
 		public static void Update(int UniverId, string fld_name, int status, int yil)
 		{
-
 			using (TablesContext db = new TablesContext())
 			{
 				int c = db.Monitorings.Where(x => x.Year == yil && x.UniverId == UniverId).Count();
@@ -53,5 +54,24 @@ namespace RatingUniversity.Classes
 
 		}
 
+        public static int GetStatus(int? idUniversity, string tableName, int year)
+        {
+            //if ((idUniversity == null) || (idUniversity == 0))
+            //    return -1;
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TablesContext"].ConnectionString);
+            string query = "select " + tableName + " FROM Monitorings WHERE UniverId = @id AND Year = @year";
+            SqlCommand command = new SqlCommand();
+            command.Connection = connection;
+            command.CommandText = query;
+            command.Parameters.Add(new SqlParameter("@id", idUniversity));
+            command.Parameters.Add(new SqlParameter("@year", year));
+            connection.Open();
+            object status = command.ExecuteScalar();
+            connection.Close();
+            if ((status == null) || (status == DBNull.Value))
+                return -1;
+            else    
+                return (int)status;
+        }
 	}
 }

@@ -1,40 +1,51 @@
 ﻿@*using PagedList.Mvc;*@
-@model IEnumerable<RatingUniversity.Models.chislennost_pps_vuza>
-@using MyFunctions = RatingUniversity.Classes.Functions;
-@using Resource = RatingUniversity.Langs.Resource;
+    @model IEnumerable<RatingUniversity.Models.chislennost_pps_vuza>
+    @using MyFunctions = RatingUniversity.Classes.Functions;
+    @using Resource = RatingUniversity.Langs.Resource;
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
     @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
 
     @{
         if (!ViewBag.isAdmin)
-            { 
+        { 
             <div class="well well-sm">
-                <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table3/Download">Скачать шаблон</a>
+                <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table3/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
             </div>
-            using (Html.BeginForm("Upload", "Table3", FormMethod.Post, new { enctype = "multipart/form-data" }))
-            {
-                <fieldset>
-                    <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
-                    <div class="input-group">
-                        <input type="file" class="form-control" name="files" />
-                        <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
-                    </div>
-                </fieldset>
+            if ((ViewBag.status == 0) || (ViewBag.status == -1))
+            { 
+                using (Html.BeginForm("Upload", "Table3", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <fieldset>
+                        <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                        <div class="input-group">
+                            <input type="file" class="form-control" name="files" />
+                            <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+                        </div>
+                    </fieldset>
+                }
             }
         }
         else
         {
-             using (Html.BeginForm("Approve", "Table3", FormMethod.Post))
-            {
-                <fieldset>
-                    <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
-                    <div class="input-group">
-                        <input type="hidden" class="form-control" name="id" value="@ViewBag.id" />
-                        <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="Approve" /></span>
-                    </div>
-                </fieldset>
+            if (ViewBag.status == 0)
+            { 
+                using (Html.BeginForm("Approve", "Table3", FormMethod.Post))
+                {
+                    <fieldset>
+                        <div class="input-group">
+                            <input type="hidden" class="form-control" name="id" value="@ViewBag.id" />
+                            <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Approve, ViewBag.lang, ViewBag.alfabet)" /></span>
+                        </div>
+                    </fieldset>
+                }
             }
+        }
+        if (ViewBag.status == 1)
+        {
+            <div>
+                <p class="bg-success text-center info-success" style="padding:15px;font-size:larger;color:green;font-weight:600">@MyFunctions.Translate(Resource.DTM_danniye_podtverjdeni, ViewBag.lang, ViewBag.alfabet)</p>
+            </div>
         }
     }
 
@@ -46,9 +57,9 @@
                     <th colspan="17" style="text-align:center">@MyFunctions.Translate(Resource.PPSAmount, ViewBag.lang, ViewBag.alfabet)</th>
                 </tr>
                 <tr>
-                    <th colspan="4" style="text-align:center">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th colspan="3" style="text-align:center">@MyFunctions.Translate(Resource.PPSBasicHeader, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th colspan="6" style="text-align:center">@MyFunctions.Translate(Resource.PPSVisitingHeader, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="3" style="text-align:center">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="6" style="text-align:center">@MyFunctions.Translate(Resource.PPSBasicHeader, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th colspan="4" style="text-align:center">@MyFunctions.Translate(Resource.PPSVisitingHeader, ViewBag.lang, ViewBag.alfabet)</th>
                     <th colspan="4" style="text-align:center">@MyFunctions.Translate(Resource.PPSHourlyHeader, ViewBag.lang, ViewBag.alfabet)</th>
                 </tr>
                 <tr>

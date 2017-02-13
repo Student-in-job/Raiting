@@ -55,6 +55,7 @@
         </ObjectGroup>
       </Objects>
     </PublishDatabaseSettings>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -290,9 +291,6 @@
       <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\citiruemost_publikaciy_pps_vuza.cs">
-      <DependentUpon>Final Rating.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\C__MigrationHistory.cs">
       <DependentUpon>Final Rating.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\darslik.cs">
@@ -599,6 +597,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\background.jpg" />
     <Content Include="Images\bullet.png" />
+    <Content Include="Images\global.svg" />
     <Content Include="Images\orderedList0.png" />
     <Content Include="Images\orderedList1.png" />
     <Content Include="Images\orderedList2.png" />
@@ -800,6 +799,7 @@
     <Content Include="Views\Table29\Index.cshtml" />
     <Content Include="Views\Table30\Index.cshtml" />
     <Content Include="Views\Table31\Index.cshtml" />
+    <Content Include="Views\Shared\ErrorFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />

@@ -32,6 +32,11 @@ namespace RatingUniversity.Classes
             return Convert.ToInt32(result);
         }
 
+        public int P1_3_rolvo_uchebnikov_posobiy_umk(int id_university, int year)
+        {
+            this.command.CommandText = "P1_3_rolvo_uchebnikov_posobiy_umk";
+            return this.execProc(id_university, year);
+        }
         public int P3_1_citiruemost_publikaciy_pps_vuza(int id_university, int year)
         {
             this.command.CommandText = "P3_1_citiruemost_publikaciy_pps_vuza";

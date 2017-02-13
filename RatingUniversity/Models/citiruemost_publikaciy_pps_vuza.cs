@@ -22,6 +22,7 @@ namespace RatingUniversity.Models
         public Nullable<int> usage { get; set; }
         public Nullable<int> year { get; set; }
         public Nullable<int> id_university { get; set; }
+        public byte lang { get; set; }
     
         public virtual university university { get; set; }
     }

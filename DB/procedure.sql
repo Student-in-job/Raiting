@@ -1,5 +1,29 @@
 --EXEC P3_11 @year = 2014, @id_university=1
 
+--1.3
+CREATE PROCEDURE P1_3_rolvo_uchebnikov_posobiy_umk
+@id_university int,
+@year int
+AS
+DECLARE  @count int, @id int, @count_uchebniki int, @count_posobiya int, @count_umk int
+begin
+SET @id=(SELECT id FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+SET @count_uchebniki = (SELECT count(id) FROM darslik
+	WHERE id_university=@id_university AND year=@year)
+SET @count_posobiya = (SELECT count(id) FROM qullanma
+	WHERE id_university=@id_university AND year=@year)
+SET @count_umk = (SELECT count(id) FROM majmua
+	WHERE id_university=@id_university AND year=@year)
+SET @count=(SELECT count(id) FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+if (@count=0)
+	INSERT INTO raiting(s1, s2, s3, year, id_university) VALUES (@count_uchebniki, @count_posobiya, @count_umk, @year, @id_university)
+else
+	UPDATE raiting set s1=@count_uchebniki, s2=@count_posobiya, s3=@count_umk WHERE id=@id
+end
+
+GO
 
 --3.1 or i14
 CREATE PROCEDURE P3_1_citiruemost_publikaciy_pps_vuza
@@ -15,8 +39,8 @@ AS
 DECLARE  @count int, @id int, @count_uz_rus int, @count_angl int
 
 begin 
-SET @count_uz_rus=(SELECT sum(usage) FROM citiruemost_publikaciy_pps_vuza WHERE id_university=@id_university AND year=@year)
-SET @count_ang=(SELECT sum(usage) FROM citiruemost_publikaciy_pps_vuza WHERE id_university=@id_university AND year=@year)
+SET @count_uz_rus=(SELECT sum(usage) FROM citiruemost_publikaciy_pps_vuza WHERE id_university=@id_university AND year=@year AND lang=0)
+SET @count_angl=(SELECT sum(usage) FROM citiruemost_publikaciy_pps_vuza WHERE id_university=@id_university AND year=@year AND lang=1)
 
 SET @id=(SELECT id FROM raiting
 	WHERE id_university=@id_university AND year=@year)
@@ -58,8 +82,10 @@ CREATE PROCEDURE P3_3_kolichestvo_sotrudnikov_vuza
 @id_university int,
 @year int
 AS
-DECLARE  @count int, @id int, @count_dis int, @count_uch int, @count_neuch int
+DECLARE  @count int, @id int, @count_pps int, @count_dis int, @count_uch int, @count_neuch int
 begin 
+SET @count_pps =(SELECT ass_shtat FROM chislennost_pps_vuza
+	WHERE id_university=@id_university AND year=@year)
 SET @count_dis=(SELECT count(disser_name) FROM informaciya_o_dissertaciyah
 	WHERE id_university=@id_university AND year=@year)
 SET @count_uch=(SELECT as_fan_doc+as_fan_nom FROM chislennost_pps_vuza
@@ -71,8 +97,8 @@ SET @id=(SELECT id FROM raiting
 SET @count=(SELECT count(id) FROM raiting
 	WHERE id_university=@id_university AND year=@year)
 if (@count=0)
-INSERT INTO raiting(d, z, v, year, id_university) VALUES (@count_dis, @count_uch, @count_neuch, @year, @id_university)
-else UPDATE raiting set d=@count_dis, z=@count_uch, v=@count_neuch WHERE id=@id
+INSERT INTO raiting(p, d, z, v, year, id_university) VALUES (@count_pps, @count_dis, @count_uch, @count_neuch, @year, @id_university)
+else UPDATE raiting set d=@count_dis, z=@count_uch, v=@count_neuch, p=@count_pps WHERE id=@id
 end
 
 GO

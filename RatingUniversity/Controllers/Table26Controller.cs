@@ -19,8 +19,8 @@ namespace RatingUniversity.Controllers
             base.Initialize(requestContext);
             this.fileName = "26_osnashennost_irc_literaturoy.xlsx";
             this.listName = "osnashennost_irc_literaturoy";
-            //this.startRow = 8;
-            //this.endRow = 2;
+            this.controllerName = "Table26";
+            this.tableName = "J26";
         }
         protected override void FormListOfData(DataTable table)
         {
@@ -45,11 +45,11 @@ namespace RatingUniversity.Controllers
                 if (row[1] != DBNull.Value) record.napravlenie = Convert.ToString(row[1]);
                 if (row[2] != DBNull.Value) record.nazvaniya_predmetov = Convert.ToString(row[2]);
                 if (row[3] != DBNull.Value) record.osn_literatura = Convert.ToString(row[3]);
-                if (row[4] != DBNull.Value) record.nalichie_uzb = Convert.ToBoolean(row[4]);
-                if (row[5] != DBNull.Value) record.nalichie_rus = Convert.ToBoolean(row[5]);
-                if (row[6] != DBNull.Value) record.nalichie_angl = Convert.ToBoolean(row[6]);
+                if (row[4] != DBNull.Value) record.nalichie_uzb = (Convert.ToString(row[4]).TrimEnd(' ').TrimStart(' ') == "+");
+                if (row[5] != DBNull.Value) record.nalichie_rus = (Convert.ToString(row[5]).TrimEnd(' ').TrimStart(' ') == "+");
+                if (row[6] != DBNull.Value) record.nalichie_angl = (Convert.ToString(row[6]).TrimEnd(' ').TrimStart(' ') == "+");
                 record.id_university = this.id;
-                record.year = DateTime.Now.Year;
+                record.year = this.year;
 
                 this.records.Add(record);
             }
@@ -57,8 +57,7 @@ namespace RatingUniversity.Controllers
 
         protected override void DeleteData()
         {
-            int year = DateTime.Now.Year;
-            IQueryable<osnashennost_irc_literaturoy> rowsToDelete = this.db.osnashennost_irc_literaturoy.Where(model => model.year == year && model.id_university == this.id);
+            IQueryable<osnashennost_irc_literaturoy> rowsToDelete = this.db.osnashennost_irc_literaturoy.Where(model => model.year == this.year && model.id_university == this.id);
             foreach (var row in rowsToDelete)
             {
                 this.db.osnashennost_irc_literaturoy.Remove(row);
@@ -73,27 +72,36 @@ namespace RatingUniversity.Controllers
                 this.db.osnashennost_irc_literaturoy.Add(newRecord);
             }
             this.db.SaveChanges();
+            MonitoringUpdate.Update(this.id, this.tableName, 0, this.year);
         }
         //
         // GET: /Table26/
         public ActionResult Index(int? id)
         {
-            if (this.id == 0)
+            if ((this.id == 0) && (id == null))
             {
-                if (id == null)
-                {
-                    return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = "Table26", active = this.active });
-                }
+                return RedirectToAction("ListIndex", "BaseInputData", new { controllerName = this.controllerName, active = this.active });
             }
-            else
+            else if (id == null)
             {
                 id = this.id;
             }
-            ViewBag.file = this.fileName;
-            int year = DateTime.Now.Year;
+            ViewBag.id = id;
+            ViewBag.Status = MonitoringUpdate.GetStatus(id, this.tableName, this.year);
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.osnashennost_irc_literaturoy.Where(model => model.id_university == id && model.year == year).ToList());
+            return View(this.db.osnashennost_irc_literaturoy.Where(model => model.id_university == id && model.year == this.year).ToList());
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public override ActionResult Approve(int id)
+        {
+            Procedures proc = new Procedures();
+            int year = this.year;
+            int result = proc.P4_1_osnashennost_irc_literaturoy(id, year);
+            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
+            return base.Approve(id);
         }
 	}
 }

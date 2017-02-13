@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using MyFunctions = RatingUniversity.Classes.Functions;
+@using Resource = RatingUniversity.Langs.Resource;
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@RatingUniversity.Classes.Functions.Translate(ViewBag.Title, ViewBag.lang, ViewBag.alfabet) - @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.PageTitle, ViewBag.lang, ViewBag.alfabet)</title>
+    <title>@MyFunctions.Translate(ViewBag.Title, ViewBag.lang, ViewBag.alfabet) - @MyFunctions.Translate(Resource.PageTitle, ViewBag.lang, ViewBag.alfabet)</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/flipclock.css")
     @Scripts.Render("~/bundles/modernizr")
@@ -14,9 +16,8 @@
     @Scripts.Render("~/Scripts/custom.js")
 </head>
 <body>
-    <div id="top-header" class="" style="height:auto;font-size:36px;font-weight:600;padding:10px 35px 10px 0;text-align:right;background:url(@Request.Url.GetLeftPart(UriPartial.Authority)/Images/background.jpg) no-repeat #fafafa;">
-        <div style="" class="text-primary">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.TopHeader, ViewBag.lang, ViewBag.alfabet)</div>
-    </div>
+    <div id="top-header" class="" style="height:13em;width:100%;background:url(@Request.Url.GetLeftPart(UriPartial.Authority)/Images/header.png) center no-repeat #fff;background-size:contain;"></div>
+    <!--<div style="padding:1em;text-align:center;font-size:24px;font-weight:bold;" class="text-primary">@MyFunctions.Translate(RatingUniversity.Langs.Resource.TopHeader, ViewBag.lang, ViewBag.alfabet)</div>-->
     <div class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
@@ -28,9 +29,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="~/Home/Index">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuHome, ViewBag.lang, ViewBag.alfabet)</a></li>
+                    <li><a href="~/Home/Index">@MyFunctions.Translate(Resource.MainMenuHome, ViewBag.lang, ViewBag.alfabet)</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuRaiting, ViewBag.lang, ViewBag.alfabet) <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@MyFunctions.Translate(Resource.MainMenuRaiting, ViewBag.lang, ViewBag.alfabet) <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <div style="padding:0;width:182%;" class="container navbar-default nav navbar-nav">
                                 @{
@@ -43,7 +44,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuEduQuality, ViewBag.lang, ViewBag.alfabet) <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@MyFunctions.Translate(Resource.MainMenuEduQuality, ViewBag.lang, ViewBag.alfabet) <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <div style="padding:0;width:182%;" class="container navbar-default nav navbar-nav">
                                 @{
@@ -61,17 +62,17 @@
                             if(ViewBag.isAdmin)
                             {
                                 <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuManage, ViewBag.lang, ViewBag.alfabet) <span class="caret"></span></a> 
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@MyFunctions.Translate(Resource.MainMenuManage, ViewBag.lang, ViewBag.alfabet) <span class="caret"></span></a> 
                                     <ul class="dropdown-menu">
-                                        <li class="navbar-default"><a href="~/University/index">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuManageUniver, ViewBag.lang, ViewBag.alfabet)</a></li>
-                                        <li class="navbar-default"><a href="~/Manage/index">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuManageUser, ViewBag.lang, ViewBag.alfabet)</a></li>
+                                        <li class="navbar-default"><a href="~/University/index">@MyFunctions.Translate(Resource.MainMenuManageUniver, ViewBag.lang, ViewBag.alfabet)</a></li>
+                                        <li class="navbar-default"><a href="~/Manage/index">@MyFunctions.Translate(Resource.MainMenuManageUser, ViewBag.lang, ViewBag.alfabet)</a></li>
                                     </ul>
                                 </li>
                             }
                         }
                     }
-                    <li><a href="~/Jadval1/Index/page/1">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuAddData, ViewBag.lang, ViewBag.alfabet)</a></li>
-                    <!--<li><a href="~/Home/About">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.MainMenuAbout, ViewBag.lang, ViewBag.alfabet)</a></li>-->
+                    <li><a href="~/Jadval1/Index/page/1">@MyFunctions.Translate(Resource.MainMenuAddData, ViewBag.lang, ViewBag.alfabet)</a></li>
+                    <!--<li><a href="~/Home/About">@MyFunctions.Translate(Resource.MainMenuAbout, ViewBag.lang, ViewBag.alfabet)</a></li>-->
                 </ul>
                 @Html.Partial("_LoginPartial")
                 <ul class="nav navbar-nav navbar-right">
@@ -79,13 +80,13 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="@Url.Content("~/Images/global.svg")" width="18" height="18" border="0" alt="" /> <span class="caret"></span></a>
                           <ul class="dropdown-menu">
                             <li class="navbar-default">
-                                <a href="@Url.Action("ChangeCulture", "Home", new { lang = "ru-ru" })"><img src="@Url.Content("~/Images/ru.png")" width="24" height="24" border="0" alt="" /> @RatingUniversity.Langs.Resource.RU</a>
+                                <a href="@Url.Action("ChangeCulture", "Home", new { lang = "ru-ru" })"><img src="@Url.Content("~/Images/ru.png")" width="24" height="24" border="0" alt="" /> @Resource.RU</a>
                             </li>
                             <li class="navbar-default">
-                                <a href="@Url.Action("ChangeCulture", "Home", new { lang = "uz-Cyrl-UZ" })"><img src="@Url.Content("~/Images/uz.png")" width="24" height="24" border="0" alt="" /> @RatingUniversity.Langs.Resource.UZCyrillic</a>
+                                <a href="@Url.Action("ChangeCulture", "Home", new { lang = "uz-Cyrl-UZ" })"><img src="@Url.Content("~/Images/uz.png")" width="24" height="24" border="0" alt="" /> @Resource.UZCyrillic</a>
                             </li>
                             <li class="navbar-default">
-                                <a href="@Url.Action("ChangeCulture", "Home", new { lang = "uz-Latn-UZ" })"><img src="@Url.Content("~/Images/uz.png")" width="24" height="24" border="0" alt="" /> @RatingUniversity.Langs.Resource.UZLatin</a>
+                                <a href="@Url.Action("ChangeCulture", "Home", new { lang = "uz-Latn-UZ" })"><img src="@Url.Content("~/Images/uz.png")" width="24" height="24" border="0" alt="" /> @Resource.UZLatin</a>
                             </li>
                         </ul>
                     </li>
@@ -98,14 +99,14 @@
         <hr />
         <footer>
             <div class="col-md-4">
-                <p>Copyright © 2014 - @DateTime.Now.Year <a href="http://edu.uz/" title="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.FooterCopyrightMinistry, ViewBag.lang, ViewBag.alfabet)">Edu.uz</a> & <a href="http://dtm.uz/" title="@RatingUniversity.Langs.Resource.FooterCopyrightDtm">DTM.uz</a></p>
-                <p>@RatingUniversity.Langs.Resource.FooterCopyrightAllRightReserved</p>
+                <p>Copyright © 2014 - @DateTime.Now.Year <a href="http://edu.uz/" title="@MyFunctions.Translate(Resource.FooterCopyrightMinistry, ViewBag.lang, ViewBag.alfabet)">Edu.uz</a> & <a href="http://dtm.uz/" title="@Resource.FooterCopyrightDtm">DTM.uz</a></p>
+                <p>@Resource.FooterCopyrightAllRightReserved</p>
             </div>
-            <div class="col-md-4 text-muted">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.FooterCopyrightInfo, ViewBag.lang, ViewBag.alfabet)</div>
-            <div class="col-md-4">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.FooterCopyrightDev, ViewBag.lang, ViewBag.alfabet)
-                <a href="http://tuit.uz/" title="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.FooterCopyrightTuit, ViewBag.lang, ViewBag.alfabet)">@RatingUniversity.Langs.Resource.FooterCopyrightTuitAbbr</a>
+            <div class="col-md-4 text-muted">@MyFunctions.Translate(Resource.FooterCopyrightInfo, ViewBag.lang, ViewBag.alfabet)</div>
+            <div class="col-md-4">@MyFunctions.Translate(Resource.FooterCopyrightDev, ViewBag.lang, ViewBag.alfabet)
+                <a href="http://tuit.uz/" title="@MyFunctions.Translate(Resource.FooterCopyrightTuit, ViewBag.lang, ViewBag.alfabet)">@RatingUniversity.Langs.Resource.FooterCopyrightTuitAbbr</a>
                 &
-                <a href="http://nuu.uz/" title="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.FooterCopyrightNuu, ViewBag.lang, ViewBag.alfabet)">@RatingUniversity.Langs.Resource.FooterCopyrightNuuAbbr</a></div>
+                <a href="http://nuu.uz/" title="@MyFunctions.Translate(Resource.FooterCopyrightNuu, ViewBag.lang, ViewBag.alfabet)">@RatingUniversity.Langs.Resource.FooterCopyrightNuuAbbr</a></div>
         </footer>
     </div>
     
