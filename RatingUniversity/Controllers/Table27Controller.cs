@@ -72,7 +72,7 @@ namespace RatingUniversity.Controllers
                 this.db.nalichie_elektronnoy_literaturi.Add(newRecord);
             }
             this.db.SaveChanges();
-            MonitoringUpdate.Update(this.id, this.controllerName, 0, this.year);
+            MonitoringUpdate.Update(this.id, this.tableName, 0, this.year);
         }
         //
         // GET: /Table27/

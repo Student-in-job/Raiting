@@ -8,19 +8,46 @@
     @{ Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
 
     @{
-        <div class="well well-sm">
-            <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table28/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
-        </div>
-
-        using (Html.BeginForm("Upload", "Table28", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        if (!ViewBag.isAdmin)
+        { 
+            <div class="well well-sm">
+                <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table28/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+            </div>
+        
+            if ((ViewBag.status == 0) || (ViewBag.status == -1))
+            {
+                using (Html.BeginForm("Upload", "Table28", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <fieldset>
+                        <legend>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                        <div class="input-group">
+                            <input type="file" class="form-control" name="files" />
+                            <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+                        </div>
+                    </fieldset>
+                }
+            }
+        }
+        else
         {
-            <fieldset>
-                <legend>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
-                <div class="input-group">
-                    <input type="file" class="form-control" name="files" />
-                    <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
-                </div>
-            </fieldset>
+            if (ViewBag.status == 0)
+            { 
+                using (Html.BeginForm("Approve", "Table28", FormMethod.Post))
+                {
+                    <fieldset>
+                        <div class="input-group">
+                            <input type="hidden" class="form-control" name="id" value="@ViewBag.id" />
+                            <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Approve, ViewBag.lang, ViewBag.alfabet)" /></span>
+                        </div>
+                    </fieldset>
+                }
+            }
+        }
+        if (ViewBag.status == 1)
+        {
+            <div>
+                <p class="bg-success text-center info-success" style="padding:15px;font-size:larger;color:green;font-weight:600">@MyFunctions.Translate(Resource.DTM_danniye_podtverjdeni, ViewBag.lang, ViewBag.alfabet)</p>
+            </div>
         }
     }
 
@@ -58,7 +85,7 @@
                         index++;
                         <tr>
                             <td>@index</td>
-                            <td>@Html.DisplayFor(modelItem => item.university)</td>
+                            <td>@ViewBag.university</td>
                             <td>@Html.DisplayFor(modelItem => item.pc_count)</td>
                             <td>@Html.DisplayFor(modelItem => item.pc_in_local_netw_count)</td>
                             <td>@Html.DisplayFor(modelItem => item.pc_with_intenet_count)</td>

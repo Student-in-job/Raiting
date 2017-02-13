@@ -84,6 +84,7 @@ namespace RatingUniversity.Controllers
                 id = this.id;
             }
             ViewBag.id = id;
+            ViewBag.Status = MonitoringUpdate.GetStatus(id, this.tableName, this.year);
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             return View(this.db.nalichie_informacii_o_vuze_v_internete.Where(model => model.id_university == id && model.year == this.year).ToList());
