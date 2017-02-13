@@ -16,7 +16,7 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            <label for="name_ru" class="col-sm-4 control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_RU, ViewBag.lang, ViewBag.alfabet)</label>
+            <label for="name_ru" class="col-sm-3 control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_RU, ViewBag.lang, ViewBag.alfabet)</label>
             <div class="col-sm-8">
                 @Html.TextBoxFor(model => model.name_RU, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.name_RU)
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-            <label for="name_uz" class="col-sm-4 control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_UZ, ViewBag.lang, ViewBag.alfabet)</label>
+            <label for="name_uz" class="col-sm-3 control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_UZ, ViewBag.lang, ViewBag.alfabet)</label>
             <div class="col-sm-8">
                 @Html.TextBoxFor(model => model.name_UZ, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.name_UZ)
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            <label for="id_region" class="col-sm-4 control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityRegion, ViewBag.lang, ViewBag.alfabet)</label>
+            <label for="id_region" class="col-sm-3 control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityRegion, ViewBag.lang, ViewBag.alfabet)</label>
             <div class="col-sm-8">
                 @Html.DropDownListFor(m => m.id_region, new System.Web.Mvc.SelectList(ViewBag.Regions, "id", "name_" + ViewBag.lang), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_region)
@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            <label for="id_branch" class="col-sm-4 control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityBranch, ViewBag.lang, ViewBag.alfabet)</label>
+            <label for="id_branch" class="col-sm-3 control-label">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityBranch, ViewBag.lang, ViewBag.alfabet)</label>
             <div class="col-sm-8">
                 @Html.TextBoxFor(m => m.id_branch, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_branch)
@@ -48,7 +48,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-sm-offset-4 col-sm-8">
+            <div class="col-sm-offset-3 col-sm-8">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </div>
