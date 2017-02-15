@@ -598,6 +598,7 @@
     <Content Include="Images\background.jpg" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\global.svg" />
+    <Content Include="Images\header.png" />
     <Content Include="Images\orderedList0.png" />
     <Content Include="Images\orderedList1.png" />
     <Content Include="Images\orderedList2.png" />
