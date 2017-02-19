@@ -1297,4 +1297,7 @@
   <data name="WrongPDF" xml:space="preserve">
     <value>Отправлен не PDF файл</value>
   </data>
+  <data name="View" xml:space="preserve">
+    <value>Куриш</value>
+  </data>
 </root>

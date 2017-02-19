@@ -27,7 +27,8 @@ namespace RatingUniversity.Controllers
             this.listNames.Add("qullanma");
             this.listNames.Add("majmua");
             this.controllerName = "Table11";
-            this.tableName = "J11";            
+            this.tableName = "J11";
+            this.procedureName = "P1_3_kolvo_uchebnikov_posobiy_umk";
         }
 
         protected override void FormListOfData(System.Data.DataTable table, string listName)
@@ -231,15 +232,15 @@ namespace RatingUniversity.Controllers
             return View(modelTable);
         }
 
-        [Authorize(Roles = "admin")]
-        [HttpPost]
-        public override ActionResult Approve(int id)
-        {
-            Procedures proc = new Procedures();
-            int result = proc.P1_3_rolvo_uchebnikov_posobiy_umk(id, this.year);
-            result = proc.P3_2_kolichestvo_izdannih_statey(id, year);
-            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
-            return base.Approve(id);
-        }
+        //[Authorize(Roles = "admin")]
+        //[HttpPost]
+        //public override ActionResult Approve(int id)
+        //{
+        //    Procedures proc = new Procedures();
+        //    int result = proc.P1_3_kolvo_uchebnikov_posobiy_umk(id, this.year);
+        //    result = proc.P3_2_kolichestvo_izdannih_statey(id, year);
+        //    MonitoringUpdate.Update(id, this.tableName, 1, this.year);
+        //    return base.Approve(id);
+        //}
 	}
 }

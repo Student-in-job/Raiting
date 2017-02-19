@@ -4241,6 +4241,17 @@ namespace RatingUniversity.Langs
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Просмотр.
+        /// </summary>
+        public static string View
+        {
+            get
+            {
+                return ResourceManager.GetString("View", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Возможность получения информации о ВУЗе из Интернета.
         /// </summary>
         public static string WebHeader

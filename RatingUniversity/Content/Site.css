@@ -39,6 +39,14 @@ font-weight: bold;
     text-transform:uppercase;
 }
 
+.info-failed {
+    padding:15px;
+    font-size:larger;
+    color:red;
+    font-weight:600;
+    text-transform:uppercase;
+}
+
 .error-message {
     font-size:large;
     color:red;

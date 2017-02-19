@@ -1,7 +1,30 @@
 --EXEC P3_11 @year = 2014, @id_university=1
 
+--1.1
+CREATE PROCEDURE P1_1_kachestvo_uchebnoy_raboti
+@id_university int,
+@year int
+AS
+DECLARE  @count int, @id int, @count_master int, @count_phd int
+begin
+SET @id=(SELECT id FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+SET @count_phd=(SELECT count(id) FROM Jadval2 
+	WHERE UniversityId=@id_university AND year=@year AND Phd_nomer IS NOT NULL)
+SET @count_master=(SELECT count(id) FROM Jadval2 
+	WHERE UniversityId=@id_university AND year=@year AND Mag_nomer IS NOT NULL)
+SET @count=(SELECT count(id) FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+if(@count=0)
+	INSERT INTO raiting(px, py, year, id_university) VALUES (@count_phd, @count_master, @year, @id_university)
+else
+	UPDATE raiting set px=@count_phd, py=@count_master WHERE id=@id
+end
+
+GO
+
 --1.3
-CREATE PROCEDURE P1_3_rolvo_uchebnikov_posobiy_umk
+CREATE PROCEDURE P1_3_kolvo_uchebnikov_posobiy_umk
 @id_university int,
 @year int
 AS
