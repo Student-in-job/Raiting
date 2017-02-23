@@ -29,6 +29,7 @@ namespace RatingUniversity.Controllers
         protected string tableName;
         protected string controllerName;
         protected int year;
+        protected string procedureName;
 
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
@@ -37,7 +38,7 @@ namespace RatingUniversity.Controllers
             this.year = DateTime.Now.Year;
         }
 
-        protected void ReadDataFromExcelFiles()
+        protected virtual void ReadDataFromExcelFiles()
         {
             try
             {
@@ -82,6 +83,9 @@ namespace RatingUniversity.Controllers
             MonitoringUpdate.Update(id, this.tableName, 0, year);
         }
 
+        protected virtual void UpdateFileName(string fileName, int recordId)
+        { }
+
         //
         // GET: /BaseInputData/
         //[Authorize(Roles="user")]
@@ -100,17 +104,25 @@ namespace RatingUniversity.Controllers
         }
 
         [Authorize(Roles="user")]
-        public FileResult Download()
+        public virtual ActionResult Download()
         {
-            string fullFileName = Server.MapPath("~/Files/"+this.fileName);
-            byte[] fileBytes = System.IO.File.ReadAllBytes(fullFileName);
-            string client_fileName = this.fileName;
-            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, client_fileName);
+            try
+            {
+                string fullFileName = Server.MapPath("~/Files/" + this.fileName);
+                byte[] fileBytes = System.IO.File.ReadAllBytes(fullFileName);
+                string client_fileName = this.fileName;
+                return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, client_fileName);
+            }
+            catch (Exception exp)
+            {
+                ViewBag.ErrorMessage = exp.Message;
+                return View("Error", new HandleErrorInfo(exp, this.controllerName, "Download"));
+            }
         }
 
         [Authorize(Roles="user")]
         [HttpPost]
-        public ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
+        public virtual ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
         {
             try
             {
@@ -158,9 +170,62 @@ namespace RatingUniversity.Controllers
         [HttpPost]
         public virtual ActionResult Approve(int id)
         {
-            int year = DateTime.Now.Year;
-            MonitoringUpdate.Update(id, this.tableName, 1, year);
-            return RedirectToAction("index", this.controllerName, new { id = id });
+            try
+            {
+                Procedures proc = new Procedures();
+                int result = proc.Executeprocedure(this.procedureName, id, this.year);
+                MonitoringUpdate.Update(id, this.tableName, 1, this.year);
+                return RedirectToAction("index", this.controllerName, new { id = id });
+            }
+            catch (Exception exp)
+            {
+                ViewBag.ErrorMessage = exp.Message;
+                return View("Error", new HandleErrorInfo(exp, this.controllerName, "Approve"));
+            }
+        }
+
+        [Authorize(Roles = "user")]
+        [HttpPost]
+        public virtual ActionResult UploadFiles(IEnumerable<HttpPostedFileBase> files, int id)
+        {
+            try
+            {
+                if (files != null)
+                {
+                    string fileName;
+                    string fileExtension;
+                    foreach (var file in files)
+                    {
+                        fileExtension = Path.GetExtension(file.FileName);
+                        fileName = Path.GetFileName(file.FileName);
+
+                        if (fileExtension == ".pdf")
+                        {
+                            //Save the uploaded file to the application folder.
+                            string filePath = this.year.ToString() + "/" + this.id.ToString() + "/" + this.tableName + "/";
+                            string savePath = Server.MapPath("~/Files/Upload/");
+                            DirectoryInfo di = new DirectoryInfo(savePath + filePath);
+                            if (!di.Exists)
+                                Directory.CreateDirectory(savePath + filePath);
+                            string saveFileName = filePath + id + DateTime.Now.ToString("_yyyy_MM_dd_HH_mm_ss") + fileExtension;
+                            file.SaveAs(savePath + saveFileName);
+                            this.UpdateFileName(saveFileName, id);
+                        }
+                        else
+                        {
+                            //TODO: Send Alert to the users file not supported.
+                            ViewBag.Error = ErrorCodes.NotPDF;
+                            return View("ErrorFile");
+                        }
+                    }
+                }
+                return Redirect(Request.UrlReferrer.ToString());
+            }
+            catch (Exception exp)
+            {
+                ViewBag.ErrorMessage = exp.Message;
+                return View("Error", new HandleErrorInfo(exp, this.controllerName, "UploadFiles"));
+            }
         }
 	}
 }

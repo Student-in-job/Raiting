@@ -26,15 +26,37 @@ namespace RatingUniversity.Classes
         {
             command.Parameters["@id_university"].Value = id_university;
             command.Parameters["@year"].Value = year;
-            this.connection.Open();
-            object result = command.ExecuteScalar();
-            this.connection.Close();
-            return Convert.ToInt32(result);
+            try
+            {
+                this.connection.Open();
+                object result = command.ExecuteScalar();
+                return Convert.ToInt32(result);
+            }
+            catch (Exception exp)
+            {
+                throw new Exception("Error executing procedure", exp);
+            }
+            finally
+            {
+                this.connection.Close();
+            }
         }
 
-        public int P1_3_rolvo_uchebnikov_posobiy_umk(int id_university, int year)
+        public int Executeprocedure(string procName, int id_university, int year)
         {
-            this.command.CommandText = "P1_3_rolvo_uchebnikov_posobiy_umk";
+            this.command.CommandText = procName;
+            return this.execProc(id_university, year);
+        }
+
+        public int P1_1_kachestvo_uchebnoy_raboti(int id_university, int year)
+        {
+            this.command.CommandText = "P1_1_kachestvo_uchebnoy_raboti";
+            return this.execProc(id_university, year);
+        }
+
+        public int P1_3_kolvo_uchebnikov_posobiy_umk(int id_university, int year)
+        {
+            this.command.CommandText = "P1_3_kolvo_uchebnikov_posobiy_umk";
             return this.execProc(id_university, year);
         }
         public int P3_1_citiruemost_publikaciy_pps_vuza(int id_university, int year)
