@@ -4327,5 +4327,12 @@ namespace RatingUniversity.Langs
                 return ResourceManager.GetString("WrongPDF", resourceCulture);
             }
         }
-    }
+
+        public static string MainMenuMonitoring 
+        { 
+            get
+            {
+            return ResourceManager.GetString("MainMenuMonitoring", resourceCulture);
+            }
+        }
 }

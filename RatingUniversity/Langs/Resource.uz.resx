@@ -1300,4 +1300,7 @@
   <data name="View" xml:space="preserve">
     <value>Куриш</value>
   </data>
+  <data name="MainMenuMonitoring" xml:space="preserve">
+    <value>Monitoring</value>
+  </data>
 </root>

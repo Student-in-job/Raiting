@@ -8,10 +8,13 @@
     <title>@MyFunctions.Translate(ViewBag.Title, ViewBag.lang, ViewBag.alfabet) - @MyFunctions.Translate(Resource.PageTitle, ViewBag.lang, ViewBag.alfabet)</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/flipclock.css")
+    @Styles.Render("~/Content/Some.css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/flipclock.js")
+    @Scripts.Render("~/Scripts/jquery.treegrid.js")
+    @Scripts.Render("~/Scripts/jquery.treegrid.bootstrap3.js")
     @Styles.Render("~/Content/custom.min.css")
     @Scripts.Render("~/Scripts/custom.js")
 </head>
@@ -68,6 +71,7 @@
                                         <li class="navbar-default"><a href="~/Manage/index">@MyFunctions.Translate(Resource.MainMenuManageUser, ViewBag.lang, ViewBag.alfabet)</a></li>
                                     </ul>
                                 </li>
+                                <li><a href="~/Monitoring/">@MyFunctions.Translate(Resource.MainMenuMonitoring, ViewBag.lang, ViewBag.alfabet)</a></li>
                             }
                         }
                     }
