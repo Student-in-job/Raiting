@@ -4328,11 +4328,12 @@ namespace RatingUniversity.Langs
             }
         }
 
-        public static string MainMenuMonitoring 
-        { 
+        public static string MainMenuMonitoring
+        {
             get
             {
-            return ResourceManager.GetString("MainMenuMonitoring", resourceCulture);
+                return ResourceManager.GetString("MainMenuMonitoring", resourceCulture);
             }
         }
+    }
 }
