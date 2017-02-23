@@ -117,8 +117,8 @@
                         @Html.DisplayFor(modelItem => item.Ishga_qabul_buyruq)
                     </td>
                     <td>
-                        @{string file = "/Files/Upload/" + item.AsosFile;}
-                        <a href=@file>@MyFunctions.Translate(Resource.View, ViewBag.lang, ViewBag.alfabet)</a>
+                        @{string fileLink = "/Scripts/ViewerJS/#../../Files/Upload/" + item.AsosFile;}
+                        <a href=@fileLink>@MyFunctions.Translate(Resource.View, ViewBag.lang, ViewBag.alfabet)</a>
                         <br />
                         @using (Html.BeginForm("UploadFiles", "Jadval2", FormMethod.Post, new { enctype = "multipart/form-data" }))
                         {

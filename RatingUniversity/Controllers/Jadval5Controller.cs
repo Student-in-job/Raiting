@@ -18,14 +18,17 @@ using System.Globalization;
 
 namespace RatingUniversity.Controllers
 {
-	public class Jadval5Controller : BaseViewController
+	public class Jadval5Controller : BaseInputDataController
     {
-        int active;
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
             this.active = 7;
             base.Initialize(requestContext);
             ViewBag.active = Functions.CreateActive(this.active, 34);
+            this.tableName = "J5";
+            this.controllerName = "Jadval5";
+            this.fileName = "table5.xls";
+            this.controllerName = "";
         }
         //
         // GET: /Jadval5/
@@ -33,19 +36,18 @@ namespace RatingUniversity.Controllers
 		public ActionResult Index(int? id, int? page)
 		{
 			TablesContext db = new TablesContext();
-			int yil = Int32.Parse(DateTime.Now.Year.ToString());
 			int? UniverId = this.id;
 			if (id == null && User.IsInRole("admin")) return View("List", db.university.ToList());
 			else if (id != null && User.IsInRole("admin")) UniverId = id;
 
-			var list = db.Jadval5.Where(pr => pr.Year == yil).Where(y => y.UniversityId == UniverId).OrderBy(j => j.Year);
+			var list = db.Jadval5.Where(pr => pr.Year == this.year).Where(y => y.UniversityId == UniverId).OrderBy(j => j.Year);
 			ViewBag.bor = true;
 			if (list.Count() == 0)
 				ViewBag.bor = false;
 
-			int? status_table = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.J5).FirstOrDefault();
+			int? status_table = db.Monitorings.Where(x => x.Year == this.year).Where(y => y.UniverId == UniverId).Select(z => z.J5).FirstOrDefault();
 			ViewBag.status = status_table;
-			DateTime? status_dt = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
+			DateTime? status_dt = db.Monitorings.Where(x => x.Year == this.year).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
 			ViewBag.status_date = 0;
 			ViewBag.date = status_dt;
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
@@ -64,22 +66,13 @@ namespace RatingUniversity.Controllers
 		[Authorize(Roles = "admin")]
 		public ActionResult Tasdiqlash(int UniverId = 0)
 		{
-			int yil = Int32.Parse(DateTime.Now.Year.ToString());
-			MonitoringUpdate.Update(UniverId, "J5", 1, yil);
+			MonitoringUpdate.Update(UniverId, "J5", 1, this.year);
 			return RedirectToAction("Index", "Jadval5");
-		}
-		[Authorize(Roles = "admin, user")]
-		public FileResult Download()
-		{
-			string filename = Server.MapPath("~/Files/table5.xls");
-			byte[] fileBytes = System.IO.File.ReadAllBytes(filename);
-			string client_fileName = "table5.xls";
-			return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, client_fileName);
 		}
 
 		[HttpPost]
 		[Authorize(Roles = "user")]
-		public ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
+		public override ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
 		{
 			if (files != null)
 			{
@@ -93,9 +86,8 @@ namespace RatingUniversity.Controllers
 					if (fileExtension == ".xls" || fileExtension == ".xlsx")
 					{
 						//Save the uploaded file to the application folder.
-						string yil = DateTime.Now.Year.ToString();
 						string ID_upl = this.id.ToString();
-						string savepath = Server.MapPath("~/Files/Upload/") + yil + "/" + ID_upl + "/";
+						string savepath = Server.MapPath("~/Files/Upload/") + this.year + "/" + ID_upl + "/";
 						Directory.CreateDirectory(savepath);
 						string savedExcelFiles = savepath + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
 						f.SaveAs(savedExcelFiles);
@@ -168,8 +160,7 @@ namespace RatingUniversity.Controllers
 
 			using (TablesContext db = new TablesContext())
 			{
-				int yil = Int32.Parse(DateTime.Now.Year.ToString());
-				IQueryable<Jadval5> deleteRows = db.Jadval5.Where(x => x.Year == yil).Where(y => y.UniversityId == UniverId);
+				IQueryable<Jadval5> deleteRows = db.Jadval5.Where(x => x.Year == this.year).Where(y => y.UniversityId == UniverId);
 				foreach (var row in deleteRows)
 				{
 					db.Jadval5.Remove(row);
@@ -179,59 +170,63 @@ namespace RatingUniversity.Controllers
 				foreach (var t in uploadExl)
 					db.Jadval5.Add(t);
 				db.SaveChanges();
-				MonitoringUpdate.Update(UniverId, "J5", 0, yil);
+				MonitoringUpdate.Update(UniverId, "J5", 0, this.year);
 
 			}
 
 		}
 
-		[Authorize(Roles = "user")]
-		public ActionResult UploadData(IEnumerable<HttpPostedFileBase> files, int id)
-		{
-			if (files != null)
-			{
-				string fileName;
-				string filepath;
-				string fileExtension;
+        protected override void UpdateFileName(string fileName, int recordId)
+        {
+            TablesContext db = new TablesContext();
+            Jadval5 record = db.Jadval5.Find(recordId);
+            record.Asos_fayl = fileName;
+            db.Entry(record).State = EntityState.Modified;
+            db.SaveChanges();
+        }
 
-				foreach (var f in files)
-				{
-					SetFileDetails(f, out fileName, out filepath, out fileExtension);
+//        [Authorize(Roles = "user")]
+//        public ActionResult UploadData(IEnumerable<HttpPostedFileBase> files, int id)
+//        {
+//            if (files != null)
+//            {
+//                string fileName;
+//                string filepath;
+//                string fileExtension;
+
+//                foreach (var f in files)
+//                {
+//                    SetFileDetails(f, out fileName, out filepath, out fileExtension);
 					
-					if (fileExtension == ".pdf")
-					{
-						//Save the uploaded file to the application folder.
-						string yil = DateTime.Now.Year.ToString();
-						string ID_upl = this.id.ToString();
-						string savepath = Server.MapPath("~/Files/Upload/") + yil + "/" + ID_upl + "/J5/";
-						Directory.CreateDirectory(savepath);
-						string savedFiles = savepath + id.ToString() + "_" + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
-						f.SaveAs(savedFiles);
-						TablesContext db=new TablesContext();
-						Jadval5 j = db.Jadval5.Find(id);
-						j.Asos_fayl = id.ToString() + "_" + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
-						db.Entry(j).State = EntityState.Modified;
-						db.SaveChanges();
-					}
-					else
-					{
-						//TODO: Send Alert to the users file not supported.
-//						return Content("Faqat pdf fayl yuklanishi kerak!");
+//                    if (fileExtension == ".pdf")
+//                    {
+//                        //Save the uploaded file to the application folder.
+//                        string ID_upl = this.id.ToString();
+//                        string savepath = Server.MapPath("~/Files/Upload/") + this.year + "/" + ID_upl + "/J5/";
+//                        Directory.CreateDirectory(savepath);
+//                        string savedFiles = savepath + id.ToString() + "_" + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
+//                        f.SaveAs(savedFiles);
+						
+//                    }
+//                    else
+//                    {
+//                        //TODO: Send Alert to the users file not supported.
+////						return Content("Faqat pdf fayl yuklanishi kerak!");
 
-						return Content("" +
-						"<HTML>" +
-						"<HEAD>" +
-						"<META HTTP-EQUIV='REFRESH' CONTENT='3; URL="+HttpContext.Request.UrlReferrer.ToString()+"'>" +
-						"</HEAD>" +
-						"<BODY>" +
-						"Faqat pdf fayl yuklanishi kerak!" +
-						"</BODY>" +
-						"</HTML>");
-					}
-				}
-			}
-			return RedirectToAction("Index", "Jadval5");
-		}
+//                        return Content("" +
+//                        "<HTML>" +
+//                        "<HEAD>" +
+//                        "<META HTTP-EQUIV='REFRESH' CONTENT='3; URL="+HttpContext.Request.UrlReferrer.ToString()+"'>" +
+//                        "</HEAD>" +
+//                        "<BODY>" +
+//                        "Faqat pdf fayl yuklanishi kerak!" +
+//                        "</BODY>" +
+//                        "</HTML>");
+//                    }
+//                }
+//            }
+//            return RedirectToAction("Index", "Jadval5");
+//        }
 
 		[Authorize(Roles = "admin")]
 		public ActionResult Status(int? id)
