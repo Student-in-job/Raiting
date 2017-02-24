@@ -1,353 +1,173 @@
-﻿@model List<RatingUniversity.Models.Monitorings>
+﻿@model IEnumerable<RatingUniversity.Models.university>
+@using MyFunctions = RatingUniversity.Classes.Functions;
+@using Resource = RatingUniversity.Langs.Resource;
 
-@{
-    ViewBag.Title = "Monitoring";
-}
+    @{
+        ViewBag.Title = "Monitoring";
+    }
 
-<h2>Monitoring</h2>
+    <h2>Monitoring</h2>
 
-<table class="table table-bordered">
-    <tr>@*
-        <th>
-            @Html.DisplayNameFor(model => model.J1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J4)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J5)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J6)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J7)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J8)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J9)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J10)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J11)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J12)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J13)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J14)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J15)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J16)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J17)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J18)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J19)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J20)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J21)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J22)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J23)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J24)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J25)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J26)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J27)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J28)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J29)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J30)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J31)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J1_2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J1_7)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J2_1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.J2_2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Year)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UniverId)
-        </th>*@
+        <table class="table table-striped table-hover tree">
+            <thead>
+                <tr>
+                    <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AccountUniversity, ViewBag.lang, ViewBag.alfabet)</th>
+                    <th>Итоги</th>
+                </tr>
+            </thead>
+            <tr class="treegrid-1">
+                <td>1. TUIT</td>
+                <td>31/32</td>
+            </tr>
+            <tr class="treegrid-2 treegrid-parent-1">
+                <td><a href="~/Jadval1">@MyFunctions.Translate(Resource.Table1, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-minus" style="color:red;"></i></td>
+            </tr>
+            <tr class="treegrid-3 treegrid-parent-1">
+                <td><a href="~/Jadval1_2">@MyFunctions.Translate(Resource.Table1_2, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-4 treegrid-parent-1">
+                <td><a href="~/Jadval1_7">@MyFunctions.Translate(Resource.Table1_7, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-5 treegrid-parent-1">
+                <td><a href="~/Jadval2">@MyFunctions.Translate(Resource.Table2, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-6 treegrid-parent-1">
+                <td><a href="~/Jadval2_1">@MyFunctions.Translate(Resource.Table2_1, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-7 treegrid-parent-1">
+                <td><a href="~/Jadval2_2">@MyFunctions.Translate(Resource.Table2_2, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-8 treegrid-parent-1">
+                <td><a href="~/Table3">@MyFunctions.Translate(Resource.Table3, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-9 treegrid-parent-1">
+                <td><a href="~/Jadval5">@MyFunctions.Translate(Resource.Table5, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-10 treegrid-parent-1">
+                <td><a href="~/Jadval6">@MyFunctions.Translate(Resource.Table6, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-11 treegrid-parent-1">
+                <td><a href="~/Jadval7">@MyFunctions.Translate(Resource.Table7, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-12 treegrid-parent-1">
+                <td><a href="~/Jadval8">@MyFunctions.Translate(Resource.Table8, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-13 treegrid-parent-1">
+                <td><a href="~/Jadval9">@MyFunctions.Translate(Resource.Table9, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-14 treegrid-parent-1">
+                <td><a href="~/Jadval10">@MyFunctions.Translate(Resource.Table10, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-15 treegrid-parent-1">
+                <td><a href="~/Table11">@MyFunctions.Translate(Resource.Table11, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-16 treegrid-parent-1">
+                <td><a href="~/Table12">@MyFunctions.Translate(Resource.Table12, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-17 treegrid-parent-1">
+                <td><a href="~/Table13">@MyFunctions.Translate(Resource.Table13, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-18 treegrid-parent-1">
+                <td><a href="~/Table14">@MyFunctions.Translate(Resource.Table14, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-19 treegrid-parent-1">
+                <td><a href="~/Table15">@MyFunctions.Translate(Resource.Table15, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-20 treegrid-parent-1">
+                <td><a href="~/Table16">@MyFunctions.Translate(Resource.Table16, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-21 treegrid-parent-1">
+                <td><a href="~/Jadval18">@MyFunctions.Translate(Resource.Table18, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-22 treegrid-parent-1">
+                <td><a href="~/Jadval19">@MyFunctions.Translate(Resource.Table19, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-23 treegrid-parent-1">
+                <td><a href="~/Jadval20">@MyFunctions.Translate(Resource.Table20, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-24 treegrid-parent-1">
+                <td><a href="~/Jadval21">@MyFunctions.Translate(Resource.Table21, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-25 treegrid-parent-1">
+                <td><a href="~/Table22">@MyFunctions.Translate(Resource.Table22, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-26 treegrid-parent-1">
+                <td><a href="~/Table23">@MyFunctions.Translate(Resource.Table23, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-27 treegrid-parent-1">
+                <td><a href="~/Table24">@MyFunctions.Translate(Resource.Table24, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-28 treegrid-parent-1">
+                <td><a href="~/Table25">@MyFunctions.Translate(Resource.Table25, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-29 treegrid-parent-1">
+                <td><a href="~/Table26">@MyFunctions.Translate(Resource.Table26, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-30 treegrid-parent-1">
+                <td><a href="~/Table27">@MyFunctions.Translate(Resource.Table27, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-31 treegrid-parent-1">
+                <td><a href="~/Table28">@MyFunctions.Translate(Resource.Table28, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-32 treegrid-parent-1">
+                <td><a href="~/Table29">@MyFunctions.Translate(Resource.Table29, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-33 treegrid-parent-1">
+                <td><a href="~/Table30">@MyFunctions.Translate(Resource.Table30, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            <tr class="treegrid-34 treegrid-parent-1">
+                <td><a href="~/Table31">@MyFunctions.Translate(Resource.Table31, ViewBag.lang, ViewBag.alfabet)</a></td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
 
-		<th>
-			J1
-		</th>
-		<th>
-			J2
-		</th>
-		<th>
-			J3
-		</th>
-		<th>
-			J4
-		</th>
-		<th>
-			J5
-		</th>
-		<th>
-			J6
-		</th>
-		<th>
-			J7
-		</th>
-		<th>
-			J8
-		</th>
-		<th>
-			J9
-		</th>
-		<th>
-			J10
-		</th>
-		<th>
-			J11
-		</th>
-		<th>
-			J12
-		</th>
-		<th>
-			J13
-		</th>
-		<th>
-			J14
-		</th>
-		<th>
-			J15
-		</th>
-		<th>
-			J16
-		</th>
-		<th>
-			J17
-		</th>
-		<th>
-			J18
-		</th>
-		<th>
-			J19
-		</th>
-		<th>
-			J20
-		</th>
-		<th>
-			J21
-		</th>
-		<th>
-			J22
-		</th>
-		<th>
-			J23
-		</th>
-		<th>
-			J24
-		</th>
-		<th>
-			J25
-		</th>
-		<th>
-			J26)	
-		</th>
-		<th>
-			J27
-		</th>
-		<th>
-			J28
-		</th>
-		<th>
-			J29
-		</th>
-		<th>
-			J30
-		</th>
-		<th>
-			J31
-		</th>
-		<th>
-			J1_2
-		</th>
-		<th>
-			J1_7
-		</th>
-		<th>
-			J2_1
-		</th>
-		<th>
-			J2_2
-		</th>
-		<th>
-			Year
-		</th>
-		<th>
-			UniverId
-		</th>
+            <tr class="treegrid-35">
+                <td>Root node 2</td>
+                <td>2/33</td>
+            </tr>
+            <tr class="treegrid-36 treegrid-parent-35">
+                <td>Node 2-1</td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            <tr class="treegrid-37 treegrid-parent-35">
+                <td>Node 2-2</td>
+                <td><i class="glyphicon glyphicon-plus" style="color:green;"></i></td>
+            </tr>
+            </tr>
+        </table>
 
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.J1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J4)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J5)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J6)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J7)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J8)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J9)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J10)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J11)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J12)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J13)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J14)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J15)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J16)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J17)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J18)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J19)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J20)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J21)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J22)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J23)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J24)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J25)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J26)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J27)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J28)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J29)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J30)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J31)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J1_2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J1_7)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J2_1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.J2_2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Year)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UniverId)
-        </td>
-    </tr>
-}
-
-</table>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.tree').treegrid();
+        });
+    </script>

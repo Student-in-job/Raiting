@@ -1285,4 +1285,7 @@
   <data name="View" xml:space="preserve">
     <value>Просмотр</value>
   </data>
+  <data name="MainMenuMonitoring" xml:space="preserve">
+    <value>Мониторинг</value>
+  </data>
 </root>

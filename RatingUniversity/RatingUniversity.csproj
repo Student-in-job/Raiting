@@ -644,6 +644,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="Scripts\jquery.treegrid.bootstrap3.js" />
+    <Content Include="Scripts\jquery.treegrid.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -821,6 +823,7 @@
     <Content Include="Views\Table30\Index.cshtml" />
     <Content Include="Views\Table31\Index.cshtml" />
     <Content Include="Views\Shared\ErrorFile.cshtml" />
+    <Content Include="Views\Monitoring\Status.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
