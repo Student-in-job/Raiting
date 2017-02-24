@@ -117,17 +117,16 @@
                         @Html.DisplayFor(modelItem => item.Ishga_qabul_buyruq)
                     </td>
                     <td>
-                        @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.AsosFile;}
-                        <a href=# onclick="OpenUrl('@fileLink')">@MyFunctions.Translate(Resource.View, ViewBag.lang, ViewBag.alfabet)</a>
-                        <br />
+                        <span>
+                            @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.AsosFile;}
+                            <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px"/> </a>
+                        </span>
                         @using (Html.BeginForm("UploadFiles", "Jadval2", FormMethod.Post, new { enctype = "multipart/form-data" }))
                         {
                             <input type="file" name="files" />
                             <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.Id)" />
                             <input type="submit" name="Submit" id="Submit" value="Прикрепить" />
                         }
-
-
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Year)
@@ -139,7 +138,7 @@
         <script>
             function OpenUrl(link){
                 var left = screen.width/2 - 325;
-                var top = screen.height/2 - 300;
+                var top = screen.height/2 - 340;
                 window.open(link, 'targetWindow',
                 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=650, height=600, top=' + top + ',left=' + left);
             }

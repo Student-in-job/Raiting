@@ -267,49 +267,49 @@ namespace RatingUniversity.Models
 		public int? Status { get; set; }
 	}
 
-    public class Monitoring
-    {
-        public Int32 Id { get; set; }
-        public Int32? J1 { get; set; }
-        public Int32? J2 { get; set; }
-        public Int32? J3 { get; set; }
-        public Int32? J4 { get; set; }
-        public Int32? J5 { get; set; }
-        public Int32? J6 { get; set; }
-        public Int32? J7 { get; set; }
-        public Int32? J8 { get; set; }
-        public Int32? J9 { get; set; }
-        public Int32? J10 { get; set; }
-        public Int32? J11 { get; set; }
-        public Int32? J12 { get; set; }
-        public Int32? J13 { get; set; }
-        public Int32? J14 { get; set; }
-        public Int32? J15 { get; set; }
-        public Int32? J16 { get; set; }
-        public Int32? J17 { get; set; }
-        public Int32? J18 { get; set; }
-        public Int32? J19 { get; set; }
-        public Int32? J20 { get; set; }
-        public Int32? J21 { get; set; }
-        public Int32? J22 { get; set; }
-        public Int32? J23 { get; set; }
-        public Int32? J24 { get; set; }
-        public Int32? J25 { get; set; }
-        public Int32? J26 { get; set; }
-        public Int32? J27 { get; set; }
-        public Int32? J28 { get; set; }
-        public Int32? J29 { get; set; }
-        public Int32? J30 { get; set; }
-        public Int32? J31 { get; set; }
-        public Int32? J32 { get; set; }
-        public Int32? J1_2 { get; set; }
-        public Int32? J1_7 { get; set; }
-        public Int32? J2_1 { get; set; }
-        public Int32? J2_2 { get; set; }
-        public Int32 Year { get; set; }
-        public Int32 UniverId { get; set; }
-        public DateTime? Srok { get; set; }
-    }
+    //public class Monitoring
+    //{
+    //    public Int32 Id { get; set; }
+    //    public Int32? J1 { get; set; }
+    //    public Int32? J2 { get; set; }
+    //    public Int32? J3 { get; set; }
+    //    public Int32? J4 { get; set; }
+    //    public Int32? J5 { get; set; }
+    //    public Int32? J6 { get; set; }
+    //    public Int32? J7 { get; set; }
+    //    public Int32? J8 { get; set; }
+    //    public Int32? J9 { get; set; }
+    //    public Int32? J10 { get; set; }
+    //    public Int32? J11 { get; set; }
+    //    public Int32? J12 { get; set; }
+    //    public Int32? J13 { get; set; }
+    //    public Int32? J14 { get; set; }
+    //    public Int32? J15 { get; set; }
+    //    public Int32? J16 { get; set; }
+    //    public Int32? J17 { get; set; }
+    //    public Int32? J18 { get; set; }
+    //    public Int32? J19 { get; set; }
+    //    public Int32? J20 { get; set; }
+    //    public Int32? J21 { get; set; }
+    //    public Int32? J22 { get; set; }
+    //    public Int32? J23 { get; set; }
+    //    public Int32? J24 { get; set; }
+    //    public Int32? J25 { get; set; }
+    //    public Int32? J26 { get; set; }
+    //    public Int32? J27 { get; set; }
+    //    public Int32? J28 { get; set; }
+    //    public Int32? J29 { get; set; }
+    //    public Int32? J30 { get; set; }
+    //    public Int32? J31 { get; set; }
+    //    public Int32? J32 { get; set; }
+    //    public Int32? J1_2 { get; set; }
+    //    public Int32? J1_7 { get; set; }
+    //    public Int32? J2_1 { get; set; }
+    //    public Int32? J2_2 { get; set; }
+    //    public Int32 Year { get; set; }
+    //    public Int32 UniverId { get; set; }
+    //    public DateTime? Srok { get; set; }
+    //}
 
     public class Table11
     {

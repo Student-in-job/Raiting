@@ -11,7 +11,6 @@
     @Styles.Render("~/Content/Some.css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jquery-ui")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/flipclock.js")
     @Scripts.Render("~/Scripts/jquery.treegrid.js")
@@ -116,25 +115,6 @@
     </div>
     
     @RenderSection("scripts", required: false)
-    <script type="text/javascript">
-        var clock;
-        $(document).ready(function () {
-            var clock;
-            clock = $('.clock').FlipClock({
-                clockFace: 'DailyCounter',
-                autoStart: false,
-                language: '@ViewBag.lang-@ViewBag.alfabet',
-                callbacks: {
-                    stop: function () {
-                        $('.message').html('The clock has stopped!')
-                    }
-                }
-            });
-            clock.setTime(@ViewBag.time);
-            clock.setCountdown(@ViewBag.Reverse);
-            clock.start();
-        });
-    </script>
 <!-- 
 Status: @HttpContext.Current.ApplicationInstance.Response.Status
 Charset: @HttpContext.Current.ApplicationInstance.Response.Charset

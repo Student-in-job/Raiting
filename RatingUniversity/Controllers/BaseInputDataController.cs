@@ -35,7 +35,7 @@ namespace RatingUniversity.Controllers
         {
             base.Initialize(requestContext);
             ViewBag.active = Functions.CreateActive(this.active, 34);
-            this.year = DateTime.Now.Year;
+            this.year = Classes.Functions.GetYear();
         }
 
         protected virtual void ReadDataFromExcelFiles()
@@ -100,7 +100,7 @@ namespace RatingUniversity.Controllers
             ViewBag.active = Functions.CreateActive(active, 34); 
             TablesContext db = new TablesContext();
             ViewBag.controller = controllerName;
-            return View(db.university.ToList());
+            return View(db.university.OrderBy(model => model.name_RU).ToList());
         }
 
         [Authorize(Roles="user")]

@@ -74,4 +74,23 @@
         <p>@RatingUniversity.Langs.Resource.HomePageChartHeaderInfo</p>
         <p><a class="btn btn-default" href="#Get more information">@RatingUniversity.Langs.Resource.ButtonLearnMore &raquo;</a></p>
     </div>-->
+    <script type="text/javascript">
+            var clock;
+            $(document).ready(function () {
+                var clock;
+                clock = $('.clock').FlipClock({
+                    clockFace: 'DailyCounter',
+                    autoStart: false,
+                    language: '@ViewBag.lang-@ViewBag.alfabet',
+                    callbacks: {
+                        stop: function () {
+                            $('.message').html('The clock has stopped!')
+                        }
+                    }
+                });
+                clock.setTime(@ViewBag.time);
+                clock.setCountdown(@ViewBag.Reverse);
+                clock.start();
+            });
+    </script>
     

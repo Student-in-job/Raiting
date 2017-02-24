@@ -13,7 +13,7 @@
                 <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Table15/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
             </div>
             if ((ViewBag.status==0) || (ViewBag.status == -1))
-                {
+            {
                 using (Html.BeginForm("Upload", "Table15", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     <fieldset>

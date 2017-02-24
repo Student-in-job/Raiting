@@ -10,15 +10,33 @@ using System.Data.Entity;
 
 namespace RatingUniversity.Controllers
 {
-    public class MonitoringController : Controller
+    public class MonitoringController : BaseViewController
     {
         TablesContext db = new TablesContext();
         //
         // GET: /Monitoring/
         public ActionResult Index()
         {
-            ViewBag.Regions = this.db.region.ToList();
-            return View(this.db.university.OrderBy(m => m.id).ToList());
+            IEnumerable<university> universities = this.db.university;
+            int year = Classes.Functions.GetYear();
+            IEnumerable<Monitorings> monitorings = this.db.Monitorings.Where(model => model.Year == year).ToList();
+            List<Classes.Monitor> monitors = new List<Monitor>();
+            foreach (university currentUniversity in universities.OrderBy(model => model.name_RU))
+            {
+                Classes.Monitor newMonitor = new Monitor(
+                    currentUniversity.id,
+                    (ViewBag.lang == "RU") ?
+                        currentUniversity.name_RU :
+                        (ViewBag.alfabet == "CY") ?
+                            currentUniversity.name_UZ :
+                            Classes.Functions.Translate(currentUniversity.name_UZ, ViewBag.lang, ViewBag.alfabet)
+                    );
+                Monitorings currentMonitorings = monitorings.Where(model => model.UniverId == currentUniversity.id).FirstOrDefault();
+                if (currentMonitorings != null)
+                    newMonitor.InitializeValues(currentMonitorings);
+                monitors.Add(newMonitor);
+            }
+            return View(monitors);
         }
 
          //
