@@ -76,4 +76,44 @@ namespace RatingUniversity.Classes
         NotExcel,
         NotPDF
     }
+
+    public class Monitor
+    {
+        internal struct MonitorSite
+        {
+            string name;
+            string value;
+        }
+
+        Monitor J2;
+        Monitor J3;
+        Monitor J4;
+        Monitor J5;
+        Monitor J6;
+        Monitor J7;
+        Monitor J8;
+        Monitor J9;
+        Monitor J10;
+        Monitor J11;
+        Monitor J12;
+        Monitor J13;
+        Monitor J14;
+        Monitor J15;
+        Monitor J16;
+        Monitor J17;
+        Monitor J18;
+        Monitor J19;
+        Monitor J20;
+        Monitor J21;
+        Monitor J22;
+        Monitor J23;
+        Monitor J24;
+        Monitor J25;
+        Monitor J26;
+        Monitor J27;
+        Monitor J28;
+        Monitor J29;
+        Monitor J30;
+        Monitor J31;
+    }
 }

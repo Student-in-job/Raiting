@@ -53,7 +53,7 @@
     <h4 class="text-center font-bold">@MyFunctions.Translate(Resource.T2_Zagolovok, ViewBag.lang, ViewBag.alfabet)</h4>
 
     @if (ViewBag.bor == true)
-    {
+    {        
         <table class="table table-bordered">
             <tr class="txtcenter">
                 <th>№</th>
@@ -117,8 +117,8 @@
                         @Html.DisplayFor(modelItem => item.Ishga_qabul_buyruq)
                     </td>
                     <td>
-                        @{string fileLink = "/Scripts/ViewerJS/#../../Files/Upload/" + item.AsosFile;}
-                        <a href=@fileLink>@MyFunctions.Translate(Resource.View, ViewBag.lang, ViewBag.alfabet)</a>
+                        @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.AsosFile;}
+                        <a href=# onclick="OpenUrl('@fileLink')">@MyFunctions.Translate(Resource.View, ViewBag.lang, ViewBag.alfabet)</a>
                         <br />
                         @using (Html.BeginForm("UploadFiles", "Jadval2", FormMethod.Post, new { enctype = "multipart/form-data" }))
                         {
@@ -136,5 +136,13 @@
             }
 
         </table>
+        <script>
+            function OpenUrl(link){
+                var left = screen.width/2 - 325;
+                var top = screen.height/2 - 300;
+                window.open(link, 'targetWindow',
+                'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=650, height=600, top=' + top + ',left=' + left);
+            }
+        </script>
         @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
     }
