@@ -4335,5 +4335,37 @@ namespace RatingUniversity.Langs
                 return ResourceManager.GetString("MainMenuMonitoring", resourceCulture);
             }
         }
+
+        public static string MonitoringTotal 
+        {
+            get
+            {
+                return ResourceManager.GetString("MonitoringTotal", resourceCulture);
+            }
+        }
+
+        public static string MonitoringApproved 
+        {
+            get
+            {
+                return ResourceManager.GetString("MonitoringApproved", resourceCulture);
+            }
+        }
+
+        public static string MonitoringUploaded 
+        {
+            get
+            {
+                return ResourceManager.GetString("MonitoringUploaded", resourceCulture);
+            }
+        }
+
+        public static string MonitoringNotUploaded 
+        {
+            get
+            {
+                return ResourceManager.GetString("MonitoringNotUploaded", resourceCulture);
+            }
+        }
     }
 }

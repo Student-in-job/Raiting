@@ -1288,4 +1288,16 @@
   <data name="MainMenuMonitoring" xml:space="preserve">
     <value>Мониторинг</value>
   </data>
+  <data name="MonitoringApproved" xml:space="preserve">
+    <value>Проверено</value>
+  </data>
+  <data name="MonitoringNotUploaded" xml:space="preserve">
+    <value>Не заполнено</value>
+  </data>
+  <data name="MonitoringTotal" xml:space="preserve">
+    <value>Итого</value>
+  </data>
+  <data name="MonitoringUploaded" xml:space="preserve">
+    <value>Заполнено</value>
+  </data>
 </root>
