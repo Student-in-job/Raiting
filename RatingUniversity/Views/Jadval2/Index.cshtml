@@ -70,7 +70,6 @@
                 <th>@MyFunctions.Translate(Resource.T2_specialnost, ViewBag.lang, ViewBag.alfabet)</th>
                 <th>@MyFunctions.Translate(Resource.T2_prikaz, ViewBag.lang, ViewBag.alfabet)</th>
                 <th>@MyFunctions.Translate(Resource.T2_fayl, ViewBag.lang, ViewBag.alfabet)</th>
-                <th>@MyFunctions.Translate(Resource.T1_God, ViewBag.lang, ViewBag.alfabet)</th>
             </tr>
 
             @foreach (var item in Model)
@@ -125,23 +124,13 @@
                         {
                             <input type="file" name="files" />
                             <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.Id)" />
-                            <input type="submit" name="Submit" id="Submit" value="Прикрепить" />
+                            <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
                         }
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Year)
                     </td>
                 </tr>
             }
 
         </table>
-        <script>
-            function OpenUrl(link){
-                var left = screen.width/2 - 325;
-                var top = screen.height/2 - 340;
-                window.open(link, 'targetWindow',
-                'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=650, height=600, top=' + top + ',left=' + left);
-            }
-        </script>
         @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        @Scripts.Render("~/Scripts/site.js");
     }

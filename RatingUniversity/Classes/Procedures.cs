@@ -59,6 +59,48 @@ namespace RatingUniversity.Classes
             this.command.CommandText = "P1_3_kolvo_uchebnikov_posobiy_umk";
             return this.execProc(id_university, year);
         }
+
+        public int P1_4_dolya_inostrancev(int id_university, int year)
+        {
+            this.command.CommandText = "P1_4_dolya_inostrancev";
+            return this.execProc(id_university, year);
+        }
+
+        public int P1_5_programmi_obmena(int id_university, int year)
+        {
+            this.command.CommandText = "P1_5_programmi_obmena";
+            return this.execProc(id_university, year);
+        }
+        public int P1_6_inostranniye_kursi(int id_university, int year)
+        {
+            this.command.CommandText = "P1_6_inostranniye_kursi";
+            return this.execProc(id_university, year);
+        }
+
+        public int P1_8_prepodavaniye_v_top_vuzah(int id_university, int year)
+        {
+            this.command.CommandText = "P1_8_prepodavaniye_v_top_vuzah";
+            return this.execProc(id_university, year);
+        }
+
+        public int P1_9_prepodavaniye_v_sspo(int id_university, int year)
+        {
+            this.command.CommandText = "P1_9_prepodavaniye_v_sspo";
+            return this.execProc(id_university, year);
+        }
+
+        public int P2_3_trudoustroystvo_vipusknikov(int id_university, int year)
+        {
+            this.command.CommandText = "P2_3_trudoustroystvo_vipusknikov";
+            return this.execProc(id_university, year);
+        }
+
+        public int P2_4_nagradi_studentov(int id_university, int year)
+        {
+            this.command.CommandText = "P2_4_nagradi_studentov";
+            return this.execProc(id_university, year);
+        }
+
         public int P3_1_citiruemost_publikaciy_pps_vuza(int id_university, int year)
         {
             this.command.CommandText = "P3_1_citiruemost_publikaciy_pps_vuza";

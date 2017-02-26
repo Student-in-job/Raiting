@@ -1,5 +1,7 @@
-﻿@using PagedList.Mvc;
-@model PagedList.IPagedList<RatingUniversity.Models.Jadval5>
+﻿    @using PagedList.Mvc;
+    @using MyFunctions = RatingUniversity.Classes.Functions;
+    @using Resource = RatingUniversity.Langs.Resource;
+    @model PagedList.IPagedList<RatingUniversity.Models.Jadval5>
 	<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 	@{
@@ -8,35 +10,48 @@
 	}
 
 
-	@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
-	{
-		<a href="/Jadval5/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
-        <h3>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</h3>
-
-		using (Html.BeginForm("Upload", "Jadval5", FormMethod.Post, new { enctype = "multipart/form-data" }))
-		{
-			<input type="file" name="files" />
-	<input type="submit" name="Submit" id="Submit" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
-		}
-	}
-@if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 1)
-{
-	<h5>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DTM_vremya_istek, ViewBag.lang, ViewBag.alfabet)</h5>
-}
-@if (ViewBag.status == 1)
-{
-	<h5>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DTM_danniye_podtverjdeni, ViewBag.lang, ViewBag.alfabet)</h5>
-}
-@if (ViewBag.status == 0)
-{
-	<h5>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DTM_danniye_ne_podtverjdeni, ViewBag.lang, ViewBag.alfabet)</h5>
-}
-@if (ViewBag.status == 0 && ViewBag.role == 1)
-{
-	<a href="/Jadval5/Tasdiqlash/@ViewBag.UniverId">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DTM_podtverjdat, ViewBag.lang, ViewBag.alfabet)</a>
-}
-						   	<h3 class="text-center font-bold">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-						   <h4 class="text-center font-bold">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T5_Zagolovok, ViewBag.lang, ViewBag.alfabet)</h4>
+	@if ((ViewBag.status == -1 || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
+    {
+        <div class="well well-sm">
+            <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Jadval5/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        </div>
+        using (Html.BeginForm("Upload", "Jadval5", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <fieldset>
+            <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+            <div class="input-group">
+                <input type="file" class="form-control" name="files" />
+                <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+            </div>
+            </fieldset>
+        }
+    }
+    @if ((ViewBag.status == null || ViewBag.status == 0) && ViewBag.status_date == 1)
+    {
+        <div>
+            <p class="bg-success text-center info-failed">@MyFunctions.Translate(Resource.DTM_vremya_istek, ViewBag.lang, ViewBag.alfabet)</p>
+        </div>
+    }
+    @if (ViewBag.status == 1)
+    {
+        <div>
+            <p class="bg-success text-center info-success">@MyFunctions.Translate(Resource.DTM_danniye_podtverjdeni, ViewBag.lang, ViewBag.alfabet)</p>
+        </div>
+    }
+    @if (ViewBag.status == 0 && ViewBag.role == 1)
+    {
+        using (Html.BeginForm("Approve", "Jadval5", FormMethod.Post))
+        {
+            <fieldset>
+                <div class="input-group">
+                    <input type="hidden" class="form-control" name="id" value="@ViewBag.id" />
+                    <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Approve, ViewBag.lang, ViewBag.alfabet)" /></span>
+                </div>
+            </fieldset>
+        }
+    }
+    <h3 class="text-center font-bold">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+	<h4 class="text-center font-bold">@MyFunctions.Translate(Resource.T5_Zagolovok, ViewBag.lang, ViewBag.alfabet)</h4>
 
 	@if (ViewBag.bor == true)
 	{
@@ -47,27 +62,12 @@
 			{
 				<th>Статус</th>
 			}
-			<th>
-				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T5_Fish, ViewBag.lang, ViewBag.alfabet)
-			</th>
-			<th>
-				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T5_davlat, ViewBag.lang, ViewBag.alfabet)
-			</th>
-			<th>
-				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T5_mutaxassislik, ViewBag.lang, ViewBag.alfabet)
-			</th>
-			<th>
-				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T5_dars_beradigan_fan, ViewBag.lang, ViewBag.alfabet)
-			</th>
-			<th>
-				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T5_asos, ViewBag.lang, ViewBag.alfabet)
-			</th>
-			<th>
-				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T5_fayl, ViewBag.lang, ViewBag.alfabet)
-			</th>
-			<th>
-				@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_God, ViewBag.lang, ViewBag.alfabet)
-			</th>
+			<th>@MyFunctions.Translate(Resource.T5_Fish, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@MyFunctions.Translate(Resource.T5_davlat, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@MyFunctions.Translate(Resource.T5_mutaxassislik, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@MyFunctions.Translate(Resource.T5_dars_beradigan_fan, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@MyFunctions.Translate(Resource.T5_asos, ViewBag.lang, ViewBag.alfabet)</th>
+			<th>@MyFunctions.Translate(Resource.T5_fayl, ViewBag.lang, ViewBag.alfabet)</th>
 		</tr>
 
 		@foreach (var item in Model)
@@ -104,22 +104,21 @@
 					@Html.DisplayFor(modelItem => item.Asos)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.Asos_fayl)
-					<br />
-					@using (Html.BeginForm("UploadData", "Jadval5", FormMethod.Post, new { enctype = "multipart/form-data" }))
-					{
-						<input type="file" name="files" />
-						<input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.Id)" />
-						<input type="submit" name="Submit" id="Submit" value="Прикрепить" />
-					}
-
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Year)
+                    <span>
+                        @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.Asos_fayl;}
+                        <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
+                    </span>
+                    @using (Html.BeginForm("UploadFiles", "Jadval5", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <input type="file" name="files" />
+                        <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.Id)" />
+                        <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+                    }
 				</td>
 			</tr>
 		}
 
 	</table>
-@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }));
+    @Scripts.Render("~/Scripts/site.js");
 	}

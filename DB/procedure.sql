@@ -23,6 +23,8 @@ end
 
 GO
 
+--1.2 TODO
+
 --1.3
 CREATE PROCEDURE P1_3_kolvo_uchebnikov_posobiy_umk
 @id_university int,
@@ -48,6 +50,170 @@ end
 
 GO
 
+--1.4
+CREATE PROCEDURE P1_4_dolya_inostrancev
+@id_university int,
+@year int
+AS
+DECLARE  @count int, @id int, @count_foreign_teachers int, @count_foreign_students int
+begin
+SET @id=(SELECT id FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+SET @count_foreign_teachers = (SELECT count(id) FROM Jadval5
+	WHERE UniversityId=@id_university AND year=@year)
+SET @count_foreign_students = (SELECT count(id) FROM Jadval6
+	WHERE UniversityId=@id_university AND year=@year)
+SET @count=(SELECT count(id) FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+if (@count=0)
+	INSERT INTO raiting(p2, p3, year, id_university) VALUES (@count_foreign_teachers, @count_foreign_teachers, @year, @id_university)
+else
+	UPDATE raiting set p2=@count_foreign_teachers, p3=@count_foreign_students WHERE id=@id
+end
+
+GO
+
+--1.5
+CREATE PROCEDURE P1_5_programmi_obmena
+@id_university int,
+@year int
+AS
+DECLARE  @count int, @id int, @count_students_abroad int, @count_teachers_abroad int
+begin
+SET @id=(SELECT id FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+SET @count_students_abroad  = (SELECT count(id) FROM Jadval7
+	WHERE UniversityId=@id_university AND year=@year)
+SET @count_teachers_abroad = (SELECT count(id) FROM Jadval8
+	WHERE UniversityId=@id_university AND year=@year)
+SET @count=(SELECT count(id) FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+if (@count=0)
+	INSERT INTO raiting(p4, p5, year, id_university) VALUES (@count_students_abroad, @count_teachers_abroad, @year, @id_university)
+else
+	UPDATE raiting set p4=@count_students_abroad, p5=@count_teachers_abroad WHERE id=@id
+end
+
+GO
+
+--1.6
+CREATE PROCEDURE P1_6_inostranniye_kursi
+@id_university int,
+@year int
+AS
+DECLARE  @count int, @id int, @count_cources int
+begin
+SET @id=(SELECT id FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+SET @count_cources = (SELECT count(id) FROM Jadval10
+	WHERE UniversityId=@id_university AND year=@year)
+SET @count=(SELECT count(id) FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+if (@count=0)
+	INSERT INTO raiting(k1, year, id_university) VALUES (@count_cources, @year, @id_university)
+else
+	UPDATE raiting set k1=@count_cources WHERE id=@id
+end
+
+GO
+
+--1.7 TODO
+
+--1.8
+CREATE PROCEDURE P1_8_prepodavaniye_v_top_vuzah
+@id_university int,
+@year int
+AS
+DECLARE  @count int, @id int, @count_cources int
+begin
+SET @id=(SELECT id FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+SET @count_cources = (SELECT count(id) FROM Jadval9
+	WHERE UniversityId=@id_university AND year=@year)
+SET @count=(SELECT count(id) FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+if (@count=0)
+	INSERT INTO raiting(pz, year, id_university) VALUES (@count_cources, @year, @id_university)
+else
+	UPDATE raiting set pz=@count_cources WHERE id=@id
+end
+
+GO
+
+--1.9
+CREATE PROCEDURE P1_9_prepodavaniye_v_sspo
+@id_university int,
+@year int
+AS
+DECLARE  @count int, @id int, @count_cources int
+begin
+SET @id=(SELECT id FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+SET @count_cources = (SELECT count(id) FROM Jadval18
+	WHERE UniversityId=@id_university AND year=@year)
+SET @count=(SELECT count(id) FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+if (@count=0)
+	INSERT INTO raiting(p9, year, id_university) VALUES (@count_cources, @year, @id_university)
+else
+	UPDATE raiting set p9=@count_cources WHERE id=@id
+end
+
+GO
+
+--2.1 TODO
+
+--2.2 TODO
+
+--2.3
+CREATE PROCEDURE P2_3_trudoustroystvo_vipusknikov
+@id_university int,
+@year int
+AS
+DECLARE  @count int, @id int, @count_work_bachelors int, @count_work_masters int
+begin
+SET @id=(SELECT id FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+SET @count_work_bachelors = (SELECT count(id) FROM Jadval20
+	WHERE UniversityId=@id_university AND year=@year)
+SET @count_work_masters = (SELECT count(id) FROM Jadval21
+	WHERE UniversityId=@id_university AND year=@year)
+SET @count=(SELECT count(id) FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+if (@count=0)
+	INSERT INTO raiting(p10, year, id_university) VALUES (@count_work_bachelors + @count_work_masters, @year, @id_university)
+else
+	UPDATE raiting set p10=@count_work_bachelors + @count_work_masters WHERE id=@id
+end
+
+--2.4
+CREATE PROCEDURE P2_4_nagradi_studentov
+@id_university int,
+@year int
+AS
+DECLARE  @count int, @id int, @int_competition_winners int, @state_competition_winners int, @int_competition_prize int, @state_competition_prize int
+begin
+SET @id=(SELECT id FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+SET @int_competition_winners = (SELECT count(id) FROM Jadval19
+	WHERE UniversityId=@id_university AND year=@year AND TanlovTuri=1)
+SET @state_competition_winners = (SELECT count(id) FROM Jadval19
+	WHERE UniversityId=@id_university AND year=@year AND TanlovTuri=2)
+SET @int_competition_prize = (SELECT count(id) FROM Jadval19
+	WHERE UniversityId=@id_university AND year=@year AND TanlovTuri=3)
+SET @state_competition_prize = (SELECT count(id) FROM Jadval19
+	WHERE UniversityId=@id_university AND year=@year AND TanlovTuri=4)	
+SET @count=(SELECT count(id) FROM raiting
+	WHERE id_university=@id_university AND year=@year)
+if (@count=0)
+	INSERT INTO raiting(p1_2, p1_3, p1_4, p1_5, year, id_university) VALUES (@int_competition_winners, @state_competition_winners, 
+		@int_competition_prize, @state_competition_prize, @year, @id_university)
+else
+	UPDATE raiting set p1_2=@int_competition_winners, p1_3 = @state_competition_winners, 
+		p1_4 = @int_competition_prize, p1_5 = @state_competition_prize WHERE id=@id
+end
+
+GO
 --3.1 or i14
 CREATE PROCEDURE P3_1_citiruemost_publikaciy_pps_vuza
 
@@ -60,49 +226,7 @@ AS
 --данного университета за данный год, если есть, то сохранить его id
 
 DECLARE  @count int, @id int, @count_uz_rus int, @count_angl int
-
-begin 
-SET @count_uz_rus=(SELECT sum(usage) FROM citiruemost_publikaciy_pps_vuza WHERE id_university=@id_university AND year=@year AND lang=0)
-SET @count_angl=(SELECT sum(usage) FROM citiruemost_publikaciy_pps_vuza WHERE id_university=@id_university AND year=@year AND lang=1)
-
-SET @id=(SELECT id FROM raiting
-	WHERE id_university=@id_university AND year=@year)
-SET @count=(SELECT count(id) FROM raiting
-	WHERE id_university=@id_university AND year=@year)
-if (@count=0)
-INSERT INTO raiting(s4, s5, year, id_university) VALUES (@count_uz_rus, @count_angl, @year, @id_university)
-else UPDATE raiting set s4=@count_uz_rus, s5=@count_angl WHERE id=@id
-end
-
-GO
-
---3.2 or i15
-CREATE PROCEDURE P3_2_kolichestvo_izdannih_statey
-@id_university int,
-@year int
-AS
-DECLARE  @count int, @id int, @count_mono int, @count_inpaper int, @count_uzpaper int
-begin 
-SET @count_mono=(SELECT count(id) FROM monografiya
-	WHERE id_university=@id_university AND year=@year)
-SET @count_inpaper=(SELECT count(id) FROM kolichestvo_izdannih_mejdunarodnih_statey
-	WHERE id_university=@id_university AND year=@year)
-SET @count_uzpaper=(SELECT count(id) FROM kolichestvo_izdannih_mestnih_statey
-	WHERE id_university=@id_university AND year=@year)
-SET @id=(SELECT id FROM raiting
-	WHERE id_university=@id_university AND year=@year)
-SET @count=(SELECT count(id) FROM raiting
-	WHERE id_university=@id_university AND year=@year)
-if (@count=0)
-INSERT INTO raiting(s7, s8, s9, year, id_university) VALUES (@count_inpaper, @count_mono, @count_uzpaper, @year, @id_university)
-else UPDATE raiting set s7=@count_inpaper, s8=@count_mono, s9=@count_uzpaper WHERE id=@id
-end
-
-GO
-
---3.3 or i16
-CREATE PROCEDURE P3_3_kolichestvo_sotrudnikov_vuza
-@id_university int,
+44
 @year int
 AS
 DECLARE  @count int, @id int, @count_pps int, @count_dis int, @count_uch int, @count_neuch int

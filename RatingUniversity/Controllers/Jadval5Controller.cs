@@ -28,7 +28,7 @@ namespace RatingUniversity.Controllers
             this.tableName = "J5";
             this.controllerName = "Jadval5";
             this.fileName = "table5.xls";
-            this.controllerName = "";
+            this.procedureName = "P1_4_dolya_inostrancev";
         }
         //
         // GET: /Jadval5/
@@ -45,8 +45,6 @@ namespace RatingUniversity.Controllers
 			if (list.Count() == 0)
 				ViewBag.bor = false;
 
-			int? status_table = db.Monitorings.Where(x => x.Year == this.year).Where(y => y.UniverId == UniverId).Select(z => z.J5).FirstOrDefault();
-			ViewBag.status = status_table;
 			DateTime? status_dt = db.Monitorings.Where(x => x.Year == this.year).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
 			ViewBag.status_date = 0;
 			ViewBag.date = status_dt;
@@ -55,7 +53,9 @@ namespace RatingUniversity.Controllers
 			ViewBag.role = 0;
 			if (User.IsInRole("admin")) ViewBag.role = 1;
 			ViewBag.UniverId = UniverId;
-			IQueryable<university> university = db.university.Where(model => model.id == UniverId);
+            ViewBag.id = UniverId;
+            ViewBag.status = MonitoringUpdate.GetStatus(UniverId, this.tableName, this.year);
+            IQueryable<university> university = db.university.Where(model => model.id == UniverId);
 			ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
 			//return View(list.ToList());
 			int pageSize = 50;
@@ -63,12 +63,12 @@ namespace RatingUniversity.Controllers
 			return View(list.ToPagedList(pageNumber, pageSize));
 		}
 
-		[Authorize(Roles = "admin")]
-		public ActionResult Tasdiqlash(int UniverId = 0)
-		{
-			MonitoringUpdate.Update(UniverId, "J5", 1, this.year);
-			return RedirectToAction("Index", "Jadval5");
-		}
+        //[Authorize(Roles = "admin")]
+        //public ActionResult Tasdiqlash(int UniverId = 0)
+        //{
+        //    MonitoringUpdate.Update(UniverId, "J5", 1, this.year);
+        //    return RedirectToAction("Index", "Jadval5");
+        //}
 
 		[HttpPost]
 		[Authorize(Roles = "user")]
