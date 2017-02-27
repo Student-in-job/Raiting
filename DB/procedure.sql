@@ -23,7 +23,68 @@ end
 
 GO
 
---1.2 TODO
+--1.2
+CREATE PROCEDURE P1_2_kachestvo_prepodavaniya
+@year int
+AS
+DECLARE @count int, @id int, @id_university int, @count_student int, @question_content int, @question_form int, @question_objectivity int
+DECLARE @content_mark5 int, @content_mark4 int, @form_mark5 int, @form_mark4 int, @objectivity_mark5 int, @objectivity_mark4 int
+DECLARE @universities cursor
+begin
+SET @universities = CURSOR FOR 
+	SELECT u.id, T, N1, N2, N3, N41, N51, N42, N52, N43, N53 
+		FROM university u 
+			LEFT JOIN raiting r ON u.id = r.id_university
+	WHERE year = @year;
+OPEN @universities;
+FETCH @universities INTO 
+	@id_university, @count_student, @question_content, @question_form, @question_objectivity,
+	@content_mark5, @content_mark4, @form_mark5, @form_mark4, @objectivity_mark5, @objectivity_mark4
+WHILE @@FETCH_STATUS = 0
+	begin
+		SET @id = (SELECT id FROM raiting
+			WHERE id_university=@id_university AND year=@year)
+		if (@count_student is null)
+			SET @count_student = 0
+		if (@question_content is null)
+			SET @question_content = 0
+		if (@question_form is null)
+			SET @question_form = 0
+		if (@question_objectivity is null)
+			SET @question_objectivity = 0
+		if (@content_mark5 is null)
+			SET @content_mark5 = 0
+		if (@content_mark4 is null)
+			SET @content_mark4 = 0
+		if (@form_mark5 is null)
+			SET @form_mark5 = 0
+		if (@form_mark4 is null)
+			SET @form_mark4 = 0
+		if (@objectivity_mark5 is null)
+			SET @objectivity_mark5 = 0
+		if (@objectivity_mark4 is null)
+			SET @objectivity_mark4 = 0	
+		SET @count = (SELECT count(id) FROM raiting
+			WHERE id_university=@id_university AND year=@year)
+		if (@count=0)
+			INSERT INTO raiting(T, N1, N2, N3, N41, N51, N42, N52, N43, N53, year, id_university) 
+				VALUES (@count_student, @question_content, @question_form, @question_objectivity, 
+					@content_mark5, @content_mark4, @form_mark5, @form_mark4, @objectivity_mark5, 
+					@objectivity_mark4, @year, @id_university)
+		else
+			UPDATE raiting 
+				set T = @count_student, N1 = @question_content, N2 = @question_form, N3 = @question_objectivity, 
+					N41 = @content_mark5, N51 = @content_mark4, N42 = @form_mark5, N52 = @form_mark4, 
+					N43 = @objectivity_mark5, N53 = @objectivity_mark4
+			WHERE id=@id
+		FETCH @universities INTO 
+			@id_university, @count_student, @question_content, @question_form, @question_objectivity,
+			@content_mark5, @content_mark4, @form_mark5, @form_mark4, @objectivity_mark5, @objectivity_mark4
+	end
+CLOSE @universities
+DEALLOCATE @universities
+end
+
 
 --1.3
 CREATE PROCEDURE P1_3_kolvo_uchebnikov_posobiy_umk
@@ -117,7 +178,40 @@ end
 
 GO
 
---1.7 TODO
+--1.7 
+CREATE PROCEDURE P1_7_inosrtanniy_yazik_i_ikt
+@year int
+AS
+DECLARE @count int, @id int, @id_university int, @count_yazik int, @count_ikt int, @universities cursor
+begin
+SET @universities = CURSOR FOR SELECT id FROM university;
+OPEN @universities;
+FETCH @universities INTO @id_university;
+WHILE @@FETCH_STATUS = 0
+	begin
+		SET @id = (SELECT id FROM raiting
+			WHERE id_university=@id_university AND year=@year)
+		SET @count_yazik = (SELECT p7 FROM Jadval_AKTdaraja_1_7 
+				WHERE year = @year AND UniversityId=@id_university)
+		if (@count_yazik is null)
+			SET @count_yazik = 0	
+		SET @count_ikt = (SELECT p8 FROM Jadval_AKTdaraja_1_7 
+				WHERE year = @year AND UniversityId=@id_university)
+		if (@count_ikt is null)
+			SET @count_ikt = 0
+		SET @count = (SELECT count(id) FROM raiting
+			WHERE id_university=@id_university AND year=@year)
+		if (@count=0)
+			INSERT INTO raiting(p7, p8, year, id_university) VALUES (@count_yazik, @count_ikt, @year, @id_university)
+		else
+			UPDATE raiting set p7 = @count_yazik, p8 = @count_ikt WHERE id=@id
+		FETCH @universities INTO @id_university;
+	end
+CLOSE @universities
+DEALLOCATE @universities
+end
+
+GO
 
 --1.8
 CREATE PROCEDURE P1_8_prepodavaniye_v_top_vuzah
@@ -161,9 +255,71 @@ end
 
 GO
 
---2.1 TODO
+--2.1
+CREATE PROCEDURE P2_1_ochenka_znaniy_studentov
+@year int
+AS
+DECLARE @count int, @id int, @id_university int, @count_student_pass int, @count_student int, @universities cursor
+begin
+SET @universities = CURSOR FOR SELECT id FROM university;
+OPEN @universities;
+FETCH @universities INTO @id_university;
+WHILE @@FETCH_STATUS = 0
+	begin
+		SET @id = (SELECT id FROM raiting
+			WHERE id_university=@id_university AND year=@year)
+		SET @count_student_pass = (SELECT T_Qualified FROM Jadval_talababilim_2_1 
+				WHERE year = @year AND UniversityId=@id_university)
+		if (@count_student_pass is null)
+			SET @count_student_pass = 0	
+		SET @count_student = (SELECT T_All FROM Jadval_talababilim_2_1 
+				WHERE year = @year AND UniversityId=@id_university)
+		if (@count_student is null)
+			SET @count_student = 0
+		SET @count = (SELECT count(id) FROM raiting
+			WHERE id_university=@id_university AND year=@year)
+		if (@count=0)
+			INSERT INTO raiting(tsi, tsti, year, id_university) VALUES (@count_student_pass, @count_student, @year, @id_university)
+		else
+			UPDATE raiting set tsi = @count_student_pass, tsti = @count_student WHERE id=@id
+		FETCH @universities INTO @id_university;
+	end
+CLOSE @universities
+DEALLOCATE @universities
+end
 
---2.2 TODO
+--2.2
+CREATE PROCEDURE P2_2_otziv_rabotodateley
+@year int
+AS
+DECLARE @count int, @id int, @id_university int, @count_positive int, @count_employers int, @universities cursor
+begin
+SET @universities = CURSOR FOR SELECT id FROM university;
+OPEN @universities;
+FETCH @universities INTO @id_university;
+WHILE @@FETCH_STATUS = 0
+	begin
+		SET @id = (SELECT id FROM raiting
+			WHERE id_university=@id_university AND year=@year)
+		SET @count_positive = (SELECT R FROM Jadval_bitiruvchi_2_2 
+				WHERE year = @year AND UniversityId=@id_university)
+		if (@count_positive is null)
+			SET @count_positive = 0	
+		SET @count_employers = (SELECT R1 FROM Jadval_bitiruvchi_2_2 
+				WHERE year = @year AND UniversityId=@id_university)
+		if (@count_employers is null)
+			SET @count_employers = 0
+		SET @count = (SELECT count(id) FROM raiting
+			WHERE id_university=@id_university AND year=@year)
+		if (@count=0)
+			INSERT INTO raiting(r1, r, year, id_university) VALUES (@count_positive, @count_employers, @year, @id_university)
+		else
+			UPDATE raiting set r1 = @count_positive, r = @count_employers WHERE id=@id
+		FETCH @universities INTO @id_university;
+	end
+CLOSE @universities
+DEALLOCATE @universities
+end
 
 --2.3
 CREATE PROCEDURE P2_3_trudoustroystvo_vipusknikov
@@ -226,7 +382,7 @@ AS
 --данного университета за данный год, если есть, то сохранить его id
 
 DECLARE  @count int, @id int, @count_uz_rus int, @count_angl int
-44
+
 @year int
 AS
 DECLARE  @count int, @id int, @count_pps int, @count_dis int, @count_uch int, @count_neuch int
