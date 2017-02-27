@@ -34,7 +34,7 @@ begin
 SET @universities = CURSOR FOR 
 	SELECT u.id, T, N1, N2, N3, N41, N51, N42, N52, N43, N53 
 		FROM university u 
-			LEFT JOIN raiting r ON u.id = r.id_university
+			LEFT JOIN Jadval_talimsifati_1_2 j ON u.id = j.UniversityId
 	WHERE year = @year;
 OPEN @universities;
 FETCH @universities INTO 

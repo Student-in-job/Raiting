@@ -541,13 +541,13 @@
     <value>TOP 300 университетов</value>
   </data>
   <data name="T1_2_kol_otvet" xml:space="preserve">
-    <value>количество оценок</value>
+    <value>кол-во оценок "{0}"</value>
   </data>
   <data name="T1_2_kol_stud" xml:space="preserve">
     <value>Число студентов, принявших участие в опросе</value>
   </data>
   <data name="T1_2_kol_vopros" xml:space="preserve">
-    <value>количество вопросов</value>
+    <value>кол-во вопросов</value>
   </data>
   <data name="T1_2_N1" xml:space="preserve">
     <value>Новизна учебных материалов и качество их содержания</value>

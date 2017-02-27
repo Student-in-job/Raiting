@@ -19,7 +19,7 @@ namespace RatingUniversity.Controllers
     public class BaseInputDataController : BaseViewController
     {
         protected string fileName;
-        protected string fileFullName;
+        private string fileFullName;
         protected ExcelFile excelFile;
         protected string listName;
         protected string lang;
@@ -176,6 +176,24 @@ namespace RatingUniversity.Controllers
                 int result = proc.Executeprocedure(this.procedureName, id, this.year);
                 MonitoringUpdate.Update(id, this.tableName, 1, this.year);
                 return RedirectToAction("index", this.controllerName, new { id = id });
+            }
+            catch (Exception exp)
+            {
+                ViewBag.ErrorMessage = exp.Message;
+                return View("Error", new HandleErrorInfo(exp, this.controllerName, "Approve"));
+            }
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public virtual ActionResult ApproveAdmin()
+        {
+            try
+            {
+                Procedures proc = new Procedures();
+                int result = proc.Executeprocedure(this.procedureName, this.year);
+                MonitoringUpdate.Update(this.tableName, 1, this.year);
+                return RedirectToAction("index", this.controllerName);
             }
             catch (Exception exp)
             {

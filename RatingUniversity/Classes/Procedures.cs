@@ -42,10 +42,37 @@ namespace RatingUniversity.Classes
             }
         }
 
+        protected int execProc(int year)
+        {
+            command.Parameters.Clear();
+            command.Parameters.Add(new SqlParameter("@year", SqlDbType.Int));
+            command.Parameters["@year"].Value = year;
+            try
+            {
+                this.connection.Open();
+                object result = command.ExecuteScalar();
+                return Convert.ToInt32(result);
+            }
+            catch (Exception exp)
+            {
+                throw new Exception("Error executing procedure", exp);
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+        }
+
         public int Executeprocedure(string procName, int id_university, int year)
         {
             this.command.CommandText = procName;
             return this.execProc(id_university, year);
+        }
+
+        public int Executeprocedure(string procName, int year)
+        {
+            this.command.CommandText = procName;
+            return this.execProc(year);
         }
 
         public int P1_1_kachestvo_uchebnoy_raboti(int id_university, int year)

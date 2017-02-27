@@ -63,13 +63,6 @@ namespace RatingUniversity.Controllers
 			return View(list.ToPagedList(pageNumber, pageSize));
 		}
 
-        //[Authorize(Roles = "admin")]
-        //public ActionResult Tasdiqlash(int UniverId = 0)
-        //{
-        //    MonitoringUpdate.Update(UniverId, "J5", 1, this.year);
-        //    return RedirectToAction("Index", "Jadval5");
-        //}
-
 		[HttpPost]
 		[Authorize(Roles = "user")]
 		public override ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
@@ -184,49 +177,6 @@ namespace RatingUniversity.Controllers
             db.Entry(record).State = EntityState.Modified;
             db.SaveChanges();
         }
-
-//        [Authorize(Roles = "user")]
-//        public ActionResult UploadData(IEnumerable<HttpPostedFileBase> files, int id)
-//        {
-//            if (files != null)
-//            {
-//                string fileName;
-//                string filepath;
-//                string fileExtension;
-
-//                foreach (var f in files)
-//                {
-//                    SetFileDetails(f, out fileName, out filepath, out fileExtension);
-					
-//                    if (fileExtension == ".pdf")
-//                    {
-//                        //Save the uploaded file to the application folder.
-//                        string ID_upl = this.id.ToString();
-//                        string savepath = Server.MapPath("~/Files/Upload/") + this.year + "/" + ID_upl + "/J5/";
-//                        Directory.CreateDirectory(savepath);
-//                        string savedFiles = savepath + id.ToString() + "_" + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
-//                        f.SaveAs(savedFiles);
-						
-//                    }
-//                    else
-//                    {
-//                        //TODO: Send Alert to the users file not supported.
-////						return Content("Faqat pdf fayl yuklanishi kerak!");
-
-//                        return Content("" +
-//                        "<HTML>" +
-//                        "<HEAD>" +
-//                        "<META HTTP-EQUIV='REFRESH' CONTENT='3; URL="+HttpContext.Request.UrlReferrer.ToString()+"'>" +
-//                        "</HEAD>" +
-//                        "<BODY>" +
-//                        "Faqat pdf fayl yuklanishi kerak!" +
-//                        "</BODY>" +
-//                        "</HTML>");
-//                    }
-//                }
-//            }
-//            return RedirectToAction("Index", "Jadval5");
-//        }
 
 		[Authorize(Roles = "admin")]
 		public ActionResult Status(int? id)

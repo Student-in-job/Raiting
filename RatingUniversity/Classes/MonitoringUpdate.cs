@@ -54,19 +54,56 @@ namespace RatingUniversity.Classes
 
 		}
 
+        public static void Update(string tableName, int status, int year)
+        {
+            using (TablesContext db = new TablesContext())
+            {
+                IEnumerable<university> universities = db.university.ToList();
+                foreach(university university in universities)
+                {
+                    IEnumerable<Monitorings> record = db.Monitorings.Where(model => model.UniverId == university.id && model.Year == year).ToList();
+                    if (record.Count() == 0)
+                    {
+                        Monitorings newRecord = new Monitorings();
+                        newRecord.Year = year;
+                        newRecord.UniverId = university.id;
+                        db.Monitorings.Add(newRecord);
+                    }
+                }
+                db.SaveChanges();
+                string query = "UPDATE Monitorings SET " + tableName + " = " + status.ToString() + " WHERE Year = " + year.ToString();
+                db.Database.ExecuteSqlCommand(query);
+            }
+        }
+
         public static int GetStatus(int? idUniversity, string tableName, int year)
         {
             //if ((idUniversity == null) || (idUniversity == 0))
             //    return -1;
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TablesContext"].ConnectionString);
-            string query = "select " + tableName + " FROM Monitorings WHERE UniverId = @id AND Year = @year";
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = query;
-            command.Parameters.Add(new SqlParameter("@id", idUniversity));
-            command.Parameters.Add(new SqlParameter("@year", year));
-            connection.Open();
-            object status = command.ExecuteScalar();
+            string query;
+            object status;
+            if (idUniversity != null)
+            {
+                query = "SELECT " + tableName + " FROM Monitorings WHERE UniverId = @id AND Year = @year";
+                command.CommandText = query;
+                command.Parameters.Add(new SqlParameter("@id", idUniversity));
+                command.Parameters.Add(new SqlParameter("@year", year));
+                connection.Open();
+                status = command.ExecuteScalar();
+            }
+            else
+            {
+                query = "SELECT " + tableName + " FROM Monitorings WHERE Year = @year";
+                command.CommandText = query;
+                command.Parameters.Add(new SqlParameter("@year", year));
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+                status = reader[0];
+            }
             connection.Close();
             if ((status == null) || (status == DBNull.Value))
                 return -1;

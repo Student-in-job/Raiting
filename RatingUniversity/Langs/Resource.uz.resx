@@ -541,7 +541,7 @@
     <value>Top universitet - 300</value>
   </data>
   <data name="T1_2_kol_otvet" xml:space="preserve">
-    <value>баҳолар сони</value>
+    <value>"{0}" баҳолар сони</value>
   </data>
   <data name="T1_2_kol_stud" xml:space="preserve">
     <value>Сўровномада иштирок этган талабалар сони</value>
