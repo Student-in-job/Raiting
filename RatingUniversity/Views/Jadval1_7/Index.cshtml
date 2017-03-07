@@ -1,73 +1,76 @@
-﻿@model IEnumerable<RatingUniversity.Models.Jadval_AKTdaraja_1_7>
-
-@{
-	Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
-	ViewBag.Title = "Jadval1_7";
-	int count = 1;
-}
-
-@if (ViewBag.role == 1)
-{
-
-        <div class="well well-sm">
-            <i class="glyphicon glyphicon-download-alt"></i> <a href="/Jadval1_7/Download">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
-        </div>
-    using (Html.BeginForm("Upload", "Jadval1_7", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        <fieldset>
-            <legend>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
-
-            <div class="input-group">
-                <input type="file" class="form-control" name="files" />
-                <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
-            </div>
-        </fieldset>
+﻿    @model IEnumerable<RatingUniversity.Models.Jadval_AKTdaraja_1_7>
+    @using MyFunctions = RatingUniversity.Classes.Functions;
+    @using Resource = RatingUniversity.Langs.Resource;
+    @{
+	    Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
+	    ViewBag.Title = "Jadval1_7";
+	    int count = 1;
     }
-}
-				  <h3 class="text-center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.T1_7_zogolovok, ViewBag.lang, ViewBag.alfabet)</h3>
 
-@if (ViewBag.bor == true)
-{
-<table class="table table-bordered">
-	<tr class="txtcenter">
-		<th>№</th>
-		<th>
-			@Html.DisplayNameFor(model => model.P)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.P7)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.P8)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.Year)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.UniversityId)
-		</th>
-	</tr>
+    @if ((ViewBag.status == -1 || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.isAdmin)
+    {
+        <div class="well well-sm">
+            <i class="glyphicon glyphicon-download-alt"></i> <a href="/Jadval1_7/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+        </div>
+        using (Html.BeginForm("Upload", "Jadval1_7", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <fieldset>
+                <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
+                <div class="input-group">
+                    <input type="file" class="form-control" name="files" />
+                    <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" /></span>
+                </div>
+            </fieldset>
+        }
+    }
+    @if ((ViewBag.status == -1 || ViewBag.status == 0) && ViewBag.status_date == 1 && ViewBag.IsAdmin)
+    {
+        <div>
+            <p class="bg-success text-center info-failed">@MyFunctions.Translate(Resource.DTM_vremya_istek, ViewBag.lang, ViewBag.alfabet)</p>
+        </div>
+    }
+    @if (ViewBag.status == 1 && ViewBag.IsAdmin)
+    {
+        <div>
+            <p class="bg-success text-center info-success">@MyFunctions.Translate(Resource.DTM_danniye_podtverjdeni, ViewBag.lang, ViewBag.alfabet)</p>
+        </div>
+    }
+    @if (ViewBag.status == 0 && ViewBag.IsAdmin)
+    {
+        using (Html.BeginForm("ApproveAdmin", "Jadval1_7", FormMethod.Post))
+        {
+            <fieldset>
+                <div class="input-group">
+                    <span class="input-group-btn"><input type="submit" name="Submit" id="Submit" class="btn btn-primary" value="@MyFunctions.Translate(Resource.Approve, ViewBag.lang, ViewBag.alfabet)" /></span>
+                </div>
+            </fieldset>
+        }
+    }
+    <h3 class="text-center">@MyFunctions.Translate(Resource.T1_7_zogolovok, ViewBag.lang, ViewBag.alfabet)</h3>
 
-@foreach (var item in Model) {
-    <tr>
-		<td>@count</td>@{count++;}
-        <td>
-            @Html.DisplayFor(modelItem => item.P)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.P7)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.P8)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Year)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UniversityId)
-        </td>
-    </tr>
-}
+    @if (ViewBag.bor == true)
+    {
+    <table class="table table-bordered">
+	    <tr class="txtcenter">
+		    <th>№</th>
+            <th>@MyFunctions.Translate(Resource.T1_7_otm_nomi, ViewBag.lang, ViewBag.alfabet)</th>
+            <th>@MyFunctions.Translate(Resource.T1_7_oqituvchi_soni, ViewBag.lang, ViewBag.alfabet)</th>
+            <th>@MyFunctions.Translate(Resource.T1_7_chet_tili_soni, ViewBag.lang, ViewBag.alfabet)</th>
+            <th>@MyFunctions.Translate(Resource.T1_7_akt_soni, ViewBag.lang, ViewBag.alfabet)</th>
+		</tr>
 
-</table>
-}
+    @foreach (var item in Model) 
+    {
+        <tr>
+		    <td>@count</td>@{count++;}
+            <td>@MyFunctions.Translate(ViewBag.listUniversities[item.UniversityId], ViewBag.lang, ViewBag.alfabet)</td>
+            <td>@Html.DisplayFor(modelItem => item.P)</td>
+            <td>@Html.DisplayFor(modelItem => item.P7)</td>
+            <td>@Html.DisplayFor(modelItem => item.P8)</td>
+            <td>@Html.DisplayFor(modelItem => item.Year)</td>
+            <td>@Html.DisplayFor(modelItem => item.UniversityId)</td>
+        </tr>
+    }
+
+    </table>
+    }

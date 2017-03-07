@@ -51,8 +51,7 @@ namespace RatingUniversity.Controllers
             }
             ViewBag.listUniversities = listUniversities;
 
-            int? status_table = db.Monitorings.Where(x => x.Year == this.year).Where(y => y.UniverId == this.id).Select(z => z.J1_2).FirstOrDefault();
-			DateTime? status_dt = db.Monitorings.Where(x => x.Year == this.year).Where(y => y.UniverId == this.id).Select(z => z.Srok).FirstOrDefault();
+            DateTime? status_dt = db.Monitorings.Where(x => x.Year == this.year).Where(y => y.UniverId == this.id).Select(z => z.Srok).FirstOrDefault();
 			ViewBag.status_date = 0;
 			ViewBag.date = status_dt;
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
@@ -68,7 +67,7 @@ namespace RatingUniversity.Controllers
             string path = Server.MapPath("~/Files/downloads/");
             DirectoryInfo di = new DirectoryInfo(path);
             if (!di.Exists) Directory.CreateDirectory(path);
-			string filename = Server.MapPath("~/Files/downloads/table1_2_" + dt + ".xls");
+            string filename = Server.MapPath("~/Files/downloads/table1_2_" + dt + ".xls");
             System.IO.File.Copy(filename_original, filename);
 
 			OleDbConnection oledbcon = new OleDbConnection(string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 12.0 xml;HDR=No'", filename));
@@ -164,7 +163,6 @@ namespace RatingUniversity.Controllers
 			GetExcelData_Jadval1_2(data);
 		}
 
-
 		private void GetExcelData_Jadval1_2(DataTable data)
 		{
 			List<Jadval_talimsifati_1_2> uploadExl = new List<Jadval_talimsifati_1_2>();
@@ -182,7 +180,7 @@ namespace RatingUniversity.Controllers
 				NewUpload.N3 = Convert.ToInt32(data.Rows[i][9]);
 				NewUpload.N43 = Convert.ToInt32(data.Rows[i][10]);
 				NewUpload.N53 = Convert.ToInt32(data.Rows[i][11]);
-				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
+                NewUpload.Year = (short)this.year;
 				NewUpload.UniversityId = Convert.ToInt32(data.Rows[i][0]);
 				uploadExl.Add(NewUpload);
 			}
@@ -199,7 +197,7 @@ namespace RatingUniversity.Controllers
 				foreach (var t in uploadExl)
 					db.Jadvaltalimsifati_1_2.Add(t);
 				db.SaveChanges();
-				MonitoringUpdate.Update(0, "J1_2", 0, this.year);
+				MonitoringUpdate.Update(0, this.tableName, 0, this.year);
 			}
 		}
 	}

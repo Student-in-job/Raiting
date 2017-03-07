@@ -41,19 +41,14 @@ namespace RatingUniversity.Controllers
 			else if (id != null && User.IsInRole("admin")) UniverId = id;
 
 			var list = db.Jadval2.Where(pr => pr.Year == this.year).Where(y => y.UniversityId == UniverId).OrderBy(j => j.Year);
-			ViewBag.bor = true;
-			if (list.Count() == 0)
-				ViewBag.bor = false;
+            ViewBag.bor = (list.Count() > 0);
 
 			DateTime? status_dt = db.Monitorings.Where(x => x.Year == this.year).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
 			ViewBag.status_date = 0;
 			ViewBag.date = status_dt;
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
 
-			ViewBag.role = 0;
-			if (User.IsInRole("admin")) ViewBag.role = 1;
-			ViewBag.UniverId = UniverId;
-            ViewBag.id = UniverId;
+			ViewBag.id = UniverId;
             ViewBag.status = MonitoringUpdate.GetStatus(UniverId, this.tableName, this.year);
             IQueryable<university> university = db.university.Where(model => model.id == UniverId);
 			ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
@@ -150,7 +145,7 @@ namespace RatingUniversity.Controllers
 				NewUpload.Speciality = Convert.ToString(data.Rows[i][7]);
 				NewUpload.Ishga_qabul_buyruq = Convert.ToString(data.Rows[i][8]);
                 NewUpload.AsosFile = "#" + Convert.ToString(data.Rows[i][9]);
-				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
+				NewUpload.Year = (short) this.year;
 				NewUpload.UniversityId = UniverId;
 				NewUpload.Status = 1;
 				

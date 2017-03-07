@@ -88,21 +88,11 @@
 						}
 					</td>
 				}
-				<td>
-					@Html.DisplayFor(modelItem => item.FullName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Davlat_ishjoy)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Speciality)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Subject)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Asos)
-				</td>
+				<td>@Html.DisplayFor(modelItem => item.FullName)</td>
+				<td>@Html.DisplayFor(modelItem => item.Davlat_ishjoy)</td>
+				<td>@Html.DisplayFor(modelItem => item.Speciality)</td>
+				<td>@Html.DisplayFor(modelItem => item.Subject)</td>
+				<td>@Html.DisplayFor(modelItem => item.Asos)</td>
 				<td>
                     <span>
                         @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.Asos_fayl;}

@@ -9,7 +9,7 @@
         int count = 1;
     }
 
-    @if ((ViewBag.status == -1 || ViewBag.status == 0) && ViewBag.status_date == 0 && ViewBag.role != 1)
+    @if ((ViewBag.status == -1 || ViewBag.status == 0) && ViewBag.status_date == 0 && !ViewBag.isAdmin)
     {
         <div class="well well-sm">
             <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Jadval2/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
@@ -37,7 +37,7 @@
             <p class="bg-success text-center info-success">@MyFunctions.Translate(Resource.DTM_danniye_podtverjdeni, ViewBag.lang, ViewBag.alfabet)</p>
         </div>
     }
-    @if (ViewBag.status == 0 && ViewBag.role == 1)
+    @if (ViewBag.status == 0 && ViewBag.isAdmin)
     {
         using (Html.BeginForm("Approve", "Jadval2", FormMethod.Post))
         {
@@ -91,30 +91,14 @@
                         </td>
                     }
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.FullName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Davlat)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Phd_seriya)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Phd_nomer)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Mag_seriya)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Mag_nomer)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Speciality)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Ishga_qabul_buyruq)
-                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Davlat)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Phd_seriya)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Phd_nomer)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Mag_seriya)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Mag_nomer)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Speciality)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ishga_qabul_buyruq)</td>
                     <td>
                         <span>
                             @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.AsosFile;}
@@ -129,7 +113,6 @@
                     </td>
                 </tr>
             }
-
         </table>
         @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
         @Scripts.Render("~/Scripts/site.js");

@@ -235,7 +235,6 @@
     <Compile Include="Controllers\Jadval19Controller.cs" />
     <Compile Include="Controllers\Jadval1Controller.cs" />
     <Compile Include="Controllers\Jadval10Controller.cs" />
-    <Compile Include="Controllers\Jadval11Controller.cs" />
     <Compile Include="Controllers\Jadval18Controller.cs" />
     <Compile Include="Controllers\Jadval1_2Controller.cs" />
     <Compile Include="Controllers\Jadval1_7Controller.cs" />
@@ -259,7 +258,6 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RaitingController.cs" />
     <Compile Include="Controllers\SciencePotentialController.cs" />
-    <Compile Include="Controllers\Table11Controller.cs" />
     <Compile Include="Controllers\Table12Controller.cs" />
     <Compile Include="Controllers\Table13Controller.cs" />
     <Compile Include="Controllers\Table14Controller.cs" />
@@ -732,7 +730,6 @@
     <Content Include="Views\QualityOfEducationalWork\ForeignLecturesParticipants.cshtml" />
     <Content Include="Views\QualityOfEducationalWork\SSPOTraining.cshtml" />
     <Content Include="Views\Jadval10\Index.cshtml" />
-    <Content Include="Views\Jadval11\Index.cshtml" />
     <Content Include="Views\Jadval18\Index.cshtml" />
     <Content Include="Views\Jadval2\Index.cshtml" />
     <Content Include="Views\Jadval6\Index.cshtml" />
@@ -791,7 +788,6 @@
     <Content Include="Views\University\Create.cshtml" />
     <Content Include="Views\University\Delete.cshtml" />
     <Content Include="Views\Jadval10\List.cshtml" />
-    <Content Include="Views\Jadval11\List.cshtml" />
     <Content Include="Views\Jadval18\List.cshtml" />
     <Content Include="Views\Jadval19\List.cshtml" />
     <Content Include="Views\Jadval2\List.cshtml" />

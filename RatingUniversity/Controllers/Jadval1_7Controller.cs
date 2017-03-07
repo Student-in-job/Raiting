@@ -17,65 +17,63 @@ using System.Threading;
 
 namespace RatingUniversity.Controllers
 {
-    public class Jadval1_7Controller : BaseViewController
+    public class Jadval1_7Controller : BaseInputDataController
     {
-        int active;
+        TablesContext db = new TablesContext();
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
             this.active = 2;
             base.Initialize(requestContext);
-            ViewBag.active = Functions.CreateActive(this.active, 34);
+            this.tableName = "J1_7";
+            this.procedureName = "P1_7_inosrtanniy_yazik_i_ikt";
+            this.fileName = "table1_7.xls";
+            this.controllerName = "Jadval1_7";
         }
         //
         // GET: /Jadval1_7/
 		[Authorize(Roles = "admin, user")]
 		public ActionResult Index()
 		{
-			TablesContext db = new TablesContext();
-			int yil = Int32.Parse(DateTime.Now.Year.ToString());
-			int UniverId = this.id;
-			var list = db.Jadval_AKTdaraja_1_7.Where(pr => pr.Year == yil).OrderBy(j => j.Year);
-			if (User.IsInRole("user")) list = db.Jadval_AKTdaraja_1_7.Where(pr => pr.Year == yil).Where(uid => uid.UniversityId == UniverId).OrderBy(j => j.Year); ;
-			if (User.IsInRole("admin")) list = db.Jadval_AKTdaraja_1_7.Where(pr => pr.Year == yil).OrderBy(j => j.Year); ;
+            ViewBag.status = MonitoringUpdate.GetStatus(null, this.tableName, this.year);
+			IEnumerable<Jadval_AKTdaraja_1_7> list;
+			if (!User.IsInRole("admin"))
+                list = db.Jadval_AKTdaraja_1_7.Where(model => model.Year == this.year && model.UniversityId == this.id).ToList();
+			else
+                list = db.Jadval_AKTdaraja_1_7.Where(model => model.Year == this.year).ToList();
 
-			ViewBag.bor = true; 
-			if (list.Count() == 0)
-				ViewBag.bor = false;
+            ViewBag.bor = (list.Count() > 0);
+            
+            Dictionary<int, string> listUniversities = new Dictionary<int, string>();
+            IEnumerable<university> universities = this.db.university.ToList();
+            foreach (university record in universities)
+            {
+                string universityName = (ViewBag.lang == "RU") ? record.name_RU : record.name_UZ;
+                listUniversities.Add(record.id, universityName);
+            }
+            ViewBag.listUniversities = listUniversities;
 
-			int? status_table = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.J1_7).FirstOrDefault();
-			ViewBag.status = status_table;
-			DateTime? status_dt = db.Monitorings.Where(x => x.Year == yil).Where(y => y.UniverId == UniverId).Select(z => z.Srok).FirstOrDefault();
+			DateTime? status_dt = db.Monitorings.Where(x => x.Year == this.year).Where(y => y.UniverId == this.id).Select(z => z.Srok).FirstOrDefault();
 			ViewBag.status_date = 0;
 			ViewBag.date = status_dt;
 			if (status_dt < DateTime.Now) ViewBag.status_date = 1;
 
-			ViewBag.role = 0;
-			if (User.IsInRole("admin")) ViewBag.role = 1;
-			ViewBag.UniverId = UniverId;
-			return View(list.ToList());
+			return View(list);
 		}
-
-		[Authorize(Roles = "admin")]
-		public ActionResult Tasdiqlash(int UniverId = 0)
-		{
-			int yil = Int32.Parse(DateTime.Now.Year.ToString());
-			MonitoringUpdate.Update(0, "J1_7", 1, yil);
-			return RedirectToAction("Index", "Jadval1_7");
-		}
-
-
 
 		[Authorize(Roles = "admin, user")]
-		public FileResult Download()
+		public override ActionResult Download()
 		{
 			string filename_original = Server.MapPath("~/Files/table1_7.xls");
 			string dt = DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss");
-			string filename = Server.MapPath("~/Files/downloads/table1_7" + dt + ".xls");
-			System.IO.File.Copy(filename_original, filename);
+            string path = Server.MapPath("~/Files/downloads/");
+            DirectoryInfo di = new DirectoryInfo(path);
+            if (!di.Exists) Directory.CreateDirectory(path);
+            string filename = Server.MapPath("~/Files/downloads/table1_7_" + dt + ".xls");
+            System.IO.File.Copy(filename_original, filename);
 
 			OleDbConnection oledbcon = new OleDbConnection(string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 12.0 xml;HDR=No'", filename));
 			TablesContext db = new TablesContext();
-			var list = db.Database.SqlQuery<university>(@"select u.id, u.name_UZ, u.name_RU, u.id_branch, u.id_region from university u ORDER BY u.name"+ViewBag.lang);
+			var list = db.Database.SqlQuery<university>(@"select u.id, u.name_UZ, u.name_RU, u.id_branch, u.id_region from university u ORDER BY u.name_"+ViewBag.lang);
 			OleDbCommand MyCommand = new OleDbCommand();
 			oledbcon.Open();
 			MyCommand.Connection = oledbcon;
@@ -99,13 +97,12 @@ namespace RatingUniversity.Controllers
 			oledbcon.Close();
 
 			byte[] fileBytes = System.IO.File.ReadAllBytes(filename);
-			string client_fileName = "table1_7" + dt + ".xls";
-			return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, client_fileName);
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, this.fileName);
 		}
 
 		[HttpPost]
 		[Authorize(Roles = "user")]
-		public ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
+        public override ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
 		{
 			if (files != null)
 			{
@@ -120,11 +117,9 @@ namespace RatingUniversity.Controllers
 
 					if (fileExtension == ".xls" || fileExtension == ".xlsx")
 					{
-						//Save the uploaded file to the application folder.
-						string yil = DateTime.Now.Year.ToString();
 						//string ID_upl = this.id.ToString();
 						string ID_upl = "admin";
-						string savepath = Server.MapPath("~/Files/Upload/") + yil + "/" + ID_upl + "/";
+						string savepath = Server.MapPath("~/Files/Upload/") + this.year + "/" + ID_upl + "/";
 						Directory.CreateDirectory(savepath);
 						string savedExcelFiles = savepath + Path.GetFileNameWithoutExtension(f.FileName) + DateTime.Now.ToString("_yyyy_MM_dd__HH_mm_ss") + fileExtension;
 						f.SaveAs(savedExcelFiles);
@@ -170,7 +165,7 @@ namespace RatingUniversity.Controllers
 		}
 
 
-		private static void GetExcelData_Jadval1_7(DataTable data)
+		private void GetExcelData_Jadval1_7(DataTable data)
 		{
 			List<Jadval_AKTdaraja_1_7> uploadExl = new List<Jadval_AKTdaraja_1_7>();
 			for (int i = 2; i < data.Rows.Count-2; i++)
@@ -180,15 +175,14 @@ namespace RatingUniversity.Controllers
 				NewUpload.P = Convert.ToInt32(data.Rows[i][2]);
 				NewUpload.P7 = Convert.ToInt32(data.Rows[i][3]);
 				NewUpload.P8 = Convert.ToInt32(data.Rows[i][4]);
-				NewUpload.Year = Convert.ToInt16(DateTime.Now.Year.ToString());
+                NewUpload.Year = (short)this.year;
 				NewUpload.UniversityId = Convert.ToInt32(data.Rows[i][0]);
 				uploadExl.Add(NewUpload);
 			}
 
 			using (TablesContext db = new TablesContext())
 			{
-				int yil = Int32.Parse(DateTime.Now.Year.ToString());
-				IQueryable<Jadval_AKTdaraja_1_7> deleteRows = db.Jadval_AKTdaraja_1_7.Where(x => x.Year == yil);
+				IQueryable<Jadval_AKTdaraja_1_7> deleteRows = db.Jadval_AKTdaraja_1_7.Where(x => x.Year == this.year);
 				foreach (var row in deleteRows)
 				{
 					db.Jadval_AKTdaraja_1_7.Remove(row);
@@ -198,7 +192,7 @@ namespace RatingUniversity.Controllers
 				foreach (var t in uploadExl)
 					db.Jadval_AKTdaraja_1_7.Add(t);
 				db.SaveChanges();
-				MonitoringUpdate.Update(0, "J1_7", 0, yil);
+				MonitoringUpdate.Update(0, "J1_7", 0, this.year);
 			}
 		}
 	}
