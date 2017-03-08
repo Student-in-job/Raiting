@@ -97,11 +97,8 @@ namespace RatingUniversity.Controllers
         [HttpPost]
         public override ActionResult Approve(int id)
         {
-            Procedures proc = new Procedures();
-            int year = this.year;
-            //int result = proc.P3_5_effektivnost_provodimih_nir(id, year);
             MonitoringUpdate.Update(id, this.tableName, 1, this.year);
-            return base.Approve(id);
+            return Redirect(Request.UrlReferrer.ToString());
         }
 	}
 }

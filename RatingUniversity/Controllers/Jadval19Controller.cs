@@ -277,6 +277,7 @@ namespace RatingUniversity.Controllers
 				foreach (var t in uploadExl)
 					db.Jadval19.Add(t);
 				db.SaveChanges();
+                MonitoringUpdate.Update(UniverId, this.tableName, 0, this.year);
 			}
 		}
 

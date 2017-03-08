@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using RatingUniversity.Classes;
 using RatingUniversity.Models;
 using System.Data;
+using System.Data.Entity;
 
 namespace RatingUniversity.Controllers
 {
@@ -22,6 +23,7 @@ namespace RatingUniversity.Controllers
             this.listName = "kolichestvo_mestnih_statey";
             this.controllerName = "Table14";
             this.tableName = "J14";
+            this.procedureName = "P3_2_kolichestvo_izdannih_statey";
         }
 
         protected override void FormListOfData(DataTable table)
@@ -98,15 +100,13 @@ namespace RatingUniversity.Controllers
             return View(this.db.kolichestvo_izdannih_mestnih_statey.Where(model => model.id_university == id && model.year == this.year).ToList());
         }
 
-        [Authorize(Roles = "admin")]
-        [HttpPost]
-        public override ActionResult Approve(int id)
+        protected override void UpdateFileName(string fileName, int recordId)
         {
-            Procedures proc = new Procedures();
-            int year = this.year;
-            int result = proc.P3_2_kolichestvo_izdannih_statey(id, year);
-            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
-            return base.Approve(id);
+            TablesContext db = new TablesContext();
+            kolichestvo_izdannih_mestnih_statey record = db.kolichestvo_izdannih_mestnih_statey.Find(recordId);
+            record.filename = fileName;
+            db.Entry(record).State = EntityState.Modified;
+            db.SaveChanges();
         }
 	}
 }

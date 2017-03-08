@@ -50,20 +50,20 @@
         }
     }
     <div>
-        <h3 class="text-center">@RatingUniversity.Classes.Functions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-        <h4 class="text-center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
-        <h5 class="text-center text-uppercase">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Information, ViewBag.lang, ViewBag.alfabet)</h5>
-        <h5 class="text-center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatNote, ViewBag.lang, ViewBag.alfabet)</h5>
+        <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+        <h4 class="text-center">@MyFunctions.Translate(Resource.CitatDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+        <h5 class="text-center text-uppercase">@MyFunctions.Translate(Resource.Information, ViewBag.lang, ViewBag.alfabet)</h5>
+        <h5 class="text-center">@MyFunctions.Translate(Resource.CitatNote, ViewBag.lang, ViewBag.alfabet)</h5>
         
         <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
             <thead>
             <tr>
-                <th style="width:38px;">№</th>
-                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatFIO, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatSource, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatInfo, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatLink, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.CitatUsage, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="width:38px">№</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.CitatFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.CitatSource, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.CitatInfo, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.CitatLink, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.CitatUsage, ViewBag.lang, ViewBag.alfabet)</th>
             </tr>
             </thead>
             <tbody>
@@ -75,7 +75,7 @@
                     index++;
                     <tr>
                         <td>@index</td>
-                        <td>@RatingUniversity.Classes.Functions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                        <td>@MyFunctions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
                         <td>@Html.DisplayFor(modelItem => item.source)</td>
                         <td>@Html.DisplayFor(modelItem => item.info)</td>
                         <td><a href="@item.link">@Html.DisplayFor(modelItem => item.link)</a></td>
@@ -85,9 +85,9 @@
                 }
             }
                 <tr>
-                    <td colspan="2">@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
                     <td colspan="4">@index</td>
                 </tr>
             </tbody>
         </table>
-        </div>
+    </div>

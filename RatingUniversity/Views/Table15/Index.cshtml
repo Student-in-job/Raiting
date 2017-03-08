@@ -50,134 +50,169 @@
         }
     }
 
-
-        <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-        <h4 class="text-center">@MyFunctions.Translate(Resource.EfNIRDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
-        <h5 class="text-center">@MyFunctions.Translate(Resource.Information, ViewBag.lang, ViewBag.alfabet)</h5>
-        <div id="tabs">
-            <ul>
-                <li><a href="#tabs-1">@MyFunctions.Translate(Resource.EfNIRSertificate, ViewBag.lang, ViewBag.alfabet)</a></li>
-                <li><a href="#tabs-2">@MyFunctions.Translate(Resource.EfNIRPatent, ViewBag.lang, ViewBag.alfabet)</a></li>
-                <li><a href="#tabs-3">@MyFunctions.Translate(Resource.EfNIRDalolatnoma, ViewBag.lang, ViewBag.alfabet)</a></li>
-            </ul>
-            <div id="tabs-1">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th style="width:38px;">№</th>
-                            <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRUniversityName, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRFIO, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@Resource.EfNIRName</th>
-                            <th style="text-align:center">@Resource.EfNIROrganization</th>
-                            <th style="text-align:center">@Resource.EfNIRCode</th>
-                            <th style="text-align:center">@Resource.FileName</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
-                            var index = 0;
-                            foreach(var item in Model.sertificat)
-                            {
-                                index++;
-                                <tr>
-                                    <td>@index</td>
-                                    <td>@MyFunctions.Translate(item.otm_name, ViewBag.lang, ViewBag.alfabet)</td>
-                                    <td>@MyFunctions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
-                                    <td>@item.sertifikat_name</td>
-                                    <td>@item.sertifikat_date</td>
-                                    <td>@item.sertifikat_number</td>
-                                    <td>@item.filename</td>
-                                </tr>
-                            }
+    <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+    <h4 class="text-center">@MyFunctions.Translate(Resource.EfNIRDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+    <h5 class="text-center">@MyFunctions.Translate(Resource.Information, ViewBag.lang, ViewBag.alfabet)</h5>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">@MyFunctions.Translate(Resource.EfNIRSertificate, ViewBag.lang, ViewBag.alfabet)</a></li>
+            <li><a href="#tabs-2">@MyFunctions.Translate(Resource.EfNIRPatent, ViewBag.lang, ViewBag.alfabet)</a></li>
+            <li><a href="#tabs-3">@MyFunctions.Translate(Resource.EfNIRDalolatnoma, ViewBag.lang, ViewBag.alfabet)</a></li>
+        </ul>
+        <div id="tabs-1">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width:38px">№</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRUniversityName, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRName, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIROrganization, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRCode, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.FileName, ViewBag.lang, ViewBag.alfabet)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var index = 0;
+                        foreach(var item in Model.sertificat)
+                        {
+                            index++;
+                            <tr>
+                                <td>@index</td>
+                                <td>@MyFunctions.Translate(item.otm_name, ViewBag.lang, ViewBag.alfabet)</td>
+                                <td>@MyFunctions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                                <td>@item.sertifikat_name</td>
+                                <td>@item.sertifikat_date</td>
+                                <td>@item.sertifikat_number</td>
+                                <td>
+                                    <span>
+                                        @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.filename;}
+                                        <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
+                                    </span>
+                                    @using (Html.BeginForm("UploadFilesOverload", "Table15", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        <input type="file" name="files" />
+                                        <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.id)" />
+                                        <input type="hidden" name="resType" value="1" />
+                                        <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+                                    }
+                                </td>
+                            </tr>
                         }
-                        <tr>
-                            <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
-                            <td colspan="5">@index</td>
-                        <tr>
-                    </tbody>
-                </table>    
-            </div>
-            <div id="tabs-2">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th style="width:38px;">№</th>
-                            <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRUniversityName, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRFIO, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@Resource.EfNIRName</th>
-                            <th style="text-align:center">@Resource.EfNIROrganization</th>
-                            <th style="text-align:center">@Resource.EfNIRCode</th>
-                            <th style="text-align:center">@Resource.FileName</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
-                            index = 0;
-                            foreach(var item in Model.patent)
-                            {
-                                index++;
-                                <tr>
-                                    <td>@index</td>
-                                    <td>@MyFunctions.Translate(item.otm_name, ViewBag.lang, ViewBag.alfabet)</td>
-                                    <td>@MyFunctions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
-                                    <td>@item.sertifikat_name</td>
-                                    <td>@item.sertifikat_date</td>
-                                    <td>@item.sertifikat_number</td>
-                                    <td>@item.filename</td>
-                                </tr>
-                            }
-                        }
-                        <tr>
-                            <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
-                            <td colspan="5">@index</td>
-                        <tr>
-                    </tbody>
-                </table>
-            </div>
-            <div id="tabs-3">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th style="width:38px;">№</th>
-                            <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRUniversityName, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRFIO, ViewBag.lang, ViewBag.alfabet)</th>
-                            <th style="text-align:center">@Resource.EfNIRName</th>
-                            <th style="text-align:center">@Resource.EfNIROrganization</th>
-                            <th style="text-align:center">@Resource.EfNIRCode</th>
-                            <th style="text-align:center">@Resource.FileName</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
-                            index = 0;
-                            foreach(var item in Model.dalolatnoma)
-                            {
-                                index++;
-                                <tr>
-                                    <td>@index</td>
-                                    <td>@MyFunctions.Translate(item.otm_name, ViewBag.lang, ViewBag.alfabet)</td>
-                                    <td>@MyFunctions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
-                                    <td>@item.sertifikat_name</td>
-                                    <td>@item.sertifikat_date</td>
-                                    <td>@item.sertifikat_number</td>
-                                    <td>@item.filename</td>
-                                </tr>
-                            }
-                        }
-                        <tr>
-                            <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
-                            <td colspan="5">@index</td>
-                        <tr>
-                    </tbody>
-                </table>
-            </div>
+                    }
+                    <tr>
+                        <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                        <td colspan="5">@index</td>
+                    <tr>
+                </tbody>
+            </table>    
         </div>
+        <div id="tabs-2">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width:38px;">№</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRUniversityName, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRName, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIROrganization, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRCode, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.FileName, ViewBag.lang, ViewBag.alfabet)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        index = 0;
+                        foreach(var item in Model.patent)
+                        {
+                            index++;
+                            <tr>
+                                <td>@index</td>
+                                <td>@MyFunctions.Translate(item.otm_name, ViewBag.lang, ViewBag.alfabet)</td>
+                                <td>@MyFunctions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                                <td>@item.sertifikat_name</td>
+                                <td>@item.sertifikat_date</td>
+                                <td>@item.sertifikat_number</td>
+                                <td>
+                                    <span>
+                                        @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.filename;}
+                                        <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
+                                    </span>
+                                    @using (Html.BeginForm("UploadFilesOverload", "Table15", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        <input type="file" name="files" />
+                                        <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.id)" />
+                                        <input type="hidden" name="resType" value="2" />
+                                        <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                    <tr>
+                        <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                        <td colspan="5">@index</td>
+                    <tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="tabs-3">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width:38px;">№</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRUniversityName, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRName, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIROrganization, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.EfNIRCode, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="text-align:center">@MyFunctions.Translate(Resource.FileName, ViewBag.lang, ViewBag.alfabet)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        index = 0;
+                        foreach(var item in Model.dalolatnoma)
+                        {
+                            index++;
+                            <tr>
+                                <td>@index</td>
+                                <td>@MyFunctions.Translate(item.otm_name, ViewBag.lang, ViewBag.alfabet)</td>
+                                <td>@MyFunctions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                                <td>@item.sertifikat_name</td>
+                                <td>@item.sertifikat_date</td>
+                                <td>@item.sertifikat_number</td>
+                                <td>
+                                    <span>
+                                        @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.filename;}
+                                        <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
+                                    </span>
+                                    @using (Html.BeginForm("UploadFilesOverload", "Table15", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        <input type="file" name="files" />
+                                        <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.id)" />
+                                        <input type="hidden" name="resType" value="3" />
+                                        <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                    <tr>
+                        <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                        <td colspan="5">@index</td>
+                    <tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-            
-@Scripts.Render("~/Scripts/jquery-ui-1.10.4.custom.min.js")
-@Styles.Render("~/Content/jquery-ui-1.10.4.custom.min.css")
-<script>
-    $(function () {
-        $("#tabs").tabs();
-    });
-</script>
+    @Scripts.Render("~/Scripts/jquery-ui-1.10.4.custom.min.js")
+    @Styles.Render("~/Content/jquery-ui-1.10.4.custom.min.css")
+    @Scripts.Render("~/Scripts/site.js")
+    <script>
+        $(function () {
+            $("#tabs").tabs();
+        });
+    </script>

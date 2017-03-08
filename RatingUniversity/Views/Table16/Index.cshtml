@@ -30,7 +30,7 @@
         {
             if (ViewBag.status == 0)
             {
-                using (Html.BeginForm("Approve", "Table15", FormMethod.Post))
+                using (Html.BeginForm("Approve", "Table16", FormMethod.Post))
                 {
                     <fieldset>
                         <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
@@ -54,44 +54,44 @@
     <h4 class="text-center">@MyFunctions.Translate(Resource.InfoThesisDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
         
     <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
-            <thead>
+        <thead>
+            <tr>
+                <th rowspan="2" style="width:38px">№</th>
+                <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisFIO, ViewBag.lang, ViewBag.alfabet)</th>
+                <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisUniversity, ViewBag.lang, ViewBag.alfabet)</th>
+                <th colspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisSpecialization, ViewBag.lang, ViewBag.alfabet)</th>
+                <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisName, ViewBag.lang, ViewBag.alfabet)</th>
+                <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisCouncil, ViewBag.lang, ViewBag.alfabet)</th>
+                <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisCouncilEmail, ViewBag.lang, ViewBag.alfabet)</th>
+                <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisDate, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+            <tr>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisCode, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisCodeName, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+        </thead>
+        <tbody>
+        @{
+            int index = 0;
+            foreach (var item in Model)
+            {
+                index++;
                 <tr>
-                    <th rowspan="2" style="width:38px;">№</th>
-                    <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisFIO, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisUniversity, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th colspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisSpecialization, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisName, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisCouncil, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisCouncilEmail, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisDate, ViewBag.lang, ViewBag.alfabet)</th>
+                    <td>@index</td>
+                    <td>@MyFunctions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td>@Html.DisplayFor(modelItem => item.work_place)</td>
+                    <td>@Html.DisplayFor(modelItem => item.iht_shifr)</td>
+                    <td>@Html.DisplayFor(modelItem => item.iht_nomi)</td>
+                    <td>@Html.DisplayFor(modelItem => item.disser_name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.kengash_shifr)</td>
+                    <td>@Html.DisplayFor(modelItem => item.kengash_email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.date)</td>
                 </tr>
-                <tr>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisCode, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.InfoThesisCodeName, ViewBag.lang, ViewBag.alfabet)</th>
-                </tr>
-            </thead>
-            <tbody>
-            @{
-                int index = 0;
-                foreach (var item in Model)
-                {
-                    index++;
-                    <tr>
-                        <td>@index</td>
-                        <td>@MyFunctions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
-                        <td>@Html.DisplayFor(modelItem => item.work_place)</td>
-                        <td>@Html.DisplayFor(modelItem => item.iht_shifr)</td>
-                        <td>@Html.DisplayFor(modelItem => item.iht_nomi)</td>
-                        <td>@Html.DisplayFor(modelItem => item.disser_name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.kengash_shifr)</td>
-                        <td>@Html.DisplayFor(modelItem => item.kengash_email)</td>
-                        <td>@Html.DisplayFor(modelItem => item.date)</td>
-                    </tr>
-                }
             }
-                <tr>
-                    <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
-                    <td colspan="7">@index</td>
-                </tr>
-            </tbody>
-        </table>
+        }
+            <tr>
+                <td colspan="2">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</td>
+                <td colspan="7">@index</td>
+            </tr>
+        </tbody>
+    </table>

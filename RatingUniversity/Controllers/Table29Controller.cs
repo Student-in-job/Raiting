@@ -20,7 +20,10 @@ namespace RatingUniversity.Controllers
             this.fileName = "29_nalichie_informacii_o_vuze_v_internete.xlsx";
             this.listName = "info_o_vuze_v_internete";
             this.controllerName = "Table29";
-            this.tableName = "J29";        }
+            this.tableName = "J29";
+            this.procedureName = "P4_3_dostupnost_info_o_vuze_v_internete";
+        }
+
         protected override void FormListOfData(DataTable table)
         {
             this.records = new List<nalichie_informacii_o_vuze_v_internete>();
@@ -88,17 +91,6 @@ namespace RatingUniversity.Controllers
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             return View(this.db.nalichie_informacii_o_vuze_v_internete.Where(model => model.id_university == id && model.year == this.year).ToList());
-        }
-
-        [Authorize(Roles = "admin")]
-        [HttpPost]
-        public override ActionResult Approve(int id)
-        {
-            Procedures proc = new Procedures();
-            int year = this.year;
-            int result = proc.P4_3_dostupnost_info_o_vuze_v_internete(id, year);
-            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
-            return base.Approve(id);
         }
 	}
 }

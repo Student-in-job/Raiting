@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using RatingUniversity.Classes;
 using RatingUniversity.Models;
 using System.Data;
+using System.Data.Entity;
 
 namespace RatingUniversity.Controllers
 {
@@ -24,6 +25,7 @@ namespace RatingUniversity.Controllers
             this.listNames.Add("rus_uzb_lang");
             this.controllerName = "Table12";
             this.tableName = "J12";
+            this.procedureName = "P3_1_citiruemost_publikaciy_pps_vuza";
         }
 
         protected override void FormListOfData(DataTable table, string listName)
@@ -97,17 +99,6 @@ namespace RatingUniversity.Controllers
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             return View(this.db.citiruemost_publikaciy_pps_vuza.Where(model => model.id_university == id && model.year == this.year).ToList());
-        }
-
-        [Authorize(Roles = "admin")]
-        [HttpPost]
-        public override ActionResult Approve(int id)
-        {
-            Procedures proc = new Procedures();
-            int year = this.year;
-            int result = proc.P3_1_citiruemost_publikaciy_pps_vuza(id, year);
-            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
-            return base.Approve(id);
         }
 	}
 }

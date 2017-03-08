@@ -1,17 +1,18 @@
-﻿@using RatingUniversity.Classes;
-@using MyFunctions = RatingUniversity.Classes.Functions;
-@using Resource = RatingUniversity.Langs.Resource;
-@{ 
-    Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; }
+﻿    @using RatingUniversity.Classes;
+    @using MyFunctions = RatingUniversity.Classes.Functions;
+    @using Resource = RatingUniversity.Langs.Resource;
+    @{ 
+        Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml"; 
+    }
     @{
-    if (ViewBag.Error == ErrorCodes.NotExcel)
-    {
-        <span class="error-message">@MyFunctions.Translate(Resource.WrongExcel, ViewBag.lang, ViewBag.alfabet);</span>
-    }
-    else if (ViewBag.Error == ErrorCodes.NotPDF)
-    {
-        <span class="error-message">@MyFunctions.Translate(Resource.WrongExcel, ViewBag.lang, ViewBag.alfabet);</span>
-    }
+        if (ViewBag.Error == ErrorCodes.NotExcel)
+        {
+            <span class="error-message">@MyFunctions.Translate(Resource.WrongExcel, ViewBag.lang, ViewBag.alfabet);</span>
+        }
+        else if (ViewBag.Error == ErrorCodes.NotPDF)
+        {
+            <span class="error-message">@MyFunctions.Translate(Resource.WrongExcel, ViewBag.lang, ViewBag.alfabet);</span>
+        }
 
-    <a href="@Request.UrlReferrer.AbsolutePath" class="btn btn-primary">@MyFunctions.Translate(Resource.Back, ViewBag.lang, ViewBag.alfabet)</a>
-}
+        <a href="@Request.UrlReferrer.AbsolutePath" class="btn btn-primary">@MyFunctions.Translate(Resource.Back, ViewBag.lang, ViewBag.alfabet)</a>
+    }

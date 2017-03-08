@@ -49,41 +49,52 @@
             </div>
         }
     }
-        <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-        <h4 class="text-center">@MyFunctions.Translate(Resource.PaperDataHeader_2, ViewBag.lang, ViewBag.alfabet)</h4>
-        <h5 class="text-center text-uppercase">@MyFunctions.Translate(Resource.Information, ViewBag.lang, ViewBag.alfabet)</h5>
+    <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+    <h4 class="text-center">@MyFunctions.Translate(Resource.PaperDataHeader_2, ViewBag.lang, ViewBag.alfabet)</h4>
+    <h5 class="text-center text-uppercase">@MyFunctions.Translate(Resource.Information, ViewBag.lang, ViewBag.alfabet)</h5>
        
-        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
-            <thead>
-            <tr>
-                <th style="width:38px">№</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.PaperFIO, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.PaperJournalName, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.PaperName, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.PaperYear, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.PaperLink, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.PaperAuthorsCount, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.FileName, ViewBag.lang, ViewBag.alfabet)</th>
-            </tr>
-            </thead>
-            <tbody>
-            @{
-                int index = 1;
-                foreach (var item in Model)
-                {
-                    index++;
-                    <tr>
-                        <td>@index</td>
-                        <td>@MyFunctions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
-                        <td>@Html.DisplayFor(modelItem => item.journal)</td>
-                        <td>@Html.DisplayFor(modelItem => item.paper)</td>
-                        <td>@MyFunctions.Translate(item.paper_year, ViewBag.lang, ViewBag.alfabet)</td>
-                        <td><a href="@MyFunctions.CreateURl(item.link)">@Html.DisplayFor(modelItem => item.link)</a></td>
-                        <td>@Html.DisplayFor(modelItem => item.coauthor_count)</td>
-                        <td></td>
-                    </tr>
-                }
+    <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
+        <thead>
+        <tr>
+            <th style="width:38px">№</th>
+            <th style="text-align:center">@MyFunctions.Translate(Resource.PaperFIO, ViewBag.lang, ViewBag.alfabet)</th>
+            <th style="text-align:center">@MyFunctions.Translate(Resource.PaperJournalName, ViewBag.lang, ViewBag.alfabet)</th>
+            <th style="text-align:center">@MyFunctions.Translate(Resource.PaperName, ViewBag.lang, ViewBag.alfabet)</th>
+            <th style="text-align:center">@MyFunctions.Translate(Resource.PaperYear, ViewBag.lang, ViewBag.alfabet)</th>
+            <th style="text-align:center">@MyFunctions.Translate(Resource.PaperLink, ViewBag.lang, ViewBag.alfabet)</th>
+            <th style="text-align:center">@MyFunctions.Translate(Resource.PaperAuthorsCount, ViewBag.lang, ViewBag.alfabet)</th>
+            <th style="text-align:center">@MyFunctions.Translate(Resource.FileName, ViewBag.lang, ViewBag.alfabet)</th>
+        </tr>
+        </thead>
+        <tbody>
+        @{
+            int index = 1;
+            foreach (var item in Model)
+            {
+                index++;
+                <tr>
+                    <td>@index</td>
+                    <td>@MyFunctions.Translate(item.fio, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td>@Html.DisplayFor(modelItem => item.journal)</td>
+                    <td>@Html.DisplayFor(modelItem => item.paper)</td>
+                    <td>@MyFunctions.Translate(item.paper_year, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td><a href="@MyFunctions.CreateURl(item.link)">@Html.DisplayFor(modelItem => item.link)</a></td>
+                    <td>@Html.DisplayFor(modelItem => item.coauthor_count)</td>
+                    <td>
+                        <span>
+                            @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.filename;}
+                            <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
+                        </span>
+                        @using (Html.BeginForm("UploadFiles", "Table14", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <input type="file" name="files" />
+                            <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.id)" />
+                            <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+                        }
+                    </td>
+                </tr>
             }
-            </tbody>
-        </table>
-
+        }
+        </tbody>
+    </table>
+    @Scripts.Render("~/Scripts/site.js");

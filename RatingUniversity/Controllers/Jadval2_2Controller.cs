@@ -73,7 +73,7 @@ namespace RatingUniversity.Controllers
 
 			OleDbConnection oledbcon = new OleDbConnection(string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 12.0 xml;HDR=No'", filename));
 			TablesContext db = new TablesContext();
-			var list = db.Database.SqlQuery<university>(@"select u.id, u.name_RU, u.name_UZ, u.id_branch, u.id_region from university u ORDER BY u.name" + ViewBag.lang);
+			var list = db.Database.SqlQuery<university>(@"select u.id, u.name_RU, u.name_UZ, u.id_branch, u.id_region from university u ORDER BY u.name_" + ViewBag.lang);
 			OleDbCommand MyCommand = new OleDbCommand();
 			oledbcon.Open();
 			MyCommand.Connection = oledbcon;
@@ -191,7 +191,7 @@ namespace RatingUniversity.Controllers
 				foreach (var t in uploadExl)
 					db.Jadval_bitiruvchi_2_2.Add(t);
 				db.SaveChanges();
-				MonitoringUpdate.Update(0, this.tableName, 0, this.year);
+				MonitoringUpdate.Update(this.tableName, 0, this.year);
 			}
 		}
 	}

@@ -258,6 +258,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RaitingController.cs" />
     <Compile Include="Controllers\SciencePotentialController.cs" />
+    <Compile Include="Controllers\Table11Controller.cs" />
     <Compile Include="Controllers\Table12Controller.cs" />
     <Compile Include="Controllers\Table13Controller.cs" />
     <Compile Include="Controllers\Table14Controller.cs" />

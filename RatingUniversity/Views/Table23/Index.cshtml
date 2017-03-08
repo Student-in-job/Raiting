@@ -50,43 +50,57 @@
         }
     }
 
-                          <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-                          <h4 class="text-center">@MyFunctions.Translate(Resource.IntGrantHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+    <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+    <h4 class="text-center">@MyFunctions.Translate(Resource.IntGrantHeader, ViewBag.lang, ViewBag.alfabet)</h4>
 
-        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word;">
-            <thead>
-                <tr>
-                    <th rowspan="3" style="width: 38px; vertical-align: central">№</th>
-                    <th colspan="5" style="text-align: center;">@MyFunctions.Translate(Resource.IntGrantInDollar, ViewBag.lang, ViewBag.alfabet)</th>
-                </tr>
-                <tr>
-                    <th colspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IntGrantGrant, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th colspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IntGrantRequest, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IntGrantTotal, ViewBag.lang, ViewBag.alfabet)</th>
-                </tr>
-                <tr>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.IntGrantName, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.IntGrantSum, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.IntGrantName, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.IntGrantSum, ViewBag.lang, ViewBag.alfabet)</th>
-                </tr>
-            </thead>
-            <tbody>
-                @{
-                    int index = 0;
-                    foreach (var item in Model)
-                    {
-                        index++;
-                        double? summa = item.grant_summa + item.buyurtma_summa;
-                        <tr>
-                            <td>@index</td>
-                            <td>@Html.DisplayFor(modelItem => item.grant_name)</td>
-                            <td>@Html.DisplayFor(modelItem => item.grant_summa)</td>
-                            <td>@Html.DisplayFor(modelItem => item.buyurtma_name)</td>
-                            <td>@Html.DisplayFor(modelItem => item.buyurtma_summa)</td>
-                            <td>@Html.DisplayFor(modelItem => summa)</td>
-                        </tr>
-                    }
+    <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word;">
+        <thead>
+            <tr>
+                <th rowspan="3" style="width: 38px; vertical-align: central">№</th>
+                <th colspan="5" style="text-align: center">@MyFunctions.Translate(Resource.IntGrantInDollar, ViewBag.lang, ViewBag.alfabet)</th>
+                <th rowspan="3" style="text-align:center">@MyFunctions.Translate(Resource.FileName, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+            <tr>
+                <th colspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IntGrantGrant, ViewBag.lang, ViewBag.alfabet)</th>
+                <th colspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IntGrantRequest, ViewBag.lang, ViewBag.alfabet)</th>
+                <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IntGrantTotal, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+            <tr>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.IntGrantName, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.IntGrantSum, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.IntGrantName, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.IntGrantSum, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int index = 0;
+                foreach (var item in Model)
+                {
+                    index++;
+                    double? summa = item.grant_summa + item.buyurtma_summa;
+                    <tr>
+                        <td>@index</td>
+                        <td>@Html.DisplayFor(modelItem => item.grant_name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.grant_summa)</td>
+                        <td>@Html.DisplayFor(modelItem => item.buyurtma_name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.buyurtma_summa)</td>
+                        <td>@Html.DisplayFor(modelItem => summa)</td>
+                        <td>
+                            <span>
+                                @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.filename;}
+                                <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
+                            </span>
+                            @using (Html.BeginForm("UploadFiles", "Table23", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                <input type="file" name="files" />
+                                <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.id)" />
+                                <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
+                            }
+                        </td>
+                    </tr>
                 }
-            </tbody>
-        </table>
+            }
+        </tbody>
+    </table>
+    @Scripts.Render("~/Scripts/site.js");

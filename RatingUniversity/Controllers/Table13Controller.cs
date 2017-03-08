@@ -8,6 +8,7 @@ using RatingUniversity.Models;
 using System.Threading;
 using System.Data;
 using System.Globalization;
+using System.Data.Entity;
 
 namespace RatingUniversity.Controllers
 {
@@ -24,6 +25,7 @@ namespace RatingUniversity.Controllers
             this.listName = "kolichestvo_mn_statey";
             this.controllerName = "Table13";
             this.tableName = "J13";
+            this.procedureName = "P3_2_kolichestvo_izdannih_statey";
         }
 
         protected override void FormListOfData(DataTable table)
@@ -100,15 +102,13 @@ namespace RatingUniversity.Controllers
             return View(this.db.kolichestvo_izdannih_mejdunarodnih_statey.Where(model => model.id_university == id && model.year == this.year).ToList());
         }
 
-        [Authorize(Roles = "admin")]
-        [HttpPost]
-        public override ActionResult Approve(int id)
+        protected override void UpdateFileName(string fileName, int recordId)
         {
-            Procedures proc = new Procedures();
-            int year = this.year;
-            int result = proc.P3_2_kolichestvo_izdannih_statey(id, year);
-            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
-            return base.Approve(id);
+            TablesContext db = new TablesContext();
+            kolichestvo_izdannih_mejdunarodnih_statey record = db.kolichestvo_izdannih_mejdunarodnih_statey.Find(recordId);
+            record.filename = fileName;
+            db.Entry(record).State = EntityState.Modified;
+            db.SaveChanges();
         }
 	}
 }

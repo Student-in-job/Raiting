@@ -17,39 +17,20 @@ namespace RatingUniversity.Classes
 			using (TablesContext db = new TablesContext())
 			{
 				int c = db.Monitorings.Where(x => x.Year == yil && x.UniverId == UniverId).Count();
-				if (UniverId==0)
-				{
-					//dlya vsex unuiverov dobavit stroku
-					TablesContext udb = new TablesContext();
-					var list = udb.Database.SqlQuery<university>(@"select u.id, u.name_UZ, u.name_RU, u.id_branch, u.id_region from university u ORDER BY u.name_UZ");
-					foreach (var l in list)
-					{
-						int cc = db.Monitorings.Where(x => x.Year == yil && x.UniverId == UniverId).Count();
-						if (cc == 0)
-						{
-							string sql = "insert Monitorings(Year, UniverId) Values(" + yil.ToString() + ", " + l.id.ToString() + ") ";
-							db.Database.ExecuteSqlCommand(sql);
-							db.SaveChanges();
-						}
-					}
-				}
-				
-				if (c == 0 && UniverId!=0)
-				{
+
+                if (c == 0 && UniverId != 0)
+                {
                     string sql = "insert Monitorings(Year, UniverId, " + fld_name + ") Values(" + yil.ToString() + ", " + UniverId.ToString() + ", " + status + ") ";
-					db.Database.ExecuteSqlCommand(sql);
-					db.SaveChanges();
-
-				}
-				else
-				{
-					string sql="";
-					if (UniverId != 0) sql = "update Monitorings set " + fld_name + "=" + status.ToString() + " where Year=" + yil.ToString() + " and UniverId=" + UniverId.ToString();
-					if (UniverId == 0) sql="update Monitorings set " + fld_name + "=" + status.ToString() + " where Year=" + yil.ToString();
-					db.Database.ExecuteSqlCommand(sql);
-					db.SaveChanges();
-
-				}
+                    db.Database.ExecuteSqlCommand(sql);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    string sql = "";
+                    if (UniverId != 0) sql = "update Monitorings set " + fld_name + "=" + status.ToString() + " where Year=" + yil.ToString() + " and UniverId=" + UniverId.ToString();
+                    db.Database.ExecuteSqlCommand(sql);
+                    db.SaveChanges();
+                }
 			}
 
 		}
@@ -84,7 +65,7 @@ namespace RatingUniversity.Classes
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
             string query;
-            object status;
+            object status = null;
             if (idUniversity != null)
             {
                 query = "SELECT " + tableName + " FROM Monitorings WHERE UniverId = @id AND Year = @year";
@@ -101,8 +82,11 @@ namespace RatingUniversity.Classes
                 command.Parameters.Add(new SqlParameter("@year", year));
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                reader.Read();
-                status = reader[0];
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    status = reader[0];
+                }
             }
             connection.Close();
             if ((status == null) || (status == DBNull.Value))

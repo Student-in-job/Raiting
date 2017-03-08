@@ -49,33 +49,33 @@
             </div>
         }
     }
-        <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-        <h4 class="text-center">@MyFunctions.Translate(Resource.WebHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+    <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+    <h4 class="text-center">@MyFunctions.Translate(Resource.WebHeader, ViewBag.lang, ViewBag.alfabet)</h4>
         
-        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word;">
-            <thead>
-                <tr>
-                    <th style="width: 38px;">№</th>
-                    <th style="text-align:center;">@MyFunctions.Translate(Resource.WebUniversity, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.Website, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.WebMetrics, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.WebLocal, ViewBag.lang, ViewBag.alfabet)</th>
-                </tr>
-            </thead>
-            <tbody>
-                @{
-                    int index = 0;
-                    foreach (var item in Model)
-                    {
-                        index++;
-                        <tr>
-                            <td>@index</td>
-                            <td>@Html.DisplayFor(modelItem => item.vuz_name)</td>
-                            <td>@Html.DisplayFor(modelItem => item.vuz_web)</td>
-                            <td>@Html.DisplayFor(modelItem => item.vuz_int_rate)</td>
-                            <td>@Html.DisplayFor(modelItem => item.vuz_uz_rate)</td>
-                        </tr>
-                    }
+    <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word;">
+        <thead>
+            <tr>
+                <th style="width: 38px">№</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.WebUniversity, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.Website, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.WebMetrics, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.WebLocal, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int index = 0;
+                foreach (var item in Model)
+                {
+                    index++;
+                    <tr>
+                        <td>@index</td>
+                        <td>@Html.DisplayFor(modelItem => item.vuz_name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.vuz_web)</td>
+                        <td>@Html.DisplayFor(modelItem => item.vuz_int_rate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.vuz_uz_rate)</td>
+                    </tr>
                 }
-            </tbody>
-        </table>
+            }
+        </tbody>
+    </table>

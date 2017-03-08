@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using RatingUniversity.Classes;
 using RatingUniversity.Models;
 using System.Data;
+using System.Data.Entity;
 
 namespace RatingUniversity.Controllers
 {
@@ -21,8 +22,7 @@ namespace RatingUniversity.Controllers
             this.listName = "granti_po_vidam_issledovaniy";
             this.controllerName = "Table25";
             this.tableName = "J25";
-            //this.startRow = 8;
-            //this.endRow = 2;
+            this.procedureName = "P3_5_effektivnost_provodimih_nir";
         }
         protected override void FormListOfData(DataTable table)
         {
@@ -101,15 +101,13 @@ namespace RatingUniversity.Controllers
             return View(this.db.granti_po_vidam_issledovaniy.Where(model => model.id_university == id && model.year == this.year).ToList());
         }
 
-        [Authorize(Roles = "admin")]
-        [HttpPost]
-        public override ActionResult Approve(int id)
+        protected override void UpdateFileName(string fileName, int recordId)
         {
-            Procedures proc = new Procedures();
-            int year = this.year;
-            int result = proc.P3_5_effektivnost_provodimih_nir(id, year);
-            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
-            return base.Approve(id);
+            TablesContext db = new TablesContext();
+            granti_po_vidam_issledovaniy record = db.granti_po_vidam_issledovaniy.Find(recordId);
+            record.filename = fileName;
+            db.Entry(record).State = EntityState.Modified;
+            db.SaveChanges();
         }
 	}
 }

@@ -21,6 +21,7 @@ namespace RatingUniversity.Controllers
             this.listName = "osnashennost_laboratornim_obor";
             this.controllerName = "Table30";
             this.tableName = "J30";
+            this.procedureName = "P4_4_stepen_osnashennosti_laboratoriy";
         }
         protected override void FormListOfData(DataTable table)
         {
@@ -47,7 +48,7 @@ namespace RatingUniversity.Controllers
                 if (row[3] != DBNull.Value) record.kolichestvo_lab_zanyatiy = Convert.ToInt32(row[3]);
                 if (row[4] != DBNull.Value) record.kolichestvo_polnostyu_osnashennih_lab = Convert.ToInt32(row[4]);
                 record.id_university = this.id;
-                record.year = this.id;
+                record.year = this.year;
 
                 this.records.Add(record);
             }
@@ -89,17 +90,6 @@ namespace RatingUniversity.Controllers
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             return View(this.db.osnashennost_laboratornim_oborudovaniem.Where(model => model.id_university == id && model.year == this.year).ToList());
-        }
-
-        [Authorize(Roles = "admin")]
-        [HttpPost]
-        public override ActionResult Approve(int id)
-        {
-            Procedures proc = new Procedures();
-            int year = this.year;
-            int result = proc.P4_4_stepen_osnashennosti_laboratoriy(id, year);
-            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
-            return base.Approve(id);
         }
 	}
 }

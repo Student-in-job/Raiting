@@ -21,6 +21,7 @@ namespace RatingUniversity.Controllers
             this.listName = "nalichie_elektronnoy_literaturi";
             this.controllerName = "Table27";
             this.tableName = "J27";
+            this.procedureName = "P4_1_osnashennost_irc_literaturoy";
         }
         protected override void FormListOfData(DataTable table)
         {
@@ -42,6 +43,9 @@ namespace RatingUniversity.Controllers
                 }
                 if (!flag) continue;
                 nalichie_elektronnoy_literaturi record = new nalichie_elektronnoy_literaturi();
+                record.nalichie_uzb = false;
+                record.nalichie_rus = false;
+                record.nalichie_angl = false;
                 if (row[1] != DBNull.Value) record.napravlenie = Convert.ToString(row[1]);
                 if (row[2] != DBNull.Value) record.nazvaniya_predmetov = Convert.ToString(row[2]);
                 if (row[3] != DBNull.Value) record.osn_literatura = Convert.ToString(row[3]);
@@ -91,17 +95,6 @@ namespace RatingUniversity.Controllers
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             return View(this.db.nalichie_elektronnoy_literaturi.Where(model => model.id_university == id && model.year == this.year).ToList());
-        }
-
-        [Authorize(Roles = "admin")]
-        [HttpPost]
-        public override ActionResult Approve(int id)
-        {
-            Procedures proc = new Procedures();
-            int year = this.year;
-            int result = proc.P4_1_osnashennost_irc_literaturoy(id, year);
-            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
-            return base.Approve(id);
         }
 	}
 }

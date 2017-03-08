@@ -1,7 +1,9 @@
-﻿@model List<RatingUniversity.Models.university>
-@{
-    ViewBag.Title = "Список вузов";
-}
+﻿    @model List<RatingUniversity.Models.university>
+    @using MyFunctions = RatingUniversity.Classes.Functions;
+    @using Resource = RatingUniversity.Langs.Resource;
+    {
+        ViewBag.Title = "Список вузов";
+    }
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
     @{
         Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
@@ -11,7 +13,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th>@RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.AccountUniversity, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.AccountUniversity, ViewBag.lang, ViewBag.alfabet)</th>
             </tr>
         </thead>
 
@@ -20,9 +22,8 @@
             string name = (ViewBag.lang == "RU") ? item.name_RU : item.name_UZ;
             <tr>
                 <td>
-                    <a href="/@ViewBag.controller/Index/@item.id">@RatingUniversity.Classes.Functions.Translate(name, ViewBag.lang, ViewBag.alfabet)</a>
+                    <a href="/@ViewBag.controller/Index/@item.id">@MyFunctions.Translate(name, ViewBag.lang, ViewBag.alfabet)</a>
                 </td>
             </tr>
         }
-
     </table>

@@ -1,23 +1,25 @@
-﻿@*model IEnumerable<RatingUniversity.Models.>*@
-@{
-    ViewBag.Title = @RatingUniversity.Langs.Resource.HomePageTitle;
-}
+﻿    @*model IEnumerable<RatingUniversity.Models.>*@
+    @using MyFunctions = RatingUniversity.Classes.Functions;
+    @using Resource = RatingUniversity.Langs.Resource;
+    @{
+        ViewBag.Title = MyFunctions.Translate(Resource.HomePageTitle, ViewBag.lang, ViewBag.alfabet);
+    }
 
-<div class="jumbotron">
-    <h1>@RatingUniversity.Langs.Resource.HomePageRatingHeader</h1>
-    <p class="lead" style="margin-bottom: 2em !important; ">@RatingUniversity.Langs.Resource.HomePageHeaderInfo</p>
-    <div class="clock"></div>
-    <div class="message"></div>
-    <!--<p><a href="" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>-->
-</div>
+    <div class="jumbotron">
+        <h1>@MyFunctions.Translate(Resource.HomePageRatingHeader, ViewBag.lang, ViewBag.alfabet)</h1>
+        <p class="lead" style="margin-bottom: 2em !important; ">@MyFunctions.Translate(Resource.HomePageHeaderInfo, ViewBag.lang, ViewBag.alfabet)</p>
+        <div class="clock"></div>
+        <div class="message"></div>
+        <!--<p><a href="" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>-->
+    </div>
 
 
     <!--<div class="row">
         <div class="col-md-8">
-            <h2>@RatingUniversity.Langs.Resource.HomePageHeader @ViewBag.year </h2>
+            <h2>@MyFunctions.Translate(Resource.HomePageHeader, ViewBag.lang, ViewBag.alfabet) @ViewBag.year </h2>
 
                 <p>
-                    @RatingUniversity.Langs.Resource.HomePageRatingHeaderInfo
+                    @MyFunctions.Translate(Resource.HomePageRatingHeaderInfo, ViewBag.lang, ViewBag.alfabet)
                 </p>
 
 
@@ -25,8 +27,8 @@
                 <thead>
                     <tr>
                         <th>№</th>
-                        <th>@RatingUniversity.Langs.Resource.HomePageChanges</th>
-                        <th>@RatingUniversity.Langs.Resource.HomePageUniversity</th>
+                        <th>@MyFunctions.Translate(Resource.HomePageChanges, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th>@MyFunctions.Translate(Resource.HomePageUniversity, ViewBag.lang, ViewBag.alfabet)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,12 +69,12 @@
                     </tr>
                 </tbody>
             </table>
-            <p><a class="btn btn-default" href="#Getting started">@RatingUniversity.Langs.Resource.ButtonLearnMore &raquo;</a></p>
+            <p><a class="btn btn-default" href="#Getting started">@MyFunctions.Translate(Resource.ButtonLearnMore, ViewBag.lang, ViewBag.alfabet) &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>@RatingUniversity.Langs.Resource.HomePageChartHeader</h2>
-        <p>@RatingUniversity.Langs.Resource.HomePageChartHeaderInfo</p>
-        <p><a class="btn btn-default" href="#Get more information">@RatingUniversity.Langs.Resource.ButtonLearnMore &raquo;</a></p>
+        <h2>@MyFunctions.Translate(Resource.HomePageChartHeader, ViewBag.lang, ViewBag.alfabet)</h2>
+        <p>@MyFunctions.Translate(Resource.HomePageChartHeaderInfo, ViewBag.lang, ViewBag.alfabet)</p>
+        <p><a class="btn btn-default" href="#Get more information">@MyFunctions.Translate(Resource.ButtonLearnMore, ViewBag.lang, ViewBag.alfabet) &raquo;</a></p>
     </div>-->
     <script type="text/javascript">
             var clock;

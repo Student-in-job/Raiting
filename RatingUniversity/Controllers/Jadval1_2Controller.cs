@@ -197,7 +197,7 @@ namespace RatingUniversity.Controllers
 				foreach (var t in uploadExl)
 					db.Jadvaltalimsifati_1_2.Add(t);
 				db.SaveChanges();
-				MonitoringUpdate.Update(0, this.tableName, 0, this.year);
+				MonitoringUpdate.Update(this.tableName, 0, this.year);
 			}
 		}
 	}

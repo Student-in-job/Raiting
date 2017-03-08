@@ -49,40 +49,46 @@
         }
     }
 
-                          <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-                          <h4 class="text-center">@MyFunctions.Translate(Resource.IRCBookHeader1, ViewBag.lang, ViewBag.alfabet)</h4>
+    <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+    <h4 class="text-center">@MyFunctions.Translate(Resource.IRCBookHeader1, ViewBag.lang, ViewBag.alfabet)</h4>
         
-    <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word;">
-            <thead>
-                <tr>
-                    <th rowspan="2" style="width: 38px;">@MyFunctions.Translate(Resource.IRCBookIndex, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th rowspan="2" style="text-align:center;">@MyFunctions.Translate(Resource.IRCBookSpeciality, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IRCBookSubject, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IRBBookTextbook, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th colspan="3" style="text-align:center">@MyFunctions.Translate(Resource.IRCBookEadditional, ViewBag.lang, ViewBag.alfabet)</th>
-                </tr>
-                <tr>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.IRCBookUzbek, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.IRCBookRussian, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.IRCBookEnglish, ViewBag.lang, ViewBag.alfabet)</th>
-                </tr>
-            </thead>
-            <tbody>
-                @{
-                    int index = 0;
-                    foreach (var item in Model)
-                    {
-                        index++;
-                        <tr>
-                            <td>@index</td>
-                            <td>@Html.DisplayFor(modelItem => item.napravlenie)</td>
-                            <td>@Html.DisplayFor(modelItem => item.nazvaniya_predmetov)</td>
-                            <td>@Html.DisplayFor(modelItem => item.osn_literatura)</td>
-                            <td>@Html.DisplayFor(modelItem => item.nalichie_uzb)</td>
-                            <td>@Html.DisplayFor(modelItem => item.nalichie_rus)</td>
-                            <td>@Html.DisplayFor(modelItem => item.nalichie_angl)</td>
-                        </tr>
-                    }
+    <table class="table table-bordered table-striped" style="width:100%;table-layout:fixed;word-wrap:break-word;">
+        <thead>
+            <tr>
+                <th rowspan="2" style="width: 38px;">@MyFunctions.Translate(Resource.IRCBookIndex, ViewBag.lang, ViewBag.alfabet)</th>
+                <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IRCBookSpeciality, ViewBag.lang, ViewBag.alfabet)</th>
+                <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IRCBookSubject, ViewBag.lang, ViewBag.alfabet)</th>
+                <th rowspan="2" style="text-align:center">@MyFunctions.Translate(Resource.IRBBookTextbook, ViewBag.lang, ViewBag.alfabet)</th>
+                <th colspan="3" style="text-align:center">@MyFunctions.Translate(Resource.IRCBookEadditional, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+            <tr>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.IRCBookUzbek, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.IRCBookRussian, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.IRCBookEnglish, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int index = 0;
+                foreach (var item in Model)
+                {
+                    index++;
+                    <tr>
+                        <td style ="vertical-align: middle; width=38px">@index</td>
+                        <td style="vertical-align: middle">@Html.DisplayFor(modelItem => item.napravlenie)</td>
+                        <td style="vertical-align: middle">@Html.DisplayFor(modelItem => item.nazvaniya_predmetov)</td>
+                        <td style="vertical-align: middle">@Html.DisplayFor(modelItem => item.osn_literatura)</td>
+                        <td style="text-align: center; vertical-align: middle">
+                            @if ((bool)item.nalichie_uzb) { <i class="glyphicon glyphicon-plus"></i> }
+                        </td>
+                        <td style="text-align: center; vertical-align: middle">
+                            @if((bool)item.nalichie_rus) { <i class="glyphicon glyphicon-plus"></i> }
+                        </td>
+                        <td style="text-align: center; vertical-align: middle">
+                            @if((bool)item.nalichie_angl) { <i class="glyphicon glyphicon-plus"></i> }
+                        </td>
+                    </tr>
                 }
-            </tbody>
-        </table>
+            }
+        </tbody>
+    </table>

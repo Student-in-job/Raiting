@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using RatingUniversity.Classes;
 using RatingUniversity.Models;
 using System.Data;
+using System.Data.Entity;
 
 namespace RatingUniversity.Controllers
 {
@@ -21,6 +22,7 @@ namespace RatingUniversity.Controllers
             this.listName = "summi_uzb_grantov";
             this.controllerName = "Table24";
             this.tableName = "J24";
+            this.procedureName = "P3_4_summa_finansovih_sredstv_na_issledovaniya";
         }
         protected override void FormListOfData(DataTable table)
         {
@@ -94,15 +96,13 @@ namespace RatingUniversity.Controllers
             return View(this.db.summi_respublikanskih_grantov.Where(model => model.id_university == id && model.year == this.year).ToList());
         }
 
-        [Authorize(Roles = "admin")]
-        [HttpPost]
-        public override ActionResult Approve(int id)
+        protected override void UpdateFileName(string fileName, int recordId)
         {
-            Procedures proc = new Procedures();
-            int year = this.year;
-            int result = proc.P3_4_summa_finansovih_sredstv_na_issledovaniya(id, year);
-            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
-            return base.Approve(id);
+            TablesContext db = new TablesContext();
+            summi_respublikanskih_grantov record = db.summi_respublikanskih_grantov.Find(recordId);
+            record.filename = fileName;
+            db.Entry(record).State = EntityState.Modified;
+            db.SaveChanges();
         }
 	}
 }

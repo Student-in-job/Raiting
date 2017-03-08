@@ -49,96 +49,62 @@
         }
     }
 
-        <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-        <h4 class="text-center">@MyFunctions.Translate(Resource.PPSDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
-        <table class="table table-bordered" style="width:1000px;table-layout:fixed;word-wrap:break-word">
-            <thead>
-                <tr>
-                    <th colspan="17" style="text-align:center">@MyFunctions.Translate(Resource.PPSAmount, ViewBag.lang, ViewBag.alfabet)</th>
-                </tr>
-                <tr>
-                    <th colspan="3" style="text-align:center">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th colspan="6" style="text-align:center">@MyFunctions.Translate(Resource.PPSBasicHeader, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th colspan="4" style="text-align:center">@MyFunctions.Translate(Resource.PPSVisitingHeader, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th colspan="4" style="text-align:center">@MyFunctions.Translate(Resource.PPSHourlyHeader, ViewBag.lang, ViewBag.alfabet)</th>
-                </tr>
-                <tr>
-                    <th>@MyFunctions.Translate(Resource.PPSBasicStaff, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSVisitingStaff, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSHourly, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSphDeX, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSphD, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSProfessor, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSDocent, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSTeacher, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSAssistant, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSProfessorPhD, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSDocentPhD, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSTeacher, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSAssistant, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSProfessorPhD, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSDocentPhD, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSTeacher, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th>@MyFunctions.Translate(Resource.PPSAssistant, ViewBag.lang, ViewBag.alfabet)</th>
-                </tr>
-            </thead>
-            <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ass_shtat)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.urindosh)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.saotbay)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.as_fan_nom)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.as_fan_doc)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.as_prof)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.as_doz)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.as_katta)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.as_ass)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ur_prof)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ur_doc)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ur_katta)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ur_ass)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.so_prof)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.so_doc)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.so_katta)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.so_ass)
-                    </td>
-                </tr>
-            }
-            </tbody>
-        </table>
+    <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+    <h4 class="text-center">@MyFunctions.Translate(Resource.PPSDataHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+    <table class="table table-bordered" style="width:1000px;table-layout:fixed;word-wrap:break-word">
+        <thead>
+            <tr>
+                <th colspan="17" style="text-align:center">@MyFunctions.Translate(Resource.PPSAmount, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+            <tr>
+                <th colspan="3" style="text-align:center">@MyFunctions.Translate(Resource.Common, ViewBag.lang, ViewBag.alfabet)</th>
+                <th colspan="6" style="text-align:center">@MyFunctions.Translate(Resource.PPSBasicHeader, ViewBag.lang, ViewBag.alfabet)</th>
+                <th colspan="4" style="text-align:center">@MyFunctions.Translate(Resource.PPSVisitingHeader, ViewBag.lang, ViewBag.alfabet)</th>
+                <th colspan="4" style="text-align:center">@MyFunctions.Translate(Resource.PPSHourlyHeader, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+            <tr>
+                <th>@MyFunctions.Translate(Resource.PPSBasicStaff, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSVisitingStaff, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSHourly, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSphDeX, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSphD, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSProfessor, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSDocent, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSTeacher, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSAssistant, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSProfessorPhD, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSDocentPhD, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSTeacher, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSAssistant, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSProfessorPhD, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSDocentPhD, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSTeacher, ViewBag.lang, ViewBag.alfabet)</th>
+                <th>@MyFunctions.Translate(Resource.PPSAssistant, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ass_shtat)</td>
+                <td>@Html.DisplayFor(modelItem => item.urindosh)</td>
+                <td>@Html.DisplayFor(modelItem => item.saotbay)</td>
+                <td>@Html.DisplayFor(modelItem => item.as_fan_nom)</td>
+                <td>@Html.DisplayFor(modelItem => item.as_fan_doc)</td>
+                <td>@Html.DisplayFor(modelItem => item.as_prof)</td>
+                <td>@Html.DisplayFor(modelItem => item.as_doz)</td>
+                <td>@Html.DisplayFor(modelItem => item.as_katta)</td>
+                <td>@Html.DisplayFor(modelItem => item.as_ass)</td>
+                <td>@Html.DisplayFor(modelItem => item.ur_prof)</td>
+                <td>@Html.DisplayFor(modelItem => item.ur_doc)</td>
+                <td>@Html.DisplayFor(modelItem => item.ur_katta)</td>
+                <td>@Html.DisplayFor(modelItem => item.ur_ass)</td>
+                <td>@Html.DisplayFor(modelItem => item.so_prof)</td>
+                <td>@Html.DisplayFor(modelItem => item.so_doc)</td>
+                <td>@Html.DisplayFor(modelItem => item.so_katta)</td>
+                <td>@Html.DisplayFor(modelItem => item.so_ass)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
 

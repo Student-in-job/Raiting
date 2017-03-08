@@ -1,36 +1,28 @@
-﻿@model IEnumerable<RatingUniversity.Models.university>
-
-@{
-    ViewBag.Title = "Список ВУЗов";
-}
+﻿    @model IEnumerable<RatingUniversity.Models.university>
+    @using MyFunctions = RatingUniversity.Classes.Functions;
+    @using Resource = RatingUniversity.Langs.Resource;
+    @{
+        ViewBag.Title = "Список ВУЗов";
+    }
     <div class="well well-sm">
         <i class="glyphicon glyphicon-plus"></i> @Html.ActionLink("Добавить", "Create")
     </div>
 
-<table class="table table-bordered">
-    <tr>
-        <th>
-            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_RU, ViewBag.lang, ViewBag.alfabet)
-        </th>
-        <th>
-            @RatingUniversity.Classes.Functions.Translate(RatingUniversity.Langs.Resource.ManageUniversityName_UZ, ViewBag.lang, ViewBag.alfabet)
-        </th>
-        <th></th>
-    </tr>
+    <table class="table table-bordered">
+        <tr>
+            <th>@MyFunctions.Translate(Resource.ManageUniversityName_RU, ViewBag.lang, ViewBag.alfabet)</th>
+            <th>@MyFunctions.Translate(Resource.ManageUniversityName_UZ, ViewBag.lang, ViewBag.alfabet)</th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name_RU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.name_UZ)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
-
-</table>
+        @foreach (var item in Model) {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.name_RU)</td>
+                <td>@Html.DisplayFor(modelItem => item.name_UZ)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.id })
+                </td>
+            </tr>
+        }
+    </table>

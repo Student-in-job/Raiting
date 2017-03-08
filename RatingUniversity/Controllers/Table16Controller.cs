@@ -22,6 +22,7 @@ namespace RatingUniversity.Controllers
             this.listName = "informaciya_o_dissertaciyah";
             this.controllerName = "Table16";
             this.tableName = "J16";
+            this.procedureName = "P3_3_kolichestvo_sotrudnikov_vuza";
         }
 
         protected override void FormListOfData(DataTable table)
@@ -95,17 +96,6 @@ namespace RatingUniversity.Controllers
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
             return View(this.db.informaciya_o_dissertaciyah.Where(model => model.id_university == id && model.year == this.year).ToList());
-        }
-
-        [Authorize(Roles = "admin")]
-        [HttpPost]
-        public override ActionResult Approve(int id)
-        {
-            Procedures proc = new Procedures();
-            int year = this.year;
-            int result = proc.P3_3_kolichestvo_sotrudnikov_vuza(id, year);
-            MonitoringUpdate.Update(id, this.tableName, 1, this.year);
-            return base.Approve(id);
         }
 	}
 }

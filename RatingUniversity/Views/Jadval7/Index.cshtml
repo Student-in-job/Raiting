@@ -12,9 +12,9 @@
 	@if ((ViewBag.status == -1 || ViewBag.status == 0) && ViewBag.status_date == 0 && !ViewBag.isAdmin)
     {
         <div class="well well-sm">
-            <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Jadval2/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
+            <i class="glyphicon glyphicon-download-alt"></i> <a href="~/Jadval7/Download">@MyFunctions.Translate(Resource.DownloadTemplate, ViewBag.lang, ViewBag.alfabet)</a>
         </div>
-        using (Html.BeginForm("Upload", "Jadval2", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        using (Html.BeginForm("Upload", "Jadval7", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <fieldset>
             <legend>@MyFunctions.Translate(Resource.AttachFile, ViewBag.lang, ViewBag.alfabet)</legend>
@@ -39,7 +39,7 @@
     }
     @if (ViewBag.status == 0 && ViewBag.isAdmin)
     {
-        using (Html.BeginForm("Approve", "Jadval2", FormMethod.Post))
+        using (Html.BeginForm("Approve", "Jadval7", FormMethod.Post))
         {
             <fieldset>
                 <div class="input-group">

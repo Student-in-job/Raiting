@@ -192,7 +192,7 @@ namespace RatingUniversity.Controllers
 				foreach (var t in uploadExl)
 					db.Jadval_AKTdaraja_1_7.Add(t);
 				db.SaveChanges();
-				MonitoringUpdate.Update(0, "J1_7", 0, this.year);
+				MonitoringUpdate.Update(this.tableName, 0, this.year);
 			}
 		}
 	}

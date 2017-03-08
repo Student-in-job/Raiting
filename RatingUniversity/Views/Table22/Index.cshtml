@@ -50,35 +50,34 @@
         }
     }
 
-                          <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
-                          <h4 class="text-center">@MyFunctions.Translate(Resource.LabHeader, ViewBag.lang, ViewBag.alfabet)</h4>
-        <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
-            <thead>
+    <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
+    <h4 class="text-center">@MyFunctions.Translate(Resource.LabHeader, ViewBag.lang, ViewBag.alfabet)</h4>
+    <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
+        <thead>
+            <tr>
+                <th style="width:38px">№</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.LabSubject, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.LabEquipment, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.LabEquipmentState, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.LabEquipmentAdd, ViewBag.lang, ViewBag.alfabet)</th>
+                <th style="text-align:center">@MyFunctions.Translate(Resource.LabEquipmentAddState, ViewBag.lang, ViewBag.alfabet)</th>
+            </tr>
+        </thead>
+        <tbody>
+        @{
+            int index = 0;
+            foreach (var item in Model)
+            {
+                index++;
                 <tr>
-                    <th style="width:38px;">№</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.LabSubject, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.LabEquipment, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.LabEquipmentState, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.LabEquipmentAdd, ViewBag.lang, ViewBag.alfabet)</th>
-                    <th style="text-align:center">@MyFunctions.Translate(Resource.LabEquipmentAddState, ViewBag.lang, ViewBag.alfabet)</th>
+                    <td>@index</td>
+                    <td>@Html.DisplayFor(modelItem => item.fan_name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.lab_asbob_name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.lab_holat)</td>
+                    <td>@Html.DisplayFor(modelItem => item.yordam_asbob_name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.yordam_holat)</td>
                 </tr>
-            </thead>
-            <tbody>
-            @{
-                int index = 0;
-                foreach (var item in Model)
-                {
-                    index++;
-                    <tr>
-                        <td>@index</td>
-                        <td>@Html.DisplayFor(modelItem => item.fan_name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.lab_asbob_name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.lab_holat)</td>
-                        <td>@Html.DisplayFor(modelItem => item.yordam_asbob_name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.yordam_holat)</td>
-                    </tr>
-                }
             }
-            </tbody>
-        </table>
-
+        }
+        </tbody>
+    </table>

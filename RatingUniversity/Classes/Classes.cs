@@ -349,7 +349,7 @@ namespace RatingUniversity.Classes
 
         public string GetReport()
         {
-            return this.ApprovedCount.ToString() + "/" + this.UploadedCount.ToString() + "/30"; 
+            return this.ApprovedCount.ToString() + "/" + this.UploadedCount.ToString() + "/28"; 
         }
     }
 }
