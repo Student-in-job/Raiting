@@ -85,6 +85,7 @@ CLOSE @universities
 DEALLOCATE @universities
 end
 
+GO
 
 --1.3
 CREATE PROCEDURE P1_3_kolvo_uchebnikov_posobiy_umk
@@ -288,6 +289,8 @@ CLOSE @universities
 DEALLOCATE @universities
 end
 
+GO
+
 --2.2
 CREATE PROCEDURE P2_2_otziv_rabotodateley
 @year int
@@ -321,6 +324,8 @@ CLOSE @universities
 DEALLOCATE @universities
 end
 
+GO
+
 --2.3
 CREATE PROCEDURE P2_3_trudoustroystvo_vipusknikov
 @id_university int,
@@ -341,6 +346,8 @@ if (@count=0)
 else
 	UPDATE raiting set p10=@count_work_bachelors + @count_work_masters WHERE id=@id
 end
+
+GO
 
 --2.4
 CREATE PROCEDURE P2_4_nagradi_studentov
@@ -381,10 +388,6 @@ AS
 --count для проверки, есть ли в таблице raiting записи для 
 --данного университета за данный год, если есть, то сохранить его id
 
-DECLARE  @count int, @id int, @count_uz_rus int, @count_angl int
-
-@year int
-AS
 DECLARE  @count int, @id int, @count_pps int, @count_dis int, @count_uch int, @count_neuch int
 begin 
 SET @count_pps =(SELECT ass_shtat FROM chislennost_pps_vuza
@@ -619,5 +622,4 @@ INSERT INTO raiting(p17, p18, p19, p20, year, id_university) VALUES (@count_osn_
 else UPDATE raiting set p17=@count_osn_lab, p18=@count_subj_lab, p19=@count_auditorii, p20=@count_audit_fond WHERE id=@id
 end
 
-
-
+GO
