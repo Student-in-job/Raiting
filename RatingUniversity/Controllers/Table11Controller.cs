@@ -59,7 +59,7 @@ namespace RatingUniversity.Controllers
                     if (row[2] != DBNull.Value) record.kod_spec = Functions.Translate(Convert.ToString(row[2]), "UZ", "LT");
                     if (row[3] != DBNull.Value) record.monograf_name = Convert.ToString(row[3]);
                     if (row[4] != DBNull.Value) record.monograf_year = Convert.ToString(row[4]);
-                    if (row[5] != DBNull.Value) record.filename = Convert.ToString(row[5]);
+                    if (row[5] != DBNull.Value) record.filename = "#" + Convert.ToString(row[5]);
                     record.id_university = this.id;
                     record.year = this.year;//DateTime.Now.Year;
 
@@ -90,7 +90,7 @@ namespace RatingUniversity.Controllers
                     if (row[2] != DBNull.Value) record.kod_spec = Functions.Translate(Convert.ToString(row[2]), "UZ", "LT");
                     if (row[3] != DBNull.Value) record.ucheb_name = Convert.ToString(row[3]);
                     if (row[4] != DBNull.Value) record.ucheb_number = Convert.ToString(row[4]);
-                    if (row[5] != DBNull.Value) record.filename = Convert.ToString(row[5]);
+                    if (row[5] != DBNull.Value) record.filename = "#" + Convert.ToString(row[5]);
                     record.id_university = this.id;
                     record.year = this.year;//DateTime.Now.Year;
 
@@ -121,7 +121,7 @@ namespace RatingUniversity.Controllers
                     if (row[2] != DBNull.Value) record.kod_spec = Functions.Translate(Convert.ToString(row[2]), "UZ", "LT");
                     if (row[3] != DBNull.Value) record.posobie_name = Convert.ToString(row[3]);
                     if (row[4] != DBNull.Value) record.posobie_number = Convert.ToString(row[4]);
-                    if (row[5] != DBNull.Value) record.filename = Convert.ToString(row[5]);
+                    if (row[5] != DBNull.Value) record.filename = "#" + Convert.ToString(row[5]);
                     record.id_university = this.id;
                     record.year = this.year;//DateTime.Now.Year;
 
@@ -152,7 +152,7 @@ namespace RatingUniversity.Controllers
                     if (row[2] != DBNull.Value) record.kod_spec = Functions.Translate(Convert.ToString(row[2]), "UZ", "LT");
                     if (row[3] != DBNull.Value) record.metodich_name = Convert.ToString(row[3]);
                     if (row[4] != DBNull.Value) record.metodich_number = Convert.ToString(row[4]);
-                    if (row[5] != DBNull.Value) record.filename = Convert.ToString(row[5]);
+                    if (row[5] != DBNull.Value) record.filename = "#" + Convert.ToString(row[5]);
                     record.id_university = this.id;
                     record.year = this.year;//DateTime.Now.Year;
 

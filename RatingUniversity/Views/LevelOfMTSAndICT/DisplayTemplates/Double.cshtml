@@ -1,4 +1,11 @@
 ﻿
-@model double
+@model Nullable<double>
 
-@string.Format("{0:0.00}", Model)
+@if (Model == null)
+{
+    <span>0,00</span>
+}
+else
+{
+    <span>@string.Format("{0:0.00}", Model)</span>
+}

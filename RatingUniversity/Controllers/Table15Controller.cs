@@ -60,7 +60,7 @@ namespace RatingUniversity.Controllers
                     if (row[3] != DBNull.Value) record.sertifikat_name = Convert.ToString(row[3]);
                     if (row[4] != DBNull.Value) record.sertifikat_date = Convert.ToString(row[4]);
                     if (row[5] != DBNull.Value) record.sertifikat_number = Convert.ToString(row[5]);
-                    if (row[6] != DBNull.Value) record.filename = Convert.ToString(row[6]);
+                    if (row[6] != DBNull.Value) record.filename = "#" + Convert.ToString(row[6]);
                     record.id_university = this.id;
                     record.year = this.year;
 

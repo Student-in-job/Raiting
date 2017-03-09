@@ -7,7 +7,7 @@
 	@{
 		Layout = "~/Views/Shared/_LayoutSideMenuEdit.cshtml";
 		int count = 1;
-	}
+    }
 
 
 	@if ((ViewBag.status == -1 || ViewBag.status == 0) && ViewBag.status_date == 0 && !ViewBag.IsAdmin)
@@ -94,15 +94,23 @@
 				<td>@Html.DisplayFor(modelItem => item.Subject)</td>
 				<td>@Html.DisplayFor(modelItem => item.Asos)</td>
 				<td>
-                    <span>
-                        @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.Asos_fayl;}
-                        <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
-                    </span>
-                    @using (Html.BeginForm("UploadFiles", "Jadval5", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    @{
+                    if (item.Asos_fayl != "#")
                     {
-                        <input type="file" name="files" />
+                        string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.Asos_fayl;
+                        <a href=# onclick="OpenUrl('@fileLink');return false;"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
+                    }
+                    else
+                    {
+                        <img src="~/Images/pdf_icon_grey.png" style="height:35px" /> 
+                    }}
+                    <a href="#" id="uploadIcon" onclick="UploadClick(this);return false;">
+                        <img src="~/Images/upload_icon.png" style="height:30px">
+                    </a>
+                    @using (Html.BeginForm("UploadFiles", "Jadval5", FormMethod.Post, new { enctype = "multipart/form-data", style = "width: 75px" }))
+                    {
+                        <input type="file" name="files" value="upload" id="files" onchange="SendData(this)" class="uploadFile"/>
                         <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.Id)" />
-                        <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
                     }
 				</td>
 			</tr>

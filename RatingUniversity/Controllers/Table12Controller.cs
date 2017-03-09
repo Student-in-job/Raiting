@@ -7,6 +7,8 @@ using RatingUniversity.Classes;
 using RatingUniversity.Models;
 using System.Data;
 using System.Data.Entity;
+using PagedList;
+using PagedList.Mvc;
 
 namespace RatingUniversity.Controllers
 {
@@ -84,7 +86,7 @@ namespace RatingUniversity.Controllers
         }
         //
         // GET: /Table12/
-        public ActionResult Index(int? id)
+        public ActionResult Index(int? id, int? page)
         {
             if ((this.id == 0) && (id == null))
             {
@@ -98,7 +100,9 @@ namespace RatingUniversity.Controllers
             ViewBag.Status = MonitoringUpdate.GetStatus(id, this.tableName, this.year);
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.citiruemost_publikaciy_pps_vuza.Where(model => model.id_university == id && model.year == this.year).ToList());
+            int pageSize = 50;
+            int pageNumber = (page ?? 1);
+            return View(this.db.citiruemost_publikaciy_pps_vuza.Where(model => model.id_university == id && model.year == this.year).ToList().ToPagedList(pageNumber, pageSize));
         }
 	}
 }

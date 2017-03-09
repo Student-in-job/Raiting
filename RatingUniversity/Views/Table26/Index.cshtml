@@ -1,5 +1,5 @@
-﻿@*using PagedList.Mvc;*@
-    @model IEnumerable<RatingUniversity.Models.osnashennost_irc_literaturoy>
+﻿    @using PagedList.Mvc;
+    @model PagedList.IPagedList<RatingUniversity.Models.osnashennost_irc_literaturoy>
     @using MyFunctions = RatingUniversity.Classes.Functions;
     @using Resource = RatingUniversity.Langs.Resource;
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
@@ -29,7 +29,7 @@
         else
         {
             if (ViewBag.status == 0)
-            { 
+            {
                 using (Html.BeginForm("Approve", "Table26", FormMethod.Post))
                 {
                     <fieldset>
@@ -51,7 +51,7 @@
 
     <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
     <h4 class="text-center">@MyFunctions.Translate(Resource.IRCBookHeader1, ViewBag.lang, ViewBag.alfabet)</h4>
-        
+
     <table class="table table-bordered table-striped" style="width:100%;table-layout:fixed;word-wrap:break-word;">
         <thead>
             <tr>
@@ -74,21 +74,25 @@
                 {
                     index++;
                     <tr>
-                        <td style ="vertical-align: middle; width=38px">@index</td>
+                        <td style="vertical-align: middle; width=38px">@index</td>
                         <td style="vertical-align: middle">@Html.DisplayFor(modelItem => item.napravlenie)</td>
                         <td style="vertical-align: middle">@Html.DisplayFor(modelItem => item.nazvaniya_predmetov)</td>
                         <td style="vertical-align: middle">@Html.DisplayFor(modelItem => item.osn_literatura)</td>
                         <td style="text-align: center; vertical-align: middle">
-                            @if ((bool)item.nalichie_uzb) { <i class="glyphicon glyphicon-plus"></i> }
+                            @if ((bool)item.nalichie_uzb)
+                            { <i class="glyphicon glyphicon-plus"></i> }
                         </td>
                         <td style="text-align: center; vertical-align: middle">
-                            @if((bool)item.nalichie_rus) { <i class="glyphicon glyphicon-plus"></i> }
+                            @if ((bool)item.nalichie_rus)
+                            { <i class="glyphicon glyphicon-plus"></i> }
                         </td>
                         <td style="text-align: center; vertical-align: middle">
-                            @if((bool)item.nalichie_angl) { <i class="glyphicon glyphicon-plus"></i> }
+                            @if ((bool)item.nalichie_angl)
+                            { <i class="glyphicon glyphicon-plus"></i> }
                         </td>
                     </tr>
                 }
             }
         </tbody>
     </table>
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

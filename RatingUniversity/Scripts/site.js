@@ -4,3 +4,12 @@
     window.open(link, 'targetWindow',
     'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=650, height=600, top=' + top + ',left=' + left);
 }
+
+function UploadClick(object) {
+    $(object).next().children().trigger('click');
+}
+
+function SendData(object) {
+    form = $(object).parent();
+    form.submit();
+}

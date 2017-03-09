@@ -134,7 +134,7 @@ namespace RatingUniversity.Controllers
 				NewUpload.Konferensiya_nomi = Convert.ToString(data.Rows[i][6]);
 				NewUpload.Student_oqituvchi = 1;
 				NewUpload.Asos = Convert.ToString(data.Rows[i][1]);
-				NewUpload.Asos_fayl = Convert.ToString(data.Rows[i][7]);
+                NewUpload.Asos_fayl = "#" + Convert.ToString(data.Rows[i][7]);
 				NewUpload.Year = (short) this.year;
 				NewUpload.UniversityId = UniverId;
 				NewUpload.Status = 1;

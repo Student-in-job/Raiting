@@ -1,5 +1,5 @@
-﻿@*using PagedList.Mvc;*@
-    @model IEnumerable<RatingUniversity.Models.kolichestvo_izdannih_mestnih_statey>
+﻿    @using PagedList.Mvc;
+    @model PagedList.IPagedList<RatingUniversity.Models.kolichestvo_izdannih_mestnih_statey>
     @using MyFunctions = RatingUniversity.Classes.Functions;
     @using Resource = RatingUniversity.Langs.Resource;
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
@@ -53,7 +53,7 @@
     <h4 class="text-center">@MyFunctions.Translate(Resource.PaperDataHeader_2, ViewBag.lang, ViewBag.alfabet)</h4>
     <h5 class="text-center text-uppercase">@MyFunctions.Translate(Resource.Information, ViewBag.lang, ViewBag.alfabet)</h5>
        
-    <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word">
+    <table class="table table-bordered table-striped" style="width:100%;table-layout:fixed;word-wrap:break-word">
         <thead>
         <tr>
             <th style="width:38px">№</th>
@@ -68,7 +68,7 @@
         </thead>
         <tbody>
         @{
-            int index = 1;
+            int index = 0;
             foreach (var item in Model)
             {
                 index++;
@@ -81,15 +81,24 @@
                     <td><a href="@MyFunctions.CreateURl(item.link)">@Html.DisplayFor(modelItem => item.link)</a></td>
                     <td>@Html.DisplayFor(modelItem => item.coauthor_count)</td>
                     <td>
-                        <span>
-                            @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.filename;}
-                            <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
-                        </span>
-                        @using (Html.BeginForm("UploadFiles", "Table14", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        @{
+                            if (item.filename != "#")
+                            {
+                                string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + item.filename;
+                                <a href=# onclick="OpenUrl('@fileLink');return false;"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
+                            }
+                            else
+                            {
+                                <img src="~/Images/pdf_icon_grey.png" style="height:35px" />
+                            }
+                        }
+                        <a href="#" id="uploadIcon" onclick="UploadClick(this);return false;">
+                            <img src="~/Images/upload_icon.png" style="height:30px">
+                        </a>
+                        @using (Html.BeginForm("UploadFiles", "Table14", FormMethod.Post, new { enctype = "multipart/form-data", style = "width: 75px" }))
                         {
-                            <input type="file" name="files" />
+                            <input type="file" name="files" value="upload" id="files" onchange="SendData(this)" class="uploadFile" />
                             <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => item.id)" />
-                            <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
                         }
                     </td>
                 </tr>
@@ -97,4 +106,5 @@
         }
         </tbody>
     </table>
-    @Scripts.Render("~/Scripts/site.js");
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    @Scripts.Render("~/Scripts/site.js")

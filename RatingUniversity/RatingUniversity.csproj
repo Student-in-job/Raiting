@@ -609,7 +609,9 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Images\pdf_icon.png" />
+    <Content Include="Images\pdf_icon_grey.png" />
     <Content Include="Images\ru.png" />
+    <Content Include="Images\upload_icon.png" />
     <Content Include="Images\uz.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

@@ -67,7 +67,7 @@
             <li><a href="#tabs-4">@MyFunctions.Translate(Resource.MDUQMajmua, ViewBag.lang, ViewBag.alfabet)</a></li>
         </ul>
         <div id="tabs-1">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th style="width:38px">№</th>
@@ -91,16 +91,25 @@
                             <td>@monografiya.monograf_name</td>
                             <td>@monografiya.monograf_year</td>
                             <td>
-                                <span>
-                                    @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + monografiya.filename;}
-                                    <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
-                                </span>
-                                @using (Html.BeginForm("UploadFilesOverload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                @{
+                                if (monografiya.filename != "#")
+                                    {
+                                        string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + monografiya.filename;
+                                        <a href=# onclick="OpenUrl('@fileLink');return false;"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Images/pdf_icon_grey.png" style="height:35px" />
+                                    }
+                                }
+                                <a href="#" id="uploadIcon" onclick="UploadClick(this);return false;">
+                                    <img src="~/Images/upload_icon.png" style="height:30px">
+                                </a>
+                                @using (Html.BeginForm("UploadFilesOverload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data", style = "width: 75px" }))
                                 {
-                                    <input type="file" name="files" />
+                                    <input type="file" name="files" value="upload" id="files" onchange="SendData(this)" class="uploadFile" />
                                     <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => monografiya.id)" />
                                     <input type="hidden" name="resType" value="1" />
-                                    <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
                                 }
                             </td>
                         </tr>
@@ -114,7 +123,7 @@
             </table>    
         </div>
         <div id="tabs-2">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th style="width:38px">№</th>
@@ -138,16 +147,25 @@
                                 <td>@darslik.ucheb_name</td>
                                 <td>@darslik.ucheb_number</td>
                                 <td>
-                                    <span>
-                                        @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + darslik.filename;}
-                                        <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
-                                    </span>
-                                    @using (Html.BeginForm("UploadFilesOverload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    @{
+                                        if (darslik.filename != "#")
+                                        {
+                                            string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + darslik.filename;
+                                            <a href=# onclick="OpenUrl('@fileLink');return false;"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
+                                        }
+                                        else
+                                        {
+                                            <img src="~/Images/pdf_icon_grey.png" style="height:35px" />
+                                        }
+                                    }
+                                    <a href="#" id="uploadIcon" onclick="UploadClick(this);return false;">
+                                        <img src="~/Images/upload_icon.png" style="height:30px">
+                                    </a>
+                                    @using (Html.BeginForm("UploadFilesOverload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data", style = "width: 75px" }))
                                     {
-                                        <input type="file" name="files" />
+                                        <input type="file" name="files" value="upload" id="files" onchange="SendData(this)" class="uploadFile" />
                                         <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => darslik.id)" />
                                         <input type="hidden" name="resType" value="2" />
-                                        <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
                                     }
                                 </td>
                             </tr>
@@ -161,7 +179,7 @@
             </table>
         </div>
         <div id="tabs-3">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th style="width:38px">№</th>
@@ -185,16 +203,25 @@
                                 <td>@qullanma.posobie_name</td>
                                 <td>@qullanma.posobie_number</td>
                                 <td>
-                                    <span>
-                                        @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + qullanma.filename;}
-                                        <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
-                                    </span>
-                                    @using (Html.BeginForm("UploadFilesOverload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    @{
+                                        if (qullanma.filename != "#")
+                                        {
+                                            string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + qullanma.filename;
+                                            <a href=# onclick="OpenUrl('@fileLink');return false;"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
+                                        }
+                                        else
+                                        {
+                                            <img src="~/Images/pdf_icon_grey.png" style="height:35px" />
+                                        }
+                                    }
+                                    <a href="#" id="uploadIcon" onclick="UploadClick(this);return false;">
+                                        <img src="~/Images/upload_icon.png" style="height:30px">
+                                    </a>
+                                    @using (Html.BeginForm("UploadFilesOverload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data", style = "width: 75px" }))
                                     {
-                                        <input type="file" name="files" />
+                                        <input type="file" name="files" value="upload" id="files" onchange="SendData(this)" class="uploadFile" />
                                         <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => qullanma.id)" />
                                         <input type="hidden" name="resType" value="3" />
-                                        <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
                                     }
                                 </td>
                             </tr>
@@ -208,7 +235,7 @@
             </table>
         </div>
         <div id="tabs-4">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th style="width:38px">№</th>
@@ -232,16 +259,25 @@
                                 <td>@majmua.metodich_name</td>
                                 <td>@majmua.metodich_number</td>
                                 <td>
-                                    <span>
-                                        @{string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + majmua.filename;}
-                                        <a href=# onclick="OpenUrl('@fileLink')"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
-                                    </span>
-                                    @using (Html.BeginForm("UploadFilesOverload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    @{
+                                        if (majmua.filename != "#")
+                                        {
+                                            string fileLink = Request.Url.GetLeftPart(UriPartial.Authority) + "/Scripts/ViewerJS/#../../Files/Upload/" + majmua.filename;
+                                            <a href=# onclick="OpenUrl('@fileLink');return false;"><img src="~/Images/pdf_icon.png" style="height:35px" /> </a>
+                                        }
+                                        else
+                                        {
+                                            <img src="~/Images/pdf_icon_grey.png" style="height:35px" />
+                                        }
+                                    }
+                                    <a href="#" id="uploadIcon" onclick="UploadClick(this);return false;">
+                                        <img src="~/Images/upload_icon.png" style="height:30px">
+                                    </a>
+                                    @using (Html.BeginForm("UploadFilesOverload", "Table11", FormMethod.Post, new { enctype = "multipart/form-data", style = "width: 75px" }))
                                     {
-                                        <input type="file" name="files" />
+                                        <input type="file" name="files" value="upload" id="files" onchange="SendData(this)" class="uploadFile" />
                                         <input type="hidden" name="id" value="@Html.DisplayFor(modelItem => majmua.id)" />
                                         <input type="hidden" name="resType" value="4" />
-                                        <input type="submit" name="Submit" id="Submit" value="@MyFunctions.Translate(Resource.Upload, ViewBag.lang, ViewBag.alfabet)" />
                                     }
                                 </td>
                             </tr>

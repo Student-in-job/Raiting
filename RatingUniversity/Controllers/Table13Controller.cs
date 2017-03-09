@@ -9,6 +9,8 @@ using System.Threading;
 using System.Data;
 using System.Globalization;
 using System.Data.Entity;
+using PagedList;
+using PagedList.Mvc;
 
 namespace RatingUniversity.Controllers
 {
@@ -56,7 +58,7 @@ namespace RatingUniversity.Controllers
                 if (row[5] != DBNull.Value) record.paper_year = Convert.ToString(row[5]);
                 if (row[6] != DBNull.Value) record.link = Convert.ToString(row[6]);
                 if (row[7] != DBNull.Value) record.coauthor_count = Convert.ToSingle(row[7]);
-                if (row[8] != DBNull.Value) record.filename = Convert.ToString(row[8]);
+                if (row[8] != DBNull.Value) record.filename = "#" + Convert.ToString(row[8]);
                 record.id_university = this.id;
                 record.year = this.year;
 
@@ -85,7 +87,7 @@ namespace RatingUniversity.Controllers
         }
         //
         // GET: /Table13/
-        public ActionResult Index(int? id)
+        public ActionResult Index(int? id, int? page)
         {
             if ((this.id == 0) && (id == null))
             {
@@ -99,7 +101,9 @@ namespace RatingUniversity.Controllers
             ViewBag.Status = MonitoringUpdate.GetStatus(id, this.tableName, this.year);
             IQueryable<university> university = this.db.university.Where(model => model.id == id);
             ViewBag.university = (ViewBag.lang == "RU") ? university.ToList()[0].name_RU : university.ToList()[0].name_UZ;
-            return View(this.db.kolichestvo_izdannih_mejdunarodnih_statey.Where(model => model.id_university == id && model.year == this.year).ToList());
+            int pageSize = 50;
+            int pageNumber = (page ?? 1);
+            return View(this.db.kolichestvo_izdannih_mejdunarodnih_statey.Where(model => model.id_university == id && model.year == this.year).ToList().ToPagedList(pageNumber, pageSize));
         }
 
         protected override void UpdateFileName(string fileName, int recordId)
