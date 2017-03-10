@@ -53,7 +53,8 @@ namespace RatingUniversity.Controllers
                 if (row[4] != DBNull.Value) record.grant_name = Convert.ToString(row[4]);
                 if (row[5] != DBNull.Value) record.grant_summa = Convert.ToDouble(row[5]);
                 else record.grant_summa = 0;
-                if (row[6] != DBNull.Value) record.filename = "#" + Convert.ToString(row[6]);
+                if (row[7] != DBNull.Value) record.filename = "#" + Convert.ToString(row[7]);
+                else record.filename = "#";
                 record.id_university = this.id;
                 record.year = this.year;
 

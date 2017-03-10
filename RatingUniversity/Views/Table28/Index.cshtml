@@ -54,56 +54,81 @@
     <h3 class="text-center">@MyFunctions.Translate(ViewBag.university, ViewBag.lang, ViewBag.alfabet)</h3>
     <h4 class="text-center">@MyFunctions.Translate(Resource.ICTLevelHeader, ViewBag.lang, ViewBag.alfabet)</h4>
         
-    <table class="table table-bordered" style="width:100%;table-layout:fixed;word-wrap:break-word;">
-        <thead>
-            <tr>
-                <th style="width: 38px">@MyFunctions.Translate(Resource.ICTLevelNumber, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelUniversity, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelCompCount, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelCompConnected, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelCompInternet, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelCompNew, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelInternet, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelMail, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelMailPPS, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelInterService, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelLMS, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelSMS, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelHRM, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelStudMS, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelFinance, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelManagerCount, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelPPSCount, ViewBag.lang, ViewBag.alfabet)</th>
-                <th style="text-align:center">@MyFunctions.Translate(Resource.ICTLevelStudentCount, ViewBag.lang, ViewBag.alfabet)</th>
-            </tr>
-        </thead>
-        <tbody>
-            @{
-                int index = 0;
-                foreach (var item in Model)
-                {
-                    index++;
+    @{
+        int index = 0;
+        foreach (var item in Model)
+        {
+            <table class="table table-bordered table-striped" style="width:100%;table-layout:fixed;word-wrap:break-word;">
+                <thead>
                     <tr>
-                        <td>@index</td>
-                        <td>@ViewBag.university</td>
-                        <td>@Html.DisplayFor(modelItem => item.pc_count)</td>
-                        <td>@Html.DisplayFor(modelItem => item.pc_in_local_netw_count)</td>
-                        <td>@Html.DisplayFor(modelItem => item.pc_with_intenet_count)</td>
-                        <td>@Html.DisplayFor(modelItem => item.last_years_pc_count)</td>
-                        <td>@Html.DisplayFor(modelItem => item.internet_speed)</td>
-                        <td>@Html.DisplayFor(modelItem => item.admin_emails_count)</td>
-                        <td>@Html.DisplayFor(modelItem => item.pps_emails_count)</td>
-                        <td>@Html.DisplayFor(modelItem => item.web_service_types)</td>
-                        <td>@Html.DisplayFor(modelItem => item.study_monitoring)</td>
-                        <td>@Html.DisplayFor(modelItem => item.research_monitoring)</td>
-                        <td>@Html.DisplayFor(modelItem => item.pps_baza)</td>
-                        <td>@Html.DisplayFor(modelItem => item.student_baza)</td>
-                        <td>@Html.DisplayFor(modelItem => item.finance)</td>
-                        <td>@Html.DisplayFor(modelItem => item.admins_count)</td>
-                        <td>@Html.DisplayFor(modelItem => item.pps_count)</td>
-                        <td>@Html.DisplayFor(modelItem => item.students_count)</td>
+                        <th>@MyFunctions.Translate(Resource.ICTLevelUniversity, ViewBag.lang, ViewBag.alfabet)</th>
+                        <th style="width:140px">@ViewBag.university</th>
                     </tr>
-                }
-            }
-        </tbody>
-    </table>
+                </thead>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelCompCount, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.pc_count)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelCompConnected, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.pc_in_local_netw_count)</td>
+                    </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelCompInternet, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.pc_with_intenet_count)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelCompNew, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.last_years_pc_count)</td>
+                    </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelInternet, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.internet_speed)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelMail, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.admin_emails_count)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelMailPPS, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.pps_emails_count)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelInterService, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.web_service_types)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelLMS, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.study_monitoring)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelSMS, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.research_monitoring)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelHRM, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.pps_baza)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelStudMS, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.student_baza)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelFinance, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.finance)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelManagerCount, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.admins_count)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelPPSCount, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.pps_count)</td>
+                </tr>
+                <tr>
+                    <td>@MyFunctions.Translate(Resource.ICTLevelStudentCount, ViewBag.lang, ViewBag.alfabet)</td>
+                    <td style="width:140px">@Html.DisplayFor(modelItem => item.students_count)</td>
+                </tr>
+            </table>
+        }
+    }

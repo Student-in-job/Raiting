@@ -1047,7 +1047,7 @@
     <value>Фан ишчи ўқув дастурида кўрсатилган асосий ўқув адабиётларнинг АРМда электрон шаклида мавжудлиги (мавжуд «+»)</value>
   </data>
   <data name="IRCBookEnglish" xml:space="preserve">
-    <value>Рус тилида</value>
+    <value>Хорижий тилда</value>
   </data>
   <data name="IRCBookHeader" xml:space="preserve">
     <value>Ахборот-ресурс марказидаги ўқув адабиётларнинг электрон китоблар шаклидагилари ҳақида МАЪЛУМОТ</value>
@@ -1059,7 +1059,7 @@
     <value>Т/р</value>
   </data>
   <data name="IRCBookRussian" xml:space="preserve">
-    <value>Хорижий тилда</value>
+    <value>Рус тилида</value>
   </data>
   <data name="IRCBookSpeciality" xml:space="preserve">
     <value>Таълим йўналишлари (мутахассисликлар) номи</value>

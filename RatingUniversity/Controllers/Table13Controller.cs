@@ -58,7 +58,8 @@ namespace RatingUniversity.Controllers
                 if (row[5] != DBNull.Value) record.paper_year = Convert.ToString(row[5]);
                 if (row[6] != DBNull.Value) record.link = Convert.ToString(row[6]);
                 if (row[7] != DBNull.Value) record.coauthor_count = Convert.ToSingle(row[7]);
-                if (row[8] != DBNull.Value) record.filename = "#" + Convert.ToString(row[8]);
+                if (row[8] != DBNull.Value) record.filename = Convert.ToString(row[8]);
+                else record.filename = "#";
                 record.id_university = this.id;
                 record.year = this.year;
 

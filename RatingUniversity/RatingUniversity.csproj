@@ -825,6 +825,7 @@
     <Content Include="Views\Table31\Index.cshtml" />
     <Content Include="Views\Shared\ErrorFile.cshtml" />
     <Content Include="Views\Monitoring\Status.cshtml" />
+    <Content Include="Views\Table28\Index_old.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />

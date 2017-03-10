@@ -1033,7 +1033,7 @@
     <value>Наличие в ИРЦе основной учебной литературы, указанной в рабочей учебной программе дисциплины в электронном варианте</value>
   </data>
   <data name="IRCBookEnglish" xml:space="preserve">
-    <value>На русском языке</value>
+    <value>На иностранном языке</value>
   </data>
   <data name="IRCBookHeader" xml:space="preserve">
     <value>СВЕДЕНИЯ об учебной литературе Информационно-ресурсного центра в форме электронной книги</value>
@@ -1045,7 +1045,7 @@
     <value>П/н</value>
   </data>
   <data name="IRCBookRussian" xml:space="preserve">
-    <value>На иностранном языке</value>
+    <value>На русском языке</value>
   </data>
   <data name="IRCBookSpeciality" xml:space="preserve">
     <value>Название образовательного направления (специальности)</value>

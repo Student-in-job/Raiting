@@ -59,6 +59,7 @@ namespace RatingUniversity.Controllers
                 if (row[7] != DBNull.Value) record.yarmarka = Convert.ToDouble(row[7]);
                 else record.yarmarka = 0;
                 if (row[8] != DBNull.Value) record.filename = "#" + Convert.ToString(row[8]);
+                else record.filename = "#";
                 record.id_university = this.id;
                 record.year = this.year;
 
