@@ -5,9 +5,8 @@ GO
 
 CREATE VIEW I1 AS 
 SELECT university.id as ID, university.name_RU as name_RU, university.name_UZ as name_UZ, 
-(raiting.px/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END)*100 as I11, 
-(raiting.py/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END)*100 as I12,
-(3*raiting.px+raiting.py)*100/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END as I1,
+(raiting.px/CASE raiting.p WHEN 0 THEN 1 ELSE raiting.p END)*100 as I1,
+raiting.px, raiting.p
 YEAR
 FROM raiting inner join university
 	ON raiting.id_university = university.id;
@@ -18,7 +17,7 @@ DROP TABLE [dbo].[I1_dolya_pps_s_uchenoy_stepenyu]
 GO
 
 CREATE VIEW I1_dolya_pps_s_uchenoy_stepenyu AS 
-SELECT ID, name_RU, name_UZ, I11, I12, I1, 4*I1/(SELECT MAX(I1) FROM I1 WHERE I1.YEAR = YEAR) AS mark, YEAR
+SELECT ID, name_RU, name_UZ, I11, px, p, 5*I1/(SELECT MAX(I1) FROM I1 WHERE I1.YEAR = YEAR) AS mark, YEAR
 FROM I1;
 GO
 
